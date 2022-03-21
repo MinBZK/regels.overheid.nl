@@ -14,6 +14,7 @@ A good translation of legislation into implementation practice requires an appro
 Legal analysis is an approach that supports this; their description and application are central to this book. The book consists of two parts. The first part deals with the theory of Legal Analysis. In order to outline the context, Chapter 2 examines the characteristics of legislation that often make implementation (or setting up) laborious. Chapter 3 then describes the different steps in the legal analysis approach:
 
 ![Legal Analysis Steps](../assets/images/stappenschema.png)
+
 1. **Determining the working area** determining the scope of the legislation and the implementation policy to which Legal Analysis is applied, for example for building an ICT system or an implementation test on draft legislation.
 
 2. **Making visible the structure in legislation** by identifying the legal 'grammar' of legislation using a legal analysis scheme.

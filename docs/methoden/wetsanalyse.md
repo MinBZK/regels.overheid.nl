@@ -14,6 +14,7 @@ Een goede vertaling van wetgeving naar de uitvoeringspraktijk vraagt om een aanp
 Wetsanalyse is een aanpak die dit ondersteunt; de beschrijving en toepassing ervan staan in dit boek centraal. Het boek bestaat uit twee delen. Het eerste deel behandelt de theorie van Wetsanalyse. Om de context te schetsen wordt in hoofdstuk 2 ingegaan op de karakteristieken van wetgeving die maken dat (het inrichten van) de uitvoering vaak bewerkelijk is. Vervolgens worden in hoofdstuk 3 de verschillende stappen in de aanpak van Wetsanalyse beschreven:
 
 ![Stappen Wetsanalyse](../assets/images/stappenschema.png)
+
 1. **Bepalen van het werkgebied** het bepalen van de scope van de wetgeving en het uitvoeringsbeleid waarop Wetsanalyse toegepast wordt, bijvoorbeeld voor het bouwen van een ICT-systeem of een uitvoeringstoets op concept wetgeving.
 
 2. **Zichtbaar maken van de structuur in wetgeving** door het identificeren van de juridische ‘grammatica’ van wetgeving met behulp van een juridisch analyseschema.
