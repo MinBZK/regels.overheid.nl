@@ -1,6 +1,10 @@
 site_name: open-regels.nl
 site_url: https://open-regels.nl/
 
+# Repository
+repo_name: regels.overheid.nl
+repo_url: https://gitlab.com/discipl/RON/regels.overheid.nl
+
 nav:
     - Home: index.md
     - Methoden:
@@ -16,6 +20,8 @@ theme:
   features:
     - navigation.tracking
     - navigation.tabs
+  icon:
+    repo: fontawesome/brands/gitlab
 
 markdown_extensions:
   - pymdownx.highlight:
