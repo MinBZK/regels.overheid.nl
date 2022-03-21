@@ -32,3 +32,30 @@ Material was used to realize the first version of [open-regels.nl](https://open-
 # MkDocs static i18 plugin
 
 Because we think it is important to be bilingual from scratch (Dutch and English), we use the [MkDocs static i18n plugin](https://github.com/ultrabug/mkdocs-static-i18n/). The `mkdocs-static-i18n` plugin allows you to support multiple languages of your documentation by adding static translation files to your existing documentation pages.
+
+# Building the site
+
+MkDocs comes with a built-in dev-server that lets you preview your documentation as you work on it. Make sure you're in the same directory as the mkdocs.yml configuration file, and then start the server by running the mkdocs serve command:
+
+```
+steven@steven-Surface-Laptop-3 ~/Development/Openregels (master) $ mkdocs serve
+INFO     -  Building documentation...
+INFO     -  Setting the default 'theme.language' option to 'nl'
+INFO     -  Cleaning site directory
+INFO     -  Translated navigation to en
+INFO     -  Documentation built in 0.58 seconds
+INFO     -  [11:32:59] Serving on http://127.0.0.1:8000/
+```
+Open up http://127.0.0.1:8000/ in your browser, and you'll see the default home page being displayed:
+
+![localhost](./images/localhost.png)
+
+That's looking good. We now need to build the site:
+
+```
+steven@steven-Surface-Laptop-3 ~/Development/Openregels (master) $ mkdocs build
+```
+
+When building our site all of the files are written to the directory assigned to the `site` dit. Generally, you will simply need to copy the contents of that directory to the root directory of a hosting provider's server. Depending on your hosting provider's setup, you may need to use a graphical or command line ftp, ssh or scp client to transfer the files.
+
+However, for our site we use a separate git repo which we update with the `site` content and then use `git pull` from the root dir on the hosting provider's server.
