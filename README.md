@@ -56,6 +56,6 @@ That's looking good. We now need to build the site:
 steven@steven-Surface-Laptop-3 ~/Development/Openregels (master) $ mkdocs build
 ```
 
-When building our site all of the files are written to the directory assigned to the `site` dit. Generally, you will simply need to copy the contents of that directory to the root directory of a hosting provider's server. Depending on your hosting provider's setup, you may need to use a graphical or command line ftp, ssh or scp client to transfer the files.
+When building our site all of the files are written to the directory assigned to the `site` dir. Generally, you will simply need to copy the contents of that directory to the root directory of a hosting provider's server. Depending on your hosting provider's setup, you may need to use a graphical or command line ftp, ssh or scp client to transfer the files.
 
-However, for our site we use a separate git repo which we update with the `site` content and then use `git pull` from the root dir on the hosting provider's server.
+However, for our site we use a separate [git repo](https://gitlab.com/commonground/virtueel-inkomstenloket/regels) which we update with the `site` content and then use `git pull` from the root dir on the hosting provider's server.
