@@ -1,0 +1,63 @@
+site_name: open-regels.nl
+site_url: https://open-regels.nl/
+
+nav:
+    - Home: index.md
+    - Methoden:
+        - ALEF: methoden/ALEF.md
+        - FLINT: methoden/FLINT.md
+    - Over: over.md
+
+theme: 
+  name: material
+  language: nl
+  palette:
+    primary: indigo
+  features:
+    - navigation.tracking
+    - navigation.tabs
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+extra:
+  alternate:
+    - name: English
+      link: /en/ 
+      lang: en
+    - name: Nederlands
+      link: /nl/
+      lang: nl
+
+  analytics:
+    provider: google
+    property: G-Q0N2DM4ZBX
+
+plugins:
+  - tags
+  - search:
+      lang: 
+        - nl
+        - en
+  - i18n:
+      default_language: nl
+      languages:
+        default:
+          name: Default (nl)
+          build: true
+        nl:
+          name: Nederlands
+          build: true
+          site_name: "Open Regels"
+        en:
+          name: English
+          build: true
+          site_name: "Open Rules"
+      nav_translations:
+        en:
+          Methoden: Methods
+          Over: About

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+         <loc>https://open-regels.nl/</loc>
+         <lastmod>2022-03-21</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="nl" href="https://open-regels.nl/nl/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://open-regels.nl/en/"/>
+         
+    </url>
+    <url>
+         <loc>https://open-regels.nl/over/</loc>
+         <lastmod>2022-03-21</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="nl" href="https://open-regels.nl/nl/over/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://open-regels.nl/en/over/"/>
+         
+    </url>
+    <url>
+         <loc>https://open-regels.nl/methoden/ALEF/</loc>
+         <lastmod>2022-03-21</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="nl" href="https://open-regels.nl/nl/methoden/ALEF/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://open-regels.nl/en/methoden/ALEF/"/>
+         
+    </url>
+    <url>
+         <loc>https://open-regels.nl/methoden/FLINT/</loc>
+         <lastmod>2022-03-21</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="nl" href="https://open-regels.nl/nl/methoden/FLINT/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://open-regels.nl/en/methoden/FLINT/"/>
+         
+    </url>
+</urlset>
