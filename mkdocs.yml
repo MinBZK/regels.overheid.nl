@@ -9,6 +9,7 @@ edit_uri: ""
 nav:
     - Home: index.md
     - Methoden:
+        - Wetsanalyse: methoden/wetsanalyse.md
         - ALEF: methoden/ALEF.md
         - FLINT: methoden/FLINT.md
     - Over: over.md
@@ -67,4 +68,5 @@ plugins:
       nav_translations:
         en:
           Methoden: Methods
+          Wetsanalyse: Law analysis
           Over: About
