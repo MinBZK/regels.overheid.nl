@@ -4,6 +4,7 @@ site_url: https://open-regels.nl/
 # Repository
 repo_name: regels.overheid.nl
 repo_url: https://gitlab.com/discipl/RON/regels.overheid.nl
+edit_uri: ""
 
 nav:
     - Home: index.md
