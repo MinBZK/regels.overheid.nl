@@ -4,36 +4,52 @@
 >
 > [This book](https://www.boomdenhaag.nl/webshop/wetsanalyse) is published by Boom publishers The Hague.
 
-Legislation is an important instrument to keep society on the right track; it is not an end in itself but a means to achieve social goals.
-In order to be able to implement legislation in an effective, lawful and explainable manner, the necessary steps must be taken. This is even more true if ICT applications are used in the implementation. Central government implementing organizations such as the Employee Insurance Agency, the Education Executive Agency and the Tax and Customs Administration now have extensive ICT landscapes to handle the ever-growing stream of decisions they make about citizens and businesses.
+Legislation is an important instrument for achieving social goals. These goals can only be achieved, however, if legislation is implemented in an effective, legitimate and explainable manner. When IT systems are used for the execution of legal rules, this poses challenges on government agencies. They have extensive IT ‘landscapes’ to handle the ever-increasing number of decisions they make regarding citizens and businesses, and they have to deal with multiple changes in legislation annually and they have to account for the correctness of automated decisions, based on these regulations.
 
 ![Book Law Analysis](../assets/images/boekwetsanalyse.png)
 
-A good translation of legislation into implementation practice requires an approach in which all steps for interpreting, specifying and further fleshing out legislation are laid down explicitly and in a structured manner. This ensures that the choices made when translating legislation into implementation are clear and that decisions made on the basis of those choices can be explained and justified. Another advantage of such an approach is that it is easier to determine which adjustments are required in the ICT systems when legislation is amended. This makes implementing organizations more agile in the implementation of legislation.
+Facing these challenges requires an approach for a structured analysis and interpretation of legislation in which every choice made is carefully documented and traceable to its legal source. This ensures that these choices are clear and that decisions based on these choices can be explained and accounted for. Another advantage of such an approach is that it is easier to determine which adjustments are required in IT systems when the legislation (the legal source) changes. This makes government agencies more agile in the implementation of legislation.
 
-Legal analysis is an approach that supports this; their description and application are central to this book. The book consists of two parts. The first part deals with the theory of Legal Analysis. In order to outline the context, Chapter 2 examines the characteristics of legislation that often make implementation (or setting up) laborious. Chapter 3 then describes the different steps in the legal analysis approach:
+_Law Analysis_ offers this approach. ‘Law’ in this context not only comprises statutory law and delegated regulations, but also covers associated policies that fill in discretionary powers in legislation. These documents are all relevant for a correct implementation of legislation. We indicate them as ‘implementation policy’.
 
-![Legal Analysis Steps](../assets/images/stappenschema.png)
+The book consists of two parts, covering both the description and the application of the approach. The first part deals with the theory of Law analysis. In order to outline the context, chapter 2 discusses characteristics of legislation that often make implementation laborious. Chapter 3 describes the steps of Law Analysis:
 
-1. **Determining the working area** determining the scope of the legislation and the implementation policy to which Legal Analysis is applied, for example for building an ICT system or an implementation test on draft legislation.
+1. **Determining the working area** in this step the scope of the legislation and associated policies to which Law analysis is applied are determined. To be able to do so, a main question is specified, regarding the application of legislation or the execution of a legal task. 
+2. **Visualizing the structure of legislation** in this step the structure of the legal rules is made explicit with the help of a special legal analysis scheme, which is set out on the next page. 
+3. **Defining the meaning of legislation** this step deals with defining unique concepts for terms or wording in the legislation and determining their associated properties. Furthermore, concrete examples are made, which help to clarify and sharpen the meaning of the concepts. 
+4. **Validating the results** the results the previous steps are tested with the help of the concrete examples and legal scenarios.
+5. **Signaling missing implementation policy** if interpretations and implementation aspects emerge that are not yet laid down in implementation policy, they are presented to the responsible unit in the organization as to fill in the gap. This is essential to guarantee the traceability of any decision or calculation to its legal source and therewith their legality. 
+6. **Drawing up a knowledge model** in this final step the meaning of the legislation and implementation policy, recorded through the analysis, are laid down in a formal model. This makes the knowledge derived from the legal sources available for a traceable, explainable and lawful implementation and execution.
 
-2. **Making visible the structure in legislation** by identifying the legal 'grammar' of legislation using a legal analysis scheme.
+Chapter 4 describes the _legal analysis scheme_, in which various legal elements in legislation and the relations between them are expressed. The scheme is used to classify terms and formulations in legislation. The classification supports making explicit the unambiguous meaning of those terms and formulations.
 
-3. **Determining the meaning of legislation** by defining the concepts for each formulation in the legislation with the corresponding properties and making concrete examples that clarify and sharpen the meaning of each concept.
+Chapter 5 examines the multidisciplinary collaboration between lawyers, information analysts and ICT developers that is essential for an optimal result of Law analysis. With the aid of the concrete examples and legal scenarios, they discuss and validate the results of the analysis and the interpretation of the legislation. This is of great importance for the quality of the analysis and thus for the correctness of the ultimate implementation and execution of the legislation. It also helps to visualize unintended effects of legislation. Chapter 5 contains some recommendations for successful application and implementation of Law Analysis.
 
-4. **Validating the analysis results** Using concrete examples and legal scenarios, the analysis results from the previous steps are tested.
-
-5. **Signaling missing implementation policy** Where interpretations and implementation aspects emerge that have not yet been laid down in the implementation policy, a signal is sent to those responsible so that this is done after all. This is essential for the legality of any decision or calculation. Everything must be traceable to legislation or officially established implementation policy.
-
-6. **Preparing the knowledge model** supported by modeling skills, the meaning of the legislation and the implementation policy is clearly and coherently recorded in a model, so that this knowledge is available for implementation in implementation practice.
-
-![Legal analysis scheme](../assets/images/analyseschema.png)
-Chapter 4 deals with the legal analysis scheme that is used in Legal Analysis, in which various legal elements that occur in legislation are grouped together. These elements form the classes assigned to formulations in legislation in Legal Analysis. Classifying formulations into legal classes provides support in making the meaning of those formulations explicit. Chapter 5 examines the multidisciplinary collaboration between lawyers, information analysts and ICT developers that is essential for an optimal result of Legal Analysis. On the basis of concrete examples and scenarios, they always discuss the results of the analysis and the interpretation given to the legislation together. This is of great importance for the quality of the analysis and thus for the correctness of the ultimate implementation of the legislation. Chapter 5 also makes some recommendations for successful application and implementation of Legal Analysis.
-
-The second part of the book consists of two large case studies showing the practical application of Legal Analysis. In Chapter 6, the income-related contribution in Article 43 Health Insurance Act (Zvw) elaborated. This contribution is levied by the tax authorities. An elaboration of the bill for the Modernization of electronic administrative traffic (section 2.3 Awb) has been chosen for chapter 7. This bill ensures that the rules for digital communication between citizens and government are adapted to the requirements of the times. These different case studies show that Legal Analysis can be applied to both general and domain-specific legislation, and to existing legislation as well as to legislation in the making.
-
-The aim of this book is to make the legal analysis approach widely known to everyone who is involved in the application or implementation of legislation in their work or study. Although the emphasis is on digital implementation of legislation in government implementing organizations, it can also be of value in legal and information science education at colleges, universities and postgraduate courses. The aim is always to build a bridge between the language of lawyers and the technology of ICT.
+The second part of the book consists of two large case studies showing the practical application of Law Analysis. Chapter 6 elaborates on the income-related contribution in the Health Insurance Act (Zorgverzekeringswet). This contribution is levied by the Dutch tax administration. The analysis of the Health Insurance Act shows what it takes to ‘translate’ legislation with many calculations into exact and accountable specifications for an IT-system that supports automated execution. Analysis of the bill on the Modernization of electronic administrative communication (amendment of the Dutch General administrative law Act) has been chosen for Chapter 7. This bill ensures that the rules for digital communication between citizens and government are adapted to current technological developments. The analysis of this bill illustrates what is needed to translate process-oriented legal rules into specifications for service delivery processes. The case studies show that Law Analysis can be applied to both general and domain-specific legislation and to enacted legislation as well as draft legislation.
 
 ## Invitation to contribute
+The aim of the book is to make the Law Analysis approach widely known to those involved in the implementation or execution of legislation, be it for work or study. Although the emphasis is on digital implementation of legislation in government agencies, it can also be of value in legal and information science education at universities and postgraduate courses. The aim is to build a bridge between the language of lawyers and of IT-developers.
+The book describes the approach and application of Law Analysis as of early 2021. However, Law Analysis will continue to evolve under the influence of developments in legislation and in the application of law and technology. Readers are invited explicitly to share experiences and ideas they encounter in applying Law Analysis, in order to contribute to the further development of Law Analysis jointly. Thus we proceed as we do in the concrete application of Law Analysis: multidisciplinary and step by step.
 
-The book describes the approach and application of Legal Analysis as of early 2021. However, Legal Analysis will continue to evolve under the influence of developments in legislation, application of law and technology. Readers are expressly invited to work with Wetsanalyse and to share experiences and ideas, in order to work together on refining and further developing Wetsanalyse. Just as cooperation is essential in the concrete application of Legal Analysis: always multidisciplinary and step by step.
+## The legal analysis scheme
+This section shows a diagram of the analysis scheme, used in Law Analysis to classify various formula’s in legislation. We explained the classes in the scheme on the next page. The scheme was developed on the basis of Dutch law; it might need some alteration or extension to make it applicable to legislation from other jurisdictions.
+
+![Legal analysis scheme](../assets//images/legalanalysysscheme.png)
+###Explication of the classes in the analysis scheme
+
+1. **Legal subject** Bearer of rights and duties, natural person or legal entity. Party to a legal relationship or a legal fact.
+2. **Legal object** Object of a legal relationship or a legal fact with a physical or non-physical appearance.
+3. **Legal relationship** Legal relation between two legal subjects of which the one party holds a right and the other holds the duty.  
+4. **Legal fact** Act, event or time lapse that creates a change in a legal state. A legal fact invokes the creation, change or ending of a legal relationship. 
+5. **Condition** Condition to a legal subject, legal object, legal relationship, legal fact or derivation rule. Determines the requirements to be met. 
+6. **Derivation rule** Rule that creates new facts or values by arranging or comparing existing facts or values.  
+7. **Variable** Description of a value, differing per legal subject, legal object, legal relationship or legal fact.  
+8. **Variable-value** Concrete value of a certain variable.
+9. **Parameter** Description of a value that is equal for all legal subjects, legal objects, legal relationships and legal facts in a (definite or an indefinite) period of time. 
+10. **Parameter-value** Concrete value of a certain parameter in a given period of time. 
+11. **Operator** Formula indicating an arithmetic operation, a compound condition, an equality or an equation. 
+12. **Time indicator** Indication of a point of period of time. 
+13. **Place indicator** Indication of a place or area.
+14. **Delegation power** Power to set (further) rules in a lower regulation (based on an act or decree). 
+15. **Delegation elaboration** Delegated regulation in which (further) rules are set. 
+16. **Source definition** Definition set in legislation.
