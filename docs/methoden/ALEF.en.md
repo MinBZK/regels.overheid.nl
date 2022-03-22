@@ -10,7 +10,7 @@ hide:
 
 ## Rules management approach
 
-In the context of the agile application of the law, the Tax and Customs Administration has developed a tool for drafting and testing rules.
+In the context of the agile application of the law, the Tax and Customs Administration has developed a tool for drafting and testing rules. The rules are drawn up on the basis of existing specifications or code, but ideally (and increasingly often) the results of the Legal Analysis are used for this.
 
 This tool is called ALEF (Agile Law Execution Factory) and is based on Jetbrains MPS. In ALEF, specifications are drawn up in collaboration with the domain experts. These specifications consist of rules, data definitions and test cases. This is done as much as possible by the domain experts themselves. The rules are written in the RuleSpeak language. This is a controlled **Dutch** language that is easy to read for both lawyers and computer systems.
 

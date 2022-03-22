@@ -10,7 +10,7 @@ hide:
 
 ## Regelbeheer aanpak
 
-De Belastingdienst heeft in het kader van het agile toepassen van de wet een tool ontwikkeld voor het opstellen en toetsen van regels.
+De Belastingdienst heeft in het kader van het agile toepassen van de wet een tool ontwikkeld voor het opstellen en toetsen van regels. Het opstellen van de regels gebeurt op basis van bestaande specificaties of code, maar idealiter (en ook steeds vaker) worden hiervoor de resultaten van de Wetsanalyse gebruikt.
 
 Deze tool heet ALEF (Agile Law Execution Factory) en is gebaseerd op Jetbrains MPS. In ALEF worden specificaties opgesteld in samenwerking met de domeinexperts. Deze specificaties bestaan uit regels, datadefinities en testgevallen. Dit wordt zoveel mogelijk door de domeinexperts zelf gedaan. De regels zijn opgesteld in de taal RegelSpraak. Dit is een gecontroleerde Nederlandse taal die zowel voor juristen als voor computersystemen goed leesbaar is.
 
