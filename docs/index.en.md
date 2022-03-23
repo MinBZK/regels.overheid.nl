@@ -28,7 +28,7 @@ Making all rules centrally findable in any case provides insight into which rule
 
 ## More application for rules
 
-The application possibilities of published rules are broader than just creating transparency. It is, for example, interesting to also make rules for draft legislation with which the impact of a proposal can be analyzed by, for example, States General (ie Dutch Parliament) and citizens and entrepreneurs themselves.
+The application possibilities of published rules are broader than just creating transparency. It is also interesting to make rules for draft legislation with which the impact of a proposal can be analyzed by, for example, the Houses and citizens and entrepreneurs themselves. Because you can do simulations with new legislation and in this way test feasibility for citizens and workability for the government itself.
 
 ## Human service
 

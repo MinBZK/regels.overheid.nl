@@ -28,7 +28,7 @@ Het centraal vindbaar maken van alle regels geeft in ieder geval inzicht welke r
 
 ## Meer toepassing voor regels
 
-De toepassingsmogelijkheden van gepubliceerde regels zijn breder dan alleen transparantie creëren. Het is bijvoorbeeld interessant om ook van concept-wetgeving regels te maken waarmee de impact van een voorstel geanalyseerd kan worden door bijvoorbeeld de Kamers en burgers en ondernemers zelf.
+De toepassingsmogelijkheden van gepubliceerde regels zijn breder dan alleen transparantie creëren. Het is interessant om óók van concept-wetgeving regels te maken waarmee de impact van een voorstel geanalyseerd kan worden door bijvoorbeeld de Kamers en burgers en ondernemers zelf. Want je kunt simulaties doen met nieuwe wetgeving en zo doenlijkheid voor de burger én werkbaarheid voor de overheid zelf toetsen.
 
 ## Menselijke maat
 
