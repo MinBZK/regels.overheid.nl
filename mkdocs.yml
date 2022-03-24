@@ -4,6 +4,8 @@ site_url: https://open-regels.nl/
 # Repository
 repo_name: regels.overheid.nl
 repo_url: https://gitlab.com/discipl/RON/regels.overheid.nl
+
+# Hide the edit button
 edit_uri: ""
 
 nav:
@@ -13,6 +15,9 @@ nav:
         - ALEF: methoden/ALEF.md
         - RegelSpraak: methoden/RegelSpraak.md
         - FLINT: methoden/FLINT.md
+    - NLX:
+        - Introductie: nlx/nlx-intro.md
+        - Demo Setup: nlx/nlx-setup.md
     - Over: over.md
 
 theme: 

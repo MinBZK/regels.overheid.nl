@@ -1,0 +1,56 @@
+<svg class="high-level-overview-illustration" viewBox="0 0 665 139" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <rect id="a" x="0" y="0" width="300" height="88" rx="5"/>
+        <mask id="c" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="88"
+              fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <rect id="b" x="365" y="0" width="300" height="88" rx="5"/>
+        <mask id="d" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="300" height="88"
+              fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <path d="M123.068 46l8.672 4.878-.98 1.744-12-6.75-1.55-.872 1.55-.872 12-6.75.98 1.744L123.068 44H168.932l-8.672-4.878.98-1.744 12 6.75 1.55.872-1.55.872-12 6.75-.98-1.744L168.932 46H123.068z"
+              fill="#9B9B9B" fill-rule="nonzero"/>
+        <use stroke="#777" mask="url(#c)" stroke-width="4" stroke-dasharray="5,3" xlink:href="#a"/>
+        <g transform="translate(25 23)">
+            <rect stroke="#7096FF" stroke-width="2" fill="#FFF" x="1" y="1" width="88" height="42" rx="5"/>
+            <text font-family="Muli" font-size="16" font-weight="500" fill="#517FFF">
+                <tspan x="25.165" y="26">Client</tspan>
+            </text>
+        </g>
+        <use stroke="#777" mask="url(#d)" stroke-width="4" stroke-dasharray="5,3" xlink:href="#b"/>
+        <g transform="translate(550 20)">
+            <rect stroke="#7096FF" stroke-width="2" fill="#FFF" x="1" y="1" width="88" height="42" rx="5"/>
+            <text font-family="Muli" font-size="16" font-weight="500" fill="#517FFF">
+                <tspan x="34.061" y="26">API</tspan>
+            </text>
+        </g>
+        <path d="M270 45c22.395-4 43.062-6 62-6 18.938 0 39.605 2 62 6" stroke="#FFF" stroke-width="5"/>
+        <path d="M277.192 45.469l9.371 3.346-.673 1.884-12.966-4.63-1.674-.599 1.38-1.12 10.691-8.676 1.26 1.553-7.726 6.27 7.992-1.366C302.377 39.377 318.762 38 334 38s31.622 1.377 49.166 4.133l7.979 1.364-7.726-6.27 1.26-1.553 10.69 8.676 1.38 1.12-1.673.598-12.966 4.63-.673-1.883 9.37-3.346-7.964-1.363C365.41 41.37 349.13 40 334 40c-15.13 0-31.411 1.369-48.83 4.104l-7.978 1.365z"
+              fill="#9B9B9B" fill-rule="nonzero"/>
+        <g transform="translate(177 23)">
+            <rect fill="#7096FF" width="90" height="44" rx="5"/>
+            <text font-family="Muli" font-size="16" font-weight="500" fill="#FFF">
+                <tspan x="18.605" y="26">Outway</tspan>
+            </text>
+        </g>
+        <g transform="translate(399 22)">
+            <rect fill="#7096FF" width="90" height="44" rx="5"/>
+            <text font-family="Muli" font-size="16" font-weight="500" fill="#FFF">
+                <tspan x="24.597" y="26">Inway</tspan>
+            </text>
+        </g>
+        <text font-family="Muli" font-size="16" font-weight="500" fill="#2C2C2C">
+            <tspan x="64.092" y="135">Requesting application</tspan>
+        </text>
+        <text font-family="Muli" font-size="16" font-weight="500" fill="#2C2C2C">
+            <tspan x="442.096" y="135">Providing service</tspan>
+        </text>
+        <path d="M497.068 45l8.672 4.878-.98 1.744-12-6.75-1.55-.872 1.55-.872 12-6.75.98 1.744L497.068 43H542.932l-8.672-4.878.98-1.744 12 6.75 1.55.872-1.55.872-12 6.75-.98-1.744L542.932 45H497.068z"
+              fill="#9B9B9B" fill-rule="nonzero"/>
+    </g>
+</svg>
