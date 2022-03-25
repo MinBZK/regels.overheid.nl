@@ -51,7 +51,7 @@ In de audit log van NLX Management van gemeente Buren is dat als volgt zichtbaar
 admin@nlx.local heeft toegang verzocht tot Regels-voor-Individuele-Inkomens-Toeslag van 01645948624791155802
 23 maart 2022 om 16:22   •   GNU/Linux   •   Firefox   •   NLX Management
 ```
-Stichtig ICTU ziet dat Toegangsverzoek in haar NLX Management verschijnen en keurt dat in dit voorbeeld goed. In de audit log wordt dat eveneens netjes geregistreerd.
+Stichting ICTU ziet dat Toegangsverzoek in haar NLX Management verschijnen en keurt dat in dit voorbeeld goed. In de audit log wordt dat eveneens netjes geregistreerd.
 ```
 steven.gort@ictu.nl heeft het toegangsverzoek van Gemeente Buren (01646211855991810346) voor Regels-voor-Individuele-Inkomens-Toeslag goedgekeurd
 24 maart 2022 om 18:33   •   GNU/Linux   •   Firefox   •   NLX Management
