@@ -12,7 +12,7 @@ Hide the headline with some inline CSS
 -->
 <style>
   .md-typeset h1 {
-    display: none;
+    opacity: 0; height: 0; margin: 0
   }
 </style>
 
