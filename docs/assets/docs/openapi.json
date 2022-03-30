@@ -1,0 +1,161 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "VIL IIT Evaluate",
+        "version": "v1",
+        "contact": {
+            "name": "Steven Gort",
+            "email": "steven.gort@ictu.nl"
+        },
+        "license": {
+            "name": "GNU GPLv3",
+            "url": "https://www.gnu.org/licenses/gpl.txt"
+        }
+    },
+    "paths": {
+        "/evaluate": {
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "variables": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Woonplaats": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string",
+                                                        "example": "Utrecht"
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "String"
+                                                    }
+                                                }
+                                            },
+                                            "aowLeeftijdBehaald": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "example": false
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "Boolean"
+                                                    }
+                                                }
+                                            },
+                                            "ouderDan21": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "example": true
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "Boolean"
+                                                    }
+                                                }
+                                            },
+                                            "alleenstaande": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "example": true
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "Boolean"
+                                                    }
+                                                }
+                                            },
+                                            "thuiswonendeKinderen": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "example": false
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "Boolean"
+                                                    }
+                                                }
+                                            },
+                                            "inkomenPerMaand": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string",
+                                                        "example": "900"
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "Integer"
+                                                    }
+                                                }
+                                            },
+                                            "vermogen": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "value": {
+                                                        "type": "string",
+                                                        "example": "3000"
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "Integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "Resident application": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "type": {
+                                                        "type": "string",
+                                                        "example": "Integer"
+                                                    },
+                                                    "value": {
+                                                        "type": "integer",
+                                                        "example": 231
+                                                    },
+                                                    "valueInfo": {
+                                                        "type": "object"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        }
+    }
+}
