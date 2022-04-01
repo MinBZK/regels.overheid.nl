@@ -1,3 +1,11 @@
+---
+tags:
+  - wetsanalyse
+  - regelspraak
+  - juridisch analyseschema
+hide:
+  - tags
+---
 # Wetsanalyse
 
 > Dit is een samenvatting van het boek Wetsanalyse, Voor een werkbare uitvoering van wetgeving met ICT, van de auteur(s): Anouschka Ausems, John Bulles en Mariette Lokin.

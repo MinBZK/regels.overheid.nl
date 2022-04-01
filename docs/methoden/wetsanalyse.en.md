@@ -1,3 +1,11 @@
+---
+tags:
+  - law analysis
+  - regelspraak
+  - legal analysis scheme
+hide:
+  - tags
+---
 # Law analysis
 
 > This is a summary of the book Wetsanalyse, Voor een werkbare uitvoering van wetgeving met ICT, by the author(s): Anouschka Ausems, John Bulles and Mariette Lokin.

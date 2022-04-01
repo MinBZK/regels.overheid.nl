@@ -19,7 +19,12 @@ nav:
     - NLX:
         - Introductie: nlx/nlx-intro.md
         - Demo Setup: nlx/nlx-setup.md
-    - Over: over.md
+    - Over:
+        - Introductie: intro.md
+        - Open Innovatie: open-innovatie.md
+        - Manifest: manifest.md
+        - Partners:
+          - Financieel Paspoort: partners/FP.md
 
 theme: 
   name: material
