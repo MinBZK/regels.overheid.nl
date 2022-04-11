@@ -10,6 +10,7 @@ edit_uri: ""
 
 nav:
     - Home: index.md
+    - Content: contentkalender.md
     - Methoden:
         - Wetsanalyse: methoden/wetsanalyse.md
         - ALEF: methoden/ALEF.md
@@ -38,6 +39,10 @@ theme:
     repo: fontawesome/brands/gitlab
 
 markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite

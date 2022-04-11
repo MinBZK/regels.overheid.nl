@@ -29,7 +29,7 @@ Uiteindelijk willen we een nieuwe bibliotheek voor regelbeheer overheidsbreed aa
 
 Deze [open-regels.nl](https://open-regels.nl) website is een community initiatief ter voorbereiding op de nog te verkrijgen opdracht van BZK om deze nieuwe bibliotheek op [regels.overheid.nl](https://regels.overheid.nl) te realiseren.
 
-Heb je vragen of wil je met ons samenwerken? Neem dan contact met [Steven Gort](mailto:steven.gort@ictu.nl)
+Heb je vragen of wil je met ons samenwerken? Neem dan contact met [Steven Gort](mailto:steven.gort@ictu.nl).
 
 ## Open Regels
 
