@@ -131,7 +131,7 @@
                                     "items": {
                                         "type": "object",
                                         "properties": {
-                                            "Resident application": {
+                                            "residentApplication": {
                                                 "type": "object",
                                                 "properties": {
                                                     "type": {
