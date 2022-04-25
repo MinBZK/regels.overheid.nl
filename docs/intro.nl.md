@@ -27,7 +27,7 @@ Door het toepassen van regelbeheer wordt beoogd de volgende “business”-doele
 
 Uiteindelijk willen we een nieuwe bibliotheek voor regelbeheer overheidsbreed aanbieden waar o.a. productlanceringen worden toegelicht, ondersteuning bij regelbeheer-implementaties , best-practices en publicatie van regelspecificaties worden gepubliceerd.
 
-Deze [open-regels.nl](https://open-regels.nl) website is een community initiatief ter voorbereiding op de nog te verkrijgen opdracht van BZK om deze nieuwe bibliotheek op [regels.overheid.nl](https://regels.overheid.nl) te realiseren.
+Deze [open-regels.nl](https://open-regels.nl) website is een community initiatief ter voorbereiding op de opdracht van BZK om deze nieuwe bibliotheek op [regels.overheid.nl](https://regels.overheid.nl) te realiseren.
 
 Heb je vragen of wil je met ons samenwerken? Neem dan contact met [Steven Gort](mailto:steven.gort@ictu.nl).
 

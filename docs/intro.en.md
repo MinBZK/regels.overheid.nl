@@ -27,7 +27,7 @@ By applying rule management, the aim is to achieve the following “business” 
 
 Ultimately, we want to offer a new government-wide rule management library that includes information on product launches, rules management implementation support, best practices, and publishing of rules specifications.
 
-This [open-regels.nl](https://open-regels.nl) website is a community initiative in preparation for the yet-to-be-obtained assignment from the Ministry of the Interior and Kingdom Relations to publish this new library on [regels.overheid.nl](https://regels.overheid.nl).
+This [open-regels.nl](https://open-regels.nl) website is a community initiative in preparation for the assignment from the Ministry of the Interior and Kingdom Relations to publish this new library on [regels.overheid.nl](https://regels.overheid.nl).
 
 Do you have any questions or do you want to work with us? Please contact [Steven Gort](mailto:steven.gort@ictu.nl)
 
