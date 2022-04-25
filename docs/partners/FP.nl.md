@@ -21,7 +21,7 @@ Het publiceren van de regels, inclusief de noodzakelijke vragen en antwoorden, z
 
 Voor het effectief kunnen koppelen van open regels zijn standaarden noodzakelijk waarmee deze regels kunnen worden aangeroepen. Ook zijn gereedschappen voor de burger nodig, zoals de app FP, om deze regels te vinden, aan te roepen en te voorzien van de relevante persoonlijke gegevens
 
-Daarnaast is het noodzakelijk voor het beschrijven van de noodzakelijke gegevens een standaard te hebben waarmee eenduidig de relatie wordt gelegd tussen de vraag en de locatie waar het antwoord vandaan moet komen. De standaard die in de app FP wordt gebruikt is de Gegevensstandaard Persoonlijke Financiën (GPF). Deze is beschreven onder ‘Methoden’.
+Daarnaast is het noodzakelijk voor het beschrijven van de noodzakelijke gegevens een standaard te hebben waarmee eenduidig de relatie wordt gelegd tussen de vraag en de locatie waar het antwoord vandaan moet komen. De standaard die in de app FP wordt gebruikt is de [Gegevensstandaard Persoonlijke Financiën (GPF)](../methoden/GPF.nl.md). Deze is beschreven onder **Methoden**.
 
 ## Wie is Stichting Financieel Paspoort?
 
