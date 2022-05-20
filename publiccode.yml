@@ -1,0 +1,47 @@
+publiccodeYmlVersion: "0.2"
+ 
+name: regels.overheid.nl
+url: "https://gitlab.com/discipl/RON/regels.overheid.nl.git"
+softwareVersion: "dev"    # Optional
+releaseDate: "2021-07-01"
+platforms:
+  - web
+ 
+categories:
+  - law & regulations
+
+developmentStatus: development
+
+softwareType: "webserver"
+
+description:
+  en:
+    localisedName: regels.overheid.nl   # Optional
+    shortDescription: >
+          Central repository for rules
+
+    longDescription: >
+          A number of governments are working to publish the rules they now use internally to develop
+          and manage systems. Several municipalities are already publishing their rules or are planning to do so.
+
+          It is useful if government authorities not only publish their rules themselves, but also make them centrally
+          findable and coordinate which concepts and structures are used in the rules. Ideally, there will
+          be a central repository where these rules can be searched. A location comparable to wetten.overheid.nl
+          for legislation or data.overheid.nl for data sources of the government.
+          
+    features:
+       - Library
+
+legal:
+  license: AGPL-3.0-or-later
+
+maintenance:
+  type: "community"
+
+  contacts:
+    - name: Steven Gort (mailto:steven.gort@ictu.nl)
+
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - en
