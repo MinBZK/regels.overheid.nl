@@ -1,6 +1,7 @@
 ---
 tags:
   - GPF
+  - Gegevensstandaard Persoonlijke Financiën
   - Financieel Paspoort
 
 hide:

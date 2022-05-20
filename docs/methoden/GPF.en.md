@@ -1,23 +1,22 @@
 ---
 tags:
   - GPF
-  - Financieel Paspoort
+  - Standard Peronal Finance
+  - Financial Passport
 
 hide:
   - tags
 ---
-> This page has yet to be translated...
->
-> Tekst en inhoud beschrijven de methode die door [Stichting Financieel Paspoort](../partners/FP.en.md) wordt gehanteerd.
+> Text and content describe the method used by [Financial Passport Foundation](../partners/FP.en.md).
 
-# Gegevensstandaard Persoonlijke Financiën
+# Data Standard Personal Finance (GPF)
 
-Een grote uitdaging bij het ophalen en delen van persoonlijke gegevens is de standaardisatie. Omdat de burger in meerdere domeinen verkeert, zoals centrale en lokale overheden, banken, verzekeringen, web-gebaseerde retail etc. heeft deze te maken met meerdere standaarden.
+A major challenge in retrieving and sharing personal data is standardization. Because citizens operate in multiple domains, such as central and local governments, banks, insurance, web-based retail, etc., they have to deal with multiple standards.
 
-Bij het opzetten van de Gegevensstandaard Persoonlijke Financiën (GPF) hebben wij de gegevensvraag als uitgangspunt genomen. De gegevensvraag is vaak een formulier (papier of webgebaseerd) met meerdere vragen. Deze vragen kunnen worden beantwoord door gebruik te maken van gegevens uit meerdere bronnen, die toegankelijk zijn volgens verschillende standaarden.
+In order to set up the GPF, we took the data request as our starting point. The data question is often a form (paper or web-based) with multiple questions. These questions can be answered by using data from multiple sources, which are accessible according to different standards.
 
-Binnen de GPF definieert de gegevensvrager per vraag welk gegeven uit welke bron als antwoord wordt verwacht. Doordat de gegevensvrager de plicht heeft aan te geven waar het antwoord vandaan moet komen is er geen onduidelijkheid over wat er wordt verwacht. Daarmee kunnen gereedschappen als de app FP, eenduidig op zoek naar het antwoord bij de desbetreffende bron. Dit voorkomt verwarring en foutief ingevulde formulieren met alle gevolgen van dien.
+Within the GPF, the data requester defines for each question which data from which source is expected as an answer. Because the data requester is obliged to indicate where the answer should come from, there is no ambiguity about what is expected. This allows tools such as the FP app to unambiguously search for the answer from the relevant source. This prevents confusion and incorrectly completed forms with all its consequences.
 
-Naast het beschrijven van de standaard hoe gegevensvragen moeten worden gedocumenteerd, beschrijft de GPF ook subsets van gegevens. Deze subsets worden vooraf gedefinieerd, tussen partijen overeengekomen en bevatten alleen die gegevens die voor een gedefinieerde gegevensvraag noodzakelijk zijn en niet meer.
+In addition to describing the standard of how to document data queries, the GPF also describes subsets of data. These subsets are predefined, agreed between the parties and contain only the data that is necessary for a defined data request and no more.
 
-Deze definitie biedt de burger enige zekerheid dat er een redelijke en passende hoeveelheid aan persoonlijke gegevens bij het delen wordt overgedragen. Ook biedt deze definitie van subsets de gegevensvrager enige zekerheid dat de ontvangen gegevens passen binnen de verwerkingsovereenkomst van de ontvanger en dat de ontvangst AVG-proof is.
+This definition provides citizens with some assurance that a reasonable and appropriate amount of personal data will be transferred in the sharing. This definition of subsets also provides the data requester with some assurance that the data received fits within the processing agreement of the recipient and that the receipt is GDPR-proof.

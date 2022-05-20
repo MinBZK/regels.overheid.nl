@@ -1,6 +1,4 @@
-> This page has yet to be translated...
->
-> Tekst en inhoud zijn een voorbeeld van hoe partners zich kunnen presenteren hier. Feedback graag delen met [Steven Gort](mailto:steven.gort@ictu.nl).
+> Text and content are an example of how partners can present themselves here. Please share feedback with [Steven Gort](mailto:steven.gort@ictu.nl).
 
 <!--
 Hide the headline with some inline CSS
@@ -13,20 +11,21 @@ Hide the headline with some inline CSS
 
 ![FP](../assets/images/FP.png)
 
-## Open-regels voor voorzieningen voor financiële redzaamheid
+## Open rules for financial self-reliancy facilities
 
-De burger wordt vaak geconfronteerd met regels die beginnen met het moeten beantwoorden van vragen (invullen van formulieren), vragen die de burger vaak niet begrijpt. Daarbij wordt de burger steeds vaker gevraagd gegevens digitaal op websites in te vullen, een aanvullende horde voor de toegang tot voorzieningen. Niet alleen hebben wij in Nederland te maken met een significante groep laaggeletterden, ook andere burgers ondervinden problemen met het begrijpen van de vragen en het ambtelijk taalgebruik.
+Citizens are often confronted with rules that start with having to answer questions (filling in forms), questions that citizens often do not understand. Citizens are increasingly being asked to enter data digitally on websites, an additional hurdle for access to facilities. In the Netherlands, not only do we have to deal with a significant group of low-literate people, other citizens also experience problems understanding the questions and the official language.
 
-Na het begrijpen van de vraag komt het probleem van het zoeken naar het juiste antwoord op deze vraag. Naast de angst die vaak bestaat dat men mogelijk het verkeerde antwoord geeft, hetgeen onverwachte en soms ernstige consequenties heeft, weten burgers vaak niet waar het antwoord vandaan zou kunnen komen. Pas na het beantwoorden van de vragen (het invullen van het formulier) komt de volgende stap die bestaat uit de toetsing of de antwoorden plausibel zijn en tenslotte de administratieve verwerking en besluit.
+After understanding the question comes the problem of seeking the right answer to this question. In addition to the fear that often exists that people may give the wrong answer, which has unexpected and sometimes serious consequences, citizens often do not know where the answer could come from. Only after answering all the questions (filling in the form) comes the next step, which consists of checking whether the answers are plausible and finally the administrative processing and decision.
 
-Het publiceren van de regels, inclusief de noodzakelijke vragen en antwoorden, zouden vele voorzieningen beter toegankelijk kunnen maken. Ook ligt dan de doorstap naar een geautomatiseerde toetsing binnen handbereik. Als voorbeeld hebben Stichting Financieel Paspoort en de gemeente Utrecht een pilot gedaan voor het aanvragen van een Individuele Inkomens Toeslag (IIT). In deze pilot is getoond hoeveel eenvoudiger het voor de burger wordt als de burger vanuit de app FP de noodzakelijke gegevens kan verzamelen, aanleveren, de regel voor IIT kan aanroepen en direct een antwoord ontvangt. De logische volgende stap is dan het onder regie van de burger aanbieden van de noodzakelijke persoonlijke gegevens in digitale vorm voor de aanvraag, zodat ook de aansluitende administratieve toetsing en toewijzing kunnen volgen.
+Publishing the rules, including the necessary questions and answers, could make many facilities more accessible. The step to an automated assessment is then also within reach. As an example, the Financial Passport Foundation and the municipality of Utrecht have conducted a pilot for applying for an Individual Income Allowance (IIT). This pilot showed how much easier it would be for citizens if the citizen can collect the necessary data from the FP app, supply it, call-up the rule for the IIT and immediately receive an answer. The logical next step is then to provide the necessary personal data in digital form for the application under the direction of the citizen, so that the subsequent administrative assessment and allocation can also be done.
 
-Voor het effectief kunnen koppelen van open regels zijn standaarden noodzakelijk waarmee deze regels kunnen worden aangeroepen. Ook zijn gereedschappen voor de burger nodig, zoals de app FP, om deze regels te vinden, aan te roepen en te voorzien van de relevante persoonlijke gegevens
+To be able to link open rules effectively, standards are necessary with which these rules can be called. Citizens also need tools, such as the FP app, to find, invoke and provide these rules with the relevant personal data.
 
-Daarnaast is het noodzakelijk voor het beschrijven van de noodzakelijke gegevens een standaard te hebben waarmee eenduidig de relatie wordt gelegd tussen de vraag en de locatie waar het antwoord vandaan moet komen. De standaard die in de app FP wordt gebruikt is de [Gegevensstandaard Persoonlijke Financiën (GPF)](../methoden/GPF.en.md). Deze is beschreven onder **Methoden**.
+In addition, it is necessary to have a standard for describing the necessary data that unambiguously establishes the relationship between the question and the location from which the answer must come. The standard used in the FP app is the [Personal Finance Data Standard (GPF)](../methoden/GPF.en.md). This is described under **Methods**.
 
-## Wie is Stichting Financieel Paspoort?
+## Who is Financial Passport Foundation?
 
-De Stichting is een burgerinitiatief zonder winstoogmerk, ontstaan vanuit de vaststelling dat de burger geen overzicht wordt geboden over alle financiële zuilen zoals overheden, verzekeringen, banken en pensioenfondsen. De burger wordt geacht financieel zelfredzaam te zijn bij budgetbeheer, belastingaangiften, sociale verzekeringen, pensioenen, etc., maar krijgt daarvoor niet de noodzakelijke educatie noch instrumentarium. In de praktijk blijkt de burger (steeds meer) een financiële analfabeet.
+The Foundation is a non-profit citizens' initiative, which originated from the observation that citizens are not offered an overview of all financial pillars such as governments, insurance, banks and pension funds. Citizens are expected to be financially self-reliant in budget management, tax returns, social insurance, pensions, etc., but they do not receive the necessary education or tools for this. In practice, citizens are (increasingly) financially illiterate.
 
-De Stichting biedt de burger een gratis gereedschap, de app FP, waarmee persoonlijke financiële gegevens op eenvoudige en snelle wijze kunnen worden verzameld en een overzicht wordt geboden dat hij/zij begrijpt. Tevens kan de burger besluiten deze gegevens in digitale vorm ter beschikking te stellen aan overheden, hulpverleners en adviseurs die compleet geïnformeerd en onmiddellijk aan de slag kunnen.
+The Foundation provides citizens with a free tool, the FP app, which allows them to collect personal financial data in a simple and fast manner, and provides an overview that they can understand. Citizens can also decide whether or not to make this data available in digital form to governments, care providers and advisers who are fully informed and can get to work immediately.
+
