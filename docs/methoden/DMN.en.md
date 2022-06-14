@@ -29,7 +29,7 @@ State to date:
 - Added TLS by Let's Encrypt.
 - [Camunda App](https://vil-regels.nl:8443/camunda/app/welcome/default/#!/login)
 - Where evaluation of DMN goes wrong and/or otherwise shows unexpected behaviour, the [Tomcat log](https://vil-regels.nl:8443/logs/catalina.out) has been made accessible for debugging. Click [here](https://vil-regels.nl:8443/logs/) for the whole directory list
-- [Engine REST](https://vil-regels.nl:8443/engine-rest/) 
-- VIL IIT DMN 1.0.6 table [deployed](https://vil-regels.nl:8443/engine-rest/decision-definition/Decision_18qw2e6:3:33656406-af80-11ec-b8af-024226688519/xml)
+- [Engine REST version](https://vil-regels.nl:8443/engine-rest/version) 
+- VIL IIT DMN 1.0.6 table [deployed](https://vil-regels.nl:8443/engine-rest/decision-definition/Decision_18qw2e6:10:a0caba98-bcd1-11ec-b8af-024226688519/xml)
 - [Source DMN](https://gitlab.com/discipl/RON/eclipse)
 - [OpenAPI specificatie](../assets/docs/openapi.json)
