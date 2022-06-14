@@ -1,3 +1,16 @@
+<!--
+    Please don't remove this blockquote.
+!-->
+> For regels.overheid.nl, we work with work packages, these are small jobs for a fixed fee to deliver part functionality (proof of concept), including minimal documentation and tests.
+
+## Introduction
+<!--
+    With the introduction we outline a brief insight into the context and reason for the work package.
+
+    Try to limit it to max 200 words.
+!-->
+
+
 ## User story
 <!--
     User stories are a few sentences in simple language that outline the desired outcome. They don't go into detail. Requirements are added later.
