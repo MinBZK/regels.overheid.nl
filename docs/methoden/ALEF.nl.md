@@ -23,8 +23,8 @@ Naast de regels worden ook testgevallen gedefinieerd op basis van de voorbeelden
 
 ## Live Demo API
 
-* [Individuele Inkomenstoeslag](https://api-regels.nl:8443/brmpociit-1.0.6/DecisionService) van de gemeente Utrecht
-* [Bijdrage sport and cultuur](https://api-regels.nl:8443/brmvilbsc-1.0.6/DecisionService) van de gemeente Amersfoort
+* [Individuele Inkomenstoeslag](https://api-regels.nl/brmpociit-1.0.6/DecisionService) van de gemeente Utrecht
+* [Bijdrage sport and cultuur](https://api-regels.nl/brmvilbsc-1.0.6/DecisionService) van de gemeente Amersfoort
 
 Er is een live demo-API beschikbaar om te testen met bijvoorbeeld Postman. Instructie [hier](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/making-soap-requests/). 
 

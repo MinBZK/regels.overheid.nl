@@ -24,8 +24,8 @@ In addition to the rules, test cases are also defined based on the examples prov
 
 ## Live Demo API
 
-* [Individual Income Allowance](https://api-regels.nl:8443/brmpociit-1.0.6/DecisionService) of the municipality Utrecht
-* [Allowance for Sports and Culture](https://api-regels.nl:8443/brmvilbsc-1.0.6/DecisionService) of the municipality Amersfoort
+* [Individual Income Allowance](https://api-regels.nl/brmpociit-1.0.6/DecisionService) of the municipality Utrecht
+* [Allowance for Sports and Culture](https://api-regels.nl/brmvilbsc-1.0.6/DecisionService) of the municipality Amersfoort
 
 A live demo API is available to test with Postman. Instruction [hier](https://learning.postman.com/docs/sending-requests/supported-api-frameworks/making-soap-requests/). 
 
