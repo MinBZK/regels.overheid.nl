@@ -18,6 +18,7 @@ nav:
         - GPF: methoden/GPF.md
         - DMN: methoden/DMN.md
         - FLINT: methoden/FLINT.md
+    - LegitiMaat: legitimaat.md
     - NLX:
         - Introductie: nlx/nlx-intro.md
         - Demo Setup: nlx/nlx-setup.md
