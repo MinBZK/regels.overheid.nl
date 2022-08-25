@@ -63,9 +63,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - Permission"
-      ],
+      "tags": ["Users-permissions - Permission"],
       "parameters": [],
       "operationId": "get/users-permissions/permissions"
     }
@@ -134,9 +132,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - Role"
-      ],
+      "tags": ["Users-permissions - Role"],
       "parameters": [
         {
           "name": "id",
@@ -216,9 +212,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - Role"
-      ],
+      "tags": ["Users-permissions - Role"],
       "parameters": [
         {
           "name": "sort",
@@ -366,9 +360,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - Role"
-      ],
+      "tags": ["Users-permissions - Role"],
       "parameters": [],
       "operationId": "post/users-permissions/roles",
       "requestBody": {
@@ -447,9 +439,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - Role"
-      ],
+      "tags": ["Users-permissions - Role"],
       "parameters": [
         {
           "name": "role",
@@ -538,9 +528,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - Role"
-      ],
+      "tags": ["Users-permissions - Role"],
       "parameters": [
         {
           "name": "role",
@@ -620,9 +608,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - User"
-      ],
+      "tags": ["Users-permissions - User"],
       "parameters": [],
       "operationId": "get/users/count"
     }
@@ -691,9 +677,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - User"
-      ],
+      "tags": ["Users-permissions - User"],
       "parameters": [
         {
           "name": "sort",
@@ -841,9 +825,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - User"
-      ],
+      "tags": ["Users-permissions - User"],
       "parameters": [],
       "operationId": "post/users",
       "requestBody": {
@@ -922,9 +904,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - User"
-      ],
+      "tags": ["Users-permissions - User"],
       "parameters": [],
       "operationId": "get/users/me"
     }
@@ -993,9 +973,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - User"
-      ],
+      "tags": ["Users-permissions - User"],
       "parameters": [
         {
           "name": "id",
@@ -1073,9 +1051,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - User"
-      ],
+      "tags": ["Users-permissions - User"],
       "parameters": [
         {
           "name": "id",
@@ -1164,9 +1140,7 @@
           }
         }
       },
-      "tags": [
-        "Users-permissions - User"
-      ],
+      "tags": ["Users-permissions - User"],
       "parameters": [
         {
           "name": "id",

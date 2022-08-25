@@ -63,9 +63,7 @@
           }
         }
       },
-      "tags": [
-        "Page"
-      ],
+      "tags": ["Page"],
       "parameters": [
         {
           "name": "slug",
@@ -145,9 +143,7 @@
           }
         }
       },
-      "tags": [
-        "Page"
-      ],
+      "tags": ["Page"],
       "parameters": [
         {
           "name": "sort",
@@ -295,9 +291,7 @@
           }
         }
       },
-      "tags": [
-        "Page"
-      ],
+      "tags": ["Page"],
       "parameters": [],
       "operationId": "post/pages",
       "requestBody": {
@@ -376,9 +370,7 @@
           }
         }
       },
-      "tags": [
-        "Page"
-      ],
+      "tags": ["Page"],
       "parameters": [
         {
           "name": "id",
@@ -456,9 +448,7 @@
           }
         }
       },
-      "tags": [
-        "Page"
-      ],
+      "tags": ["Page"],
       "parameters": [
         {
           "name": "id",
@@ -547,9 +537,7 @@
           }
         }
       },
-      "tags": [
-        "Page"
-      ],
+      "tags": ["Page"],
       "parameters": [
         {
           "name": "id",
