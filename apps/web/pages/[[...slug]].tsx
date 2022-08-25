@@ -7,6 +7,7 @@ interface Props {
 }
 
 const Home: React.FC<Props> = ({ content }) => (
+  // eslint-disable-next-line react/no-children-prop
   <ReactMarkdown children={content} />
 );
 
