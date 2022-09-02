@@ -1,0 +1,29 @@
+on:
+  workflow_call:
+    inputs:
+      working-directory:
+        type: string
+        required: true
+jobs:
+  static_code_analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: Install packages
+        run: npm i
+      - name: Typescript
+        working-directory: ${{ inputs.working-directory }}
+        run: npm run ci:tsc
+      - name: Eslint
+        working-directory: ${{ inputs.working-directory }}
+        run: npm run ci:eslint
+      - name: Prettier
+        working-directory: ${{ inputs.working-directory }}
+        run: npm run ci:prettier
+      - name: Test
+        working-directory: ${{ inputs.working-directory }}
+        run: npm run ci:test
+      - name: Build
+        working-directory: ${{ inputs.working-directory }}
+        run: npm run build
