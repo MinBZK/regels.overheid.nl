@@ -1,3 +1,6 @@
+# ALERT
+**This gitlab repo will be archived soon. We are currently migrating this repo to MinBZK's github. More information will follow once the migration is complete.**
+
 # Introduction
 
 In 2021 Utrecht started developing the [Virtual Income Desk](https://opensource.pleio.nl/news/view/bc7443c1-483c-4aca-8a8f-16f2a954ff4f/het-virtueel-inkomstenloket) with Open Rules. An initiative with the aim for citizens to always and easily receive all financial regulations to which citizens are entitled.
