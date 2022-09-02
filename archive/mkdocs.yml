@@ -3,7 +3,7 @@ site_url: https://open-regels.nl/
 
 # Repository
 repo_name: regels.overheid.nl
-repo_url: https://gitlab.com/discipl/RON/regels.overheid.nl
+repo_url: https://github.com/MinBZK/regels.overheid.nl
 
 # Hide the edit button
 edit_uri: edit/edited_via_edit_button/docs/
@@ -38,7 +38,7 @@ theme:
     - navigation.tracking
     - navigation.tabs
   icon:
-    repo: fontawesome/brands/gitlab
+    repo: fontawesome/brands/github
 
 markdown_extensions:
   - attr_list
