@@ -21,6 +21,8 @@ export const getStaticProps: GetStaticProps<Record<string, unknown>, { slug: str
   const pageResponse = await PageService.getPagesSlugSlug(slug);
   const content = pageResponse.data?.attributes?.content || '';
 
+  console.log({ pageResponse });
+
   return {
     props: {
       content,
