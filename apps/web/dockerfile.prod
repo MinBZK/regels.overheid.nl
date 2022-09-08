@@ -1,0 +1,19 @@
+FROM node:16.17.0
+
+WORKDIR /code
+
+RUN apt-get -q update && apt-get -qy install netcat
+
+COPY . .
+
+RUN npm i
+
+RUN [ "chmod", "-x", "/code/.docker/wait-for" ]
+
+RUN [ "chmod", "775", "/code/.docker/wait-for" ]
+
+WORKDIR /code/apps/web
+
+RUN npm i 
+
+CMD sh -c '/code/.docker/wait-for -s cms:1337 -t 30 -- npm run build && npm run start'
