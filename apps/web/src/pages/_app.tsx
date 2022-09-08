@@ -13,9 +13,10 @@ const App = ({ Component, pageProps }: AppProps) => {
 };
 
 App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ Component, ctx }) => {
-  console.log({ pagesResponse: process.env });
   const pagesResponse = await PageService.getPages();
+
   store.dispatch(setPages(pagesResponse.data));
+
   return {
     pageProps: {
       ...(Component.getInitialProps?.({ ...ctx, store }) ?? {}),
