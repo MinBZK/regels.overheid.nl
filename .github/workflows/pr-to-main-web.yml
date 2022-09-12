@@ -2,9 +2,9 @@ name: PR checks for apps/web
 on:
   pull_request:
     paths:
-      - "apps/web/**"
+      - 'apps/web/**'
 jobs:
   common-web-jobs:
-    uses: onursagir/ictu/.github/workflows/common-web-jobs.yml@main
+    uses: MinBZK/regels.overheid.nl/.github/workflows/common-web-jobs.yml@main
     with:
       working-directory: apps/web
