@@ -8,3 +8,31 @@ jobs:
     uses: MinBZK/regels.overheid.nl/.github/workflows/common-web-jobs.yml@main
     with:
       working-directory: apps/web
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make .env file
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          directory: apps/cms
+          file_name: .env.prod.local
+          envkey_APP_KEYS: 'only database is relevant'
+          envkey_API_TOKEN_SALT: 'only database is relevant'
+          envkey_ADMIN_JWT_SECRET: 'only database is relevant'
+          envkey_DATABASE_SSL: '{ "rejectUnauthorized": false }'
+          envkey_DATABASE_HOST: ${{ secrets.CMS_DATABASE_HOST }}
+          envkey_DATABASE_PORT: ${{ secrets.CMS_DATABASE_PORT }}
+          envkey_DATABASE_NAME: ${{ secrets.CMS_DATABASE_NAME }}
+          envkey_DATABASE_USERNAME: ${{ secrets.CMS_DATABASE_USERNAME }}
+          envkey_DATABASE_PASSWORD: ${{ secrets.CMS_DATABASE_PASSWORD }}
+      - name: Docker
+        run: 'docker-compose --file docker-compose.prod.yml up -d'
+      - name: Audit
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            localhost
+          budgetPath: ./apps/web/lighthouse-budget.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
