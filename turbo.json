@@ -8,6 +8,12 @@
     "dev": {
       "dependsOn": ["^dev"],
       "cache": false
+    },
+    "dev:cms": {
+      "cache": false
+    },
+    "dev:web": {
+      "cache": false
     }
   }
 }

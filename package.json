@@ -9,7 +9,7 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --parallel",
     "dev:cms": "turbo run dev --scope=cms",
-    "dev:web": "turbo run web --scope=web"
+    "dev:web": "turbo run dev --scope=web"
   },
   "repository": {
     "type": "git",
