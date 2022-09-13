@@ -4,12 +4,15 @@
   "license": "EUROPEAN UNION PUBLIC LICENCE v. 1.2",
   "version": "1.0.0",
   "description": "",
-  "workspaces": ["apps/*"],
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
+    "start:dev": "docker compose -f docker-compose.dev.yml up --build",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --parallel",
     "dev:cms": "turbo run dev --scope=cms",
-    "dev:web": "turbo run web --scope=web"
+    "dev:web": "turbo run dev --scope=web"
   },
   "repository": {
     "type": "git",
