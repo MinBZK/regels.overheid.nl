@@ -1,14 +1,14 @@
 {
-  "name": "cms",
+  "name": "@regels-overheid/cms",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
-    "develop": "strapi develop",
+    "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "fix": "npm run fix:lint && npm run fix:prettier",
+    "fix": "yarn fix:lint && yarn fix:prettier",
     "fix:lint": "eslint src --fix --ext ts,tsx,js,jsx",
     "fix:prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --write --ignore-path ../../.prettierignore",
     "ci:tsc": "echo 'Implement ci:tsc'",
@@ -30,8 +30,7 @@
     "uuid": "3413cb22-9add-43f1-89d6-c3835d5ae925"
   },
   "engines": {
-    "node": ">=12.x.x <=16.x.x",
-    "npm": ">=6.0.0"
+    "node": ">=12.x.x <=16.x.x"
   },
   "license": "MIT",
   "devDependencies": {

@@ -1,11 +1,15 @@
 {
   "name": "regels-overheid",
-  "private": "true",
+  "private": true,
   "license": "EUROPEAN UNION PUBLIC LICENCE v. 1.2",
   "version": "1.0.0",
   "description": "",
+  "workspaces": ["apps/*"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build --parallel",
+    "dev:cms": "turbo run dev --scope=cms",
+    "dev:web": "turbo run web --scope=web"
   },
   "repository": {
     "type": "git",

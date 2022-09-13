@@ -1,12 +1,12 @@
 {
-  "name": "web",
+  "name": "@regels-overheid/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "fix": "npm run fix:lint && npm run fix:prettier",
+    "fix": "yarn fix:lint && yarn fix:prettier",
     "fix:lint": "eslint src --fix --ext ts,tsx,js,jsx",
     "fix:prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --write --ignore-path ../../.prettierignore",
     "ci:tsc": "echo 'Implement ci:tsc'",
