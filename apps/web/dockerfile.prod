@@ -16,4 +16,4 @@ WORKDIR /code/apps/web
 
 RUN npm i 
 
-CMD sh -c '/code/.docker/wait-for -s cms:1337 -t 30 -- npm run build && npm run start'
+CMD sh -c '/code/.docker/wait-for -s cms:1337 -t 0 -- npm run build && npm run start'
