@@ -1,0 +1,36 @@
+services:
+  cms:
+    restart: always
+    env_file:
+      - ./apps/cms/.env.prod.local
+    volumes:
+      - /code/node_modules
+      - /code/cms/node_modules
+    build:
+      context: .
+      dockerfile: apps/cms/dockerfile.prod
+    ports:
+      - 1337:1337
+  nginx:
+    depends_on:
+      - cms
+    restart: always
+    ports:
+      - 80:80
+    build:
+      context: ./apps/nginx
+      dockerfile: dockerfile.prod
+  web:
+    depends_on:
+      - nginx
+    restart: always
+    environment:
+      - CMS_API=http://host.docker.internal:1337/api
+    volumes:
+      - /code/node_modules
+      - /code/cms/node_modules
+    build:
+      context: .
+      dockerfile: apps/web/dockerfile.prod
+    ports:
+      - 3000:3000
