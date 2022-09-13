@@ -3,10 +3,9 @@ services:
     depends_on:
       - cms
     build:
-      context: ./apps/web/
-      dockerfile: dockerfile.dev
+      context: .
+      dockerfile: apps/web/dockerfile.dev
     volumes:
-      - .:/code
       - /code/node_modules
       - /code/apps/web/node_modules
     ports:
@@ -18,12 +17,11 @@ services:
       - postgres
     restart: always
     volumes:
-      - .:/code
       - /code/node_modules
       - /code/apps/cms/node_modules
     build:
-      context: ./apps/cms
-      dockerfile: dockerfile.dev
+      context: .
+      dockerfile: apps/cmsdockerfile.dev
     ports:
       - 1337:1337
     environment:
