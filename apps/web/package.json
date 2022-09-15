@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prod": "next start",
     "build": "next build",
     "start": "next start",
     "fix": "yarn fix:lint && yarn fix:prettier",

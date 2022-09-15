@@ -17,6 +17,10 @@
     },
     "dev:docs": {
       "cache": false
-    }
+    },
+    "prod": {
+      "dependsOn": ["build"]
+    },
+    "start": {}
   }
 }

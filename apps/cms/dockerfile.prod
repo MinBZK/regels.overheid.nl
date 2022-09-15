@@ -6,9 +6,8 @@ COPY . .
 
 WORKDIR /code/apps/cms
 
+RUN yarn
 
-RUN ["npm", "i"]
+RUN yarn build:cms
 
-RUN ["npm", "run", "build"]
-
-CMD ["npm", "start"]
+CMD yarn start:cms
