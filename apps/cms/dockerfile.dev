@@ -4,8 +4,8 @@ WORKDIR /code
 
 COPY . .
 
-RUN yarn workspace @regels-overheid/cms install
+RUN yarn 
 
-EXPOSE 1337
+EXPOSE 3000
 
 CMD [ "yarn", "dev:cms" ]

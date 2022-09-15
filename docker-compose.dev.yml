@@ -12,9 +12,9 @@ services:
       - /code/apps/cms/node_modules
       - .:/code
     ports:
-      - 3000:3000
+      - 3002:3002
     environment:
-      - CMS_API=http://host.docker.internal:1337/api
+      - CMS_API=http://host.docker.internal:3000/api
   cms:
     container_name: cms_dev
     depends_on:
@@ -29,7 +29,7 @@ services:
       context: .
       dockerfile: apps/cms/dockerfile.dev
     ports:
-      - 1337:1337
+      - 3000:3000
     environment:
       - ADMIN_JWT_SECRET=admin-jwt-secret
       - API_TOKEN_SALT=token-salt
