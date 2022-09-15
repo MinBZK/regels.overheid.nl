@@ -51,7 +51,6 @@ services:
     restart: always
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./.docker/init-cms-db.sql:/docker-entrypoint-initdb.d/init-cms-db.sql
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
