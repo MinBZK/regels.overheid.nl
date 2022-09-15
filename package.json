@@ -12,7 +12,8 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --parallel",
     "dev:cms": "turbo run dev --scope=cms",
-    "dev:web": "turbo run dev --scope=web"
+    "dev:web": "turbo run dev --scope=web",
+    "dev:docs": "turbo run dev --scope=docs"
   },
   "repository": {
     "type": "git",
