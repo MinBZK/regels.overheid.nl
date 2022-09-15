@@ -1,13 +1,11 @@
 FROM node:16.17.0
 
-WORKDIR /code/apps/cms
+WORKDIR /code
 
-COPY package.json package.json
+COPY . .
 
-COPY package-lock.json package-lock.json
-
-RUN npm i
+RUN yarn workspace @regels-overheid/cms install
 
 EXPOSE 1337
 
-CMD npm run develop
+CMD [ "yarn", "dev:cms" ]

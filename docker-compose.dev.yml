@@ -1,29 +1,33 @@
 services:
   web:
+    container_name: web_dev
     depends_on:
       - cms
     build:
-      context: ./apps/web/
-      dockerfile: dockerfile.dev
+      context: .
+      dockerfile: apps/web/dockerfile.dev
     volumes:
-      - .:/code
       - /code/node_modules
       - /code/apps/web/node_modules
+      - /code/apps/cms/node_modules
+      - .:/code
     ports:
       - 3000:3000
     environment:
       - CMS_API=http://host.docker.internal:1337/api
   cms:
+    container_name: cms_dev
     depends_on:
       - postgres
     restart: always
     volumes:
-      - .:/code
       - /code/node_modules
+      - /code/apps/web/node_modules
       - /code/apps/cms/node_modules
+      - .:/code
     build:
-      context: ./apps/cms
-      dockerfile: dockerfile.dev
+      context: .
+      dockerfile: apps/cms/dockerfile.dev
     ports:
       - 1337:1337
     environment:
@@ -39,6 +43,7 @@ services:
       - JWT_SECRET=jwt-secret
   postgres:
     image: postgres:14.5
+    container_name: postgres_dev
     restart: always
     volumes:
       - pgdata:/var/lib/postgresql/data

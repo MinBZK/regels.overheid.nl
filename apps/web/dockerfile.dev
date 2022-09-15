@@ -1,13 +1,11 @@
 FROM node:16.17.0
 
-WORKDIR /code/apps/web
+WORKDIR /code
 
-COPY package.json package.json
+COPY . .
 
-COPY package-lock.json package-lock.json
-
-RUN npm i
+RUN yarn workspace @regels-overheid/web install
 
 EXPOSE 3000
 
-CMD npm run dev
+CMD [ "yarn", "dev:web" ]
