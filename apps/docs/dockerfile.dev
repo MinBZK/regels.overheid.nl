@@ -6,6 +6,6 @@ COPY . .
 
 RUN yarn 
 
-EXPOSE 9001
+EXPOSE 9002
 
-CMD [ "yarn", "dev:cms" ]
+CMD [ "yarn", "dev:docs" ]

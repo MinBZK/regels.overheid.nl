@@ -6,6 +6,6 @@ COPY . .
 
 RUN yarn 
 
-EXPOSE 3002
+EXPOSE 9000
 
 CMD [ "yarn", "dev:web" ]
