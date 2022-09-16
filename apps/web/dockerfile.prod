@@ -12,4 +12,4 @@ RUN [ "chmod", "775", "/code/.docker/wait-for" ]
 
 RUN yarn 
 
-CMD sh -c '/code/.docker/wait-for -s cms:1337 -t 30 -- yarn prod:web'
+CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- yarn prod:web'

@@ -4,8 +4,6 @@ WORKDIR /code
 
 COPY . .
 
-WORKDIR /code/apps/cms
-
 RUN yarn
 
 RUN yarn build:cms

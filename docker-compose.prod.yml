@@ -6,19 +6,20 @@ services:
     volumes:
       - /code/node_modules
       - /code/web/node_modules
-
       - /code/cms/node_modules
     build:
       context: .
       dockerfile: apps/cms/dockerfile.prod
     ports:
-      - 1337:1337
+      - 9001:9001
+    environment:
+      - NODE_ENV=production
   web:
     depends_on:
       - nginx
     restart: always
     environment:
-      - CMS_API=http://host.docker.internal:1337/api
+      - CMS_API=http://host.docker.internal:9001/api
     volumes:
       - /code/node_modules
       - /code/web/node_modules
@@ -27,7 +28,7 @@ services:
       context: .
       dockerfile: apps/web/dockerfile.prod
     ports:
-      - 3000:3000
+      - 9000:9000
   nginx:
     depends_on:
       - cms

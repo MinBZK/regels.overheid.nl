@@ -17,8 +17,6 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap() {
-    if (process.env.NODE_ENV !== 'development') return;
-
     const actions = ['api::page.page.findOneBySlug', 'api::page.page.find', 'api::page.page.findOne'];
 
     const actionsFromDatabase = await strapi.db

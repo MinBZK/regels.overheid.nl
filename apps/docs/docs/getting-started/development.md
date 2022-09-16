@@ -1,17 +1,17 @@
 ---
 title: Development
-description: Getting - started in development mode
+description: Getting started - development
 ---
 
 # Getting started - development
 
-## Docker compose
+## Using Docker compose
 
-The fastest way to get up and running is by using docker. Running `yarn start:dev` will start the project using the `docker-compose.dev` file this configuration also includes the database. If goes correctly nothing else will be required to do and you can visit the following urls
+The fastest way to get up and running is by using docker. Running `yarn start:dev` will start the project using the `docker-compose.dev` file this configuration also includes the database. If everything goes correctly nothing else will be required to do and you can visit the following urls.
 
-- asd
-- asd
-- asd
+- localhost:9000 for the web application
+- localhost:9001 for the cms
+- localhost:9002 for the documentation
 
 ## Running locally
 
