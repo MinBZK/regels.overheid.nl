@@ -4,8 +4,8 @@ WORKDIR /code
 
 COPY . .
 
-RUN yarn 
+RUN pnpm install
 
 EXPOSE 9000
 
-CMD [ "yarn", "dev:web" ]
+CMD [ "pnpm", "dev:web" ]

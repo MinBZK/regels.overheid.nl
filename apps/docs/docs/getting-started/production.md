@@ -23,4 +23,4 @@ DATABASE_SSL=
 JWT_SECRET=
 ```
 
-After having done so you can run `yarn start:prod` to start up the application in production mode.
+After having done so you can run `pnpm start:prod` to start up the application in production mode.
