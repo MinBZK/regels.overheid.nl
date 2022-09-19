@@ -10,6 +10,6 @@ RUN [ "chmod", "-x", "/code/.docker/wait-for" ]
 
 RUN [ "chmod", "775", "/code/.docker/wait-for" ]
 
-RUN yarn 
+RUN pnpm install
 
-CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- yarn prod:web'
+CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- pnpm prod:web'

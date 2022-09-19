@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
-    "prod": "yarn start",
+    "prod": "pnpm start",
     "build": "strapi build",
     "strapi": "strapi",
-    "fix": "yarn fix:lint && yarn fix:prettier",
+    "fix": "pnpm fix:lint && pnpm fix:prettier",
     "fix:lint": "eslint src --fix --ext ts,tsx,js,jsx",
     "fix:prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --write --ignore-path ../../.prettierignore",
     "ci:tsc": "echo 'Implement ci:tsc'",

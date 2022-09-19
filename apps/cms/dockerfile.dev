@@ -4,8 +4,8 @@ WORKDIR /code
 
 COPY . .
 
-RUN yarn 
+RUN pnpm install
 
 EXPOSE 9001
 
-CMD [ "yarn", "dev:cms" ]
+CMD [ "pnpm", "dev:cms" ]
