@@ -4,8 +4,8 @@ WORKDIR /code
 
 COPY . .
 
-RUN yarn workspace @regels-overheid/web install
+RUN yarn 
 
-EXPOSE 3000
+EXPOSE 9000
 
 CMD [ "yarn", "dev:web" ]

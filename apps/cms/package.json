@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "strapi develop",
     "start": "strapi start",
+    "prod": "yarn start",
     "build": "strapi build",
     "strapi": "strapi",
     "fix": "yarn fix:lint && yarn fix:prettier",

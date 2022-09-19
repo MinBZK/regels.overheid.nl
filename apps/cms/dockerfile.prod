@@ -1,0 +1,11 @@
+FROM node:16.17.0
+
+WORKDIR /code
+
+COPY . .
+
+RUN yarn
+
+RUN yarn build:cms
+
+CMD yarn start:cms

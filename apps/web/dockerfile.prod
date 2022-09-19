@@ -1,0 +1,15 @@
+FROM node:16.17.0
+
+WORKDIR /code
+
+RUN apt-get -q update && apt-get -qy install netcat
+
+COPY . .
+
+RUN [ "chmod", "-x", "/code/.docker/wait-for" ]
+
+RUN [ "chmod", "775", "/code/.docker/wait-for" ]
+
+RUN yarn 
+
+CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- yarn prod:web'

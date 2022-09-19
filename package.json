@@ -9,10 +9,18 @@
   ],
   "scripts": {
     "start:dev": "docker compose -f docker-compose.dev.yml up --build",
+    "start:prod": "docker compose -f docker-compose.prod.yml up --build",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --parallel",
     "dev:cms": "turbo run dev --scope=cms",
-    "dev:web": "turbo run dev --scope=web"
+    "dev:web": "turbo run dev --scope=web",
+    "dev:docs": "turbo run dev --scope=docs",
+    "prod:cms": "turbo run prod --scope=cms",
+    "prod:web": "turbo run prod --scope=web",
+    "build:cms": "turbo run build --scope=cms",
+    "build:web": "turbo run build --scope=web",
+    "start:cms": "turbo run start --scope=cms",
+    "start:web": "turbo run start --scope=web"
   },
   "repository": {
     "type": "git",

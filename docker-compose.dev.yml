@@ -11,10 +11,12 @@ services:
       - /code/apps/web/node_modules
       - /code/apps/cms/node_modules
       - .:/code
+      - yarn_cache:/yarn
+      - node_modules_cache:/app/node_modules
     ports:
-      - 3000:3000
+      - 9000:9000
     environment:
-      - CMS_API=http://host.docker.internal:1337/api
+      - CMS_API=http://host.docker.internal:9001/api
   cms:
     container_name: cms_dev
     depends_on:
@@ -25,11 +27,13 @@ services:
       - /code/apps/web/node_modules
       - /code/apps/cms/node_modules
       - .:/code
+      - yarn_cache:/yarn
+      - node_modules_cache:/app/node_modules
     build:
       context: .
       dockerfile: apps/cms/dockerfile.dev
     ports:
-      - 1337:1337
+      - 9001:9001
     environment:
       - ADMIN_JWT_SECRET=admin-jwt-secret
       - API_TOKEN_SALT=token-salt
@@ -47,12 +51,28 @@ services:
     restart: always
     volumes:
       - pgdata:/var/lib/postgresql/data
-      - ./.docker/init-cms-db.sql:/docker-entrypoint-initdb.d/init-cms-db.sql
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=strapi
     ports:
       - '5433:5432'
+  docs:
+    image: node:16.17.0
+    container_name: docs_dev
+    command: sh -c "yarn install && yarn run dev:docs"
+    expose:
+      - 9002
+    ports:
+      - 9002:9002
+    volumes:
+      - /code/node_modules
+      - /code/apps/docs/node_modules
+      - yarn_cache:/yarn
+      - node_modules_cache:/app/node_modules
+      - .:/code
+    working_dir: /code
 volumes:
   pgdata:
+  yarn_cache:
+  node_modules_cache:
