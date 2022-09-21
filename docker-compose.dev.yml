@@ -1,37 +1,13 @@
 services:
-  web:
-    container_name: web_dev
-    depends_on:
-      - cms
-    build:
-      context: .
-      dockerfile: apps/web/dockerfile.dev
-    volumes:
-      - /code/node_modules
-      - /code/apps/web/node_modules
-      - /code/apps/cms/node_modules
-      - .:/code
-      - yarn_cache:/yarn
-      - node_modules_cache:/app/node_modules
-    ports:
-      - 9000:9000
-    environment:
-      - CMS_API=http://host.docker.internal:9001/api
   cms:
-    container_name: cms_dev
     depends_on:
       - postgres
     restart: always
-    volumes:
-      - /code/node_modules
-      - /code/apps/web/node_modules
-      - /code/apps/cms/node_modules
-      - .:/code
-      - yarn_cache:/yarn
-      - node_modules_cache:/app/node_modules
     build:
       context: .
       dockerfile: apps/cms/dockerfile.dev
+    volumes:
+      - ./apps/cms:/code/apps/cms
     ports:
       - 9001:9001
     environment:
@@ -45,6 +21,35 @@ services:
       - DATABASE_PASSWORD=postgres
       - DATABASE_SSL=false
       - JWT_SECRET=jwt-secret
+  docs:
+    restart: always
+    build:
+      context: .
+      dockerfile: apps/docs/dockerfile.dev
+    volumes:
+      - /code/apps/docs/node_modules
+    ports:
+      - 9002:9002
+  web:
+    restart: always
+    depends_on:
+      - cms
+    build:
+      context: .
+      dockerfile: apps/web/dockerfile.dev
+    volumes:
+      - ./apps/web:/code/apps/web
+    ports:
+      - 9000:9000
+    environment:
+      - CMS_API=http://host.docker.internal:9001/api
+  nginx:
+    restart: always
+    ports:
+      - 80:80
+    build:
+      context: ./apps/nginx
+      dockerfile: dockerfile.dev
   postgres:
     image: postgres:14.5
     container_name: postgres_dev
@@ -56,23 +61,6 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=strapi
     ports:
-      - '5433:5432'
-  docs:
-    image: node:16.17.0
-    container_name: docs_dev
-    command: sh -c "yarn install && yarn run dev:docs"
-    expose:
-      - 9002
-    ports:
-      - 9002:9002
-    volumes:
-      - /code/node_modules
-      - /code/apps/docs/node_modules
-      - yarn_cache:/yarn
-      - node_modules_cache:/app/node_modules
-      - .:/code
-    working_dir: /code
+      - 5433:5432
 volumes:
   pgdata:
-  yarn_cache:
-  node_modules_cache:

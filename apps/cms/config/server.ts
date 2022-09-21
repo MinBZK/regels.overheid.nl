@@ -5,5 +5,5 @@ export default ({ env }: any) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
-  url: 'localhost/cms',
+  url: env('PUBLIC_URL', undefined),
 });
