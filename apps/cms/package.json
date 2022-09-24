@@ -18,25 +18,20 @@
     "ci:test": "echo 'Implement ci:test'"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "^4.3.4",
-    "@strapi/plugin-i18n": "4.3.4",
-    "@strapi/plugin-users-permissions": "4.3.4",
-    "@strapi/strapi": "4.3.4",
-    "pg": "8.6.0"
+    "@strapi/plugin-i18n": "4.3.9",
+    "@strapi/plugin-users-permissions": "4.3.9",
+    "@strapi/strapi": "4.3.9",
+    "pg": "^8.8.0"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "3413cb22-9add-43f1-89d6-c3835d5ae925"
+    "uuid": "c09d1161-800a-4488-be45-7adce511fcb7"
   },
   "engines": {
-    "node": ">=12.x.x <=16.x.x"
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.35.1",
-    "@typescript-eslint/parser": "^5.35.1",
-    "typescript": "^4.7.4"
-  }
+  "license": "MIT"
 }

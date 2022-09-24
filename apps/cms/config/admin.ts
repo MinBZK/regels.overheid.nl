@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export default ({ env }: any) => ({
+export default ({ env }) => ({
   auth: {
     secret: env('ADMIN_JWT_SECRET'),
   },

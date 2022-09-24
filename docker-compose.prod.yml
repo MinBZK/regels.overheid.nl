@@ -1,40 +1,34 @@
 services:
   cms:
     restart: always
-    env_file:
-      - ./apps/cms/.env.prod.local
-    volumes:
-      - /code/node_modules
-      - /code/web/node_modules
-      - /code/cms/node_modules
     build:
       context: .
       dockerfile: apps/cms/dockerfile.prod
     ports:
       - 9001:9001
-    environment:
-      - NODE_ENV=production
-  web:
-    depends_on:
-      - nginx
-    restart: always
-    environment:
-      - CMS_API=http://host.docker.internal:9001/api
-    volumes:
-      - /code/node_modules
-      - /code/web/node_modules
-      - /code/cms/node_modules
-    build:
-      context: .
-      dockerfile: apps/web/dockerfile.prod
-    ports:
-      - 9000:9000
-  nginx:
-    depends_on:
-      - cms
-    restart: always
-    ports:
-      - 80:80
-    build:
-      context: ./apps/nginx
-      dockerfile: dockerfile.prod
+    env_file:
+      - .env
+  # web:
+  #   depends_on:
+  #     - nginx
+  #   restart: always
+  #   environment:
+  #     - CMS_API=http://host.docker.internal:9001/api
+  #   volumes:
+  #     - /code/node_modules
+  #     - /code/web/node_modules
+  #     - /code/cms/node_modules
+  #   build:
+  #     context: .
+  #     dockerfile: apps/web/dockerfile.prod
+  #   ports:
+  #     - 9000:9000
+  # nginx:
+  #   depends_on:
+  #     - cms
+  #   restart: always
+  #   ports:
+  #     - 80:80
+  #   build:
+  #     context: ./apps/nginx
+  #     dockerfile: dockerfile.prod
