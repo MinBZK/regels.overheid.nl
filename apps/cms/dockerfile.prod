@@ -2,10 +2,21 @@ FROM node:16.17.0
 
 WORKDIR /code
 
-COPY . .
+RUN corepack enable
 
-RUN pnpm install
+RUN corepack prepare pnpm@latest --activate
 
-RUN pnpm build:cms
+COPY .npmrc pnpm-lock.yaml package.json pnpm-workspace.yaml ./
 
-CMD pnpm start:cms
+COPY apps/cms/package.json /code/apps/cms/package.json
+
+COPY apps/web/package.json /code/apps/web/package.json
+
+RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+     pnpm install -r --shamefully-hoist --config.auto-install-peers=true
+
+ADD . .
+
+RUN NODE_ENV=prodcution pnpm build:cms
+
+CMD NODE_ENV=prodcution pnpm start:cms

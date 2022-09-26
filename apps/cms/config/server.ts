@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export default ({ env }: any) => ({
+export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 9001),
   app: {
