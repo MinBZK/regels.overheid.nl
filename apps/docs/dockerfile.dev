@@ -1,11 +1,37 @@
-FROM node:16.17.0
+FROM node:16.17-alpine
 
 WORKDIR /code
 
-COPY . .
+RUN corepack enable
 
-RUN pnpm install
+RUN corepack prepare pnpm@latest --activate
 
-EXPOSE 9002
+COPY .npmrc /code/.npmrc
 
-CMD [ "pnpm", "dev:docs" ]
+COPY turbo.json /code/turbo.json
+
+COPY tsconfig.json /code/tsconfig.json
+
+COPY package.json /code/package.json
+
+COPY pnpm-lock.yaml /code/pnpm-lock.yaml
+
+COPY pnpm-workspace.yaml /code/pnpm-workspace.yaml
+
+COPY apps/docs/package.json /code/apps/docs/package.json
+
+COPY apps/docs/docusaurus.config.js /code/apps/docs/docusaurus.config.js
+
+COPY apps/docs/sidebars.js /code/apps/docs/sidebars.js
+
+COPY apps/docs/docs /code/apps/docs/docs
+
+COPY apps/docs/src /code/apps/docs/src
+
+RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+      pnpm fetch
+
+RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+     pnpm install -r
+
+CMD pnpm dev:docs

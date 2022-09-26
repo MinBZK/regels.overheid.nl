@@ -9,9 +9,9 @@ description: Getting started - development
 
 The fastest way to get up and running is by using docker. Running `pnpm start:dev` will start the project using the `docker-compose.dev` file this configuration also includes the database. If everything goes correctly nothing else will be required to do and you can visit the following urls.
 
-- localhost:9000 for the web application
-- localhost:9001 for the cms
-- localhost:9002 for the documentation
+- [http://localhost](http://localhost) or localhost:9000 for the web application
+- [http://cms.localhost](http://cms.localhost) or localhost:9001 for the cms
+- [http://docs.localhost](http://docs.localhost) or localhost:9002 for the documentation
 
 ## Running locally
 

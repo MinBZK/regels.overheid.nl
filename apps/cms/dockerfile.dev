@@ -1,11 +1,33 @@
-FROM node:16.17.0
+FROM node:16.17-alpine
 
 WORKDIR /code
 
-COPY . .
+RUN corepack enable
 
-RUN pnpm install
+RUN corepack prepare pnpm@latest --activate
 
-EXPOSE 9001
+COPY .npmrc /code/.npmrc
 
-CMD [ "pnpm", "dev:cms" ]
+COPY turbo.json /code/turbo.json
+
+COPY tsconfig.json /code/tsconfig.json
+
+COPY package.json /code/package.json
+
+COPY pnpm-lock.yaml /code/pnpm-lock.yaml
+
+COPY pnpm-workspace.yaml /code/pnpm-workspace.yaml
+
+COPY apps/cms/package.json /code/apps/cms/package.json
+
+COPY apps/cms/config /code/apps/cms/config
+
+COPY apps/cms/src /code/apps/cms/src
+
+RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+      pnpm fetch
+
+RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+     pnpm install -r --offline
+
+CMD pnpm dev:cms
