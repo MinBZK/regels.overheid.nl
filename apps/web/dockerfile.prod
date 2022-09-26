@@ -2,14 +2,26 @@ FROM node:16.17.0
 
 WORKDIR /code
 
+RUN corepack enable
+
+RUN corepack prepare pnpm@latest --activate
+
 RUN apt-get -q update && apt-get -qy install netcat
 
-COPY . .
+COPY .npmrc pnpm-lock.yaml package.json pnpm-workspace.yaml ./
+
+COPY apps/cms/package.json /code/apps/cms/package.json
+
+COPY apps/web/package.json /code/apps/web/package.json
+
+RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
+     pnpm install -r --shamefully-hoist --config.auto-install-peers=true
+      
+ADD . .
 
 RUN [ "chmod", "-x", "/code/.docker/wait-for" ]
 
 RUN [ "chmod", "775", "/code/.docker/wait-for" ]
 
-RUN yarn 
 
-CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- yarn prod:web'
+CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- pnpm prod:web'

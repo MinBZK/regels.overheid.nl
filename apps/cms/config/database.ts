@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-export default ({ env }: any) => ({
+export default ({ env }) => ({
   connection: {
     client: 'postgres',
     connection: {

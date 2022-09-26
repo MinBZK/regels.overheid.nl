@@ -4,9 +4,6 @@
   "license": "EUROPEAN UNION PUBLIC LICENCE v. 1.2",
   "version": "1.0.0",
   "description": "",
-  "workspaces": [
-    "apps/*"
-  ],
   "scripts": {
     "start:dev": "docker compose -f docker-compose.dev.yml up --build",
     "start:prod": "docker compose -f docker-compose.prod.yml up --build",
@@ -30,9 +27,10 @@
     "url": "https://github.com/MinBZK/regels.overheid.nl/issues"
   },
   "homepage": "https://github.com/MinBZK/regels.overheid.nl",
-  "devDependencies": {
+  "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.23.1",
     "turbo": "^1.4.5",
     "typescript": "^4.7.4"
   }

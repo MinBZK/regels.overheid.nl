@@ -8,7 +8,7 @@ description: Getting started - production
 # Using docker compose
 
 In order to start the application in production mode you will have to supply your own database.
-Start out by creating the `/apps/cms/.env.prod.local` file and fill it with the following variables.
+Start out by creating a `.env` file in the root of the project and fill it with the following variables.
 
 ```shell
 ADMIN_JWT_SECRET=
@@ -23,4 +23,4 @@ DATABASE_SSL=
 JWT_SECRET=
 ```
 
-After having done so you can run `yarn start:prod` to start up the application in production mode.
+After having done so you can run `pnpm start:prod` to start up the application in production mode.
