@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { Box } from '@mui/material';
+import { GetStaticPaths, GetServerSideProps } from 'next';
 import ReactMarkdown from 'react-markdown';
 import { PageService } from '../services/cms';
 
@@ -15,7 +15,7 @@ const Home: React.FC<Props> = ({ content }) => (
   </Box>
 );
 
-export const getStaticProps: GetStaticProps<Record<string, unknown>, { slug: string }> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<Record<string, unknown>, { slug: string }> = async (ctx) => {
   const { slug = 'home' } = ctx.params || {};
 
   const pageResponse = await PageService.getPagesSlugSlug(slug);
@@ -27,20 +27,6 @@ export const getStaticProps: GetStaticProps<Record<string, unknown>, { slug: str
     props: {
       content,
     },
-  };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const pagesResponse = await PageService.getPages();
-
-  const paths =
-    pagesResponse.data?.map((page) => ({
-      params: { slug: [page.attributes?.slug || ''] },
-    })) || [];
-
-  return {
-    paths,
-    fallback: true,
   };
 };
 
