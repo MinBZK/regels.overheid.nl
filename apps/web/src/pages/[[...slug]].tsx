@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
-import { Box } from '@mui/material';
-import { GetStaticPaths, GetServerSideProps } from 'next';
+import { Box } from '@mui/system';
+import { GetServerSideProps } from 'next';
 import ReactMarkdown from 'react-markdown';
 import { PageService } from '../services/cms';
 
@@ -20,8 +20,6 @@ export const getServerSideProps: GetServerSideProps<Record<string, unknown>, { s
 
   const pageResponse = await PageService.getPagesSlugSlug(slug);
   const content = pageResponse.data?.attributes?.content || '';
-
-  console.log({ pageResponse });
 
   return {
     props: {
