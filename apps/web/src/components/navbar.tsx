@@ -1,7 +1,7 @@
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
-
 import { useSelector } from 'react-redux';
+
 import { selectPages } from '../stores/redux/pages/selectors';
 
 export const Navbar: React.FC = () => {

@@ -1,5 +1,5 @@
 {
-  "name": "@regels-overheid/eslint-config",
+  "name": "@regels-overheid/eslint-config-regels-overheid",
   "version": "0.0.1",
   "private": "true",
   "files": [

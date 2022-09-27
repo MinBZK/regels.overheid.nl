@@ -7,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true,
     "isolatedModules": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "target": "ES2018",
     "noEmit": true,

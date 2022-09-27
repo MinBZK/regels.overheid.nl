@@ -1,0 +1,4 @@
+{
+  "extends": "@regels-overheid/tsconfig/react.json",
+  "include": ["."],
+}

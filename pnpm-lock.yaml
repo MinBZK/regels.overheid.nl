@@ -4,14 +4,22 @@ importers:
 
   .:
     specifiers:
-      '@regels-overheid/eslint-config': workspace:*
+      '@regels-overheid/eslint-config-regels-overheid': workspace:*
+      '@types/node': ^18.7.9
+      '@types/react': ^18.0.17
+      '@types/react-dom': ^18.0.6
+      react: ^18.2.0
       turbo: ^1.4.5
       typescript: ^4.7.4
     dependencies:
+      '@types/node': 18.7.18
+      react: 18.2.0
       turbo: 1.4.7
       typescript: 4.8.3
     devDependencies:
-      '@regels-overheid/eslint-config': link:packages/eslint-config
+      '@regels-overheid/eslint-config-regels-overheid': link:packages/eslint-config-regels-overheid
+      '@types/react': 18.0.20
+      '@types/react-dom': 18.0.6
 
   apps/cms:
     specifiers:
@@ -56,6 +64,7 @@ importers:
       '@emotion/styled': ^11.10.0
       '@mui/material': ^5.10.1
       '@reduxjs/toolkit': ^1.8.5
+      '@regels-overheid/ui': workspace:*
       '@types/node': ^18.7.9
       eslint: 8.22.0
       eslint-config-next: 12.2.5
@@ -72,6 +81,7 @@ importers:
       '@emotion/styled': 11.10.4_gyryel6m34lsxtsejhafetjriq
       '@mui/material': 5.10.6_6xnkn2aqnlmdvuspwqrjexfduy
       '@reduxjs/toolkit': 1.8.5_kkwg4cbsojnjnupd3btipussee
+      '@regels-overheid/ui': link:../../packages/ui
       next: 12.2.5_biqbaboplfbrettd7655fr4n2y
       next-redux-wrapper: 7.0.5_hqvnqhaxpizklyi3ao27hqxpae
       react: 18.2.0
@@ -85,7 +95,7 @@ importers:
       openapi-typescript-codegen: 0.23.0
       react-redux: 8.0.2_biqbaboplfbrettd7655fr4n2y
 
-  packages/eslint-config:
+  packages/eslint-config-regels-overheid:
     specifiers:
       '@typescript-eslint/eslint-plugin': 5.35.1
       '@typescript-eslint/parser': 5.35.1
@@ -123,6 +133,18 @@ importers:
 
   packages/tsconfig:
     specifiers: {}
+
+  packages/ui:
+    specifiers:
+      '@regels-overheid/tsconfig': workspace:*
+      '@types/react': ^18.0.17
+      '@types/react-dom': ^18.0.6
+      react: ^18.2.0
+    devDependencies:
+      '@regels-overheid/tsconfig': link:../tsconfig
+      '@types/react': 18.0.20
+      '@types/react-dom': 18.0.6
+      react: 18.2.0
 
 packages:
 
@@ -4695,6 +4717,12 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: false
 
+  /@types/react-dom/18.0.6:
+    resolution: {integrity: sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA==}
+    dependencies:
+      '@types/react': 18.0.20
+    dev: true
+
   /@types/react-is/17.0.3:
     resolution: {integrity: sha512-aBTIWg1emtu95bLTLx0cpkxwGW3ueZv71nE2YFBpL8k/z5czEW8yYpOo8Dp+UUAFAtKwNaOsh/ioSeQnWlZcfw==}
     dependencies:
@@ -8578,7 +8606,7 @@ packages:
     peerDependencies:
       eslint: ^7.5.0 || ^8.0.0
     dependencies:
-      '@typescript-eslint/utils': 5.37.0_eslint@8.23.0
+      '@typescript-eslint/utils': 5.38.1_eslint@8.23.0
       eslint: 8.23.0
     transitivePeerDependencies:
       - supports-color

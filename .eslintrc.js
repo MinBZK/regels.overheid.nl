@@ -1,4 +1,9 @@
 module.exports = {
   root: true,
-  extends: ['@regels-overheid/eslint-config/base'],
+  extends: ['@regels-overheid/eslint-config-regels-overheid/base'],
+  settings: {
+    next: {
+      rootDir: ["apps/*/"],
+    },
+  },
 };
