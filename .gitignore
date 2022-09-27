@@ -139,3 +139,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+apps/cms/src/extensions/documentation/documentation/1.0.0/full_documentation.json

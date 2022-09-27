@@ -1,0 +1,10 @@
+{
+  "name": "@regels-overheid/ui",
+  "version": "1.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "private": "true",
+  "devDependencies": {
+    "@regels-overheid/tsconfig": "workspace:*"
+  }
+}

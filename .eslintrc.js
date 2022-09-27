@@ -1,3 +1,9 @@
 module.exports = {
-  extends: ['plugin:@typescript-eslint/recommended'],
+  root: true,
+  extends: ['@regels-overheid/eslint-config-regels-overheid/base'],
+  settings: {
+    next: {
+      rootDir: ["apps/*/"],
+    },
+  },
 };
