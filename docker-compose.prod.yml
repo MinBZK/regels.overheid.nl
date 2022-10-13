@@ -17,6 +17,8 @@ services:
       dockerfile: apps/web/dockerfile.prod
     ports:
       - 9000:9000
+    extra_hosts:
+      - host.docker.internal:host-gateway
   nginx:
     depends_on:
       - cms

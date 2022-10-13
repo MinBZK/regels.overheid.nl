@@ -1,4 +1,4 @@
-FROM node:16.17-alpine
+FROM node:16.17.0
 
 WORKDIR /code
 
@@ -6,28 +6,19 @@ RUN corepack enable
 
 RUN corepack prepare pnpm@latest --activate
 
-COPY .npmrc /code/.npmrc
-
-COPY turbo.json /code/turbo.json
-
-COPY tsconfig.json /code/tsconfig.json
-
-COPY package.json /code/package.json
-
-COPY pnpm-lock.yaml /code/pnpm-lock.yaml
-
-COPY pnpm-workspace.yaml /code/pnpm-workspace.yaml
+COPY .npmrc pnpm-lock.yaml package.json pnpm-workspace.yaml ./
 
 COPY apps/cms/package.json /code/apps/cms/package.json
 
-COPY apps/cms/config /code/apps/cms/config
+COPY apps/web/package.json /code/apps/web/package.json
 
-COPY apps/cms/src /code/apps/cms/src
-
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
-      pnpm fetch
+COPY apps/docs/package.json /code/apps/docs/package.json
 
 RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
-     pnpm install -r --offline
+     pnpm install --shamefully-hoist --config.auto-install-peers=true
+
+ADD . .
+
+RUN pnpm build:cms
 
 CMD pnpm dev:cms

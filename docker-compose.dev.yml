@@ -8,6 +8,8 @@ services:
       dockerfile: apps/cms/dockerfile.dev
     volumes:
       - ./apps/cms:/code/apps/cms
+      - /code/apps/cms/node_modules
+      - /code/node_modules
     ports:
       - 9001:9001
     environment:
@@ -21,6 +23,7 @@ services:
       - DATABASE_PASSWORD=postgres
       - DATABASE_SSL=false
       - JWT_SECRET=jwt-secret
+      - PUBLIC_URL=http://cms.localhost
   docs:
     restart: always
     build:
@@ -39,10 +42,14 @@ services:
       dockerfile: apps/web/dockerfile.dev
     volumes:
       - ./apps/web:/code/apps/web
+      - /code/apps/web/node_modules
+      - /code/node_modules
     ports:
       - 9000:9000
     environment:
       - CMS_API=http://host.docker.internal:9001/api
+    extra_hosts:
+      - host.docker.internal:host-gateway
   nginx:
     restart: always
     ports:
