@@ -30,7 +30,9 @@ services:
       context: .
       dockerfile: apps/docs/dockerfile.dev
     volumes:
+      - ./apps/docs:/code/docs/web
       - /code/apps/docs/node_modules
+      - /code/node_modules
     ports:
       - 9002:9002
   web:
