@@ -9,6 +9,7 @@ services:
     volumes:
       - ./apps/cms:/code/apps/cms
       - /code/apps/cms/node_modules
+      - /code/apps/cms/dist
       - /code/node_modules
     ports:
       - 9001:9001

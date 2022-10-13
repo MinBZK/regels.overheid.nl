@@ -19,6 +19,6 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
 
 ADD . .
 
-RUN pnpm build:cms
+RUN PUBLIC_URL="http://cms.localhost" pnpm build:cms
 
 CMD pnpm dev:cms
