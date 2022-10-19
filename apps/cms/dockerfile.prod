@@ -12,6 +12,8 @@ COPY apps/cms/package.json /code/apps/cms/package.json
 
 COPY apps/web/package.json /code/apps/web/package.json
 
+COPY apps/docs/package.json /code/apps/docs/package.json
+
 RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
      pnpm install -r --shamefully-hoist --config.auto-install-peers=true
 
