@@ -8,9 +8,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Documentation',
   tagline: 'regels.overheid.nl - Documentation',
-  url: 'https://docs.regels.overheid.nl',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
+  url: 'http://localhost',
+  baseUrl: process.env.BASE_URL || '/',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 

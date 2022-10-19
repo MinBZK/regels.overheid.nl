@@ -19,9 +19,14 @@ services:
       - 9000:9000
     extra_hosts:
       - host.docker.internal:host-gateway
+  docs:
+    restart: always
+    build:
+      context: .
+      dockerfile: apps/docs/dockerfile.prod
+    ports:
+      - 9002:9002
   nginx:
-    depends_on:
-      - cms
     restart: always
     ports:
       - 80:80
