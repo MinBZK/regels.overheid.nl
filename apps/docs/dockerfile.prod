@@ -21,9 +21,6 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
       
 ADD . .
 
-RUN [ "chmod", "-x", "/code/.docker/wait-for" ]
+RUN BASE_URL="/docs/" pnpm run build:docs
 
-RUN [ "chmod", "775", "/code/.docker/wait-for" ]
-
-
-CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- pnpm prod:web'
+CMD BASE_URL="/docs/" pnpm run start:docs

@@ -16,8 +16,10 @@
     "prod:web": "turbo run prod --scope=web",
     "build:cms": "turbo run build --scope=cms",
     "build:web": "turbo run build --scope=web",
+    "build:docs": "turbo run build --scope=docs",
     "start:cms": "turbo run start --scope=cms",
-    "start:web": "turbo run start --scope=web"
+    "start:web": "turbo run start --scope=web",
+    "start:docs": "turbo run start --scope=docs"
   },
   "repository": {
     "type": "git",
