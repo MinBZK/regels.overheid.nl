@@ -11,7 +11,7 @@ services:
   web:
     restart: always
     environment:
-      - CMS_API=http://host.docker.internal:9001/api
+      - CMS_API=http://cms:9001/api
     build:
       context: .
       dockerfile: apps/web/dockerfile.prod
