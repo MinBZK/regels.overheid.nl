@@ -29,7 +29,7 @@ services:
   nginx:
     restart: always
     ports:
-      - 80:80
+      - 8080:80
     build:
       context: ./apps/nginx
       dockerfile: dockerfile.prod
