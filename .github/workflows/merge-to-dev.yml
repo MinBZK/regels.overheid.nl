@@ -1,0 +1,15 @@
+name: Deploy from dev
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Deploy to Digital Ocean
+        run: doctl compute ssh 318466947 --ssh-command "cd ~/regels.overheid.nl && git pull && docker compose -f docker-compose.prod.yml up -d --build"
