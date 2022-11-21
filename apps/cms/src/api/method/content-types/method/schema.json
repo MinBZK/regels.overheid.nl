@@ -4,7 +4,8 @@
   "info": {
     "singularName": "method",
     "pluralName": "methods",
-    "displayName": "Method"
+    "displayName": "Method",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,15 @@
     }
   },
   "attributes": {
+    "Title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
     "Description": {
       "pluginOptions": {
         "i18n": {
@@ -23,7 +33,7 @@
       },
       "type": "richtext"
     },
-    "Illustration": {
+    "Visual": {
       "allowedTypes": [
         "images",
         "files",
@@ -31,7 +41,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
