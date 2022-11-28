@@ -1,0 +1,4 @@
+.minbzk-theme {
+	--utrecht-article-max-inline-size: calc(2 / 3 * var(--utrecht-page-max-inline-size));
+	--utrecht-page-max-inline-size: 1200px;
+}
