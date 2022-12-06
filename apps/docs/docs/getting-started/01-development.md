@@ -43,3 +43,15 @@ This will start all the development servers.
 ### Granularity
 
 If you wish to run the application seperarly you can do so by running `pnpm dev:cms`, `pnpm dev:web` and `pnpm dev:docs` respectively.
+
+## Frontend
+
+The frontend is being developed using [NextJs](https://nextjs.org/docs/getting-started) and [MDX](https://mdxjs.com/docs/) is enabled.
+
+## Backend/CMS
+
+While there is no real dedicated backend [Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/quick-start.html#_1-install-strapi-and-create-a-new-project) is used to develop the API and allow for content management.
+
+## Docs
+
+Docs are being maintained using [Docusaurus](https://docusaurus.io/docs)
