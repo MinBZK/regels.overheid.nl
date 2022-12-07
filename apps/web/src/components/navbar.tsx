@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Button, CssBaseline, Toolbar, Typography } from '@mui/material';
 import Link from 'next/link';
 
 import { useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ export const Navbar: React.FC = () => {
 
   return (
     <AppBar>
+      <CssBaseline />
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
           Regels

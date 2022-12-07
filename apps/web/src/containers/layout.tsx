@@ -3,11 +3,17 @@ import { Navbar } from '../components/navbar';
 
 export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <>
-      <Navbar />
-      <Box py={9} display="grid" gridTemplateColumns="1fr [main-start] repeat(5, 1fr) [main-end] 1fr">
-        <Box gridArea="main">{children}</Box>
+    <Box
+      rowGap={2}
+      display="grid"
+      gridTemplateRows="64px auto"
+      gridTemplateColumns="repeat(5, 1fr)"
+      gridTemplateAreas="'nav nav nav nav nav' 'left main main main right'"
+    >
+      <Box gridArea="nav">
+        <Navbar />
       </Box>
-    </>
+      <Box gridArea="main">{children}</Box>
+    </Box>
   );
 };
