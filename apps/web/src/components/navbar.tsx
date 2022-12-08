@@ -24,6 +24,10 @@ export const Navbar: React.FC = () => {
               </Link>
             );
           })}
+
+          <Link href={`/methoden`}>
+            <Button sx={{ color: '#fff' }}>Methoden</Button>
+          </Link>
         </Box>
       </Toolbar>
     </AppBar>
