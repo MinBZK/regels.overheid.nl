@@ -7,6 +7,7 @@ interface Props {
   content: string;
 }
 
+// eslint-disable-next-line react/no-children-prop
 const Home: React.FC<Props> = ({ content }) => <ReactMarkdown children={content} components={{ p: Typography }} />;
 
 export const getServerSideProps: GetServerSideProps<Record<string, unknown>, { slug: string }> = async (ctx) => {
