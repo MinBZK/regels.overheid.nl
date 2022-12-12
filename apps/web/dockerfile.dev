@@ -19,4 +19,8 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
 
 ADD . .
 
+ENV CMS_API=http://cms:9001/api
+
+ENV NEXT_PUBLIC_CMS_ROOT_URL=http://cms.localhost/
+
 CMD pnpm dev:web
