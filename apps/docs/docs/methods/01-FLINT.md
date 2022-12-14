@@ -28,7 +28,7 @@ Een handeling is _actie_, die betrekking heeft op een _object_, uitgevoerd door 
 
 Een handeling zonder object of voorwaarden is mogelijk, een handeling zonder actie, actor of resultaat kan niet bestaan. Een handeling kan worden beschreven in een zogenoemd frame, zie onderstaande figuur:
 
-![Pasted image 20221206121413.png](../static/img/Pasted%20image%2020221206121413.png)
+![Pasted image 20221206121413.png](../../static/img/Pasted%20image%2020221206121413.png)
 
 ## Feiten
 
@@ -39,7 +39,7 @@ Een _feit_ is iets dat onder voorwaarden _waar_ is. Dat wil zeggen:
 
 Een ‘feit’ kan worden beschreven in een frame, zie onderstaande figuur:
 
-![Pasted image 20221206174454.png](../static/img/Pasted%20image%2020221206174454.png
+![Pasted image 20221206174454.png](../../static/img/Pasted%20image%2020221206174454.png
 )
 Omdat ieder feit een afleidingsfunctie kan bevatten, kan ieder feit tot in het oneindige in meer detail worden beschreven. Op het moment dat de actor en ontvanger die bij een handeling betrokken zijn, tot overeenstemming zijn gekomen, verdwijnt de behoefte aan verdere detaillering. Als er een meningsverschil ontstaat tussen beiden, kan dat worden opgelost:
 1. door het toevoegen van nieuwe bronnen;
@@ -58,13 +58,13 @@ Een _plicht_ wordt in Flint uitgedrukt als een combinatie van handelingen en fei
 
 Een plicht is een feit (de plicht bestaat omdat hij het gevolg is van een handeling). Voor het frame van een plicht, zie hieronder:
 
-![Pasted image 20221206174553.png](../static/img/Pasted%20image%2020221206174553.png)
+![Pasted image 20221206174553.png](../../static/img/Pasted%20image%2020221206174553.png)
 
 ## Een voorbeeld
 
 Artikel 14, eerste lid aanhef en onder a, Vreemdelingenwet (de brontekst) bevat drie handelingen: het inwilligen, het afwijzen en het niet in behandeling nemen van een aanvraag tot het verlenen van een verblijfsvergunning. Hieronder is het frame van de handeling _inwilligen aanvraag reguliere verblijfsvergunning voor bepaalde tijd_ uitgewerkt.
 
-![Pasted image 20221206120245.png](../static/img/Pasted%20image%2020221206120245.png)
+![Pasted image 20221206120245.png](../../static/img/Pasted%20image%2020221206120245.png)
 
 De actie, de actor en het object van de handeling kunnen worden gevuld. De voorwaarden en de ontvanger ontbreken in deze zin. Om deze elementen van de handeling te kunnen vullen, moet een bron worden gevonden. In dit geval zijn dat respectievelijk [artikel 26, eerste lid](https://wetten.overheid.nl/BWBR0011823/2022-10-01/0#Hoofdstuk3_Afdeling3_Paragraaf5_Artikel26) en [artikel 8 aanhef en onder a](https://wetten.overheid.nl/BWBR0011823/2022-10-01/0#Hoofdstuk3_Afdeling1_Artikel8), Vreemdelingenwet.
 
