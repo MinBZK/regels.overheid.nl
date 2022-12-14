@@ -13,6 +13,12 @@ The fastest way to get up and running is by using docker. Running `pnpm start:de
 - [http://cms.localhost](http://cms.localhost) or localhost:9001 for the cms
 - [http://docs.localhost](http://docs.localhost) or localhost:9002 for the documentation
 
+### Error(s)?
+
+Where `pnmp start:dev` produces errors, an alternative is this route.
+
+First run `COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.dev.yml build` to build. Followed by `docker-compose -f docker-compose.dev.yml up` not using the detached mode. This ensures that you can see the logging in the terminal and that the containers are not running by default
+
 ## Running locally
 
 Keep in mind that if you wish to run the application without docker you will have to provide your own PostgreSQL database.
