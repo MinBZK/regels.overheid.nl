@@ -8,6 +8,8 @@ services:
       - 9001:9001
     env_file:
       - .env
+    volumes:
+      - ./apps/cms/public/uploads:/code/apps/cms/public/uploads
   web:
     restart: always
     build:
