@@ -1,6 +1,6 @@
 ---
 title: FLINT
-description: Getting started - development
+description: Methods - norm engineering
 ---
 
 Flint is een actie-gerichte interpretatiemethode waarin normen worden uitgedrukt als _handelingen_, _feiten_ of _plichten_. Flint is ontwikkeld om alle toestanden en toestandsovergangen waarin normen een rol spelen expliciet te kunnen beschrijven met een referentie naar gebruikte bronnen.
@@ -17,10 +17,10 @@ Flint is een actie-gerichte interpretatiemethode waarin normen worden uitgedrukt
 - Juridische normen gaan over gedrag dat door de staat kunnen worden afgedwongen
 
 # De bouwstenen van Flint
-- [Handelingen](#Handelingen)
-- [Feiten](#Feiten)
-- [Plichten](#Plichten)
-- [Voorbeeld](#Een voorbeeld)
+- Handelingen
+- Feiten
+- Plichten
+- Een voorbeeld
 
 ## Handelingen
 
