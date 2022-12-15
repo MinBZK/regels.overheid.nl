@@ -31,7 +31,7 @@ COPY turbo.json turbo.json
 
 ENV BASE_URL /docs/
 
-RUN yarn turbo run build --filter=@regels-overheid/web...
+RUN yarn turbo run build --filter=@regels-overheid/docs...
 
 # ==== Runner ====
 FROM node:18-alpine AS runner
