@@ -3,9 +3,9 @@ title: Overig opleidingsmateriaal
 description: Method - Agile Law Execution Factory
 ---
 
-## Overig opleidingsmateriaal
+## Inhoud
 
-De opdrachten in de verschillende modules zijn gebaseerd op het volgende algemene materiaal
+De opdrachten in de verschillende modules zijn gebaseerd op het volgende algemene materiaal:
 
 ## Case
 [Wet Treinen Op Korte Afstand 2018](../../static/pdf/WetTreinen2018.pdf)
