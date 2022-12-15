@@ -40,6 +40,9 @@ WORKDIR /app
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 strapi
+RUN mkdir -p public/uploads
+RUN chown -R strapi:nodejs public
+
 USER strapi
 
 COPY --from=builder --chown=strapi:nodejs /app/apps/cms/src ./src

@@ -23,7 +23,7 @@ services:
       - host.docker.internal:host-gateway
     environment:
       - DOPPLER_TOKEN
-      - CMS_API_URL=http://host.docker.internal:9001/api
+      - CMS_API_URL=http://cms:9001/api
   docs:
     restart: always
     build:
