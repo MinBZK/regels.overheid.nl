@@ -12,10 +12,7 @@ const Methoden: React.FC<Props> = ({ methods }) => {
       <Typography variant="h3">Methoden</Typography>
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" columnGap={4} alignItems="flex-start">
         {methods.data?.map((method) => {
-          const mediaURL = new URL(
-            `${method.attributes.Visual?.data.attributes.formats.medium.url}`,
-            process.env.NEXT_PUBLIC_CMS_ROOT_URL
-          );
+          const mediaURL = `${process.env.NEXT_PUBLIC_CMS_ROOT_URL}${method.attributes.Visual?.data.attributes.formats.medium.url}`;
 
           return (
             <Card key={method.id}>
