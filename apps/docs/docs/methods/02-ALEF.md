@@ -7,6 +7,8 @@ description: Method - Agile Law Execution Factory
 
 Agile Law Execution Factory (Alef): een fabriek waarmee software geautomatiseerd wordt gemaakt uit specificaties in RegelSpraak. Alef is gebaseerd op MPS van het Tsjechische bedrijf JetBrains, dat een heel scala aan innovatieve tools maakt, waaronder de zeer bekende Java-ontwikkelomgeving IntelliJ. 
 
+![imageGert](../../static/img/gert-voorafgaand-aan-zijn-presentat-ie-in-gesprek-met-markus-volter.jpg)
+
 ## Features ALEF
 
 ### Modelleren
@@ -56,5 +58,3 @@ Agile Law Execution Factory (Alef): een fabriek waarmee software geautomatiseerd
 ## MDSE
 
 In het competence centre model driven software engineering (MDSE) van de Belastingdienst komt alle technische kennis samen die nodig is om op basis van Jetbrains Meta Programming Systems (MPS) te bouwen aan ALEF. Kijk ook op <a href="https://werken.belastingdienst.nl" target="_blank">werken.belastingdienst.nl</a>
-
-![imageGert](../../static/img/gert-voorafgaand-aan-zijn-presentat-ie-in-gesprek-met-markus-volter.jpg)
