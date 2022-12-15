@@ -1,26 +1,55 @@
-FROM node:16.17.0
+# ==== Builder ====
+FROM node:18-alpine AS builder
 
-WORKDIR /code
+RUN apk add --no-cache libc6-compat
+RUN apk update
 
-RUN corepack enable
+WORKDIR /app
 
-RUN corepack prepare pnpm@latest --activate
+RUN yarn global add turbo
 
-RUN apt-get -q update && apt-get -qy install netcat
+COPY . .
 
-COPY .npmrc pnpm-lock.yaml package.json pnpm-workspace.yaml ./
+RUN turbo prune --scope=@regels-overheid/docs --docker
 
-COPY apps/cms/package.json /code/apps/cms/package.json
+# ==== Installer ====
+FROM node:18-alpine AS installer
 
-COPY apps/web/package.json /code/apps/web/package.json
+RUN apk add --no-cache libc6-compat
+RUN apk update
 
-COPY apps/docs/package.json /code/apps/docs/package.json
+WORKDIR /app
 
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
-     pnpm install -r --shamefully-hoist --config.auto-install-peers=true
-      
-ADD . .
+COPY .gitignore .gitignore
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/yarn.lock ./yarn.lock
 
-RUN BASE_URL="/docs/" pnpm run build:docs
+RUN yarn install
 
-CMD BASE_URL="/docs/" pnpm run start:docs
+COPY --from=builder /app/out/full/ .
+COPY turbo.json turbo.json
+
+ENV BASE_URL /docs/
+
+RUN yarn turbo run build --filter=@regels-overheid/web...
+
+# ==== Runner ====
+FROM node:18-alpine AS runner
+
+WORKDIR /app
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 docusaurus
+
+USER docusaurus
+
+COPY --from=installer --chown=docusaurus:nodejs /app/apps/docs/build ./build
+COPY --from=installer --chown=docusaurus:nodejs /app/apps/docs/package.json .
+COPY --from=installer --chown=docusaurus:nodejs /app/apps/docs/docusaurus.config.js .
+COPY --from=installer --chown=docusaurus:nodejs /app/apps/docs/sidebars.js .
+COPY --from=installer --chown=docusaurus:nodejs /app/node_modules ./node_modules
+COPY --from=installer --chown=docusaurus:nodejs /app/apps/docs/src/css ./src/css
+
+ENV BASE_URL /docs/
+
+CMD yarn start
