@@ -29,4 +29,4 @@ Het opleidingsmateriaal is modulair opgezet rondom de onderwerpen:
 
 Op de pagina's van de modules staat een nadere toelichting op de inhoud. Ook zijn daar de presentaties en de opdrachten te vinden.
 
-De opdrachten zijn gebaseerd op een case van een fictieve wet, Treinen Op Korte Afstand (TOKA). De beschrijving van die case en het ALEF-project dat de basis is voor de opdrachten is te vinden op de pagina Overig opleidingsmateriaal.
+De opdrachten zijn gebaseerd op een case van een fictieve wet, Treinen Op Korte Afstand (TOKA). De beschrijving van die case en het ALEF-project dat de basis is voor de opdrachten is te vinden op de pagina [Overig opleidingsmateriaal](../opleidingsmateriaal/08-overig.md).
