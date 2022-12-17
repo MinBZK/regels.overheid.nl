@@ -7,10 +7,10 @@ services:
       context: .
       dockerfile: apps/cms/dockerfile.dev
     volumes:
-      - ./apps/cms:/code/apps/cms
-      - /code/apps/cms/node_modules
-      - /code/apps/cms/dist
-      - /code/node_modules
+      - ./apps/cms/config:/app/config
+      - ./apps/cms/database:/app/database
+      - ./apps/cms/public:/app/public
+      - ./apps/cms/src:/app/src
     ports:
       - 9001:9001
     environment:
@@ -31,22 +31,19 @@ services:
       context: .
       dockerfile: apps/docs/dockerfile.dev
     volumes:
-      - ./apps/docs:/code/docs/web
-      - /code/apps/docs/node_modules
-      - /code/node_modules
+      - ./apps/docs/src:/app/src
+      - ./apps/docs/docs:/app/docs
+      - ./apps/docs/static:/app/static
+      - ./apps/docs/sidebar.js:/app/sidebar.js
     ports:
       - 9002:9002
   web:
     restart: always
-    depends_on:
-      - cms
     build:
       context: .
       dockerfile: apps/web/dockerfile.dev
     volumes:
-      - ./apps/web:/code/apps/web
-      - /code/apps/web/node_modules
-      - /code/node_modules
+      - ./apps/web/src:/app/src
     ports:
       - 9000:9000
     environment:
