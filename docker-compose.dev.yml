@@ -7,10 +7,10 @@ services:
       context: .
       dockerfile: apps/cms/dockerfile.dev
     volumes:
-      - ./apps/cms/config:/app/config
-      - ./apps/cms/database:/app/database
-      - ./apps/cms/public:/app/public
-      - ./apps/cms/src:/app/src
+      - ./apps/cms/config:/code/apps/cms/config
+      - ./apps/cms/database:/code/apps/cms/database
+      - ./apps/cms/public:/code/apps/cms/public
+      - ./apps/cms/src:/code/apps/cms/src
     ports:
       - 9001:9001
     environment:
@@ -31,10 +31,10 @@ services:
       context: .
       dockerfile: apps/docs/dockerfile.dev
     volumes:
-      - ./apps/docs/src:/app/src
-      - ./apps/docs/docs:/app/docs
-      - ./apps/docs/static:/app/static
-      - ./apps/docs/sidebar.js:/app/sidebar.js
+      - ./apps/docs/src:/code/apps/docs/src
+      - ./apps/docs/docs:/code/apps/docs/docs
+      - ./apps/docs/static:/code/apps/docs/static
+      - ./apps/docs/sidebar.js:/code/apps/docs/sidebar.js
     ports:
       - 9002:9002
   web:
@@ -43,11 +43,11 @@ services:
       context: .
       dockerfile: apps/web/dockerfile.dev
     volumes:
-      - ./apps/web/src:/app/src
+      - ./apps/web/src:/code/apps/web/src
     ports:
       - 9000:9000
     environment:
-      - CMS_API=http://host.docker.internal:9001/api
+      - CMS_API_URL=http://host.docker.internal:9001/api
     extra_hosts:
       - host.docker.internal:host-gateway
   nginx:
