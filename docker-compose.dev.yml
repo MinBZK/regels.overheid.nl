@@ -48,6 +48,7 @@ services:
       - 9000:9000
     environment:
       - CMS_API_URL=http://host.docker.internal:9001/api
+      - NEXT_PUBLIC_CMS_ROOT_URL=http://cms.localhost
     extra_hosts:
       - host.docker.internal:host-gateway
   nginx:
