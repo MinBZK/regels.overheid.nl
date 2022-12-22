@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+const path = require('path');
+
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
@@ -12,10 +13,16 @@ const withMDX = require('@next/mdx')({
   },
 });
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  output: 'standalone',
+  experimental: {
+    outputFileTracingRoot: path.join(__dirname, '../../'),
+    transpilePackages: ['ui'],
+  },
 };
 
 module.exports = withMDX(nextConfig);

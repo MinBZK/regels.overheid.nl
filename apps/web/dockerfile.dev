@@ -1,26 +1,39 @@
-FROM node:16.17.0
+# ==== Base ====
+FROM node:18-alpine as base
+
+RUN apk add --no-cache libc6-compat
+RUN apk update
+RUN yarn global add turbo
+# ==== Builder ====
+FROM base as builder
 
 WORKDIR /code
 
-RUN corepack enable
+COPY . .
 
-RUN corepack prepare pnpm@latest --activate
+RUN turbo prune --scope=@regels-overheid/web --docker
+# ==== Installer ====
+FROM base AS installer
 
-COPY .npmrc pnpm-lock.yaml package.json pnpm-workspace.yaml ./
+WORKDIR /code
 
-COPY apps/cms/package.json /code/apps/cms/package.json
+COPY .gitignore .gitignore
+COPY --from=builder /code/out/json/ .
+COPY --from=builder /code/out/yarn.lock ./yarn.lock
 
-COPY apps/web/package.json /code/apps/web/package.json
+RUN yarn install
+# ==== Runner ====
+FROM base AS runner
 
-COPY apps/docs/package.json /code/apps/docs/package.json
+WORKDIR /code
 
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
-     pnpm install --shamefully-hoist --config.auto-install-peers=true
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 app
 
-ADD . .
+USER app
 
-ENV CMS_API=http://cms:9001/api
+COPY --from=builder --chown=app:nodejs /code/out/yarn.lock ./yarn.lock
+COPY --from=builder --chown=app:nodejs /code/out/full .
+COPY --from=installer --chown=app:nodejs /code/node_modules ./node_modules
 
-ENV NEXT_PUBLIC_CMS_ROOT_URL=http://cms.localhost/
-
-CMD pnpm dev:web
+CMD yarn dev

@@ -1,24 +1,56 @@
-FROM node:16.17.0
+# ==== Base ====
+FROM node:18-alpine AS base
 
-WORKDIR /code
+ARG DOPPLER_TOKEN
 
-RUN corepack enable
+RUN apk add --no-cache libc6-compat
+RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.key' -O /etc/apk/keys/cli@doppler-8004D9FF50437357.rsa.pub && \
+    echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
+    apk add doppler
+RUN apk update
 
-RUN corepack prepare pnpm@latest --activate
 
-COPY .npmrc pnpm-lock.yaml package.json pnpm-workspace.yaml ./
+# ==== Builder ====
+FROM base AS builder
 
-COPY apps/cms/package.json /code/apps/cms/package.json
+WORKDIR /app
+RUN yarn global add turbo
+COPY . .
+RUN turbo prune --scope=@regels-overheid/cms --docker
 
-COPY apps/web/package.json /code/apps/web/package.json
+# ==== Installer ====
+FROM base AS installer
 
-COPY apps/docs/package.json /code/apps/docs/package.json
+WORKDIR /app
 
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
-     pnpm install -r --shamefully-hoist --config.auto-install-peers=true
+COPY .gitignore .gitignore
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/yarn.lock ./yarn.lock
+RUN yarn install
 
-ADD . .
+COPY --from=builder /app/out/full/ .
+COPY turbo.json turbo.json
+ENV DOPPLER_TOKEN=${DOPPLER_TOKEN}
+RUN doppler run -- yarn turbo run build --filter=@regels-overheid/cms...
 
-RUN NODE_ENV=prodcution pnpm build:cms
+# ==== Runner ====
+FROM base AS runner
 
-CMD NODE_ENV=prodcution pnpm start:cms
+WORKDIR /app
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 strapi
+RUN mkdir -p public/uploads
+RUN chown -R strapi:nodejs public
+
+USER strapi
+
+COPY --from=builder --chown=strapi:nodejs /app/apps/cms/src ./src
+COPY --from=builder --chown=strapi:nodejs /app/apps/cms/database ./database
+COPY --from=builder --chown=strapi:nodejs /app/apps/cms/favicon.ico ./favicon.ico
+COPY --from=builder --chown=strapi:nodejs /app/apps/cms/tsconfig.json ./tsconfig.json
+COPY --from=installer --chown=strapi:nodejs /app/apps/cms/dist/ ./dist
+COPY --from=installer --chown=strapi:nodejs /app/apps/cms/package.json .
+COPY --from=installer --chown=strapi:nodejs /app/node_modules ./node_modules
+
+CMD doppler run -- yarn start

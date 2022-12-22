@@ -1,29 +1,45 @@
-FROM node:16.17.0
+FROM node:18-alpine AS builder
 
-WORKDIR /code
+RUN apk add --no-cache libc6-compat
+RUN apk update
 
-RUN corepack enable
+WORKDIR /app
+RUN yarn global add turbo
+COPY . .
+RUN turbo prune --scope=@regels-overheid/web --docker
 
-RUN corepack prepare pnpm@latest --activate
+FROM node:18-alpine AS installer
+RUN apk add --no-cache libc6-compat
+RUN apk update
+WORKDIR /app
 
-RUN apt-get -q update && apt-get -qy install netcat
+COPY .gitignore .gitignore
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/yarn.lock ./yarn.lock
+RUN yarn install
 
-COPY .npmrc pnpm-lock.yaml package.json pnpm-workspace.yaml ./
+COPY --from=builder /app/out/full/ .
+COPY turbo.json turbo.json
+RUN yarn turbo run build --filter=@regels-overheid/web...
 
-COPY apps/cms/package.json /code/apps/cms/package.json
+FROM node:18-alpine AS runner
 
-COPY apps/web/package.json /code/apps/web/package.json
+RUN wget -q -t3 'https://packages.doppler.com/public/cli/rsa.8004D9FF50437357.key' -O /etc/apk/keys/cli@doppler-8004D9FF50437357.rsa.pub && \
+    echo 'https://packages.doppler.com/public/cli/alpine/any-version/main' | tee -a /etc/apk/repositories && \
+    apk add doppler
 
-COPY apps/docs/package.json /code/apps/docs/package.json
+WORKDIR /app
 
-RUN --mount=type=cache,id=pnpm-store,target=/root/.pnpm-store\
-     pnpm install -r --shamefully-hoist --config.auto-install-peers=true
-      
-ADD . .
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+USER nextjs
 
-RUN [ "chmod", "-x", "/code/.docker/wait-for" ]
+COPY --from=installer /app/apps/web/next.config.js .
+COPY --from=installer /app/apps/web/package.json .
 
-RUN [ "chmod", "775", "/code/.docker/wait-for" ]
+COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/standalone ./
+COPY --from=installer --chown=nextjs:nodejs /app/apps/web/.next/static ./apps/web/.next/static
 
+ENV PORT 9000
 
-CMD sh -c '/code/.docker/wait-for -s cms:9001 -t 30 -- pnpm prod:web'
+CMD doppler run -- node apps/web/server.js

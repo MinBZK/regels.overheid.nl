@@ -4,6 +4,9 @@
   "license": "EUROPEAN UNION PUBLIC LICENCE v. 1.2",
   "version": "1.0.0",
   "description": "",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
     "start:dev": "docker-compose -f \"docker-compose.dev.yml\" up --build",
     "start:prod": "docker compose -f \"docker-compose.prod.yml\" up --build",

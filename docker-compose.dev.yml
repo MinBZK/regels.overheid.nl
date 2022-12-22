@@ -7,10 +7,10 @@ services:
       context: .
       dockerfile: apps/cms/dockerfile.dev
     volumes:
-      - ./apps/cms:/code/apps/cms
-      - /code/apps/cms/node_modules
-      - /code/apps/cms/dist
-      - /code/node_modules
+      - ./apps/cms/config:/code/apps/cms/config
+      - ./apps/cms/database:/code/apps/cms/database
+      - ./apps/cms/public:/code/apps/cms/public
+      - ./apps/cms/src:/code/apps/cms/src
     ports:
       - 9001:9001
     environment:
@@ -31,26 +31,24 @@ services:
       context: .
       dockerfile: apps/docs/dockerfile.dev
     volumes:
-      - ./apps/docs:/code/docs/web
-      - /code/apps/docs/node_modules
-      - /code/node_modules
+      - ./apps/docs/src:/code/apps/docs/src
+      - ./apps/docs/docs:/code/apps/docs/docs
+      - ./apps/docs/static:/code/apps/docs/static
+      - ./apps/docs/sidebar.js:/code/apps/docs/sidebar.js
     ports:
       - 9002:9002
   web:
     restart: always
-    depends_on:
-      - cms
     build:
       context: .
       dockerfile: apps/web/dockerfile.dev
     volumes:
-      - ./apps/web:/code/apps/web
-      - /code/apps/web/node_modules
-      - /code/node_modules
+      - ./apps/web/src:/code/apps/web/src
     ports:
       - 9000:9000
     environment:
-      - CMS_API=http://host.docker.internal:9001/api
+      - CMS_API_URL=http://host.docker.internal:9001/api
+      - NEXT_PUBLIC_CMS_ROOT_URL=http://cms.localhost
     extra_hosts:
       - host.docker.internal:host-gateway
   nginx:
