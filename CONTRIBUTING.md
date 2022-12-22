@@ -26,7 +26,7 @@ Never made an open source contribution before? Wondering how contributions work 
 
 ## Where can I go for help?
 
-If you need help, you can ask questions on our Slack [tbd]
+If you need help, you can ask questions on our [Slack](https://praatmee.codefor.nl/), channel #regels-overheid-nl.
 
 ## What does the Code of Conduct mean for me?
 
