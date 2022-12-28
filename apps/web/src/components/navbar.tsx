@@ -1,35 +1,58 @@
-import { AppBar, Box, Button, CssBaseline, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Typography, useTheme } from '@mui/material';
 import Link from 'next/link';
 
 import { useSelector } from 'react-redux';
 import { selectPages } from '../stores/redux/pages/selectors';
+import { Container } from './container';
+
+interface NavbarItemProps extends React.PropsWithChildren {
+  href: string;
+}
+
+const NavbarItem: React.FC<NavbarItemProps> = ({ children, href }) => {
+  const { palette } = useTheme();
+
+  return (
+    <Box
+      px={1}
+      sx={{
+        '&:hover': { background: palette.primary.light, a: { color: palette.common.black } },
+        a: { textDecoration: 'none', color: palette.common.white },
+      }}
+    >
+      <Link href={href}>
+        <Typography component="span" display="flex" alignItems="center" color="inherit" height="100%" fontSize={20}>
+          {children}
+        </Typography>
+      </Link>
+    </Box>
+  );
+};
 
 export const Navbar: React.FC = () => {
   const pages = useSelector(selectPages);
 
   return (
-    <AppBar>
-      <CssBaseline />
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-          Regels
-        </Typography>
-        <Box>
+    <AppBar
+      sx={{ mt: '119px' }}
+      position="relative
+    "
+    >
+      <Container flex={1}>
+        <Box display="flex" alignItems="stretch">
           {pages?.map(({ attributes, id }) => {
             const href = attributes?.slug === 'home' ? '' : attributes?.slug;
 
             return (
-              <Link key={id} href={`/${href}`}>
-                <Button sx={{ color: '#fff' }}>{attributes?.name}</Button>
-              </Link>
+              <NavbarItem key={id} href={`/${href}`}>
+                {attributes?.name}
+              </NavbarItem>
             );
           })}
 
-          <Link href={`/methoden`}>
-            <Button sx={{ color: '#fff' }}>Methoden</Button>
-          </Link>
+          <NavbarItem href="/methoden">Methoden</NavbarItem>
         </Box>
-      </Toolbar>
+      </Container>
     </AppBar>
   );
 };
