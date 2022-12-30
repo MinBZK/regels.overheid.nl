@@ -10,5 +10,5 @@ export const makeTheme = ({ fontFamily }: MakeThemeArgs) =>
   createTheme({
     palette,
     components,
-    typography: { fontFamily },
+    typography: { fontFamily, fontSize: 16 },
   });
