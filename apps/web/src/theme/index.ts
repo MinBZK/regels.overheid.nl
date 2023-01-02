@@ -1,14 +1,10 @@
 import { createTheme } from '@mui/material/styles';
 import { components } from './components';
 import { palette } from './palette';
+import { typography } from './typography';
 
-export interface MakeThemeArgs {
-  fontFamily: string;
-}
-
-export const makeTheme = ({ fontFamily }: MakeThemeArgs) =>
-  createTheme({
-    palette,
-    components,
-    typography: { fontFamily, fontSize: 16 },
-  });
+export const theme = createTheme({
+  palette,
+  components,
+  typography,
+});
