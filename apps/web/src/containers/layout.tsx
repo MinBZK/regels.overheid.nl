@@ -1,19 +1,14 @@
-import { Box } from '@mui/material';
+import { Stack } from '@mui/material';
+import { Container } from '../components/container';
+import { Footer } from '../components/footer';
 import { Navbar } from '../components/navbar';
 
 export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
-    <Box
-      rowGap={2}
-      display="grid"
-      gridTemplateRows="64px auto"
-      gridTemplateColumns="repeat(5, 1fr)"
-      gridTemplateAreas="'nav nav nav nav nav' 'left main main main right'"
-    >
-      <Box gridArea="nav">
-        <Navbar />
-      </Box>
-      <Box gridArea="main">{children}</Box>
-    </Box>
+    <Stack minHeight="100vh" direction="column">
+      <Navbar />
+      <Container pb={5}>{children}</Container>
+      <Footer mt="auto" />
+    </Stack>
   );
 };

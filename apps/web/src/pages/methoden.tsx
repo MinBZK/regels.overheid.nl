@@ -9,10 +9,6 @@ interface Props {
 const Methoden: React.FC<Props> = ({ methods }) => {
   return (
     <Stack spacing={2}>
-      <Typography><i>
-        Deze website heeft nog géén officiele status. Dit is <strong>work in progress</strong>.
-        Heb je vragen of wil je met ons samenwerken? Neem dan contact met <a href="mailto:steven.gort@ictu.nl">Steven Gort</a>.
-      </i></Typography>
       <Typography variant="h3">Methoden</Typography>
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" columnGap={4} alignItems="flex-start">
         {methods.data?.map((method) => {
