@@ -15,6 +15,9 @@ export const Footer: React.FC<BoxProps> = (props) => {
             <Link href="https://github.com/MinBZK/regels.overheid.nl">GitHub</Link>
           </ListItem>
           <ListItem>
+            <Link href="https://regels.dexcat.nl/">Regelregister</Link>
+          </ListItem>
+          <ListItem>
             <Link href="https://regels.overheid.nl/docs">Documentatie</Link>
           </ListItem>
         </List>
