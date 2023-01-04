@@ -11,6 +11,8 @@ const App = ({ Component, pageProps }: AppProps) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Layout>
+        <title>Regelregister van de Nederlandse Overheid</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
         <Component {...pageProps}></Component>
       </Layout>
     </ThemeProvider>

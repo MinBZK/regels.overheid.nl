@@ -4,9 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Regelregister van de Nederlandse Overheid</title>
-        <link rel="icon" type="image/png" href="/public/favicon.ico"></link>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <link rel="icon" type="image/png" href="../public/favicon.ico"></link>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Head>
