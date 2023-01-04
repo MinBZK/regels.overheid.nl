@@ -12,13 +12,13 @@ export const Footer: React.FC<BoxProps> = (props) => {
         <Typography fontWeight="bold">Overige links</Typography>
         <List>
           <ListItem>
-            <Link href="https://github.com/MinBZK/regels.overheid.nl">GitHub</Link>
+            <Link href="https://github.com/MinBZK/regels.overheid.nl" target="_blank">GitHub</Link>
           </ListItem>
           <ListItem>
-            <Link href="https://regels.dexcat.nl/">Regelregister</Link>
+            <Link href="https://regels.dexcat.nl/" target="_blank">Regelregister</Link>
           </ListItem>
           <ListItem>
-            <Link href="https://regels.overheid.nl/docs">Documentatie</Link>
+            <Link href="https://regels.overheid.nl/docs" target="_blank">Documentatie</Link>
           </ListItem>
         </List>
       </Container>
