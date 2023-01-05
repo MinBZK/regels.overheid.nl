@@ -1,5 +1,6 @@
 import { Box, Card, CardContent, CardMedia, Stack, Typography } from '@mui/material';
 import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 import { getMethods, GetMethodsResponse } from '../services/strapi/get-methods';
 
 interface Props {
@@ -9,6 +10,9 @@ interface Props {
 const Methoden: React.FC<Props> = ({ methods }) => {
   return (
     <Stack spacing={2}>
+      <Head>
+        <title>Regelregister van de Nederlandse Overheid - Methoden</title>
+      </Head>
       <Typography variant="h3">Methoden</Typography>
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" columnGap={4} alignItems="flex-start">
         {methods.data?.map((method) => {

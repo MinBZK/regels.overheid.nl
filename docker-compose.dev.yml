@@ -44,6 +44,7 @@ services:
       dockerfile: apps/web/dockerfile.dev
     volumes:
       - ./apps/web/src:/code/apps/web/src
+      - ./apps/web/public:/code/apps/web/public
     ports:
       - 9000:9000
     environment:
