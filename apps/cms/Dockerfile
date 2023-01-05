@@ -1,0 +1,69 @@
+# ==== Base ====
+FROM node:18-alpine as base
+RUN apk update && \
+    apk add --no-cache libc6-compat && \
+    yarn global add turbo
+# ==== Prune project ====
+FROM base as pruned
+
+WORKDIR /project
+COPY . .
+RUN turbo prune --scope=@regels-overheid/cms --docker
+# ==== Install dependencies ====
+FROM base AS install
+
+WORKDIR /project
+
+COPY --from=pruned /project/out/json/ .
+COPY --from=pruned /project/out/yarn.lock ./yarn.lock
+
+RUN yarn install
+# ==== Strapi Dev ====
+FROM base AS dev
+
+WORKDIR /project
+
+ARG UID=1001
+ARG GID=1001
+
+RUN addgroup --system --gid ${GID} app && \
+    adduser --system --uid $UID app
+
+COPY --from=pruned --chown=app:app /project/out/yarn.lock ./yarn.lock
+COPY --from=pruned --chown=app:app /project/out/full .
+COPY --from=install --chown=app:app /project/node_modules ./node_modules
+
+ARG PUBLIC_URL=http://localhost:9001
+ENV PUBLIC_URL ${PUBLIC_URL}
+ENV NODE_ENV development
+
+USER app
+
+RUN yarn build
+EXPOSE 9001
+ENTRYPOINT yarn dev
+
+# ==== Strapi Prod ====
+FROM base AS prod
+
+WORKDIR /project
+
+ARG UID=1001
+ARG GID=1001
+
+RUN addgroup --system --gid ${GID} app && \
+    adduser --system --uid $UID app
+
+COPY --from=pruned --chown=app:app /project/out/yarn.lock ./yarn.lock
+COPY --from=pruned --chown=app:app /project/out/full .
+COPY --from=install --chown=app:app /project/node_modules ./node_modules
+
+ARG PUBLIC_URL=http://localhost:9001
+ENV PUBLIC_URL ${PUBLIC_URL}
+ENV NODE_ENV production
+
+USER app
+
+RUN yarn build
+EXPOSE 9001
+ENTRYPOINT yarn start
