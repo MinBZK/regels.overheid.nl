@@ -8,7 +8,7 @@ export const Container: React.FC<Props> = ({ children, ...rest }) => (
     gridTemplateColumns={['1fr', '1fr repeat(5, 1fr) 1fr']}
     sx={{
       '& > * ': {
-        gridColumn: '2 / 8',
+        gridColumn: '2 / 7',
       },
     }}
     {...rest}
