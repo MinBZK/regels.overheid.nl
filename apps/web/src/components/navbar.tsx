@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Stack } from '@mui/system';
 import { useSelector } from 'react-redux';
-import Logo from '../public/logo.png';
+import Logo from '../assets/logo.png';
 import { selectPages } from '../stores/redux/pages/selectors';
 import { Container } from './container';
 
