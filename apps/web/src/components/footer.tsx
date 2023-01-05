@@ -3,7 +3,7 @@ import { Container } from './container';
 
 export const Footer: React.FC<BoxProps> = (props) => {
   return (
-    <Box sx={{ backgroundColor: 'primary.light', ...props.sx }} minHeight={150} py={10} {...props}>
+    <Box sx={{ backgroundColor: 'primary.light2', ...props.sx }} minHeight={150} py={10} {...props}>
       <Container>
         <Typography mb={2}>
           Deze website heeft nog géén officiele status. Dit is work in progress. Heb je vragen of wil je met ons
