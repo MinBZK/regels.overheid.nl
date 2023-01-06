@@ -1,0 +1,5 @@
+owner: MinBZK
+git-repo: helm.regels.overheid.nl
+package-path: .deploy
+git-base-url: https://api.github.com/
+git-upload-url: https://uploads.github.com/
