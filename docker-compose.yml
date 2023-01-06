@@ -43,19 +43,27 @@ services:
     container_name: regels_docs
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://docs:8080"]
+      test: ["CMD", "curl", "-f", "http://docs:9002"]
       interval: 10s
       timeout: 5s
       retries: 10
       start_period: 10s
+    volumes:
+      - ./apps/docs/docs:/project/apps/docs/docs
+      - ./apps/docs/static:/project/apps/docs/static
+      - ./apps/docs/src:/project/apps/docs/src
     build:
       context: .
       dockerfile: apps/docs/Dockerfile
+      target: dev
+      args:
+        GID: ${GID:-1001}
+        UID: ${UID:-1001}
     environment:
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/docs/
-      - VIRTUAL_DEST=/
-      - VIRTUAL_PORT=8080
+      - VIRTUAL_DEST=/docs/
+      - VIRTUAL_PORT=9002
   web:
     container_name: regels_web
     restart: unless-stopped
