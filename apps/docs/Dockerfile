@@ -17,7 +17,7 @@ WORKDIR /project
 COPY --from=pruned /project/out/json/ .
 COPY --from=pruned /project/out/yarn.lock ./yarn.lock
 RUN yarn install
-COPY --from=pruned --chown=app:nodejs /project/out/full .
+COPY --from=pruned /project/out/full .
 ENV BASE_URL=/docs/
 RUN yarn build
 
