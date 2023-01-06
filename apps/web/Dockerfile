@@ -29,15 +29,15 @@ WORKDIR /project
 ARG UID=1001
 ARG GID=1001
 
-RUN addgroup --system --gid ${GID} app && \
-    adduser --system --uid $UID app
+RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
+    (getent passwd ${UID} || adduser --system --uid ${UID} app)
 
-COPY --from=pruned --chown=app:app /project/out/yarn.lock ./yarn.lock
-COPY --from=pruned --chown=app:app /project/out/full .
-COPY --from=install --chown=app:app /project/node_modules ./node_modules
+COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
+COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
+COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
 
 EXPOSE 9000
 
-USER app
+USER ${UID}
 RUN yarn build
 ENTRYPOINT yarn start
