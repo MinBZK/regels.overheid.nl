@@ -1,0 +1,1 @@
+This branch is automatically built by the Helm Releaser GitHub Action.
