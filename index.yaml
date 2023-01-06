@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  example:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-01-06T11:11:01.386372801Z"
+    description: A Helm chart for Kubernetes
+    digest: d8f5174604f4558536713433b4528fdf26ce8e7fa886c03744ec712c05f048a9
+    name: example
+    type: application
+    urls:
+    - https://github.com/MinBZK/regels.overheid.nl/releases/download/example-0.1.0/example-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-01-06T11:11:01.386377501Z"
