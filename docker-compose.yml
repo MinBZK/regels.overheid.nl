@@ -76,9 +76,13 @@ services:
       timeout: 5s
       retries: 10
       start_period: 10s
+    volumes:
+      - ./apps/web/src:/project/apps/web/src
+      - ./apps/web/public:/project/apps/web/public
     build:
       context: .
       dockerfile: apps/web/Dockerfile
+      target: dev
       args: 
         GID: ${GID:-1001}
         UID: ${UID:-1001}
