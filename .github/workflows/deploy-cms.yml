@@ -1,0 +1,34 @@
+name: Deploy CMS
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "apps/cms/**"
+      - ".github/actions/**"
+      - ".github/workflows/deploy-cms.yml"
+      - "package.json"
+      - "yarn.lock"
+jobs:
+  build-cms-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/build-and-push-docker
+        with:
+          app-name: cms
+          digitalocean-access-token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          build-args: |
+            PUBLIC_URL=https://regels.overheid.nl/cms/
+  deploy-cms-image:
+    runs-on: ubuntu-latest
+    needs: build-cms-image
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/upgrade-helm
+        with:
+          app-name: cms
+          release-name: cms
+          digitalocean-access-token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
+          cluster-id: '${{ secrets.DIGITALOCEAN_PRODUCTION_CLUSTER_ID }}'
+          
