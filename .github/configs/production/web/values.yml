@@ -1,0 +1,19 @@
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - host: regels.overheid.nl
+      paths:
+        - path: /
+          pathType: Prefix
+  tls:
+    - secretName: regels-overheid-nl-tls
+      hosts:
+        - regels.overheid.nl
+imagePullSecrets:
+  - name: regels-overheid-nl
+image:
+  tag: latest
+config: 
+  CMS_API_URL: http://cms:9001/api
+  NEXT_PUBLIC_CMS_ROOT_URL: https://regels.overheid.nl/cms
