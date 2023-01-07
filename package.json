@@ -8,8 +8,8 @@
     "apps/*"
   ],
   "scripts": {
-    "start:dev": "docker-compose -f \"docker-compose.dev.yml\" up --build",
-    "start:prod": "docker compose -f \"docker-compose.prod.yml\" up --build",
+    "start:docker": "docker-compose up --build",
+    "start": "turbo run start --parallel",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --parallel",
     "dev:cms": "turbo run dev --scope=cms",

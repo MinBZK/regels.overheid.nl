@@ -9,6 +9,10 @@
       "dependsOn": ["^dev"],
       "cache": false
     },
+    "start": {
+      "dependsOn": ["^start"],
+      "cache": false
+    },
     "dev:cms": {
       "cache": false
     },
@@ -20,7 +24,6 @@
     },
     "prod": {
       "dependsOn": ["build"]
-    },
-    "start": {}
+    }
   }
 }

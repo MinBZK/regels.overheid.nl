@@ -7,17 +7,42 @@ description: Getting started - development
 
 ## Using Docker compose
 
-The fastest way to get up and running is by using docker. Running `pnpm start:dev` will start the project using the `docker-compose.dev` file this configuration also includes the database. If everything goes correctly nothing else will be required to do and you can visit the following urls.
+The fastest way to get up and running is by using docker. Running `yarn start:docker` will start the project using the `docker-compose` file this configuration also includes the database. If everything goes correctly nothing else will be required to do and you can visit the following urls.
 
-- [http://localhost](http://localhost) or localhost:9000 for the web application
-- [http://cms.localhost](http://cms.localhost) or localhost:9001 for the cms
-- [http://docs.localhost](http://docs.localhost) or localhost:9002 for the documentation
+- [http://localhost](http://localhost) for the web application
+- [http://localhost/cms](http://localhost/cms) for the CMS (Strapi)
+- [http://localhost/docs](http://localhost/docs) for the documentation (Docsaurus)
+
+The reverse proxy runs on port 80. By default, no other services are exposed to the host directly. See below on how to override this behavior and others.
+
+### Overriding User and Group
+
+On Linux / Mac, you may need to override the user and group that the containers run as. To do this, copy `.env.example` to `.env` if you haven't already, and modify `UID` and `GID` respectively to your user and/or group ID. You can find these by running `id` in your terminal.
+
+### Overriding Docker
+
+If you want to override the Docker configuration, you can create a `docker-compose.override.yml` file. This file will be used by docker-compose to override the default configuration. The syntax and options are the same as the default `docker-compose.yml` file. More information can be found in the [docker-compose documentation](https://docs.docker.com/compose/extends/).
+
+
+### Doppler usage
+
+To use Doppler, follow the instructions above on overriding Docker. Add your desired environment variables, for example:    
+```yaml
+cms:
+  environment:
+    - MY_SECRET
+```
+
+Then run docker-compose and Doppler
+```bash
+doppler run -- docker-compose up -d
+```
 
 ### Error(s)?
 
-Where `pnmp start:dev` produces errors, an alternative is this route.
+Where `yarn start:docker` produces errors, an alternative is this route.
 
-First run `COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.dev.yml build` to build. Followed by `docker-compose -f docker-compose.dev.yml up` not using the detached mode. This ensures that you can see the logging in the terminal and that the containers are not running by default
+First run `COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up --build` to build and deploy the project and attach to the ouput. This ensures that you can see the logging in the terminal and that the containers are not running by default. 
 
 ## Running locally
 
