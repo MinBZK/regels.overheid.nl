@@ -1,44 +1,37 @@
 import { Typography } from '@mui/material';
-import { Box } from '@mui/system';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
+import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 import { PageService } from '../services/cms';
 
 interface Props {
+  name: string;
   content: string;
 }
 
-const Home: React.FC<Props> = ({ content }) => (
-  <Box component="main" p={10}>
+const Home: React.FC<Props> = ({ content, name }) => (
+  <>
+    <Head>
+      <title>Regelregister van de Nederlandse Overheid - {name}</title>
+    </Head>
     {/*  eslint-disable-next-line react/no-children-prop */}
     <ReactMarkdown children={content} components={{ p: Typography }} />
-  </Box>
+  </>
 );
 
-export const getStaticProps: GetStaticProps<Record<string, unknown>, { slug: string }> = async (ctx) => {
+export const getServerSideProps: GetServerSideProps<Record<string, unknown>, { slug: string }> = async (ctx) => {
   const { slug = 'home' } = ctx.params || {};
 
   const pageResponse = await PageService.getPagesSlugSlug(slug);
+
+  const name = pageResponse.data?.attributes?.name;
   const content = pageResponse.data?.attributes?.content || '';
 
   return {
     props: {
+      name,
       content,
     },
-  };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const pagesResponse = await PageService.getPages();
-
-  const paths =
-    pagesResponse.data?.map((page) => ({
-      params: { slug: [page.attributes?.slug || ''] },
-    })) || [];
-
-  return {
-    paths,
-    fallback: true,
   };
 };
 
