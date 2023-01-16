@@ -5,6 +5,18 @@ ingress:
       if ($request_uri ~* "^/docs/(.*)") {
         rewrite ^/docs/(.*) /$1 break;
       }
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "server: hide";
+      more_set_headers "X-Content-Type-Options: nosniff";
+      more_set_headers "X-Frame-Options: SAMEORIGIN";
+      more_set_headers "X-Xss-Protection: 1; mode=block";
+      more_set_headers "Referrer-Policy: strict-origin-when-cross-origin";
+      more_set_headers "Content-Security-Policy-Report-Only: default-src 'self' regels.overheid.nl *.regels.overheid.nl; frame-ancestors 'none'";
+      more_set_headers "Strict-Transport-Security: max-age=31536000; includeSubDomains";
+    nginx.ingress.kubernetes.io/server-snippet: |
+      ssl_stapling on;
+      ssl_stapling_verify on;
+      gzip off;
   className: nginx
   hosts:
     - host: regels.overheid.nl

@@ -1,6 +1,20 @@
 ingress:
   enabled: true
   className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "server: hide";
+      more_set_headers "X-Content-Type-Options: nosniff";
+      more_set_headers "X-Frame-Options: SAMEORIGIN";
+      more_set_headers "X-Xss-Protection: 1; mode=block";
+      more_set_headers "Referrer-Policy: strict-origin-when-cross-origin";
+      more_set_headers "Content-Security-Policy-Report-Only: default-src 'self' regels.overheid.nl *.regels.overheid.nl; frame-ancestors 'none'";
+      more_set_headers "Strict-Transport-Security: max-age=31536000; includeSubDomains";
+    nginx.ingress.kubernetes.io/server-snippet: |
+      ssl_stapling on;
+      ssl_stapling_verify on;
+      gzip off;
   hosts:
     - host: regels.overheid.nl
       paths:
@@ -12,8 +26,6 @@ ingress:
         - regels.overheid.nl
 imagePullSecrets:
   - name: regels-overheid-nl
-image:
-  tag: latest
 config: 
   CMS_API_URL: http://cms:9001/api
   NEXT_PUBLIC_CMS_ROOT_URL: https://regels.overheid.nl/cms
