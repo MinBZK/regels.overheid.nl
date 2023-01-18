@@ -12,16 +12,16 @@ const App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ Component, ctx }) => {
-  const pagesResponse = await PageService.getPages();
+// App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ Component, ctx }) => {
+//   const pagesResponse = await PageService.getPages();
 
-  store.dispatch(setPages(pagesResponse.data));
+//   store.dispatch(setPages(pagesResponse.data));
 
-  return {
-    pageProps: {
-      ...(Component.getInitialProps?.({ ...ctx, store }) ?? {}),
-    },
-  };
-});
+//   return {
+//     pageProps: {
+//       ...(Component.getInitialProps?.({ ...ctx, store }) ?? {}),
+//     },
+//   };
+// });
 
 export default wrapper.withRedux(App);
