@@ -52,6 +52,8 @@ services:
       - ./apps/docs/docs:/project/apps/docs/docs
       - ./apps/docs/static:/project/apps/docs/static
       - ./apps/docs/src:/project/apps/docs/src
+    ports:
+      - 9002:9002 # for local development / hot reloading
     build:
       context: .
       dockerfile: apps/docs/Dockerfile
