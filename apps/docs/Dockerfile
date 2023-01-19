@@ -53,6 +53,14 @@ EXPOSE 9002
 ENTRYPOINT yarn dev
 
 # ==== Reverse proxy ====
-FROM nginxinc/nginx-unprivileged:alpine as prod
-COPY --from=build --chown=nginx:nginx /project/apps/docs/build /usr/share/nginx/html
-EXPOSE 8080
+FROM base as prod
+WORKDIR /project
+
+ARG UID=1001
+ARG GID=1001
+
+RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
+    (getent passwd ${UID} || adduser --system --uid ${UID} app)
+COPY --from=build --chown=${UID}:${GID} /project .
+EXPOSE 9002
+ENTRYPOINT yarn start
