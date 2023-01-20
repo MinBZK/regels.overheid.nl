@@ -30,6 +30,7 @@ runs:
       uses: docker/build-push-action@v3
       with:
         context: .
+        target: prod
         file: apps/${{ inputs.app-name }}/Dockerfile
         push: true
         tags: registry.digitalocean.com/regels-overheid-nl/${{ inputs.app-name }}:${{ github.sha }},registry.digitalocean.com/regels-overheid-nl/${{ inputs.app-name }}:latest
