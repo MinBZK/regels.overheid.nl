@@ -1,5 +1,5 @@
 ---
-title: ALEF
+title: Inhoud
 description: Method - Agile Law Execution Factory
 ---
 
@@ -14,19 +14,19 @@ Het opleidingsmateriaal bestaat uit:
 Het opleidingsmateriaal is modulair opgezet rondom de onderwerpen:
 
 - **Regels en gegevens**
-  - [ALEF200 Regels en gegevens - basis](../opleidingsmateriaal/02-ALEF200.md)
-  - [ALEF201 Regels en gegevens - advanced](../opleidingsmateriaal/03-ALEF201.md)
+  - [ALEF200 Regels en gegevens - basis](../ALEF/02-ALEF200.md)
+  - [ALEF201 Regels en gegevens - advanced](../ALEF/03-ALEF201.md)
 
 - **Besturing**
-  - [ALEF210 Besturing](../opleidingsmateriaal/04-ALEF210.md)
+  - [ALEF210 Besturing](../ALEF/04-ALEF210.md)
 
 - **Services**.
-  - [ALEF220 Services](../opleidingsmateriaal/05-ALEF220.md)
+  - [ALEF220 Services](../ALEF/05-ALEF220.md)
 
 - **Testen**
-  - [ALEF300 Testen - basis](../opleidingsmateriaal/06-ALEF300.md)
-  - [ALEF301 Testen - advanced](../opleidingsmateriaal/07-ALEF301.md)
+  - [ALEF300 Testen - basis](../ALEF/06-ALEF300.md)
+  - [ALEF301 Testen - advanced](../ALEF/07-ALEF301.md)
 
 Op de pagina's van de modules staat een nadere toelichting op de inhoud. Ook zijn daar de presentaties en de opdrachten te vinden.
 
-De opdrachten zijn gebaseerd op een case van een fictieve wet, Treinen Op Korte Afstand (TOKA). De beschrijving van die case en het ALEF-project dat de basis is voor de opdrachten is te vinden op de pagina [Overig opleidingsmateriaal](../opleidingsmateriaal/08-overig.md).
+De opdrachten zijn gebaseerd op een case van een fictieve wet, Treinen Op Korte Afstand (TOKA). De beschrijving van die case en het ALEF-project dat de basis is voor de opdrachten is te vinden op de pagina [Overig opleidingsmateriaal](../ALEF/08-overig.md).
