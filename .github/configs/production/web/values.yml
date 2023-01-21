@@ -11,4 +11,3 @@ imagePullSecrets:
   - name: regels-overheid-nl
 config: 
   CMS_API_URL: http://cms:9001/api
-  NEXT_PUBLIC_CMS_ROOT_URL: https://regels.overheid.nl/cms
