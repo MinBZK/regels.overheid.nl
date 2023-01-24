@@ -1,11 +1,18 @@
 import { Box, Card, CardContent, CardMedia, Stack, Typography } from '@mui/material';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import { getMethods, GetMethodsResponse } from '../services/strapi/get-methods';
+import { getMethods, GetMethodsResponse, Method } from '../services/strapi/get-methods';
 
 interface Props {
   methods: GetMethodsResponse;
 }
+
+const getMethodImage = (method: Method) => {
+  const preferred = method.attributes.Visual?.data?.attributes?.formats?.medium;
+  const fallback = method.attributes.Visual?.data?.attributes?.formats?.thumbnail;
+
+  return preferred || fallback;
+};
 
 const Methoden: React.FC<Props> = ({ methods }) => {
   return (
@@ -16,16 +23,18 @@ const Methoden: React.FC<Props> = ({ methods }) => {
       <Typography variant="h3">Methoden</Typography>
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" columnGap={4} alignItems="flex-start">
         {methods.data?.map((method) => {
-          const mediaURL = `${process.env.NEXT_PUBLIC_CMS_ROOT_URL}${method.attributes.Visual?.data.attributes.formats.medium.url}`;
+          const image = getMethodImage(method);
 
           return (
             <Card key={method.id}>
-              <CardMedia
-                component="img"
-                height="300"
-                image={mediaURL.toString()}
-                alt={method.attributes.Visual?.data.attributes.formats.medium.name}
-              />
+              {image && (
+                <CardMedia
+                  component="img"
+                  height="300"
+                  image={`${process.env.NEXT_PUBLIC_CMS_ROOT_URL}${image.url}`}
+                  alt={image.name}
+                />
+              )}
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {method.attributes.Title}
