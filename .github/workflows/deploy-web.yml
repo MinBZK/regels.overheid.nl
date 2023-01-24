@@ -20,6 +20,7 @@ jobs:
           digitalocean-access-token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           build-args: |
             PUBLIC_URL=https://regels.overheid.nl/web/
+            NEXT_PUBLIC_CMS_ROOT_URL=https://regels.overheid.nl/cms
   deploy-web-image:
     runs-on: ubuntu-latest
     needs: build-web-image
