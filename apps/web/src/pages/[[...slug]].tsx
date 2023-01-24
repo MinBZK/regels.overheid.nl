@@ -12,7 +12,7 @@ interface Props {
 const Home: React.FC<Props> = ({ content, name }) => (
   <>
     <Head>
-      <title>Regelregister van de Nederlandse Overheid - {name}</title>
+      <title>{`Regelregister van de Nederlandse Overheid - ${name}`}</title>
     </Head>
     {/*  eslint-disable-next-line react/no-children-prop */}
     <ReactMarkdown children={content} components={{ p: Typography }} />
