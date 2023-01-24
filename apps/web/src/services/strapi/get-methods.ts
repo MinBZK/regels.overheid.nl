@@ -93,7 +93,7 @@ export interface Attributes {
   Visual?: Visual;
 }
 
-export interface Datum {
+export interface Method {
   id: number;
   attributes: Attributes;
 }
@@ -110,7 +110,7 @@ export interface Meta {
 }
 
 export interface GetMethodsResponse {
-  data: Datum[];
+  data: Method[];
   meta: Meta;
 }
 
