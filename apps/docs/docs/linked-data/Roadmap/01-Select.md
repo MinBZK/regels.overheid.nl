@@ -23,7 +23,7 @@ Onderstaande tabel toont een weergave van de minimaal benodigde gegevens voor re
 
 :::info
 
-- We hanteren hier bewust de (inmiddels) achterhaalde link in de registratie van Bereken huurtoeslag. Zie ook [#issue](https://github.com/MinBZK/Algoritmeregister/issues/7)
-- Bij de **Grondslag** van de Akte AI van het Kadaster ontbreekt de link in de registratie.
+- We hanteren hier bewust de (inmiddels) achterhaalde link naar de wettelijke grondslag in de registratie van Bereken huurtoeslag. Zie ook [#issue](https://github.com/MinBZK/Algoritmeregister/issues/7)
+- Bij de Akte AI van het Kadaster komt de link naar de wettelijke grondslag niet voor in de registratie.
 
 :::
