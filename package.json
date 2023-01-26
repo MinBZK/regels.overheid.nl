@@ -4,9 +4,17 @@
   "license": "EUROPEAN UNION PUBLIC LICENCE v. 1.2",
   "version": "1.0.0",
   "description": "",
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "start:dev": "docker compose -f docker-compose.dev.yml up --build",
-    "start:prod": "docker compose -f docker-compose.prod.yml up --build",
+    "start:docker": "docker-compose up --build",
+    "start": "turbo run start --parallel",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --parallel",
     "dev:cms": "turbo run dev --scope=cms",
@@ -35,5 +43,8 @@
     "eslint": "^8.23.1",
     "turbo": "^1.4.5",
     "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "semantic-release": "^19.0.5"
   }
 }

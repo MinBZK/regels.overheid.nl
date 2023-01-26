@@ -1,0 +1,124 @@
+services:
+  cms:
+    container_name: regels_cms
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://cms:9001"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    build:
+      context: .
+      dockerfile: apps/cms/Dockerfile
+      target: dev
+      args: 
+        PUBLIC_URL: http://localhost/cms/
+        GID: ${GID:-1001}
+        UID: ${UID:-1001}
+    volumes:
+      - ./apps/cms/config:/project/apps/cms/config
+      - ./apps/cms/database:/project/apps/cms/database
+      - ./apps/cms/public:/project/apps/cms/public
+      - ./apps/cms/src:/project/apps/cms/src
+    environment:
+      - JWT_SECRET=jwt-secret
+      - ADMIN_JWT_SECRET=admin-jwt-secret
+      - API_TOKEN_SALT=token-salt
+      - APP_KEYS=a,b,c
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_NAME=strapi
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_SSL=false
+      - VIRTUAL_HOST=localhost
+      - VIRTUAL_PATH=/cms/
+      - VIRTUAL_DEST=/
+      - VIRTUAL_PORT=9001
+  docs:
+    container_name: regels_docs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://docs:9002"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    volumes:
+      - ./apps/docs/docs:/project/apps/docs/docs
+      - ./apps/docs/static:/project/apps/docs/static
+      - ./apps/docs/src:/project/apps/docs/src
+    ports:
+      - 9002:9002 # for local development / hot reloading
+    build:
+      context: .
+      dockerfile: apps/docs/Dockerfile
+      target: dev
+      args:
+        GID: ${GID:-1001}
+        UID: ${UID:-1001}
+    environment:
+      - VIRTUAL_HOST=localhost
+      - VIRTUAL_PATH=/docs/
+      - VIRTUAL_DEST=/docs/
+      - VIRTUAL_PORT=9002
+  web:
+    container_name: regels_web
+    restart: unless-stopped
+    depends_on:
+      cms:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://web:9000"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    volumes:
+      - ./apps/web/src:/project/apps/web/src
+      - ./apps/web/public:/project/apps/web/public
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      target: dev
+      args: 
+        GID: ${GID:-1001}
+        UID: ${UID:-1001}
+    environment:
+      - CMS_API_URL=http://cms:9001/api
+      - NEXT_PUBLIC_CMS_ROOT_URL=http://localhost/cms
+      - VIRTUAL_HOST=localhost
+      - VIRTUAL_PATH=/
+      - VIRTUAL_DEST=/
+      - VIRTUAL_PORT=9000
+  postgres:
+    image: postgres:14.5
+    container_name: regels_postgres
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - regels-pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=strapi
+    ports:
+      - 5433:5432
+  nginx:
+    container_name: regels_nginx_proxy
+    image: nginxproxy/nginx-proxy:latest
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+volumes:
+  regels-pgdata:

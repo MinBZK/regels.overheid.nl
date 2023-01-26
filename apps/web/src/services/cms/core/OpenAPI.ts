@@ -19,7 +19,7 @@ export type OpenAPIConfig = {
 };
 
 export const OpenAPI: OpenAPIConfig = {
-  BASE: process.env.CMS_API!,
+  BASE: process.env.CMS_API_URL!,
   VERSION: '1.0.0',
   WITH_CREDENTIALS: false,
   CREDENTIALS: 'include',

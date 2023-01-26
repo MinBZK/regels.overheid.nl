@@ -1,0 +1,15 @@
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      if ($request_uri ~* "^/cms/(.*)") {
+        rewrite ^/cms/(.*) /$1 break;
+      }
+  hosts:
+    - paths:
+        - path: /cms/
+          pathType: Prefix
+imagePullSecrets:
+  - name: regels-overheid-nl
+configSecretName: cms-doppler-config

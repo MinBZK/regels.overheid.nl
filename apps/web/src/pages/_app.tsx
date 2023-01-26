@@ -1,14 +1,19 @@
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { AppProps } from 'next/app';
 import { Layout } from '../containers/layout';
 import { PageService } from '../services/cms';
 import { wrapper } from '../stores/redux';
 import { setPages } from '../stores/redux/pages/slice';
+import { theme } from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout>
+        <Component {...pageProps}></Component>
+      </Layout>
+    </ThemeProvider>
   );
 };
 

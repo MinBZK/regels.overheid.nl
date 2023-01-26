@@ -1,0 +1,13 @@
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+    - paths:
+        - path: /
+          pathType: Prefix
+imagePullSecrets:
+  - name: regels-overheid-nl
+config: 
+  CMS_API_URL: http://cms:9001/api

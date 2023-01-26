@@ -6,8 +6,8 @@
     "dev": "next dev --port 9000",
     "start": "next start --port 9000",
     "build": "next build",
-    "prod": "pnpm start",
-    "fix": "pnpm fix:lint && pnpm fix:prettier",
+    "prod": "yarn start",
+    "fix": "yarn fix:lint && yarn fix:prettier",
     "fix:lint": "eslint src --fix --ext ts,tsx,js,jsx",
     "fix:prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --write --ignore-path ../../.prettierignore",
     "ci:tsc": "echo 'Implement ci:tsc'",
@@ -19,9 +19,13 @@
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/react": "^1.6.22",
     "@mui/material": "^5.10.1",
+    "@next/font": "^13.0.6",
+    "@next/mdx": "^13.0.6",
     "@reduxjs/toolkit": "^1.8.5",
-    "next": "12.2.5",
+    "next": "13.0.6",
     "next-redux-wrapper": "^7.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -31,7 +35,7 @@
   "devDependencies": {
     "@types/node": "^18.7.9",
     "eslint": "8.22.0",
-    "eslint-config-next": "12.2.5",
+    "eslint-config-next": "13.0.6",
     "openapi-typescript-codegen": "^0.23.0",
     "react-redux": "^8.0.2"
   }
