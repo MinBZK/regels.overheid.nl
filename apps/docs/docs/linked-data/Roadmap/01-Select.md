@@ -13,13 +13,13 @@ Voor het voorbeeld hier beschouwen we de volgende 4 registraties in het register
 
 Onderstaande tabel toont een weergave van de minimaal benodigde gegevens voor registratie.
 
-| Gegevens      | UWV                | Ministerie van Financiën | Provincie Zuid-Holland |  Kadaster |
-| ------------- | ------------------ | ------------------------ | ---------------------- | --------- |
-| **Naam**      | Klantapplicatie WW | Berekenen huurtoeslag    | Webapplicatie Impactmonitor Brugopening | Akte AI |
-| **Grondslag** | Niet ingevuld      | [Wet op de huurtoeslag](https://wetten.overheid.nl/BWBR0008659/2022-01-01) | [Besluit van Gedeputeerde Staten](https://lokaleregelgeving.overheid.nl/CVDR431299/1) | Artikel 3, lid 1a Kadasterwet |
-| **Type**      | Regelgebaseerd     | Op regels gebaseerd      | real-time voorspelmodel | Niet ingevuld |
-| **Status**    | In gebruik         | In gebruik               | In productie en het gebruik zit in een pilotfase | Niet ingevuld |
-
+| Gegevens           | Algoritme 1 | Algoritme 2 | Algoritme 3 | Algoritme 4 |
+| :----------------- | :---------- | :---------- | :---------- | :---------- |
+| **Organisatie**    | UWV | Ministerie van Financiën | Provincie Zuid-Holland | Kadaster |
+| **Naam**           | Klantapplicatie WW | Berekenen huurtoeslag | Webapplicatie Impactmonitor Brugopening | Akte AI |
+| **Grondslag**      | Niet ingevuld | [Wet op de huurtoeslag](https://wetten.overheid.nl/BWBR0008659/2022-01-01) | [Besluit van Gedeputeerde Staten](https://lokaleregelgeving.overheid.nl/CVDR431299/1) | Artikel 3, lid 1a Kadasterwet |
+| **Type**           | Regelgebaseerd | Op regels gebaseerd | real-time voorspelmodel | Niet ingevuld |
+| **Status**         | In gebruik | In gebruik | In productie en het gebruik zit in een pilotfase | Niet ingevuld |
 
 :::info
 
