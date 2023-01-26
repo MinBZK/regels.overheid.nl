@@ -15,7 +15,7 @@ Er zijn al veel handleidingen, handboeken, tutorials en best practices beschikba
 
 Voor de Linked Open Data Roadmap stelt [Platform Linked Data Nederland](https://www.pldn.nl/wiki/BoekTNO/stappenplan) de volgende negen stappen voor
 
-1. Selecteer gegevens
+1. [Selecteer gegevens](./Roadmap/01-Select.md)
 2. Bereid de gegevens voor
 3. Modelleer de gegevens
 4. Definieer een naamgevingsschema
