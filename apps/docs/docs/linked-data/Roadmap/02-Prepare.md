@@ -53,6 +53,33 @@ De **Naam** is een vrij veld van het type String. Het mag letters, cijfers, spec
 
 ## Grondslag
 
+Voor de **Grondslag** herleiden we de herkomst(en) uit één of meerdere van de volgende OWMS contenmodellen:
+- [Basis Wetten Bestand](https://standaarden.overheid.nl/bwb)
+- [Decentrale Regelgeving](https://standaarden.overheid.nl/cvdr)
+- [Officiële publicaties](https://standaarden.overheid.nl/op)
+
+### Basiswettenbestand (BWB)
+
+Meer informatie over en documentatie van het BWB is [hier](https://www.overheid.nl/help/wet-en-regelgeving) te vinden.
+
+In het onderdeel Wet- en regelgeving vindt u de verdragen, wetten, ministeriële regelingen, algemene maatregelen van bestuur en andere koninklijke besluiten, regelgeving van zelfstandige bestuursorganen (ZBO's) en de publiekrechtelijke bedrijfsorganisatie (PBO) en de wetten en regels die per 10-10-2010 van kracht zijn geworden voor de BES-eilanden (Bonaire, Sint Eustatius en Saba). Opgenomen zijn de geconsolideerde teksten zoals die op een zeker moment luiden; dat wil zeggen dat alle wijzigingen in de teksten zijn verwerkt. Daarbij wordt informatie geboden over wijzigingshistorie en publicatiebronnen.
+
+BWB volgt voor identificatie van (onderdelen van) wet- en regelgeving de standaard [Juriconnect](https://standaarden.overheid.nl/juriconnect). Het BWB gebruikt Juriconnect versie 1.3.1.
+
+### Centrale Voorziening Decentrale Regelgeving (CVDR)
+
+Decentrale overheden zijn verplicht geconsolideerde teksten van hun algemeen verbindende voorschriften op het internet beschikbaar te stellen. Een geconsolideerde tekst is de tekst van de oorspronkelijke regeling waarin later vastgestelde wijzigingen zijn verwerkt.
+
+Voor het beschikbaar stellen van die teksten is het gebruik van de Centrale Voorziening Decentrale Regelgeving (CVDR) voorgeschreven. Met die applicatie worden regelingen gepubliceerd op een speciale [lokale regelgeving website](https://lokaleregelgeving.overheid.nl/zoeken).
+
+### Officiële publicaties (OP)
+
+OP ("Officiële publicaties") is de XML-standaard om officiële publicaties rechtsgeldig op het internet te plaatsen. Deze XML-standaard wordt gebruikt voor het coderen van de bronbestanden van alle documenten op [officielebekendmakingen.nl](https://www.officielebekendmakingen.nl/). Ook [DROP](https://www.koopoverheid.nl/voor-overheden/gemeenten-provincies-en-waterschappen/drop) gebruikt OP.
+
+### Toepassen
+
+
+
 ## Type
 
 ## Status
