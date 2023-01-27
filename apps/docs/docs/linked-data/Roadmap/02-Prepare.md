@@ -76,12 +76,24 @@ Voor het beschikbaar stellen van die teksten is het gebruik van de Centrale Voor
 
 OP ("Officiële publicaties") is de XML-standaard om officiële publicaties rechtsgeldig op het internet te plaatsen. Deze XML-standaard wordt gebruikt voor het coderen van de bronbestanden van alle documenten op [officielebekendmakingen.nl](https://www.officielebekendmakingen.nl/). Ook [DROP](https://www.koopoverheid.nl/voor-overheden/gemeenten-provincies-en-waterschappen/drop) gebruikt OP.
 
+:::info
+
+Officiële publicaties is nog niet beschouwd op relevantie hieromtrent.
+
+:::
+
 ### Toepassen
 
+Voor de **Grondslag** hanteren we de link(s) mét citeertitel van het Basis Wetten Bestand en/of de directe link(s) van Decentrale Regelgeving.
 
+| Organisatie | Naam | Grondslag |
+| :---------- | :--- | :-------- |
+| UWV | Klantapplicatie WW | [Hoofdstuk II Werkloosheidswet](https://wetten.overheid.nl/jci1.3:c:BWBR0004045&hoofdstuk=II&z=2022-08-02&g=2022-08-02) |
+| Ministerie van Financiën | Berekenen huurtoeslag | [Wet op de huurtoeslag](https://wetten.overheid.nl/jci1.3:c:BWBR0008659&z=2023-01-01&g=2023-01-01) |
+| Zuid-Holland | Webapplicatie Impactmonitor Brugopening | https://lokaleregelgeving.overheid.nl/CVDR431299 |
+| Dienst voor het kadaster en de openbare registers | Akte AI | [artikel 3, eerste lid, van de Kadasterwet](http://wetten.overheid.nl/jci1.3:c:BWBR0004541&hoofdstuk=1&artikel=3&lid=1)
 
 ## Type
 
 ## Status
 
-# Resultaat
