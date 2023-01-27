@@ -5,6 +5,7 @@ description: LOD - Bereid de gegevens voor
 
 In deze stap worden de gegevens van de aanleverende partijen geanalyseerd, gestructureerd, aangevuld en/of gecorrigeerd waar nodig én gedocumenteerd.
 
+
 ## Organisatie
 
 Van organisaties kennen we het [Register van Overheidsorganisaties](https://organisaties.overheid.nl/) en de [Centrale OIN Raadpleegvoorziening](https://portaal.digikoppeling.nl/registers/) van alle uitgegeven openbare Organisatie Identificatienummers (OIN). Organisaties die met of binnen de overheid digitaal informatie willen uitwisselen op basis van de Digikoppeling Standaard kunnen een OIN krijgen. Dit is een uniek identificerend nummer dat gebruikt wordt in de digitale communicatie en onder meer wordt opgenomen in PKIO-certificaten.
@@ -49,7 +50,7 @@ Voor het veld **Organisatie** hanteren we de OWMS-URIs. Die we (later?) vervange
 
 ## Naam
 
-De **Naam** is een vrij veld van het type String. Het mag letters, cijfers, speciale symbolen, zoals % en #, en elk ander afdrukbaar teken bevatten. Maximale lengte: 80 tekens.
+De **Naam** is een vrij veld van het type String dat uniciteit afdwingt op de gegevens die zijn ingevoerd. Het mag letters, cijfers, speciale symbolen, zoals % en #, en elk ander afdrukbaar teken bevatten. Maximale lengte: 80 tekens.
 
 ## Grondslag
 
@@ -91,9 +92,46 @@ Voor de **Grondslag** hanteren we de link(s) mét citeertitel van het Basis Wett
 | UWV | Klantapplicatie WW | [Hoofdstuk II Werkloosheidswet](https://wetten.overheid.nl/jci1.3:c:BWBR0004045&hoofdstuk=II&z=2022-08-02&g=2022-08-02) |
 | Ministerie van Financiën | Berekenen huurtoeslag | [Wet op de huurtoeslag](https://wetten.overheid.nl/jci1.3:c:BWBR0008659&z=2023-01-01&g=2023-01-01) |
 | Zuid-Holland | Webapplicatie Impactmonitor Brugopening | https://lokaleregelgeving.overheid.nl/CVDR431299 |
-| Dienst voor het kadaster en de openbare registers | Akte AI | [artikel 3, eerste lid, van de Kadasterwet](http://wetten.overheid.nl/jci1.3:c:BWBR0004541&hoofdstuk=1&artikel=3&lid=1)
+| Dienst voor het kadaster en de openbare registers | Akte AI | [artikel 3, eerste lid, van de Kadasterwet](http://wetten.overheid.nl/jci1.3:c:BWBR0004541&hoofdstuk=1&artikel=3&lid=1) |
+
 
 ## Type
 
+Het veld **Type** mag niet leeg zijn en we hanteren de volgende waardenlijst:
+
+- regelgebaseerd
+- statistische redenering
+- machine learning
+- kunstmatige intelligentie
+
+Bron: [Intelligent Things >> It's all about machine learning](https://www.linkedin.com/pulse/intelligent-things-its-all-machine-learning-roger-attick)
+
+![Algoritmes-varianten](../../../static/img/algosvarianten.jpeg)
+*Image Credit: Dr. Boris Adryan*
+
+### Toepassen
+
+| Naam | Type |
+| :--- | :--- |
+| Klantapplicatie WW | regelgebaseerd |
+| Berekenen huurtoeslag | regelgebaseerd |
+| Webapplicatie Impactmonitor Brugopening | statistische redenering |
+| Akte AI | machine learning |
+
+
 ## Status
 
+Het veld **Status** mag niet leeg zijn en we hanteren de volgende waardenlijst:
+
+- in gebruik
+- gestopt
+- archief
+- in ontwikkeling
+- pilot
+
+| Naam | Status |
+| :--- | :--- |
+| Klantapplicatie WW | in gebruik |
+| Berekenen huurtoeslag | in gebruik |
+| Webapplicatie Impactmonitor Brugopening | pilot |
+| Akte AI | in gebruik |
