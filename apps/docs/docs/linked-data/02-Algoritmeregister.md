@@ -17,10 +17,10 @@ Voor de Linked Open Data Roadmap stelt [Platform Linked Data Nederland](https://
 
 1. [Selecteer gegevens](./Roadmap/01-Select.md)
 2. [Bereid de gegevens voor](./Roadmap/02-Prepare.md)
-3. Modelleer de gegevens
-4. Definieer een naamgevingsschema
-5. Converteer de gegevens
-6. Organiseer onderhoud & beheer
-7. Voeg metadata toe
-8. Publiceer de gegevens
-9. Koppel de gegevens
+3. [Modelleer de gegevens](./Roadmap/03-Model.md)
+4. [Definieer een naamgevingsschema](./Roadmap/04-Define.md)
+5. [Converteer de gegevens](./Roadmap/05-Convert.md)
+6. [Organiseer onderhoud & beheer](./Roadmap/06-Organize.md)
+7. [Voeg metadata toe](./Roadmap/07-Add.md)
+8. [Publiceer de gegevens](./Roadmap/08-Publish.md)
+9. [Koppel de gegevens](./Roadmap/09-Link.md)
