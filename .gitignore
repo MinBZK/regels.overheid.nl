@@ -142,3 +142,5 @@ next-env.d.ts
 
 # Docker
 docker-compose.override.yml
+
+apps/web/public/publications
