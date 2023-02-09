@@ -2,10 +2,9 @@ import { AppBar, Box, Typography, useTheme } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { usePagesContext } from '@/components/pages-provider';
 import { Stack } from '@mui/system';
-import { useSelector } from 'react-redux';
 import Logo from '../assets/logo.png';
-import { selectPages } from '../stores/redux/pages/selectors';
 import { Container } from './container';
 
 interface NavbarItemProps extends React.PropsWithChildren {
@@ -41,7 +40,7 @@ const NavbarItem: React.FC<NavbarItemProps> = ({ children, href }) => {
 };
 
 export const Navbar: React.FC = () => {
-  const pages = useSelector(selectPages);
+  const { pages } = usePagesContext();
 
   return (
     <Stack>

@@ -1,32 +1,29 @@
+import { PagesContext } from '@/components/pages-provider';
+import { getPages } from '@/services/cms/get-pages';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { AppProps } from 'next/app';
 import { Layout } from '../containers/layout';
-import { PageService } from '../services/cms';
-import { wrapper } from '../stores/redux';
-import { setPages } from '../stores/redux/pages/slice';
 import { theme } from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const { pages, ...componentProps } = pageProps;
+
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Layout>
-        <Component {...pageProps}></Component>
-      </Layout>
-    </ThemeProvider>
+    <PagesContext.Provider value={{ pages }}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Layout>
+          <Component {...componentProps}></Component>
+        </Layout>
+      </ThemeProvider>
+    </PagesContext.Provider>
   );
 };
 
-App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ Component, ctx }) => {
-  const pagesResponse = await PageService.getPages();
+App.getInitialProps = async () => {
+  const pages = await getPages().then((res) => res.data);
 
-  store.dispatch(setPages(pagesResponse.data));
+  return { pageProps: { pages } };
+};
 
-  return {
-    pageProps: {
-      ...(Component.getInitialProps?.({ ...ctx, store }) ?? {}),
-    },
-  };
-});
-
-export default wrapper.withRedux(App);
+export default App;
