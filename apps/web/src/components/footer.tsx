@@ -1,5 +1,5 @@
 import { Box, BoxProps, Link, List, ListItem, Typography } from '@mui/material';
-import { Container } from './container';
+import { Container } from '@/components/container';
 
 export const Footer: React.FC<BoxProps> = (props) => {
   return (

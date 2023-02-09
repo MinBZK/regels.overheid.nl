@@ -1,7 +1,7 @@
+import { getMethods, GetMethodsResponse, Method } from '@/services/cms/get-methods';
 import { Box, Card, CardContent, CardMedia, Stack, Typography } from '@mui/material';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import { getMethods, GetMethodsResponse, Method } from '../services/strapi/get-methods';
 
 interface Props {
   methods: GetMethodsResponse;

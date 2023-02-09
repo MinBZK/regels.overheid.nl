@@ -1,9 +1,9 @@
 import { PagesContext } from '@/components/pages-provider';
+import { Layout } from '@/containers/layout';
 import { getPages } from '@/services/cms/get-pages';
+import { theme } from '@/theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { AppProps } from 'next/app';
-import { Layout } from '../containers/layout';
-import { theme } from '../theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { pages, ...componentProps } = pageProps;
