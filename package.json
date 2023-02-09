@@ -9,9 +9,14 @@
       "main"
     ]
   },
-  "workspaces": [
-    "apps/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "webpack"
+    ]
+  },
   "scripts": {
     "start:docker": "docker-compose up --build",
     "start": "turbo run start --parallel",
