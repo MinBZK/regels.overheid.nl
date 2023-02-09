@@ -1,7 +1,7 @@
+import { Container } from '@/components/container';
+import { Footer } from '@/components/footer';
+import { Navbar } from '@/components/navbar';
 import { Stack } from '@mui/material';
-import { Container } from '../components/container';
-import { Footer } from '../components/footer';
-import { Navbar } from '../components/navbar';
 
 export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
