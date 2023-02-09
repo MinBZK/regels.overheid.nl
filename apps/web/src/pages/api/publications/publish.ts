@@ -1,4 +1,4 @@
-import { strapiDatabase } from '../../../helpers/strapi-database';
+import { strapiDatabase } from '@/helpers/strapi-database';
 import { Octokit } from '@octokit/rest';
 import fs from 'fs/promises';
 import { NextApiRequest, NextApiResponse } from 'next';
