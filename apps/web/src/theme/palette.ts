@@ -30,4 +30,7 @@ export const palette: PaletteOptions = {
     light: '#66B69F',
     lighter: '#E6F3EF',
   },
+  common: {
+    black: '#212427',
+  },
 };
