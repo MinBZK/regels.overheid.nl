@@ -1,4 +1,5 @@
 import { darken, lighten, ThemeOptions } from '@mui/material';
+import { MuiAlert } from './components/mui-alert';
 
 export const components: ThemeOptions['components'] = {
   MuiAppBar: {
@@ -57,4 +58,5 @@ export const components: ThemeOptions['components'] = {
       }),
     },
   },
+  MuiAlert,
 };
