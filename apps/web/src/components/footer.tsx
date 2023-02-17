@@ -1,32 +1,93 @@
-import { Box, BoxProps, Link, List, ListItem, Typography } from '@mui/material';
 import { Container } from '@/components/container';
+import { ExternalLinkIcon } from '@/theme/icons/external-link-icon';
+import { Alert, Box, BoxProps, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
+import Link from 'next/link';
+
+interface ListItemLink {
+  href: string;
+  title: string;
+  blank?: true;
+}
+
+const linkGroups: ListItemLink[][] = [
+  [
+    { title: 'Over deze website', href: '/over' },
+    { title: 'Contact', href: 'mailto:steven.gort@ictu.nl' },
+    { title: 'Github', href: 'https://github.com/MinBZK/regels.overheid.nl', blank: true },
+    { title: 'Regelregister', href: 'https://regels.dexcat.nl/' },
+  ],
+  [
+    { title: 'Documentatie', href: '/docs' },
+    { title: 'Privacy en cookies', href: '#' },
+    { title: 'Toegankelijkheid', href: '#' },
+    { title: 'Sitemap', href: '#' },
+  ],
+  [
+    { title: 'Methoden', href: ' https://regels.overheid.nl/methoden ' },
+    { title: 'Overheid.nl', href: ' https://www.overheid.nl/' },
+    { title: 'Linked Data Overheid', href: ' https://linkeddata.overheid.nl/front/portal/' },
+    { title: 'PUC Open Data', href: ' https://puc.overheid.nl/mijno' },
+  ],
+  [
+    { title: 'MijnOverheid.nl', href: 'https://mijn.overheid.nl/' },
+    { title: 'Rijksoverheid.nl', href: 'https://www.rijksoverheid.nl/', blank: true },
+    { title: 'Ondernemersplein', href: 'https://ondernemersplein.kvk.nl/', blank: true },
+    { title: 'Werkenbijdeoverheid', href: 'https://www.werkenbijdeoverheid.nl/', blank: true },
+  ],
+];
 
 export const Footer: React.FC<BoxProps> = (props) => {
   return (
-    <Box sx={{ backgroundColor: 'primary.lighter', ...props.sx }} minHeight={150} py={10} {...props}>
+    <Box
+      sx={{ backgroundColor: 'primary.lighter', ...props.sx }}
+      borderTop="12px solid"
+      borderColor="primary.light"
+      fontSize={16}
+      {...props}
+    >
       <Container>
-        <Typography mb={2}>
-          Deze website heeft nog géén officiele status. Dit is work in progress. Heb je vragen of wil je met ons
-          samenwerken? Neem dan contact met <Link href="mailto:steven.gort@ictu.nl">Steven Gort</Link>.
-        </Typography>
-        <Typography fontWeight="bold">Overige links</Typography>
-        <List>
-          <ListItem>
-            <Link href="https://github.com/MinBZK/regels.overheid.nl" target="_blank">
-              GitHub
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://regels.dexcat.nl/" target="_blank">
-              Regelregister
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://regels.overheid.nl/docs" target="_blank">
-              Documentatie
-            </Link>
-          </ListItem>
-        </List>
+        <Box
+          display="grid"
+          gridAutoFlow="dense"
+          alignItems="flex-start"
+          columnGap={2}
+          gridTemplateColumns={['100%', '1fr 1fr', '1fr', '340px auto']}
+        >
+          <Box
+            component={Alert}
+            severity="warning"
+            gridColumn={['auto', '2 / 3', 'auto']}
+            width={[, , 664, 'auto']}
+            justifySelf={[, , 'center', null]}
+          >
+            Deze website heeft nog géén officiele status. Dit is work in progress. Heb je vragen of wil je met ons
+            samenwerken? Neem dan contact met Steven Gort.
+          </Box>
+          <Stack gridColumn={['auto', '1 / 2', 'auto']} direction={['column', 'column', 'row']}>
+            {linkGroups.map((links, i) => (
+              <List key={i} dense>
+                {links.map(({ href, title, blank }, j) => {
+                  const isExternal = !href.startsWith('/');
+                  const LinkComponent = isExternal ? 'a' : Link;
+
+                  return (
+                    <ListItem key={j}>
+                      <ListItemIcon sx={{ minWidth: 26 }}>{'>'}</ListItemIcon>
+                      <Typography component={ListItemText} whiteSpace="pre">
+                        <LinkComponent href={href} target={blank && '_blank'}>
+                          <Stack direction="row" alignItems="center" columnGap={2}>
+                            {title}
+                            {blank && <ExternalLinkIcon sx={{ fontSize: 18 }} />}
+                          </Stack>
+                        </LinkComponent>
+                      </Typography>
+                    </ListItem>
+                  );
+                })}
+              </List>
+            ))}
+          </Stack>
+        </Box>
       </Container>
     </Box>
   );
