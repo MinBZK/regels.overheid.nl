@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { theme } from '../src/theme';
 
 export const parameters = {
@@ -18,6 +18,7 @@ export const parameters = {
 export const decorators = [
   (Story) => (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Story />
     </ThemeProvider>
   ),
