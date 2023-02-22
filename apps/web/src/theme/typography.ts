@@ -3,9 +3,9 @@ import local from '@next/font/local';
 
 const localFont = local({
   src: [
-    { path: '../theme/font/ROsanswebtextregular.woff', weight: 'normal' },
-    { path: '../theme/font/ROsanswebtextitalic.woff', weight: 'normal', style: 'italic' },
-    { path: '../theme/font/ROsanswebtextbold.woff', weight: 'bold' },
+    { path: '../../public/font/ROsanswebtextregular.woff', weight: 'normal' },
+    { path: '../../public/font/ROsanswebtextitalic.woff', weight: 'normal', style: 'italic' },
+    { path: '../../public/font/ROsanswebtextbold.woff', weight: 'bold' },
   ],
   fallback: ['Arial', 'Veranda', 'Times New Roman'],
 });
