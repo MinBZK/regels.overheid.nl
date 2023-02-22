@@ -14,7 +14,11 @@
       "apps/*"
     ],
     "nohoist": [
-      "webpack"
+      "webpack",
+      "**storybook**",
+      "@storybook",
+      "**/@storybook",
+      "**/@storybook/**"
     ]
   },
   "scripts": {
