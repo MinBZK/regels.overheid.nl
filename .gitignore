@@ -144,3 +144,5 @@ next-env.d.ts
 docker-compose.override.yml
 
 apps/web/public/publications
+
+storybook-static

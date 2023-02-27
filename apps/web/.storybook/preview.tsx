@@ -1,6 +1,12 @@
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import React from 'react';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import { theme } from '../src/theme';
+
+import { themeConfig } from '../src/theme';
+
+const { typography, ...themeConfigWithoutTypography } = themeConfig;
+const { fontFamily, ...typographyWithoutFontFamily } = typography;
+
+import 'rijksoverheid-fonts/sans';
 
 export const parameters = {
   backgrounds: {
@@ -14,6 +20,14 @@ export const parameters = {
     },
   },
 };
+
+const theme = createTheme({
+  ...themeConfigWithoutTypography,
+  typography: {
+    ...typographyWithoutFontFamily,
+    fontFamily: `Rijksoverheid Sans Web Text`,
+  },
+});
 
 export const decorators = [
   (Story) => (
