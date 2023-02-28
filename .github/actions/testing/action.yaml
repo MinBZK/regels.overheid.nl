@@ -3,41 +3,41 @@ inputs:
   name:
     description: "Name of the document, will also be used as the asset label in the release"
     required: true
-jobs:
-  build-html:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/setup-node@v3
-        with:
-          path: npm
-          node-version: 18
-      - uses: actions/checkout@v3
-      - run: |
-          echo '
-          {
-            "branches": [
-              "main"
-            ],
-            "plugins": [
-              [
-                "@semantic-release/github",
-                {
-                  "assets": [
-                    {
-                      "path": "./output/${{ inputs.name }}.html",
-                      "label": "${{ inputs.name }}"
-                    }
-                  ]
-                }
-              ]
+runs:
+  using: composite
+  steps: 
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        path: npm
+        node-version: 18
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Build document
+      run: |
+        mkdir ./output
+        npx respec --localhost --src index.html --out "./output/${{ inputs.name }}.html"
+    - name: Semantic Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo '
+        {
+          "branches": [
+            "main"
+          ],
+          "plugins": [
+            [
+              "@semantic-release/github",
+              {
+                "assets": [
+                  {
+                    "path": "./output/${{ inputs.name }}.html",
+                    "label": "${{ inputs.name }}"
+                  }
+                ]
+              }
             ]
-          } ' >> .releaserc
-      - name: Build Respec document
-        run: |
-          mkdir ./output
-          npx respec --localhost --src index.html --out "./output/${{ inputs.name }}.html"
-      - name: Make release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npx semantic-release
+          ]
+        } ' >> .releaserc
+        npx semantic-release
