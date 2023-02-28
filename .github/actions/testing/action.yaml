@@ -3,6 +3,9 @@ inputs:
   name:
     description: "Name of the document, will also be used as the asset label in the release"
     required: true
+  pat: 
+    description: "GitHub access token"
+    required: true
 runs:
   using: composite
   steps: 
@@ -14,12 +17,14 @@ runs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build document
+      shell: sh
       run: |
         mkdir ./output
         npx respec --localhost --src index.html --out "./output/${{ inputs.name }}.html"
     - name: Semantic Release
+      shell: sh
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.pat }}
       run: |
         echo '
         {
