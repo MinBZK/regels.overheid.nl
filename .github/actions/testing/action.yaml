@@ -17,12 +17,12 @@ runs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build document
-      shell: sh
+      shell: bash
       run: |
         mkdir ./output
         npx respec --localhost --src index.html --out "./output/${{ inputs.name }}.html"
     - name: Semantic Release
-      shell: sh
+      shell: bash
       env:
         GITHUB_TOKEN: ${{ inputs.pat }}
       run: |
