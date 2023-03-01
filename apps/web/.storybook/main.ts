@@ -10,6 +10,5 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  staticDirs: [{ from: '../src/theme/font', to: '/src/theme/font' }],
 };
 export default config;

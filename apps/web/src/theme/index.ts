@@ -4,9 +4,11 @@ import { components } from './components';
 import { palette } from './palette';
 import { typography } from './typography';
 
-export const theme = createTheme({
+export const themeConfig = {
   palette,
   components,
   typography,
   breakpoints,
-});
+};
+
+export const theme = createTheme(themeConfig);

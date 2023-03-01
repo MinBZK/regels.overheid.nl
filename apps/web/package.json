@@ -8,7 +8,7 @@
     "build": "next build",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build:storybook": "storybook build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -28,6 +28,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.5",
+    "rijksoverheid-fonts": "https://github.com/MinBZK/rijksoverheid-fonts",
     "slugify": "^1.6.5",
     "typescript": "4.9.5"
   },
