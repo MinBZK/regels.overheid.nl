@@ -6,7 +6,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://cms:9001"]
+      test: ['CMD', 'wget', '-qO-', 'http://cms:9001']
       interval: 10s
       timeout: 5s
       retries: 10
@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: apps/cms/Dockerfile
       target: dev
-      args: 
+      args:
         PUBLIC_URL: http://localhost/cms/
         GID: ${GID:-1001}
         UID: ${UID:-1001}
@@ -43,7 +43,7 @@ services:
     container_name: regels_docs
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://docs:9002"]
+      test: ['CMD', 'curl', '-f', 'http://docs:9002']
       interval: 10s
       timeout: 5s
       retries: 10
@@ -73,7 +73,7 @@ services:
       cms:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://web:9000"]
+      test: ['CMD', 'wget', '-qO-', 'http://web:9000']
       interval: 10s
       timeout: 5s
       retries: 10
@@ -85,10 +85,11 @@ services:
       context: .
       dockerfile: apps/web/Dockerfile
       target: dev
-      args: 
+      args:
         GID: ${GID:-1001}
         UID: ${UID:-1001}
     environment:
+      - CMS_DATABASE_URL=postgresql://postgres:postgres@postgres:5432/strapi
       - CMS_API_URL=http://cms:9001/api
       - NEXT_PUBLIC_CMS_ROOT_URL=http://localhost/cms
       - VIRTUAL_HOST=localhost
@@ -100,7 +101,7 @@ services:
     container_name: regels_postgres
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready"]
+      test: ['CMD-SHELL', 'pg_isready']
       interval: 10s
       timeout: 5s
       retries: 5
@@ -117,7 +118,7 @@ services:
     image: nginxproxy/nginx-proxy:latest
     restart: unless-stopped
     ports:
-      - "80:80"
+      - '80:80'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 volumes:
