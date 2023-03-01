@@ -4,6 +4,7 @@ import { getPages } from '@/services/cms/get-pages';
 import { theme } from '@/theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { AppProps } from 'next/app';
+import '@total-typescript/ts-reset';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { pages, ...componentProps } = pageProps;

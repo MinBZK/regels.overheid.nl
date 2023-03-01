@@ -7,7 +7,5 @@ export const commonFetch = async <T>(path: string) => {
 
   const json = await response.json();
 
-  console.log({ url: url.toString(), json });
-
   return json as T;
 };
