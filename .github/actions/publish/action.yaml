@@ -7,6 +7,7 @@ runs:
   using: composite
   steps: 
     - run: echo "::add-mask::${{ inputs.token }}"
+      shell: bash
     - name: Send notify request
       id: request
       uses: fjogeleit/http-request-action@v1
