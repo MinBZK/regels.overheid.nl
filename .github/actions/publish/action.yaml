@@ -6,7 +6,9 @@ inputs:
 runs:
   using: composite
   steps: 
-    - run: echo "::add-mask::${{ inputs.token }}"
+    - run: |
+          local_secret="${{ inputs.token }}"
+          echo "::add-mask::$local_secret"
       shell: bash
     - name: Send notify request
       id: request
