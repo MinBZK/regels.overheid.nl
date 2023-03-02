@@ -7,8 +7,9 @@ runs:
   using: composite
   steps: 
     - run: |
-          local_secret="${{ inputs.token }}"
+          local_secret=${{ inputs.token }}
           echo "::add-mask::$local_secret"
+          echo ${{ toJSON(GITHUB) }}
       shell: bash
     - name: Send notify request
       id: request
