@@ -15,8 +15,8 @@ runs:
     - name: Validate notify response
       env:
         response: fromJson(steps.request.outputs.response)
-      if: ${{ response.ok  != true }}
+      if: env.response.ok != true 
       uses: actions/github-script@v3
       with:
         script: |
-          core.setFailed(${{ repsonse.message }})
+          core.setFailed(${{ env.repsonse.message }})
