@@ -14,7 +14,7 @@ runs:
     - name: Validate notify response
       env:
         response: fromJson(steps.request.outputs.response)
-      if: fromJSON(steps.request.outputs.response).ok != true
+      if: fromJSON(steps.request.outputs.response).ok == true
       uses: actions/github-script@v3
       with:
         script: |
