@@ -12,7 +12,7 @@ runs:
       with:
         url: 'https:/regels.overheid.nl/api/publications/publish&owner=${{ github.repository.owner.name }}&repo=${{ github.repository.name }}&secret=${{ inputs.token }}'
         bearerToken: ${{ inputs.token }} 
-        - name: A/B Check
+          name: A/B Check
     - name: Validate notify response
       env:
         response: fromJson(steps.request.outputs.response)
