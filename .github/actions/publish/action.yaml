@@ -6,11 +6,12 @@ inputs:
 runs:
   using: composite
   steps: 
+    - run: echo "::add-mask::${{ inputs.token }}"
     - name: Send notify request
       id: request
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https:/regels.overheid.nl/api/publications&owner=${{ github.repository.owner.name }}&repo=${{ github.repository.name }}&secret=${{ inputs.token }}'
+        url: 'https:/regels.overheid.nl/api/publications?owner=${{ github.repository.owner.name }}&repo=${{ github.repository.name }}&secret=${{ inputs.token }}'
     - name: Validate notify response
       env:
         response: fromJson(steps.request.outputs.response)
