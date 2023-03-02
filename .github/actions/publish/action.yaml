@@ -1,6 +1,7 @@
 name: Publish Respec document to regels.overheid.nl
 inputs: 
   name: token
+    description: "The secret publication token"
     required: true
 runs:
   using: composite
