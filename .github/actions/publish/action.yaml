@@ -8,7 +8,7 @@ runs:
   steps:
     - name: Send notify request
       id: request
-      uses: fjogeleit/http-request-action@v1
+      uses: fjogeleit/http-request-action@main
       with:
         url: "https://regels.overheid.nl/api/publications?owner=${{ github.event.repository.owner.name }}&repo=${{ github.event.repository.name }}&secret=${{ inputs.token }}"
     # - name: Validate notify response
