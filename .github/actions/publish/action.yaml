@@ -1,6 +1,6 @@
 name: Publish Respec document to regels.overheid.nl
 inputs: 
-  - name: token
+  name: token
     required: true
 runs:
   using: composite
@@ -21,4 +21,4 @@ runs:
       uses: actions/github-script@v3
       with:
         script: |
-        core.setFailed(${{ repsonse.message }})
+          core.setFailed(${{ repsonse.message }})
