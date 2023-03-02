@@ -14,6 +14,7 @@ runs:
     - name: Show Response
       run: |
         echo ${{ steps.request.outputs.response }}
+      shell: bash
 
     # - name: Validate notify response
     #   env:
