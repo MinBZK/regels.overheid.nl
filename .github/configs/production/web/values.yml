@@ -9,5 +9,4 @@ ingress:
           pathType: Prefix
 imagePullSecrets:
   - name: regels-overheid-nl
-config: 
-  CMS_API_URL: http://cms:9001/api
+configSecretName: web-doppler-config
