@@ -9,7 +9,6 @@ runs:
     - run: |
           local_secret=$(${{ inputs.token }})
           echo "::add-mask::$local_secret"
-          echo ${{ toJSON(GITHUB) }}
       shell: bash
     - name: Send notify request
       id: request
