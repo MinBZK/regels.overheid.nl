@@ -2,7 +2,7 @@
 FROM node:18-alpine as base
 
 RUN apk update && \
-    apk add --no-cache libc6-compat && \
+    apk add --no-cache libc6-compat git && \
     yarn global add turbo
     
 # ==== Prune project ====
