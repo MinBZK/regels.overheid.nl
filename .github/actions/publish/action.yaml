@@ -1,7 +1,24 @@
 name: Publish Respec document to regels.overheid.nl
+inputs: 
+  - name: token
+    required: true
 runs:
   using: composite
   steps: 
-    - name: Notify server of new release
+    - name: Send notify request
+      id: request
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: 'https:/regels.overheid.nl/api/publications/publish&owner=${{ github.repository.owner.name }}&repo=${{ github.repository.name }}&secret=${{ inputs.token }}'
+        bearerToken: ${{ inputs.token }} 
+        - name: A/B Check
+    - name: Validate notify response
+      env:
+        response: fromJson(steps.request.outputs.response)
       shell: bash
-      run: echo ${{ toJSON(github) }}
+      run: echo ${{ toJSON(response) }}
+      if: ${{ response.ok }} != true
+      uses: actions/github-script@v3
+      with:
+        script: |
+        core.setFailed(${{ repsonse.message }})
