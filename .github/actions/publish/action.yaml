@@ -15,9 +15,7 @@ runs:
     - name: Validate notify response
       env:
         response: fromJson(steps.request.outputs.response)
-      shell: bash
-      run: echo ${{ toJSON(response) }}
-      if: ${{ response.ok }} != true
+      if: ${{ response.ok  != true }}
       uses: actions/github-script@v3
       with:
         script: |
