@@ -6,10 +6,10 @@ inputs:
 runs:
   using: composite
   steps: 
-    - run: |
-          local_secret=$(${{ inputs.token }})
-          echo "::add-mask::$local_secret"
-      shell: bash
+    # - run: |
+    #       local_secret=$(${{ inputs.token }})
+    #       echo "::add-mask::$local_secret"
+    #   shell: bash
     - name: Send notify request
       id: request
       uses: fjogeleit/http-request-action@v1
