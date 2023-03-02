@@ -7,7 +7,7 @@ runs:
   using: composite
   steps: 
     - run: |
-          local_secret=${{ inputs.token }}
+          local_secret=$(${{ inputs.token }})
           echo "::add-mask::$local_secret"
           echo ${{ toJSON(GITHUB) }}
       shell: bash
@@ -15,7 +15,7 @@ runs:
       id: request
       uses: fjogeleit/http-request-action@v1
       with:
-        url: 'https:/regels.overheid.nl/api/publications?owner=${{ github.repository.owner.name }}&repo=${{ github.repository.name }}&secret=${{ inputs.token }}'
+        url: 'https:/regels.overheid.nl/api/publications?owner=${{ github.event.repository.owner.name }}&repo=${{ github.event.repository.name }}&secret=${{ inputs.token }}'
     - name: Validate notify response
       env:
         response: fromJson(steps.request.outputs.response)
