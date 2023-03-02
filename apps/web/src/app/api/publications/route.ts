@@ -46,7 +46,7 @@ export async function POST(req: Request) {
     await fs
       .access(latestPath)
       .then(() => fs.rm(latestPath))
-      .catch(() => {});
+      .catch(() => null);
 
     const versionNumbersPromises = releases.data.map(async (release) => {
       const [asset] = release.assets;
