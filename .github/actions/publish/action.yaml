@@ -11,6 +11,10 @@ runs:
       uses: fjogeleit/http-request-action@main
       with:
         url: "https://regels.overheid.nl/api/publications?owner=${{ github.event.repository.owner.name }}&repo=${{ github.event.repository.name }}&secret=${{ inputs.token }}"
+    - name: Show Response
+      run: |
+        echo ${{ steps.request.outputs.response }}
+
     # - name: Validate notify response
     #   env:
     #     response: fromJson(steps.request.outputs.response)
