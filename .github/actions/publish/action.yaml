@@ -11,16 +11,11 @@ runs:
       uses: fjogeleit/http-request-action@main
       with:
         url: "https://regels.overheid.nl/api/publications?owner=${{ github.event.repository.owner.name }}&repo=${{ github.event.repository.name }}&secret=${{ inputs.token }}"
-    - name: Show Response
-      run: |
-        echo ${{ steps.request.outputs.response }}
-      shell: bash
-
-    # - name: Validate notify response
-    #   env:
-    #     response: fromJson(steps.request.outputs.response)
-    #   if: env.response.ok != true
-    #   uses: actions/github-script@v3
-    #   with:
-    #     script: |
-    #       core.setFailed(${{ env.repsonse.message }})
+    - name: Validate notify response
+      env:
+        response: fromJson(steps.request.outputs.response)
+      if: fromJSON(steps.request.outputs.response).ok != true
+      uses: actions/github-script@v3
+      with:
+        script: |
+          core.setFailed(${{ steps.request.outputs.response }})
