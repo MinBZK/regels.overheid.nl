@@ -82,7 +82,3 @@ export async function POST(req: Request) {
     return new Response(JSON.stringify({ ok: false, message: e.message }));
   }
 }
-
-export async function GET(req: Request) {
-  return new Response('hello!');
-}
