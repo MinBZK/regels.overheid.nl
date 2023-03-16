@@ -34,4 +34,4 @@ jobs:
           method: 'PUT'
           bearerToken: ${{ secrets.CMS_API_TOKEN }}
           url: 'https://regels.overheid.nl/cms/api/application-metadata'
-          data: '{ "data": { "version": "${{ needs.semantic-release.outputs.new-release-version }}", "versionUpdatedAt": ${{ steps.date.outputs.date }} } }'
+          data: '{ "data": { "version": "${{ needs.semantic-release.outputs.new-release-version }}", "versionUpdatedAt": "${{ steps.date.outputs.date }}" } }'
