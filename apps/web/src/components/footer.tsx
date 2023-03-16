@@ -2,6 +2,7 @@ import { Container } from '@/components/container';
 import { ExternalLinkIcon } from '@/theme/icons/external-link-icon';
 import { Alert, Box, BoxProps, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
+import { useApplicationMetadata } from './application-metadata-provider';
 
 interface ListItemLink {
   href: string;
@@ -37,6 +38,8 @@ const linkGroups: ListItemLink[][] = [
 ];
 
 export const Footer: React.FC<BoxProps> = (props) => {
+  const { version, versionUpdatedAt } = useApplicationMetadata() || {};
+
   return (
     <Box
       sx={{ backgroundColor: 'primary.lighter', ...props.sx }}
@@ -89,6 +92,21 @@ export const Footer: React.FC<BoxProps> = (props) => {
           </Stack>
         </Box>
       </Container>
+      {version && (
+        <Typography textAlign="center" py={1} fontSize={16} color="primary.dark">
+          Onze website is voortdurend in ontwikkeling.{' '}
+          <Typography
+            component="a"
+            color="inherit"
+            fontWeight="bold"
+            fontSize="inherit"
+            href="https://github.com/MinBZK/regels.overheid.nl/releases"
+          >
+            Laatste live-versie v{version}
+          </Typography>{' '}
+          {versionUpdatedAt ? `(${versionUpdatedAt})` : null}
+        </Typography>
+      )}
     </Box>
   );
 };

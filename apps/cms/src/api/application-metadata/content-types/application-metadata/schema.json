@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "application_metadatas",
+  "info": {
+    "singularName": "application-metadata",
+    "pluralName": "application-metadatas",
+    "displayName": "Application metadata",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version": {
+      "type": "string"
+    },
+    "versionUpdatedAt": {
+      "type": "date"
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Alert, AlertTitle } from '@mui/material';
 import { Meta, StoryObj } from '@storybook/react';
 
@@ -19,7 +20,7 @@ type Story = StoryObj<typeof Alert>;
 
 export const Default: Story = {
   args: {
-    severity: 'success',
+    severity: 'warning',
     children: 'This is a info message!',
   },
 };
