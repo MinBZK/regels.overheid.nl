@@ -26,10 +26,7 @@ export const MuiAlert: Components<Theme>['MuiAlert'] = {
         padding: 0,
         fontSize: 20,
         marginRight: theme.spacing(3),
-
-        '&:has(+.MuiAlert-message .MuiAlertTitle-root)': {
-          marginTop: theme.spacing(0.5),
-        },
+        marginTop: theme.spacing(0.5),
       },
     }),
     standardInfo: ({ theme }) => ({
