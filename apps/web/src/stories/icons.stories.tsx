@@ -21,6 +21,20 @@ const component = () => {
 
         const Icon = iconModule[iconName];
 
+        const stroke = [
+          'ArchIcon',
+          'ArrowRightIcon',
+          'MegaphoneIcon',
+          'MenuIcon',
+          'PlusIcon',
+          'RightAngleRulerIcon',
+          'RulerIcon',
+          'ScaleIcon',
+          'ThereforeIcon',
+        ].includes(iconName)
+          ? 'black'
+          : undefined;
+
         return (
           <Box
             key={iconName}
@@ -32,7 +46,7 @@ const component = () => {
             flexDirection="column"
             justifyContent="center"
           >
-            <Icon />
+            <Icon stroke={stroke} />
             <Typography variant="caption">{iconName}</Typography>
           </Box>
         );
