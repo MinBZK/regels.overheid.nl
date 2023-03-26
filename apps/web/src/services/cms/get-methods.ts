@@ -83,14 +83,17 @@ export interface Visual {
   data: Data;
 }
 
+export type Icons = 'arch' | 'megaphone' | 'right-angle-ruler' | 'ruler' | 'scale' | 'therefore';
+
 export interface Attributes {
   Description: string;
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
   locale: string;
   Title: string;
-  Visual?: Visual;
+  Icon: Icons;
+  Href: string | null;
 }
 
 export interface Method {
