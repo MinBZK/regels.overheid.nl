@@ -11,6 +11,7 @@ import 'rijksoverheid-fonts/sans';
 export const parameters = {
   backgrounds: {
     default: 'light',
+    values: [{ name: 'light', value: '#fff' }],
   },
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
