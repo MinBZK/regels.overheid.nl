@@ -1,8 +1,8 @@
 import { Box, BoxProps, useTheme } from '@mui/material';
 
-type Props = React.PropsWithChildren & Omit<BoxProps, 'display' | 'gridTemplateColumns' | 'sx'>;
+type Props = React.PropsWithChildren & Omit<BoxProps, 'display' | 'gridTemplateColumns'>;
 
-export const Container: React.FC<Props> = ({ children, ...rest }) => {
+export const Container: React.FC<Props> = ({ children, sx, ...rest }) => {
   const { spacing } = useTheme();
 
   return (
@@ -17,6 +17,7 @@ export const Container: React.FC<Props> = ({ children, ...rest }) => {
         `${spacing(18)} minmax(auto, 1152px) ${spacing(18)}`,
       ]}
       sx={{
+        ...sx,
         '& > * ': {
           gridColumn: '2 / 3',
         },
