@@ -7,6 +7,7 @@ import { NavbarMobile } from './navbar/navbar-mobile';
 import { usePagesContext } from './pages-provider';
 
 export interface SubComponentProps {
+  pages: Page[];
   isPageActive: (page: Page) => boolean;
 }
 
@@ -19,13 +20,16 @@ export const Navbar: React.FC = () => {
 
     return router.asPath === `/${page.attributes.slug}`;
   };
+
+  const sortedPages = pages.sort((a, b) => (a.attributes.order || 9000) - (b.attributes.order || 9000));
+
   return (
     <>
       <Box display={['block', 'none']}>
-        <NavbarMobile isPageActive={isPageActive} />
+        <NavbarMobile isPageActive={isPageActive} pages={sortedPages} />
       </Box>
       <Box display={['none', 'block']}>
-        <NavbarDesktop isPageActive={isPageActive} />
+        <NavbarDesktop isPageActive={isPageActive} pages={sortedPages} />
       </Box>
     </>
   );
