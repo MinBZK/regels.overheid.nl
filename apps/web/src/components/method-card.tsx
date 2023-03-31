@@ -38,11 +38,9 @@ const iconMap: Record<Icons, React.FC<SvgIconProps<'svg'>>> = {
 };
 
 export const MethodCard: React.FC<Props> = ({ title, href, icon, description, date }) => {
+  const { palette } = useTheme();
   const Icon = icon && iconMap[icon];
   const enhancedDate = new Date(date);
-  const { palette, breakpoints } = useTheme();
-
-  console.log({ breakpoints });
 
   return (
     <Card>
