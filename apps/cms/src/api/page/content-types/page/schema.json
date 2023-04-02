@@ -25,6 +25,14 @@
     },
     "content": {
       "type": "richtext",
+      "required": false
+    },
+    "order": {
+      "type": "integer"
+    },
+    "cmsPage": {
+      "type": "boolean",
+      "default": true,
       "required": true
     }
   }

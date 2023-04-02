@@ -17,6 +17,7 @@ export interface Attributes {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
+  cmsPage: boolean | null;
 }
 
 export const getPageBySlug = async (slug: string) => commonFetch<GetPagesResponse>(`api/pages/slug/${slug}`);

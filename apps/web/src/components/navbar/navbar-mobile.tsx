@@ -1,26 +1,20 @@
 import Logo from '@/assets/logo.png';
-import { Page } from '@/services/cms/get-pages';
 import { MenuIcon } from '@/theme/icons/menu-icon';
 import { Button, Modal, Stack, Typography, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from '../container';
-import { usePagesContext } from '../pages-provider';
+import { SubComponentProps } from '../navbar';
 
-export const NavbarMobile: React.FC = () => {
-  const router = useRouter();
+export const NavbarMobile: React.FC<SubComponentProps> = ({ pages, isPageActive }) => {
   const { palette } = useTheme();
-  const { pages } = usePagesContext();
+  const { asPath } = useRouter();
   const [open, setOpen] = useState(false);
 
-  const isPageActive = (page: Page) => {
-    if (page.attributes.slug === 'home') return router.pathname === '/';
-
-    return router.query.slug === page.attributes.slug;
-  };
+  useEffect(() => setOpen(false), [asPath]);
 
   return (
     <Container borderBottom="8px solid" borderColor="primary.light" pt={0} pb={0} height={94}>
