@@ -12,5 +12,5 @@ jobs:
         with:
           context: .
           target: prod
-          file: apps/web/Dockerfile
+          file: ./apps/web/Dockerfile
           push: false
