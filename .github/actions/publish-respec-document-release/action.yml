@@ -1,0 +1,21 @@
+name: Publish Respec document to regels.overheid.nl
+inputs:
+  token:
+    description: "The secret publication token"
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Send notify request
+      id: request
+      uses: fjogeleit/http-request-action@main
+      with:
+        url: "https://regels.overheid.nl/api/publications?owner=${{ github.event.repository.owner.name }}&repo=${{ github.event.repository.name }}&secret=${{ inputs.token }}"
+    - name: Validate notify response
+      env:
+        response: fromJson(steps.request.outputs.response)
+      if: fromJSON(steps.request.outputs.response).ok != true
+      uses: actions/github-script@v3
+      with:
+        script: |
+          core.setFailed(${{ steps.request.outputs.response }})

@@ -3,10 +3,7 @@ import { makeURL } from './make-url';
 export interface Attributes {
   name: string;
   slug: string;
-  content: string;
-  createdAt: Date;
-  updatedAt: Date;
-  publishedAt: Date;
+  order: number | null;
 }
 
 export interface Page {
@@ -31,7 +28,7 @@ export interface GetPagesResponse {
 }
 
 export const getPages = () => {
-  const url = makeURL('api/pages');
+  const url = makeURL('api/pages?fields[0]=name&fields[1]=slug&fields[2]=order');
 
   return fetch(url).then((res) => res.json() as Promise<GetPagesResponse>);
 };

@@ -1,5 +1,7 @@
-import { getMethods, GetMethodsResponse, Method } from '@/services/cms/get-methods';
-import { Box, Card, CardContent, CardMedia, Stack, Typography } from '@mui/material';
+import { MethodCard } from '@/components/method-card';
+import { PageTitle } from '@/components/page-title';
+import { getMethods, GetMethodsResponse } from '@/services/cms/get-methods';
+import { Box, Stack } from '@mui/material';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
@@ -7,54 +9,41 @@ interface Props {
   methods: GetMethodsResponse;
 }
 
-const getMethodImage = (method: Method) => {
-  const preferred = method.attributes.Visual?.data?.attributes?.formats?.medium;
-  const fallback = method.attributes.Visual?.data?.attributes?.formats?.thumbnail;
-
-  return preferred || fallback;
-};
-
-const Methoden: React.FC<Props> = ({ methods }) => {
-  return (
+const Methoden: React.FC<Props> = ({ methods }) => (
+  <>
+    <Head>
+      <title>Regelregister van de Nederlandse Overheid - Methoden</title>
+    </Head>
+    <PageTitle>Methoden</PageTitle>
     <Stack spacing={2}>
-      <Head>
-        <title>Regelregister van de Nederlandse Overheid - Methoden</title>
-      </Head>
-      <Typography variant="h3">Methoden</Typography>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" columnGap={4} alignItems="flex-start">
+      <Box
+        display="grid"
+        gridTemplateColumns={['100%', '1fr 1fr', '100%', 'repeat(3, 1fr)']}
+        columnGap={4}
+        rowGap={[2, 5, 4, 4]}
+        alignItems="flex-start"
+      >
         {methods.data?.map((method) => {
-          const image = getMethodImage(method);
-
           return (
-            <Card key={method.id}>
-              {image && (
-                <CardMedia
-                  component="img"
-                  height="300"
-                  image={`${process.env.NEXT_PUBLIC_CMS_ROOT_URL}${image.url}`}
-                  alt={image.name}
-                />
-              )}
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {method.attributes.Title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {method.attributes.Description}
-                </Typography>
-              </CardContent>
-            </Card>
+            <MethodCard
+              key={method.id}
+              href={method.attributes.Href}
+              icon={method.attributes.Icon}
+              title={method.attributes.Title}
+              description={method.attributes.Description}
+              date={method.attributes.updatedAt || method.attributes.createdAt}
+            />
           );
         })}
       </Box>
     </Stack>
-  );
-};
+  </>
+);
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   return {
     props: {
-      methods: await getMethods({ includeVisual: true }),
+      methods: await getMethods({ includeVisual: false }),
     },
   };
 };

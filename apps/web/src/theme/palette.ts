@@ -11,6 +11,7 @@ export const palette: PaletteOptions = {
     dark: '#007BC0',
     main: '#B2D7EA',
     light: '#E5F1F9',
+    contrastText: '#FFFFFF',
   },
   warning: {
     dark: '#E17000',
@@ -30,7 +31,14 @@ export const palette: PaletteOptions = {
     light: '#66B69F',
     lighter: '#E6F3EF',
   },
+  grey: {
+    '100': '#4D5052',
+    '200': '#7A7C7D',
+    '300': '#A6A7A9',
+    '400': '#D3D3D4',
+  },
   common: {
     black: '#212427',
+    white: '#FFFFFF',
   },
 };

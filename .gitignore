@@ -143,4 +143,7 @@ next-env.d.ts
 # Docker
 docker-compose.override.yml
 
-apps/web/public/publications
+apps/web/public/public/publications
+!apps/web/public/public/publications/.gitkeep
+
+storybook-static

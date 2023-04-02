@@ -33,20 +33,29 @@
       },
       "type": "richtext"
     },
-    "Visual": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false,
+    "Icon": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "enumeration",
+      "enum": [
+        "arch",
+        "megaphone",
+        "right-angle-ruler",
+        "ruler",
+        "scale",
+        "therefore"
+      ]
+    },
+    "Href": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
