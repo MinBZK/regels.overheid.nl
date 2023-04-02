@@ -1,0 +1,16 @@
+name: Validate pull request
+
+on:
+  pull_request:
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Build (Docker)
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          target: prod
+          file: apps/web/Dockerfile
+          push: false
