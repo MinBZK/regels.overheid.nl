@@ -18,6 +18,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { Stack } from '@mui/system';
+import Link from 'next/link';
 import { ArchIcon } from '../theme/icons/arch-icon';
 
 interface Props {
@@ -87,7 +88,12 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
                   })}
                 </Typography>
                 {href && (
-                  <Button endIcon={<ArrowRightIcon stroke={palette.common.white} />} variant="contained">
+                  <Button
+                    href={href}
+                    variant="contained"
+                    LinkComponent={Link}
+                    endIcon={<ArrowRightIcon stroke={palette.common.white} />}
+                  >
                     Lees meer
                   </Button>
                 )}
