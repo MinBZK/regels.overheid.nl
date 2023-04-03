@@ -1,10 +1,23 @@
-name: Validate pull request
+name: Validate pull request (web)
 
 on:
   pull_request:
 
 jobs:
-  deploy-preview:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: onursagir/regels.overheid.nl/run-workspace-script
+  typecheck:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: onursagir/regels.overheid.nl/run-workspace-script
+  stylecheck:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: onursagir/regels.overheid.nl/run-workspace-script
+  build:
+    needs: [lint, typecheck, stylecheck]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3

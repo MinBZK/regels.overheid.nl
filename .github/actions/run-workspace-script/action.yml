@@ -1,0 +1,16 @@
+name: "Run workspace script"
+inputs:
+  workspace:
+    required: true
+  script:
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+        with:
+          cache: yarn
+          node-version: 18
+    - run: yarn workspace ${{ inputs.workspace }} run {{ inputs.script }}
+      shell: bash
