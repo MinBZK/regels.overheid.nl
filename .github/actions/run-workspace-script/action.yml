@@ -12,5 +12,5 @@ runs:
       with:
         cache: yarn
         node-version: 18
-    - run: yarn workspace ${{ inputs.workspace }} run {{ inputs.script }}
+    - run: yarn workspace ${{ inputs.workspace }} run ${{ inputs.script }}
       shell: bash
