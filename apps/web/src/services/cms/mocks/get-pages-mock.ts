@@ -7,6 +7,7 @@ export const getPagesMock: GetPagesResponse = {
       attributes: {
         name: 'Home',
         slug: 'home',
+        order: 1,
       },
     },
     {
@@ -14,6 +15,7 @@ export const getPagesMock: GetPagesResponse = {
       attributes: {
         name: 'Over',
         slug: 'over',
+        order: 2,
       },
     },
     {
@@ -21,6 +23,7 @@ export const getPagesMock: GetPagesResponse = {
       attributes: {
         name: 'Roadmap',
         slug: 'roadmap',
+        order: 3,
       },
     },
     {
@@ -28,6 +31,7 @@ export const getPagesMock: GetPagesResponse = {
       attributes: {
         name: 'Methoden',
         slug: 'methoden',
+        order: 4,
       },
     },
     {
@@ -35,6 +39,7 @@ export const getPagesMock: GetPagesResponse = {
       attributes: {
         name: 'Regels',
         slug: 'regels',
+        order: 5,
       },
     },
   ],

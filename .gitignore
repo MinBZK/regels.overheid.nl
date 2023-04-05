@@ -147,3 +147,5 @@ apps/web/public/public/publications
 !apps/web/public/public/publications/.gitkeep
 
 storybook-static
+
+apps/web/.vscode/settings.json
