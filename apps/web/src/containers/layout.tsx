@@ -7,7 +7,9 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <Stack minHeight="100vh" direction="column">
       <Navbar />
-      <Container pb={5}>{children}</Container>
+      <Container pb={5} overflow="hidden">
+        {children}
+      </Container>
       <Footer mt="auto" />
     </Stack>
   );
