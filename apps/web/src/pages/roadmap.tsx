@@ -7,6 +7,7 @@ import { GithubIcon } from '@/theme/icons/github-icon';
 import { LicenseIcon } from '@/theme/icons/license-icon';
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
+import { GetServerSideProps } from 'next';
 import { useEffect, useRef, useState } from 'react';
 
 const Roadmap = () => {
@@ -78,6 +79,12 @@ const Roadmap = () => {
       </Stack>
     </Stack>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {},
+  };
 };
 
 export default Roadmap;
