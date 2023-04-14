@@ -1,3 +1,6 @@
+/**
+* Comment here
+*/
 import { ComponentsIcon } from '@/theme/icons/components-icon';
 import { GavelIcon } from '@/theme/icons/gavel-icon';
 import { GithubIcon } from '@/theme/icons/github-icon';
