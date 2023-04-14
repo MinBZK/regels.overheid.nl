@@ -51,7 +51,7 @@ export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
       <>
         Migratie <a href="https://regelbeheer.pleio.nl/">regelbeheer.pleio.nl</a>
       </>,
-    ]
+    ],
   ],
   [
     ['content management', 'Redactie proces op basis van governance structuur'],
