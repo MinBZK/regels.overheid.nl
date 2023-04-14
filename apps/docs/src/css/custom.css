@@ -36,13 +36,13 @@
 
 :root {
   --ifm-font-family-base: "RO Sans", sans-serif;
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #01689b;
+  --ifm-color-primary-dark: #007bc7;
+  --ifm-color-primary-darker: #007bc7;
+  --ifm-color-primary-darkest: #01689b;
+  --ifm-color-primary-light: #8fcae7;
+  --ifm-color-primary-lighter: #b3d7ee;
+  --ifm-color-primary-lightest: #d9ebf7;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
