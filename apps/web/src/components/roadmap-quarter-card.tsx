@@ -2,11 +2,12 @@ import { ComponentsIcon } from '@/theme/icons/components-icon';
 import { GavelIcon } from '@/theme/icons/gavel-icon';
 import { GithubIcon } from '@/theme/icons/github-icon';
 import { LicenseIcon } from '@/theme/icons/license-icon';
+import { ThereforeIcon } from '@/theme/icons/therefore-icon';
 import { Box, Collapse, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Stack } from '@mui/system';
 import { useMemo, useState } from 'react';
 
-type Icons = 'devops' | 'design' | 'content management' | 'legal';
+type Icons = 'devops' | 'linked data' | 'design' | 'content management' | 'legal';
 
 export interface RoadmapQuarterCardProps {
   quarter: number;
@@ -19,6 +20,8 @@ const IconMapping = (icon: Icons) => {
   switch (icon) {
     case 'devops':
       return <GithubIcon stroke={palette.warning.dark} />;
+    case 'linked data':
+      return <ThereforeIcon stroke={palette.warning.dark} />;
     case 'design':
       return <ComponentsIcon stroke={palette.warning.dark} />;
     case 'content management':

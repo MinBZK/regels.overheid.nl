@@ -4,6 +4,7 @@ import { roadmapQuarterCardsItems } from '@/components/roadmap-quarter-card/road
 import { ComponentsIcon } from '@/theme/icons/components-icon';
 import { GavelIcon } from '@/theme/icons/gavel-icon';
 import { GithubIcon } from '@/theme/icons/github-icon';
+import { ThereforeIcon } from '@/theme/icons/therefore-icon';
 import { LicenseIcon } from '@/theme/icons/license-icon';
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
@@ -47,6 +48,10 @@ const Roadmap = () => {
           <Stack direction="row" columnGap={1}>
             <LicenseIcon stroke={palette.primary.dark} />
             <Typography color="primary.dark">Content management</Typography>
+          </Stack>
+          <Stack direction="row" columnGap={1}>
+            <ThereforeIcon stroke={palette.primary.dark} />
+            <Typography color="primary.dark">Linked Data</Typography>
           </Stack>
           <Stack direction="row" columnGap={1}>
             <GithubIcon stroke={palette.primary.dark} />
