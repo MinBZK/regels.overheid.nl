@@ -16,6 +16,12 @@ export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
       </>,
     ],
     ['design', 'Uitwerking Design System met design tokens & annotaties'],
+    [
+      'linked data',
+      <>
+        XML import <a href="https://linkeddata.overheid.nl/front/portal/">LiDO</a>
+      </>,
+    ],
     ['devops', 'Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)'],
     ['devops', 'Definitieve cloud architectuur'],
     [
@@ -32,6 +38,7 @@ export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
     ],
   ],
   [
+    ['linked data', 'Apache Jena Fuseki SPARQL server'],
     [
       'content management',
       <>
