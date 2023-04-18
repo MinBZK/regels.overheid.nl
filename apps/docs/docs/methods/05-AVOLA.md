@@ -3,7 +3,7 @@ title: Avola
 description: Method - Avola
 ---
 
-Avola is een platform waarmee regels binnen een organisatie op een gestandaardiseerde wijze vertaald kunnen worden naar een toetsbaar beslismodel. 
+[Avola](https://avola-decision.com/) is een platform waarmee regels binnen een organisatie op een gestandaardiseerde wijze vertaald kunnen worden naar een toetsbaar beslismodel. 
 Modellen zijn eenvoudig aanroepbaar door andere applicaties zodat de regels automatisch kunnen worden getoetst. 
 
 Er wordt gebruik gemaakt van de bekende DMN-standaard om logica van regels vast te leggen in beslistabellen die het model vormen.
@@ -30,3 +30,30 @@ Een gemeente vraagt om een beslismodel van de regels voor wel/niet recht op alge
 Op basis hiervan wordt een beslismodel opgesteld. 
 2. Het beslismodel wordt vervolgens doorlopen met de medewerkers, testscenario’s worden ingevuld en de uitkomsten worden gebruikt om het beslismodel aan te passen.
 3. Zodra de testscenario’s correct zijn doorlopen en er een akkoord is van de medewerkers wordt het beslismodel geïmplementeerd en aangeroepen door een applicatie.
+
+# Functies
+### Modelleren
+- Gebruikersvriendelijke beslistabel voor weergave en bewerken
+- Visuele weergave beslisboom/beslismodel
+- Onderhoudsvriendelijke versionering functionaliteit
+- Uitgebreide mogelijkheden voor het opstellen van een hiërarchische datastructuur
+
+### Testen
+- Testscenario's via Avola platform
+- Import test scenario's via Excel
+- Test verschillende versies van een beslismodel
+
+### Implementatie en API
+- Eenvoudig te gebruiken REST API
+- Uitgebreide documentatie voor gebruik
+- Test API en Productie API
+
+### Inzicht en analyse
+- Executies traceerbaar en inzichtelijk
+- Regelanalyse
+- BI export
+
+### Security
+- ISAE 3402 Certificering
+- Configureerbare approval-flow
+- Diverse rechten en rollen instelbaar per gebruiker
