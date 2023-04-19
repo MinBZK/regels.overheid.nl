@@ -1,0 +1,32 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+#
+# MinBZK regels.overheid.nl security.txt
+#
+
+Expires: 2023-12-01T23:00:01+00:00
+
+# If you would like to report a security issue please first read our
+# responsible disclosure policy:
+Policy: https://english.ncsc.nl/publications/publications/2019/juni/01/coordinated-vulnerability-disclosure-the-guideline
+
+# Please always try to contact us through our responsible disclosure form
+The information on https://www.ncsc.nl/contact/kwetsbaarheid-melden is authoritative
+
+# We can offer you a swift and proper response in the following languages:
+Preferred-Languages: nl, en
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEu1FMcJcezwkT6Vx0y/amuXqDAdQFAmPOT84ACgkQy/amuXqD
+AdSICQv/VnT6ZHW1sG0fPmP/BOI6UpZi+BfWFbcNroWuZ8IK1Iu9JQvxvkEmile1
+2fMfqpa9xEcTOoA0Bzjx8bXcOc2bRUc2wJnGjskg9+6+Woj+z721qWnRcWrnm+dS
+0n4X1aXlgLW3ATprlLaCYAjtR4s2tf8+XTghle3gyz/53BAwbf5vaC5ddfsHUMPc
+fZeo1grTJRaMOhsZQSZEZEp86U0zwFTOGNjjQEY8hBewfIe0bC2ra/hjkBCj9/hV
+Di8OJjWkZfqVaprX417q2E3AT1p66N1QrC2HsMS1ZKHf/dZBiCvIyNo4fD5ljL8w
+N98y0hqGIwgx5io2vX7n1UXxLUyCSnYmNLoXkErMKWaCPZABoAEhE7UOLiXB4XTq
+3cNRaqVXZQq9U5qN2spyqJtbZ9lFruk91Ij72TtQjAXqCsalsVQEJ3Jc0RaE4ATG
+tPnJPPl6+6KGrurwcBSEOOFmJB4XmmeZ3YOPBiHQhblvX5vxgrbRcdDnQrzAWKWM
+c04F0F3Z
+=zqk2
+-----END PGP SIGNATURE-----
