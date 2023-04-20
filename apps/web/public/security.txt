@@ -4,8 +4,10 @@ Hash: SHA512
 #
 # MinBZK regels.overheid.nl security.txt
 #
-
-Expires: 2023-12-01T23:00:01+00:00
+Contact: mailto:steven.gort@ictu.nl
+Expires: 2024-05-01T11:00:00.000Z
+Encryption: openpgp4fpr:BB514C70971ECF0913E95C74CBF6A6B97A8301D4
+Canonical: https://regels.overheid.nl/.well-known/security.txt
 
 # If you would like to report a security issue please first read our
 # responsible disclosure policy:
