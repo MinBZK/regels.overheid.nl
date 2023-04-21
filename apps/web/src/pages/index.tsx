@@ -23,9 +23,11 @@ const Home: React.FC<Props> = ({ name, content }) => {
 
 export const getServerSideProps: GetServerSideProps<Record<string, unknown>, { slug: string }> = async (ctx) => {
   const { slug = 'home' } = ctx.params || {};
-  const page = await getPageBySlug(slug).then((res) => res.data.attributes);
+  const page = await getPageBySlug(slug)
+    .then((res) => res.data?.attributes)
+    .catch(() => null);
 
-  if (page.cmsPage === false)
+  if (page?.cmsPage === false || page == null)
     return {
       notFound: true,
     };
