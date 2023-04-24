@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /cms/admin/
+
+Sitemap: https://regels.overheid.nl/sitemap.xml

@@ -21,7 +21,7 @@ const linkGroups: ListItemLink[][] = [
     { title: 'Documentatie', href: '/docs' },
     { title: 'Privacy en cookies', href: '#' },
     { title: 'Toegankelijkheid', href: '#' },
-    { title: 'Sitemap', href: '#' },
+    { title: 'Sitemap', href: '/sitemap.xml' },
   ],
   [
     { title: 'Methoden', href: ' https://regels.overheid.nl/methoden ' },
