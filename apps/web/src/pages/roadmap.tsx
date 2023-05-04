@@ -1,15 +1,12 @@
 import { PageTitle } from '@/components/page-title';
 import { RoadmapQuarterCard } from '@/components/roadmap-quarter-card';
 import { roadmapQuarterCardsItems } from '@/components/roadmap-quarter-card/roadmap-quarter-cards-items';
-import { ComponentsIcon } from '@/theme/icons/components-icon';
-import { GavelIcon } from '@/theme/icons/gavel-icon';
-import { GithubIcon } from '@/theme/icons/github-icon';
 import { ThereforeIcon } from '@/theme/icons/therefore-icon';
-import { LicenseIcon } from '@/theme/icons/license-icon';
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import { GetServerSideProps } from 'next';
 import { useEffect, useRef, useState } from 'react';
+import { IconBrandGithub, IconComponents, IconGavel, IconLicense } from '@tabler/icons-react';
 
 const Roadmap = () => {
   const { palette, breakpoints } = useTheme();
@@ -46,7 +43,7 @@ const Roadmap = () => {
           alignSelf={[, , , 'flex-end']}
         >
           <Stack direction="row" columnGap={1}>
-            <LicenseIcon stroke={palette.primary.dark} />
+            <IconLicense color={palette.primary.dark} />
             <Typography color="primary.dark">Content management</Typography>
           </Stack>
           <Stack direction="row" columnGap={1}>
@@ -54,15 +51,15 @@ const Roadmap = () => {
             <Typography color="primary.dark">Linked Data</Typography>
           </Stack>
           <Stack direction="row" columnGap={1}>
-            <GithubIcon stroke={palette.primary.dark} />
+            <IconBrandGithub color={palette.primary.dark} />
             <Typography color="primary.dark">DevOps</Typography>
           </Stack>
           <Stack direction="row" columnGap={1}>
-            <ComponentsIcon stroke={palette.primary.dark} />
+            <IconComponents color={palette.primary.dark} />
             <Typography color="primary.dark">Design</Typography>
           </Stack>
           <Stack direction="row" columnGap={1}>
-            <GavelIcon stroke={palette.primary.dark} />
+            <IconGavel color={palette.primary.dark} />
             <Typography color="primary.dark">Legal</Typography>
           </Stack>
         </Box>

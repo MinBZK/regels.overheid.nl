@@ -1,10 +1,7 @@
-import { ComponentsIcon } from '@/theme/icons/components-icon';
-import { GavelIcon } from '@/theme/icons/gavel-icon';
-import { GithubIcon } from '@/theme/icons/github-icon';
-import { LicenseIcon } from '@/theme/icons/license-icon';
 import { ThereforeIcon } from '@/theme/icons/therefore-icon';
 import { Box, Collapse, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Stack } from '@mui/system';
+import { IconBrandGithub, IconComponents, IconGavel, IconLicense } from '@tabler/icons-react';
 import { useMemo, useState } from 'react';
 
 type Icons = 'devops' | 'linked data' | 'design' | 'content management' | 'legal';
@@ -19,15 +16,15 @@ const IconMapping = (icon: Icons) => {
 
   switch (icon) {
     case 'devops':
-      return <GithubIcon stroke={palette.warning.dark} />;
+      return <IconBrandGithub color={palette.warning.dark} size={22} strokeWidth={1} />;
     case 'linked data':
       return <ThereforeIcon stroke={palette.warning.dark} />;
     case 'design':
-      return <ComponentsIcon stroke={palette.warning.dark} />;
+      return <IconComponents color={palette.warning.dark} size={22} strokeWidth={1} />;
     case 'content management':
-      return <LicenseIcon stroke={palette.warning.dark} />;
+      return <IconLicense color={palette.warning.dark} size={22} strokeWidth={1} />;
     case 'legal':
-      return <GavelIcon stroke={palette.warning.dark} />;
+      return <IconGavel color={palette.warning.dark} size={22} strokeWidth={1} />;
   }
 };
 
@@ -89,7 +86,7 @@ export const RoadmapQuarterCard: React.FC<RoadmapQuarterCardProps> = ({ quarter,
               borderRadius={0.5}
               bgcolor="common.white"
             >
-              {IconMapping(icon)}
+              <Box width={22}>{IconMapping(icon)}</Box>
               <Typography color="common.black">{content}</Typography>
             </Stack>
           ))}

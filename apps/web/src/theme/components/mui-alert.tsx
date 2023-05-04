@@ -1,9 +1,7 @@
 import { Components } from '@mui/material';
 import { Theme } from '@mui/system';
-import { AlertTriangleIcon } from '../icons/alert-triangle-icon';
-import { CheckCircleIcon } from '../icons/check-circle-icon';
-import { InfoCircleIcon } from '../icons/info-circle-icon';
 import { WarningCircleIcon } from '../icons/warning-circle-icon';
+import { IconAlertTriangle, IconCircleCheck, IconInfoCircle } from '@tabler/icons-react';
 
 export const MuiAlert: Components<Theme>['MuiAlert'] = {
   styleOverrides: {
@@ -26,7 +24,6 @@ export const MuiAlert: Components<Theme>['MuiAlert'] = {
         padding: 0,
         fontSize: 20,
         marginRight: theme.spacing(3),
-        marginTop: theme.spacing(0.5),
       },
     }),
     standardInfo: ({ theme }) => ({
@@ -60,9 +57,9 @@ export const MuiAlert: Components<Theme>['MuiAlert'] = {
   },
   defaultProps: {
     iconMapping: {
-      info: <InfoCircleIcon fontSize="inherit" />,
-      success: <CheckCircleIcon fontSize="inherit" />,
-      warning: <AlertTriangleIcon fontSize="inherit" />,
+      info: <IconInfoCircle fontSize="inherit" />,
+      success: <IconCircleCheck fontSize="inherit" />,
+      warning: <IconAlertTriangle fontSize="inherit" />,
       error: <WarningCircleIcon fontSize="inherit" />,
     },
   },

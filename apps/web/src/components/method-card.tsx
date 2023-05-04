@@ -1,9 +1,4 @@
 import { Icons } from '@/services/cms/get-methods';
-import { ArrowRightIcon } from '@/theme/icons/arrow-right-icon';
-import { MegaphoneIcon } from '@/theme/icons/megaphone-icon';
-import { RightAngleRulerIcon } from '@/theme/icons/right-angle-ruler-icon';
-import { RulerIcon } from '@/theme/icons/ruler-icon';
-import { ScaleIcon } from '@/theme/icons/scale-icon';
 import { ThereforeIcon } from '@/theme/icons/therefore-icon';
 import {
   Box,
@@ -19,7 +14,16 @@ import {
 } from '@mui/material';
 import { Stack } from '@mui/system';
 import Link from 'next/link';
-import { ArchIcon } from '../theme/icons/arch-icon';
+
+import {
+  IconArrowRight,
+  IconBuildingArch,
+  IconRuler,
+  IconRuler2,
+  IconScale,
+  IconSpeakerphone,
+  TablerIconsProps,
+} from '@tabler/icons-react';
 
 interface Props {
   date: string;
@@ -29,13 +33,13 @@ interface Props {
   description: string;
 }
 
-const iconMap: Record<Icons, React.FC<SvgIconProps<'svg'>>> = {
-  arch: ArchIcon,
-  ruler: RulerIcon,
-  scale: ScaleIcon,
-  megaphone: MegaphoneIcon,
+const iconMap: Record<Icons, React.FC<TablerIconsProps>> = {
+  arch: IconBuildingArch,
+  ruler: IconRuler2,
+  scale: IconScale,
+  megaphone: IconSpeakerphone,
   therefore: ThereforeIcon,
-  'right-angle-ruler': RightAngleRulerIcon,
+  'right-angle-ruler': IconRuler,
 };
 
 export const MethodCard: React.FC<Props> = ({ title, href, icon, description, date }) => {
@@ -57,7 +61,7 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
             alignItems="center"
             justifyContent="center"
           >
-            {Icon && <Icon fill="transparent" fillOpacity="0" sx={{ fontSize: 100 }} stroke={palette.common.white} />}
+            {Icon && <Icon size={100} color={palette.common.white} strokeWidth={1} />}
           </Box>
         </Box>
         <CardContent sx={{ display: 'flex' }}>
@@ -86,12 +90,7 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
                   })}
                 </Typography>
                 {href && (
-                  <Button
-                    href={href}
-                    variant="contained"
-                    LinkComponent={Link}
-                    endIcon={<ArrowRightIcon stroke={palette.common.white} />}
-                  >
+                  <Button href={href} variant="contained" LinkComponent={Link} endIcon={<IconArrowRight />}>
                     Lees meer
                   </Button>
                 )}
