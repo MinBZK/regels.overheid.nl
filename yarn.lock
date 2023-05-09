@@ -7239,6 +7239,11 @@ change-case@^3.1.0:
     upper-case "^1.1.1"
     upper-case-first "^1.1.0"
 
+changesets@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/changesets/-/changesets-1.0.2.tgz#d4eb67f826c6b5e19b56ced4f5add72e1e0cadb8"
+  integrity sha512-lnXvvqJEcK0z/6RtwKNLbejazl+Hxd1bocMcNgfLHWb4rGxuqkO/LdeGNzwIx3jHj+fNWZ6AGgK5AqNBwva4Xg==
+
 character-entities-legacy@^1.0.0:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/character-entities-legacy/-/character-entities-legacy-1.1.4.tgz#94bc1845dce70a5bb9d2ecc748725661293d8fc1"
