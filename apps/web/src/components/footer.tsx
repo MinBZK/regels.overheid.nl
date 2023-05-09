@@ -18,13 +18,13 @@ const linkGroups: ListItemLink[][] = [
     { title: 'Regelregister', href: 'https://regels.dexcat.nl/' },
   ],
   [
-    { title: 'Documentatie', href: '/docs' },
+    { title: 'Documentatie', href: 'https://regels.overheid.nl/docs' },
     { title: 'Privacy en cookies', href: '#' },
     { title: 'Toegankelijkheid', href: '#' },
-    { title: 'Sitemap', href: '#' },
+    { title: 'Sitemap', href: '/sitemap.xml' },
   ],
   [
-    { title: 'Methoden', href: ' https://regels.overheid.nl/methoden ' },
+    { title: 'Methoden', href: ' /methoden ' },
     { title: 'Overheid.nl', href: ' https://www.overheid.nl/' },
     { title: 'Linked Data Overheid', href: ' https://linkeddata.overheid.nl/front/portal/' },
     { title: 'PUC Open Data', href: ' https://puc.overheid.nl/mijno' },

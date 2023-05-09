@@ -5,14 +5,44 @@
  */
 
 /* You can override the default Infima variables here. */
+
+@font-face {
+  font-family: "RO Sans";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../../static/webfonts/ROsanswebtextregular.woff") format("woff"),
+    url("../../static/webfonts/ROsanswebtextregular.ttf") format("truetype"),
+    url("../../static/webfonts/ROsanswebtextregular.eot") format("embedded-opentype");
+}
+
+@font-face {
+  font-family: "RO Sans";
+  font-weight: normal;
+  font-style: italic;
+  src: url("../../static/webfonts/ROsanswebtextitalic.woff") format("woff"),
+    url("../../static/webfonts/ROsanswebtextitalic.ttf") format("truetype"),
+    url("../../static/webfonts/ROsanswebtextitalic.eot") format("embedded-opentype");
+}
+
+@font-face {
+  font-family: "RO Sans";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../../static/webfonts/ROsanswebtextbold.woff") format("woff"),
+    url("../../static/webfonts/ROsanswebtextbold.ttf") format("truetype"),
+    url("../../static/webfonts/ROsanswebtextbold.eot") format("embedded-opentype");
+}
+
+
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-font-family-base: "RO Sans", sans-serif;
+  --ifm-color-primary: #01689b;
+  --ifm-color-primary-dark: #007bc7;
+  --ifm-color-primary-darker: #007bc7;
+  --ifm-color-primary-darkest: #01689b;
+  --ifm-color-primary-light: #8fcae7;
+  --ifm-color-primary-lighter: #b3d7ee;
+  --ifm-color-primary-lightest: #d9ebf7;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }

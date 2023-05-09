@@ -1,11 +1,11 @@
-name: "Run workspace script"
+name: 'Run workspace script'
 inputs:
   workspace:
     required: true
   script:
     required: true
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
