@@ -1,12 +1,11 @@
 import { PageTitle } from '@/components/page-title';
 import { RoadmapQuarterCard } from '@/components/roadmap-quarter-card';
 import { roadmapQuarterCardsItems } from '@/components/roadmap-quarter-card/roadmap-quarter-cards-items';
-import { ThereforeIcon } from '@/theme/icons/therefore-icon';
 import { Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import { GetServerSideProps } from 'next';
 import { useEffect, useRef, useState } from 'react';
-import { IconBrandGithub, IconComponents, IconGavel, IconLicense } from '@tabler/icons-react';
+import { IconBrandGithub, IconComponents, IconGavel, IconLicense, IconBinaryTree2 } from '@tabler/icons-react';
 
 const Roadmap = () => {
   const { palette, breakpoints } = useTheme();
@@ -47,7 +46,7 @@ const Roadmap = () => {
             <Typography color="primary.dark">Content management</Typography>
           </Stack>
           <Stack direction="row" columnGap={1}>
-            <ThereforeIcon stroke={palette.primary.dark} />
+            <IconBinaryTree2 stroke={palette.primary.dark} />
             <Typography color="primary.dark">Linked Data</Typography>
           </Stack>
           <Stack direction="row" columnGap={1}>

@@ -1,22 +1,11 @@
 import { Icons } from '@/services/cms/get-methods';
-import { ThereforeIcon } from '@/theme/icons/therefore-icon';
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Chip,
-  SvgIconProps,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Typography, useTheme } from '@mui/material';
 import { Stack } from '@mui/system';
 import Link from 'next/link';
 
 import {
   IconArrowRight,
+  IconBinaryTree2,
   IconBuildingArch,
   IconRuler,
   IconRuler2,
@@ -38,7 +27,7 @@ const iconMap: Record<Icons, React.FC<TablerIconsProps>> = {
   ruler: IconRuler2,
   scale: IconScale,
   megaphone: IconSpeakerphone,
-  therefore: ThereforeIcon,
+  therefore: IconBinaryTree2,
   'right-angle-ruler': IconRuler,
 };
 

@@ -1,7 +1,6 @@
-import { ThereforeIcon } from '@/theme/icons/therefore-icon';
 import { Box, Collapse, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Stack } from '@mui/system';
-import { IconBrandGithub, IconComponents, IconGavel, IconLicense } from '@tabler/icons-react';
+import { IconBinaryTree2, IconBrandGithub, IconComponents, IconGavel, IconLicense } from '@tabler/icons-react';
 import { useMemo, useState } from 'react';
 
 type Icons = 'devops' | 'linked data' | 'design' | 'content management' | 'legal';
@@ -18,7 +17,7 @@ const IconMapping = (icon: Icons) => {
     case 'devops':
       return <IconBrandGithub color={palette.warning.dark} size={22} strokeWidth={1} />;
     case 'linked data':
-      return <ThereforeIcon stroke={palette.warning.dark} />;
+      return <IconBinaryTree2 stroke={palette.warning.dark} />;
     case 'design':
       return <IconComponents color={palette.warning.dark} size={22} strokeWidth={1} />;
     case 'content management':
