@@ -27,7 +27,7 @@ jobs:
       - name: Install and Build
         run: |
           yarn install
-          yarn workspace @regels-overheid/web build:storybook
+          yarn workspace web build:storybook
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:

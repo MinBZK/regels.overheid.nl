@@ -2,7 +2,7 @@ import { Box, Button, Card, CardActions, CardContent, CardMedia, Chip, Typograph
 import { Stack } from '@mui/system';
 import { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ArchIcon } from '../theme/icons/arch-icon';
+// import { ArchIcon } from '../theme/icons/arch-icon';
 
 const Component: React.FC<{ direction?: 'vertical' | 'horizontal'; showMedia?: boolean }> = ({
   direction = 'vertical',
@@ -22,7 +22,7 @@ const Component: React.FC<{ direction?: 'vertical' | 'horizontal'; showMedia?: b
             alignItems="center"
             justifyContent="center"
           >
-            <ArchIcon fill="transparent" fillOpacity="0" sx={{ fontSize: 100 }} />
+            {/* <ArchIcon fill="transparent" fillOpacity="0" sx={{ fontSize: 100 }} /> */}
           </Box>
         </CardMedia>
       )}

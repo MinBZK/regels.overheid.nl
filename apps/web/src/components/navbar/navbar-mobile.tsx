@@ -1,7 +1,7 @@
 import Logo from '@/assets/logo.png';
-import { MenuIcon } from '@/theme/icons/menu-icon';
 import { Button, Modal, Stack, Typography, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
+import { IconMenu2 } from '@tabler/icons-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -23,7 +23,7 @@ export const NavbarMobile: React.FC<SubComponentProps> = ({ pages, isPageActive 
         <Button
           onClick={() => setOpen(!open)}
           variant="outlined"
-          startIcon={<MenuIcon stroke={palette.primary.dark} />}
+          startIcon={<IconMenu2 color={palette.primary.dark} />}
           sx={{
             width: '96px',
             height: '56px',

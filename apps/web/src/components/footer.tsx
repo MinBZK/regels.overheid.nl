@@ -1,6 +1,6 @@
 import { Container } from '@/components/container';
-import { ExternalLinkIcon } from '@/theme/icons/external-link-icon';
 import { Alert, Box, BoxProps, List, ListItem, ListItemIcon, ListItemText, Stack, Typography } from '@mui/material';
+import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useApplicationMetadata } from './application-metadata-provider';
 
@@ -80,7 +80,7 @@ export const Footer: React.FC<BoxProps> = (props) => {
                         <LinkComponent href={href} target={blank && '_blank'}>
                           <Stack direction="row" alignItems="center" columnGap={2}>
                             {title}
-                            {blank && <ExternalLinkIcon sx={{ fontSize: 18 }} />}
+                            {blank && <IconExternalLink size={18} />}
                           </Stack>
                         </LinkComponent>
                       </Typography>
