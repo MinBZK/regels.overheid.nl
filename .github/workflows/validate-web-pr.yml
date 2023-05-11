@@ -10,21 +10,21 @@ jobs:
     steps:
       - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
         with:
-          workspace: '@regels-overheid/web'
+          workspace: 'web'
           script: lint
   typecheck:
     runs-on: ubuntu-20.04
     steps:
       - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
         with:
-          workspace: '@regels-overheid/web'
+          workspace: 'web'
           script: typecheck
   stylecheck:
     runs-on: ubuntu-20.04
     steps:
       - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
         with:
-          workspace: '@regels-overheid/web'
+          workspace: 'web'
           script: stylecheck
   build:
     needs: [lint, typecheck, stylecheck]

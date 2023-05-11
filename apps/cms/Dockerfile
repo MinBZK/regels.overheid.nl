@@ -8,7 +8,7 @@ FROM base as pruned
 
 WORKDIR /project
 COPY . .
-RUN turbo prune --scope=@regels-overheid/cms --docker
+RUN turbo prune --scope=cms --docker
 # ==== Install dependencies ====
 FROM base AS install
 
