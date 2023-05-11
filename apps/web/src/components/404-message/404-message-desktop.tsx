@@ -8,7 +8,7 @@ export const Four04MessageDesktop = () => {
   const router = useRouter();
 
   return (
-    <Stack direction="row" columnGap={10} justifyContent="center" height="100%" pt={10}>
+    <Stack direction="row" columnGap={10} justifyContent="center" height="100%" p={10}>
       <Image
         src={Four04IllustrationDesktop}
         alt="404"
@@ -20,7 +20,7 @@ export const Four04MessageDesktop = () => {
       />
       <Stack justifyContent="center" spacing={3}>
         <Typography fontSize={32} color="primary.main" textAlign="center">
-          Fout 404
+          Error 404
         </Typography>
 
         <Typography fontSize={62} color="primary.dark" textAlign="center">

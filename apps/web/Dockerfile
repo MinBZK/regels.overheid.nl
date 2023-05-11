@@ -12,7 +12,7 @@ WORKDIR /project
 
 COPY . .
 
-RUN turbo prune --scope=@regels-overheid/web --docker
+RUN turbo prune --scope=web --docker
 
 # ==== Install ====
 FROM base AS install

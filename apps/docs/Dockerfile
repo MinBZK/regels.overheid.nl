@@ -8,7 +8,7 @@ RUN yarn global add turbo
 FROM base as pruned
 WORKDIR /project
 COPY . .
-RUN turbo prune --scope=@regels-overheid/docs --docker
+RUN turbo prune --scope=docs --docker
 
 # ==== Install dependencies ====
 FROM base AS install

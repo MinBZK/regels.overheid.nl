@@ -9,7 +9,7 @@ export const Four04MessageMobile = () => {
   return (
     <Stack>
       <Typography fontSize={28} color="primary.main" textAlign="center">
-        Fout 404
+        Error 404
       </Typography>
       <Image
         src={Four04IllustrationMobile}
