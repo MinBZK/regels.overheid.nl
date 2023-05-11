@@ -1,6 +1,6 @@
 {
-  "name": "@regels-overheid/web",
-  "version": "0.1.0",
+  "name": "web",
+  "version": "1.19.2",
   "private": true,
   "scripts": {
     "dev": "next dev --port 9000",
