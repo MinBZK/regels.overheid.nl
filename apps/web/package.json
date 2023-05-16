@@ -16,7 +16,6 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
-    "@next/font": "^13.1.6",
     "@octokit/rest": "^19.0.7",
     "@tabler/icons-react": "^2.16.0",
     "@total-typescript/ts-reset": "^0.3.7",
