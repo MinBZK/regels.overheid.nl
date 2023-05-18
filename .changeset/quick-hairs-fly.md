@@ -8,4 +8,4 @@ Following dependency maintenance has been done, this has been done to facilitate
 
 - Removed the following dependencies: @next/font
 - Installed the following dependencies: tailwindcss, postcss, autoprefixer
-- Upgraded the following dependencies: next, @types/react, @types/react-dom
+- Upgraded the following dependencies: next, @types/react, @types/react-dom, typescript, eslint-config-next, eslint, @types/node
