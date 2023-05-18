@@ -45,6 +45,7 @@ RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
 COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
 COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
 COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
+COPY --from=install --chown=${UID}:${GID} /project/apps/docs/node_modules ./apps/docs/node_modules
 
 USER ${UID}
 
