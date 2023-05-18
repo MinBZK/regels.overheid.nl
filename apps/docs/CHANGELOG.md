@@ -1,5 +1,11 @@
 # docs
 
+## 1.20.1
+
+### Patch Changes
+
+- c637e82: Hoisting has been disabled throughout the entire repo now, in order work with this the Dockerfile has been updated
+
 ## 1.20.0
 
 ### Minor Changes
