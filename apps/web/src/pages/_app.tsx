@@ -7,6 +7,7 @@ import { theme } from '@/theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import '@total-typescript/ts-reset';
 import { AppProps } from 'next/app';
+import '@/tailwind.css';
 
 interface PageProps {
   pages: Page[];

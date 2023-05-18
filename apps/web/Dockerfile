@@ -38,6 +38,7 @@ RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
 COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
 COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
 COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
+COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/web/node_modules
 
 USER ${UID}
 
@@ -58,6 +59,7 @@ RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
 COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
 COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
 COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
+COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/web/node_modules
 
 EXPOSE 9000
 

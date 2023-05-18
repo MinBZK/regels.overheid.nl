@@ -32,6 +32,7 @@ RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
 COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
 COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
 COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
+COPY --from=install --chown=${UID}:${GID} /project/apps/cms/node_modules ./apps/cms/node_modules
 
 ARG PUBLIC_URL=http://localhost:9001
 ENV PUBLIC_URL ${PUBLIC_URL}
@@ -57,6 +58,7 @@ RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
 COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
 COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
 COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
+COPY --from=install --chown=${UID}:${GID} /project/apps/cms/node_modules ./apps/cms/node_modules
 
 ARG PUBLIC_URL=http://localhost:9001
 ENV PUBLIC_URL ${PUBLIC_URL}
