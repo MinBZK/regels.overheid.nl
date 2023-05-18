@@ -1,5 +1,5 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
-import local from "next/font/local";
+import local from 'next/font/local';
 
 const localFont = local({
   src: [
