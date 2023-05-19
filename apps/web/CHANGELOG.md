@@ -1,5 +1,14 @@
 # web
 
+## 1.21.0
+
+### Minor Changes
+
+- 002220a: - Created publication page
+  - Created publication card component
+  - Created Tailwind card component
+  - Installed dependencies: clsx, @storybook/addon-styling
+
 ## 1.20.1
 
 ### Patch Changes
