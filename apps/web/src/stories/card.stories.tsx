@@ -53,7 +53,7 @@ const Component: React.FC<{ direction?: 'vertical' | 'horizontal'; showMedia?: b
 };
 
 const meta: Meta<typeof Card> = {
-  title: 'Components/Card',
+  title: 'Components/Card (Legacy)',
   component: Card,
 };
 
