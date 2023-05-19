@@ -1,5 +1,6 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import React from 'react';
+import '../src/tailwind.css';
 
 import { themeConfig } from '../src/theme';
 
