@@ -1,0 +1,28 @@
+import { PublicationCard } from '@/components/card/publication-card';
+
+const Publicaties = () => {
+  return (
+    <>
+      <h1 className="font-bold text-4xl mb-12 text-primary-dark">Publicaties</h1>
+      <h2 className="font-bold text-3xl mb-6 text-primary-main">Over alle publicaties</h2>
+      <p className="text-base mb-16">
+        De ReSpec publicaties bieden inzicht en waardevolle kennis over diverse vakgebieden. Onze publicaties zijn
+        geschreven door vooraanstaande experts en dragen bij aan de ontwikkeling en vooruitgang van het bijbehorende
+        vakgebied.
+      </p>
+      <section className="grid md:grid-cols-2 gap-x-6 gap-y-12">
+        <PublicationCard
+          url="/publications/de-legitimaat"
+          tag="Algoritme"
+          title="De Legitimaat"
+          description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
+        />
+        <PublicationCard title="DCAT" disabled />
+        <PublicationCard title="Harmonisator" disabled />
+        <PublicationCard title="Calculemus Protocol" disabled />
+      </section>
+    </>
+  );
+};
+
+export default Publicaties;
