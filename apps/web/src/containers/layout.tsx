@@ -10,7 +10,7 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
       <Container pb={5} overflow="hidden">
         {children}
       </Container>
-      <Footer mt="auto" />
+      <Footer />
     </Stack>
   );
 };
