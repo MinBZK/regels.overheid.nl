@@ -5,11 +5,13 @@ import {
   IconInfoCircle,
   TablerIconsProps,
 } from '@tabler/icons-react';
+import clsx from 'clsx';
 
 type Severity = 'info' | 'success' | 'warning' | 'error';
 
 interface NotificationProps extends React.PropsWithChildren {
   severity: Severity;
+  className?: string;
 }
 
 interface IconMappingProps {
@@ -44,9 +46,11 @@ const IconMapping: React.FC<IconMappingProps> = ({ severity, className }) => {
   return <Icon size={16} className={className} />;
 };
 
-export const Notification: React.FC<NotificationProps> = ({ severity = 'info', children }) => (
-  <div className={`${notificationVariantsMapping[severity]} p-6 border-2 text-base flex gap-x-8`}>
-    <IconMapping severity={severity} className={`${iconVariantsMapping[severity]} text-xs mt-1 w-8 shrink-0`} />
+export const Notification: React.FC<NotificationProps> = ({ severity = 'info', children, className }) => (
+  <div className={`${notificationVariantsMapping[severity]} p-6 border-2 text-base flex ${clsx(className)}`}>
+    <div className="w-8 shrink-0">
+      <IconMapping severity={severity} className={`${iconVariantsMapping[severity]} text-xs mt-1`} />
+    </div>
     <div>{children}</div>
   </div>
 );
