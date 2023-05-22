@@ -3,7 +3,7 @@ import { Alert, AlertTitle } from '@mui/material';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Alert> = {
-  title: 'Notification',
+  title: 'Notification (Legacy)',
   component: Alert,
   tags: ['autodocs'],
   argTypes: {
