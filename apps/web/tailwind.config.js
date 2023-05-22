@@ -40,7 +40,14 @@ module.exports = {
           lighter: '#E6F3EF',
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'max-width': '1180px',
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
