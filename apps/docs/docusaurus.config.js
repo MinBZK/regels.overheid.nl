@@ -57,11 +57,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'regels.overheid.nl',
-        // logo: {
-        //   alt: 'My Site Logo',
-        //   src: 'img/logo.svg',
-        // },
+        // title: 'regels.overheid.nl',
+        logo: {
+          alt: 'Regels Overheid Logo',
+          src: 'img/logo.png',
+        },
         items: [
           {
             type: 'doc',
