@@ -1,5 +1,12 @@
 # docs
 
+## 2.0.0
+
+### Major Changes
+
+- d335285: introduction pra added to applications documentation
+- bae7be3: Added general info concering Virtueel Inkomstenloket application
+
 ## 1.20.1
 
 ### Patch Changes
