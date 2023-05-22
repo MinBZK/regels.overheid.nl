@@ -18,6 +18,13 @@ module.exports = {
           lighter: '#E5F1F9',
         },
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'max-width': '1180px',
+          },
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
