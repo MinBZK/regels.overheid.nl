@@ -15,8 +15,10 @@ const Home: React.FC<Props> = ({ name, content }) => {
       <Head>
         <title>{`Regelregister van de Nederlandse Overheid - ${name}`}</title>
       </Head>
-      {/*  eslint-disable-next-line react/no-children-prop */}
-      <ReactMarkdown children={content} components={{ p: Typography }} />
+      <div className="prose">
+        {/*  eslint-disable-next-line react/no-children-prop */}
+        <ReactMarkdown children={content} />
+      </div>
     </>
   );
 };
