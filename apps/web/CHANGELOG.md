@@ -1,5 +1,11 @@
 # web
 
+## 1.21.1
+
+### Patch Changes
+
+- 89fd7c6: Fixed typography not displaying properly on cms pages
+
 ## 1.21.0
 
 ### Minor Changes
