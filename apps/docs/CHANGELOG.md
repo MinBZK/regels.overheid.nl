@@ -1,5 +1,11 @@
 # docs
 
+## 2.0.1
+
+### Patch Changes
+
+- ca7c097: Include logo in docs
+
 ## 2.0.0
 
 ### Major Changes
