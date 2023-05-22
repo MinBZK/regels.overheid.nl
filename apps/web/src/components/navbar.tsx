@@ -31,7 +31,7 @@ export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
   return (
     <>
       <header className="border-b-8 border-primary-light">
-        <div className="h-24 sm:h-auto container p-4 flex justify-between items-center sm:p-0">
+        <div className="h-24 sm:h-auto container flex justify-between items-center">
           <figure className="w-[170px] sm:w-[300px] aspect-[540/190] relative">
             <Image src={Logo} alt="regels.overheid.nl logo" fill />
           </figure>

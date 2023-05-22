@@ -1,4 +1,3 @@
-import { Container } from '@/components/container';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
 import { usePagesContext } from '@/components/pages-provider';
@@ -18,9 +17,7 @@ export const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
           label: name,
         }))}
       />
-      <Container pb={5} overflow="hidden">
-        {children}
-      </Container>
+      <div className="container pt-14 pb-8">{children}</div>
       <Footer />
     </Stack>
   );
