@@ -13,20 +13,14 @@ Het gaat dus om algoritmen, maar ook om de context waarbinnen die worden gebruik
 ## Het bereik van De LegitiMaat
 De LegitiMaat gaat het om het gehele proces van wet tot aan individueel besluit en daarna, reactie van de ontvangers (telefoontjes, klachten, bezwaren) en de keteneffecten. Het is maatschappelijk zeer relevant dat dit proces beter inzichtelijk wordt. Daarmee verhogen we de transparantie. Met de LegitiMaat kan beoordeeld worden of de wetten, de algemene beginselen van behoorlijk bestuur en het verbod van discriminatie zijn nageleefd.
 
-## Onderdelen van de LegitiMaat
-De LegitiMaat bevat een analyse van de gebruikelijke stappen die worden gezet bij overheidsorganisaties. Dit is de procesplaat.
+## Onderdelen van De LegitiMaat
+De LegitiMaat bevat een analyse van de gebruikelijke stappen die worden gezet bij overheidsorganisaties. Dit is de *procesplaat*. Aan de hand van de procesplaat is er een *documentenlijst* gemaakt. Dit zijn de documenten die nodig zijn voor het onderzoek. Dan zijn *vragenlijsten* aan de hand van de procesplaat. Deze kunnen door de overheidsorganisatie zelf worden beantwoord. Op basis van de verkregen informatie en antwoorden kan een visitatieteam aan de slag.
 
-Aan de hand van de procesplaat is er een Documentenlijst gemaakt. Dit zijn de documenten die nodig zijn voor het onderzoek.
-
-Dan zijn vragenlijsten aan de hand van de procesplaat. Deze kunnen door de overheidsorganisatie zelf worden beantwoord.
-
-Op basis van de verkregen informatie en antwoorden kan een visitatieteam aan de slag.
-
-Met De LegitiMaat hebben we de praktijk, de technologie en het recht een stap dichter bij elkaar gebracht.
-
-De laatst gepubliceerde versie is [hier](https://open-regels.nl/lm/delegitimaat/1.0.0) te vinden. Voor de werkversie verwijzen we naar de <a href="https://minbzk.github.io/LegitiMaat/" target="_blank">GitHub Page</a>:octicons-link-external-16: van MinBZK.
+Met De LegitiMaat hebben we de praktijk, de technologie en het recht een stap dichter bij elkaar gebracht. De laatst gepubliceerde versie is [hier](https://regels.overheid.nl/publications/de-legitimaat) te vinden. Voor de werkversie verwijzen we naar de <a href="https://minbzk.github.io/LegitiMaat/" target="_blank">GitHub Page</a> van MinBZK.
 
 ## Meer weten?
-Wij werkten zelf ook zo open mogelijk. Hoe de De LegitiMaat tot stand is gekomen vind je [in deze slides](https://noti.st/maikeklip/XRXDzo/slides). Documenten en literatuur staan op [Pleio](https://regelbeheer.pleio.nl/groups/view/7e9c261c-2200-4247-bbfb-2f97cb4e8e6d/toezicht-op-algoritmen/files)
+Wij werkten zelf ook zo open mogelijk. Hoe de De LegitiMaat tot stand is gekomen vind je [in deze slides](https://noti.st/maikeklip/XRXDzo/slides). Verder zijn nog beschikbaar:
+- [Presentatie BZK - mei 2022](../../static/pdf/BZK.presentatie.24052022.pptx)
+- [Slides Marlies van Eck (en)](../../static/pdf/marliesvaneck.thelegitimate.pdf)
 
 Voor Engelstalige informatie over The LegitiMate, kijk hier: [A cool experiment in NL: The LegitiMate. Working method to judge the use of algorithms in ADM from 3 perspectives. – Automated administrative decisions and the law](https://automatedadministrativedecisionsandthelaw.wordpress.com/2022/03/16/a-cool-experiment-in-nl-the-legitimate-working-method-to-judge-the-use-of-algorithms-in-adm-from-3-perspectives/)cd docs
