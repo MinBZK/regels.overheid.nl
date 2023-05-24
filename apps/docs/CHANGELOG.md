@@ -1,5 +1,17 @@
 # docs
 
+## 2.1.0
+
+### Minor Changes
+
+- 2d00776: Added general explanation for De LegitiMaat as a method
+- 9d7e929: Summary book 'Wetsanalyse' added as method
+- 0784bc9: Added USoft content provided by supplier as method
+
+### Patch Changes
+
+- d5d156f: Ordered methods alphabetically
+
 ## 2.0.1
 
 ### Patch Changes
