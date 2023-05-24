@@ -1,5 +1,12 @@
 # web
 
+## 1.22.0
+
+### Minor Changes
+
+- 9dd254a: Created Tailwind footer component
+- a4feb7a: Created Tailwind notification component
+
 ## 1.21.1
 
 ### Patch Changes
