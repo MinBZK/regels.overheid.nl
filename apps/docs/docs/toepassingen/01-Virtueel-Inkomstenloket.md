@@ -17,6 +17,9 @@ De Belastingdienst heeft inmiddels besloten om deze aanpak open source te maken,
 
 Om Virtueel Inkomstenloket versnelling te geven, faciliteert het ministerie van Sociale Zaken en Werkgelegenheid via het programma Innovatie Gegevensuitwisseling in de Sociale Zekerheid (IGS) met ondersteuning op technische en juridische aspecten.
 
+- De volledige architectuur repository van IGS is in een HTML publicatie beschikbaar: [https://stelsel-architectuur.twi-programma.nl/](https://stelsel-architectuur.twi-programma.nl/)
+- De documentatie van de IGS componenten is [hier](https://innovatie-gegevens-socialezaken.github.io/igs/) te vinden.
+
 ## IIT
 
 De publicatie van de gestandaardiseerde regels voor de uitvoering van de allereerste regeling [Individuele inkomenstoeslag](https://pki.utrecht.nl/Loket/product/0c17f7cd409dc999eb351883a138ca3d) met het Virtueel Inkomstenloket zijn [hier](https://regels.dexcat.nl/dataset/regelgroep-uit-te-keren-individuele-inkomenstoeslag) gepubliceerd.
