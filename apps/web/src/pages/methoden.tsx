@@ -22,6 +22,7 @@ const Methoden: React.FC<Props> = ({ methods }) => (
             href={method.attributes.Href}
             icon={method.attributes.Icon}
             title={method.attributes.Title}
+            tag={method.attributes.Tag || 'methode'}
             description={method.attributes.Description}
             date={method.attributes.updatedAt || method.attributes.createdAt}
           />

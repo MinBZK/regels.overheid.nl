@@ -1,6 +1,6 @@
 import { Card } from '@/components/card';
-import { Chip } from '@/components/chip';
-import { Icons } from '@/services/cms/get-methods';
+import { Chip, ChipVariant } from '@/components/chip';
+import { Icons, Tag } from '@/services/cms/get-methods';
 import {
   IconArrowRight,
   IconBinaryTree2,
@@ -14,6 +14,7 @@ import {
 import Link from 'next/link';
 import { Button } from '../button';
 import { clsx } from 'clsx';
+import { ucfirst } from '@/helpers/ucfirst';
 
 interface Props {
   date: string;
@@ -22,6 +23,7 @@ interface Props {
   href: string | null;
   description: string;
   className?: string;
+  tag: Tag;
 }
 
 const iconMap: Record<Icons, React.FC<TablerIconsProps>> = {
@@ -33,7 +35,14 @@ const iconMap: Record<Icons, React.FC<TablerIconsProps>> = {
   'right-angle-ruler': IconRuler,
 };
 
-export const MethodCard: React.FC<Props> = ({ title, href, icon, description, date, className }) => {
+const chipVariantMap: Record<Tag, ChipVariant> = {
+  methode: 'info',
+  DSL: 'success',
+  platform: 'warning',
+  software: 'error',
+};
+
+export const MethodCard: React.FC<Props> = ({ title, href, icon, description, date, className, tag }) => {
   const Icon = icon && iconMap[icon];
   const enhancedDate = new Date(date);
 
@@ -43,7 +52,7 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
         {Icon && <Icon className="text-white" size={70} stroke={1} />}
       </figure>
       <div className="flex flex-col gap-y-4 items-start">
-        <Chip label="Methode" />
+        <Chip label={ucfirst(tag)} variant={chipVariantMap[tag]} />
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-base text-grey-dark">{description}</p>
         <div className="flex w-full items-center justify-between flex-wrap">

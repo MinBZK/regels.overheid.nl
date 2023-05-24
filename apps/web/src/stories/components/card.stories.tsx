@@ -41,6 +41,7 @@ export const MethodCard: Story = {
       <MethodCardComponent
         href="#"
         icon="arch"
+        tag="methode"
         date="2021-01-01"
         title="De LegitiMaat"
         description="De LegitiMaat is een werkmethode om de geautomatiseerde uitvoering van wetten door de overheid op een gestandaardiseerde manier inzichtelijk te maken en te beoordelen."
