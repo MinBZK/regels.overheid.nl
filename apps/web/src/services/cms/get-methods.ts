@@ -118,7 +118,7 @@ export interface GetMethodsResponse {
 }
 
 export const getMethods = ({ includeVisual = false }: { includeVisual: boolean }) => {
-  const url = makeURL('api/methods');
+  const url = makeURL('api/methods?sort[0]=Title');
 
   if (includeVisual) url.searchParams.set('populate', 'Visual');
 
