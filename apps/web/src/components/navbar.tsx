@@ -1,36 +1,83 @@
-import { Page } from '@/services/cms/get-pages';
-import { Box } from '@mui/material';
+import Logo from '@/assets/logo.png';
+import { IconMenu2 } from '@tabler/icons-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { clsx } from 'clsx';
 import { useRouter } from 'next/router';
 
-import { NavbarDesktop } from './navbar/navbar-desktop';
-import { NavbarMobile } from './navbar/navbar-mobile';
-import { usePagesContext } from './pages-provider';
-
-export interface SubComponentProps {
-  pages: Page[];
-  isPageActive: (page: Page) => boolean;
+interface Item {
+  href: string;
+  label: string;
 }
 
-export const Navbar: React.FC = () => {
-  const router = useRouter();
-  const { pages } = usePagesContext();
+interface Props {
+  items: Item[];
+  activeHref: string;
+}
 
-  const isPageActive = (page: Page) => {
-    if (page.attributes.slug === 'home') return router.pathname === '/';
+export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
+  const { asPath } = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
-    return router.asPath === `/${page.attributes.slug}`;
-  };
+  useEffect(() => {
+    if (isOpen === true) document.body.style.overflow = 'hidden';
 
-  const sortedPages = pages.sort((a, b) => (a.attributes.order || 9000) - (b.attributes.order || 9000));
+    if (isOpen === false) document.body.style.overflow = '';
+  }, [isOpen]);
+
+  useEffect(() => setIsOpen(false), [asPath]);
 
   return (
     <>
-      <Box display={['block', 'none']}>
-        <NavbarMobile isPageActive={isPageActive} pages={sortedPages} />
-      </Box>
-      <Box display={['none', 'block']}>
-        <NavbarDesktop isPageActive={isPageActive} pages={sortedPages} />
-      </Box>
+      <header className="border-b-8 border-primary-light">
+        <div className="h-24 sm:h-auto container flex justify-between items-center">
+          <figure className="w-[170px] sm:w-[300px] aspect-[540/190] relative">
+            <Image src={Logo} alt="regels.overheid.nl logo" fill />
+          </figure>
+          <button
+            className="h-14 bg-primary-light rounded-lg flex items-center px-3 gap-x-2 border-black border-2 sm:hidden"
+            onClick={() => setIsOpen((state) => !state)}
+          >
+            <IconMenu2 />
+            <span className="text-base font-bold">Menu</span>
+          </button>
+        </div>
+        <div className="h-16 bg-primary-main hidden sm:block">
+          <nav className="container flex items-center gap-x-2">
+            {items.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={`h-16 flex items-center px-4 hover:bg-primary-light hover:text-primary-main ${clsx(
+                  href !== activeHref && ' text-white',
+                  href === activeHref && 'bg-primary-light text-black'
+                )}`}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+        {isOpen && (
+          <div className="fixed top-24 bottom-0 bg-primary-main left-0 right-0 mt-2 z-10">
+            <nav className="container flex flex-col gap-y-2">
+              {items.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`h-[70px] text-white flex items-center ${clsx(
+                    href !== activeHref && ' text-white',
+                    href === activeHref && 'bg-primary-light text-black border-black border-2 px-4'
+                  )}`}
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
     </>
   );
 };
