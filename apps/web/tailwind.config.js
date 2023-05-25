@@ -13,6 +13,9 @@ module.exports = {
       xl: '1280px',
       '2xl': '1536px',
     },
+    fontFamily: {
+      sans: ['var(--font-sans)', 'Arial', 'Veranda', 'Times New Roman'],
+    },
     extend: {
       colors: {
         black: '#212427',
@@ -22,7 +25,6 @@ module.exports = {
           light: '#CECECE',
           lighter: '#EFEFEF',
         },
-        black: '#212427',
         primary: {
           dark: '#154270',
           main: '#007BC0',

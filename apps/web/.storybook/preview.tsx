@@ -1,12 +1,5 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import React from 'react';
 import '../src/tailwind.css';
-
-import { themeConfig } from '../src/theme';
-
-const { typography, ...themeConfigWithoutTypography } = themeConfig;
-const { fontFamily, ...typographyWithoutFontFamily } = typography;
-
 import 'rijksoverheid-fonts/sans';
 
 export const parameters = {
@@ -23,19 +16,19 @@ export const parameters = {
   },
 };
 
-const theme = createTheme({
-  ...themeConfigWithoutTypography,
-  typography: {
-    ...typographyWithoutFontFamily,
-    fontFamily: `Rijksoverheid Sans Web Text`,
-  },
-});
-
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Story />
-    </ThemeProvider>
+    <>
+      <style>
+        {`
+        :root{ 
+          --font-sans: 'Rijksoverheid Sans Web Text';
+        }
+        `}
+      </style>
+      <div className="container">
+        <Story />
+      </div>
+    </>
   ),
 ];

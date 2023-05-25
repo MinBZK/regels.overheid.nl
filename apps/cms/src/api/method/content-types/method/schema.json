@@ -56,6 +56,21 @@
         }
       },
       "type": "string"
+    },
+    "Tag": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "platform",
+        "software",
+        "DSL",
+        "methode"
+      ],
+      "required": true
     }
   }
 }

@@ -17,7 +17,6 @@
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.8",
     "@octokit/rest": "^19.0.7",
-    "@storybook/addon-styling": "^1.0.8",
     "@tabler/icons-react": "^2.16.0",
     "@tailwindcss/typography": "^0.5.9",
     "@total-typescript/ts-reset": "^0.3.7",
@@ -43,15 +42,18 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.0-beta.45",
-    "@storybook/addon-interactions": "^7.0.0-beta.45",
-    "@storybook/addon-links": "^7.0.0-beta.45",
-    "@storybook/blocks": "^7.0.0-beta.45",
-    "@storybook/nextjs": "^7.0.0-beta.45",
-    "@storybook/react": "^7.0.0-beta.45",
-    "@storybook/testing-library": "^0.0.14-next.1",
-    "@types/webpack-env": "^1.18.0",
-    "eslint-plugin-storybook": "^0.6.10",
-    "storybook": "^7.0.0-beta.45"
+    "@babel/core": "^7.21.8",
+    "@storybook/addon-actions": "^7.0.15",
+    "@storybook/addon-essentials": "^7.0.15",
+    "@storybook/addon-interactions": "^7.0.15",
+    "@storybook/addon-links": "^7.0.15",
+    "@storybook/addon-mdx-gfm": "^7.0.15",
+    "@storybook/cli": "^7.0.15",
+    "@storybook/nextjs": "^7.0.15",
+    "@storybook/react": "^7.0.15",
+    "@storybook/testing-library": "^0.1.0",
+    "babel-loader": "^8.3.0",
+    "eslint-plugin-storybook": "^0.6.12",
+    "storybook": "^7.0.15"
   }
 }

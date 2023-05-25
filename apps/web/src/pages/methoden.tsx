@@ -1,7 +1,6 @@
-import { MethodCard } from '@/components/method-card';
-import { PageTitle } from '@/components/page-title';
+import { MethodCard } from '@/components/card/method-card';
+import { Typography } from '@/components/typography';
 import { getMethods, GetMethodsResponse } from '@/services/cms/get-methods';
-import { Box, Stack } from '@mui/material';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
@@ -14,29 +13,22 @@ const Methoden: React.FC<Props> = ({ methods }) => (
     <Head>
       <title>Regelregister van de Nederlandse Overheid - Methoden</title>
     </Head>
-    <PageTitle>Methoden</PageTitle>
-    <Stack spacing={2}>
-      <Box
-        display="grid"
-        gridTemplateColumns={['100%', '1fr 1fr', '100%', 'repeat(3, 1fr)']}
-        columnGap={4}
-        rowGap={[2, 5, 4, 4]}
-        alignItems="flex-start"
-      >
-        {methods.data?.map((method) => {
-          return (
-            <MethodCard
-              key={method.id}
-              href={method.attributes.Href}
-              icon={method.attributes.Icon}
-              title={method.attributes.Title}
-              description={method.attributes.Description}
-              date={method.attributes.updatedAt || method.attributes.createdAt}
-            />
-          );
-        })}
-      </Box>
-    </Stack>
+    <Typography variant="page-title">Methoden</Typography>
+    <div className="grid gap-y-4 items-start md:grid-cols-2 md:gap-y-16 md:gap-x-4 lg:grid-cols-1 lg:gap-y-8 xl:grid-cols-3 xl:gap-x-6 2xl:gap-x-14">
+      {methods.data?.map((method) => {
+        return (
+          <MethodCard
+            key={method.id}
+            href={method.attributes.Href}
+            icon={method.attributes.Icon}
+            title={method.attributes.Title}
+            tag={method.attributes.Tag || 'methode'}
+            description={method.attributes.Description}
+            date={method.attributes.updatedAt || method.attributes.createdAt}
+          />
+        );
+      })}
+    </div>
   </>
 );
 

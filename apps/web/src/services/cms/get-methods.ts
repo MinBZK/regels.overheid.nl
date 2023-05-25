@@ -85,6 +85,8 @@ export interface Visual {
 
 export type Icons = 'arch' | 'megaphone' | 'right-angle-ruler' | 'ruler' | 'scale' | 'therefore';
 
+export type Tag = 'platform' | 'software' | 'DSL' | 'methode';
+
 export interface Attributes {
   Description: string;
   createdAt: string;
@@ -94,6 +96,7 @@ export interface Attributes {
   Title: string;
   Icon: Icons;
   Href: string | null;
+  Tag?: Tag;
 }
 
 export interface Method {
@@ -118,7 +121,7 @@ export interface GetMethodsResponse {
 }
 
 export const getMethods = ({ includeVisual = false }: { includeVisual: boolean }) => {
-  const url = makeURL('api/methods');
+  const url = makeURL('api/methods?sort[0]=Title');
 
   if (includeVisual) url.searchParams.set('populate', 'Visual');
 
