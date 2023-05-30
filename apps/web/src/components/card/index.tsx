@@ -1,14 +1,18 @@
+import { OverrideAbleComponentFunctionComponent } from '@/helpers/override-able-component-function-component';
 import { clsx } from 'clsx';
 
 interface Props extends React.PropsWithChildren {
   disabled?: boolean;
   className?: string;
-  component?: React.ElementType;
 }
 
-export const Card: React.FC<Props> = ({ children, component, disabled, className = '' }) => {
-  const Component = component || 'div';
-
+export const Card: OverrideAbleComponentFunctionComponent<'div', Props> = ({
+  children,
+  disabled,
+  className = '',
+  component: Component = 'div',
+  ...htmlComponentProps
+}) => {
   return (
     <Component
       className={clsx(
@@ -17,6 +21,7 @@ export const Card: React.FC<Props> = ({ children, component, disabled, className
         !disabled && 'border-b border-r border-grey-lighter',
         className
       )}
+      {...htmlComponentProps}
     >
       {children}
     </Component>

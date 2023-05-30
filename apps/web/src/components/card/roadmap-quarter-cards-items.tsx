@@ -1,4 +1,4 @@
-import { RoadmapQuarterCardProps } from '../roadmap-quarter-card';
+import { RoadmapQuarterCardProps } from './roadmap-quarter-card';
 
 export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
   [
