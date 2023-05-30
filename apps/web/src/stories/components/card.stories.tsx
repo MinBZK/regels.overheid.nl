@@ -2,7 +2,7 @@ import { Card } from '@/components/card';
 import { MethodCard as MethodCardComponent } from '@/components/card/method-card';
 import { PublicationCard as PublicationCardComponent } from '@/components/card/publication-card';
 import { RoadmapQuarterCard as RoadmapQuarterCardComponent } from '@/components/card/roadmap-quarter-card';
-import { roadmapQuarterCardsItems } from '@/components/roadmap-quarter-card/roadmap-quarter-cards-items';
+import { roadmapQuarterCardsItems } from '@/components/card/roadmap-quarter-cards-items';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Card> = {

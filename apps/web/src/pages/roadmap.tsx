@@ -1,5 +1,5 @@
 import { IconCategory, RoadmapQuarterCard, itemIconMap } from '@/components/card/roadmap-quarter-card';
-import { roadmapQuarterCardsItems } from '@/components/roadmap-quarter-card/roadmap-quarter-cards-items';
+import { roadmapQuarterCardsItems } from '@/components/card/roadmap-quarter-cards-items';
 import { Typography } from '@/components/typography';
 import { ucfirst } from '@/helpers/ucfirst';
 import { GetServerSideProps } from 'next';

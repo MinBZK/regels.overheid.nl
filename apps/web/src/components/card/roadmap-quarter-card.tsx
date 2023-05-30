@@ -13,7 +13,7 @@ export type IconCategory = 'devops' | 'linked data' | 'design' | 'content manage
 
 type BgColorMapKey = 'past' | 'current' | 'next' | 'later';
 
-export interface Props {
+export interface RoadmapQuarterCardProps {
   quarter: number;
   items: [icon: IconCategory, content: string | JSX.Element][];
 }
@@ -33,7 +33,7 @@ const cardColorMap: Record<BgColorMapKey, string> = {
   later: 'bg-primary-lighter',
 };
 
-export const RoadmapQuarterCard: React.FC<Props> = ({ quarter, items }) => {
+export const RoadmapQuarterCard: React.FC<RoadmapQuarterCardProps> = ({ quarter, items }) => {
   const currentQuarter: number = useMemo(() => {
     const date = new Date();
     const month = date.getMonth() + 1;
