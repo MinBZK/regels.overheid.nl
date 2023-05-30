@@ -1,5 +1,17 @@
 # web
 
+## 1.23.0
+
+### Minor Changes
+
+- a3c7f2b: Created Tailwind navbar component
+- f2a06c7: Added tag property to `methode` content-type
+  Sorted methods on method page by title
+  Created Tailwind typography component
+  Created Tailwind chip component
+  Created Tailwind button component
+  Refactored methoden page from MUI to Tailwind
+
 ## 1.22.0
 
 ### Minor Changes
