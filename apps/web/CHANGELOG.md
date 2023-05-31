@@ -1,5 +1,11 @@
 # web
 
+## 1.24.0
+
+### Minor Changes
+
+- da4e699: Refactored the roadmap page from Mui to Tailwind
+
 ## 1.23.0
 
 ### Minor Changes
