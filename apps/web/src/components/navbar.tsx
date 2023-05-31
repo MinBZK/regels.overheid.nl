@@ -1,10 +1,12 @@
+'use client';
+
 import Logo from '@/assets/logo.png';
 import { IconMenu2 } from '@tabler/icons-react';
+import { clsx } from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { clsx } from 'clsx';
-import { useRouter } from 'next/router';
 
 interface Item {
   href: string;
@@ -17,7 +19,7 @@ interface Props {
 }
 
 export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
-  const { asPath } = useRouter();
+  const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
     if (isOpen === false) document.body.style.overflow = '';
   }, [isOpen]);
 
-  useEffect(() => setIsOpen(false), [asPath]);
+  useEffect(() => setIsOpen(false), [pathName]);
 
   return (
     <>
@@ -50,8 +52,8 @@ export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
                 key={href}
                 href={href}
                 className={`h-16 flex items-center px-4 hover:bg-primary-light hover:text-primary-main ${clsx(
-                  href !== activeHref && ' text-white',
-                  href === activeHref && 'bg-primary-light text-black'
+                  href !== pathName && ' text-white',
+                  href === pathName && 'bg-primary-light text-black'
                 )}`}
               >
                 {label}

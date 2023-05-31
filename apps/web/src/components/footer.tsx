@@ -1,7 +1,7 @@
 import { Notification } from '@/components/notification';
 import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';
-import { version } from '../../package.json';
+import packageDotJson from '../../package.json';
 
 interface FooterLinkProps extends React.PropsWithChildren {
   href: string;
@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
         <p className="text-base text-center sm:w-100% mt-12 text-primary-dark lg:mt-8">
           Onze website is voortdurend in ontwikkeling. Laatste{' '}
           <a className="underline font-bold" href="https://github.com/MinBZK/regels.overheid.nl/releases">
-            live-versie v{version}
+            live-versie v{packageDotJson.version}
           </a>
         </p>
       </div>

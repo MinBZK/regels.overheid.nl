@@ -1,14 +1,19 @@
-import { IconCategory, RoadmapQuarterCard, itemIconMap } from '@/components/card/roadmap-quarter-card';
+import { RoadmapQuarterCard } from '@/components/card/roadmap-quarter-card';
+import { IconCategory, roadmapQuarterCardItemIconMap } from '@/components/card/roadmap-quarter-card-icon-map';
 import { roadmapQuarterCardsItems } from '@/components/card/roadmap-quarter-cards-items';
 import { Typography } from '@/components/typography';
 import { ucfirst } from '@/helpers/ucfirst';
-import { GetServerSideProps } from 'next';
+import { Metadata } from 'next';
+import Head from 'next/head';
 
-const legendaOrder: IconCategory[] = ['content management', 'devops', 'design', 'legal', 'linked data'];
+const legendOrder: IconCategory[] = ['content management', 'devops', 'design', 'legal', 'linked data'];
 
-const Roadmap = () => {
+export default function RoadmapPage() {
   return (
     <>
+      <Head>
+        <title>Regelgeving Centraal - Roadmap</title>
+      </Head>
       <Typography variant="page-title">Roadmap</Typography>
       <div className="mb-4 xl:flex xl:justify-between">
         <p className="text-xl mb-3 xl:w-[440px]">
@@ -17,8 +22,8 @@ const Roadmap = () => {
         </p>
         <div className="grid grid-cols-[auto_auto] gap-4  md:flex xl:flex-shrink-0 xl:mt-auto">
           <span className="text-body col-span-2 md:hidden">Roadmap legenda</span>
-          {legendaOrder.map((label) => {
-            const Icon = itemIconMap[label];
+          {legendOrder.map((label) => {
+            const Icon = roadmapQuarterCardItemIconMap[label];
 
             return (
               <span key={label} className="flex flex-shrink-0 text-primary-dark items-center gap-x-3 whitespace-nowrap">
@@ -36,12 +41,8 @@ const Roadmap = () => {
       </div>
     </>
   );
-};
+}
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {},
-  };
+export const metadata: Metadata = {
+  title: 'Regelregister van de Nederlandse Overheid - Roadmap',
 };
-
-export default Roadmap;
