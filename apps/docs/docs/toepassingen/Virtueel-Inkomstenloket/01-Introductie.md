@@ -1,6 +1,6 @@
 ---
-title: Virtueel Inkomstenloket
-description: Toepassing - Virtueel Inkomstenloket (VIL)
+title: Introductie
+description: VIL - Introductie
 ---
 
 # Introductie
@@ -9,7 +9,7 @@ Gemeente Utrecht, Amersfoort, Buren én Eindhoven werken aan een toepassing waar
 
 # Regelbeheeraanpak
 
-Dit gebeurt dankzij een [regelbeheeraanpak](../methods/01-Regelspraak.md) die is ontwikkeld door de Belastingdienst. Naast de regels worden ook testgevallen gedefinieerd op basis van de voorbeelden die door de domeinexperts worden aangeleverd. De regels worden gevalideerd aan de hand van de testgevallen.
+Dit gebeurt dankzij een [regelbeheeraanpak](../../methods/05-REGELSPRAAK.md) die is ontwikkeld door de Belastingdienst. Naast de regels worden ook testgevallen gedefinieerd op basis van de voorbeelden die door de domeinexperts worden aangeleverd. De regels worden gevalideerd aan de hand van de testgevallen.
 
 De Belastingdienst heeft inmiddels besloten om deze aanpak open source te maken, zodat Virtueel Inkomstenloket (én anderen!) de methodiek kan gebruiken. Dat is een primeur: Virtueel Inkomstenloket is de eerste die deze informatie gebruikt, buiten de Belastingdienst zelf.
 
@@ -17,9 +17,16 @@ De Belastingdienst heeft inmiddels besloten om deze aanpak open source te maken,
 
 Om Virtueel Inkomstenloket versnelling te geven, faciliteert het ministerie van Sociale Zaken en Werkgelegenheid via het programma Innovatie Gegevensuitwisseling in de Sociale Zekerheid (IGS) met ondersteuning op technische en juridische aspecten.
 
+- De volledige architectuur repository van IGS is in een HTML publicatie beschikbaar: [https://stelsel-architectuur.twi-programma.nl/](https://stelsel-architectuur.twi-programma.nl/)
+- De documentatie van de IGS componenten is [hier](https://innovatie-gegevens-socialezaken.github.io/igs/) te vinden.
+
 ## IIT
 
 De publicatie van de gestandaardiseerde regels voor de uitvoering van de allereerste regeling [Individuele inkomenstoeslag](https://pki.utrecht.nl/Loket/product/0c17f7cd409dc999eb351883a138ca3d) met het Virtueel Inkomstenloket zijn [hier](https://regels.dexcat.nl/dataset/regelgroep-uit-te-keren-individuele-inkomenstoeslag) gepubliceerd.
+
+## Plateau 4
+
+Met Virtueel Inkomstenloket streven we naar een eindsituatie van "onze droon", die we plateau 4 noemen. Dat wordt [hier](../Virtueel-Inkomstenloket/plateau-4) nader toegelicht mét bijbehorende architectuur platen.
 
 ## Nieuwe regeling toevoegen aan VIL
 :::info
