@@ -5,6 +5,12 @@ description: VIL - Plateau 4 eind situatie “onze droom”
 
 # Eind situatie “onze droom”
 
+:::info
+
+Vastgesteld door F. de Waal, Senior Data architect, Gemeente Utrecht, op 24 mei 2023, v 0.6
+
+:::
+
 Hoe ziet ons “droom loket” er uit?
 
 ![Plateau 4 compleet](../../../static/img/plateau4-compleet.png)
@@ -24,7 +30,7 @@ Onderstaande stappen kunnen op elk moment uitgevoerd worden door de inwoner, wan
 4. De gegevens worden als VC (Verifiable Credential) opgeslagen in de IGS Wallet.
 5. De inwoner kan in de wallet zien welke VC’s zijn opgehaald.
 
-Onderstaand in architectuur weergegeven:
+**In architectuur weergegeven**
 
 ![Plateau 4 stap 2 Architectuur](../../../static/img/plateau4-stap2-arch.png)
 
@@ -46,7 +52,19 @@ Op lange termijn is de rule engine óók SSI compliant en kan VC’s rechtstreek
 
 Een VC heeft een ID header (bijv. “AOW leeftijd”) , een inhoud (bijv. “ja”) en een signed source (bronsysteem waarvan afkomstig, bijv. “UWV”)
 
-Onderstaand in architectuur weergegeven:
-
+**In architectuur weergegeven**
 
 ![Plateau 4 stap 3 Architectuur](../../../static/img/plateau4-stap3-arch.png)
+
+## Stap 4 uitwisselen gegevens
+1. Inwoner kan de voucher (claim) effectueren in het inwisselportaal. Inwoner drukt op “inwisselen voucher” in het inwisselportaal van een organisatie op basis van de QR code van de voucher gegenereerd door de wallet.
+2. De inwoner kan een aanvraag indienen op de gemeentelijke (of energiebedrijf) inwisselportaal (website) met de QR code om de claim te effectueren (met ‘waarden’ en eventueel een PDF). De claim (waarden) via de “app stelseldienst” ophalen uit de wallet en aanbieden aan de “zaak afhandelservice” van een gemeente (of een ‘afhandeladministratiesysteem’ van een energiebedrijf). De “app stelseldienst” doet een oproep aan de wallet om de VC (met voucher/claim) op te halen, deze wordt aangeboden aan de “VC degenerator”, die de waarde (claim) uit de VC haalt (eventueel samen met een PDF) beschikbaar stelt aan de “app stelseldienst”. De “app stelseldienst” biedt de voucher/claim met PDF aan de gemeentelijke website waar de inwoner de aanvraag kan indienen. De VC van de claim wordt uit de wallet verwijderd (zodat claim niet 2 keer aangevraagd worden).
+3. Het besluit (waarde) én het bedrag (euro) op de aanvraag (claim) in de zaakafhandeling, wordt beschikbaar gesteld aan de “VC generator” waar het besluit én het bedrag omgezet wordt in een VC en wordt als een VC opgenomen in de wallet van de inwoner.
+
+**In architectuur weergegeven**
+
+![Plateau 4 stap 4 Architectuur](../../../static/img/plateau4-stap4-arch.png)
+
+**Vraagstuk:** hoe gaan we om claim die meerdere malen worden ingediend? Mogelijke oplossing is dat de VC van de claim in de wallet direct verwijderd wordt nadat deze gebruikt is voor een aanvraag.
+
+**Audit trail inrichten:** welke gegevens zijn gebruikt voor een aanvraag en gemeente ambtenaar die aanvraag in behandeling neemt. Mogelijkheid onderzoeken opnemen in een afdelings-wallet (dit het reguliere zaakafhandel-proces met logging en auditing zoals het nu ingericht is
