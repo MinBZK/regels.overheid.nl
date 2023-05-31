@@ -1,5 +1,15 @@
 # docs
 
+## 2.2.0
+
+### Minor Changes
+
+- 22dd562: explanation final situation VIL added, including architectural figures
+
+### Patch Changes
+
+- cada5a4: Added IGS links & fixed translating methods
+
 ## 2.1.0
 
 ### Minor Changes
