@@ -1,5 +1,5 @@
 ---
-title: Plateau 4
+title: Plateau-4
 description: VIL - Plateau 4 eind situatie “onze droom”
 ---
 

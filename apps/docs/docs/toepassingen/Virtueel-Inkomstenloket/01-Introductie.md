@@ -9,7 +9,7 @@ Gemeente Utrecht, Amersfoort, Buren én Eindhoven werken aan een toepassing waar
 
 # Regelbeheeraanpak
 
-Dit gebeurt dankzij een [regelbeheeraanpak](../methods/01-Regelspraak.md) die is ontwikkeld door de Belastingdienst. Naast de regels worden ook testgevallen gedefinieerd op basis van de voorbeelden die door de domeinexperts worden aangeleverd. De regels worden gevalideerd aan de hand van de testgevallen.
+Dit gebeurt dankzij een [regelbeheeraanpak](../../methods/05-REGELSPRAAK.md) die is ontwikkeld door de Belastingdienst. Naast de regels worden ook testgevallen gedefinieerd op basis van de voorbeelden die door de domeinexperts worden aangeleverd. De regels worden gevalideerd aan de hand van de testgevallen.
 
 De Belastingdienst heeft inmiddels besloten om deze aanpak open source te maken, zodat Virtueel Inkomstenloket (én anderen!) de methodiek kan gebruiken. Dat is een primeur: Virtueel Inkomstenloket is de eerste die deze informatie gebruikt, buiten de Belastingdienst zelf.
 
@@ -26,7 +26,7 @@ De publicatie van de gestandaardiseerde regels voor de uitvoering van de alleree
 
 ## Plateau 4
 
-Met Virtueel Inkomstenloket streven we naar een eindsituatie van "onze droon", die we plateau 4 noemen. Dat wordt hier nader toegelicht mét bijbehorende architectuur platen.
+Met Virtueel Inkomstenloket streven we naar een eindsituatie van "onze droon", die we plateau 4 noemen. Dat wordt [hier](../Virtueel-Inkomstenloket/plateau-4) nader toegelicht mét bijbehorende architectuur platen.
 
 ## Nieuwe regeling toevoegen aan VIL
 :::info
