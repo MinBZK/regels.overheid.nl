@@ -1,6 +1,6 @@
 ---
-title: Virtueel Inkomstenloket
-description: Toepassing - Virtueel Inkomstenloket (VIL)
+title: Introductie
+description: VIL - Introductie
 ---
 
 # Introductie
@@ -23,6 +23,10 @@ Om Virtueel Inkomstenloket versnelling te geven, faciliteert het ministerie van 
 ## IIT
 
 De publicatie van de gestandaardiseerde regels voor de uitvoering van de allereerste regeling [Individuele inkomenstoeslag](https://pki.utrecht.nl/Loket/product/0c17f7cd409dc999eb351883a138ca3d) met het Virtueel Inkomstenloket zijn [hier](https://regels.dexcat.nl/dataset/regelgroep-uit-te-keren-individuele-inkomenstoeslag) gepubliceerd.
+
+## Plateau 4
+
+Met Virtueel Inkomstenloket streven we naar een eindsituatie van "onze droon", die we plateau 4 noemen. Dat wordt hier nader toegelicht mét bijbehorende architectuur platen.
 
 ## Nieuwe regeling toevoegen aan VIL
 :::info
