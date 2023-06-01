@@ -15,18 +15,6 @@ const nextConfig = {
 
     return config;
   },
-  rewrites: async () => {
-    return [
-      {
-        source: '/publications/:dir/:version',
-        destination: '/public/publications/:dir/:version.html',
-      },
-      {
-        source: '/publications/:dir',
-        destination: '/public/publications/:dir/latest.html',
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
