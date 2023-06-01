@@ -1,5 +1,12 @@
 # web
 
+## 2.0.0
+
+### Major Changes
+
+- 083f85f: Upgraded the project to use the NextJs app router
+  Removed ui library MUI
+
 ## 1.24.0
 
 ### Minor Changes
