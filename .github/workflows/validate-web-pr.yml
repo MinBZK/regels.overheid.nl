@@ -38,3 +38,7 @@ jobs:
           target: prod
           file: ./apps/web/Dockerfile
           push: false
+          build-args: |
+            PUBLIC_URL=https://regels.overheid.nl/web/
+            NEXT_PUBLIC_CMS_ROOT_URL=https://regels.overheid.nl/cms
+            CMS_API_URL=https://regels.overheid.nl/cms/api

@@ -64,7 +64,12 @@ COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/
 EXPOSE 9000
 
 USER ${UID}
-ARG NEXT_PUBLIC_CMS_ROOT_URL=http://localhost/cms
+
+ARG CMS_API_URL
+ARG NEXT_PUBLIC_CMS_ROOT_URL
+
+ENV CMS_API_URL ${CMS_API_URL}
 ENV NEXT_PUBLIC_CMS_ROOT_URL ${NEXT_PUBLIC_CMS_ROOT_URL}
+
 RUN yarn build
 ENTRYPOINT yarn start
