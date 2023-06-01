@@ -22,9 +22,9 @@ const Wrapper: React.FC<WrapperProps> = ({ disabled, className, children, url })
   if (disabled || url === undefined) return <div className={className}>{children}</div>;
 
   return (
-    <Link href={url} className={className}>
+    <a href={url} className={className}>
       {children}
-    </Link>
+    </a>
   );
 };
 
