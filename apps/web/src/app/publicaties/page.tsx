@@ -1,6 +1,7 @@
 import { PublicationCard } from '@/components/card/publication-card';
+import { Metadata } from 'next';
 
-const Publicaties = () => {
+export default function PublicatiesPage() {
   return (
     <>
       <h1 className="font-bold text-4xl mb-12 text-primary-dark">Publicaties</h1>
@@ -23,6 +24,8 @@ const Publicaties = () => {
       </section>
     </>
   );
-};
+}
 
-export default Publicaties;
+export const metadata: Metadata = {
+  title: 'Regelregister van de Nederlandse Overheid - Publicaties',
+};

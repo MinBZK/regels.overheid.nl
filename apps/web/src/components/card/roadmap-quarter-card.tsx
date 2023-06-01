@@ -1,15 +1,11 @@
+'use client';
+
+import { clsx } from 'clsx';
 import { useMemo, useState } from 'react';
 import { Card } from '.';
 import { Collapse } from '../collapse';
-import { clsx } from 'clsx';
-import { Icon } from '@tabler/icons-react';
-import { IconBrandGithub } from '@tabler/icons-react';
-import { IconLicense } from '@tabler/icons-react';
-import { IconBinaryTree2 } from '@tabler/icons-react';
-import { IconComponents } from '@tabler/icons-react';
-import { IconGavel } from '@tabler/icons-react';
-
-export type IconCategory = 'devops' | 'linked data' | 'design' | 'content management' | 'legal';
+import { IconCategory } from './roadmap-quarter-card-icon-map';
+import { roadmapQuarterCardItemIconMap } from './roadmap-quarter-card-icon-map';
 
 type BgColorMapKey = 'past' | 'current' | 'next' | 'later';
 
@@ -17,14 +13,6 @@ export interface RoadmapQuarterCardProps {
   quarter: number;
   items: [icon: IconCategory, content: string | JSX.Element][];
 }
-
-export const itemIconMap: Record<IconCategory, Icon> = {
-  devops: IconBrandGithub,
-  'content management': IconLicense,
-  'linked data': IconBinaryTree2,
-  design: IconComponents,
-  legal: IconGavel,
-};
 
 const cardColorMap: Record<BgColorMapKey, string> = {
   current: 'bg-primary-main',
@@ -64,7 +52,7 @@ export const RoadmapQuarterCard: React.FC<RoadmapQuarterCardProps> = ({ quarter,
       <Collapse in={isOpen} className="md:block">
         <ul className="space-y-3">
           {items.map(([icon, content], i) => {
-            const IconComponent = itemIconMap[icon];
+            const IconComponent = roadmapQuarterCardItemIconMap[icon];
 
             return (
               <li key={i} className="bg-white p-4 rounded flex gap-x-4 items-center">

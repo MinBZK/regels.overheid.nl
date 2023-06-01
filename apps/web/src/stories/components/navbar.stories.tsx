@@ -1,8 +1,5 @@
-import React from 'react';
-import { Navbar } from '../../components/navbar';
-import { PagesContext } from '../../components/pages-provider';
 import { Meta, StoryObj } from '@storybook/react';
-import { getPagesMock } from '../../services/cms/mocks/get-pages-mock';
+import { Navbar } from '../../components/navbar';
 
 const meta: Meta<typeof Navbar> = {
   title: 'Components/Navbar',
@@ -14,13 +11,6 @@ const meta: Meta<typeof Navbar> = {
       { href: '/roadmap', label: 'Roadmap' },
     ],
   },
-  decorators: [
-    (Story) => (
-      <PagesContext.Provider value={{ pages: getPagesMock.data }}>
-        <Story />
-      </PagesContext.Provider>
-    ),
-  ],
 };
 export default meta;
 

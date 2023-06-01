@@ -1,10 +1,10 @@
 import { strapiDatabase } from '@/helpers/strapi-database';
 import { Octokit } from '@octokit/rest';
+import '@total-typescript/ts-reset';
 import { compareVersions } from 'compare-versions';
 import fs from 'fs/promises';
 import path from 'path';
 import slugify from 'slugify';
-
 const rootPublicationsDir = path.resolve(__dirname, '../../../../../public/public/publications');
 
 export async function POST(req: Request) {
@@ -72,7 +72,6 @@ export async function POST(req: Request) {
     });
 
     const versionNumbers = await Promise.all(versionNumbersPromises);
-
     const [latestVersionNumber] = versionNumbers.filter(Boolean).sort(compareVersions).reverse();
 
     await fs.copyFile(path.resolve(publicationDir, `${latestVersionNumber}.html`), latestPath);

@@ -8,7 +8,6 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   output: 'standalone',
   experimental: {
-    appDir: true,
     outputFileTracingRoot: path.join(__dirname, '../../'),
   },
   webpack(config) {
