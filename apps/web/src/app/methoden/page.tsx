@@ -7,8 +7,6 @@ import Head from 'next/head';
 export default async function MethodenPage() {
   const { data: methods } = await getMethods({ includeVisual: false });
 
-  console.log('asd');
-
   return (
     <>
       <Head>
