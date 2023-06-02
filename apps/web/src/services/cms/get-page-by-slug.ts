@@ -20,4 +20,5 @@ export interface Attributes {
   cmsPage: boolean | null;
 }
 
-export const getPageBySlug = async (slug: string) => commonFetch<GetPagesResponse>(`api/pages/slug/${slug}`);
+export const getPageBySlug = async (slug: string) =>
+  commonFetch<GetPagesResponse>(`api/pages/slug/${slug}`, { next: { revalidate: 0 } });
