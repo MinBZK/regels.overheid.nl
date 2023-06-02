@@ -42,7 +42,7 @@ De ervaring is dat het Calculemus protocol een goede basis is voor het inzichtel
 
 Het Calculemus protocol is niet klaar. Het is een stappenplan dat werkt in de huidige praktijk. Mogelijk is er in de toekomst behoefte is aan veranderingen. Misschien zijn er nieuwe stappen nodig. Of er is behoefte aan meer gedetailleerde van stappen, bijvoorbeeld om de automatische ondersteuning van onderdelen van het normatief systeem te ondersteunen.
 
-- [instrumenten](https://gitlab.com/normativesystems/beschrijving-methode/-/wikis/Instrumenten-voor-het-maken-en-gebruiken-van-normatieve-systemen)
+- [instrumenten](../norm-engineering/07-INSTRUMENTEN.md)
 
 # Flint als taal voor het beschrijven van normen
 
@@ -130,7 +130,7 @@ Dus het feit Y is waar als X bestaat in de Context C.
 
 - voorbeelden (pm)
 - voorbeelden (pm)
-- [theorie](https://gitlab.com/normativesystems/beschrijving-methode/-/wikis/Elementaire-normatieve-concepten)
+- [theorie](../norm-engineering/09-NORMATIEVE-CONCEPTEN.md)
 
 # Het uitwerken van een gereguleerde taak met Calculemus-Flint
 
