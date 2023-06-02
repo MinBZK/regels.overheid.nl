@@ -34,9 +34,9 @@ export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
     <>
       <header className="border-b-8 border-primary-light">
         <div className="h-24 sm:h-auto container flex justify-between items-center">
-          <figure className="w-[170px] sm:w-[300px] aspect-[540/190] relative">
+          <Link className="w-[170px] sm:w-[300px] aspect-[540/190] relative" href="/">
             <Image src={Logo} alt="regels.overheid.nl logo" fill />
-          </figure>
+          </Link>
           <button
             className="h-14 bg-primary-light rounded-lg flex items-center px-3 gap-x-2 border-black border-2 sm:hidden"
             onClick={() => setIsOpen((state) => !state)}
