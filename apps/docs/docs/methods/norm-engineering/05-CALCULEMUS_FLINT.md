@@ -130,7 +130,7 @@ Dus het feit Y is waar als X bestaat in de Context C.
 
 - voorbeelden (pm)
 - voorbeelden (pm)
-- [theorie](../norm-engineering/09-NORMATIEVE-CONCEPTEN.md)
+- [theorie](../norm-engineering/NORMATIEVE-CONCEPTEN)
 
 # Het uitwerken van een gereguleerde taak met Calculemus-Flint
 
@@ -187,7 +187,7 @@ In hoofdlijnen bestaat de methode uit de volgende stappen:
 De Flint methode is hierboven toegelicht.
 Voorbeelden van het maken van Flint interpretaties, instrumenten die de methode ondersteunen en een uitwerking van de theorie achter Flint zijn beschikbaar:
 
-- [voorbeelden interpreteren met Flint](https://gitlab.com/normativesystems/beschrijving-methode/-/wikis/Voorbeelden-interpreteren-met-Flint)
+- [voorbeeld interpreteren met Flint](../norm-engineering/VOORBEELDEN/01-VERBLIJFSVERGUNNING.md)
 - voorbeelden (pm)
 - theorie (pm)
 
@@ -210,10 +210,6 @@ Wanneer de voor een taak relevante bronnen zijn geïnterpreteerd met behulp van 
 Algemene regels kunnen worden toegepast in een zaak. Informatie over de zaak waarmee mensen bewijzen of aannemelijk maken dat ze voldoen aan de voorwaarden die een handeling geldig maken, noemen we bewijsmiddelen. Wanneer een actor van mening is dat er voldoende bewijsmiddelen zijn om een handeling in een zaak geldig te maken, gaat hij er vanuit dat het resultaat van de handeling waar wordt (het resultaat komt tot stand: er ontstaat iets, of er verdwijnt juist iets). Wanneer verschillende betrokkenen tot verschillende resultaten komen, is er behoefte aan het analyseren van de oorzaak van die verschillen, en (meestal) behoefte aan het oplossen van meningsverschillen. Dat is de volgende stap van het protocol.
 
 Op dit moment wordt het verzamelen van bewijsmiddelen en het gebruik daarvan in een redenering niet ondersteund. We zullen een nadere invulling van de methode ontwikkelen wanneer er dee functionaliteit nodig hebben in de zaken die we in de praktijk tegen komen.
-
-- [voorbeelden](/normativesystems/beschrijving-methode/-/wikis/url)
-- [instrumenten](/normativesystems/beschrijving-methode/-/wikis/url)
-- [theorie](/normativesystems/beschrijving-methode/-/wikis/url)
 
 ### Specificaties voor automatisch redeneren
 
