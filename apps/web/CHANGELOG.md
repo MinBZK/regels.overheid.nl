@@ -1,5 +1,11 @@
 # web
 
+## 2.0.1
+
+### Patch Changes
+
+- ecc0e53: Fixed publications not rendering, this issue is happened because NextJs doesn't server static files that weren't present during the build phase, thus an api route was created to dynamically handle static file requests
+
 ## 2.0.0
 
 ### Major Changes
