@@ -13,7 +13,7 @@ export default function PublicatiesPage() {
       </p>
       <section className="grid md:grid-cols-2 gap-x-6 gap-y-12">
         <PublicationCard
-          url="/publications/de-legitimaat"
+          url="/publicaties/de-legitimaat"
           tag="Algoritme"
           title="De Legitimaat"
           description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
