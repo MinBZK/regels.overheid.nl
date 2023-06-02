@@ -2,7 +2,6 @@
 title: Inleiding
 description: Methods - norm engineering
 ---
-
 Normen beïnvloeden ons gedrag. Dat is een nadeel omdat we niet zomaar alles kunnen doen dat in ons hoofd opkomt, maar het levert ook veel op. Hoe dat werkt is het onderwerp van de studie van normatieve systemen.
 
 We zijn op zoek naar de bouwstenen van normen, hoe ze ons gedrag beïnvloeden, hoe we ze systematisch kunnen beschrijven, we willen weten hoe we normen toepassen in specifieke zaken.
@@ -15,7 +14,7 @@ Dit is werk in uitvoering. Als je vragen of opmerkingen hebt, horen we het graag
 
 Wil je meer weten: via de onderstaande pagina's kun je vinden wat je zoekt.
 
-- [Normatieve systemen voor het beïnvloeden van gedrag](https://gitlab.com/normativesystems/beschrijving-methode/-/wikis/Normatieve-systemen-voor-het-be%C3%AFnvloeden-van-gedrag)
+- [Normatieve systemen voor het beïnvloeden van gedrag](../../methods/norm-engineering/02-GEDRAG.md)
 - [De overheid als normatief systeem](https://gitlab.com/normativesystems/beschrijving-methode/-/wikis/De-overheid-als-normatief-systeem)
 - [Perspectieven op normatieve systemen](https://gitlab.com/normativesystems/beschrijving-methode/-/wikis/Perspectieven-op-normatieve-systemen)
 - [De Calculemus-Flint methode](https://gitlab.com/normativesystems/beschrijving-methode/-/wikis/De-Calculemus-Flint-methode)
