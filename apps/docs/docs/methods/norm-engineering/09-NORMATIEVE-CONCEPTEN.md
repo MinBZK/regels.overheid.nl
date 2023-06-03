@@ -41,4 +41,4 @@ De bevoegdheid-gehoudenheid relatie gaat over wat iemand (de houder van de bevoe
 De aanspraak-plicht relatie gaat over wat iemand (de plichthouder) in de toekomst moet doen voor een ander (de aanspraakhouder). Dat iemand een aanspraak heeft op een ander die iets voor hem of haar moet doen, is het gevolg van een bevoegde handeling zoals die hierboven is beschreven. Om aan de plicht te voldoen moet een andere handeling worden verricht. Een plicht ontstaat als hij is gecreëerd door het verrichten van een handeling, en die weer verdwijnt als er aan is voldoen door het verrichten van een andere handeling. 
 
 Flint is een taal die is ontwikkeld om normatieve relaties te beschrijven, zie de onderstaande figuur.
-![Normen voor transities en statische normen](https://gitlab.com/normativesystems/beschrijving-methode/-/raw/main/images/transitienormen-en-statische-normen.png)
+![Normen voor transities en statische normen](../../../static/img/transitienormen-en-statische-normen.png)

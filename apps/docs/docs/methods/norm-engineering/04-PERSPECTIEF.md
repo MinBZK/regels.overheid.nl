@@ -13,7 +13,7 @@ Valente deed zijn onderzoek aan de Universiteit van Amsterdam. Hij beschreef de 
 
 Zowel de wetsanalyse aanpak van de Belastingdienst, als het norm engineering programma van TNO bouwen voort op dit werk. 
 
-![Vier perspectieven op normatieve systemen](https://gitlab.com/normativesystems/beschrijving-methode/-/raw/main/images/vier-perspectieven-op-normatieve_systemen.png)
+![Vier perspectieven op normatieve systemen](../../../static/img/vier-perspectieven-op-normatieve_systemen.png)
 
 # Zaakgebaseerde methoden (*case-based*)
 

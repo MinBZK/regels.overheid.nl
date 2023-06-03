@@ -25,7 +25,7 @@ De vijf stappen van het Calculemus protocol zijn:
 4. Het uitvoeren van de taak
 5. Het vergelijken van resultaten
 
-![Calculemus protocol](https://gitlab.com/normativesystems/beschrijving-methode/-/raw/main/images/calculemus-protocol.png)
+![Calculemus protocol](../../../static/img/calculemus-protocol.png)
 
 De interpretatiestap is de kern van de methode.
 Daar wordt vastgelegd aan welke normen men zich moet houden.
@@ -95,10 +95,10 @@ Er zijn drie soorten Flint frames:
 - feit frames.
 
 **Handelingsframes**
-![Handelingsframe](https://gitlab.com/normativesystems/beschrijving-methode/-/raw/main/images/handelingsframe.png)
+![Handelingsframe](../../../static/img/handelingsframe.png)
 
 **Plicht frames**
-![Plicht frame](https://gitlab.com/normativesystems/beschrijving-methode/-/raw/main/images/plicht-frame.png)
+![Plicht frame](../../../static/img/plicht-frame.png)
 
 Een plicht is iets wat iemand (een plichthouder) hoort te doen.
 Een plicht kan alleen bestaan als hij is gemaakt (door het verrichten van een handeling), als hij weer kan verdwijnen als er aan is voldaan (door een andere handeling) en als er iemand is (de aanspraakhouder) die er aanspraak op maakt dat de plichthouder zich aan zijn plicht houdt.
@@ -109,7 +109,7 @@ Maar dit is niet noodzakelijk.
 Een voorbeeld voor het interpreteren van plichten en de relaties met handelingen wordt hier later toegevoegd.
 
 **Feit frames**
-![Feit frame](https://gitlab.com/normativesystems/beschrijving-methode/-/raw/main/images/feit-frame.png)
+![Feit frame](../../../static/img/feit-frame.png)
 
 ### Wat is een feit?
 

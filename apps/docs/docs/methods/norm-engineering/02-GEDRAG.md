@@ -41,7 +41,7 @@ Waar we korte, eenvoudige beschrijvingen geven, gebruiken we geen voetnoten en r
 - Ethische normen gaan over gedrag dat als 'goed' kan worden gekwalificeerd
 - Juridische normen gaan over gedrag dat door de staat kan worden afgedwongen
 
-![Drie soorten normen](https://gitlab.com/normativesystems/beschrijving-methode/-/raw/main/images/drie-soorten-normen.png)
+![Drie soorten normen](../../../static/img/drie-soorten-normen.png)
 
 # Wat zijn normatieve systemen?
 
