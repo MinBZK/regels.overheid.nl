@@ -125,5 +125,5 @@ export const getMethods = ({ includeVisual = false }: { includeVisual: boolean }
 
   if (includeVisual) url.searchParams.set('populate', 'Visual');
 
-  return fetch(url.toString()).then((res) => res.json() as Promise<GetMethodsResponse>);
+  return fetch(url.toString(), { next: { revalidate: 0 } }).then((res) => res.json() as Promise<GetMethodsResponse>);
 };
