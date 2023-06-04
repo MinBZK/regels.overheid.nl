@@ -1,5 +1,12 @@
 # web
 
+## 2.0.2
+
+### Patch Changes
+
+- 540a973: Fixed dynamic data being cached. Caching caused cms changes not to be reflected on the website unless a fresh build was deployed
+- 4cdd9b7: Fixed dynamic data being cached on the methods page.
+
 ## 2.0.1
 
 ### Patch Changes

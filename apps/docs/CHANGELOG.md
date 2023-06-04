@@ -1,5 +1,13 @@
 # docs
 
+## 2.3.0
+
+### Minor Changes
+
+- 3a54721: Replace flint with norm engineering wiki content
+- b1d3c01: Added OpenFisca documentation & press release references
+- 72ed25d: Added Semantic HTML vocabulary description
+
 ## 2.2.0
 
 ### Minor Changes
