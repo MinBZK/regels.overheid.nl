@@ -23,10 +23,10 @@ On Linux / Mac, you may need to override the user and group that the containers 
 
 If you want to override the Docker configuration, you can create a `docker-compose.override.yml` file. This file will be used by docker-compose to override the default configuration. The syntax and options are the same as the default `docker-compose.yml` file. More information can be found in the [docker-compose documentation](https://docs.docker.com/compose/extends/).
 
-
 ### Doppler usage
 
-To use Doppler, follow the instructions above on overriding Docker. Add your desired environment variables, for example:    
+To use Doppler, follow the instructions above on overriding Docker. Add your desired environment variables, for example:
+
 ```yaml
 cms:
   environment:
@@ -34,6 +34,7 @@ cms:
 ```
 
 Then run docker-compose and Doppler
+
 ```bash
 doppler run -- docker-compose up -d
 ```
@@ -42,7 +43,7 @@ doppler run -- docker-compose up -d
 
 Where `yarn start:docker` produces errors, an alternative is this route.
 
-First run `COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up --build` to build and deploy the project and attach to the ouput. This ensures that you can see the logging in the terminal and that the containers are not running by default. 
+First run `COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up --build` to build and deploy the project and attach to the ouput. This ensures that you can see the logging in the terminal and that the containers are not running by default.
 
 ## Running locally
 
@@ -74,6 +75,10 @@ This will start all the development servers.
 ### Granularity
 
 If you wish to run the application seperarly you can do so by running `pnpm dev:cms`, `pnpm dev:web` and `pnpm dev:docs` respectively.
+
+### Using nvm
+
+In order to get set up right away with the right node version a `.nvmrc` file is present in the project root to make use of it first run `nvm use`. For installation instructions for nvm see [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
 
 ## Frontend
 
