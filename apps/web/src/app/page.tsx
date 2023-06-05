@@ -2,6 +2,7 @@ import { getPageBySlug } from '@/services/cms/get-page-by-slug';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Head from 'next/head';
 import { Metadata } from 'next';
+import remarkGfmPlugin from 'remark-gfm';
 
 interface Props {
   params?: {
@@ -19,7 +20,10 @@ export default async function Home({ params }: Props) {
       </Head>
       <div className="prose">
         {/* @ts-expect-error Server Component */}
-        <MDXRemote source={page.data?.attributes.content} />
+        <MDXRemote
+          source={page.data?.attributes.content}
+          options={{ mdxOptions: { rehypePlugins: [remarkGfmPlugin] } }}
+        />
       </div>
     </>
   );
