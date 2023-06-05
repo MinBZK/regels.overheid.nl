@@ -1,5 +1,11 @@
 # web
 
+## 2.0.3
+
+### Patch Changes
+
+- 653b4e3: Fixed content from cms containing tables not rendering properly
+
 ## 2.0.2
 
 ### Patch Changes
