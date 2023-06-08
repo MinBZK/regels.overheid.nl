@@ -1,5 +1,11 @@
 # docs
 
+## 2.4.0
+
+### Minor Changes
+
+- 292dcb3: RuleManagement Methode introduction added
+
 ## 2.3.0
 
 ### Minor Changes
