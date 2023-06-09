@@ -20,7 +20,9 @@ runs:
       shell: bash
       run: |
         mkdir ./output
-        npx respec --localhost --src index.html --out "./output/${{ inputs.name }}.html"
+        npx respec --localhost --src index.html --out "./output/output.html"
+        cp -R media output/media
+        npx base64-html-images output/output.html "output/${{ inputs.name }}.html"
     - name: Semantic Release
       shell: bash
       env:
