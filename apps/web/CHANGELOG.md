@@ -1,5 +1,11 @@
 # web
 
+## 2.0.4
+
+### Patch Changes
+
+- b615eb2: Disabled standalone build
+
 ## 2.0.3
 
 ### Patch Changes
