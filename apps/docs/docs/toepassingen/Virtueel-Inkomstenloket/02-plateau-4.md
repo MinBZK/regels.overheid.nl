@@ -3,12 +3,25 @@ title: Plateau-4
 description: VIL - Plateau 4 eind situatie “onze droom”
 ---
 
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '2px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
 # Eind situatie “onze droom”
 
 :::info
 
-Vastgesteld door F. de Waal, Senior Data architect, Gemeente Utrecht, op 24 mei 2023, v 0.6
+Vastgesteld door F. de Waal, Senior Data architect, Gemeente Utrecht, op 3 juni 2023, v 0.6
 
+Wijzigingen t.o.v. de vorige versie zijn in <Highlight color="#25c2a0">groen</Highlight> weergegeven.
 :::
 
 Hoe ziet ons “droom loket” er uit?
@@ -19,7 +32,7 @@ Onderstaande stappen kunnen op elk moment uitgevoerd worden door de inwoner, wan
 
 ## Stap 2. Haal gegevens op in wallet
 1. Inwoner haalt gegevens op in uitreik portaal. Inwoner drukt op “ophalen gegevens” in het uitreik portaal, er komt een QR code
-2. QR code wordt gescand en de gegevens worden opgehaald middels de “VC API Connector”
+2. <Highlight color="#25c2a0">Per bronsysteem</Highlight> QR code wordt gescand en <Highlight color="#25c2a0">in een aantal gevallen DigiD gebruiken</Highlight> de gegevens worden opgehaald middels de “VC API Connector”
 3. De (nieuwe) gegevens (VC’s) van de inwoner worden met “VC API Connector” middels bankbevraging én bevraging basisadministraties (die VC’s aanbieden in plateau 4) opgehaald: 
    - Mijnbelastingdienst (VC)
    - MijnUWV (VC)
