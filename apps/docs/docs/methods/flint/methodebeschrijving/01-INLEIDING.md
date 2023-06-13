@@ -14,10 +14,11 @@ Dit is werk in uitvoering. Als je vragen of opmerkingen hebt, horen we het graag
 
 Wil je meer weten: via de onderstaande pagina's kun je vinden wat je zoekt.
 
-- [Normatieve systemen voor het beïnvloeden van gedrag](../norm-engineering/02-GEDRAG.md)
-- [De overheid als normatief systeem](../norm-engineering/03-OVERHEID.md)
-- [Perspectieven op normatieve systemen](../norm-engineering/04-PERSPECTIEF.md)
-- [De Calculemus-Flint methode](../norm-engineering/05-CALCULEMUS_FLINT.md)
-- [Voorbeelden van het werken met Calculemus-Flint](../norm-engineering/06-VOORBEELD.md)
-- [Instrumenten voor het maken en gebruiken van normatieve systemen](../norm-engineering/07-INSTRUMENTEN.md)
-- [Hoe verder?](../norm-engineering/08-VERDER.md)
+- [Normatieve systemen voor het beïnvloeden van gedrag](../methodebeschrijving/02-GEDRAG.md)
+- [De overheid als normatief systeem](../methodebeschrijving/03-OVERHEID.md)
+- [Perspectieven op normatieve systemen](../methodebeschrijving/04-PERSPECTIEF.md)
+- [De Calculemus-Flint methode](../methodebeschrijving/05-CALCULEMUS_FLINT.md)
+- [Voorbeelden van het werken met Calculemus-Flint](../methodebeschrijving/06-VOORBEELD.md)
+- [Instrumenten voor het maken en gebruiken van normatieve systemen](../methodebeschrijving/07-INSTRUMENTEN.md)
+- [Hoe verder?](../methodebeschrijving/08-VERDER.md)
+

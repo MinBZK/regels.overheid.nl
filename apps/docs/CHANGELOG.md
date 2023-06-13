@@ -1,5 +1,12 @@
 # docs
 
+## 2.5.0
+
+### Minor Changes
+
+- 3319441: Restructured Flint method description
+- 7a9880d: Updated Plateau-4 architecture
+
 ## 2.4.0
 
 ### Minor Changes
