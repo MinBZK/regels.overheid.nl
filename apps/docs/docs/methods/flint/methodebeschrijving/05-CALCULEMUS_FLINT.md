@@ -25,7 +25,7 @@ De vijf stappen van het Calculemus protocol zijn:
 4. Het uitvoeren van de taak
 5. Het vergelijken van resultaten
 
-![Calculemus protocol](../../../static/img/calculemus-protocol.png)
+![Calculemus protocol](../../../../static/img/calculemus-protocol.png)
 
 De interpretatiestap is de kern van de methode.
 Daar wordt vastgelegd aan welke normen men zich moet houden.
@@ -42,7 +42,7 @@ De ervaring is dat het Calculemus protocol een goede basis is voor het inzichtel
 
 Het Calculemus protocol is niet klaar. Het is een stappenplan dat werkt in de huidige praktijk. Mogelijk is er in de toekomst behoefte is aan veranderingen. Misschien zijn er nieuwe stappen nodig. Of er is behoefte aan meer gedetailleerde van stappen, bijvoorbeeld om de automatische ondersteuning van onderdelen van het normatief systeem te ondersteunen.
 
-- [instrumenten](../norm-engineering/07-INSTRUMENTEN.md)
+- [instrumenten](../methodebeschrijving/07-INSTRUMENTEN.md)
 
 # Flint als taal voor het beschrijven van normen
 
@@ -95,10 +95,10 @@ Er zijn drie soorten Flint frames:
 - feit frames.
 
 **Handelingsframes**
-![Handelingsframe](../../../static/img/handelingsframe.png)
+![Handelingsframe](../../../../static/img/handelingsframe.png)
 
 **Plicht frames**
-![Plicht frame](../../../static/img/plicht-frame.png)
+![Plicht frame](../../../../static/img/plicht-frame.png)
 
 Een plicht is iets wat iemand (een plichthouder) hoort te doen.
 Een plicht kan alleen bestaan als hij is gemaakt (door het verrichten van een handeling), als hij weer kan verdwijnen als er aan is voldaan (door een andere handeling) en als er iemand is (de aanspraakhouder) die er aanspraak op maakt dat de plichthouder zich aan zijn plicht houdt.
@@ -109,7 +109,7 @@ Maar dit is niet noodzakelijk.
 Een voorbeeld voor het interpreteren van plichten en de relaties met handelingen wordt hier later toegevoegd.
 
 **Feit frames**
-![Feit frame](../../../static/img/feit-frame.png)
+![Feit frame](../../../../static/img/feit-frame.png)
 
 ### Wat is een feit?
 
@@ -130,7 +130,7 @@ Dus het feit Y is waar als X bestaat in de Context C.
 
 - voorbeelden (pm)
 - voorbeelden (pm)
-- [theorie](../norm-engineering/NORMATIEVE-CONCEPTEN)
+- [theorie](../methodebeschrijving/09-NORMATIEVE-CONCEPTEN.md)
 
 # Het uitwerken van een gereguleerde taak met Calculemus-Flint
 

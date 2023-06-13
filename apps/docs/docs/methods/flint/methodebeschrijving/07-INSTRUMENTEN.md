@@ -12,7 +12,7 @@ De vijf stappen van het Calculemus protocol zijn:
 4. Het uitvoeren van de taak
 5. Het vergelijken van resultaten
 
-![Calculemus protocol](../../../static/img/calculemus-protocol.png)
+![Calculemus protocol](../../../../static/img/calculemus-protocol.png)
 
 We ontwikkelen instrumenten om het gebruik van het protocol te ondersteunen. Op dit moment ligt de nadruk daarbij op:
 
