@@ -16,7 +16,7 @@ De LegitiMaat gaat het om het gehele proces van wet tot aan individueel besluit 
 ## Onderdelen van De LegitiMaat
 De LegitiMaat bevat een analyse van de gebruikelijke stappen die worden gezet bij overheidsorganisaties. Dit is de *procesplaat*. Aan de hand van de procesplaat is er een *documentenlijst* gemaakt. Dit zijn de documenten die nodig zijn voor het onderzoek. Dan zijn *vragenlijsten* aan de hand van de procesplaat. Deze kunnen door de overheidsorganisatie zelf worden beantwoord. Op basis van de verkregen informatie en antwoorden kan een visitatieteam aan de slag.
 
-Met De LegitiMaat hebben we de praktijk, de technologie en het recht een stap dichter bij elkaar gebracht. De laatst gepubliceerde versie is [hier](https://regels.overheid.nl/publications/de-legitimaat) te vinden. Voor de werkversie verwijzen we naar de <a href="https://minbzk.github.io/LegitiMaat/" target="_blank">GitHub Page</a> van MinBZK.
+Met De LegitiMaat hebben we de praktijk, de technologie en het recht een stap dichter bij elkaar gebracht. De laatst gepubliceerde versie is [hier](https://regels.overheid.nl/publicaties/de-legitimaat) te vinden. Voor de werkversie verwijzen we naar de <a href="https://minbzk.github.io/LegitiMaat/" target="_blank">GitHub Page</a> van MinBZK.
 
 ## Meer weten?
 Wij werkten zelf ook zo open mogelijk. Hoe de De LegitiMaat tot stand is gekomen vind je [in deze slides](https://noti.st/maikeklip/XRXDzo/slides). Verder zijn nog beschikbaar:
