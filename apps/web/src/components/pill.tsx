@@ -1,22 +1,22 @@
 import { clsx } from 'clsx';
 
-export type ChipVariant = 'warning' | 'info' | 'error' | 'success';
+export type PillVariant = 'warning' | 'info' | 'error' | 'success';
 
 interface Props {
   label: string;
   disabled?: boolean;
   className?: string;
-  variant?: ChipVariant;
+  variant?: PillVariant;
 }
 
-const variantMapping: Record<ChipVariant, string> = {
+const variantMapping: Record<PillVariant, string> = {
   info: 'text-primary-main bg-primary-lighter',
   warning: 'text-warning-main bg-warning-lighter',
   error: 'text-error-main bg-error-lighter',
   success: 'text-success-main bg-success-lighter',
 };
 
-export const Chip: React.FC<Props> = ({ disabled, label, className, variant = 'info' }) => {
+export const Pill: React.FC<Props> = ({ disabled, label, className, variant = 'info' }) => {
   return (
     <span
       className={clsx(

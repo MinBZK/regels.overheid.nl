@@ -1,5 +1,5 @@
 import { Card } from '@/components/card';
-import { Chip, ChipVariant } from '@/components/chip';
+import { Pill, PillVariant } from '@/components/pill';
 import { Icons, Tag } from '@/services/cms/get-methods';
 import {
   IconArrowRight,
@@ -35,7 +35,7 @@ const iconMap: Record<Icons, React.FC<TablerIconsProps>> = {
   'right-angle-ruler': IconRuler,
 };
 
-const chipVariantMap: Record<Tag, ChipVariant> = {
+const chipVariantMap: Record<Tag, PillVariant> = {
   methode: 'info',
   DSL: 'success',
   platform: 'warning',
@@ -52,7 +52,7 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
         {Icon && <Icon className="text-white" size={70} stroke={1} />}
       </figure>
       <div className="flex flex-col gap-y-4 items-start">
-        <Chip label={ucfirst(tag)} variant={chipVariantMap[tag]} />
+        <Pill label={ucfirst(tag)} variant={chipVariantMap[tag]} />
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-base text-grey-dark">{description}</p>
         <div className="flex w-full items-center justify-between flex-wrap">
