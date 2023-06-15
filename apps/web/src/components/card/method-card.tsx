@@ -52,7 +52,7 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
         {Icon && <Icon className="text-white" size={70} stroke={1} />}
       </figure>
       <div className="flex flex-col gap-y-4 items-start">
-        <Pill label={ucfirst(tag)} variant={chipVariantMap[tag]} />
+        <Pill label={tag} variant={chipVariantMap[tag]} className="capitalize" />
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-base text-grey-dark">{description}</p>
         <div className="flex w-full items-center justify-between flex-wrap">
