@@ -1,32 +1,39 @@
 import { clsx } from 'clsx';
 
-export type ChipVariant = 'warning' | 'info' | 'error' | 'success';
+type ChipVariant = 'outline' | 'filled';
 
 interface Props {
   label: string;
   disabled?: boolean;
   className?: string;
   variant?: ChipVariant;
+  onClick?: React.DOMAttributes<HTMLButtonElement>['onClick'];
 }
 
 const variantMapping: Record<ChipVariant, string> = {
-  info: 'text-primary-main bg-primary-lighter',
-  warning: 'text-warning-main bg-warning-lighter',
-  error: 'text-error-main bg-error-lighter',
-  success: 'text-success-main bg-success-lighter',
+  outline: 'text-primary-dark border-primary-dark hover:bg-primary-light focus-visible:bg-primary-light',
+  filled: 'bg-primary-lighter hover:bg-primary-light focus-visible:bg-primary-light border-transparent',
 };
 
-export const Chip: React.FC<Props> = ({ disabled, label, className, variant = 'info' }) => {
+const disabledVariantMapping: Record<ChipVariant, string> = {
+  outline: 'border border-grey-light',
+  filled: 'bg-grey-lighter',
+};
+
+export const Chip: React.FC<Props> = ({ label, variant = 'filled', disabled = false, onClick, className }) => {
   return (
-    <span
+    <button
       className={clsx(
-        'px-2 py-1  text-xs font-bold rounded mt-auto',
+        'h-8 rounded text-base font-bold px-4 inline-flex items-center cursor-pointer transition-colors focus-visible:outline outline-primary-dark outline-2 border',
+        !disabled && 'text-primary-dark',
         !disabled && variantMapping[variant],
-        disabled && 'bg-gray-lighter text-grey-main',
+        disabled && 'text-grey-main cursor-default',
+        disabled && disabledVariantMapping[variant],
         className
       )}
+      onClick={onClick}
     >
       {label}
-    </span>
+    </button>
   );
 };

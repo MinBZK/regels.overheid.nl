@@ -2,7 +2,7 @@ import { Chip } from '@/components/chip';
 import { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Chip> = {
-  title: 'Components/Chip ',
+  title: 'Components/Chip',
   component: Chip,
   tags: ['autodocs'],
 };
@@ -13,6 +13,6 @@ type Story = StoryObj<typeof Chip>;
 
 export const Default: Story = {
   args: {
-    label: 'This is a little chip',
+    label: 'This is a chip',
   },
 };
