@@ -7,11 +7,11 @@ module.exports = {
       padding: '1.5rem',
     },
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1536px',
+      sm: '768px',
+      md: '1024px',
+      lg: '1280px',
+      xl: '1440px',
+      '2xl': '1768px',
     },
     fontFamily: {
       sans: ['var(--font-sans)', 'Arial', 'Veranda', 'Times New Roman'],

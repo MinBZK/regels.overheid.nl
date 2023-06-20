@@ -3,6 +3,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import Head from 'next/head';
 import { Metadata } from 'next';
 import remarkGfmPlugin from 'remark-gfm';
+import { Container } from '@/components/container';
 
 interface Props {
   params?: {
@@ -18,13 +19,13 @@ export default async function Home({ params }: Props) {
       <Head>
         <title>{`Regelregister van de Nederlandse Overheid - ${page.data?.attributes.name}`}</title>
       </Head>
-      <div className="prose">
+      <Container className="prose">
         {/* @ts-expect-error Server Component */}
         <MDXRemote
           source={page.data?.attributes.content}
           options={{ mdxOptions: { rehypePlugins: [remarkGfmPlugin] } }}
         />
-      </div>
+      </Container>
     </>
   );
 }

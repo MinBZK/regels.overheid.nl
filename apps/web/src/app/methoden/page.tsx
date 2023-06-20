@@ -12,7 +12,6 @@ export default async function MethodenPage() {
       <Head>
         <title>Regelregister van de Nederlandse Overheid - Methoden</title>
       </Head>
-      <Typography variant="page-title">Methoden</Typography>
       <MethodCards methods={methods} />
     </>
   );
