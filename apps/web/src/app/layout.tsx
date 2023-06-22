@@ -1,9 +1,9 @@
 import { Footer } from '@/components/footer';
-import { Navbar } from '@/components/navbar';
-import { getPages } from '@/services/cms/get-pages';
+import '@/tailwind.css';
 import localFont from 'next/font/local';
 
-import '@/tailwind.css';
+import { getPages } from '@/services/cms/get-pages';
+import { Topbar } from './topbar';
 
 const RoSansWeb = localFont({
   src: [
@@ -25,13 +25,7 @@ export default async function Layout({ children }: React.PropsWithChildren) {
       </head>
       <body className={RoSansWeb.className}>
         <div className={`flex min-h-screen flex-col `}>
-          <Navbar
-            activeHref={'/'}
-            items={pages.map(({ attributes: { name, slug } }) => ({
-              href: slug === 'home' ? '/' : `/${slug}`,
-              label: name,
-            }))}
-          />
+          <Topbar pages={pages} />
           <div className="pt-14 pb-8">{children}</div>
           <Footer />
         </div>
