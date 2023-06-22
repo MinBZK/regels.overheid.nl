@@ -22,6 +22,6 @@ Het semantisch HTML-vocabulaire is een uitvinding die gedaan is in co-developmen
 
 ## Vervolg
 
-En er is meer mogelijk: de volgende stap in deze methodiek is dat wet- en regelgeving niet alleen vastgelegd wordt als HTML document volgens deze open standaarden maar ook uitgevoerd kan worden op basis hiervan. In een samenwerkingsverband met TNO werkt het Ministerie aan een eerste prototype om wet- en regelgeving van de Rijksbegrotingscyclus op democratische en transparante wijze uit te kunnen voeren, met borging van kwaliteit. Daarmee zijn wetten, regels, contracten, processen en afspraken niets anders dan informatieobjecten, net als een begrotingstabel. Hiervoor is wel een andere taal en methodiek nodig, welke gebaseerd is op dezelfde open standaarden: [Flint](../methods/norm-engineering/05-CALCULEMUS_FLINT.md).
+En er is meer mogelijk: de volgende stap in deze methodiek is dat wet- en regelgeving niet alleen vastgelegd wordt als HTML document volgens deze open standaarden maar ook uitgevoerd kan worden op basis hiervan. In een samenwerkingsverband met TNO werkt het Ministerie aan een eerste prototype om wet- en regelgeving van de Rijksbegrotingscyclus op democratische en transparante wijze uit te kunnen voeren, met borging van kwaliteit. Daarmee zijn wetten, regels, contracten, processen en afspraken niets anders dan informatieobjecten, net als een begrotingstabel. Hiervoor is wel een andere taal en methodiek nodig, welke gebaseerd is op dezelfde open standaarden: [Flint](../methods/flint/methodebeschrijving/05-CALCULEMUS_FLINT.md).
 
 
