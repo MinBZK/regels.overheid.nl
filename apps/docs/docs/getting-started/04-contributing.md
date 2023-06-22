@@ -5,7 +5,7 @@ description: Getting started - contributing
 
 ## Pull request
 
-You can also contribute by submitting a pull request. If you wish to do so find an issue in the issues list. For a more detailed description of contributing in this way see [CONTRIBUTING.md](https://github.com/MinBZK/regels.overheid.nl/blob/develop/CONTRIBUTING.md)
+You can also contribute by submitting a pull request. If you wish to do so find an issue in the issues list. For a more detailed description of contributing in this way see [CONTRIBUTING.md](https://github.com/MinBZK/regels.overheid.nl/blob/main/CONTRIBUTING.md)
 
 ### Review process
 
