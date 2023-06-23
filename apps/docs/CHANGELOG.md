@@ -1,5 +1,18 @@
 # docs
 
+## 2.6.0
+
+### Minor Changes
+
+- 88347bf: Added video explanation with practical example
+- 3f1f2c4: Added initial content regarding Concordia Legal
+
+### Patch Changes
+
+- 8ff15a4: Fixed `Edit this page` redirecting to the develop branch
+- d3f87e6: Broken link to De LegitiMaat publication fixed
+- 16aee13: Fix broken links
+
 ## 2.5.0
 
 ### Minor Changes

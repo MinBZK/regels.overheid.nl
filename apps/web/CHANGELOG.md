@@ -1,5 +1,18 @@
 # web
 
+## 2.1.0
+
+### Minor Changes
+
+- 861dc9c: Created breadcrumbs component
+- cce700c: Created Chip component
+- 8e66436: Added the possibility to filter by tag on methods page
+
+### Patch Changes
+
+- 16b5e11: Implemented correct container sizes and breakpoints
+- adda394: Upgraded NextJs 13.4.3 > 14.4.5
+
 ## 2.0.4
 
 ### Patch Changes
