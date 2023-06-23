@@ -187,7 +187,7 @@ In hoofdlijnen bestaat de methode uit de volgende stappen:
 De Flint methode is hierboven toegelicht.
 Voorbeelden van het maken van Flint interpretaties, instrumenten die de methode ondersteunen en een uitwerking van de theorie achter Flint zijn beschikbaar:
 
-- [voorbeeld interpreteren met Flint](../norm-engineering/VOORBEELDEN/01-VERBLIJFSVERGUNNING.md)
+- [voorbeeld interpreteren met Flint](../methodebeschrijving/VOORBEELDEN/01-VERBLIJFSVERGUNNING.md)
 - voorbeelden (pm)
 - theorie (pm)
 
