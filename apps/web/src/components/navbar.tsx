@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { Container } from './container';
 
 interface Item {
   href: string;
@@ -33,20 +34,20 @@ export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
   return (
     <>
       <header className="border-b-8 border-primary-light">
-        <div className="h-24 sm:h-auto container flex justify-between items-center">
+        <Container className="h-24 sm:h-auto flex justify-between items-center">
           <Link className="w-[170px] sm:w-[300px] aspect-[540/190] relative" href="/">
             <Image src={Logo} alt="regels.overheid.nl logo" fill />
           </Link>
           <button
-            className="h-14 bg-primary-light rounded-lg flex items-center px-3 gap-x-2 border-black border-2 sm:hidden"
+            className="h-14 bg-primary-light rounded-lg flex items-center px-3 gap-x-2 border-black border sm:hidden"
             onClick={() => setIsOpen((state) => !state)}
           >
             <IconMenu2 />
             <span className="text-base font-bold">Menu</span>
           </button>
-        </div>
+        </Container>
         <div className="h-16 bg-primary-main hidden sm:block">
-          <nav className="container flex items-center gap-x-2">
+          <Container className="flex items-center gap-x-2">
             {items.map(({ href, label }) => (
               <Link
                 key={href}
@@ -59,24 +60,24 @@ export const Navbar: React.FC<Props> = ({ items, activeHref }) => {
                 {label}
               </Link>
             ))}
-          </nav>
+          </Container>
         </div>
         {isOpen && (
           <div className="fixed top-24 bottom-0 bg-primary-main left-0 right-0 mt-2 z-10">
-            <nav className="container flex flex-col gap-y-2">
+            <Container className="flex flex-col gap-y-2 py-3">
               {items.map(({ href, label }) => (
                 <Link
                   key={href}
                   href={href}
-                  className={`h-[70px] text-white flex items-center ${clsx(
+                  className={`h-[70px] text-white flex items-center px-4 ${clsx(
                     href !== activeHref && ' text-white',
-                    href === activeHref && 'bg-primary-light text-black border-black border-2 px-4'
+                    href === activeHref && 'bg-primary-light text-black border-black border '
                   )}`}
                 >
                   {label}
                 </Link>
               ))}
-            </nav>
+            </Container>
           </div>
         )}
       </header>

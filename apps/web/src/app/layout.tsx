@@ -32,7 +32,7 @@ export default async function Layout({ children }: React.PropsWithChildren) {
               label: name,
             }))}
           />
-          <div className="container pt-14 pb-8">{children}</div>
+          <div className="pt-14 pb-8">{children}</div>
           <Footer />
         </div>
       </body>

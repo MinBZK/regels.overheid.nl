@@ -2,6 +2,7 @@ import { Notification } from '@/components/notification';
 import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';
 import packageDotJson from '../../package.json';
+import { Container } from './container';
 
 interface FooterLinkProps extends React.PropsWithChildren {
   href: string;
@@ -25,7 +26,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ children, href, isBlank }) => {
 export const Footer: React.FC = () => {
   return (
     <div className="w-full bg-primary-lighter border-t-primary-light border-t-8 py-6 mt-auto">
-      <div className="container">
+      <Container>
         <div className="flex flex-col sm:flex-row-reverse sm:justify-between sm:items-start lg:flex-col lg:items-center lg:gap-y-6">
           <Notification severity="warning" className="mb-6 sm:w-[300px] lg:w-[664px]">
             Deze website heeft nog géén officiele status. Dit is work in progress. Heb je vragen of wil je met ons
@@ -76,7 +77,7 @@ export const Footer: React.FC = () => {
             live-versie v{packageDotJson.version}
           </a>
         </p>
-      </div>
+      </Container>
     </div>
   );
 };
