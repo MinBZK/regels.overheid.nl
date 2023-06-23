@@ -22,7 +22,11 @@ In de video leggen wij de methode uit.
 ## Werkt het in de praktijk?
 Deze manier van werken gebruiken wij voor onze eigen projecten op het gebied van (o.a.) arbeidsrecht en ook in onze consulting werkzaamheden. Wat we hebben gebouwd, werkt naar tevredenheid.
 
-De video met een praktijkvoorbeeld is nog net niet af helaas, stay tuned. 
+In de video hieronder lichten we de methode met een praktijkvoorbeeld verder toe.
+
+<video width="100%" height="auto" controls>
+  <source src="https://www.concordialegal.nl/wp-content/uploads/2023/06/Concordia-Legal-uitwerking-ingesproken.mp4" type="video/mp4" />
+</video>
 
 ## Concordia Legal
 Wij zijn een legal tech bedrijf met als doel juridisch werk te vereenvoudigen.
