@@ -1,0 +1,5 @@
+---
+'web': minor
+---
+
+Created CommonOverrideAbleComponent
