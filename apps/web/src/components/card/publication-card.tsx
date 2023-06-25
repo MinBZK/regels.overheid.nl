@@ -32,7 +32,6 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({ title, url, ta
   return (
     <Card
       component="article"
-      disabled={disabled}
       className={clsx(!disabled && 'hover:bg-primary-main group transition-all duration-300 ease-linear')}
     >
       <Wrapper url={url} disabled={disabled} className={clsx('flex w-full h-full', disabled && 'cursor-not-allowed')}>
