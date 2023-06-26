@@ -8,19 +8,13 @@ interface Props extends React.PropsWithChildren {
 
 export const Card: OverrideAbleComponentFunctionComponent<'div', Props> = ({
   children,
-  disabled,
   className = '',
   component: Component = 'div',
   ...htmlComponentProps
 }) => {
   return (
     <Component
-      className={clsx(
-        'rounded-lg px-3 py-4',
-        disabled && 'bg-grey-lighter',
-        !disabled && 'border-b border-r border-grey-lighter',
-        className
-      )}
+      className={clsx('rounded-lg px-3 py-4 border-b border-r border-grey-lighter', className)}
       {...htmlComponentProps}
     >
       {children}
