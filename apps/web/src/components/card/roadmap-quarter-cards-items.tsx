@@ -1,3 +1,4 @@
+import { Link } from '../link';
 import { RoadmapQuarterCardProps } from './roadmap-quarter-card';
 
 export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
@@ -12,14 +13,20 @@ export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
     [
       'content management',
       <>
-        Capabilities toets <a href="https://regels.dexcat.nl/api">Regelregister</a>
+        Capabilities toets{' '}
+        <Link component="a" href="https://regels.dexcat.nl/api">
+          Regelregister
+        </Link>
       </>,
     ],
     ['design', 'Uitwerking Design System met design tokens & annotaties'],
     [
       'linked data',
       <>
-        XML import <a href="https://linkeddata.overheid.nl/front/portal/">LiDO</a>
+        XML import{' '}
+        <Link component="a" href="https://linkeddata.overheid.nl/front/portal/">
+          LiDO
+        </Link>
       </>,
     ],
     ['devops', 'Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)'],
@@ -27,13 +34,19 @@ export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
     [
       'devops',
       <>
-        Fair Web Analytics obv <a href="https://www.offen.dev/">offen.dev</a>
+        Fair Web Analytics obv{' '}
+        <Link component="a" href="https://www.offen.dev/">
+          offen.dev
+        </Link>
       </>,
     ],
     [
       'devops',
       <>
-        Doorontwikkeling <a href="https://xml-annotate.live.wem.io/">Low Code Widget voor annotatie</a>
+        Doorontwikkeling{' '}
+        <Link component="a" href="https://xml-annotate.live.wem.io/">
+          Low Code Widget voor annotatie
+        </Link>
       </>,
     ],
   ],
@@ -42,10 +55,17 @@ export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
     [
       'content management',
       <>
-        Eerste versie <a href="https://minbzk.github.io/dcat-ap-ronl/">applicatie profiel</a> van de{' '}
-        <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211">
+        Eerste versie{' '}
+        <Link component="a" href="https://minbzk.github.io/dcat-ap-ronl/">
+          applicatie profiel
+        </Link>{' '}
+        van de{' '}
+        <Link
+          component="a"
+          href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211"
+        >
           Europese DCAT-AP standaard
-        </a>{' '}
+        </Link>{' '}
         voor uitwisseling met regels.overheid.nl
       </>,
     ],
@@ -56,7 +76,10 @@ export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
     [
       'devops',
       <>
-        Migratie <a href="https://regelbeheer.pleio.nl/">regelbeheer.pleio.nl</a>
+        Migratie{' '}
+        <Link component="a" href="https://regelbeheer.pleio.nl/">
+          regelbeheer.pleio.nl
+        </Link>
       </>,
     ],
   ],
