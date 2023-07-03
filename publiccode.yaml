@@ -15,8 +15,8 @@ developmentStatus: development
 softwareType: "addon"
 
 description:
-  en:
-    localisedName: medusa   # Optional
+  nl:
+    localisedName: regels.overheid.nl   # Optional
     shortDescription: >
           Openbare bibliotheek van regels die de overheid gebruikt om wetgeving te vertalen naar uitvoering.
           
