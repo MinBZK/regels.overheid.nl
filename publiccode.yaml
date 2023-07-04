@@ -1,64 +1,56 @@
 publiccodeYmlVersion: "0.2"
-
 name: Open Regels
-url: "https://github.com/MinBZK/regels.overheid.git"
-softwareVersion: "dev"    # Optional
-logo: "/apps/web/src/assets/logo.png"
-releaseDate: "2023-06-30"
+url: https://github.com/MinBZK/regels.overheid.git
+softwareVersion: dev
+releaseDate: 2023-06-30
 platforms:
   - web
- 
 categories:
   - law & regulations
-
 developmentStatus: development
-
-softwareType: "addon"
-
+softwareType: addon
 description:
   nl:
-    localisedName: regels.overheid.nl   # Optional
+    localisedName: regels.overheid.nl
     shortDescription: >
-          Openbare bibliotheek van regels die de overheid gebruikt om wetgeving te vertalen naar uitvoering.
-          
+      Openbare bibliotheek van regels die de overheid gebruikt om
+      wetgeving te vertalen naar uitvoering.
     longDescription: >
-          Regels zijn nodig om wet- en regelgeving te vertalen naar uitvoering. Er zijn geen eenduidige aanwijzingen hoe een regel moet worden opgesteld.
-          Daardoor kun je niet altijd controleren of een regel juist is. Die aanwijzingen bestaan bijvoorbeeld wel voor wet- en regelgeving.
-          Regels zijn ook geen computercode die gecontroleerd kan worden door een machine. Het is daarom lastig voor overheden, burgers en bedrijven 
-          lastig om te bepalen of een regel 'juist' is.
-          
-          Daarom vind je op deze website regels die de overheid gebruikt om wetgeving te vertalen naar uitvoering. 
+      Regels zijn nodig om wet- en regelgeving te vertalen naar
+      uitvoering. Er zijn geen eenduidige aanwijzingen hoe een regel moet worden
+      opgesteld. Daardoor kun je niet altijd controleren of een regel juist is.
+      Die aanwijzingen bestaan bijvoorbeeld wel voor wet- en regelgeving. Regels
+      zijn ook geen computercode die gecontroleerd kan worden door een machine.
+      Het is daarom lastig voor overheden, burgers en bedrijven  lastig om te
+      bepalen of een regel 'juist' is.
 
+      Daarom vind je op deze website regels die de overheid gebruikt om wetgeving te vertalen naar uitvoering. 
     features:
-       - Bibliotheek
-
+      - Bibliotheek
 legal:
   license: EUPL-1.2
-
 maintenance:
-  type: "community"
-
+  type: community
   contacts:
     - name: Steven Gort
-
 localisation:
   localisationReady: true
   availableLanguages:
     - nl
-# De Nederlandse uitbreiding op de Common Ground standaard
 nl:
   countryExtensionVersion: "1.0"
   commonground:
-  - layerType: "process"
-  - installationType: "self"
-  - intendedOrganisations: "https://github.com/MinBZK"
+    layerType: process
+    installationType: self
+    intendedOrganisations:
+      - https://github.com/MinBZK
   gemma:
     bedrijfsfuncties:
-      - "Uitvoering Sociaal Doemein"
-      - "Gegevensmanagement"
+      - Uitvoering Sociaal Doemein
+      - Gegevensmanagement
     bedrijfsservices:
-      - "Producten- en dienstenrealisatie sociaal domein"
-      - "Casusregievoering sociaal domein"
-    applicatiefunctie: "Publiceren gemeentelijke producten en diensten"
+      - Producten- en dienstenrealisatie sociaal domein
+      - Casusregievoering sociaal domein
+    applicatiefunctie: Publiceren gemeentelijke producten en diensten
   upl:
-  - "individuele inkomenstoeslag"
+    - individuele inkomenstoeslag
