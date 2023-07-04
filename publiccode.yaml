@@ -2,7 +2,7 @@ publiccodeYmlVersion: "0.2"
 name: Open Regels
 url: https://github.com/MinBZK/regels.overheid.git
 softwareVersion: dev
-logo: https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/web/src/assets/logo.png
+logo: "https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/web/src/assets/logo.png"
 releaseDate: 2023-06-30
 platforms:
   - web
