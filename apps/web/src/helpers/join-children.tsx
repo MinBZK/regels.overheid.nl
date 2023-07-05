@@ -1,14 +1,22 @@
-export const joinChildren = (children: any[], separator: JSX.Element) => {
-  const result: React.ReactNode[] = [];
+import { Fragment, ReactNode } from 'react';
 
-  for (let i = 0; i < children.length; i++) {
-    const child = children[i];
-    if (child == null) continue;
+export const joinChildren = (children: React.ReactNode, separator: JSX.Element) => {
+  const filteredChildren = Array.isArray(children) ? children.filter(Boolean) : children;
 
-    result.push(child);
-
-    result.push(separator);
+  if (!Array.isArray(filteredChildren) || filteredChildren.length === 1) {
+    return <>{filteredChildren}</>;
   }
 
-  return result.slice(0, -1);
+  const separatedChildren: React.ReactNode[] = [];
+  const numChildren = filteredChildren.length;
+
+  filteredChildren.forEach((child, index) => {
+    separatedChildren.push(child as ReactNode);
+
+    if (index !== numChildren - 1) {
+      separatedChildren.push(<Fragment key={`separator-${index}`}>{separator}</Fragment>);
+    }
+  });
+
+  return <>{separatedChildren}</>;
 };
