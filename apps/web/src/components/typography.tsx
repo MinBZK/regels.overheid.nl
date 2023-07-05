@@ -5,7 +5,7 @@ type TypographyVariantTypes = 'page-title';
 type TypographyVariant = [component: React.ElementType, classNames: string];
 
 const typographyVariantMapping: Record<TypographyVariantTypes, TypographyVariant> = {
-  'page-title': ['h1', 'text-5xl mb-6'],
+  'page-title': ['h1', 'text-5xl mb-6 font-bold text-primary-dark'],
 };
 
 interface Props extends React.PropsWithChildren {
