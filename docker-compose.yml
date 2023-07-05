@@ -92,6 +92,7 @@ services:
       - CMS_DATABASE_URL=postgresql://postgres:postgres@postgres:5432/strapi
       - CMS_API_URL=http://cms:9001/api
       - NEXT_PUBLIC_CMS_ROOT_URL=http://localhost/cms
+      - CMS_URL=http://cms:9001
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/
       - VIRTUAL_DEST=/
