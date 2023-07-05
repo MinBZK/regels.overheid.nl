@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@octokit/rest": "^19.0.7",
+    "@sindresorhus/slugify": "^2.2.1",
     "@tabler/icons-react": "^2.16.0",
     "@tailwindcss/typography": "^0.5.9",
     "@total-typescript/ts-reset": "^0.3.7",
