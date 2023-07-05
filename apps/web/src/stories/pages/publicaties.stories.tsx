@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react';
-import Publicaties from '../../app/publicaties/page';
+import Publicaties from '../../app/(common-page)/publicaties/page';
 
 const meta: Meta<typeof Publicaties> = {
   title: 'Pages/Publicaties',
