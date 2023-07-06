@@ -17,7 +17,7 @@ export default async function BlogPage() {
       </Container>
       <Container bleed>
         <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
-          {blogArticlesResponse.data.map(({ id, attributes }) => (
+          {blogArticlesResponse.data?.map(({ id, attributes }) => (
             <BlogArticleCard
               key={id}
               title={attributes.title}

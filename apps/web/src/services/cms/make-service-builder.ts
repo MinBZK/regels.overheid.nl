@@ -45,13 +45,13 @@ export function makeServiceBuilder<TModel, TResponseKind extends 'collection' | 
       TPickedModel = TFields extends undefined
         ? TDefaultFields extends undefined
           ? TModel
-          : // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          : // eslint-disable-next-line
             // @ts-ignore
             Pick<TModel, TDefaultFields[number]>
-        : // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        : // eslint-disable-next-line
           // @ts-ignore
           Pick<TModel, ExtractTrueValues<TFields>>,
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // eslint-disable-next-line
       // @ts-ignore
       TModelWithMedia = TPickedModel & AddMediaFields<TPopulateMediaFields>,
       TReturn = TResponseKind extends 'collection'
@@ -59,7 +59,6 @@ export function makeServiceBuilder<TModel, TResponseKind extends 'collection' | 
         : CmsSingularResponse<TModelWithMedia>
     >(serviceOptions?: { fields?: TFields; args?: TUrlBuilderArgs }): Promise<TReturn> {
       // service body
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const _url = builderOptions?.urlBuilder?.(serviceOptions!.args!) || url;
       const fetchUrl = makeURL(`api/${_url}`);
 
@@ -70,7 +69,7 @@ export function makeServiceBuilder<TModel, TResponseKind extends 'collection' | 
       if (builderOptions?.populateMediaFields)
         fetchUrl.searchParams.append('populate', builderOptions.populateMediaFields.join(','));
 
-      const response = await fetch(fetchUrl.toString());
+      const response = await fetch(fetchUrl.toString(), { next: { revalidate: 0 } });
 
       return response.json() as Promise<TReturn>;
     };

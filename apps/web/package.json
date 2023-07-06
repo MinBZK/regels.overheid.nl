@@ -26,6 +26,7 @@
     "autoprefixer": "^10.4.14",
     "clsx": "^1.2.1",
     "compare-versions": "^6.0.0-rc.1",
+    "encoding": "^0.1.13",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "javascript-time-ago": "^2.5.9",

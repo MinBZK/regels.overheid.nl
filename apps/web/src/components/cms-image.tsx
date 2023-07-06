@@ -5,5 +5,6 @@ export const CmsImage: React.FC<React.ComponentProps<typeof Image>> = ({ src, ..
 
   const _src = `${cmsRootUrl}${src}`;
 
+  // eslint-disable-next-line jsx-a11y/alt-text
   return <Image src={_src} {...rest} />;
 };
