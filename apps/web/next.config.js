@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 
 /** @type {import('next').NextConfig} */
@@ -10,6 +9,28 @@ const nextConfig = {
     config.plugins.push(new webpack.IgnorePlugin({ resourceRegExp: /^pg-native$/ }));
 
     return config;
+  },
+  images: {
+    remotePatterns: [
+      {
+        port: '80',
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '/cms/uploads/**',
+      },
+      {
+        port: '9001',
+        protocol: 'http',
+        hostname: 'cms',
+        pathname: '/uploads/**',
+      },
+      {
+        port: '80',
+        protocol: 'https',
+        hostname: 'regels.overheid.nl',
+        pathname: 'cms/uploads/**',
+      },
+    ],
   },
 };
 
