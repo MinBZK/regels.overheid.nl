@@ -1,11 +1,10 @@
-import { RoadmapQuarterCard } from '@/components/card/roadmap-quarter-card';
-import { IconCategory, roadmapQuarterCardItemIconMap } from '@/components/card/roadmap-quarter-card-icon-map';
-import { roadmapQuarterCardsItems } from '@/components/card/roadmap-quarter-cards-items';
+import { IconCategory, roadmapQuarterCardItemIconMap } from '@/app/roadmap/roadmap-quarter-card-icon-map';
 import { Container } from '@/components/container';
 import { Typography } from '@/components/typography';
 import { ucfirst } from '@/helpers/ucfirst';
 import { Metadata } from 'next';
 import Head from 'next/head';
+import { Roadmap } from './roadmap';
 
 const legendOrder: IconCategory[] = ['content management', 'devops', 'design', 'legal', 'linked data'];
 
@@ -40,13 +39,7 @@ export default function RoadmapPage() {
           </div>
         </div>
       </Container>
-      <Container bleed className="xl:mt-14">
-        <div className="flex flex-col gap-6 overflow-auto md:flex-row md:items-start xl:justify-between">
-          {roadmapQuarterCardsItems.map((items, index) => (
-            <RoadmapQuarterCard key={index} quarter={index + 1} items={items} />
-          ))}
-        </div>
-      </Container>
+      <Roadmap />
     </>
   );
 }

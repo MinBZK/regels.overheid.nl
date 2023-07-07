@@ -1,7 +1,7 @@
-import { Link } from '../link';
-import { RoadmapQuarterCardProps } from './roadmap-quarter-card';
+import { Link } from '@/components/link';
+import { RoadmapQuarterCardProps } from '../../app/roadmap/roadmap-quarter-card';
 
-export const roadmapQuarterCardsItems: RoadmapQuarterCardProps['items'][] = [
+export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
   [
     ['content management', 'Capabilities toets CMS & Next.js / MDX'],
     ['content management', 'ReSpec documentatie publicatie proces'],
