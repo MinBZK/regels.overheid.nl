@@ -1,4 +1,4 @@
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 
 export type PillVariant = 'warning' | 'info' | 'error' | 'success';
 
@@ -20,7 +20,7 @@ export const Pill: React.FC<Props> = ({ disabled, label, className, variant = 'i
   return (
     <span
       className={clsx(
-        'px-2 py-1  text-xs font-bold rounded mt-auto',
+        'mt-auto rounded  px-2 py-1 text-xs font-bold',
         !disabled && variantMapping[variant],
         disabled && 'bg-gray-lighter text-grey-main',
         className

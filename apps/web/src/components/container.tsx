@@ -1,16 +1,22 @@
-import { OverrideAbleComponentFunctionComponent } from '@/helpers/override-able-component-function-component';
-import { clsx } from 'clsx';
+import clsx from 'clsx';
+import { PropsWithChildren } from 'react';
+import { OverrideAbleComponentFunctionComponent } from './override-able-component-function-component';
 
-interface Props extends React.PropsWithChildren {
-  className?: string;
+interface Props extends PropsWithChildren {
   bleed?: boolean;
+  className?: string;
 }
 
 export const Container: OverrideAbleComponentFunctionComponent<'div', Props> = ({
   component: Component = 'div',
-  children,
   bleed,
+  children,
   className,
+  ...componentProps
 }) => {
-  return <Component className={clsx('container', !bleed && 'xl:max-w-[760px]', className)}>{children}</Component>;
+  return (
+    <Component className={clsx(className, 'container', !bleed && 'xl:max-w-[760px]')} {...componentProps}>
+      {children}
+    </Component>
+  );
 };
