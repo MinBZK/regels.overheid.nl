@@ -1,7 +1,4 @@
-import { IconBrandGithub } from '@tabler/icons-react';
-import { IconLicense } from '@tabler/icons-react';
-import { IconBinaryTree2 } from '@tabler/icons-react';
-import { IconComponents } from '@tabler/icons-react';
+import { IconBinaryTree2, IconBrandGithub, IconComponents, IconLicense } from '@tabler/icons-react';
 
 import { IconGavel } from '@tabler/icons-react';
 

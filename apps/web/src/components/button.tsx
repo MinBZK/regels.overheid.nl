@@ -4,10 +4,10 @@ import { OverrideAbleComponentFunctionComponent } from './override-able-componen
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
 
 interface Props extends React.PropsWithChildren {
+  variant?: Variant;
+  className?: string;
   endIcon?: JSX.Element;
   startIcon?: JSX.Element;
-  className?: string;
-  variant?: Variant;
 }
 
 const enabledVariants: Record<Variant, string> = {
