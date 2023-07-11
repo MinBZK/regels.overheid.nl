@@ -3,6 +3,8 @@ import { RemoteMdx } from '@/components/remote-mdx';
 import { getPageBySlug } from '@/prisma/get-page-by-slug';
 import { Metadata } from 'next';
 
+export const revalidate = 3600;
+
 export default async function Home() {
   const page = await getPageBySlug('home');
 
