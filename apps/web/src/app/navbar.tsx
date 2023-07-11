@@ -33,23 +33,12 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
 
   return (
     <header role="banner" className="border-b-8 border-primary-light">
-      <nav
-        role="navigation"
-        aria-label="Hoofdnavigatie"
-        className="flex flex-col flex-wrap"
-      >
+      <nav role="navigation" aria-label="Hoofdnavigatie" className="flex flex-col flex-wrap">
         <Container className="flex h-24 items-center justify-between sm:h-auto">
-          <Link
-            className="relative aspect-[540/190] w-[170px] sm:w-[300px]"
-            href="/"
-          >
+          <Link className="relative aspect-[540/190] w-[170px] sm:w-[300px]" href="/">
             <Image src={Logo} alt="regels.overheid.nl logo" fill />
           </Link>
-          <Button
-            variant="secondary"
-            className="sm:hidden"
-            onClick={() => setIsOpen((state) => !state)}
-          >
+          <Button variant="secondary" className="sm:hidden" onClick={() => setIsOpen((state) => !state)}>
             Menu
           </Button>
         </Container>
@@ -80,8 +69,7 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
                   key={id}
                   href={slug === 'home' ? '/' : `/${slug}`}
                   className={clsx(
-                    slugIsActivePath(slug) &&
-                      'border border-black bg-primary-light text-black',
+                    slugIsActivePath(slug) && 'border border-black bg-primary-light text-black',
                     'flex h-[70px] items-center px-4 text-white'
                   )}
                 >

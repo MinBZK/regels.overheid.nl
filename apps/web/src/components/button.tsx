@@ -11,8 +11,7 @@ interface Props extends React.PropsWithChildren {
 }
 
 const enabledVariants: Record<Variant, string> = {
-  primary:
-    'bg-primary-dark text-white outline-black hover:bg-primary-main focus:bg-primary-main focus:outline-2',
+  primary: 'bg-primary-dark text-white outline-black hover:bg-primary-main focus:bg-primary-main focus:outline-2',
   secondary:
     'bg-primary-light text-primary-dark outline-black hover:bg-primary-lighter focus:bg-primary-lighter focus:outline-2',
   tertiary: 'text-primary-dark underline hover:text-primary-main',
@@ -27,10 +26,7 @@ const disabledVariant: Record<Variant, string> = {
   ghost: 'border border-grey-main text-grey-main',
 };
 
-export const Button: OverrideAbleComponentFunctionComponent<
-  'button',
-  Props
-> = ({
+export const Button: OverrideAbleComponentFunctionComponent<'button', Props> = ({
   children,
   component: Component = 'button',
   endIcon,
