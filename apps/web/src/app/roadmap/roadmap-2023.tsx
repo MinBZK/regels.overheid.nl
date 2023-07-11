@@ -4,12 +4,12 @@ import { RoadmapQuarterCardProps } from '../../app/roadmap/roadmap-quarter-card'
 export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
   [
     ['content management', 'Capabilities toets CMS & Next.js / MDX'],
-    ['content management', 'ReSpec documentatie publicatie proces'],
     ['devops', 'CI/CD pipeline & release process irt scrum sprints'],
     ['devops', '100% internet.nl test'],
     ['legal', 'Low Code Widget voor annotatie deployed bij UBR'],
   ],
   [
+    ['content management', 'ReSpec documentatie publicatie proces'],
     [
       'content management',
       <>
@@ -19,7 +19,8 @@ export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
         </Link>
       </>,
     ],
-    ['design', 'Uitwerking Design System met design tokens & annotaties'],
+  ],
+  [
     [
       'linked data',
       <>
@@ -29,50 +30,11 @@ export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
         </Link>
       </>,
     ],
-    ['devops', 'Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)'],
-    ['devops', 'Definitieve cloud architectuur'],
-    [
-      'devops',
-      <>
-        Fair Web Analytics obv{' '}
-        <Link component="a" href="https://www.offen.dev/">
-          offen.dev
-        </Link>
-      </>,
-    ],
-    [
-      'devops',
-      <>
-        Doorontwikkeling{' '}
-        <Link component="a" href="https://xml-annotate.live.wem.io/">
-          Low Code Widget voor annotatie
-        </Link>
-      </>,
-    ],
+    ['linked data', 'Apache Jena Fuseki SPARQL server'],
   ],
   [
-    ['linked data', 'Apache Jena Fuseki SPARQL server'],
-    [
-      'content management',
-      <>
-        Eerste versie{' '}
-        <Link component="a" href="https://minbzk.github.io/dcat-ap-ronl/">
-          applicatie profiel
-        </Link>{' '}
-        van de{' '}
-        <Link
-          component="a"
-          href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211"
-        >
-          Europese DCAT-AP standaard
-        </Link>{' '}
-        voor uitwisseling met regels.overheid.nl
-      </>,
-    ],
-    ['content management', 'Creatie & publicatie proces'],
-    ['content management', 'Inrichten governance structuur'],
-    ['design', 'Interactive prototype'],
-    ['design', 'Validatie (Testen)'],
+    ['devops', 'Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)'],
+    ['devops', 'Definitieve cloud architectuur'],
     [
       'devops',
       <>
@@ -82,9 +44,5 @@ export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
         </Link>
       </>,
     ],
-  ],
-  [
-    ['content management', 'Redactie proces op basis van governance structuur'],
-    ['devops', 'Minimum viable product'],
   ],
 ];
