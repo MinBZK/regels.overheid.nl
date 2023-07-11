@@ -47,9 +47,9 @@ const IconMapping: React.FC<IconMappingProps> = ({ severity, className }) => {
 };
 
 export const Notification: React.FC<NotificationProps> = ({ severity = 'info', children, className }) => (
-  <div className={`${notificationVariantsMapping[severity]} p-6 border-2 text-base flex ${clsx(className)}`}>
+  <div className={clsx(className, notificationVariantsMapping[severity], '$ flex border-2 p-6 text-base')}>
     <div className="w-8 shrink-0">
-      <IconMapping severity={severity} className={`${iconVariantsMapping[severity]} text-xs mt-1`} />
+      <IconMapping severity={severity} className={`${iconVariantsMapping[severity]} mt-1 text-xs`} />
     </div>
     <div>{children}</div>
   </div>

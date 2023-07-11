@@ -1,37 +1,36 @@
-import { PublicationCard } from '@/components/card/publication-card';
 import { Container } from '@/components/container';
+import { Typography } from '@/components/typography';
 import { Metadata } from 'next';
+import { PublicationCard } from './publication-card';
 
 export default function PublicatiesPage() {
   return (
-    <>
+    <main>
       <Container>
-        <h1 className="font-bold text-4xl mb-12 text-primary-dark">Publicaties</h1>
-        <h2 className="font-bold text-3xl mb-6 text-primary-main">Over alle publicaties</h2>
-        <p className="text-base mb-16">
+        <Typography variant="h1">Publicaties</Typography>
+        <Typography variant="h2">Over alle publicaties</Typography>
+        <Typography>
           De ReSpec publicaties bieden inzicht en waardevolle kennis over diverse vakgebieden. Onze publicaties zijn
           geschreven door vooraanstaande experts en dragen bij aan de ontwikkeling en vooruitgang van het bijbehorende
           vakgebied.
-        </p>
+        </Typography>
       </Container>
-      <Container bleed>
-        <section className="grid md:grid-cols-2 gap-x-6 gap-y-12">
-          <PublicationCard
-            url="/publicaties/de-legitimaat"
-            tag="Algoritme"
-            title="De Legitimaat"
-            description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
-          />
-          <PublicationCard
-            title="DCAT"
-            variant="wip"
-            description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
-          />
-          <PublicationCard title="Harmonisator" variant="unavailable" />
-          <PublicationCard title="Calculemus Protocol" variant="unavailable" />
-        </section>
+      <Container bleed className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2">
+        <PublicationCard
+          url="/publicaties/de-legitimaat"
+          tag="Algoritme"
+          title="De Legitimaat"
+          description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
+        />
+        <PublicationCard
+          title="DCAT"
+          variant="wip"
+          description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
+        />
+        <PublicationCard title="Harmonisator" variant="unavailable" />
+        <PublicationCard title="Calculemus Protocol" variant="unavailable" />
       </Container>
-    </>
+    </main>
   );
 }
 

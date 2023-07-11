@@ -2,8 +2,9 @@
 FROM node:18-alpine as base
 
 RUN apk update && \
-    apk add --no-cache libc6-compat git && \
+    apk add --no-cache libc6-compat git  openssl1.1-compat&& \
     yarn global add turbo
+
     
 # ==== Prune project ====
 FROM base as pruned
@@ -43,9 +44,12 @@ COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/
 USER ${UID}
 
 EXPOSE 9000
+
+RUN yarn workspace web run prisma generate
+
 ENTRYPOINT yarn dev
 
-# # ==== Prod ====
+#  ==== Prod ====
 FROM base AS prod
 
 WORKDIR /project
@@ -65,11 +69,15 @@ EXPOSE 9000
 
 USER ${UID}
 
-ARG CMS_API_URL
-ARG NEXT_PUBLIC_CMS_ROOT_URL
+ARG DATABASE_URL
+ARG CMS_URL
+ARG NEXT_PUBLIC_CMS_URL
 
-ENV CMS_API_URL ${CMS_API_URL}
-ENV NEXT_PUBLIC_CMS_ROOT_URL ${NEXT_PUBLIC_CMS_ROOT_URL}
+ENV DATABASE_URL ${DATABASE_URL}
+ENV CMS_URL ${CMS_URL}
+ENV NEXT_PUBLIC_CMS_URL ${NEXT_PUBLIC_CMS_URL}
 
+RUN yarn workspace web run prisma generate
 RUN yarn build
+
 ENTRYPOINT yarn start

@@ -1,5 +1,5 @@
 export const PageNotFoundIllustrationMobile = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.9627 139.27444" className="w-full h-full">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86.9627 139.27444" className="h-full w-full">
     <g id="a455b45d-13a7-4f68-9fbd-185b3256b236" data-name="Layer 2">
       <g id="be81686e-275f-4a1c-ab56-3b78c6a239ed" data-name="Layer 1">
         <path
