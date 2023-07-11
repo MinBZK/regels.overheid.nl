@@ -1,11 +1,12 @@
+import { getPages } from '@/prisma/get-pages';
 import { Breadcrumbs } from './breadcrumbs';
 
 export default async function CommonPageLayout({ children }: React.PropsWithChildren) {
+  const pages = await getPages();
   return (
     <>
-      {/* @ts-expect-error Server Component */}
-      <Breadcrumbs />
-      <div className="pt-14 pb-8">{children}</div>
+      <Breadcrumbs pages={pages} />
+      <main className="pb-8 pt-14">{children}</main>
     </>
   );
 }

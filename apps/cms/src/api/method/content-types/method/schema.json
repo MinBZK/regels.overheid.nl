@@ -31,7 +31,8 @@
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "Icon": {
       "pluginOptions": {
@@ -47,7 +48,8 @@
         "ruler",
         "scale",
         "therefore"
-      ]
+      ],
+      "required": true
     },
     "Href": {
       "pluginOptions": {
@@ -55,7 +57,8 @@
           "localized": true
         }
       },
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Tag": {
       "pluginOptions": {

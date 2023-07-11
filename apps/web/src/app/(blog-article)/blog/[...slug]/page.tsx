@@ -1,11 +1,17 @@
+import { resolveCmsFile } from '@/common/resolve-cms-file';
+import { Breadcrumbs } from '@/components/breadcrumbs';
 import { Button } from '@/components/button';
-import { CmsImage } from '@/components/cms-image';
 import { Container } from '@/components/container';
+import { RemoteMdx } from '@/components/remote-mdx';
 import { Typography } from '@/components/typography';
-import { getBlogArticle } from '@/services/cms/get-blog-article';
+import { getBlogArticle } from '@/prisma/get-blog-article';
+import { getEntityFiles } from '@/prisma/get-entity-files';
+import { blog_articles } from '@prisma/client';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 interface Props {
   params: {
@@ -14,43 +20,70 @@ interface Props {
 }
 
 export default async function BlogArticlePage(props: Props) {
-  const articleResponse = await getBlogArticle({ args: { id: Number(props.params.slug[0]) } });
+  const id = Number(props.params.slug[0]);
+  const blogArticle = (await getBlogArticle(id)) as blog_articles; // generateMetadata ensures that blogArticle exists
+  const [coverFile] = await getEntityFiles('api::blog-article.blog-article', id);
 
   return (
-    <Container>
-      <Button component={Link} variant="text" startIcon={<IconArrowLeft />} href="/blog">
-        Overzicht
-      </Button>
-      <Typography variant="page-title" className="mb-12 mt-4 ">
-        {articleResponse.data.attributes.title}
-      </Typography>
-      <span className="text-grey-light">Publicatiedatum 28-04-2023, 14:40</span>
-      <figure className="aspect-[308/140] relative rounded-lg overflow-hidden mb-12 mt-3">
-        {articleResponse.data.attributes.cover.data.attributes.formats.small && (
-          <CmsImage
-            fill
-            className="object-cover"
-            src={articleResponse.data.attributes.cover.data.attributes.formats.small.url}
-            alt={
-              articleResponse.data.attributes.cover.data.attributes.alternativeText ||
-              articleResponse.data.attributes.title
+    <>
+      <header>
+        <nav>
+          <Breadcrumbs>
+            <Link href="/">Home</Link>
+            <Link href="/blog">Blog</Link>
+            <span>{blogArticle.title}</span>
+          </Breadcrumbs>
+        </nav>
+      </header>
+      <Container component="main" className="pb-8 pt-14">
+        <header>
+          <Button component={Link} variant="tertiary" startIcon={<IconArrowLeft />} href="/blog">
+            Overzicht
+          </Button>
+          <Typography variant="h1" className="mb-12 mt-4 ">
+            {blogArticle.title}
+          </Typography>
+          <span className="text-grey-light">
+            Publicatiedatum{' '}
+            {
+              // published_at at this stage cannot be null ensured in getBlogArticle
+              blogArticle.published_at!.toLocaleDateString('nl-NL', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+              })
             }
-          />
-        )}
-      </figure>
-      <div className="prose">{articleResponse.data.attributes.content}</div>
-      <div className="py-6 border-t border-b border-grey-light mt-6">
-        Categorie: {articleResponse.data.attributes.category}
-      </div>
-    </Container>
+          </span>
+          <figure className="relative mb-12 mt-3 aspect-[308/140] overflow-hidden rounded-lg">
+            {coverFile.files?.url && (
+              <Image
+                fill
+                className="object-cover"
+                src={resolveCmsFile(coverFile.files.url)}
+                alt={coverFile.files?.alternative_text || blogArticle?.title}
+              />
+            )}
+          </figure>
+        </header>
+        <article>
+          <RemoteMdx content={blogArticle?.content || ''} />
+        </article>
+        <div className="mt-6 border-b border-t border-grey-light py-6">Categorie: {blogArticle?.category}</div>
+      </Container>
+    </>
   );
 }
 
 export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata> {
   const [id] = params.slug;
-  const articleResponse = await getBlogArticle({ args: { id: Number(id) } });
+
+  const blogArticle = await getBlogArticle(Number(id));
+
+  if (!blogArticle) return notFound();
 
   return {
-    title: `${articleResponse.data.attributes.title} - Blog - regels.overheid.nl`,
+    title: `${blogArticle.title} - Blog - regels.overheid.nl`,
   };
 }

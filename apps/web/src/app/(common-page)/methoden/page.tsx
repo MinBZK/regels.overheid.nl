@@ -1,20 +1,13 @@
+import { Container } from '@/components/container';
 import { Typography } from '@/components/typography';
+import { getMethods } from '@/prisma/get-methods';
 import { Metadata } from 'next';
-import Head from 'next/head';
-import { MethodCards } from './method-cards';
-import { getMethods } from '@/services/cms/get-methods';
+import { MethodsPage } from './methods-page';
 
 export default async function MethodenPage() {
-  const { data: methods } = await getMethods({ includeVisual: false });
+  const methods = await getMethods();
 
-  return (
-    <>
-      <Head>
-        <title>Regelregister van de Nederlandse Overheid - Methoden</title>
-      </Head>
-      <MethodCards methods={methods} />
-    </>
-  );
+  return <MethodsPage methods={methods} />;
 }
 
 export const metadata: Metadata = {

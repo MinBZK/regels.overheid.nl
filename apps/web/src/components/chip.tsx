@@ -1,4 +1,4 @@
-import { clsx } from 'clsx';
+import clsx from 'clsx';
 
 type ChipVariant = 'outline' | 'filled';
 
@@ -24,10 +24,10 @@ export const Chip: React.FC<Props> = ({ label, variant = 'filled', disabled = fa
   return (
     <button
       className={clsx(
-        'h-8 rounded text-base font-bold px-4 inline-flex items-center cursor-pointer transition-colors focus-visible:outline outline-primary-dark outline-2 border',
+        'inline-flex h-8 cursor-pointer items-center rounded border px-4 text-base font-bold outline-2 outline-primary-dark transition-colors focus-visible:outline',
         !disabled && 'text-primary-dark',
         !disabled && variantMapping[variant],
-        disabled && 'text-grey-main cursor-default',
+        disabled && 'cursor-default text-grey-main',
         disabled && disabledVariantMapping[variant],
         className
       )}

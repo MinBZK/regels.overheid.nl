@@ -1,19 +1,27 @@
 'use client';
 
 import { Breadcrumbs as BreadcrumbsComponent } from '@/components/breadcrumbs';
-import { getPageBySlug } from '@/services/cms/get-page-by-slug';
+import { getPages } from '@/prisma/get-pages';
 import Link from 'next/link';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
-export const Breadcrumbs = async () => {
-  const selectedLayoutSegment = useSelectedLayoutSegment();
+interface Props {
+  pages: Awaited<ReturnType<typeof getPages>>;
+}
 
-  const page = selectedLayoutSegment && (await getPageBySlug(selectedLayoutSegment));
+export const Breadcrumbs: React.FC<Props> = ({ pages }) => {
+  const pathName = usePathname();
+
+  const page = pages.find((page) => pathName.includes(page.slug));
 
   return (
-    <BreadcrumbsComponent>
-      <Link href="/">Home</Link>
-      {/* {selectedLayoutSegment && <span>{page?.data.attributes.name}</span>} */}
-    </BreadcrumbsComponent>
+    <header>
+      <nav>
+        <BreadcrumbsComponent>
+          <Link href="/">Home</Link>
+          {page && <span>{page?.name}</span>}
+        </BreadcrumbsComponent>
+      </nav>
+    </header>
   );
 };

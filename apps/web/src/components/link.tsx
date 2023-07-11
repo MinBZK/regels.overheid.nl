@@ -1,14 +1,14 @@
-import { OverrideAbleComponentFunctionComponent } from '@/helpers/override-able-component-function-component';
+import { OverrideAbleComponentFunctionComponent } from './override-able-component-function-component';
 import NextLink from 'next/link';
 
 export const Link: OverrideAbleComponentFunctionComponent<typeof NextLink, React.PropsWithChildren> = ({
   component: Component = NextLink,
   children,
   href,
-  ...props
+  ...componentProps
 }) => {
   return (
-    <Component href={href} className="text-primary-dark hover:underline hover:text-primary-main" {...props}>
+    <Component href={href} className="text-primary-dark hover:text-primary-main hover:underline" {...componentProps}>
       {children}
     </Component>
   );

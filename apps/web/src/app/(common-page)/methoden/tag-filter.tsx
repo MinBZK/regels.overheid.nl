@@ -1,16 +1,16 @@
 'use client';
 
+import { arrayWithout } from '@/common/array-without';
 import { Chip } from '@/components/chip';
-import { arrayWithout } from '@/helpers/array-without';
-import { Method } from '@/services/cms/get-methods';
+import { methods } from '@prisma/client';
 import { IconFilter } from '@tabler/icons-react';
 import { useState } from 'react';
-import { defaultTag } from './method-cards';
+import { defaultTag } from './methods-page';
 
 interface Props {
   filters: string[];
-  methods: Method[];
-  onFilter: (methods: Method[]) => void;
+  methods: methods[];
+  onFilter: (methods: methods[]) => void;
 }
 
 export const TagFilter: React.FC<Props> = ({ filters, onFilter, methods }) => {
@@ -21,7 +21,7 @@ export const TagFilter: React.FC<Props> = ({ filters, onFilter, methods }) => {
 
     onFilter(
       newActiveFilters.length > 0
-        ? methods.filter((method) => newActiveFilters.includes(method.attributes.Tag || defaultTag))
+        ? methods.filter((method) => newActiveFilters.includes(method.tag || defaultTag))
         : methods
     );
   };
@@ -33,7 +33,7 @@ export const TagFilter: React.FC<Props> = ({ filters, onFilter, methods }) => {
   };
 
   return (
-    <div className="flex gap-4 items-center py-4 border-b border-primary-dark mb-6">
+    <div className="mb-6 flex items-center gap-4 border-b border-primary-dark py-4">
       <span className="text-2xl">Filter</span>
       <IconFilter className="mr-4" />
       {filters.map((filter) => (
