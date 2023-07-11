@@ -10,13 +10,13 @@ export default function RoadmapPage() {
   return (
     <>
       <Container>
-        <Typography variant="page-title">Roadmap</Typography>
+        <Typography variant="h1">Roadmap</Typography>
         <div className="mb-4">
-          <p className="mb-3 text-xl xl:w-[440px]">
+          <Typography className=" text-xl xl:w-[440px]">
             Verken onze roadmap om een duidelijk inzicht te krijgen in onze strategie voor het centraal vindbaar maken
             van alle regels.
-          </p>
-          <div className="grid grid-cols-[auto_auto] gap-4 md:flex xl:mt-auto xl:flex-shrink-0">
+          </Typography>
+          <div className="mt-3 grid grid-cols-[auto_auto] gap-4 md:flex xl:mt-auto xl:flex-shrink-0">
             <span className="text-body col-span-2 md:hidden">Roadmap legenda</span>
             {legendOrder.map((label) => {
               const Icon = roadmapQuarterCardItemIconMap[label];

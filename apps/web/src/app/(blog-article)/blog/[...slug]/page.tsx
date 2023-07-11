@@ -19,6 +19,8 @@ interface Props {
   };
 }
 
+export const revalidate = 3600;
+
 export default async function BlogArticlePage(props: Props) {
   const id = Number(props.params.slug[0]);
   const blogArticle = (await getBlogArticle(id)) as blog_articles; // generateMetadata ensures that blogArticle exists
