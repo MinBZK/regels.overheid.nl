@@ -1,5 +1,20 @@
 # docs
 
+## 3.0.0
+
+### Major Changes
+
+- f4dd3b6: Added publiccode.yaml in order to service openCatalogi"
+
+### Minor Changes
+
+- 016c971: Added CircuLaw content as a method
+
+### Patch Changes
+
+- 7a1387c: Added logo for openCatalogi.nl
+- 9681b7d: Language description corrected
+
 ## 2.6.0
 
 ### Minor Changes

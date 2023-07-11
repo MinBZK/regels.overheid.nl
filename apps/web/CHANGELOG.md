@@ -1,5 +1,25 @@
 # web
 
+## 3.0.0
+
+### Major Changes
+
+- 74ff73d: Complete refactor of the web app
+
+### Minor Changes
+
+- b0b8fe6: Added the ability to display multiple years on the roadmap
+- bffc4be: Created link component
+- f473134: Added blog pages
+- dff1877: Created CommonOverrideAbleComponent
+- e84365a: Created work in progress variant for publications and refactored the disabled variant to the unavailable variant
+
+### Patch Changes
+
+- 81c749b: Lowered cache times for pages that rely on content from the cms
+- e801c59: Removed disabled prop from Card component
+- 72a0127: Fixed typography on roadmap page
+
 ## 2.1.0
 
 ### Minor Changes
