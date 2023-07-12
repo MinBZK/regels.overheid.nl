@@ -10,8 +10,6 @@ interface Props {
   };
 }
 
-export const revalidate = 3600;
-
 export default async function SlugPage({ params }: Props) {
   const page = await getPageBySlug(params.slug);
 
