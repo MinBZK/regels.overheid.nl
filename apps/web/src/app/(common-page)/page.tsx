@@ -1,14 +1,11 @@
 import { Container } from '@/components/container';
-import { RemoteMdx } from '@/components/remote-mdx';
-import { getPageBySlug } from '@/prisma/get-page-by-slug';
+import { RemotePage } from '@/components/remote-page';
 import { Metadata } from 'next';
 
 export default async function Home() {
-  const page = await getPageBySlug('home');
-
   return (
     <Container component="main">
-      <RemoteMdx content={page?.content || ''} />
+      <RemotePage page="home" />
     </Container>
   );
 }
