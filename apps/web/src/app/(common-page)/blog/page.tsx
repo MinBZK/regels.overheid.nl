@@ -5,8 +5,6 @@ import { Metadata } from 'next';
 import { Typography } from '@/components/typography';
 import slugify from '@sindresorhus/slugify';
 
-export const revalidate = 3600;
-
 export default async function Blog() {
   const articles = await getBlogArticles();
 
