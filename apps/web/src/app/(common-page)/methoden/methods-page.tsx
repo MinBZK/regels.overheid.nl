@@ -21,7 +21,6 @@ export const MethodsPage: React.FC<Props> = ({ methods }) => {
   return (
     <main>
       <Container>
-        <Typography variant="h1">Methoden</Typography>
         <TagFilter filters={Array.from(uniqueTags)} methods={methods} onFilter={(data) => setFilteredMethods(data)} />
       </Container>
       <Container bleed>

@@ -1,5 +1,5 @@
 import { Container } from '@/components/container';
-import { RemoteMdx } from '@/components/remote-mdx';
+import { RemotePage } from '@/components/remote-page';
 import { getPageBySlug } from '@/prisma/get-page-by-slug';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -10,12 +10,10 @@ interface Props {
   };
 }
 
-export default async function SlugPage({ params }: Props) {
-  const page = await getPageBySlug(params.slug);
-
+export default function SlugPage({ params }: Props) {
   return (
     <Container component="main">
-      <RemoteMdx content={page!.content || ''} />
+      <RemotePage page={params.slug} />
     </Container>
   );
 }

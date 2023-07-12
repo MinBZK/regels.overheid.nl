@@ -1,4 +1,5 @@
 import { Container } from '@/components/container';
+import { RemotePage } from '@/components/remote-page';
 import { Typography } from '@/components/typography';
 import { Metadata } from 'next';
 import { Roadmap } from './roadmap';
@@ -6,16 +7,15 @@ import { IconCategory, roadmapQuarterCardItemIconMap } from './roadmap-quarter-c
 
 const legendOrder: IconCategory[] = ['content management', 'devops', 'design', 'legal', 'linked data'];
 
-export default function RoadmapPage() {
+export default async function RoadmapPage() {
   return (
     <>
       <Container>
         <Typography variant="h1">Roadmap</Typography>
         <div className="mb-4">
-          <Typography className=" text-xl xl:w-[440px]">
-            Verken onze roadmap om een duidelijk inzicht te krijgen in onze strategie voor het centraal vindbaar maken
-            van alle regels.
-          </Typography>
+          <div className="xl:w-[440px]">
+            <RemotePage page="roadmap" />
+          </div>
           <div className="mt-3 grid grid-cols-[auto_auto] gap-4 md:flex xl:mt-auto xl:flex-shrink-0">
             <span className="text-body col-span-2 md:hidden">Roadmap legenda</span>
             {legendOrder.map((label) => {
