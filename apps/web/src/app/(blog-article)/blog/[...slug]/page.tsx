@@ -19,7 +19,7 @@ interface Props {
   };
 }
 
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export default async function BlogArticlePage(props: Props) {
   const id = Number(props.params.slug[0]);

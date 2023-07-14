@@ -140,7 +140,7 @@ model blog_articles {
   id                                                   Int          @id @default(autoincrement())
   title                                                String       @db.VarChar(255)
   category                                             String       @db.VarChar(255)
-  content                                              String
+  content                                              String?
   created_at                                           DateTime?    @db.Timestamp(6)
   updated_at                                           DateTime?    @db.Timestamp(6)
   published_at                                         DateTime?    @db.Timestamp(6)
