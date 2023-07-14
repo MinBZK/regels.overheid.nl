@@ -1,5 +1,18 @@
 # web
 
+## 3.1.0
+
+### Minor Changes
+
+- f798811: Allow all pages to have content managed trough the cms
+
+### Patch Changes
+
+- bdd3092: Lowered cache time for all pages to 5 minutes
+- 5b7a602: Lowered cache time for all pages
+- 4dac6ec: Fixed typography components always rendering as a p tag
+- 6a7965b: Fixed links inside remote mdx pages not having the right styles applied
+
 ## 3.0.0
 
 ### Major Changes
