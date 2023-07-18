@@ -4,11 +4,8 @@ on:
     branches:
       - main
     paths:
-      - 'apps/web/**'
-      - '.github/actions/**'
+      - 'apps/web/CHANGELOG.md'
       - '.github/workflows/deploy-web.yml'
-      - 'package.json'
-      - 'yarn.lock'
 jobs:
   build-web-image:
     runs-on: ubuntu-latest

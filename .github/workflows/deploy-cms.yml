@@ -4,11 +4,8 @@ on:
     branches:
       - main
     paths:
-      - "apps/cms/**"
-      - ".github/actions/**"
-      - ".github/workflows/deploy-cms.yml"
-      - "package.json"
-      - "yarn.lock"
+      - 'apps/cms/CHANGELOG.md'
+      - '.github/workflows/deploy-cms.yml'
 jobs:
   build-cms-image:
     runs-on: ubuntu-latest
@@ -31,4 +28,3 @@ jobs:
           release-name: cms
           digitalocean-access-token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
           cluster-id: '${{ secrets.DIGITALOCEAN_PRODUCTION_CLUSTER_ID }}'
-          
