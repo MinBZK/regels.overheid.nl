@@ -26,8 +26,7 @@ export const BlogArticleCard: React.FC<Props> = async ({ id, title, category, ur
   return (
     <Card component="article" className="group flex w-full flex-col overflow-hidden border-l border-t">
       <Link href={url}>
-        <figure className="relative -ml-4 -mr-4 -mt-4 mb-2 aspect-[308/140] overflow-hidden">
-          {coverFile && (
+        <figure className="relative -ml-3 -mr-3 -mt-4 mb-2 aspect-[308/140] overflow-hidden">
           {coverFile.files?.ext && coverFile.files.hash && (
             <Image
               fill
