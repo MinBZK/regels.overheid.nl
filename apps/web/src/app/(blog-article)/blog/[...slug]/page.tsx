@@ -7,7 +7,6 @@ import { RemoteMdx } from '@/components/remote-mdx';
 import { Typography } from '@/components/typography';
 import { getBlogArticle } from '@/prisma/get-blog-article';
 import { getEntityFiles } from '@/prisma/get-entity-files';
-import { blog_articles } from '@prisma/client';
 import slugify from '@sindresorhus/slugify';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { Metadata } from 'next';
@@ -26,7 +25,7 @@ export const revalidate = 300;
 
 export default async function BlogArticlePage(props: Props) {
   const id = Number(props.params.slug[0]);
-  const blogArticle = (await getBlogArticle(id)) as blog_articles; // generateMetadata ensures that blogArticle exists
+  const blogArticle = (await getBlogArticle(id))!; // generateMetadata ensures that blogArticle exists
   const [coverFile] = await getEntityFiles('api::blog-article.blog-article', id);
 
   return (
