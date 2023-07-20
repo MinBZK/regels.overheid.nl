@@ -1,4 +1,4 @@
-import { resolveCmsFile } from '@/common/resolve-cms-file';
+import { resolveCmsImage } from '@/common/resolve-cms-image';
 import { truncateStringAtWord } from '@/common/truncate-string-at-word';
 import { Breadcrumbs } from '@/components/breadcrumbs';
 import { Button } from '@/components/button';
@@ -62,11 +62,11 @@ export default async function BlogArticlePage(props: Props) {
             }
           </span>
           <figure className="relative mb-12 mt-3 aspect-[308/140] overflow-hidden rounded-lg">
-            {coverFile.files?.url && (
+            {coverFile.files?.ext && coverFile.files.hash && (
               <Image
                 fill
                 className="object-cover"
-                src={resolveCmsFile(coverFile.files.url)}
+                src={resolveCmsImage({ ext: coverFile.files.ext, hash: coverFile.files.hash, width: 1235 })}
                 alt={coverFile.files?.alternative_text || blogArticle?.title}
               />
             )}

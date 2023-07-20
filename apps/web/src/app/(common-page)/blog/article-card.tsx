@@ -1,4 +1,4 @@
-import { resolveCmsFile } from '@/common/resolve-cms-file';
+import { resolveCmsImage } from '@/common/resolve-cms-image';
 import { Card } from '@/components/card';
 import { Pill } from '@/components/pill';
 import { getEntityFiles } from '@/prisma/get-entity-files';
@@ -28,10 +28,11 @@ export const BlogArticleCard: React.FC<Props> = async ({ id, title, category, ur
       <Link href={url}>
         <figure className="relative -ml-4 -mr-4 -mt-4 mb-2 aspect-[308/140] overflow-hidden">
           {coverFile && (
+          {coverFile.files?.ext && coverFile.files.hash && (
             <Image
               fill
               className="object-cover"
-              src={resolveCmsFile(coverFile.files!.url!)}
+              src={resolveCmsImage({ ext: coverFile.files.ext, hash: coverFile.files.hash, width: 720 })}
               alt={coverFile.files?.alternative_text || title}
             />
           )}
