@@ -36,7 +36,7 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
       <nav role="navigation" aria-label="Hoofdnavigatie" className="flex flex-col flex-wrap">
         <Container className="flex h-24 items-center justify-between sm:h-auto">
           <Link className="relative aspect-[540/190] w-[170px] sm:w-[300px]" href="/">
-            <Image src={Logo} alt="regels.overheid.nl logo" fill />
+            <Image src={Logo} alt="regels.overheid.nl logo" />
           </Link>
           <Button variant="secondary" className="sm:hidden" onClick={() => setIsOpen((state) => !state)}>
             Menu
