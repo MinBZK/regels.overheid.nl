@@ -24,6 +24,11 @@ const nextConfig = {
         hostname: 'host.docker.internal',
         pathname: '/cms/**',
       },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '/**',
+      },
     ],
   },
 };
