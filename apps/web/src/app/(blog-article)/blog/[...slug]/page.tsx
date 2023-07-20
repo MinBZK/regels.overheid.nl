@@ -12,6 +12,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ShareBar } from './share-bar';
 
 interface Props {
   params: {
@@ -73,6 +74,9 @@ export default async function BlogArticlePage(props: Props) {
           <RemoteMdx content={blogArticle?.content || ''} />
         </article>
         <div className="mt-6 border-b border-t border-grey-light py-6">Categorie: {blogArticle?.category}</div>
+
+        <p className="mb-2 mt-12 text-xl">Deel deze pagina</p>
+        <ShareBar title={blogArticle.title} />
       </Container>
     </>
   );
