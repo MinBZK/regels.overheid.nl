@@ -43,7 +43,7 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
           </Button>
         </Container>
         <div className="hidden bg-primary-main sm:block">
-          <Container component="ul" className="flex h-16 items-center gap-x-2">
+          <Container component="ul" className="flex h-16 items-center">
             {pages.map(({ id, slug, name }) => {
               return (
                 <li key={id}>
