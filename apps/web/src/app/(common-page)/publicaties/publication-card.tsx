@@ -16,8 +16,8 @@ interface PublishedProps {
 }
 
 interface WipProps {
-  url?: never;
-  tag?: never;
+  url: string;
+  tag: string;
   title: string;
   variant: 'wip';
   description: string;
@@ -37,18 +37,37 @@ type VariantMappingComponent = 'card' | 'title' | 'description' | 'tag';
 
 const variantMapping: Record<Variant, Partial<Record<VariantMappingComponent, string>>> = {
   published: {
-    card: 'border-primary-main hover:bg-primary-main',
-    title: 'group-hover:text-white',
-    description: 'group-hover:text-white',
+    card: 'hover:bg-primary-lighter hover:border-primary-lighter hover:drop-shadow-sm',
+    title: 'group-hover:underline',
+    description: '',
     tag: 'text-primary-main bg-primary-lighter group-hover:bg-white group-hover:text-primary-dark',
   },
-  wip: { tag: 'text-primary-dark' },
+  wip: {
+    card: 'hover:bg-warning-lighter hover:border-warning-lighter hover:drop-shadow-sm',
+    title: 'group-hover:underline',
+    description: '',
+    tag: 'text-primary-main bg-primary-lighter group-hover:bg-white group-hover:text-primary-dark',
+  },
   unavailable: {
     card: 'border-none bg-grey-lighter',
     title: 'text-grey-main',
     description: 'text-grey-main',
     tag: 'bg-gray-lighter text-grey-main',
   },
+};
+
+const wrapperComponentTag = (variant: Variant) => {
+  if (variant === 'published' || variant === 'wip') return 'article';
+
+  return Fragment;
+};
+
+const cardComponentTag = (variant: Variant) => {
+  if (variant === 'published') return Link;
+
+  if (variant === 'wip') return 'a';
+
+  return 'article';
 };
 
 export const PublicationCard: React.FC<PublicationCardProps> = ({
@@ -60,30 +79,35 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
 }) => {
   const variantStyles = variantMapping[variant];
 
-  const InnerComponent = variant === 'published' ? Link : Fragment;
+  const Wrapper = wrapperComponentTag(variant);
 
   return (
-    <Card component="article" className={clsx('group transition-all duration-300 ease-linear', variantStyles.card)}>
-      <InnerComponent href={url as string} className="flex h-full w-full">
-        <div className="flex flex-col items-start gap-y-2">
+    <Wrapper>
+      <Card
+        href={url!}
+        component={cardComponentTag(variant)}
+        className={clsx(variantStyles.card, 'group flex h-full transition-all duration-150 ease-linear')}
+      >
+        <div className={clsx('flex flex-col items-start gap-y-2')}>
           <h3 className={clsx('text-base font-bold', variantStyles.title)}>{title}</h3>
-          <p className={clsx('text-sm text-grey-dark', variantStyles.description)}>
+          <p className={clsx('mb-2 text-base text-grey-dark', variantStyles.description)}>
             {variant === 'unavailable'
               ? 'Binnenkort zal er een publicatie verschijnen op deze kaart, echter is deze momenteel nog in ontwikkeling.'
               : description}
           </p>
-          {variant === 'published' && <Pill label={tag!} />}
-          <span className={clsx('mt-auto text-xs font-bold', variantStyles.tag)}>
-            {variant === 'wip' && 'Work in progress'}
-            {variant === 'unavailable' && 'Binnenkort bischikbaar'}
-          </span>
+          {variant !== 'unavailable' && (
+            <Pill label={tag!} variant={variant === 'wip' ? 'warning' : 'info'} className="group-hover:bg-white" />
+          )}
+          {variant === 'unavailable' && (
+            <span className={clsx('mt-auto text-base font-bold', variantStyles.tag)}>Binnenkort beschikbaar</span>
+          )}
         </div>
-        {variant === 'published' && (
+        {variant !== 'unavailable' && (
           <div className="ml-auto flex w-9 shrink-0 items-center justify-end">
-            <IconExternalLink className="text-primary-main group-hover:text-white" />
+            <IconExternalLink className="text-primary-main group-hover:text-black" />
           </div>
         )}
-      </InnerComponent>
-    </Card>
+      </Card>
+    </Wrapper>
   );
 };
