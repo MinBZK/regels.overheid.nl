@@ -12,10 +12,7 @@ export const Card: OverrideAbleComponentFunctionComponent<'div', Props> = ({
   ...componentProps
 }) => {
   return (
-    <Component
-      className={clsx(className, 'rounded-lg border-b border-r border-grey-lighter px-3 py-4')}
-      {...componentProps}
-    >
+    <Component className={clsx(className, 'rounded-lg border border-grey-lighter px-3 py-4')} {...componentProps}>
       {children}
     </Component>
   );
