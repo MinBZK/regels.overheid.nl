@@ -12,10 +12,8 @@ export default async function RoadmapPage() {
     <>
       <Container>
         <Typography variant="h1">Roadmap</Typography>
-        <div className="mb-4">
-          <div className="xl:w-[440px]">
-            <RemotePage page="roadmap" />
-          </div>
+        <div className="mb-16">
+          <RemotePage page="roadmap" />
           <div className="mt-3 grid grid-cols-[auto_auto] gap-4 md:flex xl:mt-auto xl:flex-shrink-0">
             <span className="text-body col-span-2 md:hidden">Roadmap legenda</span>
             {legendOrder.map((label) => {
