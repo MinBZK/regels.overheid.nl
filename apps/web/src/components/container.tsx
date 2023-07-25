@@ -15,7 +15,7 @@ export const Container: OverrideAbleComponentFunctionComponent<'div', Props> = (
   ...componentProps
 }) => {
   return (
-    <Component className={clsx(className, 'container', !bleed && 'xl:max-w-[760px]')} {...componentProps}>
+    <Component className={clsx(className, 'container', !bleed && 'xl:max-w-[814px]')} {...componentProps}>
       {children}
     </Component>
   );
