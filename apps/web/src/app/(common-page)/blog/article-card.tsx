@@ -25,7 +25,7 @@ export const BlogArticleCard: React.FC<Props> = async ({ id, title, category, ur
 
   return (
     <Card component="article" className="group flex w-full flex-col overflow-hidden border-l border-t">
-      <Link href={url}>
+      <Link href={url} className="flex h-full flex-col">
         <figure className="relative -ml-3 -mr-3 -mt-4 mb-2 aspect-[308/140] overflow-hidden">
           {coverFile.files?.ext && coverFile.files.hash && (
             <Image
@@ -36,11 +36,11 @@ export const BlogArticleCard: React.FC<Props> = async ({ id, title, category, ur
             />
           )}
         </figure>
-        <div className="flex h-[96px] flex-col">
+        <div className="flex flex-1 flex-col gap-y-3">
           <h5 className="font-bold group-hover:underline">{title}</h5>
-          <div className="mt-auto flex flex-row items-center">
-            <Pill label={category} />
-            <span className="ml-auto flex items-center text-sm font-bold text-primary-dark underline">
+          <div className="mt-auto flex flex-col items-center">
+            <Pill label={category} className="self-start" />
+            <span className="mt-2 flex items-center text-sm font-bold text-primary-dark underline">
               <IconClockHour2 className="mr-2" />
               {timeAgo.format(date)}
             </span>
