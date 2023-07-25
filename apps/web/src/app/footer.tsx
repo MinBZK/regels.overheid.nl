@@ -14,7 +14,11 @@ const FooterLink: React.FC<FooterLinkProps> = ({ children, href, isBlank }) => {
 
   return (
     <li className="mt-4 first:mt-0">
-      <LinkComponent href={href} className="flex items-center gap-x-4 text-base text-primary-dark">
+      <LinkComponent
+        href={href}
+        target={isBlank ? '_blank' : '_self'}
+        className="flex items-center gap-x-4 text-base text-primary-dark"
+      >
         <span>&gt;</span>
         {children}
         {isBlank && <IconExternalLink size={18} />}
@@ -35,7 +39,7 @@ export const Footer: React.FC = () => {
           </a>
           .
         </Notification>
-        <nav aria-label="Footer Navigatie" className="flex flex-col gap-y-12 lg:flex-row lg:justify-center lg:gap-x-20">
+        <nav aria-label="Footer Navigatie" className="flex flex-col gap-y-12 lg:flex-row lg:justify-center lg:gap-x-9">
           <ul>
             <FooterLink href="/over">Over deze website</FooterLink>
             <FooterLink href="mailto:steven.gort@ictu.nl">Contact</FooterLink>
@@ -72,7 +76,7 @@ export const Footer: React.FC = () => {
       </Container>
       <Container component="p" className="sm:w-100% mt-12 text-center text-base text-primary-dark lg:mt-8">
         Onze website is voortdurend in ontwikkeling. Laatste{' '}
-        <a className="font-bold underline" href="https://github.com/MinBZK/regels.overheid.nl/releases">
+        <a className="font-bold underline" target="_blank" href="https://github.com/MinBZK/regels.overheid.nl/releases">
           live-versie {packageJson.version}
         </a>
       </Container>
