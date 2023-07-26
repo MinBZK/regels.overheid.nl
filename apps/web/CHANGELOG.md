@@ -1,5 +1,11 @@
 # web
 
+## 3.2.1
+
+### Patch Changes
+
+- a60acb3: Fixed wrong global property being used for Prisma
+
 ## 3.2.0
 
 ### Minor Changes
