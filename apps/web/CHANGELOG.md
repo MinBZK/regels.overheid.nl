@@ -1,5 +1,11 @@
 # web
 
+## 3.2.3
+
+### Patch Changes
+
+- 35a6c0e: 40072c6: Add missing build args to deploy-web workflow
+
 ## 3.2.2
 
 ### Patch Changes
