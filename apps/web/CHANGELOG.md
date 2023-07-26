@@ -1,5 +1,30 @@
 # web
 
+## 3.2.0
+
+### Minor Changes
+
+- ce3e7f3: Created web api endpoint to copy images from cms to web also implemented the functionality to dynamically resize images using url search params
+- 96d3d29: Align card component styles with new designs
+- 35e59d1: Update publication card items style and allow "Work in progress" items to link to their reflected document
+- 763d5e9: Added the appropiate meta tags for blog articles
+- 10b6fec: Added the possibility to share a blog article
+
+### Patch Changes
+
+- 75e10c2: Add margin between blog items and blog page text
+- 77a8daf: Fix incorrect margins for article card cover image
+- bba195d: Change article card layout in order to better wrap the date
+- 55e7f27: Remove gap between navigation link items
+- 7d06619: Increase container size on xl viewport
+- ecdb46e: Fix cms images not resolving correctly
+- 4f39acc: Increase method card size
+- 66f14cd: Fix ordered and unordered lists not rendering correctly
+- d7dde32: Decrease size of pill component
+- 01531f7: Add margin between methods and method page text
+- 856a0cb: Fix links in footer opening link in current tab rather than opening a new tab
+- 3837ec7: Remove max-width from roadmap page and add margin between text and roadmap
+
 ## 3.1.0
 
 ### Minor Changes
