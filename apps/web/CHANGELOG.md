@@ -1,5 +1,11 @@
 # web
 
+## 3.2.2
+
+### Patch Changes
+
+- 40072c6: Add missing env vars to Dockerfile
+
 ## 3.2.1
 
 ### Patch Changes
