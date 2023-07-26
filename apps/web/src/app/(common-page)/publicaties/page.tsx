@@ -11,16 +11,18 @@ export default function PublicatiesPage() {
         <Typography variant="h1">Publicaties</Typography>
         <RemotePage page="publicaties" />
       </Container>
-      <Container bleed className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2">
+      <Container className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2">
         <PublicationCard
-          url="/publicaties/de-legitimaat"
           tag="Algoritme"
           title="De Legitimaat"
+          url="/publicaties/de-legitimaat"
           description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
         />
         <PublicationCard
           title="DCAT"
+          tag="Work in progress"
           variant="wip"
+          url="https://minbzk.github.io/dcat-ap-ronl/"
           description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
         />
         <PublicationCard title="Harmonisator" variant="unavailable" />

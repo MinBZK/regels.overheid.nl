@@ -1,7 +1,6 @@
 'use client';
 
 import { Container } from '@/components/container';
-import { Typography } from '@/components/typography';
 import { methods } from '@prisma/client';
 import { useState } from 'react';
 import { MethodCard } from './method-card';
@@ -19,7 +18,7 @@ export const MethodsPage: React.FC<Props> = ({ methods }) => {
   const uniqueTags = new Set(methods.map(({ tag }) => tag || defaultTag));
 
   return (
-    <main>
+    <>
       <Container>
         <TagFilter filters={Array.from(uniqueTags)} methods={methods} onFilter={(data) => setFilteredMethods(data)} />
       </Container>
@@ -40,6 +39,6 @@ export const MethodsPage: React.FC<Props> = ({ methods }) => {
           })}
         </div>
       </Container>
-    </main>
+    </>
   );
 };

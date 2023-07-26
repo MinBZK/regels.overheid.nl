@@ -45,15 +45,15 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
   const enhancedDate = new Date(date);
 
   return (
-    <Card component="article" className={`flex gap-x-3 overflow-hidden lg:h-[320x] xl:flex-col ${clsx(className)}`}>
+    <Card component="article" className={`flex gap-x-3 overflow-hidden lg:h-[570px] xl:flex-col ${clsx(className)}`}>
       <figure className="-my-4 -ml-3 hidden w-[320px]  shrink-0 items-center justify-center bg-primary-main lg:flex xl:-mx-3 xl:mb-4 xl:h-[200px] xl:w-auto">
         {Icon && <Icon className="text-white" size={70} stroke={1} />}
       </figure>
-      <div className="flex flex-col items-start gap-y-4">
-        <Pill label={tag} variant={chipVariantMap[tag]} className="capitalize" />
+      <div className="flex flex-1 flex-col items-start gap-y-4">
+        <Pill label={tag} variant={chipVariantMap[tag]} className="mt-0 capitalize" />
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-base text-grey-dark">{description}</p>
-        <div className="flex w-full flex-wrap items-center justify-between">
+        <div className="flex w-full flex-wrap items-center justify-between lg:mt-auto">
           <hr className="mb-4 h-[1px] w-full border-0 bg-grey-dark opacity-20" />
           <span className="text-base font-bold text-grey-dark opacity-60">
             {enhancedDate.toLocaleDateString('nl-NL', {

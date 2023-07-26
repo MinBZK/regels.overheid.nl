@@ -16,7 +16,7 @@ export default async function Blog() {
         <RemotePage page="blog" />
       </Container>
 
-      <Container bleed className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4">
+      <Container className="mt-16 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-3">
         {articles.map(({ id, category, published_at, title }) => (
           <BlogArticleCard
             id={id}

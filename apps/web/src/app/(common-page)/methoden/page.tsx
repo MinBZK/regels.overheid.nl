@@ -10,11 +10,11 @@ export default async function MethodenPage() {
 
   return (
     <>
-      <Container>
+      <Container className="mb-16">
         <Typography variant="h1">Methoden</Typography>
         <RemotePage page="methoden" />
       </Container>
-      <MethodsPage methods={methods} />;
+      <MethodsPage methods={methods} />
     </>
   );
 }

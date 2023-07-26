@@ -21,6 +21,8 @@ export const RemoteMdx: React.FC<Props> = ({ content }) => {
         a: (props) => (
           <Link component={props.href?.startsWith('/') ? NextLink : 'a'} href={props.href || '#'} {...(props as any)} />
         ),
+        ol: (props) => <ol className="list-decimal pl-7 text-lg" {...(props as any)} />,
+        ul: (props) => <ul className="list-disc pl-7 text-lg" {...(props as any)} />,
       }}
     />
   );

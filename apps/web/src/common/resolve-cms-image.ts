@@ -8,7 +8,7 @@ interface Options {
 export function resolveCmsImage({ ext, hash, height, width }: Options) {
   const publicURL = process.env.WEB_URL || process.env.NEXT_WEB_URL;
 
-  const url = new URL(`/media/cms/${hash}.${ext}`, publicURL);
+  const url = new URL(`/media/cms/${hash}${ext}`, publicURL);
 
   if (width) url.searchParams.set('w', width.toString());
 
@@ -16,5 +16,3 @@ export function resolveCmsImage({ ext, hash, height, width }: Options) {
 
   return url.toString();
 }
-
-resolveCmsImage({ ext: 'png', hash: '7fc7db1746', width: 100, height: 100 });
