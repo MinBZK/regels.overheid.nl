@@ -1,5 +1,11 @@
 # cms
 
+## 1.21.0
+
+### Minor Changes
+
+- d687fd4: Added description field to blog article content type
+
 ## 1.20.0
 
 ### Minor Changes
