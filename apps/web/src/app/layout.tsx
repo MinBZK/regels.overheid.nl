@@ -1,7 +1,6 @@
+import { getPages } from '@/services/cms/get-pages';
 import '@total-typescript/ts-reset';
-import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { getPages } from '../prisma/get-pages';
 import { Footer } from './footer';
 import './globals.css';
 import { Navbar } from './navbar';

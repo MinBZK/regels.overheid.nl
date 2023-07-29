@@ -1,7 +1,7 @@
 'use client';
 
 import { Container } from '@/components/container';
-import { methods } from '@prisma/client';
+import { getMethods } from '@/services/cms/get-methods';
 import { useState } from 'react';
 import { MethodCard } from './method-card';
 import { TagFilter } from './tag-filter';
@@ -9,7 +9,7 @@ import { TagFilter } from './tag-filter';
 export const defaultTag = 'methode';
 
 interface Props {
-  methods: methods[];
+  methods: Awaited<ReturnType<typeof getMethods>>;
 }
 
 export const MethodsPage: React.FC<Props> = ({ methods }) => {
@@ -24,19 +24,21 @@ export const MethodsPage: React.FC<Props> = ({ methods }) => {
       </Container>
       <Container bleed>
         <div className="grid items-start gap-y-4 transition-all md:grid-cols-2 md:gap-x-4 md:gap-y-16 lg:grid-cols-1 lg:gap-y-8 xl:grid-cols-3 xl:gap-x-6 2xl:gap-x-14">
-          {filteredMethods.map(({ id, href, icon, title, tag, description, updated_at, created_at }) => {
-            return (
-              <MethodCard
-                key={id}
-                href={href}
-                icon={icon}
-                title={title}
-                tag={tag || defaultTag}
-                description={description}
-                date={updated_at || created_at!}
-              />
-            );
-          })}
+          {filteredMethods.map(
+            ({ id, href, icon, title, tag, description, updatedAt, createdAt }) =>
+              title &&
+              description && (
+                <MethodCard
+                  key={id}
+                  href={href}
+                  icon={icon}
+                  title={title}
+                  tag={tag || defaultTag}
+                  description={description}
+                  date={updatedAt || createdAt}
+                />
+              )
+          )}
         </div>
       </Container>
     </>

@@ -15,9 +15,9 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 interface Props {
-  tag: string;
-  date: Date;
-  icon: string;
+  tag?: string | null;
+  date?: string | null;
+  icon?: string | null;
   title: string;
   className?: string;
   href: string | null;
@@ -42,7 +42,6 @@ const chipVariantMap: Record<string, PillVariant> = {
 
 export const MethodCard: React.FC<Props> = ({ title, href, icon, description, date, className, tag }) => {
   const Icon = icon && iconMap[icon];
-  const enhancedDate = new Date(date);
 
   return (
     <Card component="article" className={`flex gap-x-3 overflow-hidden lg:h-[570px] xl:flex-col ${clsx(className)}`}>
@@ -50,18 +49,20 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
         {Icon && <Icon className="text-white" size={70} stroke={1} />}
       </figure>
       <div className="flex flex-1 flex-col items-start gap-y-4">
-        <Pill label={tag} variant={chipVariantMap[tag]} className="mt-0 capitalize" />
+        {tag && <Pill label={tag} variant={chipVariantMap[tag]} className="mt-0 capitalize" />}
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-base text-grey-dark">{description}</p>
         <div className="flex w-full flex-wrap items-center justify-between lg:mt-auto">
           <hr className="mb-4 h-[1px] w-full border-0 bg-grey-dark opacity-20" />
-          <span className="text-base font-bold text-grey-dark opacity-60">
-            {enhancedDate.toLocaleDateString('nl-NL', {
-              month: 'long',
-              day: 'numeric',
-              year: 'numeric',
-            })}
-          </span>
+          {date && (
+            <span className="text-base font-bold text-grey-dark opacity-60">
+              {new Date(date).toLocaleDateString('nl-NL', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })}
+            </span>
+          )}
           {href && (
             <Button href={href} component={Link} endIcon={<IconArrowRight />}>
               Lees meer

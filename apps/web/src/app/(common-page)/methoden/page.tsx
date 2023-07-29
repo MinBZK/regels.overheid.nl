@@ -1,7 +1,7 @@
 import { Container } from '@/components/container';
 import { RemotePage } from '@/components/remote-page';
 import { Typography } from '@/components/typography';
-import { getMethods } from '@/prisma/get-methods';
+import { getMethods } from '@/services/cms/get-methods';
 import { Metadata } from 'next';
 import { MethodsPage } from './methods-page';
 

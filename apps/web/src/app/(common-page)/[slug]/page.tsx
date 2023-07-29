@@ -1,6 +1,6 @@
 import { Container } from '@/components/container';
 import { RemotePage } from '@/components/remote-page';
-import { getPageBySlug } from '@/prisma/get-page-by-slug';
+import { getPageBySlug } from '@/services/cms/get-page-by-slug';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 

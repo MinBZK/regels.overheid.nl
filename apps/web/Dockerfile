@@ -83,7 +83,6 @@ ENV NEXT_PUBLIC_CMS_URL ${NEXT_PUBLIC_CMS_URL}
 ENV WEB_URL ${WEB_URL}
 ENV NEXT_WEB_URL ${NEXT_WEB_URL}
 
-RUN yarn workspace web run prisma generate
 RUN yarn build
 
 ENTRYPOINT yarn start
