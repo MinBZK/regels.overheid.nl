@@ -12,4 +12,6 @@ ingress:
           pathType: Prefix
 imagePullSecrets:
   - name: regels-overheid-nl
+uploadsPersistence:
+  enabled: true
 configSecretName: cms-doppler-config
