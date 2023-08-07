@@ -1,5 +1,15 @@
 # web
 
+## 3.3.0
+
+### Minor Changes
+
+- cc1cdcd: Swap Prisma for Drizzle
+
+### Patch Changes
+
+- cf1540f: Fix method card text overflow on methods page
+
 ## 3.2.3
 
 ### Patch Changes
