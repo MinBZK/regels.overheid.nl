@@ -45,8 +45,6 @@ USER ${UID}
 
 EXPOSE 9000
 
-RUN yarn workspace web run prisma generate
-
 ENTRYPOINT yarn dev
 
 #  ==== Prod ====
