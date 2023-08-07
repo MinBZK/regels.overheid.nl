@@ -48,10 +48,10 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
       <figure className="-my-4 -ml-3 hidden w-[320px]  shrink-0 items-center justify-center bg-primary-main lg:flex xl:-mx-3 xl:mb-4 xl:h-[200px] xl:w-auto">
         {Icon && <Icon className="text-white" size={70} stroke={1} />}
       </figure>
-      <div className="flex flex-1 flex-col items-start gap-y-4">
+      <div className="flex flex-1 flex-col items-start gap-y-4 lg:overflow-hidden">
         {tag && <Pill label={tag} variant={chipVariantMap[tag]} className="mt-0 capitalize" />}
         <h3 className="text-xl font-bold">{title}</h3>
-        <p className="text-base text-grey-dark">{description}</p>
+        <p className="text-base text-grey-dark lg:line-clamp-[7] lg:overflow-hidden">{description}</p>
         <div className="flex w-full flex-wrap items-center justify-between lg:mt-auto">
           <hr className="mb-4 h-[1px] w-full border-0 bg-grey-dark opacity-20" />
           {date && (

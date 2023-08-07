@@ -21,7 +21,7 @@ export const Pill: React.FC<Props> = ({ disabled, label, className, variant = 'i
     <span
       className={clsx(
         className,
-        'mt-auto rounded px-2 py-1 text-base font-bold',
+        'rounded px-2 py-1 text-base font-bold',
         !disabled && variantMapping[variant],
         disabled && 'bg-gray-lighter text-grey-main'
       )}
