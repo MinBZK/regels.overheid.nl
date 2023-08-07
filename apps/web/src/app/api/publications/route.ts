@@ -1,7 +1,9 @@
-import { prismaClient } from '@/prisma/prisma-client';
+import { db } from '@/drizzle/db';
+import { publishers } from '@/drizzle/schema';
 import { Octokit } from '@octokit/rest';
 import slugify from '@sindresorhus/slugify';
 import { compareVersions } from 'compare-versions';
+import { and, eq } from 'drizzle-orm';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -21,21 +23,17 @@ export async function POST(req: Request) {
 
     if (typeof secret !== 'string') throw new Error('Secret is not a string');
 
-    const name = await prismaClient.publishers
-      .findFirst({
-        select: {
-          name: true,
-        },
-        where: {
-          repo,
-          owner,
-          secret,
-        },
+    const name = await db
+      .select({
+        name: publishers.name,
       })
+      .from(publishers)
+      .where(and(eq(publishers.repo, repo), eq(publishers.owner, owner), eq(publishers.secret, secret)))
+      .limit(1)
       .then((result) => {
-        if (!result) throw new Error('Publisher not found');
+        if (!result[0].name) throw new Error('Publisher not found');
 
-        return result.name as string;
+        return result[0].name;
       });
 
     const publicationDir = path.resolve(rootPublicationsDir, slugify(name, { lowercase: true }));

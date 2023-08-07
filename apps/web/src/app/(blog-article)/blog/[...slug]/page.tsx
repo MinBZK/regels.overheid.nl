@@ -5,8 +5,7 @@ import { Button } from '@/components/button';
 import { Container } from '@/components/container';
 import { RemoteMdx } from '@/components/remote-mdx';
 import { Typography } from '@/components/typography';
-import { getBlogArticle } from '@/prisma/get-blog-article';
-import { getEntityFiles } from '@/prisma/get-entity-files';
+import { getBlogArticleById } from '@/services/cms/get-blog-article-by-id';
 import slugify from '@sindresorhus/slugify';
 import { IconArrowLeft } from '@tabler/icons-react';
 import { Metadata } from 'next';
@@ -25,8 +24,10 @@ export const revalidate = 300;
 
 export default async function BlogArticlePage(props: Props) {
   const id = Number(props.params.slug[0]);
-  const blogArticle = (await getBlogArticle(id))!; // generateMetadata ensures that blogArticle exists
-  const [coverFile] = await getEntityFiles('api::blog-article.blog-article', id);
+  const blogArticle = await getBlogArticleById(id);
+
+  // Absolutely required fields, we can not render the page without these
+  if (!blogArticle.title || !blogArticle.content) return notFound();
 
   return (
     <>
@@ -47,26 +48,25 @@ export default async function BlogArticlePage(props: Props) {
           <Typography variant="h1" className="mb-12 mt-4 ">
             {blogArticle.title}
           </Typography>
-          <span className="text-grey-light">
-            Publicatiedatum{' '}
-            {
-              // published_at at this stage cannot be null ensured in getBlogArticle
-              blogArticle.published_at!.toLocaleDateString('nl-NL', {
+          {blogArticle.publishedAt && (
+            <span className="text-grey-light">
+              Publicatiedatum{' '}
+              {new Date(blogArticle.publishedAt).toLocaleDateString('nl-NL', {
                 month: 'long',
                 day: 'numeric',
                 year: 'numeric',
                 hour: 'numeric',
                 minute: 'numeric',
-              })
-            }
-          </span>
+              })}
+            </span>
+          )}
           <figure className="relative mb-12 mt-3 aspect-[308/140] overflow-hidden rounded-lg">
-            {coverFile.files?.ext && coverFile.files.hash && (
+            {blogArticle.cover.ext && blogArticle.cover.hash && (
               <Image
                 fill
                 className="object-cover"
-                src={resolveCmsImage({ ext: coverFile.files.ext, hash: coverFile.files.hash, width: 1235 })}
-                alt={coverFile.files?.alternative_text || blogArticle?.title}
+                src={resolveCmsImage({ ext: blogArticle.cover.ext, hash: blogArticle.cover.hash, width: 1235 })}
+                alt={blogArticle.cover.alt || blogArticle?.title}
               />
             )}
           </figure>
@@ -86,18 +86,16 @@ export default async function BlogArticlePage(props: Props) {
 export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata> {
   const [id] = params.slug;
 
-  const blogArticle = await getBlogArticle(Number(id));
+  const blogArticle = await getBlogArticleById(Number(id));
 
-  if (!blogArticle) return notFound();
-
-  const [coverFile] = await getEntityFiles('api::blog-article.blog-article', blogArticle.id);
+  if (!blogArticle.title || !blogArticle.content) return notFound();
 
   function images() {
-    if (!coverFile.files?.ext || !coverFile.files?.hash || !coverFile.files?.mime) return;
+    if (!blogArticle.cover.ext || !blogArticle.cover.hash || !blogArticle.cover.mime) return;
 
     const url = resolveCmsImage({
-      ext: coverFile.files.ext,
-      hash: coverFile.files.hash,
+      ext: blogArticle.cover.ext,
+      hash: blogArticle.cover.hash,
       width: 1200,
       height: 630,
     });
@@ -107,8 +105,8 @@ export async function generateMetadata({ params }: { params: { slug: string[] } 
       width: 1200,
       height: 630,
       secureUrl: url,
-      type: coverFile.files.mime,
-      alt: coverFile.files.alternative_text || undefined,
+      type: blogArticle.cover.mime,
+      alt: blogArticle.cover.alt || undefined,
     };
   }
 

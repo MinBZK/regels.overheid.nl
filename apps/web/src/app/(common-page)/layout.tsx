@@ -1,4 +1,4 @@
-import { getPages } from '@/prisma/get-pages';
+import { getPages } from '@/services/cms/get-pages';
 import { Breadcrumbs } from './breadcrumbs';
 
 export const revalidate = 300;

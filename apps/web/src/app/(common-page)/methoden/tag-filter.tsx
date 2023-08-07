@@ -2,15 +2,15 @@
 
 import { arrayWithout } from '@/common/array-without';
 import { Chip } from '@/components/chip';
-import { methods } from '@prisma/client';
 import { IconFilter } from '@tabler/icons-react';
 import { useState } from 'react';
 import { defaultTag } from './methods-page';
+import { getMethods } from '@/services/cms/get-methods';
 
 interface Props {
   filters: string[];
-  methods: methods[];
-  onFilter: (methods: methods[]) => void;
+  methods: Awaited<ReturnType<typeof getMethods>>;
+  onFilter: (methods: Awaited<ReturnType<typeof getMethods>>) => void;
 }
 
 export const TagFilter: React.FC<Props> = ({ filters, onFilter, methods }) => {

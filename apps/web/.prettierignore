@@ -2,3 +2,4 @@ public
 .vscode
 .next
 storybook-static
+src/drizzle/meta

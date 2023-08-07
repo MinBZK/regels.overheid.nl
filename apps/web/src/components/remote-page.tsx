@@ -1,4 +1,4 @@
-import { getPageBySlug } from '@/prisma/get-page-by-slug';
+import { getPageBySlug } from '@/services/cms/get-page-by-slug';
 import { RemoteMdx } from './remote-mdx';
 
 interface Props {
@@ -10,5 +10,5 @@ export const RemotePage: React.FC<Props> = async ({ page: slug }) => {
 
   if (!page) return null;
 
-  return <RemoteMdx content={page.content} />;
+  return <RemoteMdx content={page.content || ''} />;
 };
