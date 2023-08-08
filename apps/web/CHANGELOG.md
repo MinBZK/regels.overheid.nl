@@ -1,5 +1,11 @@
 # web
 
+## 3.3.1
+
+### Patch Changes
+
+- 68b6e63: Set rejectUnauthorized to false in production
+
 ## 3.3.0
 
 ### Minor Changes
