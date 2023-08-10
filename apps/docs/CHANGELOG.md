@@ -1,5 +1,11 @@
 # docs
 
+## 3.1.0
+
+### Minor Changes
+
+- 1345e27: "Added content concerning Sparkwise & Blueriq"
+
 ## 3.0.0
 
 ### Major Changes
