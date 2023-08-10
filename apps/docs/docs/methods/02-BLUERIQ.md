@@ -61,3 +61,25 @@ Organisaties die Blueriq gebruiken voor grotere of meerdere applicaties hebben v
 
 ![overzicht blueriq platform](../../static/img/blueriq-3.png)
 
+## Dynamic Case Management 
+Om een ideale klantreis te bieden, gebruikt Blueriq Dynamic Case Management (DCM) en staat een zaak centraal. Waar gebruikersinteractie bepaalt wat er binnen een taak van zo’n klantreis gebeurt bepaalt DCM wie als volgende aanzet is of zijn en hoe de klantreis verder afgehandeld kan warden. Kenmerkend aan DCM is dat het verloop, in tegenstelling tot Business Process Management (BPM), **geheel regelgedreven** is. Alleen stappen die 
+in het specifieke geval van de klant relevant zijn, worden op het juiste moment verplicht óf optioneel uitvoerbaar voor de kenniswerker of de klant. Zo worden processen, autorisaties en tijdslijnen streng bewaakt maar wordt tegelijk ook maximale flexibiliteit geboden. Alle procesvarianten passen binnen een model, van volledig automatische processen (STP Straight Through Processing) tot meer handmatige afhandeling wanneer het verloop onvoorspelbaar is. Of wanneer de situatie zodanig complex is dat deze door een expert beoordeeld moet worden. 
+
+## Decision Management 
+In ieder proces worden **talloze beslissingen** genomen. Dit kunnen formele beslissingen zijn, zoals de vraag of een bepaalde subsidie verstrekt mag worden. Maar ook alle eenvoudige vragen die nodig zijn om de zaak af te handelen; Hoe wordt de aanvraagdatum bepaald, welke termijn is van toepassing etc. Deze beslissingen kennen vaak een relatie met wet- en regelgeving, beleidsdocumenten of ontwerpbeslissingen. Doordat beslsissingen in Blueriq als business rules gemodelleerd worden, bijvoorbeeld in overzichtelijke beslistabellen, wordt dit expliciet gemaakt. 
+Afhankelijkheden tussen regels en gegevens kunnen makkelijk in kaart gebracht worden met een **Decision Requirement Graph (DRG)**. Zo’n DRG toont de regels en gegevens die gebruikt worden om een afgeleid gegeven (c.q. een beslissing) te bepalen. Deze DRG kent Blueriq voor zowel het model van alle mogelijke paden naar een beslissing als in de oplossing voor een individueel genomen besluit.
+
+![DRG](../../static/img/blueriq-4.png)
+
+## Drie keer Blueriq 
+Met Blueriq bedoelen we niet aIleen ons bedrijf en het platform, maar ook de expertise van gecertificeerde specialisten die werken volgens een bepaalde aanpak.
+
+Het platform Blueriq is erop gericht om onnodige vertaalslagen en overdrachtsmomenten te elimineren, zodat de specialist die de oplossing realiseert ook echt inhoudelijk betrokken is bij de klant en het gewenste bedrijfsproces. Het specialisme om met Blueriq te modelleren en te werken volgens die succesvolle aanpak is bij de Blueriq Academy te leren in specifieke opleidingen. De drie-eenheid aanpak, specialisten en ons unieke platform maakt onze dienstverlening compleet.
+
+## Beheerbaar Blueriq
+Blueriq biedt uitgebreide functionaliteit om oplossingen te beheren. Dit begint met het integrale versiebeheer, dat modelleurs in staat stelt om te werken met een eigen kopie van een bepaalde versie van een oplossing. Dit maakt het mogelijk om teams zelfstandig en onafhankelijk van elkaar te laten werken aan verschillende releases of features. Met de publisher kan een model 'doorgezet' worden van een Ontwikkelomgeving naar een Test-, Acceptatie- en Productieomgeving of andere aanvullende omgevingen. Zo is altijd helder welke modellen op welke omgeving aanwezig zijn. De Blueriq Runtime is ook in staat om meerdere versies van een oplossing gelijktijdig te draaien, of op een ontwikkelomgeving wijzigingen direct live te zien. Het bewaken van de kwaliteit van modellen wordt in Blueriq mogelijk gemaakt door model unit tests en de Blueriq Model Analyzer.
+
+![beheerbaar blueriq](../../static/img/blueriq-6.jpg)
+
+## Contact
+Voor meer informatie over de regelservices van Blueriq op regels.overheid.nl, neem contact op met: r.frankena@blueriq.com of +31 (0)6 26358741
