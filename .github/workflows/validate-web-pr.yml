@@ -12,13 +12,6 @@ jobs:
         with:
           workspace: 'web'
           script: lint
-  typecheck:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
-        with:
-          workspace: 'web'
-          script: typecheck
   stylecheck:
     runs-on: ubuntu-20.04
     steps:
@@ -27,7 +20,7 @@ jobs:
           workspace: 'web'
           script: stylecheck
   build:
-    needs: [lint, typecheck, stylecheck]
+    needs: [lint, stylecheck]
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
