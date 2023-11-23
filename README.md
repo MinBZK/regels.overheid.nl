@@ -9,7 +9,7 @@
 In 2021, Utrecht started developing the [Virtual Income Desk](https://opensource.pleio.nl/news/view/bc7443c1-483c-4aca-8a8f-16f2a954ff4f/het-virtueel-inkomstenloket) with Open Rules.
 This initiative aims for citizens to always and easily receive all financial regulations to which they are entitled.
 
-For the realization of this goal, standards of the [NORA guideline *rule management*](https://www.noraonline.nl/wiki/Leidraad_Regelbeheer) have been used.
+For the realization of this goal, standards of the [NORA guideline _rule management_](https://www.noraonline.nl/wiki/Leidraad_Regelbeheer) have been used.
 These standardized [rules for the Virtual Income Desk](https://regels.dexcat.nl/dataset/regelgroep-uit-te-keren-individuele-inkomenstoeslag) have now been published.
 
 Rules management is applied in various ways by organizations. A constant shared by all organizations is the need to implement the law according to the interpretation intended by the legislator, to act in accordance with the principles of good administration and to be able to adapt implementation as smoothly as possible to new insights from politics.
@@ -57,3 +57,5 @@ First, these applications are tested by leading municipalities and improved wher
 The functionality required to provide an overview of rules is very similar to how a register works, where [data.overheid.nl](https://data.overheid.nl) offers a register with references to where data is found, so can Open Rules help to collect references to where rules can be found on, for example, [regels.overheid.nl](https://regels.overheid.nl). The choice here is to keep the rules decentralized if a government itself takes care of the publication (and can make it sustainable) or to centralize the storage. Both are happening on [data.overheid.nl](https://data.overheid.nl) to make life easier for governments.
 
 Open Rules therefore offers a deployment tool to publish and store information about rules (metadata) as well as the rules themselves.
+
+temp
