@@ -24,6 +24,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+      - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+        with:
+          action: 'add'
+          database_id: ${{ secrets.DATABASE_ID }}
+          digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
       - name: Build (Docker)
         uses: docker/build-push-action@v3
         with:
@@ -38,3 +43,8 @@ jobs:
             NEXT_PUBLIC_CMS_URL=https://regels.overheid.nl/cms
             WEB_URL=http://localhost:9000
             NEXT_PUBLIC_WEB_URL=https://regels.overheid.nl
+      - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+        with:
+          action: 'remove'
+          database_id: ${{ secrets.DATABASE_ID }}
+          digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
