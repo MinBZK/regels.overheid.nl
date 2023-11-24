@@ -1,0 +1,12 @@
+name: regels.overheid.nl Open Catalogi Workflow
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Open Catalogi Github Page
+        uses: OpenCatalogi/opencatalogi-action@1.1.3
