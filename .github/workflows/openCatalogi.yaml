@@ -1,0 +1,20 @@
+name: Mijn Open Catalogi Workflow
+
+on:
+ push:
+  branches:
+   - main
+
+permissions:
+ contents: write
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Create or Update publiccode.yaml
+     uses: OpenCatalogi/publiccode-action@1.1.1
+     with:
+      opencatalogi: true
+   - name: Create een Productpagina
+     uses: OpenCatalogi/productpage-action@1.0.0
