@@ -5,5 +5,5 @@ export default {
   schema: './src/schema.ts',
   out: './src/drizzle',
   driver: 'pg',
-  dbCredentials: cmsDatabaseConfig(),
+  dbCredentials: cmsDatabaseConfig() as any,
 } satisfies Config;
