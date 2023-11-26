@@ -5,6 +5,7 @@ export function cmsDatabaseConfig() {
     connectionString: process.env.DATABASE_URL,
     ssl: process.env.DATABASE_CA_CERT
       ? {
+          rejectUnauthorized: false,
           ca: process.env.DATABASE_CA_CERT,
         }
       : false,
