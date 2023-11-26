@@ -1,13 +1,10 @@
 import 'server-only';
 
-import { cmsDatabaseConnectionString } from '@/common/cms-database-connection-string';
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres from 'postgres';
+import { cmsDatabaseConfig } from '@/common/cms-database-config';
+import { drizzle } from 'drizzle-orm/node-postgres';
+import path from 'path';
+import { Pool } from 'pg';
 
-const client = postgres(cmsDatabaseConnectionString(), {
-  ssl: {
-    rejectUnauthorized: process.env.NODE_ENV !== 'production',
-  },
-});
+const pool = new Pool({ ...cmsDatabaseConfig(), max: 1 });
 
-export const db = drizzle(client);
+export const db = drizzle(pool);
