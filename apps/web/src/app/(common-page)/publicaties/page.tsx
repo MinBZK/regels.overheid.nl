@@ -26,7 +26,7 @@ export default function PublicatiesPage() {
           description="De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal."
         />
         <PublicationCard
-          title="DCAT"git che
+          title="DCAT"
           tag="Work in progress"
           variant="wip"
           url="https://minbzk.github.io/dcat-ap-ronl/"
