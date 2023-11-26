@@ -1,11 +1,9 @@
-import { cmsDatabaseConnectionString } from './src/common/cms-database-connection-string';
+import { cmsDatabaseConfig } from '@/common/cms-database-config';
 import { Config } from 'drizzle-kit';
 
 export default {
   schema: './src/schema.ts',
   out: './src/drizzle',
   driver: 'pg',
-  dbCredentials: {
-    connectionString: cmsDatabaseConnectionString(),
-  },
+  dbCredentials: cmsDatabaseConfig(),
 } satisfies Config;
