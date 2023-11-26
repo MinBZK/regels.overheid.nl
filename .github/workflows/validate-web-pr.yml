@@ -24,28 +24,32 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
         with:
-          action: 'add'
-          database_id: ${{ secrets.DATABASE_ID }}
-          digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
-      - name: Build (Docker)
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          target: prod
-          file: ./apps/web/Dockerfile
-          push: false
-          build-args: |
-            PUBLIC_URL=https://regels.overheid.nl/web/
-            DATABASE_URL=${{ secrets.DATABASE_URL }}
-            CMS_URL=http://cms:9001
-            NEXT_PUBLIC_CMS_URL=https://regels.overheid.nl/cms
-            WEB_URL=http://localhost:9000
-            NEXT_PUBLIC_WEB_URL=https://regels.overheid.nl
-            DATABASE_CA_CERT=${{ secrets.DATABASE_CA_CERT }}
-      - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
-        with:
-          action: 'remove'
-          database_id: ${{ secrets.DATABASE_ID }}
-          digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
+          detached: true
+      # - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+      #   with:
+      #     action: 'add'
+      #     database_id: ${{ secrets.DATABASE_ID }}
+      #     digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
+      # - name: Build (Docker)
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     context: .
+      #     target: prod
+      #     file: ./apps/web/Dockerfile
+      #     push: false
+      #     build-args: |
+      #       PUBLIC_URL=https://regels.overheid.nl/web/
+      #       DATABASE_URL=${{ secrets.DATABASE_URL }}
+      #       CMS_URL=http://cms:9001
+      #       NEXT_PUBLIC_CMS_URL=https://regels.overheid.nl/cms
+      #       WEB_URL=http://localhost:9000
+      #       NEXT_PUBLIC_WEB_URL=https://regels.overheid.nl
+      #       DATABASE_CA_CERT=${{ secrets.DATABASE_CA_CERT }}
+      # - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+      #   with:
+      #     action: 'remove'
+      #     database_id: ${{ secrets.DATABASE_ID }}
+      #     digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
