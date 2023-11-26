@@ -43,6 +43,7 @@ jobs:
             NEXT_PUBLIC_CMS_URL=https://regels.overheid.nl/cms
             WEB_URL=http://localhost:9000
             NEXT_PUBLIC_WEB_URL=https://regels.overheid.nl
+            DATABASE_CA_CERT=${{ secrets.DATABASE_CA_CERT }}
       - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
         with:
           action: 'remove'
