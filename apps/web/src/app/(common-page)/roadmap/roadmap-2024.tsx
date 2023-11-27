@@ -6,7 +6,7 @@ export const roadmap2024: RoadmapQuarterCardProps['items'][] = [
     ['design', 'Uitwerking Design System met design tokens & annotaties'],
     ['design', 'Interactive prototype'],
     ['linked data', 'Apache Jena Fuseki SPARQL server'],
-    ['devops','Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)']
+    ['devops', 'Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)'],
   ],
   [
     [

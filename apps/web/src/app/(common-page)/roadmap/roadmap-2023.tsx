@@ -10,8 +10,9 @@ export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
       'legal',
       <>
         <Link component="a" href="https://xml-annotate.live.wem.io/">
-        Low Code Widget voor annotatie
-        </Link>{' '}deployed bij UBR
+          Low Code Widget voor annotatie
+        </Link>{' '}
+        deployed bij UBR
       </>,
     ],
   ],
