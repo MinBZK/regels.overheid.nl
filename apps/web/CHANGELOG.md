@@ -1,5 +1,11 @@
 # web
 
+## 3.5.0
+
+### Minor Changes
+
+- 965a68a: Updated rescheduled roadmap items for '23 & '24
+
 ## 3.4.0
 
 ### Minor Changes
