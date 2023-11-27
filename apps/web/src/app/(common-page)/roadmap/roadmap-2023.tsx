@@ -6,7 +6,14 @@ export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
     ['content management', 'Capabilities toets CMS & Next.js / MDX'],
     ['devops', 'CI/CD pipeline & release process irt scrum sprints'],
     ['devops', '100% internet.nl test'],
-    ['legal', 'Low Code Widget voor annotatie deployed bij UBR'],
+    [
+      'legal',
+      <>
+        <Link component="a" href="https://xml-annotate.live.wem.io/">
+        Low Code Widget voor annotatie
+        </Link>{' '}deployed bij UBR
+      </>,
+    ],
   ],
   [
     ['content management', 'ReSpec documentatie publicatie proces'],
@@ -22,20 +29,6 @@ export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
   ],
   [
     [
-      'linked data',
-      <>
-        XML import{' '}
-        <Link component="a" href="https://linkeddata.overheid.nl/front/portal/">
-          LiDO
-        </Link>
-      </>,
-    ],
-    ['linked data', 'Apache Jena Fuseki SPARQL server'],
-  ],
-  [
-    ['devops', 'Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)'],
-    ['devops', 'Definitieve cloud architectuur'],
-    [
       'devops',
       <>
         Migratie{' '}
@@ -44,5 +37,9 @@ export const roadmap2023: RoadmapQuarterCardProps['items'][] = [
         </Link>
       </>,
     ],
+  ],
+  [
+    ['design', 'Design een Lab-pagina, georganiseerd in kaarten om verschillende tools te presenteren.'],
+    ['devops', 'Definitieve cloud architectuur'],
   ],
 ];

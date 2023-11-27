@@ -4,16 +4,9 @@ import { RoadmapQuarterCardProps } from './roadmap-quarter-card';
 export const roadmap2024: RoadmapQuarterCardProps['items'][] = [
   [
     ['design', 'Uitwerking Design System met design tokens & annotaties'],
-    [
-      'devops',
-      <>
-        Fair Web Analytics obv{' '}
-        <Link component="a" href="https://www.offen.dev/">
-          offen.dev
-        </Link>
-      </>,
-    ],
     ['design', 'Interactive prototype'],
+    ['linked data', 'Apache Jena Fuseki SPARQL server'],
+    ['devops','Multistack website én regelbank obv Gemeenschappelijke datacatalogus (GDC)']
   ],
   [
     [
@@ -44,8 +37,26 @@ export const roadmap2024: RoadmapQuarterCardProps['items'][] = [
     ],
     ['design', 'Validatie (Testen)'],
     ['devops', 'Minimum viable product'],
+    [
+      'linked data',
+      <>
+        XML import{' '}
+        <Link component="a" href="https://linkeddata.overheid.nl/front/portal/">
+          LiDO
+        </Link>
+      </>,
+    ],
   ],
   [
+    [
+      'devops',
+      <>
+        Fair Web Analytics obv{' '}
+        <Link component="a" href="https://www.offen.dev/">
+          offen.dev
+        </Link>
+      </>,
+    ],
     ['content management', 'Creatie & publicatie proces'],
     ['content management', 'Inrichten governance structuur'],
   ],
