@@ -1,5 +1,15 @@
 # web
 
+## 3.4.0
+
+### Minor Changes
+
+- c270ea4: Added WetsTaal Handreiking
+
+### Patch Changes
+
+- c08a3be: Fixed TLS/SSL connectivity issues when connecting to the database
+
 ## 3.3.1
 
 ### Patch Changes
