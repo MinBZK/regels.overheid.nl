@@ -3,7 +3,7 @@ name: regels.overheid.nl PublicCode Workflow
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   build:

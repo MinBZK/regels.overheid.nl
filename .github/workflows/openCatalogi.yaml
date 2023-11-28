@@ -3,7 +3,7 @@ name: Mijn Open Catalogi Workflow
 on:
  push:
   branches:
-   - main
+   - develop
 
 permissions:
  contents: write
