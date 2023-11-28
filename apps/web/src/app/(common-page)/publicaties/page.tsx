@@ -19,6 +19,13 @@ export default function PublicatiesPage() {
           description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
         />
         <PublicationCard
+          title="WetsTaal Handreiking"
+          tag="Work in progress"
+          variant="wip"
+          url="https://diederikd.github.io/wetstaal_1_documentatie/"
+          description="De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal."
+        />
+        <PublicationCard
           title="DCAT"
           tag="Work in progress"
           variant="wip"

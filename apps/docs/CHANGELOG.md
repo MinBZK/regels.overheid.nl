@@ -1,5 +1,11 @@
 # docs
 
+## 3.2.0
+
+### Minor Changes
+
+- c727d6f: Added DEMO page
+
 ## 3.1.0
 
 ### Minor Changes
