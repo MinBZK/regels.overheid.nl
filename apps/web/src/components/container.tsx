@@ -1,18 +1,22 @@
-import { Box, BoxProps } from '@mui/material';
+import clsx from 'clsx';
+import { PropsWithChildren } from 'react';
+import { OverrideAbleComponentFunctionComponent } from './override-able-component-function-component';
 
-type Props = React.PropsWithChildren & Omit<BoxProps, 'display' | 'gridTemplateColumns' | 'sx'>;
+interface Props extends PropsWithChildren {
+  bleed?: boolean;
+  className?: string;
+}
 
-export const Container: React.FC<Props> = ({ children, ...rest }) => (
-  <Box
-    display="grid"
-    gridTemplateColumns={['1fr', '1fr repeat(5, 1fr) 1fr']}
-    sx={{
-      '& > * ': {
-        gridColumn: '2 / 7',
-      },
-    }}
-    {...rest}
-  >
-    {children}
-  </Box>
-);
+export const Container: OverrideAbleComponentFunctionComponent<'div', Props> = ({
+  component: Component = 'div',
+  bleed,
+  children,
+  className,
+  ...componentProps
+}) => {
+  return (
+    <Component className={clsx(className, 'container', !bleed && 'xl:max-w-[814px]')} {...componentProps}>
+      {children}
+    </Component>
+  );
+};

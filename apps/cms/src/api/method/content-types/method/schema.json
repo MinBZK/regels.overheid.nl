@@ -31,22 +31,49 @@
           "localized": true
         }
       },
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
-    "Visual": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false,
+    "Icon": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "enumeration",
+      "enum": [
+        "arch",
+        "megaphone",
+        "right-angle-ruler",
+        "ruler",
+        "scale",
+        "therefore"
+      ],
+      "required": true
+    },
+    "Href": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "Tag": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "platform",
+        "software",
+        "DSL",
+        "methode"
+      ],
+      "required": true
     }
   }
 }

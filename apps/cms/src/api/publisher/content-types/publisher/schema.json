@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publishers",
+  "info": {
+    "singularName": "publisher",
+    "pluralName": "publishers",
+    "displayName": "Publishers",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "owner": {
+      "type": "string",
+      "required": true
+    },
+    "repo": {
+      "type": "string",
+      "required": true
+    },
+    "secret": {
+      "type": "string",
+      "private": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,50 @@
+name: Build and release Respec
+inputs:
+  name:
+    description: 'Name of the document, will also be used as the asset label in the release'
+    required: true
+  token:
+    description: 'GitHub access token'
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        path: npm
+        node-version: 18
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Build document
+      shell: bash
+      run: |
+        mkdir ./output
+        npx respec --localhost --src index.html --out "./output/output.html"
+        cp -R media output/media
+        npx base64-html-images output/output.html "output/${{ inputs.name }}.html"
+    - name: Semantic Release
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.token }}
+      run: |
+        echo '
+        {
+          "branches": [
+            "main"
+          ],
+          "plugins": [
+            [
+              "@semantic-release/github",
+              {
+                "assets": [
+                  {
+                    "path": "./output/${{ inputs.name }}.html",
+                    "label": "${{ inputs.name }}"
+                  }
+                ]
+              }
+            ]
+          ]
+        } ' >> .releaserc
+        npx semantic-release

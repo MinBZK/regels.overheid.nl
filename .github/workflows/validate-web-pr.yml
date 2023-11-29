@@ -1,0 +1,52 @@
+name: Validate pull request (web)
+
+on:
+  pull_request:
+    paths:
+      - 'apps/web/**'
+jobs:
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
+        with:
+          workspace: 'web'
+          script: lint
+  stylecheck:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
+        with:
+          workspace: 'web'
+          script: stylecheck
+  build:
+    needs: [lint, stylecheck]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+        with:
+          action: 'add'
+          database_id: ${{ secrets.DATABASE_ID }}
+          digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'
+      - name: Build (Docker)
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          target: prod
+          file: ./apps/web/Dockerfile
+          push: false
+          no-cache: true
+          build-args: |
+            PUBLIC_URL=https://regels.overheid.nl/web/
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
+            CMS_URL=http://cms:9001
+            NEXT_PUBLIC_CMS_URL=https://regels.overheid.nl/cms
+            WEB_URL=http://localhost:9000
+            NEXT_PUBLIC_WEB_URL=https://regels.overheid.nl
+            DATABASE_CA_CERT=${{ secrets.DATABASE_CA_CERT }}
+      - uses: GarreauArthur/manage-digital-ocean-managed-database-trusted-sources-gh-action@main
+        with:
+          action: 'remove'
+          database_id: ${{ secrets.DATABASE_ID }}
+          digitalocean_token: '${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}'

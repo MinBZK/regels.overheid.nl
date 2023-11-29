@@ -1,18 +1,26 @@
-name: Perform semantic release
+name: Release
+
 on:
   push:
     branches:
       - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
-  semantic-release:    
-    name: semantic-release
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          cache: npm
+          cache: yarn
           node-version: 18
-      - run: npx semantic-release
+      - run: yarn
+      - uses: changesets/action@v1
+        with:
+          createGithubReleases: true
+          publish: yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

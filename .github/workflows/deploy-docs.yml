@@ -4,11 +4,8 @@ on:
     branches:
       - main
     paths:
-      - "apps/docs/**"
-      - ".github/actions/**"
-      - ".github/workflows/deploy-docs.yml"
-      - "package.json"
-      - "yarn.lock"
+      - 'apps/docs/CHANGELOG.md'
+      - '.github/workflows/deploy-docs.yml'
 jobs:
   build-docs-image:
     runs-on: ubuntu-latest
@@ -30,5 +27,3 @@ jobs:
           digitalocean-access-token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           cluster-id: ${{ secrets.DIGITALOCEAN_PRODUCTION_CLUSTER_ID }}
           secrets: '${{ toJson(secrets) }}'
-
-

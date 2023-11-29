@@ -1,28 +1,36 @@
-const path = require('path');
-
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    // If you use remark-gfm, you'll need to use next.config.mjs
-    // as the package is ESM only
-    // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [],
-    rehypePlugins: [],
-    // If you use `MDXProvider`, uncomment the following line.
-    // providerImportSource: "@mdx-js/react",
-  },
-});
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  output: 'standalone',
-  experimental: {
-    outputFileTracingRoot: path.join(__dirname, '../../'),
-    transpilePackages: ['ui'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '/cms/uploads/**',
+      },
+      {
+        port: '9001',
+        protocol: 'http',
+        hostname: 'cms',
+        pathname: '/uploads/**',
+      },
+      {
+        port: '80',
+        protocol: 'https',
+        hostname: 'regels.overheid.nl',
+        pathname: '/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'host.docker.internal',
+        pathname: '/cms/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
-module.exports = withMDX(nextConfig);
+module.exports = nextConfig;

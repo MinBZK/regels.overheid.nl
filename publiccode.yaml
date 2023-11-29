@@ -1,0 +1,58 @@
+publiccodeYmlVersion: "0.2"
+name: Open Regels
+url: https://github.com/MinBZK/regels.overheid.git
+softwareVersion: dev
+logo: "https://regels.overheid.nl/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.a9bd994f.png&w=1920&q=75"
+releaseDate: 2023-06-30
+platforms:
+  - web
+categories:
+  - law & regulations
+developmentStatus: development
+softwareType: addon
+description:
+  nl:
+    localisedName: regels.overheid.nl
+    shortDescription: >
+      Openbare bibliotheek van regels die de overheid gebruikt om
+      wetgeving te vertalen naar uitvoering.
+    longDescription: >
+      Regels zijn nodig om wet- en regelgeving te vertalen naar
+      uitvoering. Er zijn geen eenduidige aanwijzingen hoe een regel moet worden
+      opgesteld. Daardoor kun je niet altijd controleren of een regel juist is.
+      Die aanwijzingen bestaan bijvoorbeeld wel voor wet- en regelgeving. Regels
+      zijn ook geen computercode die gecontroleerd kan worden door een machine.
+      Het is daarom lastig voor overheden, burgers en bedrijven  lastig om te
+      bepalen of een regel 'juist' is.
+
+      Daarom vind je op deze website regels die de overheid gebruikt om wetgeving te vertalen naar uitvoering. 
+    features:
+      - Bibliotheek
+legal:
+  license: EUPL-1.2
+maintenance:
+  type: community
+  contacts:
+    - name: Steven Gort
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - nl
+nl:
+  countryExtensionVersion: "1.0"
+  commonground:
+    layerType: process
+    installationType: self
+    intendedOrganisations:
+      - https://github.com/MinBZK
+  gemma:
+    bedrijfsfuncties:
+      - Uitvoering Sociaal Doemein
+      - Gegevensmanagement
+    bedrijfsservices:
+      - Producten- en dienstenrealisatie sociaal domein
+      - Casusregievoering sociaal domein
+    applicatiefunctie: Publiceren gemeentelijke producten en diensten
+  upl:
+    - individuele inkomenstoeslag
+    

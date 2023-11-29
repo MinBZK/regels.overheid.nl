@@ -38,13 +38,13 @@ const config = {
           // Please change this to your repo.
 
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/MinBZK/regels.overheid.nl/tree/develop/apps/docs',
+          editUrl: 'https://github.com/MinBZK/regels.overheid.nl/tree/main/apps/docs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/MinBZK/regels.overheid.nl/tree/develop/apps/docs',
+          editUrl: 'https://github.com/MinBZK/regels.overheid.nl/tree/main/apps/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -57,11 +57,11 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'regels.overheid.nl',
-        // logo: {
-        //   alt: 'My Site Logo',
-        //   src: 'img/logo.svg',
-        // },
+        // title: 'regels.overheid.nl',
+        logo: {
+          alt: 'Regels Overheid Logo',
+          src: 'img/logo.png',
+        },
         items: [
           {
             type: 'doc',
@@ -84,7 +84,7 @@ const config = {
             items: [
               {
                 label: 'Documentation',
-                to: '/docs/intro',
+                to: '/docs',
               },
             ],
           },
