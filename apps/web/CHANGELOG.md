@@ -1,5 +1,11 @@
 # web
 
+## 3.6.0
+
+### Minor Changes
+
+- 4008318: Facilitate backend for Open Catalogi via applicable github actions
+
 ## 3.5.0
 
 ### Minor Changes
