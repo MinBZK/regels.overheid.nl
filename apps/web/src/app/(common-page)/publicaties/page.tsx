@@ -29,7 +29,7 @@ export default function PublicatiesPage() {
           title="DCAT"
           tag="Work in progress"
           variant="wip"
-          url="https://minbzk.github.io/dcat-ap-ronl/"
+          url="/publicaties/dcat-ap-ronl"
           description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
         />
         <PublicationCard title="Harmonisator" variant="unavailable" />
