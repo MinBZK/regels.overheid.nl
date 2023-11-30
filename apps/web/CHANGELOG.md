@@ -1,5 +1,15 @@
 # web
 
+## 3.7.0
+
+### Minor Changes
+
+- 900c63f: Published dcat-ap-ronl ReSpec on regels.overheid.nl
+
+### Patch Changes
+
+- ab1f5e5: Remove empty links from footer
+
 ## 3.6.0
 
 ### Minor Changes
