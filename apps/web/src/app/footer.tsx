@@ -46,12 +46,10 @@ export const Footer: React.FC = () => {
             <FooterLink href="https://github.com/MinBZK/regels.overheid.nl" isBlank>
               Github
             </FooterLink>
-            <FooterLink href="https://regels.dexcat.nl/">Regelregister</FooterLink>
           </ul>
           <ul>
+            <FooterLink href="https://regels.dexcat.nl/">Regelregister</FooterLink>
             <FooterLink href="https://regels.overheid.nl/docs">Documentatie </FooterLink>
-            <FooterLink href="#">Privacy en cookies</FooterLink>
-            <FooterLink href="#">Toegankelijkheid</FooterLink>
             <FooterLink href="/sitemap.xml">Sitemap</FooterLink>
           </ul>
           <ul>
