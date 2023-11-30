@@ -1,5 +1,11 @@
 # docs
 
+## 3.2.1
+
+### Patch Changes
+
+- cf1c708: Fixed missing config in publish github action
+
 ## 3.2.0
 
 ### Minor Changes
