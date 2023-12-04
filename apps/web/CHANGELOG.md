@@ -1,5 +1,11 @@
 # web
 
+## 3.7.1
+
+### Patch Changes
+
+- 88814fb: 404 page not showing when navigating to a publication that doesn't exist
+
 ## 3.7.0
 
 ### Minor Changes
