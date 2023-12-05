@@ -15,7 +15,7 @@ export default function PublicatiesPage() {
         <PublicationCard
           tag="Algoritme"
           title="De Legitimaat"
-          url="/publicaties/de-legitimaat"
+          url="/publicaties/legitimaat"
           description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
         />
         <PublicationCard
