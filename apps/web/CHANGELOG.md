@@ -1,5 +1,11 @@
 # web
 
+## 3.7.2
+
+### Patch Changes
+
+- ec6e39f: Updated legitimaat url with new publication (moved from open-regels.nl)
+
 ## 3.7.1
 
 ### Patch Changes
