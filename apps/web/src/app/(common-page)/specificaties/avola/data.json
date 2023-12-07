@@ -1,0 +1,5070 @@
+{
+  "Recht op algemene bijstand": {
+    "head": [
+      [null, null],
+      ["Type aanvraag", "List"],
+      ["Partnersituatie aanvragers", "Pair"],
+      ["Criterium vermogensnorm (PW)", "Pair"],
+      ["Criterium netto inkomensnorm algemene bijstand", "Pair"],
+      ["Bijstandsrecht hoofdaanvrager", "Pair"],
+      ["Criterium voorliggende voorziening hoofdaanvrager", "Pair"],
+      ["Ondernemerscheck hoofdaanvrager", "Pair"],
+      ["Bijstandsrecht medeaanvrager", "Pair"],
+      ["Criterium voorliggende voorziening medeaanvrager", "Pair"],
+      ["Ondernemerscheck medeaanvrager", "Pair"],
+      ["Inlichtingen- en medewerkingsplicht", "Pair"],
+      ["Recht op algemene bijstand", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Telt niet als zelfstandige ondernemer"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan inlichtingen- en medewerkingsplicht"],
+        ["Is", "Recht op algemene bijstand"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel bijstandspartners"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Telt niet als zelfstandige ondernemer"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Telt niet als zelfstandige ondernemer"],
+        ["Is", "Voldoet aan inlichtingen- en medewerkingsplicht"],
+        ["Is", "Recht op algemene bijstand"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel bijstandspartners"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Niet rechthebbend"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Telt niet als zelfstandige ondernemer"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Telt niet als zelfstandige ondernemer"],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        [null, null],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Telt als zelfstandige ondernemer"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Geen bijstandspartners"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel bijstandspartners"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel bijstandspartners"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Telt als zelfstandige ondernemer"],
+        [null, null],
+        ["Is", "Geen recht op algemene bijstand"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan inlichtingen- en medewerkingsplicht"],
+        ["Is", "Geen recht op algemene bijstand"]
+      ]
+    ]
+  },
+  "Criterium netto inkomensnorm algemene bijstand": {
+    "head": [
+      [null, null],
+      ["Totaal netto maandinkomen incl VT naar rato", "Currency"],
+      ["Bijstandsnorm (inclusief VT) naar rato", "Currency"],
+      ["Criterium netto inkomensnorm algemene bijstand", "Pair"]
+    ],
+    "body": [
+      [
+        ["<", null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        [">=", null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Bijstandsnorm (inclusief VT) naar rato": {
+    "head": [
+      [null, null],
+      ["Maandgedeelte naar rato", "Percentage"],
+      ["Toepasselijke bijstandsnorm inclusief VT", "Currency"],
+      ["Bijstandsnorm (inclusief VT) naar rato", "Currency"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        ["Is", "[Maandgedeelte naar rato] * [Toepasselijke bijstandsnorm inclusief VT]"]
+      ]
+    ]
+  },
+  "Toepasselijke bijstandsnorm inclusief VT": {
+    "head": [
+      [null, null],
+      ["Type aanvraag", "List"],
+      ["Bijstandsrecht hoofdaanvrager", "Pair"],
+      ["Bijstandsrecht medeaanvrager", "Pair"],
+      ["Inrichtingssituatie hoofdaanvrager", "List"],
+      ["Inrichtingssituatie medeaanvrager", "List"],
+      ["Type regeling", "List"],
+      ["Toepasselijke bijstandsnorm inclusief VT", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Algemene bijstand"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Bijzondere bijstand"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "0.5 * [Bijstandsnorm met niet-rechthebbende medeaanvrager]"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Niet rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "0.5 * [Bijstandsnorm met niet-rechthebbende hoofdaanvrager]"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Algemene bijstand"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Bijzondere bijstand"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["Is", "Algemene bijstand"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["Is", "Bijzondere bijstand"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["Is", "Algemene bijstand"],
+        ["Is", "[Persoonlijke bijstandsnorm hoofdaanvrager] + [Persoonlijke bijstandsnorm medeaanvrager]"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["Is", "Bijzondere bijstand"],
+        [
+          "Is",
+          "[Persoonlijke bijstandsnorm hoofdaanvrager voor kostendelerscorrectie] + [Persoonlijke bijstandsnorm medeaanvrager voor kostendelerscorrectie]"
+        ]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Algemene bijstand"],
+        ["Is", "[Persoonlijke bijstandsnorm hoofdaanvrager] + [Persoonlijke bijstandsnorm medeaanvrager]"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Wel rechthebbend"],
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Bijzondere bijstand"],
+        [
+          "Is",
+          "[Persoonlijke bijstandsnorm hoofdaanvrager voor kostendelerscorrectie] + [Persoonlijke bijstandsnorm medeaanvrager voor kostendelerscorrectie]"
+        ]
+      ]
+    ]
+  },
+  "Bijstandsnorm gezamenlijk huishouden voor kostendelerscorrectie": {
+    "head": [
+      [null, null],
+      ["Inrichtingssituatie hoofdaanvrager", "List"],
+      ["Inrichtingssituatie medeaanvrager", "List"],
+      ["Normcategorie oudste aanvrager", "List"],
+      ["Normcategorie jongste aanvrager", "List"],
+      ["Aantal ten laste komende kinderen van de hoofdaanvrager", "Whole number"],
+      ["Bijstandsnorm gezamenlijk huishouden voor kostendelerscorrectie", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Verblijft in inrichting zonder woonlasten"],
+        ["Is", "Verblijft in inrichting zonder woonlasten"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [
+          "Is",
+          "( 0.344761 + [Basisbedrag bijstandsnorm volwassenen (incl VT)] ) + [Bedrag verhoging premie Zorgverzekeringswet gehuwden]"
+        ]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Jongerennorm"],
+        [null, null],
+        ["=", "0"],
+        ["Is", "0.345614 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Jongerennorm"],
+        [null, null],
+        [">=", "1"],
+        ["Is", "0.545615 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor volwassenen"],
+        ["Is", "Jongerennorm"],
+        ["=", "0"],
+        ["Is", "0.672807 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor volwassenen"],
+        ["Is", "Jongerennorm"],
+        [">=", "1"],
+        ["Is", "0.872808 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor volwassenen"],
+        ["Is", "Norm voor volwassenen"],
+        [null, null],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor pensioengerechtigden"],
+        ["Is", "Norm voor volwassenen"],
+        [null, null],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Verblijft niet in inrichting"],
+        [null, null],
+        ["Is", "Norm voor pensioengerechtigden"],
+        [null, null],
+        ["Is", null]
+      ]
+    ]
+  },
+  "Basisbedrag bijstandsnorm volwassenen (incl VT)": {
+    "head": [
+      [null, null],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Basisbedrag bijstandsnorm volwassenen (incl VT)", "Currency"]
+    ],
+    "body": [
+      [
+        ["Between (right excl.)", "Jan 1, 2020 "],
+        ["Is", "€1,503.31"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2020 "],
+        ["Is", "€1,512.90"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2021 "],
+        ["Is", "€1,536.34"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2021 "],
+        ["Is", "€1,541.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2022 "],
+        ["Is", "€1,559.58"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2022 "],
+        ["Is", "€1,574.03"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2023 "],
+        ["Is", "€1,708.08"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2023 "],
+        ["Is", "€1,738.02"]
+      ]
+    ]
+  },
+  "Normcategorie jongste aanvrager": {
+    "head": [
+      [null, null],
+      ["Type aanvraag", "List"],
+      ["Geboortedatum hoofdaanvrager", "DateTime"],
+      ["Normcategorie jongste aanvrager", "List"]
+    ],
+    "body": [
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        [">=", null],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["<", null],
+        ["Is", null]
+      ]
+    ]
+  },
+  "Normcategorie hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Pensioensrecht hoofdaanvrager", "Pair"],
+      ["Leeftijd hoofdaanvrager", "Timespan"],
+      ["Normcategorie hoofdaanvrager", "List"]
+    ],
+    "body": [
+      [
+        ["Is", "Pensioensgerechtigd"],
+        [null, null],
+        ["Is", "Norm voor pensioengerechtigden"]
+      ],
+      [
+        ["Is", "Niet pensioensgerechtigd"],
+        [">=", "21 Years"],
+        ["Is", "Norm voor volwassenen"]
+      ],
+      [
+        ["Is", "Niet pensioensgerechtigd"],
+        ["<", "21 Years"],
+        ["Is", "Jongerennorm"]
+      ]
+    ]
+  },
+  "Leeftijd hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Leeftijd hoofdaanvrager", "Timespan"]
+    ],
+    "body": [[["Is difference between", null]]]
+  },
+  "Pensioensrecht hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Geboortedatum hoofdaanvrager", "DateTime"],
+      ["Leeftijd hoofdaanvrager (in maanden)", "Timespan"],
+      ["Pensioensrecht hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["<", "Jan 1, 1953"],
+        [null, null],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 1953 "],
+        ["<", "796 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 1953 "],
+        [">=", "796 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Sep 1, 1955 "],
+        ["<", "799 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Sep 1, 1955 "],
+        [">=", "799 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jun 1, 1956 "],
+        ["<", "802 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jun 1, 1956 "],
+        [">=", "802 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        [">=", "Mar 1, 1957"],
+        ["<", "804 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        [">=", "Mar 1, 1957"],
+        [">=", "804 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ]
+    ]
+  },
+  "Leeftijd hoofdaanvrager (in maanden)": {
+    "head": [
+      [null, null],
+      ["Geboortedatum hoofdaanvrager", "DateTime"],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Leeftijd hoofdaanvrager (in maanden)", "Timespan"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        ["Is difference between", null]
+      ]
+    ]
+  },
+  "Normcategorie medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Pensioensrecht medeaanvrager", "Pair"],
+      ["Leeftijd medeaanvrager", "Timespan"],
+      ["Normcategorie medeaanvrager", "List"]
+    ],
+    "body": [
+      [
+        ["Is", "Pensioensgerechtigd"],
+        [null, null],
+        ["Is", "Norm voor pensioengerechtigden"]
+      ],
+      [
+        ["Is", "Niet pensioensgerechtigd"],
+        [">=", "21 Years"],
+        ["Is", "Norm voor volwassenen"]
+      ],
+      [
+        ["Is", "Niet pensioensgerechtigd"],
+        ["<", "21 Years"],
+        ["Is", "Jongerennorm"]
+      ]
+    ]
+  },
+  "Leeftijd medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Geboortedatum medeaanvrager", "DateTime"],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Leeftijd medeaanvrager", "Timespan"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        ["Is difference between", null]
+      ]
+    ]
+  },
+  "Pensioensrecht medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Geboortedatum medeaanvrager", "DateTime"],
+      ["Leeftijd medeaanvrager (in maanden)", "Timespan"],
+      ["Pensioensrecht medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["<", "Jan 1, 1953"],
+        [null, null],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 1953 "],
+        ["<", "796 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 1953 "],
+        [">=", "796 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Sep 1, 1955 "],
+        ["<", "799 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Sep 1, 1955 "],
+        [">=", "799 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jun 1, 1956 "],
+        ["<", "802 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        ["Between (right excl.)", "Jun 1, 1956 "],
+        [">=", "802 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ],
+      [
+        [">=", "Mar 1, 1957"],
+        ["<", "804 Months"],
+        ["Is", "Niet pensioensgerechtigd"]
+      ],
+      [
+        [">=", "Mar 1, 1957"],
+        [">", "804 Months"],
+        ["Is", "Pensioensgerechtigd"]
+      ]
+    ]
+  },
+  "Leeftijd medeaanvrager (in maanden)": {
+    "head": [
+      [null, null],
+      ["Geboortedatum medeaanvrager", "DateTime"],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Leeftijd medeaanvrager (in maanden)", "Timespan"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        ["Is difference between", null]
+      ]
+    ]
+  },
+  "Type aanvraag": {
+    "head": [
+      [null, null],
+      ["Geboortedatum medeaanvrager", "DateTime"],
+      ["Type aanvraag", "List"]
+    ],
+    "body": [
+      [
+        ["Is", null],
+        ["Is", "Individuele aanvraag"]
+      ],
+      [
+        ["Is not", null],
+        ["Is", "Gezamenlijke aanvraag"]
+      ]
+    ]
+  },
+  "Normcategorie oudste aanvrager": {
+    "head": [
+      [null, null],
+      ["Type aanvraag", "List"],
+      ["Geboortedatum hoofdaanvrager", "DateTime"],
+      ["Normcategorie oudste aanvrager", "List"]
+    ],
+    "body": [
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["<=", null],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        [">", null],
+        ["Is", null]
+      ]
+    ]
+  },
+  "Bedrag verhoging premie Zorgverzekeringswet gehuwden": {
+    "head": [
+      [null, null],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Bedrag verhoging premie Zorgverzekeringswet gehuwden", "Currency"]
+    ],
+    "body": [
+      [
+        ["Between (right excl.)", "Jan 1, 2020 "],
+        ["Is", "€74.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2021 "],
+        ["Is", "€76.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2022 "],
+        ["Is", "€79.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2023 "],
+        ["Is", "€50.00"]
+      ]
+    ]
+  },
+  "Basisbedrag bijstandsnorm samenwonende pensioengerechtigden (incl VT)": {
+    "head": [
+      [null, null],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Basisbedrag bijstandsnorm samenwonende pensioengerechtigden (incl VT)", "Currency"]
+    ],
+    "body": [
+      [
+        ["Between (right excl.)", "Jan 1, 2020 "],
+        ["Is", "€1,594.42"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2020 "],
+        ["Is", "€1,606.88"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2021 "],
+        ["Is", "€1,620.74"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2021 "],
+        ["Is", "€1,627.08"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2022 "],
+        ["Is", "€1,642.54"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2022 "],
+        ["Is", "€1,660.36"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2023 "],
+        ["Is", "€1,807.20"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2023 "],
+        ["Is", "€1,843.60"]
+      ]
+    ]
+  },
+  "Bijstandsnorm gezamenlijk huishouden": {
+    "head": [
+      [null, null],
+      ["Aantal kostendelende medebewoners", "Whole number"],
+      ["Normcategorie oudste aanvrager", "List"],
+      ["Normcategorie jongste aanvrager", "List"],
+      ["Aantal ten laste komende kinderen van de hoofdaanvrager", "Whole number"],
+      ["Normcategorie hoofdaanvrager", "List"],
+      ["Normcategorie medeaanvrager", "List"],
+      ["Bijstandsnorm gezamenlijk huishouden", "Currency"]
+    ],
+    "body": [
+      [
+        ["=", "0"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", null]
+      ],
+      [
+        [null, null],
+        ["Is", "Jongerennorm"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", null]
+      ],
+      [
+        [">=", "1"],
+        [null, null],
+        ["In", "Norm voor volwassenen, Norm voor pensioengerechtigden"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "[Persoonlijke bijstandsnorm hoofdaanvrager] + [Persoonlijke bijstandsnorm medeaanvrager]"]
+      ],
+      [
+        [">=", "1"],
+        ["In", "Norm voor volwassenen, Norm voor pensioengerechtigden"],
+        ["Is", "Jongerennorm"],
+        ["=", "0"],
+        ["Is", "Jongerennorm"],
+        [null, null],
+        ["Is", "265.49 + [Persoonlijke bijstandsnorm medeaanvrager]"]
+      ],
+      [
+        [">=", "1"],
+        ["In", "Norm voor volwassenen, Norm voor pensioengerechtigden"],
+        ["Is", "Jongerennorm"],
+        ["=", "0"],
+        [null, null],
+        ["Is", "Jongerennorm"],
+        ["Is", "265.49 + [Persoonlijke bijstandsnorm hoofdaanvrager]"]
+      ],
+      [
+        [">=", "1"],
+        ["In", "Norm voor volwassenen, Norm voor pensioengerechtigden"],
+        ["Is", "Jongerennorm"],
+        [">=", "1"],
+        ["Is", "Jongerennorm"],
+        [null, null],
+        ["Is", "572.76 + [Persoonlijke bijstandsnorm medeaanvrager]"]
+      ],
+      [
+        [">=", "1"],
+        ["In", "Norm voor volwassenen, Norm voor pensioengerechtigden"],
+        ["Is", "Jongerennorm"],
+        [">=", "1"],
+        [null, null],
+        ["Is", "Jongerennorm"],
+        ["Is", "572.76 + [Persoonlijke bijstandsnorm hoofdaanvrager]"]
+      ]
+    ]
+  },
+  "Persoonlijke bijstandsnorm hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Normcategorie hoofdaanvrager", "List"],
+      ["Aantal kostendelende medebewoners", "Whole number"],
+      ["Partnersituatie aanvragers", "Pair"],
+      ["Persoonlijke bijstandsnorm hoofdaanvrager", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Jongerennorm"],
+        [null, null],
+        [null, null],
+        ["Is", null]
+      ],
+      [
+        [null, null],
+        ["=", "0"],
+        [null, null],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Norm voor volwassenen"],
+        ["Between", "1 "],
+        ["Is", "Geen bijstandspartners"],
+        [
+          "Is",
+          "( 0.4 + ( ( [Aantal kostendelende medebewoners] + 1 ) * 0.3 ) ) / ( [Aantal kostendelende medebewoners] + 1 ) * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"
+        ]
+      ],
+      [
+        ["Is", "Norm voor volwassenen"],
+        ["Between", "1 "],
+        ["Is", "Wel bijstandspartners"],
+        [
+          "Is",
+          "( 0.4 + ( ( [Aantal kostendelende medebewoners] + 2 ) * 0.3 ) ) / ( [Aantal kostendelende medebewoners] + 2 ) * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"
+        ]
+      ],
+      [
+        ["Is", "Norm voor volwassenen"],
+        [">=", "5"],
+        [null, null],
+        ["Is", "( 0.4 + ( 6 * 0.3 ) ) / ( 6 ) * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        ["Between", "1 "],
+        ["Is", "Geen bijstandspartners"],
+        [
+          "Is",
+          "( 0.4 + ( ( [Aantal kostendelende medebewoners] + 1 ) * 0.3 ) ) / ( [Aantal kostendelende medebewoners] + 1 ) * [Basisbedrag bijstandsnorm samenwonende pensioengerechtigden (incl VT)]"
+        ]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        ["Between", "1 "],
+        ["Is", "Wel bijstandspartners"],
+        [
+          "Is",
+          "( 0.4 + ( ( [Aantal kostendelende medebewoners] + 2 ) * 0.3 ) ) / ( [Aantal kostendelende medebewoners] + 2 ) * [Basisbedrag bijstandsnorm samenwonende pensioengerechtigden (incl VT)]"
+        ]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        [">=", "5"],
+        [null, null],
+        [
+          "Is",
+          "( 0.4 + ( 6 * 0.3 ) ) / ( 6 ) * [Basisbedrag bijstandsnorm samenwonende pensioengerechtigden (incl VT)]"
+        ]
+      ]
+    ]
+  },
+  "Persoonlijke bijstandsnorm hoofdaanvrager voor kostendelerscorrectie": {
+    "head": [
+      [null, null],
+      ["Inrichtingssituatie hoofdaanvrager", "List"],
+      ["Normcategorie hoofdaanvrager", "List"],
+      ["Situatie woonlasten hoofdaanvrager", "Pair"],
+      ["Persoonlijke bijstandsnorm hoofdaanvrager voor kostendelerscorrectie", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Verblijft in inrichting zonder woonlasten"],
+        [null, null],
+        [null, null],
+        [
+          "Is",
+          "( 0.22165 * [Basisbedrag bijstandsnorm volwassenen (incl VT)] ) + [Bedrag verhoging premie Zorgverzekeringswet alleenstaanden]"
+        ]
+      ],
+      [
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", "Jongerennorm"],
+        [null, null],
+        ["Is", "0.172807 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft in inrichting met woonlasten"],
+        ["Is", "Norm voor volwassenen"],
+        [null, null],
+        ["Is", "0.7 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor volwassenen"],
+        ["Is", "Wel woonlasten"],
+        ["Is", "0.7 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor volwassenen"],
+        ["Is", "Geen woonlasten"],
+        ["Is", "0.5 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", "Norm voor pensioengerechtigden"],
+        [null, null],
+        ["Is", null]
+      ]
+    ]
+  },
+  "Basisbedrag bijstandsnorm alleenstaande pensioengerechtigden (incl VT)": {
+    "head": [
+      [null, null],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Basisbedrag bijstandsnorm alleenstaande pensioengerechtigden (incl VT)", "Currency"]
+    ],
+    "body": [
+      [
+        ["Between (right excl.)", "Jan 1, 2020 "],
+        ["Is", "€1,176.25"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2020 "],
+        ["Is", "€1,184.26"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2021 "],
+        ["Is", "€1,195.97"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2021 "],
+        ["Is", "€1,199.98"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2022 "],
+        ["Is", "€1,213.06"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2022 "],
+        ["Is", "€1,225.67"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2023 "],
+        ["Is", "€1,330.67"]
+      ],
+      [
+        ["Between (right excl.)", "Jul 1, 2023 "],
+        ["Is", "€1,357.66"]
+      ]
+    ]
+  },
+  "Bedrag verhoging premie Zorgverzekeringswet alleenstaanden": {
+    "head": [
+      [null, null],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Bedrag verhoging premie Zorgverzekeringswet alleenstaanden", "Currency"]
+    ],
+    "body": [
+      [
+        ["Between (right excl.)", "Jan 1, 2020 "],
+        ["Is", "€33.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2021 "],
+        ["Is", "€34.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2022 "],
+        ["Is", "€34.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2023 "],
+        ["Is", "€3.00"]
+      ]
+    ]
+  },
+  "Partnersituatie aanvragers": {
+    "head": [
+      [null, null],
+      ["Type aanvraag", "List"],
+      ["Samenwoonsituatie aanvragers", "Pair"],
+      ["Relatietype aanvragers", "List"],
+      ["Uitkomst onderzoek relatiestatus aanvragers", "Pair"],
+      ["Partnersituatie aanvragers", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel samenwonend"],
+        ["In", "Gehuwd, Geregistreerd partner"],
+        [null, null],
+        ["Is", "Wel bijstandspartners"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel samenwonend"],
+        ["In", "Ongehuwd, Overige familierelatie"],
+        ["Is", "Wel bijstandspartners"],
+        ["Is", "Wel bijstandspartners"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel samenwonend"],
+        ["In", "Ongehuwd, Overige familierelatie"],
+        ["Is", "Geen bijstandspartners"],
+        ["Is", "Geen bijstandspartners"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Niet samenwonend"],
+        [null, null],
+        ["Is", "Wel bijstandspartners"],
+        ["Is", "Wel bijstandspartners"]
+      ],
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Niet samenwonend"],
+        [null, null],
+        ["Is", "Geen bijstandspartners"],
+        ["Is", "Geen bijstandspartners"]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen bijstandspartners"]
+      ]
+    ]
+  },
+  "Persoonlijke bijstandsnorm medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Normcategorie medeaanvrager", "List"],
+      ["Aantal kostendelende medebewoners", "Whole number"],
+      ["Persoonlijke bijstandsnorm medeaanvrager", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Jongerennorm"],
+        [null, null],
+        ["Is", null]
+      ],
+      [
+        [null, null],
+        ["=", "0"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Norm voor volwassenen"],
+        ["Between", "1 "],
+        [
+          "Is",
+          "( 0.4 + ( ( [Aantal kostendelende medebewoners] + 2 ) * 0.3 ) ) / ( [Aantal kostendelende medebewoners] + 2 ) * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"
+        ]
+      ],
+      [
+        ["Is", "Norm voor volwassenen"],
+        [">=", "5"],
+        ["Is", "( 0.4 + ( 6 * 0.3 ) ) / ( 6 ) * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        ["Between", "1 "],
+        [
+          "Is",
+          "( 0.4 + ( ( [Aantal kostendelende medebewoners] + 2 ) * 0.3 ) ) / ( [Aantal kostendelende medebewoners] + 2 ) * [Basisbedrag bijstandsnorm samenwonende pensioengerechtigden (incl VT)]"
+        ]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        [">=", "5"],
+        [
+          "Is",
+          "( 0.4 + ( 6 * 0.3 ) ) / ( 6 ) * [Basisbedrag bijstandsnorm samenwonende pensioengerechtigden (incl VT)]"
+        ]
+      ]
+    ]
+  },
+  "Persoonlijke bijstandsnorm medeaanvrager voor kostendelerscorrectie": {
+    "head": [
+      [null, null],
+      ["Inrichtingssituatie medeaanvrager", "List"],
+      ["Normcategorie medeaanvrager", "List"],
+      ["Situatie woonlasten medeaanvrager", "Pair"],
+      ["Persoonlijke bijstandsnorm medeaanvrager voor kostendelerscorrectie", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Verblijft in inrichting zonder woonlasten"],
+        [null, null],
+        [null, null],
+        [
+          "Is",
+          "( 0.22165 * [Basisbedrag bijstandsnorm volwassenen (incl VT)] ) + [Bedrag verhoging premie Zorgverzekeringswet alleenstaanden]"
+        ]
+      ],
+      [
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", "Jongerennorm"],
+        [null, null],
+        ["Is", "0.172807 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft in inrichting met woonlasten"],
+        ["Is", "Norm voor volwassenen"],
+        [null, null],
+        ["Is", "0.7 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor volwassenen"],
+        ["Is", "Wel woonlasten"],
+        ["Is", "0.7 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        ["Is", "Norm voor volwassenen"],
+        ["Is", "Geen woonlasten"],
+        ["Is", "0.5 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", "Norm voor pensioengerechtigden"],
+        [null, null],
+        ["Is", null]
+      ]
+    ]
+  },
+  "Bijstandsrecht hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Criterium verblijfstitel hoofdaanvrager", "Pair"],
+      ["Criterium woonachtig in Rotterdam hoofdaanvrager", "Pair"],
+      ["Toepassing uitsluitingsgronden hoofdaanvrager (algemene bijstand)", "Pair"],
+      ["Bijstandsrecht hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Geen uitsluitingsgronden van toepassing"],
+        ["Is", "Wel rechthebbend"]
+      ],
+      [
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        [null, null],
+        ["Is", "Niet rechthebbend"]
+      ],
+      [
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        ["Is", "Niet rechthebbend"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"],
+        ["Is", "Niet rechthebbend"]
+      ]
+    ]
+  },
+  "Criterium verblijfstitel hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Nationaliteitencategorie hoofdaanvrager", "List"],
+      ["Vreemdelingenstatus hoofdaanvrager", "Pair"],
+      ["Criterium verblijfstitel hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Nederlandse nationaliteit"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["In", "EU - burger, Derdelander, Turkse nationaliteit"],
+        ["Is", "Gelijkgestelde vreemdeling"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["In", "EU - burger, Derdelander, Turkse nationaliteit"],
+        ["Is", "Geen gelijkgestelde vreemdeling"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Nationaliteitencategorie hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Nationaliteit hoofdaanvrager", "List"],
+      ["Nationaliteit hoofdaanvrager", "List"],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Nationaliteitencategorie hoofdaanvrager", "List"]
+    ],
+    "body": [
+      [
+        ["Is", "Nederlandse"],
+        [null, null],
+        [null, null],
+        ["Is", "Nederlandse nationaliteit"]
+      ],
+      [
+        [
+          "In",
+          "Slowaakse, Tsjechische, Sloveense, Kroatische, Letse, Estische, Litouwse, Belgische, Bulgaarse, Deense, Burger van de Bondsrepubliek Duitsland, Finse, Franse, Griekse, Hongaarse, Ierse, IJslandse, Italiaanse, Liechtensteinse, Luxemburgse, Maltese, Noorse, Oostenrijkse, Poolse, Portugese, Roemeense, Spaanse, Zweedse, Zwitserse, Cyprische"
+        ],
+        [null, null],
+        [null, null],
+        ["Is", "EU - burger"]
+      ],
+      [
+        ["In", "Brits burger, Brits onderdaan, Brits overzees burger, British National (overseas)"],
+        [null, null],
+        ["<", "Jan 1, 2021"],
+        ["Is", "EU - burger"]
+      ],
+      [
+        [
+          "Not in",
+          "Nederlandse, Slowaakse, Tsjechische, Sloveense, Kroatische, Letse, Estische, Litouwse, Belgische, Bulgaarse, Deense, Burger van de Bondsrepubliek Duitsland, Finse, Franse, Griekse, Brits burger, Hongaarse, Ierse, IJslandse, Italiaanse, Liechtensteinse, Luxemburgse, Maltese, Noorse, Oostenrijkse, Poolse, Portugese, Roemeense, Spaanse, Zweedse, Zwitserse, Brits onderdaan, Brits overzees burger, Cyprische, British National (overseas)"
+        ],
+        ["Is not", null],
+        [null, null],
+        ["Is", "Derdelander"]
+      ],
+      [
+        ["In", "Brits burger, Brits onderdaan, Brits overzees burger, British National (overseas)"],
+        [null, null],
+        [">=", "Jan 1, 2021"],
+        ["Is", "Derdelander"]
+      ]
+    ]
+  },
+  "Vreemdelingenstatus hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Nationaliteitencategorie hoofdaanvrager", "List"],
+      ["Verblijfsperiode in Nederland hoofdaanvrager", "Timespan"],
+      ["Uitkomst onderzoek verblijfstitel hoofdaanvrager", "Pair"],
+      ["IND Verblijfscode hoofdaanvrager", "List"],
+      ["Nadere gegevens hoofdaanvrager", "List"],
+      ["Vreemdelingenstatus hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "EU - burger"],
+        ["<", "3 Months"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", "Wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", "Geen recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["In", "21, 22, 23, 24, 25, 26, 27, 33"],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["Is", "32"],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is not", null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is", null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", "Wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", "Geen recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["In", "21, 22, 23, 24, 25, 26, 27, 33"],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["Is", "32"],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is not", null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is", null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "46"],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ]
+    ]
+  },
+  "Verblijfsperiode in Nederland hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Verblijfsperiode in Nederland hoofdaanvrager", "Timespan"]
+    ],
+    "body": [[["Is difference between", null]]]
+  },
+  "Criterium woonachtig in Rotterdam hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Uitkomst onderzoek woonsituatie hoofdaanvrager", "List"],
+      ["Type feitelijk hoofdverblijf hoofdaanvrager", "Pair"],
+      ["Postcode feitelijk hoofdverblijf hoofdaanvrager", "Whole number"],
+      ["Gemeentecode BRP-adres hoofdaanvrager", "Whole number"],
+      ["Bindingsindicatie hoofdaanvrager", "Pair"],
+      ["Criterium woonachtig in Rotterdam hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", null],
+        [null, null],
+        [null, null],
+        ["=", "599"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", null],
+        [null, null],
+        [null, null],
+        ["<>", "599"],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op BRP-adres"],
+        [null, null],
+        [null, null],
+        ["=", "599"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op BRP-adres"],
+        [null, null],
+        [null, null],
+        ["<>", "599"],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Buitenlands hoofdverblijf"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["<", "3000"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3000 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3100 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3150 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3152 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["=", "3181"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3182 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3190 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        [">", "3196"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Geen vast woon-/verblijfadres"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel binding met Rotterdam"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Geen vast woon-/verblijfadres"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen binding met Rotterdam"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Toepassing uitsluitingsgronden hoofdaanvrager (algemene bijstand)": {
+    "head": [
+      [null, null],
+      ["Uitsluitingsgrond leeftijd hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond detentie hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond onttrekking vrijheidsstraf hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond dienstplicht hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond werkstaking hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond verblijf in buitenland hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond weigering (arbeids)verplichtingen hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond uitreiziger hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond onderwijsmogelijkheid hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond onbetaald verlof hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond jongere in inrichting hoofdaanvrager", "Pair"],
+      ["Toepassing uitsluitingsgronden hoofdaanvrager (algemene bijstand)", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Geen uitsluitingsgronden van toepassing"]
+      ],
+      [
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond verblijf in buitenland hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Normcategorie hoofdaanvrager", "List"],
+      ["Aantal weken per jaar in buitenland hoofdaanvrager", "Timespan"],
+      ["Uitsluitingsgrond verblijf in buitenland hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        ["<=", "13 Weeks"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        [">", "13 Weeks"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["In", "Jongerennorm, Norm voor volwassenen"],
+        ["<=", "4 Weeks"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["In", "Jongerennorm, Norm voor volwassenen"],
+        [">", "4 Weeks"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond leeftijd hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Leeftijd hoofdaanvrager", "Timespan"],
+      ["Uitsluitingsgrond leeftijd hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["<", "18 Years"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        [">=", "18 Years"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond dienstplicht hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Dienstplichtsituatie hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond dienstplicht hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Vervult geen (militaire) dienstplicht"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Vervult (militaire) dienstplicht"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond werkstaking hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Stakingssituatie hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond werkstaking hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Niet in werkstaking"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "In werkstaking"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond jongere in inrichting hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Inrichtingssituatie hoofdaanvrager", "List"],
+      ["Leeftijd hoofdaanvrager", "Timespan"],
+      ["Uitsluitingsgrond jongere in inrichting hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        [null, null],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        [">=", "21 Years"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["<", "21 Years"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond onderwijsmogelijkheid hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Bekostigde onderwijsmogelijkheid hoofdaanvrager", "Pair"],
+      ["Leeftijd hoofdaanvrager", "Timespan"],
+      ["Uitsluitingsgrond onderwijsmogelijkheid hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Geen bekostigde onderwijsmogelijkheid"],
+        [null, null],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Wel bekostigde onderwijsmogelijkheid"],
+        [">=", "27 Years"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Wel bekostigde onderwijsmogelijkheid"],
+        ["<", "27 Years"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond weigering (arbeids)verplichtingen hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Uitkomst onderzoek houding (arbeids)verplichtingen hoofdaanvrager", "Pair"],
+      ["Leeftijd hoofdaanvrager", "Timespan"],
+      ["Uitsluitingsgrond weigering (arbeids)verplichtingen hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Ondubbelzinnige vaststelling van weigering (arbeids)verplichtingen"],
+        ["<", "27 Years"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Ondubbelzinnige vaststelling van weigering (arbeids)verplichtingen"],
+        [">=", "27 Years"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Geen vaststelling van weigering (arbeids)verplichtingen"],
+        [null, null],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond detentie hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Detentie hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond detentie hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "In detentie"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen detentie"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond onttrekking vrijheidsstraf hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Onttrekking vrijheidsstraf hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond onttrekking vrijheidsstraf hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Onttrekt zich aan vrijheidsstraf"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen onttrekking aan vrijheidsstraf"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond uitreiziger hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Status uitreiziger hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond uitreiziger hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Uitreiziger"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen uitreiziger"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond onbetaald verlof hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Onbetaald verlof hoofdaanvrager", "Pair"],
+      ["Uitsluitingsgrond onbetaald verlof hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Onbetaald verlof"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen onbetaald verlof"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Bijstandsrecht medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Criterium verblijfstitel medeaanvrager", "Pair"],
+      ["Criterium woonachtig in Rotterdam medeaanvrager", "Pair"],
+      ["Toepassing uitsluitingsgronden medeaanvrager (algemene bijstand)", "Pair"],
+      ["Bijstandsrecht medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Geen uitsluitingsgronden van toepassing"],
+        ["Is", "Wel rechthebbend"]
+      ],
+      [
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        [null, null],
+        ["Is", "Niet rechthebbend"]
+      ],
+      [
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"],
+        [null, null],
+        ["Is", "Niet rechthebbend"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"],
+        ["Is", "Niet rechthebbend"]
+      ]
+    ]
+  },
+  "Criterium verblijfstitel medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Nationaliteitencategorie medeaanvrager", "List"],
+      ["Vreemdelingenstatus medeaanvrager", "Pair"],
+      ["Criterium verblijfstitel medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Nederlandse nationaliteit"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["In", "EU - burger, Derdelander, Turkse nationaliteit"],
+        ["Is", "Gelijkgestelde vreemdeling"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["In", "EU - burger, Derdelander, Turkse nationaliteit"],
+        ["Is", "Geen gelijkgestelde vreemdeling"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Nationaliteitencategorie medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Nationaliteit medeaanvrager", "List"],
+      ["Startdatum verblijf in Nederland medeaanvrager", "DateTime"],
+      ["Nationaliteit medeaanvrager", "List"],
+      ["Nationaliteitencategorie medeaanvrager", "List"]
+    ],
+    "body": [
+      [
+        ["Is", "Nederlandse"],
+        [null, null],
+        [null, null],
+        ["Is", "Nederlandse nationaliteit"]
+      ],
+      [
+        [
+          "In",
+          "Slowaakse, Tsjechische, Sloveense, Kroatische, Letse, Estische, Litouwse, Belgische, Bulgaarse, Deense, Burger van de Bondsrepubliek Duitsland, Finse, Franse, Griekse, Hongaarse, Ierse, IJslandse, Italiaanse, Liechtensteinse, Luxemburgse, Maltese, Noorse, Oostenrijkse, Poolse, Portugese, Roemeense, Spaanse, Zweedse, Zwitserse, Cyprische"
+        ],
+        [null, null],
+        [null, null],
+        ["Is", "EU - burger"]
+      ],
+      [
+        ["In", "Brits burger, Brits onderdaan, Brits overzees burger, British National (overseas)"],
+        ["<", "Jan 1, 2021"],
+        [null, null],
+        ["Is", "EU - burger"]
+      ],
+      [
+        [
+          "Not in",
+          "Nederlandse, Slowaakse, Tsjechische, Sloveense, Kroatische, Letse, Estische, Litouwse, Belgische, Bulgaarse, Deense, Burger van de Bondsrepubliek Duitsland, Finse, Franse, Griekse, Brits burger, Hongaarse, Ierse, IJslandse, Italiaanse, Liechtensteinse, Luxemburgse, Maltese, Noorse, Oostenrijkse, Poolse, Portugese, Roemeense, Spaanse, Zweedse, Zwitserse, Brits onderdaan, Brits overzees burger, Cyprische, British National (overseas)"
+        ],
+        [null, null],
+        ["Is not", null],
+        ["Is", "Derdelander"]
+      ],
+      [
+        ["In", "Brits burger, Brits onderdaan, Brits overzees burger, British National (overseas)"],
+        [">=", "Jan 1, 2021"],
+        [null, null],
+        ["Is", "Derdelander"]
+      ]
+    ]
+  },
+  "Vreemdelingenstatus medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Nationaliteitencategorie medeaanvrager", "List"],
+      ["Verblijfsperiode in Nederland medeaanvrager", "Timespan"],
+      ["Uitkomst onderzoek verblijfstitel medeaanvrager", "Pair"],
+      ["IND Verblijfscode medeaanvrager", "List"],
+      ["Nadere gegevens medeaanvrager", "List"],
+      ["Vreemdelingenstatus medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "EU - burger"],
+        ["<", "3 Months"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", "Wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", "Geen recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["In", "21, 22, 23, 24, 25, 26, 27, 33"],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["Is", "32"],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is not", null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "EU - burger"],
+        [">=", "3 Months"],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is", null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", "Wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", "Geen recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["In", "21, 22, 23, 24, 25, 26, 27, 33"],
+        [null, null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["Is", "32"],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is not", null],
+        ["Is", "Gelijkgestelde vreemdeling"]
+      ],
+      [
+        ["Is", "Derdelander"],
+        [null, null],
+        ["Is", null],
+        ["In", "31, 34, 41, 98"],
+        ["Is", null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "46"],
+        [null, null],
+        ["Is", "Geen gelijkgestelde vreemdeling"]
+      ]
+    ]
+  },
+  "Verblijfsperiode in Nederland medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Verblijfsperiode in Nederland medeaanvrager", "Timespan"]
+    ],
+    "body": [[["Is difference between", null]]]
+  },
+  "Criterium woonachtig in Rotterdam medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Uitkomst onderzoek woonsituatie medeaanvrager", "List"],
+      ["Type feitelijk hoofdverblijf medeaanvrager", "Pair"],
+      ["Postcode feitelijk hoofdverblijf medeaanvrager", "Whole number"],
+      ["Gemeentecode BRP-adres medeaanvrager", "Whole number"],
+      ["Bindingsindicatie medeaanvrager", "Pair"],
+      ["Criterium woonachtig in Rotterdam medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", null],
+        [null, null],
+        [null, null],
+        ["=", "599"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", null],
+        [null, null],
+        [null, null],
+        ["<>", "599"],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op BRP-adres"],
+        [null, null],
+        [null, null],
+        ["=", "599"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op BRP-adres"],
+        [null, null],
+        [null, null],
+        ["<>", "599"],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Buitenlands hoofdverblijf"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["<", "3000"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3000 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3100 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3150 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3152 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["=", "3181"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3182 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        ["Between", "3190 "],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Woonachtig op verblijfadres"],
+        ["Is", "Hoofdverblijf in Nederland"],
+        [">", "3196"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        ["Is", "Geen vast woon-/verblijfadres"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel binding met Rotterdam"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Geen vast woon-/verblijfadres"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Geen binding met Rotterdam"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Toepassing uitsluitingsgronden medeaanvrager (algemene bijstand)": {
+    "head": [
+      [null, null],
+      ["Uitsluitingsgrond leeftijd medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond detentie medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond onttrekking vrijheidsstraf medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond dienstplicht medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond werkstaking medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond verblijf in buitenland medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond jongere in inrichting medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond onbetaald verlof medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond onderwijsmogelijkheid medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond weigering (arbeids)verplichtingen medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond uitreiziger medeaanvrager", "Pair"],
+      ["Toepassing uitsluitingsgronden medeaanvrager (algemene bijstand)", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Niet van toepassing"],
+        ["Is", "Geen uitsluitingsgronden van toepassing"]
+      ],
+      [
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        [null, null],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel van toepassing"],
+        ["Is", "Uitsluitingsgrond(en) van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond leeftijd medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Leeftijd medeaanvrager", "Timespan"],
+      ["Uitsluitingsgrond leeftijd medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["<", "18 Years"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        [">=", "18 Years"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond dienstplicht medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Dienstplichtsituatie medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond dienstplicht medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Vervult geen (militaire) dienstplicht"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Vervult (militaire) dienstplicht"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond werkstaking medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Stakingssituatie medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond werkstaking medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Niet in werkstaking"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "In werkstaking"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond jongere in inrichting medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Inrichtingssituatie medeaanvrager", "List"],
+      ["Leeftijd medeaanvrager", "Timespan"],
+      ["Uitsluitingsgrond jongere in inrichting medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Verblijft niet in inrichting"],
+        [null, null],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        [">=", "21 Years"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["In", "Verblijft in inrichting met woonlasten, Verblijft in inrichting zonder woonlasten"],
+        ["<", "21 Years"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond onderwijsmogelijkheid medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Bekostigde onderwijsmogelijkheid medeaanvrager", "Pair"],
+      ["Leeftijd medeaanvrager", "Timespan"],
+      ["Uitsluitingsgrond onderwijsmogelijkheid medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Geen bekostigde onderwijsmogelijkheid"],
+        [null, null],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Wel bekostigde onderwijsmogelijkheid"],
+        [">=", "27 Years"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Wel bekostigde onderwijsmogelijkheid"],
+        ["<", "27 Years"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond weigering (arbeids)verplichtingen medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Uitkomst onderzoek houding (arbeids)verplichtingen medeaanvrager", "Pair"],
+      ["Leeftijd medeaanvrager", "Timespan"],
+      ["Uitsluitingsgrond weigering (arbeids)verplichtingen medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Ondubbelzinnige vaststelling van weigering (arbeids)verplichtingen"],
+        ["<", "27 Years"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Ondubbelzinnige vaststelling van weigering (arbeids)verplichtingen"],
+        [">=", "27 Years"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Geen vaststelling van weigering (arbeids)verplichtingen"],
+        [null, null],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond verblijf in buitenland medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Normcategorie medeaanvrager", "List"],
+      ["Aantal weken per jaar in buitenland medeaanvrager", "Timespan"],
+      ["Uitsluitingsgrond verblijf in buitenland medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        ["<=", "13 Weeks"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        [">", "13 Weeks"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["In", "Jongerennorm, Norm voor volwassenen"],
+        ["<=", "4 Weeks"],
+        ["Is", "Niet van toepassing"]
+      ],
+      [
+        ["In", "Jongerennorm, Norm voor volwassenen"],
+        [">", "4 Weeks"],
+        ["Is", "Wel van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond onbetaald verlof medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Onbetaald verlof medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond onbetaald verlof medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Onbetaald verlof"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen onbetaald verlof"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond uitreiziger medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Status uitreiziger medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond uitreiziger medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Uitreiziger"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen uitreiziger"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond detentie medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Detentie medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond detentie medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "In detentie"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen detentie"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Uitsluitingsgrond onttrekking vrijheidsstraf medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Onttrekking vrijheidsstraf medeaanvrager", "Pair"],
+      ["Uitsluitingsgrond onttrekking vrijheidsstraf medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Onttrekt zich aan vrijheidsstraf"],
+        ["Is", "Wel van toepassing"]
+      ],
+      [
+        ["Is", "Geen onttrekking aan vrijheidsstraf"],
+        ["Is", "Niet van toepassing"]
+      ]
+    ]
+  },
+  "Bijstandsnorm met niet-rechthebbende medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Normcategorie hoofdaanvrager", "List"],
+      ["Aantal ten laste komende kinderen van de hoofdaanvrager", "Whole number"],
+      ["Inrichtingssituatie hoofdaanvrager", "List"],
+      ["Bijstandsnorm met niet-rechthebbende medeaanvrager", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Jongerennorm"],
+        ["=", "0"],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", "0.345614 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Jongerennorm"],
+        [">=", "1"],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", "0.545615 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Norm voor volwassenen"],
+        [null, null],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        [null, null],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", null]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Verblijft in inrichting zonder woonlasten"],
+        [
+          "Is",
+          "( 0.344761 * [Basisbedrag bijstandsnorm volwassenen (incl VT)] ) + [Bedrag verhoging premie Zorgverzekeringswet gehuwden]"
+        ]
+      ]
+    ]
+  },
+  "Bijstandsnorm met niet-rechthebbende hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Normcategorie medeaanvrager", "List"],
+      ["Aantal ten laste komende kinderen van de hoofdaanvrager", "Whole number"],
+      ["Inrichtingssituatie medeaanvrager", "List"],
+      ["Bijstandsnorm met niet-rechthebbende hoofdaanvrager", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Jongerennorm"],
+        ["=", "0"],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", "0.345614 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Jongerennorm"],
+        [">=", "1"],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting zonder woonlasten"],
+        ["Is", "0.545615 * [Basisbedrag bijstandsnorm volwassenen (incl VT)]"]
+      ],
+      [
+        ["Is", "Norm voor volwassenen"],
+        [null, null],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Norm voor pensioengerechtigden"],
+        [null, null],
+        ["In", "Verblijft niet in inrichting, Verblijft in inrichting met woonlasten"],
+        ["Is", null]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Verblijft in inrichting zonder woonlasten"],
+        [
+          "Is",
+          "( 0.344761 * [Basisbedrag bijstandsnorm volwassenen (incl VT)] ) + [Bedrag verhoging premie Zorgverzekeringswet gehuwden]"
+        ]
+      ]
+    ]
+  },
+  "Maandgedeelte naar rato": {
+    "head": [
+      [null, null],
+      ["Relevant maandgedeelte (in dagen)", "Timespan"],
+      ["Maandgedeelte naar rato", "Percentage"]
+    ],
+    "body": [
+      [
+        [null, null],
+        ["Is", "( [Relevant maandgedeelte (in dagen)] + 1 ) / [Aantal kalenderdagen in aanvraagmaand]"]
+      ]
+    ]
+  },
+  "Relevant maandgedeelte (in dagen)": {
+    "head": [
+      [null, null],
+      ["Laatste kalenderdag van de aanvraagmaand", "DateTime"],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Relevant maandgedeelte (in dagen)", "Timespan"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        ["Is difference between", null]
+      ]
+    ]
+  },
+  "Totaal netto maandinkomen incl VT naar rato": {
+    "head": [
+      [null, null],
+      ["Totaal netto maandinkomen incl VT", "Currency"],
+      ["Maandgedeelte naar rato", "Percentage"],
+      ["Totaal netto maandinkomen incl VT naar rato", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is not", null],
+        [null, null],
+        ["Is", "[Totaal netto maandinkomen incl VT] * [Maandgedeelte naar rato]"]
+      ],
+      [
+        ["Is", null],
+        [null, null],
+        ["Is", "€0.00"]
+      ]
+    ]
+  },
+  "Criterium vermogensnorm (PW)": {
+    "head": [
+      [null, null],
+      ["Vermogen boven de vrijgestelde vermogensgrens", "Currency"],
+      ["Toepasselijke bijstandsnorm inclusief VT", "Currency"],
+      ["Criterium vermogensnorm (PW)", "Pair"]
+    ],
+    "body": [
+      [
+        ["<=", "€0.00"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        [">", "€0.00"],
+        [">=", null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        [">", "€0.00"],
+        ["<", null],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Vermogen boven de vrijgestelde vermogensgrens": {
+    "head": [
+      [null, null],
+      ["Vermogen van aanvragers", "Currency"],
+      ["Vrijgestelde vermogensgrens", "Currency"],
+      ["Vermogen boven de vrijgestelde vermogensgrens", "Currency"]
+    ],
+    "body": [
+      [
+        ["<=", null],
+        [null, null],
+        ["Is", "€0.00"]
+      ],
+      [
+        [">", null],
+        [null, null],
+        ["Is", "[Vermogen van aanvragers] - [Vrijgestelde vermogensgrens]"]
+      ]
+    ]
+  },
+  "Vermogen van aanvragers": {
+    "head": [
+      [null, null],
+      ["Totale waarde van bezittingen", "Currency"],
+      ["Vermogen van aanvragers", "Currency"]
+    ],
+    "body": [
+      [
+        [null, null],
+        ["Is", "[Totale waarde van bezittingen] - [Totale waarde van de schulden]"]
+      ]
+    ]
+  },
+  "Totale waarde van bezittingen": {
+    "head": [
+      [null, null],
+      ["Gecorrigeerde vermogenswaarde van bank- en spaarrekeningen en contant geld", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van voertuigen", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van antiek, kunstvoorwerpen, sieraden en verzamelingen", "Currency"],
+      ["Totale waarde van bezittingen", "Currency"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [
+          "Is",
+          "[Gecorrigeerde vermogenswaarde van bank- en spaarrekeningen en contant geld] + [Gecorrigeerde vermogenswaarde van voertuigen] + [Gecorrigeerde vermogenswaarde van antiek, kunstvoorwerpen, sieraden en verzamelingen] + [Totale vermogenswaarde bezittingen van leden van het huishouden] + [Totale vermogenswaarde van levensverzekeringen, aandelen en obligaties] + [Totale vermogenswaarde van digitaal vermogen en crypto valuta] + [Totale vermogenswaarde onroerend goed (exclusief eigen woning)]"
+        ]
+      ]
+    ]
+  },
+  "Gecorrigeerde vermogenswaarde van voertuigen": {
+    "head": [
+      [null, null],
+      ["Gecorrigeerde vermogenswaarde van auto's, motoren en campers", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van vaartuigen en caravans", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van voertuigen", "Currency"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        [
+          "Is",
+          "[Gecorrigeerde vermogenswaarde van auto's, motoren en campers] + [Gecorrigeerde vermogenswaarde van vaartuigen en caravans]"
+        ]
+      ]
+    ]
+  },
+  "Gecorrigeerde vermogenswaarde van auto's, motoren en campers": {
+    "head": [
+      [null, null],
+      ["Totale vermogenswaarde van auto's, motoren en campers", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van auto's, motoren en campers", "Currency"]
+    ],
+    "body": [
+      [
+        ["<=", null],
+        ["Is", "€0.00"]
+      ],
+      [
+        [">", null],
+        ["Is", "[Totale vermogenswaarde van auto's, motoren en campers] - [Vrijstelling vermogenswaarde]"]
+      ]
+    ]
+  },
+  "Vrijstelling vermogenswaarde": {
+    "head": [
+      [null, null],
+      ["Vrijstelling vermogenswaarde", "Currency"]
+    ],
+    "body": [[["Is", "€2,300.00"]]]
+  },
+  "Gecorrigeerde vermogenswaarde van vaartuigen en caravans": {
+    "head": [
+      [null, null],
+      ["Totale vermogenswaarde van vaartuigen en caravans", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van vaartuigen en caravans", "Currency"]
+    ],
+    "body": [
+      [
+        ["<=", null],
+        ["Is", "€0.00"]
+      ],
+      [
+        [">", null],
+        ["Is", "[Totale vermogenswaarde van vaartuigen en caravans] - [Vrijstelling vermogenswaarde]"]
+      ]
+    ]
+  },
+  "Gecorrigeerde vermogenswaarde van antiek, kunstvoorwerpen, sieraden en verzamelingen": {
+    "head": [
+      [null, null],
+      ["Gecorrigeerde vermogenswaarde van kunstvoorwerpen", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van sieraden", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van verzamelingen", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van antiek, kunstvoorwerpen, sieraden en verzamelingen", "Currency"]
+    ],
+    "body": [
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [
+          "Is",
+          "[Gecorrigeerde vermogenswaarde van kunstvoorwerpen] + [Gecorrigeerde vermogenswaarde van sieraden] + [Gecorrigeerde vermogenswaarde van verzamelingen]"
+        ]
+      ]
+    ]
+  },
+  "Gecorrigeerde vermogenswaarde van kunstvoorwerpen": {
+    "head": [
+      [null, null],
+      ["Totale vermogenswaarde van kunstvoorwerpen", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van kunstvoorwerpen", "Currency"]
+    ],
+    "body": [
+      [
+        ["<=", null],
+        ["Is", "€0.00"]
+      ],
+      [
+        [">", null],
+        ["Is", "[Totale vermogenswaarde van kunstvoorwerpen] - [Vrijstelling vermogenswaarde]"]
+      ]
+    ]
+  },
+  "Gecorrigeerde vermogenswaarde van sieraden": {
+    "head": [
+      [null, null],
+      ["Totale vermogenswaarde van sieraden", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van sieraden", "Currency"]
+    ],
+    "body": [
+      [
+        ["<=", null],
+        ["Is", "€0.00"]
+      ],
+      [
+        [">", null],
+        ["Is", "[Totale vermogenswaarde van sieraden] - [Vrijstelling vermogenswaarde]"]
+      ]
+    ]
+  },
+  "Gecorrigeerde vermogenswaarde van verzamelingen": {
+    "head": [
+      [null, null],
+      ["Totale vermogenswaarde van verzamelingen", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van verzamelingen", "Currency"]
+    ],
+    "body": [
+      [
+        ["<=", null],
+        ["Is", "€0.00"]
+      ],
+      [
+        [">", null],
+        ["Is", "[Totale vermogenswaarde van verzamelingen] - [Vrijstelling vermogenswaarde]"]
+      ]
+    ]
+  },
+  "Gecorrigeerde vermogenswaarde van bank- en spaarrekeningen en contant geld": {
+    "head": [
+      [null, null],
+      ["Totale vermogenswaarde van bank- en spaarrekeningen en contant geld", "Currency"],
+      ["Gecorrigeerde vermogenswaarde van bank- en spaarrekeningen en contant geld", "Currency"]
+    ],
+    "body": [
+      [
+        [">", null],
+        ["Is", "[Totale vermogenswaarde van bank- en spaarrekeningen en contant geld] - [Bijstandsnorm exclusief VT]"]
+      ],
+      [
+        ["Between", "€0.00 "],
+        ["Is", "€0.00"]
+      ],
+      [
+        ["<", "€0.00"],
+        ["Is", "[Totale vermogenswaarde van bank- en spaarrekeningen en contant geld] - [Bijstandsnorm exclusief VT]"]
+      ]
+    ]
+  },
+  "Bijstandsnorm exclusief VT": {
+    "head": [
+      [null, null],
+      ["Bijstandsnorm exclusief VT", "Currency"]
+    ],
+    "body": [[["Is", "0.95 * [Toepasselijke bijstandsnorm inclusief VT]"]]]
+  },
+  "Totale vermogenswaarde van bank- en spaarrekeningen en contant geld": {
+    "head": [
+      [null, null],
+      ["Totale vermogenswaarde van bank- en spaarrekeningen en contant geld", "Currency"]
+    ],
+    "body": [
+      [["Is", "[Totale vermogenswaarde van bank- en spaarrekeningen] + [Totale vermogenswaarde van contant geld]"]]
+    ]
+  },
+  "Vrijgestelde vermogensgrens": {
+    "head": [
+      [null, null],
+      ["Type huishouden aanvrager(s)", "List"],
+      ["Vrijgestelde vermogensgrens", "Currency"]
+    ],
+    "body": [
+      [
+        ["Is", "Alleenstaande"],
+        ["Is", null]
+      ],
+      [
+        ["Is", "Co-ouder"],
+        [
+          "Is",
+          "[Basisbedrag vrijgestelde vermogensgrens] * ( [Aantal zorgdagen per week voor niet ten laste komende kinderen] / 7 ) + [Basisbedrag vrijgestelde vermogensgrens]"
+        ]
+      ],
+      [
+        ["In", "Alleenstaande ouder, Gezamenlijk huishouden"],
+        ["Is", "[Basisbedrag vrijgestelde vermogensgrens] * 2"]
+      ]
+    ]
+  },
+  "Type huishouden aanvrager(s)": {
+    "head": [
+      [null, null],
+      ["Type aanvraag", "List"],
+      ["Partnersituatie aanvragers", "Pair"],
+      ["Aantal ten laste komende kinderen van de hoofdaanvrager", "Whole number"],
+      ["Aantal zorgdagen per week voor niet ten laste komende kinderen", "Decimal number"],
+      ["Type huishouden aanvrager(s)", "List"]
+    ],
+    "body": [
+      [
+        ["Is", "Gezamenlijke aanvraag"],
+        ["Is", "Wel bijstandspartners"],
+        [null, null],
+        [null, null],
+        ["Is", "Gezamenlijk huishouden"]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        ["=", "0"],
+        ["=", "0.0 dagen"],
+        ["Is", "Alleenstaande"]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        ["=", "0"],
+        ["Between (right excl.)", "0.0 dagen "],
+        ["Is", "Alleenstaande"]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        ["=", "0"],
+        ["Between", "3.0 dagen "],
+        ["Is", "Co-ouder"]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        ["=", "0"],
+        ["Between (left excl.)", "4.0 dagen "],
+        ["Is", "Alleenstaande ouder"]
+      ],
+      [
+        ["Is", "Individuele aanvraag"],
+        [null, null],
+        [">=", "1"],
+        [null, null],
+        ["Is", "Alleenstaande ouder"]
+      ]
+    ]
+  },
+  "Basisbedrag vrijgestelde vermogensgrens": {
+    "head": [
+      [null, null],
+      ["Ingangsdatum regeling", "DateTime"],
+      ["Basisbedrag vrijgestelde vermogensgrens", "Currency"]
+    ],
+    "body": [
+      [
+        ["Between (right excl.)", "Jan 1, 2020 "],
+        ["Is", "€6,225.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2021 "],
+        ["Is", "€6,295.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2022 "],
+        ["Is", "€6,505.00"]
+      ],
+      [
+        ["Between (right excl.)", "Jan 1, 2023 "],
+        ["Is", "€7,605.00"]
+      ]
+    ]
+  },
+  "Criterium voorliggende voorziening hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Recht op voorliggende voorziening hoofdaanvrager (PW)", "Pair"],
+      ["Uitkomst onderzoek vermoedelijke voorliggende voorziening hoofdaanvrager (PW)", "Pair"],
+      ["Recht op AOW hoofdaanvrager", "Pair"],
+      ["Recht op studiefinanciering hoofdaanvrager", "Pair"],
+      ["27+ leeftijdscheck hoofdaanvrager", "Pair"],
+      ["Criterium voorliggende voorziening hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Vermoedelijk geen recht op voorliggende voorziening"],
+        [null, null],
+        ["Is", "Geen recht"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet niet aan criterium"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk geen recht op voorliggende voorziening"],
+        [null, null],
+        ["Is", "Geen recht"],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"],
+        ["Is", "Geen invloed op bijstandsrecht"],
+        ["Is", "Geen recht"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet niet aan criterium"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"],
+        ["Is", "Geen invloed op bijstandsrecht"],
+        ["Is", "Geen recht"],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"],
+        ["Is", "Wel invloed op bijstandsrecht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Recht op voorliggende voorziening hoofdaanvrager (PW)": {
+    "head": [
+      [null, null],
+      ["Recht op WW hoofdaanvrager", "Pair"],
+      ["Recht op IOW hoofdaanvrager", "Pair"],
+      ["Recht op ZW hoofdaanvrager", "Pair"],
+      ["Recht op WAZ hoofdaanvrager", "Pair"],
+      ["Recht op WIA hoofdaanvrager", "Pair"],
+      ["Recht op WAO hoofdaanvrager", "Pair"],
+      ["Recht op WAMIL hoofdaanvrager", "Pair"],
+      ["Recht op WAZO hoofdaanvrager", "Pair"],
+      ["Recht op TW hoofdaanvrager", "Pair"],
+      ["Recht op Wajong hoofdaanvrager", "Pair"],
+      ["Recht op ANW hoofdaanvrager", "Pair"],
+      ["Recht op IOAW hoofdaanvrager (PW)", "Pair"],
+      ["Recht op IOAZ hoofdaanvrager", "Pair"],
+      ["Recht op algemene heffingskorting hoofdaanvrager", "Pair"],
+      ["Recht op inkomensafhankelijke combinatiekorting hoofdaanvrager", "Pair"],
+      ["Recht op jonggehandicaptenkorting hoofdaanvrager", "Pair"],
+      ["Recht op (buitenlands) pensioen hoofdaanvrager", "Pair"],
+      ["Recht op WTOS hoofdaanvrager", "Pair"],
+      ["Recht op PAWW hoofdaanvrager", "Pair"],
+      ["Recht op buitenlandse sociale verzekering hoofdaanvrager", "Pair"],
+      ["Recht op wachtgeld hoofdaanvrager", "Pair"],
+      ["Recht op RVU hoofdaanvrager", "Pair"],
+      ["Recht op VUT hoofdaanvrager", "Pair"],
+      ["Recht op giften of toelage hoofdaanvrager", "Pair"],
+      ["Recht op alimentatie hoofdaanvrager", "Pair"],
+      ["Recht op voorliggende voorziening hoofdaanvrager (PW)", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht op voorliggende voorziening"]
+      ],
+      [
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ]
+    ]
+  },
+  "Recht op AOW hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Pensioensrecht hoofdaanvrager", "Pair"],
+      ["Recht op AOW hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Pensioensgerechtigd"],
+        ["Is", "Wel recht"]
+      ],
+      [
+        ["Is", "Niet pensioensgerechtigd"],
+        ["Is", "Geen recht"]
+      ]
+    ]
+  },
+  "27+ leeftijdscheck hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Leeftijd hoofdaanvrager", "Timespan"],
+      ["27+ leeftijdscheck hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        [">=", "27 Years"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["<", "27 Years"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Criterium voorliggende voorziening medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Recht op voorliggende voorziening medeaanvrager (PW)", "Pair"],
+      ["Uitkomst onderzoek vermoedelijke voorliggende voorziening medeaanvrager", "Pair"],
+      ["Recht op AOW medeaanvrager", "Pair"],
+      ["Recht op studiefinanciering medeaanvrager", "Pair"],
+      ["27+ leeftijdscheck medeaanvrager", "Pair"],
+      ["Criterium voorliggende voorziening medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Vermoedelijk geen recht op voorliggende voorziening"],
+        [null, null],
+        ["Is", "Geen recht"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet niet aan criterium"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk geen recht op voorliggende voorziening"],
+        [null, null],
+        ["Is", "Geen recht"],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"],
+        ["Is", "Geen invloed op bijstandsrecht"],
+        ["Is", "Geen recht"],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet niet aan criterium"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"],
+        ["Is", "Geen invloed op bijstandsrecht"],
+        ["Is", "Geen recht"],
+        ["Is", "Niet rechthebbend"],
+        [null, null],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"],
+        ["Is", "Wel invloed op bijstandsrecht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Voldoet niet aan criterium"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Wel rechthebbend"],
+        ["Is", "Voldoet aan criterium"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Recht op voorliggende voorziening medeaanvrager (PW)": {
+    "head": [
+      [null, null],
+      ["Recht op WW medeaanvrager", "Pair"],
+      ["Recht op IOW medeaanvrager", "Pair"],
+      ["Recht op ZW medeaanvrager", "Pair"],
+      ["Recht op WAZ medeaanvrager", "Pair"],
+      ["Recht op WIA medeaanvrager", "Pair"],
+      ["Recht op WAO medeaanvrager", "Pair"],
+      ["Recht op WAMIL medeaanvrager", "Pair"],
+      ["Recht op WAZO medeaanvrager", "Pair"],
+      ["Recht op TW medeaanvrager", "Pair"],
+      ["Recht op Wajong medeaanvrager", "Pair"],
+      ["Recht op ANW medeaanvrager", "Pair"],
+      ["Recht op IOAW medeaanvrager (bijstand)", "Pair"],
+      ["Recht op IOAZ medeaanvrager", "Pair"],
+      ["Recht op algemene heffingskorting medeaanvrager", "Pair"],
+      ["Recht op inkomensafhankelijke combinatiekorting medeaanvrager", "Pair"],
+      ["Recht op jonggehandicaptenkorting medeaanvrager", "Pair"],
+      ["Recht op (buitenlands) pensioen medeaanvrager", "Pair"],
+      ["Recht op WTOS medeaanvrager", "Pair"],
+      ["Recht op PAWW medeaanvrager", "Pair"],
+      ["Recht op buitenlandse sociale verzekering medeaanvrager", "Pair"],
+      ["Recht op wachtgeld medeaanvrager", "Pair"],
+      ["Recht op RVU medeaanvrager", "Pair"],
+      ["Recht op VUT medeaanvrager", "Pair"],
+      ["Recht op giften of toelage medeaanvrager", "Pair"],
+      ["Recht op alimentatie medeaanvrager", "Pair"],
+      ["Recht op voorliggende voorziening medeaanvrager (PW)", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht"],
+        ["Is", "Vermoedelijk geen recht op voorliggende voorziening"]
+      ],
+      [
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        [null, null],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ],
+      [
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        [null, null],
+        ["Is", "Vermoedelijk wel recht"],
+        ["Is", "Vermoedelijk recht op voorliggende voorziening"]
+      ]
+    ]
+  },
+  "Recht op AOW medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Pensioensrecht medeaanvrager", "Pair"],
+      ["Recht op AOW medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        ["Is", "Pensioensgerechtigd"],
+        ["Is", "Wel recht"]
+      ],
+      [
+        ["Is", "Niet pensioensgerechtigd"],
+        ["Is", "Geen recht"]
+      ]
+    ]
+  },
+  "27+ leeftijdscheck medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Leeftijd medeaanvrager", "Timespan"],
+      ["27+ leeftijdscheck medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        [">=", "27 Years"],
+        ["Is", "Voldoet aan criterium"]
+      ],
+      [
+        ["<", "27 Years"],
+        ["Is", "Voldoet niet aan criterium"]
+      ]
+    ]
+  },
+  "Ondernemerscheck hoofdaanvrager": {
+    "head": [
+      [null, null],
+      ["Aantal werkzame uren als zelfstandige per jaar hoofdaanvrager", "Whole number"],
+      ["Ondernemerscheck hoofdaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        [">=", "1225 uur"],
+        ["Is", "Telt als zelfstandige ondernemer"]
+      ],
+      [
+        ["<", "1225 uur"],
+        ["Is", "Telt niet als zelfstandige ondernemer"]
+      ]
+    ]
+  },
+  "Ondernemerscheck medeaanvrager": {
+    "head": [
+      [null, null],
+      ["Aantal werkzame uren als zelfstandige per jaar medeaanvrager", "Whole number"],
+      ["Ondernemerscheck medeaanvrager", "Pair"]
+    ],
+    "body": [
+      [
+        [">=", "1225 uur"],
+        ["Is", "Telt als zelfstandige ondernemer"]
+      ],
+      [
+        ["<", "1225 uur"],
+        ["Is", "Telt niet als zelfstandige ondernemer"]
+      ]
+    ]
+  }
+}
