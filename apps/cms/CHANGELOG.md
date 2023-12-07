@@ -1,5 +1,11 @@
 # cms
 
+## 1.22.0
+
+### Minor Changes
+
+- 067421d: Added feature to hide pages from the navbar
+
 ## 1.21.0
 
 ### Minor Changes
