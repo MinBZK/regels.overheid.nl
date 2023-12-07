@@ -1,4 +1,4 @@
-import { getPages } from '@/services/cms/get-pages';
+import { getNavbarPages } from '@/services/cms/get-navbar-pages';
 import '@total-typescript/ts-reset';
 import localFont from 'next/font/local';
 import { Footer } from './footer';
@@ -20,7 +20,7 @@ const RoSansWeb = localFont({
 });
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const pages = await getPages();
+  const pages = await getNavbarPages();
 
   return (
     <html lang="nl">
