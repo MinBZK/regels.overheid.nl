@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/button';
 import { Container } from '@/components/container';
-import { getPages } from '@/services/cms/get-pages';
+import { getNavbarPages } from '@/services/cms/get-navbar-pages';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -17,7 +17,7 @@ export interface Page {
 }
 
 interface Props {
-  pages: Awaited<ReturnType<typeof getPages>>;
+  pages: Awaited<ReturnType<typeof getNavbarPages>>;
 }
 
 export const Navbar: React.FC<Props> = ({ pages }) => {
