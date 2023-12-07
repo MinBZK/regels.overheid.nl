@@ -1,5 +1,16 @@
 # web
 
+## 3.8.0
+
+### Minor Changes
+
+- d1b7528: Added Avola specification page
+- 515d04a: Added feature to hide pages from the navbar
+
+### Patch Changes
+
+- e80254b: Fixed incorrect drizzle config
+
 ## 3.7.2
 
 ### Patch Changes
