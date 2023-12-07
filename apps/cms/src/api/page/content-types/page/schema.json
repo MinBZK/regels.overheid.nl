@@ -34,6 +34,11 @@
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "showInNav": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }
