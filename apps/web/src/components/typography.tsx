@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { OverrideAbleComponentFunctionComponent } from './override-able-component-function-component';
 
 type TypographyVariantTypes = 'page-title' | 'h1' | 'h2' | 'h3' | 'p';
 
@@ -18,7 +17,7 @@ interface Props extends React.PropsWithChildren {
   className?: string;
 }
 
-export const Typography: OverrideAbleComponentFunctionComponent<'p', Props> = ({
+export const Typography: React.OverrideAbleComponentFC<'p', Props> = ({
   children,
   className,
   variant = 'p',

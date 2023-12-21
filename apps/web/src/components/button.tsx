@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { OverrideAbleComponentFunctionComponent } from './override-able-component-function-component';
 
 type Variant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
 
@@ -26,7 +25,7 @@ const disabledVariant: Record<Variant, string> = {
   ghost: 'border border-grey-main text-grey-main',
 };
 
-export const Button: OverrideAbleComponentFunctionComponent<'button', Props> = ({
+export const Button: React.OverrideAbleComponentFC<'button', Props> = ({
   children,
   component: Component = 'button',
   endIcon,
