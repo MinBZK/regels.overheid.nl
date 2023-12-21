@@ -1,6 +1,14 @@
 import 'react';
+import { CSSProperties } from 'react';
 
 declare module 'react' {
+  interface StyleAbleProps {
+    className?: string;
+    style?: CSSProperties;
+  }
+
+  interface StyleAbleFC<P = {}> extends React.FC<P & StyleAbleProps> {}
+
   type DistributiveOmit<T, K extends keyof any> = T extends any ? Omit<T, K> : never;
 
   type OverrideProps<TProps, TComponent extends React.ElementType> = TProps &

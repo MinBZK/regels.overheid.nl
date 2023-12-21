@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-type TypographyVariantTypes = 'page-title' | 'h1' | 'h2' | 'h3' | 'p';
+type TypographyVariantTypes = 'page-title' | 'h1' | 'h2' | 'h3' | 'p' | 'large';
 
 type TypographyVariant = [component: React.ElementType, classNames: string];
 
@@ -10,6 +10,7 @@ const typographyVariantMapping: Record<TypographyVariantTypes, TypographyVariant
   h2: ['h2', 'text-primary-dark text-3xl sm:text-4xl font-bold my-4'],
   h3: ['h3', 'text-primary-dark text-2xl font-bold my-3'],
   p: ['p', 'text-lg font-normal my-3'],
+  large: ['p', 'text-xl my-4 font-bold text-black'],
 };
 
 interface Props extends React.PropsWithChildren {
