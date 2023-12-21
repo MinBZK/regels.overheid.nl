@@ -34,7 +34,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-Vervang het text DOCUMENT_NAAM met het gewenste document naam. Na het opnemen van de action zal er op een push op de main branch een nieuwe release van de repository gemaakt worden. Belangrijk is om te weten dat er alleen een release zal worden aangemaakt wanneer er commit messages met het prefix `feat:` of `fix:` geschreven zijn.
+Vervang DOCUMENT_NAAM met het gewenste document naam. Na het opnemen van de action zal er op een push op de main branch een nieuwe release van de repository gemaakt worden. Belangrijk is om te weten dat er alleen een release zal worden aangemaakt wanneer er commit messages met het prefix `feat:` of `fix:` geschreven zijn.
 
 ## Publication action
 
@@ -53,6 +53,8 @@ jobs:
       - uses: minbzk/regels.overheid.nl/.github/actions/publish-respec-document-release@main
         with:
           token: ${{ secrets.REGELS_PUBLICATION_TOKEN }}
+          owner: 'OWNER'
+          repo: 'REPOSiTORY'
 ```
 
-Na het opnemen van deze action zal de publicatie service op regels.overheid.nl genotificeerd worden van elke nieuwe release waarna deze gepubliceerd zal worden.
+Vervang OWNER met de github user en REPOSITORY met de naam van de repository. Na het opnemen van deze action zal de publicatie service op regels.overheid.nl genotificeerd worden van elke nieuwe release waarna deze gepubliceerd zal worden.

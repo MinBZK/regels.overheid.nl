@@ -1,8 +1,5 @@
 import {
   pgTable,
-  pgEnum,
-  pgSchema,
-  AnyPgColumn,
   serial,
   varchar,
   timestamp,
@@ -77,10 +74,12 @@ export const adminUsers = pgTable(
       adminUsersCreatedByIdFk: foreignKey({
         columns: [table.createdById],
         foreignColumns: [table.id],
+        name: 'admin_users_created_by_id_fk',
       }).onDelete('set null'),
       adminUsersUpdatedByIdFk: foreignKey({
         columns: [table.updatedById],
         foreignColumns: [table.id],
+        name: 'admin_users_updated_by_id_fk',
       }).onDelete('set null'),
     };
   }
@@ -305,6 +304,28 @@ export const applicationMetadatas = pgTable(
   }
 );
 
+export const blogArticles = pgTable(
+  'blog_articles',
+  {
+    id: serial('id').primaryKey().notNull(),
+    title: varchar('title', { length: 255 }),
+    category: varchar('category', { length: 255 }),
+    content: text('content'),
+    description: text('description'),
+    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
+    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
+    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
+    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+  },
+  (table) => {
+    return {
+      createdByIdFk: index('blog_articles_created_by_id_fk').on(table.createdById),
+      updatedByIdFk: index('blog_articles_updated_by_id_fk').on(table.updatedById),
+    };
+  }
+);
+
 export const methods = pgTable(
   'methods',
   {
@@ -325,29 +346,6 @@ export const methods = pgTable(
     return {
       createdByIdFk: index('methods_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('methods_updated_by_id_fk').on(table.updatedById),
-    };
-  }
-);
-
-export const pages = pgTable(
-  'pages',
-  {
-    id: serial('id').primaryKey().notNull(),
-    name: varchar('name', { length: 255 }),
-    slug: varchar('slug', { length: 255 }),
-    content: text('content'),
-    order: integer('order'),
-    cmsPage: boolean('cms_page'),
-    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
-    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
-    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
-    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-  },
-  (table) => {
-    return {
-      createdByIdFk: index('pages_created_by_id_fk').on(table.createdById),
-      updatedByIdFk: index('pages_updated_by_id_fk').on(table.updatedById),
     };
   }
 );
@@ -496,24 +494,26 @@ export const methodsLocalizationsLinks = pgTable(
   }
 );
 
-export const blogArticles = pgTable(
-  'blog_articles',
+export const pages = pgTable(
+  'pages',
   {
     id: serial('id').primaryKey().notNull(),
-    title: varchar('title', { length: 255 }),
-    category: varchar('category', { length: 255 }),
+    name: varchar('name', { length: 255 }),
+    slug: varchar('slug', { length: 255 }),
     content: text('content'),
+    order: integer('order'),
+    cmsPage: boolean('cms_page'),
     createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
     updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
     publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
     createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
     updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-    description: text('description'),
+    showInNav: boolean('show_in_nav'),
   },
   (table) => {
     return {
-      createdByIdFk: index('blog_articles_created_by_id_fk').on(table.createdById),
-      updatedByIdFk: index('blog_articles_updated_by_id_fk').on(table.updatedById),
+      createdByIdFk: index('pages_created_by_id_fk').on(table.createdById),
+      updatedByIdFk: index('pages_updated_by_id_fk').on(table.updatedById),
     };
   }
 );

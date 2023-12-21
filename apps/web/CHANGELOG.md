@@ -1,5 +1,44 @@
 # web
 
+## 3.8.0
+
+### Minor Changes
+
+- d1b7528: Added Avola specification page
+- 515d04a: Added feature to hide pages from the navbar
+
+### Patch Changes
+
+- e80254b: Fixed incorrect drizzle config
+
+## 3.7.2
+
+### Patch Changes
+
+- ec6e39f: Updated legitimaat url with new publication (moved from open-regels.nl)
+
+## 3.7.1
+
+### Patch Changes
+
+- 88814fb: 404 page not showing when navigating to a publication that doesn't exist
+
+## 3.7.0
+
+### Minor Changes
+
+- 900c63f: Published dcat-ap-ronl ReSpec on regels.overheid.nl
+
+### Patch Changes
+
+- ab1f5e5: Remove empty links from footer
+
+## 3.6.0
+
+### Minor Changes
+
+- 4008318: Facilitate backend for Open Catalogi via applicable github actions
+
 ## 3.5.0
 
 ### Minor Changes

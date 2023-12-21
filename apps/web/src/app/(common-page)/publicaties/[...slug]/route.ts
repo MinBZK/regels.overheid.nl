@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import { notFound } from 'next/navigation';
 
 export async function GET(request: Request) {
   const enhancedUrl = new URL(request.url);
@@ -13,7 +12,12 @@ export async function GET(request: Request) {
     .then(() => true)
     .catch(() => false);
 
-  if (!publicationExists) notFound();
+  if (!publicationExists) {
+    const url = new URL('/404', request.url);
+    const response = await fetch(url.toString());
+
+    return new Response(response.body);
+  }
 
   const buffer = await fs.readFile(publicationPath);
 

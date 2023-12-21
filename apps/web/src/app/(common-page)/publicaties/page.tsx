@@ -15,7 +15,7 @@ export default function PublicatiesPage() {
         <PublicationCard
           tag="Algoritme"
           title="De Legitimaat"
-          url="/publicaties/de-legitimaat"
+          url="/publicaties/legitimaat"
           description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
         />
         <PublicationCard
@@ -29,7 +29,7 @@ export default function PublicatiesPage() {
           title="DCAT"
           tag="Work in progress"
           variant="wip"
-          url="https://minbzk.github.io/dcat-ap-ronl/"
+          url="/publicaties/dcat-ap-ronl"
           description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
         />
         <PublicationCard title="Harmonisator" variant="unavailable" />
