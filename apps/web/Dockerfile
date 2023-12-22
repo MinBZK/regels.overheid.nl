@@ -1,8 +1,8 @@
 # ==== Base ====
-FROM node:18-alpine as base
+FROM node:18-alpine3.18 as base
 
 RUN apk update && \
-    apk add --no-cache libc6-compat git  openssl1.1-compat&& \
+    apk add --no-cache libc6-compat git openssl1.1-compat&& \
     yarn global add turbo
 
     

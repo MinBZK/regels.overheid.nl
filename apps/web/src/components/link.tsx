@@ -1,7 +1,6 @@
-import { OverrideAbleComponentFunctionComponent } from './override-able-component-function-component';
 import NextLink from 'next/link';
 
-export const Link: OverrideAbleComponentFunctionComponent<typeof NextLink, React.PropsWithChildren> = ({
+export const Link: React.OverrideAbleComponentFC<typeof NextLink, React.PropsWithChildren> = ({
   component: Component = NextLink,
   children,
   href,
