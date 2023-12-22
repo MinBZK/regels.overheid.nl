@@ -1,0 +1,48 @@
+categories:
+- it-development
+description:
+  en:
+    apiDocumentation: ''
+    awards: []
+    documentation: ''
+    features: []
+    genericName: This monorepo stores all code and assets of all projects with which
+      we develop regels.overheid.nl
+    localisedName: ''
+    longDescription: ''
+    screenshots: []
+    shortDescription: ''
+    videos: []
+developmentStatus: development
+landingURL: ''
+legal:
+  authorsFile: ''
+  license: eupl-1.2
+  mainCopyrightOwner: ''
+  repoOwner: ''
+localisation:
+  availableLanguages:
+  - en
+  localisationReady: false
+maintenance:
+  contacts: []
+  contractors: []
+  type: none
+name: regels.overheid.nl
+nl:
+  vng:
+    commonground: []
+    gemma: []
+organisation:
+  logo: https://avatars.githubusercontent.com/u/33843588?v=4
+  name: MinBZK
+  url: MinBZK
+platforms:
+- web
+publiccodeYmlVersion: '0.2'
+releaseDate: '2023-12-22'
+roadmap: ''
+softwareType: standalone/web
+softwareVersion: ''
+url: https://regels.overheid.nl/roadmap
+usedBy: []
