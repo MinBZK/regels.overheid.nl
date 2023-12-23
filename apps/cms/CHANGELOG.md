@@ -1,5 +1,11 @@
 # cms
 
+## 1.22.1
+
+### Patch Changes
+
+- e1b1cdb: Fixed broken Dockerfile
+
 ## 1.22.0
 
 ### Minor Changes

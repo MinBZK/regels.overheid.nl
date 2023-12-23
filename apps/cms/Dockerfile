@@ -1,7 +1,7 @@
 # ==== Base ====
-FROM node:18-alpine as base
+FROM node:18-alpine3.18 as base
 RUN apk update && \
-    apk add --no-cache libc6-compat && \
+    apk add --no-cache libc6-compat openssl && \
     yarn global add turbo
 # ==== Prune project ====
 FROM base as pruned

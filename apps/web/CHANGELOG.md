@@ -1,5 +1,16 @@
 # web
 
+## 3.9.0
+
+### Minor Changes
+
+- b6ca28a: Added lab page
+
+### Patch Changes
+
+- e1b1cdb: Fixed broken Dockerfile
+- 21dbcc9: Refactored OverrideAbleComponentFunctionComponent into a type augment
+
 ## 3.8.0
 
 ### Minor Changes
