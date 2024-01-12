@@ -1,4 +1,12 @@
-import { IconBinaryTree2, IconBrandGithub, IconGavel, Icon, IconComponents, IconLicense, IconUserCheck} from '@tabler/icons-react';
+import {
+  IconBinaryTree2,
+  IconBrandGithub,
+  IconGavel,
+  Icon,
+  IconComponents,
+  IconLicense,
+  IconUserCheck,
+} from '@tabler/icons-react';
 
 export type IconCategory = 'user check' | 'devops' | 'linked data' | 'design' | 'content management' | 'legal';
 
