@@ -1,5 +1,11 @@
 # web
 
+## 3.9.1
+
+### Patch Changes
+
+- 8b2e6e6: Introduced user check items & updated roadmap 2024 accordingly
+
 ## 3.9.0
 
 ### Minor Changes
