@@ -23,16 +23,16 @@ export default async function LabPage() {
           description="Norm Editor is een applicatie, gebouwd met behulp van webgebaseerde technologieën, waarmee een gebruiker op een gebruiksvriendelijke en interactieve manier interpretaties van normen in FLINT kan creëren."
         />
         <LabItemCard
+          title="Apache Jena Fuseki"
+          icon="icon-api-app"
+          description="Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te extraheren uit en te schrijven naar RDF-graphs."
+          demo="https://regels.overheid.nl/sparql"
+        />
+        <LabItemCard
           variant="coming-soon"
           title="Bold Form Builder"
           icon="icon-forms"
           description="Ontwerp conditionele BOLD formulieren sneller en consistenter"
-        />
-        <LabItemCard
-          variant="coming-soon"
-          title="Apache Jena Fuseki"
-          icon="icon-api-app"
-          description="Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te extraheren uit en te schrijven naar RDF-graphs."
         />
         <Card className="flex flex-col items-center justify-center">
           <Typography variant="large" className="text-center">
