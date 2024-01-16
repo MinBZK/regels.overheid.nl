@@ -1,5 +1,11 @@
 # web
 
+## 3.10.0
+
+### Minor Changes
+
+- 3a3c381: Enable Apache Jena Fuseki demo in lab page
+
 ## 3.9.1
 
 ### Patch Changes
