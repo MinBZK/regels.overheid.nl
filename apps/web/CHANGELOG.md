@@ -1,5 +1,11 @@
 # web
 
+## 3.11.0
+
+### Minor Changes
+
+- 6dbe1e2: Updated colofon info
+
 ## 3.10.0
 
 ### Minor Changes
