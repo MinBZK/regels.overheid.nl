@@ -12,6 +12,7 @@ import {
   IconHeartHandshake,
   IconPlayerPlay,
   IconScale,
+  IconFileTypeDoc,
   TablerIconsProps,
 } from '@tabler/icons-react';
 import clsx from 'clsx';
@@ -160,7 +161,7 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
             )}
             {props.docs && (
               <Li to={props.docs}>
-                <IconForms /> Documentation
+                <IconFileTypeDoc /> Documentation
               </Li>
             )}
             {props.license && (
