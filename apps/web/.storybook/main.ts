@@ -1,6 +1,6 @@
 import type { StorybookConfig } from '@storybook/nextjs';
 
-import { join, dirname } from 'path';
+import { join, dirname, resolve } from 'path';
 
 /**
  * This function is used to resolve the absolute path of a package.
@@ -14,7 +14,6 @@ const config: StorybookConfig = {
   addons: [
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-essentials'),
-    getAbsolutePath('@storybook/addon-onboarding'),
     getAbsolutePath('@storybook/addon-interactions'),
   ],
   framework: {
@@ -23,6 +22,14 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: 'tag',
+  },
+  staticDirs: [{ from: resolve(__dirname, '../src/app/fonts'), to: 'fonts' }],
+  webpackFinal(config) {
+    config.resolve ??= {};
+    config.resolve.alias ??= {};
+    config.resolve.alias['@'] = resolve(__dirname, '../src');
+
+    return config;
   },
 };
 export default config;

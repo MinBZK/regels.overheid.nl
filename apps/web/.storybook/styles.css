@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Rijksoverheid Sans Web Text';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/ROsanswebtextregular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rijksoverheid Sans Web Text';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/ROsanswebtextbold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Rijksoverheid Sans Web Text';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: url('/fonts/ROsanswebtextitalic.woff') format('woff');
+}
+
+:root {
+  --font-sans: Rijksoverheid Sans Web Text;
+}
