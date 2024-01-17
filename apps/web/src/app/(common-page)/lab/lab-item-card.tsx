@@ -28,6 +28,7 @@ interface DefaultLabItemCard {
   repo?: string;
   demo?: string;
   license?: string;
+  docs?: string;
   variant?: 'default';
   description: string;
   codeOfConduct?: string;
@@ -155,6 +156,11 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
             {props.repo && (
               <Li to={props.repo}>
                 <IconBrandGithub /> Git repository
+              </Li>
+            )}
+            {props.docs && (
+              <Li to={props.docs}>
+                <IconForms /> Documentation
               </Li>
             )}
             {props.license && (
