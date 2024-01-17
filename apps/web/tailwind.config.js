@@ -9,14 +9,6 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '1.5rem',
-    },
-    screens: {
-      sm: '768px',
-      md: '1024px',
-      lg: '1280px',
-      xl: '1440px',
-      '2xl': '1768px',
     },
     fontFamily: {
       sans: ['var(--font-sans)', 'Arial', 'Veranda', 'Times New Roman'],
@@ -53,13 +45,6 @@ module.exports = {
           main: '#339D7F',
           light: '#66B69F',
           lighter: '#E6F3EF',
-        },
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            'max-width': '1180px',
-          },
         },
       },
     },
