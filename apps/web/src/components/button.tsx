@@ -1,47 +1,58 @@
-import clsx from 'clsx';
+import { VariantProps, cva, cx } from '@/cva.config';
 
-type Variant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
-
-interface Props extends React.PropsWithChildren {
-  variant?: Variant;
+export interface ButtonProps extends React.PropsWithChildren, VariantProps<typeof variants> {
   className?: string;
   endIcon?: JSX.Element;
   startIcon?: JSX.Element;
 }
 
-const enabledVariants: Record<Variant, string> = {
-  primary: 'bg-primary-dark text-white outline-black hover:bg-primary-main focus:bg-primary-main focus:outline-2',
-  secondary:
-    'bg-primary-light text-primary-dark outline-black hover:bg-primary-lighter focus:bg-primary-lighter focus:outline-2',
-  tertiary: 'text-primary-dark underline hover:text-primary-main',
-  ghost:
-    'border border-primary-dark text-primary-dark outline-primary-main hover:border-primary-main hover:text-primary-main focus:border-primary-main focus:text-primary-main focus:underline focus:outline',
-};
+const variants = cva({
+  base: 'flex h-10 items-center rounded-lg px-4 text-base',
+  variants: {
+    variant: {
+      text: 'text-primary-dark underline hover:text-primary-main',
+      contained: 'bg-primary-dark text-white outline-black hover:bg-primary-main focus:bg-primary-main focus:outline-2',
+      outlined:
+        'border border-primary-dark text-primary-dark outline-primary-main hover:border-primary-main hover:text-primary-main focus:border-primary-main focus:text-primary-main focus:underline focus:outline',
+    },
+    color: { 'primary-dark': '', 'primary-light': '' },
+    disabled: { true: '' },
+  },
+  compoundVariants: [
+    {
+      variant: 'contained',
+      color: 'primary-light',
+      className: 'bg-primary-light text-primary-dark hover:bg-primary-lighter focus:bg-primary-lighter',
+    },
+    {
+      variant: 'contained',
+      disabled: true,
+      className: 'bg-grey-light text-grey-dark',
+    },
+    {
+      variant: 'outlined',
+      disabled: true,
+      className: 'border-grey-main text-grey-main',
+    },
+    { variant: 'text', disabled: true, className: 'text-grey-main' },
+  ],
+});
 
-const disabledVariant: Record<Variant, string> = {
-  primary: 'bg-grey-light text-grey-dark',
-  secondary: 'bg-grey-light text-grey-dark',
-  tertiary: 'text-grey-main',
-  ghost: 'border border-grey-main text-grey-main',
-};
-
-export const Button: React.OverrideAbleComponentFC<'button', Props> = ({
+export const Button: React.OverrideAbleComponentFC<'button', ButtonProps> = ({
   children,
-  component: Component = 'button',
   endIcon,
   startIcon,
-  variant = 'primary',
   className,
+  disabled = false,
+  variant = 'contained',
+  color = 'primary-dark',
+  component: Component = 'button',
   ...componentProps
 }) => {
   return (
     <Component
-      className={clsx(
-        className,
-        'flex h-10 items-center rounded-lg px-4 text-base',
-        !componentProps.disabled && enabledVariants[variant],
-        componentProps.disabled && disabledVariant[variant]
-      )}
+      className={cx(variants({ variant, color, disabled, className }))}
+      disabled={disabled}
       {...componentProps}
     >
       {startIcon && <span className="mr-3">{startIcon}</span>}
