@@ -66,6 +66,34 @@ services:
       - VIRTUAL_PATH=/docs/
       - VIRTUAL_DEST=/docs/
       - VIRTUAL_PORT=9002
+  docs-beta:
+    container_name: regels_docs_beta
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://docs-beta:9003']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    volumes:
+      - ./apps/docs-beta/docs:/project/apps/docs-beta/docs
+      - ./apps/docs-beta/static:/project/apps/docs-beta/static
+      - ./apps/docs-beta/src:/project/apps/docs-beta/src
+    ports:
+      - 9003:9003
+    build:
+      context: .
+      dockerfile: apps/docs-beta/Dockerfile
+      target: dev
+      args:
+        GID: ${GID:-1001}
+        UID: ${UID:-1001}
+    environment:
+      - VIRTUAL_HOST=localhost
+      - VIRTUAL_PATH=/docs-beta/
+      - VIRTUAL_DEST=/docs-beta/
+      - VIRTUAL_PORT=9002
+
   web:
     container_name: regels_web
     restart: unless-stopped
