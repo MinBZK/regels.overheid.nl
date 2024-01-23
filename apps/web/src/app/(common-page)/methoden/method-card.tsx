@@ -1,6 +1,6 @@
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
-import { Pill, PillVariant } from '@/components/pill';
+import { Pill, PillProps } from '@/components/pill';
 import {
   IconArrowRight,
   IconBinaryTree2,
@@ -33,7 +33,7 @@ const iconMap: Record<string, React.FC<TablerIconsProps>> = {
   'right-angle-ruler': IconRuler,
 };
 
-const chipVariantMap: Record<string, PillVariant> = {
+const chipVariantMap: Record<string, Exclude<PillProps['variant'], undefined>> = {
   methode: 'info',
   DSL: 'success',
   platform: 'warning',

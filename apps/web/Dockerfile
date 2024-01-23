@@ -25,10 +25,8 @@ COPY --from=pruned /project/out/yarn.lock ./yarn.lock
 
 RUN yarn install
 
-# ==== Dev ====
-FROM base AS dev
-
-WORKDIR /project
+# ==== Build ====
+FROM base AS build
 
 ARG UID=1001
 ARG GID=1001
@@ -42,30 +40,29 @@ COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
 COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/web/node_modules
 
 USER ${UID}
+
+# ==== Dev ====
+FROM build AS dev
+
+WORKDIR /project
 
 EXPOSE 9000
 
 ENTRYPOINT yarn dev
 
-#  ==== Prod ====
-FROM base AS prod
+# ==== Storybook (dev) ====
+FROM build AS storybook-dev
 
 WORKDIR /project
 
-ARG UID=1001
-ARG GID=1001
+EXPOSE 6006
 
-RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
-    (getent passwd ${UID} || adduser --system --uid ${UID} app)
+ENTRYPOINT yarn workspace web storybook
 
-COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
-COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
-COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
-COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/web/node_modules
+#  ==== Prod ====
+FROM build AS prod
 
-EXPOSE 9000
-
-USER ${UID}
+WORKDIR /project
 
 ARG DATABASE_URL
 ARG CMS_URL
