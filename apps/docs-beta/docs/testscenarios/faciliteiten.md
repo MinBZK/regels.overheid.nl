@@ -1,5 +1,7 @@
 ---
-sidebar_position: 6
+title: Test faciliteiten
+description: Navigatie en begrip van open regels
+sidebar_position: 3
 ---
 
 ## Testomgeving
@@ -7,7 +9,7 @@ sidebar_position: 6
 - Bijvoorbeeld: gebruik van een specifieke versie van de browser, testomgeving of specifieke hardware.
 - Online via Microsoft Teams en toestemming vragen voor een schermopname. De testdeelnemer erop attenderen op welk divice de test afgenomen dient te worden.
 
-## Test Faciliteiten
+## Locaties
 - Locatie van de testsessies (fysiek of virtueel).
 - Technische vereisten, zoals toegang tot specifieke tools of software.
 
@@ -18,7 +20,7 @@ Online//
 
 ## Nora Online
 
-# Planning
+## Planning
 - Data en tijden voor de testsessies.
 - Duur van elke sessie en eventuele pauzes.
 

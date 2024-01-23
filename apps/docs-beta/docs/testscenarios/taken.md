@@ -1,8 +1,10 @@
 ---
-sidebar_position: 3
+title: Testscenario's
+description: Navigatie en begrip van open regels
+sidebar_position: 2
 ---
 
-# Testscenario: Navigatie en Begrip van Open Regels
+# Navigatie en Begrip van Open Regels
 Introductie: Je bent een professional op het gebied van overheidsbeleid en juridische zaken. Vandaag zullen we de website 'Regels.overheid.nl' testen, die tot doel heeft wetten toegankelijker te maken door ze te vertalen naar praktische regels. We willen begrijpen hoe goed de website je ondersteunt bij het vinden van informatie en het begrijpen van regels.
 
 ## Taak 1: Eerste Indruk van de Homepage
@@ -27,11 +29,11 @@ Vertel me welke stappen je onderneemt en wat je opvalt tijdens het zoeken.
 - Taak 2.1: Zoeken naar Specifieke Informatie
 - Vind een methode die helpt, bij het begrijpen en toepassen van regels, om de circulaire economie te ondersteunen.
 
-### Taak 3: -
+## Taak 3: -
 
-### Taak 4: -
+## Taak 4: -
 
-### Taak 5: -
+## Taak 5: -
 
 Afsluiting: Bedank de deelnemer voor hun deelname en vraag of ze nog algemene opmerkingen of feedback hebben over hun ervaring met de website.
 

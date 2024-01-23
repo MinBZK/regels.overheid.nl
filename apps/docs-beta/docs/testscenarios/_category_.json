@@ -1,8 +1,8 @@
 {
-  "label": "Testplan - Testscenario's",
+  "label": "Testplan - Invulling",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Uitleg testen."
+    "description": "Algemene uitleg over testen hier."
   }
 }
