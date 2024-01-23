@@ -50,7 +50,7 @@ COPY --from=install --chown=${UID}:${GID} /project/apps/docs-beta/node_modules .
 USER ${UID}
 
 ENV BASE_URL=/docs-beta/
-EXPOSE 3000
+EXPOSE 9003
 ENTRYPOINT yarn dev
 
 # ==== Reverse proxy ====

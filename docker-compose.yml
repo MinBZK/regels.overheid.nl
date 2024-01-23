@@ -92,7 +92,7 @@ services:
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/docs-beta/
       - VIRTUAL_DEST=/docs-beta/
-      - VIRTUAL_PORT=9002
+      - VIRTUAL_PORT=9003
 
   web:
     container_name: regels_web
