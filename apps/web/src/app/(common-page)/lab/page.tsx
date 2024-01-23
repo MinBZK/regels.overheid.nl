@@ -26,7 +26,7 @@ export default async function LabPage() {
           title="Apache Jena Fuseki"
           icon="icon-api-app"
           description="Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te extraheren uit en te schrijven naar RDF-graphs."
-          demo="https://regels.overheid.nl/sparql"
+          demo="https://regels.overheid.nl/lab/sparql"
           docs="https://jena.apache.org/documentation/fuseki2/"
           repo="https://github.com/apache/jena"
           licenseVariant="Apache License 2.0"
