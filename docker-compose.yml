@@ -126,6 +126,25 @@ services:
       - VIRTUAL_PATH=/
       - VIRTUAL_DEST=/
       - VIRTUAL_PORT=9000
+  storybook:
+    container_name: regels_storybook
+    restart: unless-stopped
+    volumes:
+      - ./apps/web/src:/project/apps/web/src
+      - ./apps/web/public:/project/apps/web/public
+      - ./apps/web/.storybook:/project/apps/web/.storybook
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      target: storybook-dev
+      args:
+        GID: ${GID:-1001}
+        UID: ${UID:-1001}
+    environment:
+      - VIRTUAL_HOST=localhost
+      - VIRTUAL_PATH=/storybook/
+      - VIRTUAL_DEST=/
+      - VIRTUAL_PORT=6006
   postgres:
     image: postgres:14.5
     container_name: regels_postgres

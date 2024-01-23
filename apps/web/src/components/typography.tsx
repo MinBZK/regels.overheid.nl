@@ -1,31 +1,48 @@
-import clsx from 'clsx';
+import { cva, cx, VariantProps } from '@/cva.config';
 
-type TypographyVariantTypes = 'page-title' | 'h1' | 'h2' | 'h3' | 'p' | 'large';
-
-type TypographyVariant = [component: React.ElementType, classNames: string];
-
-const typographyVariantMapping: Record<TypographyVariantTypes, TypographyVariant> = {
-  'page-title': ['h1', 'text-5xl mb-6'],
-  h1: ['h1', 'text-primary-dark text-4xl sm:text-5xl font-bold my-6'],
-  h2: ['h2', 'text-primary-dark text-3xl sm:text-4xl font-bold my-4'],
-  h3: ['h3', 'text-primary-dark text-2xl font-bold my-3'],
-  p: ['p', 'text-lg font-normal my-3'],
-  large: ['p', 'text-xl my-4 font-bold text-black'],
-};
-
-interface Props extends React.PropsWithChildren {
-  variant?: TypographyVariantTypes;
+export interface TypographyProps extends React.PropsWithChildren, VariantProps<typeof variants> {
   className?: string;
 }
 
-export const Typography: React.OverrideAbleComponentFC<'p', Props> = ({
+const variants = cva({
+  variants: {
+    variant: {
+      h1: 'scroll-m-20 text-4xl font-bold text-primary-dark lg:text-5xl',
+      h2: 'mt-10 scroll-m-20 pb-2 text-3xl font-bold text-primary-dark first:mt-0 lg:text-4xl',
+      h3: 'mt-8 scroll-m-20 text-2xl font-bold text-primary-dark',
+      h4: 'mt-6 scroll-m-20 text-xl font-bold text-primary-dark',
+      p: 'leading-7 [&:not(:first-child)]:mt-4',
+      large: 'text-xl',
+    },
+  },
+  defaultVariants: {
+    variant: 'p',
+  },
+});
+
+const variantComponent = cva({
+  variants: {
+    variant: {
+      h1: 'h1',
+      h2: 'h2',
+      h3: 'h3',
+      h4: 'h4',
+      p: 'p',
+      large: 'div',
+    },
+  },
+  defaultVariants: {
+    variant: 'p',
+  },
+});
+
+export const Typography: React.OverrideAbleComponentFC<'p', TypographyProps> = ({
   children,
   className,
-  variant = 'p',
   component,
+  variant = 'p',
 }) => {
-  const [defaultComponent, defaultClassName] = typographyVariantMapping[variant];
-  const Component = component ?? defaultComponent;
+  const Component = component || variantComponent({ variant });
 
-  return <Component className={clsx(className, defaultClassName)}>{children}</Component>;
+  return <Component className={cx(variants({ variant, className }))}>{children}</Component>;
 };
