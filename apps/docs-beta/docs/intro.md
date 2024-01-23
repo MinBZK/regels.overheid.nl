@@ -2,46 +2,25 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Testplan voor Expertise Paneel
 
-Let's discover **Docusaurus in less than 5 minutes**.
+De website 'Regels.overheid.nl' streeft ernaar om de teksten van wetten toegankelijker te maken door ze te vertalen naar praktische regels. Dit proces voorkomt verschillende interpretaties en het daaruit voortvloeiende risico van ongelijke behandeling. Door gebruik te maken van Open Regels beoogt de website:
 
-## Getting Started
+- Beslissingen van de overheid helder uit te leggen en controleerbaar te maken.
+- Regels op elkaar af te stemmen voor consistentie.
+- Samen te werken aan een gedeelde aanpak en methodiek voor het opstellen van regels.
+- Op termijn ook de regels van concept-wetgeving toegankelijk te maken, waardoor burgers, ambtenaren en politici zelf de praktische werking beter kunnen beoordelen.
 
-Get started by **creating a new site**.
+## Doelstelling voor de eerste usability test
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Het primaire doel van de eerste usability test is om de gebruikerservaring van 'Regels.overheid.nl' te evalueren en te begrijpen hoe goed de website erin slaagt de bovengenoemde doelstellingen te ondersteunen. Specifieke aandachtspunten zijn onder meer:
 
-### What you'll need
+- Is de website toegankelijk en begrijpelijk voor zowel burgers, ambtenaren als politici?
+- Hoe goed ondersteunt de website het begrip van de praktische werking van regels?
+- Wat zijn de algemene indrukken van de gebruikers over de website? Wat wordt positief gewaardeerd en waar zijn mogelijke verbeteringen nodig?
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Deelnemersprofiel
 
-## Generate a new site
+Overzicht van het expertise paneel, inclusief de expertisegebieden van de deelnemers. Bijv:
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- Jeffrey Lauwers | Designer NL Design System
