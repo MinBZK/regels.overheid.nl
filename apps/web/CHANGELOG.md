@@ -1,5 +1,30 @@
 # web
 
+## 3.12.0
+
+### Minor Changes
+
+- c75942b: Reworked the following components to integrate [cva](https://beta.cva.style/):
+
+  - typography
+  - container
+  - pill
+  - notification
+  - chip
+  - button
+
+- c75942b: Added stories for the following components:
+
+  - typography
+  - pill
+  - notification
+  - chip
+  - button
+
+### Patch Changes
+
+- 681c44f: Update Apache Jena Fuseki demo URL in lab page
+
 ## 3.11.0
 
 ### Minor Changes
