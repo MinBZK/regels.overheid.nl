@@ -1,5 +1,11 @@
 # web
 
+## 3.12.1
+
+### Patch Changes
+
+- 2439276: Increase font size for paragraph components
+
 ## 3.12.0
 
 ### Minor Changes
