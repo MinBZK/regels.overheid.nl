@@ -11,7 +11,7 @@ const variants = cva({
       h2: 'mt-10 scroll-m-20 pb-2 text-3xl font-bold text-primary-dark first:mt-0 lg:text-4xl',
       h3: 'mt-8 scroll-m-20 text-2xl font-bold text-primary-dark',
       h4: 'mt-6 scroll-m-20 text-xl font-bold text-primary-dark',
-      p: 'leading-7 [&:not(:first-child)]:mt-4',
+      p: 'text-lg leading-7 [&:not(:first-child)]:mt-4',
       large: 'text-xl',
     },
   },
