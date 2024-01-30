@@ -28,6 +28,8 @@ RUN yarn install
 # ==== Build ====
 FROM base AS build
 
+WORKDIR /project
+
 ARG UID=1001
 ARG GID=1001
 
@@ -81,5 +83,7 @@ ENV NEXT_WEB_URL ${NEXT_WEB_URL}
 ENV DATABASE_CA_CERT ${DATABASE_CA_CERT}
 
 RUN yarn build
+
+EXPOSE 9000
 
 ENTRYPOINT yarn start
