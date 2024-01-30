@@ -1,5 +1,11 @@
 # web
 
+## 3.12.2
+
+### Patch Changes
+
+- 7c51204: Fix all publications showing a 404 page
+
 ## 3.12.1
 
 ### Patch Changes
