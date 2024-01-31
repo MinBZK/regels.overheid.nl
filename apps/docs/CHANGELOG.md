@@ -1,5 +1,11 @@
 # docs
 
+## 3.4.0
+
+### Minor Changes
+
+- ce21ca9: Descriptions legal classes & contact info added
+
 ## 3.3.0
 
 ### Minor Changes
