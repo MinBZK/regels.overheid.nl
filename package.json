@@ -2,41 +2,21 @@
   "name": "regels-overheid",
   "private": true,
   "license": "EUROPEAN UNION PUBLIC LICENCE v. 1.2",
-  "version": "1.0.0",
-  "description": "",
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      "@semantic-release/github",
-      "semantic-release-export-data"
-    ]
-  },
-  "workspaces": {
-    "packages": [
-      "apps/*"
-    ],
-    "nohoist": [
-      "**"
-    ]
-  },
   "scripts": {
-    "start:docker": "docker-compose up --build",
-    "start": "turbo run start --parallel",
-    "dev": "turbo run dev --parallel",
-    "build": "turbo run build --parallel",
-    "dev:cms": "turbo run dev --scope=cms",
-    "dev:web": "turbo run dev --scope=web",
-    "dev:docs": "turbo run dev --scope=docs",
-    "prod:cms": "turbo run prod --scope=cms",
-    "prod:web": "turbo run prod --scope=web",
-    "build:cms": "turbo run build --scope=cms",
-    "build:web": "turbo run build --scope=web",
-    "build:docs": "turbo run build --scope=docs",
-    "start:cms": "turbo run start --scope=cms",
-    "start:web": "turbo run start --scope=web",
-    "start:docs": "turbo run start --scope=docs"
+    "start": "turbo start",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "prettier": "^3.1.1",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
   },
   "repository": {
     "type": "git",
@@ -45,11 +25,5 @@
   "bugs": {
     "url": "https://github.com/MinBZK/regels.overheid.nl/issues"
   },
-  "homepage": "https://github.com/MinBZK/regels.overheid.nl",
-  "dependencies": {
-    "turbo": "^1.4.5"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.26.1"
-  }
+  "homepage": "https://github.com/MinBZK/regels.overheid.nl"
 }
