@@ -8,14 +8,16 @@ jobs:
   lint:
     runs-on: ubuntu-20.04
     steps:
-      - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/run-workspace-script
         with:
           workspace: 'web'
           script: lint
   stylecheck:
     runs-on: ubuntu-20.04
     steps:
-      - uses: MinBZK/regels.overheid.nl/.github/actions/run-workspace-script@main
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/run-workspace-script
         with:
           workspace: 'web'
           script: stylecheck
