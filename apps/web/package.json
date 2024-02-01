@@ -3,14 +3,14 @@
   "version": "3.12.2",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 9000",
     "build": "next build",
     "typecheck": "tsc --noEmit -p ./tsconfig.json",
     "stylecheck": "prettier --check .",
     "storybook": "storybook dev -p 6006",
     "drizzle-kit": "drizzle-kit",
     "build-storybook": "storybook build",
-    "start": "next start",
+    "start": "next start --port 9000",
     "lint": "next lint"
   },
   "dependencies": {
