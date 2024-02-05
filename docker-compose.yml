@@ -20,21 +20,18 @@ services:
         GID: ${GID:-1001}
         UID: ${UID:-1001}
     volumes:
-      - ./apps/cms/config:/project/apps/cms/config
-      - ./apps/cms/database:/project/apps/cms/database
-      - ./apps/cms/public:/project/apps/cms/public
-      - ./apps/cms/src:/project/apps/cms/src
+      - ./apps/cms/config:/app/apps/cms/config
+      - ./apps/cms/database:/app/apps/cms/database
+      - ./apps/cms/public:/app/apps/cms/public
+      - ./apps/cms/src:/app/apps/cms/src
     environment:
+      - PUBLIC_URL=http://localhost/cms/
+      - DATABASE_CLIENT=postgres
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/strapi
       - JWT_SECRET=jwt-secret
       - ADMIN_JWT_SECRET=admin-jwt-secret
       - API_TOKEN_SALT=token-salt
       - APP_KEYS=a,b,c
-      - DATABASE_HOST=postgres
-      - DATABASE_PORT=5432
-      - DATABASE_NAME=strapi
-      - DATABASE_USERNAME=postgres
-      - DATABASE_PASSWORD=postgres
-      - DATABASE_SSL=false
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/cms/
       - VIRTUAL_DEST=/
@@ -49,11 +46,11 @@ services:
       retries: 10
       start_period: 10s
     volumes:
-      - ./apps/docs/docs:/project/apps/docs/docs
-      - ./apps/docs/static:/project/apps/docs/static
-      - ./apps/docs/src:/project/apps/docs/src
+      - ./apps/docs/docs:/app/apps/docs/docs
+      - ./apps/docs/static:/app/apps/docs/static
+      - ./apps/docs/src:/app/apps/docs/src
     ports:
-      - 9002:9002 # for local development / hot reloading
+      - 9002:9002
     build:
       context: .
       dockerfile: apps/docs/Dockerfile
@@ -62,6 +59,8 @@ services:
         GID: ${GID:-1001}
         UID: ${UID:-1001}
     environment:
+      - PORT=9002
+      - BASE_URL=/docs/
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/docs/
       - VIRTUAL_DEST=/docs/
@@ -76,11 +75,9 @@ services:
       retries: 10
       start_period: 10s
     volumes:
-      - ./apps/docs-beta/docs:/project/apps/docs-beta/docs
-      - ./apps/docs-beta/static:/project/apps/docs-beta/static
-      - ./apps/docs-beta/src:/project/apps/docs-beta/src
-    ports:
-      - 9003:9003
+      - ./apps/docs-beta/docs:/app/apps/docs-beta/docs
+      - ./apps/docs-beta/static:/app/apps/docs-beta/static
+      - ./apps/docs-beta/src:/app/apps/docs-beta/src
     build:
       context: .
       dockerfile: apps/docs-beta/Dockerfile
@@ -88,17 +85,20 @@ services:
       args:
         GID: ${GID:-1001}
         UID: ${UID:-1001}
+    ports:
+      - 9003:9003
     environment:
+      - PORT=9003
+      - BASE_URL=/docs-beta/
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/docs-beta/
       - VIRTUAL_DEST=/docs-beta/
       - VIRTUAL_PORT=9003
-
   web:
     container_name: regels_web
     restart: unless-stopped
     depends_on:
-      cms:
+      postgres:
         condition: service_healthy
     healthcheck:
       test: ['CMD', 'wget', '-qO-', 'http://web:9000']
@@ -107,8 +107,8 @@ services:
       retries: 10
       start_period: 10s
     volumes:
-      - ./apps/web/src:/project/apps/web/src
-      - ./apps/web/public:/project/apps/web/public
+      - ./apps/web/src:/app/apps/web/src
+      - ./apps/web/public:/app/apps/web/public
     build:
       context: .
       dockerfile: apps/web/Dockerfile
@@ -118,9 +118,9 @@ services:
         UID: ${UID:-1001}
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/strapi
-      - CMS_URL=http://cms:9001
+      - CMS_URL=http://cms:1337
       - NEXT_PUBLIC_CMS_URL=http://localhost/cms
-      - WEB_URL=http://localhost:9000
+      - WEB_URL=http://localhost:1337
       - NEXT_PUBLIC_WEB_URL=http://localhost
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/
@@ -130,9 +130,9 @@ services:
     container_name: regels_storybook
     restart: unless-stopped
     volumes:
-      - ./apps/web/src:/project/apps/web/src
-      - ./apps/web/public:/project/apps/web/public
-      - ./apps/web/.storybook:/project/apps/web/.storybook
+      - ./apps/web/src:/app/apps/web/src
+      - ./apps/web/public:/app/apps/web/public
+      - ./apps/web/.storybook:/app/apps/web/.storybook
     build:
       context: .
       dockerfile: apps/web/Dockerfile
@@ -140,6 +140,8 @@ services:
       args:
         GID: ${GID:-1001}
         UID: ${UID:-1001}
+    ports:
+      - 6006:6006
     environment:
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/storybook/

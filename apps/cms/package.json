@@ -7,29 +7,29 @@
     "dev": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi",
-    "fix": "yarn fix:lint && yarn fix:prettier",
-    "fix:lint": "eslint src --fix --ext ts,tsx,js,jsx",
-    "fix:prettier": "prettier \"./**/*.{js,jsx,ts,tsx,json,css,scss,md}\" --write --ignore-path ../../.prettierignore",
-    "ci:tsc": "echo 'Implement ci:tsc'",
-    "ci:eslint": "echo 'Implement ci:eslint'",
-    "ci:prettier": "echo 'Implement ci:prettier'",
-    "ci:test": "echo 'Implement ci:test'"
+    "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.3.9",
-    "@strapi/plugin-users-permissions": "4.3.9",
-    "@strapi/strapi": "4.3.9",
-    "pg": "^8.8.0"
+    "@strapi/plugin-cloud": "4.19.0",
+    "@strapi/plugin-i18n": "4.19.0",
+    "@strapi/plugin-users-permissions": "4.19.0",
+    "@strapi/strapi": "4.19.0",
+    "@strapi/typescript-utils": "^4.19.0",
+    "@types/node": "^20",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "styled-components": "5.3.3"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "c09d1161-800a-4488-be45-7adce511fcb7"
+    "uuid": "a4893268-5f64-4fd6-8650-e1cc82b1eb4b"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
+    "node": ">=18.0.0 <=20.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
