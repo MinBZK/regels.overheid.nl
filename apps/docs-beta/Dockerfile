@@ -1,40 +1,41 @@
 # ==== Base ====
-FROM node:18-alpine as base
+FROM node:20.11-alpine as root
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+RUN corepack enable
+RUN corepack prepare pnpm@8 --activate 
 
 RUN apk add --no-cache libc6-compat
 RUN apk update
-RUN yarn global add turbo
-# ==== Prune project ====
-FROM base as pruned
-WORKDIR /project
+
+RUN pnpm install -g turbo
+
+# ==== Builder ====
+FROM root as builder
+
+WORKDIR /app
+
 COPY . .
-RUN turbo prune --scope=docs-beta --docker
 
-# ==== Install dependencies ====
-FROM base AS install
+RUN turbo prune docs-beta --docker
 
-WORKDIR /project
+# ==== Installer ====
+FROM root as installer
 
-COPY --from=pruned /project/out/json/ .
-COPY --from=pruned /project/out/yarn.lock ./yarn.lock
-RUN yarn install
-# ==== Build project ====
-FROM base AS build
+WORKDIR /app
 
-WORKDIR /project
+COPY .gitignore .gitignore
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 
-COPY --from=pruned /project/out/json/ .
-COPY --from=pruned /project/out/yarn.lock ./yarn.lock
-COPY --from=install /project/node_modules ./node_modules
-RUN yarn install
-COPY --from=pruned /project/out/full .
-ENV BASE_URL=/docs-beta/
-RUN yarn build
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-# ==== Dev ====
-FROM base AS dev
+# ==== Base ====
+FROM root AS base
 
-WORKDIR /project
+WORKDIR /app
 
 ARG UID=1001
 ARG GID=1001
@@ -42,28 +43,27 @@ ARG GID=1001
 RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
     (getent passwd ${UID} || adduser --system --uid ${UID} app)
 
-COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
-COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
-COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
-COPY --from=install --chown=${UID}:${GID} /project/apps/docs-beta/node_modules ./apps/docs-beta/node_modules
+COPY --from=builder --chown=${UID}:${GID} /app/out/full .
+COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
+COPY --from=installer --chown=${UID}:${GID} /app/apps/docs-beta/node_modules ./apps/docs-beta/node_modules
 
 USER ${UID}
 
-ENV BASE_URL=/docs-beta/
-EXPOSE 9003
-ENTRYPOINT yarn dev
+# ==== Dev ====
+FROM base as dev
 
-# ==== Reverse proxy ====
+WORKDIR /app
+
+EXPOSE 9003
+
+ENTRYPOINT pnpm dev
+
+# ==== Prod ====
 FROM base as prod
-WORKDIR /project
 
-ARG UID=1001
-ARG GID=1001
-
-RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
-    (getent passwd ${UID} || adduser --system --uid ${UID} app)
-COPY --from=build --chown=${UID}:${GID} /project .
+WORKDIR /app
 
 EXPOSE 9003
 
-ENTRYPOINT yarn start
+ENTRYPOINT pnpm start

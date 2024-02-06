@@ -3,9 +3,9 @@
   "version": "3.4.0",
   "private": true,
   "scripts": {
-    "start": "docusaurus serve  --port 9002 --host 0.0.0.0",
+    "start": "docusaurus serve --host 0.0.0.0 --port 9002",
     "docusaurus": "docusaurus",
-    "dev": "docusaurus start --port 9002 --host 0.0.0.0",
+    "dev": "docusaurus start --host 0.0.0.0 --port 9002",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
