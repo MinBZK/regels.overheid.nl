@@ -16,12 +16,11 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 8.9.0
-          run_install: false
+          run_install: true
       - uses: actions/setup-node@v3
         with:
           cache: pnpm
           node-version: 20.11
-      - run: pnpm
       - uses: changesets/action@v1
         with:
           createGithubReleases: true
