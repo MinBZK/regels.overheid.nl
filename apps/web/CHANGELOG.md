@@ -1,5 +1,11 @@
 # web
 
+## 3.13.0
+
+### Minor Changes
+
+- 6403bb5: External tab navigation for publications
+
 ## 3.12.2
 
 ### Patch Changes
