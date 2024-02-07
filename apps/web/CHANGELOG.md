@@ -1,5 +1,12 @@
 # web
 
+## 3.13.1
+
+### Patch Changes
+
+- c2a4adc: Downgrade remark-gfm to v3.x.x, v4.x.x was causing an issue on the blog article page where articles containing tables would crash the page.
+- 898109e: Use startsWith instead of includes when resolving active navbar item
+
 ## 3.13.0
 
 ### Minor Changes
