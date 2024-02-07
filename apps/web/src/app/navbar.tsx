@@ -29,7 +29,7 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
   const slugIsActivePath = (slug: string) => {
     if (pathName === '/' && slug === 'home') return true;
 
-    return pathName.includes(slug);
+    return pathName.startsWith(`/${slug}`);
   };
 
   return (
