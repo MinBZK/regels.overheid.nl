@@ -5,7 +5,7 @@ description: Lab - Open Source tool voor Wetsanalyse
 
 # Introductie
 
-Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door 5 studententeams in één semester gewerkt aan het bouwen van tooling voor [Wetsanalyse](../methods/WETSANALYSE.md).
+Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door 5 studententeams in één semester gewerkt aan het bouwen van tooling voor [Wetsanalyse](../../methods/WETSANALYSE.md).
 
 De beschikbaar gestelde applicatie is het eindproduct van het team Galactische Zakenpartners dat zonder nadere kwaliteitsslag en/of gebruikerstesten anderszins is deployed op de lab pagina.
 
