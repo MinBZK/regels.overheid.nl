@@ -66,4 +66,9 @@ WORKDIR /app
 
 EXPOSE 9002
 
+ARG BASE_URL="/docs"
+ENV BASE_URL=${BASE_URL}
+
+RUN pnpm build
+
 ENTRYPOINT pnpm start
