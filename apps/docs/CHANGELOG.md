@@ -1,5 +1,11 @@
 # docs
 
+## 3.5.1
+
+### Patch Changes
+
+- b39adeb: Fix broken link WA method
+
 ## 3.5.0
 
 ### Minor Changes
