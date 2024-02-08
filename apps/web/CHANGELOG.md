@@ -1,5 +1,15 @@
 # web
 
+## 3.14.0
+
+### Minor Changes
+
+- 2a454c5: Added lab item Legal Annotation Tool
+
+### Patch Changes
+
+- 2a454c5: Added docs for lab items Legal Annotation Tool
+
 ## 3.13.1
 
 ### Patch Changes

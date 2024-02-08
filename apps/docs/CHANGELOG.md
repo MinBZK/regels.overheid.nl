@@ -1,5 +1,11 @@
 # docs
 
+## 3.5.0
+
+### Minor Changes
+
+- 2a454c5: Added docs for lab items Legal Annotation Tool
+
 ## 3.4.0
 
 ### Minor Changes
