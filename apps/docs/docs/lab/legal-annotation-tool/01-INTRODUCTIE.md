@@ -30,4 +30,5 @@ De leerroute Software Engineering is onderdeel van de opleiding HBO-ICT. Binnen 
 
 # Project details
 
-[Gebruikers documentatie](./documentatie/01-GEBRUIKERS.md)
+- [Gebruikers documentatie](./documentatie/01-GEBRUIKERS.md)
+- [Ontwikkelaars documentatie](./documentatie/02-DEVELOPERS.md)
