@@ -58,7 +58,6 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'regels.overheid.nl',
         logo: {
           alt: 'Regels Overheid Logo',
           src: 'img/logo.png',
@@ -68,7 +67,17 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Documentation',
+            label: 'Documentatie',
+          },
+          {
+            href: 'https://www.figma.com/file/miuXp5zu2JNhG2t3c29KBS',
+            label: 'Figma Ontwerp',
+            position: 'right',
+          },
+          {
+            href: 'https://regels.overheid.nl',
+            label: 'Live Website',
+            position: 'right',
           },
           {
             href: 'https://github.com/MinBZK/regels.overheid.nl',

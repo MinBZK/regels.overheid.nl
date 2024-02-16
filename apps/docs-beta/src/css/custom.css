@@ -10,7 +10,8 @@
   font-family: 'RO Sans';
   font-weight: normal;
   font-style: normal;
-  src: url('../../static/webfonts/ROsanswebtextregular.woff') format('woff'),
+  src:
+    url('../../static/webfonts/ROsanswebtextregular.woff') format('woff'),
     url('../../static/webfonts/ROsanswebtextregular.ttf') format('truetype'),
     url('../../static/webfonts/ROsanswebtextregular.eot') format('embedded-opentype');
 }
@@ -19,7 +20,8 @@
   font-family: 'RO Sans';
   font-weight: normal;
   font-style: italic;
-  src: url('../../static/webfonts/ROsanswebtextitalic.woff') format('woff'),
+  src:
+    url('../../static/webfonts/ROsanswebtextitalic.woff') format('woff'),
     url('../../static/webfonts/ROsanswebtextitalic.ttf') format('truetype'),
     url('../../static/webfonts/ROsanswebtextitalic.eot') format('embedded-opentype');
 }
@@ -28,7 +30,8 @@
   font-family: 'RO Sans';
   font-weight: bold;
   font-style: normal;
-  src: url('../../static/webfonts/ROsanswebtextbold.woff') format('woff'),
+  src:
+    url('../../static/webfonts/ROsanswebtextbold.woff') format('woff'),
     url('../../static/webfonts/ROsanswebtextbold.ttf') format('truetype'),
     url('../../static/webfonts/ROsanswebtextbold.eot') format('embedded-opentype');
 }
@@ -56,4 +59,8 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+#__docusaurus {
+  overflow-x: hidden;
 }
