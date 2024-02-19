@@ -1,32 +1,47 @@
-import clsx from 'clsx';
+import { cva, cx, VariantProps } from '@/cva.config';
 
-export type PillVariant = 'warning' | 'info' | 'error' | 'success';
-
-interface Props {
+export interface PillProps extends VariantProps<typeof variants> {
   label: string;
-  disabled?: boolean;
   className?: string;
-  variant?: PillVariant;
 }
 
-const variantMapping: Record<PillVariant, string> = {
-  info: 'text-primary-main bg-primary-lighter',
-  warning: 'text-warning-main bg-warning-lighter',
-  error: 'text-error-main bg-error-lighter',
-  success: 'text-success-main bg-success-lighter',
-};
+const variants = cva({
+  base: 'rounded px-2 py-1 text-base font-bold',
+  variants: {
+    variant: {
+      info: 'bg-primary-lighter text-primary-main',
+      warning: 'bg-warning-lighter text-warning-main',
+      error: 'bg-error-lighter text-error-main',
+      success: 'bg-success-lighter text-success-main',
+    },
+    disabled: {
+      true: 'bg-gray-lighter text-grey-main',
+    },
+  },
+  compoundVariants: [
+    {
+      variant: ['info', 'warning', 'error', 'success'],
+      disabled: true,
+      className: 'bg-gray-lighter text-grey-main',
+    },
+  ],
+  defaultVariants: {
+    variant: 'info',
+    disabled: false,
+  },
+});
 
-export const Pill: React.FC<Props> = ({ disabled, label, className, variant = 'info' }) => {
+export const Pill: React.OverrideAbleComponentFC<'span', PillProps> = ({
+  disabled,
+  label,
+  className,
+  component: Component = 'span',
+  variant = 'info',
+  ...componentProps
+}) => {
   return (
-    <span
-      className={clsx(
-        className,
-        'rounded px-2 py-1 text-base font-bold',
-        !disabled && variantMapping[variant],
-        disabled && 'bg-gray-lighter text-grey-main'
-      )}
-    >
+    <Component className={cx(variants({ variant, disabled, className }))} disabled={disabled} {...componentProps}>
       {label}
-    </span>
+    </Component>
   );
 };

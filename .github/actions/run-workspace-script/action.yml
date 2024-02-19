@@ -8,11 +8,15 @@ runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v3
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 8.9.0
+        run_install: false
     - uses: actions/setup-node@v3
       with:
-        cache: yarn
-        node-version: 18
-    - run: yarn
+        cache: pnpm
+        node-version: 20.11
+    - run: pnpm install
       shell: bash
-    - run: yarn workspace ${{ inputs.workspace }} run ${{ inputs.script }}
+    - run: pnpm --filter=${{ inputs.workspace }} ${{ inputs.script }}
       shell: bash

@@ -1,39 +1,45 @@
-import clsx from 'clsx';
+import { cva, cx, VariantProps } from '@/cva.config';
 
-type ChipVariant = 'outline' | 'filled';
-
-interface Props {
+export interface ChipProps extends VariantProps<typeof variants> {
   label: string;
-  disabled?: boolean;
-  className?: string;
-  variant?: ChipVariant;
-  onClick?: React.DOMAttributes<HTMLButtonElement>['onClick'];
 }
 
-const variantMapping: Record<ChipVariant, string> = {
-  outline: 'text-primary-dark border-primary-dark hover:bg-primary-light focus-visible:bg-primary-light',
-  filled: 'bg-primary-lighter hover:bg-primary-light focus-visible:bg-primary-light border-transparent',
-};
+const variants = cva({
+  base: 'inline-flex h-8 cursor-pointer items-center rounded border px-4 text-base font-bold text-primary-dark outline-2 outline-primary-dark transition-colors focus-visible:outline',
+  variants: {
+    variant: {
+      filled: 'border-transparent bg-primary-lighter hover:bg-primary-light focus-visible:bg-primary-light',
+      outline: 'border-primary-dark text-primary-dark hover:bg-primary-light focus-visible:bg-primary-light',
+    },
+    disabled: {
+      true: 'cursor-default text-grey-main',
+    },
+  },
+  compoundVariants: [
+    {
+      variant: 'filled',
+      disabled: true,
+      className: 'bg-grey-lighter',
+    },
+    {
+      variant: 'outline',
+      disabled: true,
+      className: 'border border-grey-light',
+    },
+  ],
+});
 
-const disabledVariantMapping: Record<ChipVariant, string> = {
-  outline: 'border border-grey-light',
-  filled: 'bg-grey-lighter',
-};
-
-export const Chip: React.FC<Props> = ({ label, variant = 'filled', disabled = false, onClick, className }) => {
+export const Chip: React.OverrideAbleComponentFC<'button', ChipProps> = ({
+  label,
+  className,
+  variant = 'filled',
+  disabled = false,
+  component: Component = 'button',
+  ...componentProps
+}) => {
   return (
-    <button
-      className={clsx(
-        'inline-flex h-8 cursor-pointer items-center rounded border px-4 text-base font-bold outline-2 outline-primary-dark transition-colors focus-visible:outline',
-        !disabled && 'text-primary-dark',
-        !disabled && variantMapping[variant],
-        disabled && 'cursor-default text-grey-main',
-        disabled && disabledVariantMapping[variant],
-        className
-      )}
-      onClick={onClick}
-    >
+    <Component className={cx(variants({ variant, disabled, className }))} {...componentProps}>
       {label}
-    </button>
+    </Component>
   );
 };

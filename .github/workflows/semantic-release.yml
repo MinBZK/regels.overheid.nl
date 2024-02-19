@@ -13,14 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.9.0
+          run_install: true
       - uses: actions/setup-node@v3
         with:
-          cache: yarn
-          node-version: 18
-      - run: yarn
+          cache: pnpm
+          node-version: 20.11
       - uses: changesets/action@v1
         with:
           createGithubReleases: true
-          publish: yarn changeset publish
+          publish: pnpm changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

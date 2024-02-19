@@ -1,21 +1,27 @@
-import clsx from 'clsx';
-import { PropsWithChildren } from 'react';
+import { cx, VariantProps, cva } from '@/cva.config';
 
-interface Props extends PropsWithChildren {
-  bleed?: boolean;
+interface Props extends VariantProps<typeof variants> {
   className?: string;
 }
 
+const variants = cva({
+  base: 'container',
+  variants: {
+    bleed: {
+      true: '',
+      false: 'lg:max-w-4xl xl:max-w-5xl',
+    },
+  },
+  defaultVariants: {
+    bleed: false,
+  },
+});
+
 export const Container: React.OverrideAbleComponentFC<'div', Props> = ({
-  component: Component = 'div',
   bleed,
-  children,
   className,
+  component: Component = 'div',
   ...componentProps
 }) => {
-  return (
-    <Component className={clsx(className, 'container', !bleed && 'xl:max-w-[814px]')} {...componentProps}>
-      {children}
-    </Component>
-  );
+  return <Component className={cx(variants({ bleed, className }))} {...componentProps} />;
 };

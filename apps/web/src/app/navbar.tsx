@@ -29,7 +29,7 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
   const slugIsActivePath = (slug: string) => {
     if (pathName === '/' && slug === 'home') return true;
 
-    return pathName.includes(slug);
+    return pathName.startsWith(`/${slug}`);
   };
 
   return (
@@ -39,7 +39,7 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
           <Link className="relative aspect-[540/190] w-[170px] sm:w-[300px]" href="/">
             <Image src={Logo} alt="regels.overheid.nl logo" />
           </Link>
-          <Button variant="secondary" className="sm:hidden" onClick={() => setIsOpen((state) => !state)}>
+          <Button color="primary-light" className="sm:hidden" onClick={() => setIsOpen((state) => !state)}>
             Menu
           </Button>
         </Container>

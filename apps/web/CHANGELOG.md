@@ -1,5 +1,83 @@
 # web
 
+## 3.14.0
+
+### Minor Changes
+
+- 2a454c5: Added lab item Legal Annotation Tool
+
+### Patch Changes
+
+- 2a454c5: Added docs for lab items Legal Annotation Tool
+
+## 3.13.1
+
+### Patch Changes
+
+- c2a4adc: Downgrade remark-gfm to v3.x.x, v4.x.x was causing an issue on the blog article page where articles containing tables would crash the page.
+- 898109e: Use startsWith instead of includes when resolving active navbar item
+
+## 3.13.0
+
+### Minor Changes
+
+- 6403bb5: External tab navigation for publications
+
+## 3.12.2
+
+### Patch Changes
+
+- 7c51204: Fix all publications showing a 404 page
+
+## 3.12.1
+
+### Patch Changes
+
+- 2439276: Increase font size for paragraph components
+
+## 3.12.0
+
+### Minor Changes
+
+- c75942b: Reworked the following components to integrate [cva](https://beta.cva.style/):
+
+  - typography
+  - container
+  - pill
+  - notification
+  - chip
+  - button
+
+- c75942b: Added stories for the following components:
+
+  - typography
+  - pill
+  - notification
+  - chip
+  - button
+
+### Patch Changes
+
+- 681c44f: Update Apache Jena Fuseki demo URL in lab page
+
+## 3.11.0
+
+### Minor Changes
+
+- 6dbe1e2: Updated colofon info
+
+## 3.10.0
+
+### Minor Changes
+
+- 3a3c381: Enable Apache Jena Fuseki demo in lab page
+
+## 3.9.1
+
+### Patch Changes
+
+- 8b2e6e6: Introduced user check items & updated roadmap 2024 accordingly
+
 ## 3.9.0
 
 ### Minor Changes

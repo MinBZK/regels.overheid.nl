@@ -20,7 +20,7 @@ export const PageNotFound = () => {
           Helaas is dit niet de pagina waarnaar je op zoek was. Ga alsjeblieft door met zoeken binnen de wettelijke
           grenzen.
         </p>
-        <Button component={Link} href="/" variant="primary" startIcon={<IconArrowLeft />}>
+        <Button component={Link} href="/" startIcon={<IconArrowLeft />}>
           Terug naar home
         </Button>
       </div>

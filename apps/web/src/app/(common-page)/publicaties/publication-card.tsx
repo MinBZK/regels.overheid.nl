@@ -84,7 +84,8 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
   return (
     <Wrapper>
       <Card
-        href={url!}
+        href={url}
+        target="_blank"
         component={cardComponentTag(variant)}
         className={clsx(variantStyles.card, 'group flex h-full transition-all duration-150 ease-linear')}
       >

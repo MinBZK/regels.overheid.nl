@@ -3,91 +3,75 @@ title: Development
 description: Getting started - development
 ---
 
-# Getting started - development
+# Getting Started - Development
 
-## Using Docker compose
+There are two primary methods for setting up the development environment, as described below. If you encounter any issues, please [start a new issue](https://github.com/MinBZK/regels.overheid.nl/issues).
 
-The fastest way to get up and running is by using docker. Running `yarn start:docker` will start the project using the `docker-compose` file this configuration also includes the database. If everything goes correctly nothing else will be required to do and you can visit the following urls.
+## Using Docker Compose
 
-- [http://localhost](http://localhost) for the web application
-- [http://localhost/cms](http://localhost/cms) for the CMS (Strapi)
-- [http://localhost/docs](http://localhost/docs) for the documentation (Docsaurus)
+Docker Compose offers a quick and straightforward way to set up your development environment.
 
-The reverse proxy runs on port 80. By default, no other services are exposed to the host directly. See below on how to override this behavior and others.
+### Prerequisites
 
-### Overriding User and Group
+- **Docker and Docker Compose**: Ensure both Docker and Docker Compose are installed on your system. For installation instructions, visit the [official Docker documentation](https://docs.docker.com/get-docker/).
 
-On Linux / Mac, you may need to override the user and group that the containers run as. To do this, copy `.env.example` to `.env` if you haven't already, and modify `UID` and `GID` respectively to your user and/or group ID. You can find these by running `id` in your terminal.
+### Starting the Project
 
-### Overriding Docker
+Execute `docker compose up -d --build` in the project's root directory to launch all required containers, including a reverse proxy. Allow about 30 seconds for full initialization.
 
-If you want to override the Docker configuration, you can create a `docker-compose.override.yml` file. This file will be used by docker-compose to override the default configuration. The syntax and options are the same as the default `docker-compose.yml` file. More information can be found in the [docker-compose documentation](https://docs.docker.com/compose/extends/).
+Accessible URLs upon setup:
 
-### Doppler usage
+- **[http://localhost](http://localhost)** - Web application.
+- **[http://localhost/cms](http://localhost/cms)** - CMS for content management.
+- **[http://localhost/docs](http://localhost/docs)** - Documentation.
+- **[http://localhost/docs-beta](http://localhost/docs-beta)** - Beta documentation.
+- **[http://localhost/storybook](http://localhost/storybook)** - Storybook environment.
 
-To use Doppler, follow the instructions above on overriding Docker. Add your desired environment variables, for example:
+### Overriding User and Group IDs
 
-```yaml
-cms:
-  environment:
-    - MY_SECRET
-```
+For Linux/Mac, adjust the user and group IDs by duplicating `.env.example` to `.env` and modifying `UID` and `GID` with your IDs (find these with `id` command).
 
-Then run docker-compose and Doppler
+### Customizing Docker Configuration
 
-```bash
-doppler run -- docker-compose up -d
-```
+Create a `docker-compose.override.yml` for Docker configurations. Refer to [docker-compose documentation](https://docs.docker.com/compose/extends/) for syntax and options.
 
-### Error(s)?
+## Running Locally
 
-Where `yarn start:docker` produces errors, an alternative is this route.
+Built using Turbo repo and pnpm.
 
-First run `COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose up --build` to build and deploy the project and attach to the ouput. This ensures that you can see the logging in the terminal and that the containers are not running by default.
+### Prerequisites
 
-## Running locally
+- **Node.js**: Preferably version `20.x.x` minimally version `18.x.x`. Install via [Node.js website](https://nodejs.org/en) or use [Node Version Manager](https://github.com/nvm-sh/nvm).
+- **pnpm**: Follow the [pnpm installation guide](https://pnpm.io/installation).
+- **PostgreSQL Database Instance**: Install locally or use cloud services. For Docker users:
+  ```shell
+  docker run -d \
+    --name postgres-regels.overheid.nl \
+    -e POSTGRES_PASSWORD=postgres \
+    -e POSTGRES_USER=postgres \
+    -e POSTGRES_DB=strapi \
+    -p 5432:5432 \
+  postgres
+  ```
 
-Keep in mind that if you wish to run the application without docker you will have to provide your own PostgreSQL database.
+### Setting up Environment Variables
 
-Start out by creating `apps/cms/.env` as shown below and fill it with your information.
+Create two `.env` files from `.env.example` for:
 
-```shell
-ADMIN_JWT_SECRET=
-API_TOKEN_SALT=
-APP_KEYS=
-DATABASE_HOST=
-DATABASE_PORT=
-DATABASE_NAME=
-DATABASE_USERNAME=
-DATABASE_PASSWORD=
-DATABASE_SSL=
-JWT_SECRET=
-```
+- **cms**: `apps/cms/.env.example`
+- **web**: `apps/web/.env.example`
 
-After doing you can run the following command to start all the development servers.
+### Starting the Project
 
-```shell
-pnpm dev
-```
+Ensure all dependencies are installed with `pnpm i`. Then, start the application in dev mode using `pnpm dev`, which leverages Turbo repo to start each app in development mode.
 
-This will start all the development servers.
+Accessible URLs upon setup:
 
-### Granularity
+- **[http://localhost:9000](http://localhost:9000)** - Web application.
+- **[http://localhost:9001](http://localhost:9001)** - CMS for content management.
+- **[http://localhost:9002/docs/](http://localhost:9002/docs/)** - Documentation.
+- **[http://localhost:9003/docs-beta/](http://localhost:9003/docs-beta/)** - Beta documentation.
 
-If you wish to run the application seperarly you can do so by running `pnpm dev:cms`, `pnpm dev:web` and `pnpm dev:docs` respectively.
+Using this method Storybook will not be started if you wish to start it run `pnpm --filter=web storybook` in a new terminal window.
 
-### Using nvm
-
-In order to get set up right away with the right node version a `.nvmrc` file is present in the project root to make use of it first run `nvm use`. For installation instructions for nvm see [nvm-sh/nvm](https://github.com/nvm-sh/nvm)
-
-## Frontend
-
-The frontend is being developed using [NextJs](https://nextjs.org/docs/getting-started) and [MDX](https://mdxjs.com/docs/) is enabled.
-
-## Backend/CMS
-
-While there is no real dedicated backend [Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/quick-start.html#_1-install-strapi-and-create-a-new-project) is used to develop the API and allow for content management.
-
-## Docs
-
-Docs are being maintained using [Docusaurus](https://docusaurus.io/docs)
+For further documentation please refer to the [Turborepo](https://turbo.build/repo/docs) and [pnpm workspaces](https://pnpm.io/workspaces) docs.

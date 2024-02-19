@@ -1,3 +1,4 @@
+import { cx, cva, VariantProps } from '@/cva.config';
 import {
   IconAlertTriangle,
   IconCircleCheck,
@@ -5,52 +6,58 @@ import {
   IconInfoCircle,
   TablerIconsProps,
 } from '@tabler/icons-react';
-import clsx from 'clsx';
+import { PropsWithChildren } from 'react';
 
-type Severity = 'info' | 'success' | 'warning' | 'error';
-
-interface NotificationProps extends React.PropsWithChildren {
-  severity: Severity;
+export interface NotificationProps extends VariantProps<typeof variants>, PropsWithChildren {
   className?: string;
 }
 
-interface IconMappingProps {
-  severity: Severity;
-  className: string;
-}
-
-const notificationVariantsMapping: Record<Severity, string> = {
-  error: 'bg-error-lighter border-error-light',
-  info: 'bg-primary-lighter border-primary-light',
-  success: 'bg-success-lighter border-success-light',
-  warning: 'bg-warning-lighter border-warning-light',
-};
-
-const iconVariantsMapping: Record<Severity, string> = {
-  error: 'text-error-dark',
-  info: 'text-primary-dark',
-  success: 'text-success-dark',
-  warning: 'text-warning-dark',
-};
-
-const iconMapping: Record<Severity, React.FC<TablerIconsProps>> = {
+const iconMapping: Record<Exclude<VariantProps<typeof variants>['severity'], undefined>, React.FC<TablerIconsProps>> = {
   info: IconInfoCircle,
   error: IconExclamationCircle,
   success: IconCircleCheck,
   warning: IconAlertTriangle,
 };
 
-const IconMapping: React.FC<IconMappingProps> = ({ severity, className }) => {
+const variants = cva({
+  base: 'flex border-2 p-6 text-base',
+  variants: {
+    severity: {
+      error: 'border-error-light bg-error-lighter',
+      info: 'border-primary-light bg-primary-lighter',
+      success: 'border-success-light bg-success-lighter',
+      warning: 'border-warning-light bg-warning-lighter',
+    },
+  },
+});
+
+const variantIconVariant = cva({
+  base: 'w-5 text-xs',
+  variants: {
+    severity: {
+      error: 'text-error-dark',
+      info: 'text-primary-dark',
+      success: 'text-success-dark',
+      warning: 'text-warning-dark',
+    },
+  },
+});
+
+export const Notification: React.OverrideAbleComponentFC<'div', NotificationProps> = ({
+  children,
+  className,
+  severity = 'info',
+  component: Component = 'div',
+  ...componentProps
+}) => {
   const Icon = iconMapping[severity];
 
-  return <Icon size={16} className={className} />;
+  return (
+    <Component className={cx(variants({ severity, className }))} {...componentProps}>
+      <div className="w-8 shrink-0">
+        <Icon className={cx(variantIconVariant({ severity }))} />
+      </div>
+      <div>{children}</div>
+    </Component>
+  );
 };
-
-export const Notification: React.FC<NotificationProps> = ({ severity = 'info', children, className }) => (
-  <div className={clsx(className, notificationVariantsMapping[severity], '$ flex border-2 p-6 text-base')}>
-    <div className="w-8 shrink-0">
-      <IconMapping severity={severity} className={`${iconVariantsMapping[severity]} mt-1 text-xs`} />
-    </div>
-    <div>{children}</div>
-  </div>
-);

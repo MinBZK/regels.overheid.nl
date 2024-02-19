@@ -1,5 +1,23 @@
 # docs
 
+## 3.5.1
+
+### Patch Changes
+
+- b39adeb: Fix broken link WA method
+
+## 3.5.0
+
+### Minor Changes
+
+- 2a454c5: Added docs for lab items Legal Annotation Tool
+
+## 3.4.0
+
+### Minor Changes
+
+- ce21ca9: Descriptions legal classes & contact info added
+
 ## 3.3.0
 
 ### Minor Changes

@@ -1,4 +1,0 @@
-packageExtensions:
-  eslint-config-next@*:
-    dependencies:
-      next: '*'

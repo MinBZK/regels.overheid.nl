@@ -1,34 +1,41 @@
 # ==== Base ====
-FROM node:18-alpine3.18 as base
+FROM node:20.11-alpine as root
 
-RUN apk update && \
-    apk add --no-cache libc6-compat git openssl1.1-compat&& \
-    yarn global add turbo
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
 
-    
-# ==== Prune project ====
-FROM base as pruned
+RUN corepack enable
+RUN corepack prepare pnpm@8 --activate 
 
-WORKDIR /project
+RUN apk add --no-cache libc6-compat
+RUN apk update
+
+RUN pnpm install -g turbo
+
+# ==== Builder ====
+FROM root as builder
+
+WORKDIR /app
 
 COPY . .
 
-RUN turbo prune --scope=web --docker
+RUN turbo prune web --docker
 
-# ==== Install ====
-FROM base AS install
+# ==== Installer ====
+FROM root as installer
 
-WORKDIR /project
+WORKDIR /app
 
-COPY --from=pruned /project/out/json/ .
-COPY --from=pruned /project/out/yarn.lock ./yarn.lock
+COPY .gitignore .gitignore
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 
-RUN yarn install
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-# ==== Dev ====
-FROM base AS dev
+# ==== Base ====
+FROM root AS base
 
-WORKDIR /project
+WORKDIR /app
 
 ARG UID=1001
 ARG GID=1001
@@ -36,36 +43,35 @@ ARG GID=1001
 RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
     (getent passwd ${UID} || adduser --system --uid ${UID} app)
 
-COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
-COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
-COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
-COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/web/node_modules
+COPY --from=builder --chown=${UID}:${GID} /app/out/full .
+COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
+COPY --from=installer --chown=${UID}:${GID} /app/apps/web/node_modules ./apps/web/node_modules
 
 USER ${UID}
 
+# ==== Dev ====
+FROM base as dev
+
+WORKDIR /app
+
 EXPOSE 9000
 
-ENTRYPOINT yarn dev
+ENTRYPOINT pnpm dev
+
+# ==== Storybook (dev) ====
+FROM base AS storybook-dev
+
+WORKDIR /app
+
+EXPOSE 6006
+
+ENTRYPOINT pnpm --filter=web storybook
 
 #  ==== Prod ====
 FROM base AS prod
 
-WORKDIR /project
-
-ARG UID=1001
-ARG GID=1001
-
-RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
-    (getent passwd ${UID} || adduser --system --uid ${UID} app)
-
-COPY --from=pruned --chown=${UID}:${GID} /project/out/yarn.lock ./yarn.lock
-COPY --from=pruned --chown=${UID}:${GID} /project/out/full .
-COPY --from=install --chown=${UID}:${GID} /project/node_modules ./node_modules
-COPY --from=install --chown=${UID}:${GID} /project/apps/web/node_modules ./apps/web/node_modules
-
-EXPOSE 9000
-
-USER ${UID}
+WORKDIR /app
 
 ARG DATABASE_URL
 ARG CMS_URL
@@ -81,8 +87,11 @@ ENV NEXT_PUBLIC_CMS_URL ${NEXT_PUBLIC_CMS_URL}
 
 ENV WEB_URL ${WEB_URL}
 ENV NEXT_WEB_URL ${NEXT_WEB_URL}
+
 ENV DATABASE_CA_CERT ${DATABASE_CA_CERT}
 
-RUN yarn build
+EXPOSE 9000
 
-ENTRYPOINT yarn start
+RUN pnpm build
+
+ENTRYPOINT pnpm start
