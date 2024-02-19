@@ -1,5 +1,8 @@
 name: regels.overheid.nl PublicCode Workflow
 
+permissions:
+  contents: write
+  
 on:
   push:
     branches:
@@ -10,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Update publiccode.yaml
-        uses: OpenCatalogi/publiccode-action@1.3.2
+        uses: OpenCatalogi/publiccode-action@latest
