@@ -3,8 +3,11 @@ import Layout from '@theme/Layout';
 import styles from './home.module.css';
 import CheckDesign from './check-design.svg';
 import UserTests from './user-tests.svg';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Home() {
+  const { siteConfig } = useDocusaurusContext();
+
   return (
     <Layout>
       <div className={styles.hero}>
@@ -25,7 +28,7 @@ export default function Home() {
           </p>
           <CheckDesign className={styles.cardImage} />
         </a>
-        <a className={styles.card} href="/intro">
+        <a className={styles.card} href={`${siteConfig.baseUrl}intro`}>
           <h2 className={styles.cardTitle}>Ga naar de gebruikerstest</h2>
           <p className={styles.cardText}>
             Jouw input is van onschatbare waarde voor ons om onze producten te optimaliseren en te laten aansluiten bij
