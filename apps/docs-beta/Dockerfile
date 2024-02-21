@@ -66,4 +66,10 @@ WORKDIR /app
 
 EXPOSE 9003
 
+ARG BASE_URL=/docs-beta/
+
+ENV BASE_URL=${BASE_URL}
+
+RUN pnpm run build
+
 ENTRYPOINT pnpm start
