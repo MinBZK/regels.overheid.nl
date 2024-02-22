@@ -64,3 +64,11 @@
 #__docusaurus {
   overflow-x: hidden;
 }
+
+.footer {
+  background-color: #e5f1f9;
+}
+
+.footer__copyright {
+  display: none;
+}

@@ -88,35 +88,7 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Documentation',
-                to: '/docs',
-              },
-            ],
-          },
-          {
-            title: 'Docs (Beta)',
-            items: [
-              {
-                label: 'Documentation (Beta)',
-                to: '/docs-beta',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/MinBZK/regels.overheid.nl',
-              },
-            ],
-          },
-        ],
+        links: [],
         copyright: `Copyright © ${new Date().getFullYear()} regels.overheid.nl`,
       },
       prism: {
