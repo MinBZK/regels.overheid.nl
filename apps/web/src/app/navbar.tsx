@@ -7,8 +7,9 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import Logo from './logo.png';
+import { VariantProps, cva, cx } from '@/cva.config';
 
 export interface Page {
   id: number;
@@ -20,17 +21,85 @@ interface Props {
   pages: Awaited<ReturnType<typeof getNavbarPages>>;
 }
 
+const navbarItemVariants = cva({
+  base: 'flex px-4 text-white',
+  variants: {
+    variant: {
+      desktop: 'h-16 items-center  hover:bg-primary-light hover:text-primary-main',
+      mobile: 'h-[70px] items-center  text-white',
+    },
+    isActive: {
+      true: 'bg-primary-light text-black',
+    },
+  },
+  compoundVariants: [{ variant: 'mobile', isActive: true, class: 'border border-black bg-primary-light text-black' }],
+});
+
+interface NavbarItemProps extends Omit<VariantProps<typeof navbarItemVariants>, 'isActive'> {
+  slug: string | null;
+  name: string | null;
+  className?: string;
+}
+
+const NavbarItem: React.FC<NavbarItemProps> = ({ slug: _slug, name, variant, className }) => {
+  const pathName = usePathname();
+
+  if (!_slug || !name) return null;
+
+  const Component = _slug.startsWith('http') ? 'a' : Link;
+  const Wrapper = variant === 'desktop' ? 'li' : Fragment;
+
+  const isActive = () => {
+    if (pathName === '/' && _slug === 'home') return true;
+
+    return pathName.startsWith(`/${_slug}`);
+  };
+
+  const slug = () => {
+    if (_slug === 'home') return '/';
+
+    if (_slug.startsWith('/') || _slug.startsWith('http')) return _slug;
+
+    return `/${_slug}`;
+  };
+
+  return (
+    <Wrapper className={className}>
+      <Component href={slug()} className={cx(navbarItemVariants({ variant, isActive: isActive() }))}>
+        {name}
+      </Component>
+    </Wrapper>
+  );
+};
+
+const betaDocsVariants = cva({
+  variants: {
+    variant: {
+      mobile: '',
+      desktop: 'absolute right-0 top-0',
+    },
+  },
+});
+
+interface BetaDocsItemProps extends VariantProps<typeof betaDocsVariants> {}
+
+const BetaDocsItem: React.FC<BetaDocsItemProps> = ({ variant }) => {
+  return (
+    <a
+      target="_blank"
+      href="/docs-beta"
+      className={clsx(navbarItemVariants({ variant }), betaDocsVariants({ variant }))}
+    >
+      Beta
+    </a>
+  );
+};
+
 export const Navbar: React.FC<Props> = ({ pages }) => {
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => setIsOpen(false), [pathName]);
-
-  const slugIsActivePath = (slug: string) => {
-    if (pathName === '/' && slug === 'home') return true;
-
-    return pathName.startsWith(`/${slug}`);
-  };
 
   return (
     <header role="banner" className="border-b-8 border-primary-light">
@@ -44,45 +113,22 @@ export const Navbar: React.FC<Props> = ({ pages }) => {
           </Button>
         </Container>
         <div className="hidden bg-primary-main sm:block">
-          <Container component="ul" className="flex h-16 items-center">
-            {pages.map(
-              ({ id, slug, name }) =>
-                slug &&
-                name && (
-                  <li key={id}>
-                    <Link
-                      className={clsx(
-                        slugIsActivePath(slug) && 'bg-primary-light !text-black',
-                        'flex h-16 items-center px-4 text-white hover:bg-primary-light hover:text-primary-main'
-                      )}
-                      href={slug === 'home' ? '/' : `/${slug}`}
-                    >
-                      {name}
-                    </Link>
-                  </li>
-                )
-            )}
+          <Container bleed className="relative">
+            <Container component="ul" className="flex h-16 items-center">
+              {pages.map(({ id, slug, name }) => (
+                <NavbarItem key={id} slug={slug} name={name} variant="desktop" />
+              ))}
+            </Container>
+            <BetaDocsItem variant="desktop" />
           </Container>
         </div>
         {isOpen && (
           <div className="fixed bottom-0 left-0 right-0 top-24 z-10 mt-2 bg-primary-main sm:hidden">
             <Container className="flex flex-col gap-y-2 py-3">
-              {pages.map(
-                ({ id, slug, name }) =>
-                  name &&
-                  slug && (
-                    <Link
-                      key={id}
-                      href={slug === 'home' ? '/' : `/${slug}`}
-                      className={clsx(
-                        slugIsActivePath(slug) && 'border border-black bg-primary-light text-black',
-                        'flex h-[70px] items-center px-4 text-white'
-                      )}
-                    >
-                      {name}
-                    </Link>
-                  )
-              )}
+              {pages.map(({ id, slug, name }) => (
+                <NavbarItem key={id} slug={slug} name={name} variant="mobile" />
+              ))}
+              <NavbarItem slug="/docs-beta" name="Beta" variant="mobile" />
             </Container>
           </div>
         )}

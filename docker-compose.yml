@@ -172,5 +172,16 @@ services:
       - '80:80'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+  adminer: 
+    container_name: regels_adminer
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    environment:
+      - VIRTUAL_HOST=localhost
+      - VIRTUAL_PATH=/adminer/
+      - VIRTUAL_DEST=/
+      - VIRTUAL_PORT=8080
 volumes:
   regels-pgdata:

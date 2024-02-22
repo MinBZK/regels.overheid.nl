@@ -5,7 +5,7 @@ interface Props extends VariantProps<typeof variants> {
 }
 
 const variants = cva({
-  base: 'container',
+  base: 'container px-2',
   variants: {
     bleed: {
       true: '',
