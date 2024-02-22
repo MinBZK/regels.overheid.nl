@@ -1,5 +1,11 @@
 # web
 
+## 3.15.0
+
+### Minor Changes
+
+- 529cfb2: Added beta to navbar
+
 ## 3.14.0
 
 ### Minor Changes
