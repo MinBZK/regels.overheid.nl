@@ -85,7 +85,11 @@ interface BetaDocsItemProps extends VariantProps<typeof betaDocsVariants> {}
 
 const BetaDocsItem: React.FC<BetaDocsItemProps> = ({ variant }) => {
   return (
-    <a href="/docs-beta" className={clsx(navbarItemVariants({ variant }), betaDocsVariants({ variant }))}>
+    <a
+      target="_blank"
+      href="/docs-beta"
+      className={clsx(navbarItemVariants({ variant }), betaDocsVariants({ variant }))}
+    >
       Beta
     </a>
   );
