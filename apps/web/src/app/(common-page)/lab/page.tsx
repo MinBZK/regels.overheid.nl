@@ -14,6 +14,7 @@ export default async function LabPage() {
       </Container>
       <Container bleed className="mt-20 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3">
         <LabItemCard
+          method="Flint"
           title="Norm Editor"
           icon="icon-eye-edit"
           licenseVariant="Apache License 2.0"

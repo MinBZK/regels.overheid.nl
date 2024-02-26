@@ -1,9 +1,11 @@
 'use client';
 
+import { methodsTree } from '@/common/methods-tree';
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
 import { Link } from '@/components/link';
 import { Typography } from '@/components/typography';
+import slugify from '@sindresorhus/slugify';
 import {
   IconBrandGithub,
   IconEyeEdit,
@@ -16,7 +18,8 @@ import {
   TablerIconsProps,
 } from '@tabler/icons-react';
 import clsx from 'clsx';
-import React, { PropsWithChildren, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+import React, { PropsWithChildren, useLayoutEffect, useState } from 'react';
 
 const iconMap = {
   'icon-eye-edit': IconEyeEdit,
@@ -35,6 +38,7 @@ interface DefaultLabItemCard {
   codeOfConduct?: string;
   licenseVariant?: string;
   icon: keyof typeof iconMap;
+  method: keyof typeof methodsTree;
 }
 
 interface ComingSoonLabItemCard {
@@ -42,6 +46,7 @@ interface ComingSoonLabItemCard {
   description: string;
   variant: 'coming-soon';
   icon: keyof typeof iconMap;
+  method: keyof typeof methodsTree;
 }
 
 type LabItemCardProps = DefaultLabItemCard | ComingSoonLabItemCard;
@@ -118,15 +123,20 @@ const Element: React.FC<ElementProps> = ({ children, isClone, isFlipped, title, 
 ``;
 
 export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
-  const { variant, title, description, icon } = props;
+  const { variant, title, description, icon, method } = props;
+  const pathname = usePathname();
 
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(window.location.hash === `#${slugify(method || '')}`);
+
+  useLayoutEffect(() => {
+    if (window.location.hash === `#${slugify(method || '')}` && !isFlipped) setIsFlipped(true);
+  }, [isFlipped, method]);
 
   const Icon = iconMap[icon];
 
   if (variant === 'coming-soon')
     return (
-      <Card className="flex flex-col items-center  px-12 py-6">
+      <Card id={slugify(method || '')} className="flex flex-col items-center  px-12 py-6">
         <div className="mb-4 flex h-[150px] w-[150px] shrink-0 items-center justify-center rounded-full border text-2xl shadow-sm">
           <Icon className="h-16 w-16" />
         </div>
@@ -140,10 +150,13 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
       </Card>
     );
 
-  const handleFlip = () => setIsFlipped(!isFlipped);
+  const handleFlip = () => {
+    window.history.replaceState({}, '', pathname);
+    setIsFlipped(!isFlipped);
+  };
 
   return (
-    <div className="relative">
+    <div id={slugify(method || '', { lowercase: true })} className="relative">
       <Element isClone Icon={Icon} description={description} title={title} />
       <Element Icon={Icon} description={description} title={title} isFlipped={isFlipped} onClick={handleFlip}>
         <CardFace className="flex flex-col rounded-lg bg-primary-dark text-white">
