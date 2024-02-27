@@ -65,7 +65,11 @@ export default async function BlogArticlePage(props: Props) {
               <Image
                 fill
                 className="object-cover"
-                src={resolveCmsImage({ ext: blogArticle.cover.ext, hash: blogArticle.cover.hash, width: 1235 })}
+                src={resolveCmsImage({
+                  ext: blogArticle.cover.ext,
+                  hash: blogArticle.cover.hash,
+                  width: 1235,
+                }).toString()}
                 alt={blogArticle.cover.alt || blogArticle?.title}
               />
             )}
