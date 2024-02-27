@@ -97,12 +97,14 @@ export async function generateMetadata({ params }: { params: { slug: string[] } 
   function images() {
     if (!blogArticle.cover.ext || !blogArticle.cover.hash || !blogArticle.cover.mime) return;
 
-    const url = resolveCmsImage({
+    const rootURL = resolveCmsImage({
       ext: blogArticle.cover.ext,
       hash: blogArticle.cover.hash,
       width: 1200,
       height: 630,
     });
+
+    const url = new URL(rootURL.pathname + rootURL.search, 'https://regels.overheid.nl').toString();
 
     return {
       url,
