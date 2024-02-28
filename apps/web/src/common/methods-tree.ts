@@ -22,6 +22,6 @@ export const methodsTree = {
     color: 'info',
     demo: '/lab/legal-annotation-tool',
     docs: '/docs/methods/WETSANALYSE',
-    publication: 'https://diederikd.github.io/wetstaal_1_documentatie/'
+    publication: 'https://diederikd.github.io/wetstaal_1_documentatie/',
   },
 } satisfies Record<string, MethodTree>;
