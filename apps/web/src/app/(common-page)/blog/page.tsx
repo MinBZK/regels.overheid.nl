@@ -26,7 +26,9 @@ export default async function Blog() {
                 date={publishedAt}
                 category={category}
                 coverUrl={
-                  cover.ext && cover.hash ? resolveCmsImage({ ext: cover.ext, hash: cover.hash, width: 720 }) : null
+                  cover.ext && cover.hash
+                    ? resolveCmsImage({ ext: cover.ext, hash: cover.hash, width: 720 }).toString()
+                    : null
                 }
               />
             )

@@ -6,7 +6,7 @@ interface Options {
 }
 
 export function resolveCmsImage({ ext, hash, height, width }: Options) {
-  const publicURL = process.env.WEB_URL || process.env.NEXT_WEB_URL;
+  const publicURL = process.env.WEB_URL || process.env.NEXT_PUBLIC_WEB_URL;
 
   const url = new URL(`/media/cms/${hash}${ext}`, publicURL);
 
@@ -14,5 +14,5 @@ export function resolveCmsImage({ ext, hash, height, width }: Options) {
 
   if (height) url.searchParams.set('h', height.toString());
 
-  return url.toString();
+  return url;
 }
