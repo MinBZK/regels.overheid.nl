@@ -11,7 +11,7 @@ const variants = cva({
   base: 'flex gap-x-6',
   variants: {
     variant: {
-      Flint: 'border-red-500 text-red-500',
+      FLINT: 'border-red-500 text-red-500',
       'De LegitiMaat': '',
     } satisfies Record<keyof typeof methodsTree, string>,
     color: {
