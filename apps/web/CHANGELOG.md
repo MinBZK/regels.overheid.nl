@@ -1,5 +1,13 @@
 # web
 
+## 3.15.1
+
+### Patch Changes
+
+- 9db552f: Fixed not being able to share blog articles
+- 64b5087: Fixed social image not showing on blog article page
+- 26a5b0a: Fixed blog article page reporting missing page
+
 ## 3.15.0
 
 ### Minor Changes
