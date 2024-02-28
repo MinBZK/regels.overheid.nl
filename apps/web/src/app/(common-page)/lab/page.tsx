@@ -14,7 +14,7 @@ export default async function LabPage() {
       </Container>
       <Container bleed className="mt-20 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3">
         <LabItemCard
-          method="Flint"
+          method="FLINT"
           title="Norm Editor"
           icon="icon-eye-edit"
           licenseVariant="Apache License 2.0"
@@ -24,6 +24,7 @@ export default async function LabPage() {
           description="Norm Editor is een applicatie, gebouwd met behulp van webgebaseerde technologieën, waarmee een gebruiker op een gebruiksvriendelijke en interactieve manier interpretaties van normen in FLINT kan creëren."
         />
         <LabItemCard
+          method="Wetsanalyse"
           title="Legal Annotation Tool"
           icon="icon-eye-edit"
           licenseVariant="EU PL 1.2 license"

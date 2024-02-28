@@ -13,9 +13,14 @@ export const methodsTree = {
     docs: '/docs/methods/LEGITIMAAT',
     publication: '/publicaties/legitimaat',
   },
-  Flint: {
+  FLINT: {
     color: 'info',
     demo: '/lab/interpretation-editor/',
     docs: '/docs/methods/flint/INTRODUCTIE',
+  },
+  Wetsanalyse: {
+    color: 'info',
+    demo: '/lab/legal-annotation-tool',
+    docs: '/docs/methods/WETSANALYSE',
   },
 } satisfies Record<string, MethodTree>;
