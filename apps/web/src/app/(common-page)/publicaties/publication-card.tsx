@@ -102,33 +102,31 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
   const Wrapper = wrapperComponentTag(variant);
 
   return (
-    <Wrapper>
-      <Card id={method && slugify(method, { lowercase: true })} className="flex h-full">
-        <div className="flex flex-col items-start gap-y-2">
-          <div className="flex w-full items-center justify-between">
-            <h3 className={clsx('text-base font-bold', variantStyles.title)}>{title}</h3>
-            {variant !== 'unavailable' && (
-              <Link component="a" target="_blank" href={url} className="flex gap-x-2">
-                Bekijk publicatie
-                <IconExternalLink />
-              </Link>
-            )}
-          </div>
-          <p className={clsx('mb-2 text-base text-grey-dark', variantStyles.description)}>
-            {variant === 'unavailable'
-              ? 'Binnenkort zal er een publicatie verschijnen op deze kaart, echter is deze momenteel nog in ontwikkeling.'
-              : description}
-          </p>
-          <div className="mt-auto flex gap-x-6">
-            <Pill
-              label={tag || 'Binnenkort beschikbaar'}
-              variant={variant === 'wip' ? 'warning' : 'info'}
-              className={cx(variant === 'unavailable' && 'bg-gray-lighter text-grey-main')}
-            />
-            {method && <MethodNavigation hide="publication" variant={method} />}
-          </div>
+    <Card component="article" id={method && slugify(method, { lowercase: true })} className="flex h-full">
+      <div className="flex w-full flex-col items-start gap-y-2">
+        <div className="flex w-full items-center justify-between">
+          <h3 className={clsx('text-base font-bold', variantStyles.title)}>{title}</h3>
+          {variant !== 'unavailable' && (
+            <Link component="a" target="_blank" href={url} className="flex gap-x-2">
+              Bekijk publicatie
+              <IconExternalLink />
+            </Link>
+          )}
         </div>
-      </Card>
-    </Wrapper>
+        <p className={clsx('mb-2 text-base text-grey-dark', variantStyles.description)}>
+          {variant === 'unavailable'
+            ? 'Binnenkort zal er een publicatie verschijnen op deze kaart, echter is deze momenteel nog in ontwikkeling.'
+            : description}
+        </p>
+        <div className="mt-auto flex gap-x-6">
+          <Pill
+            label={tag || 'Binnenkort beschikbaar'}
+            variant={variant === 'wip' ? 'warning' : 'info'}
+            className={cx(variant === 'unavailable' && 'bg-gray-lighter text-grey-main')}
+          />
+          {method && <MethodNavigation hide="publication" variant={method} />}
+        </div>
+      </div>
+    </Card>
   );
 };

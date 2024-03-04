@@ -5,15 +5,9 @@ import { IconBook2, IconFileTypeDoc, IconMicroscope, IconPlayerPlay } from '@tab
 import NextLink from 'next/link';
 import { HTMLProps } from 'react';
 
-const foo: Required<MethodTree['color']> = undefined;
-
 const variants = cva({
   base: 'flex gap-x-6',
   variants: {
-    variant: {
-      FLINT: 'border-red-500 text-red-500',
-      'De LegitiMaat': '',
-    } satisfies Record<keyof typeof methodsTree, string>,
     color: {
       error: 'border-error-main text-error-main',
       info: 'border-primary-main text-primary-main',
@@ -24,7 +18,8 @@ const variants = cva({
 });
 
 interface MethodNavigationProps extends VariantProps<typeof variants> {
-  hide: keyof MethodTree;
+  hide?: keyof MethodTree;
+  variant: keyof typeof methodsTree;
 }
 
 interface LinkProps extends HTMLProps<HTMLAnchorElement> {}
@@ -34,9 +29,12 @@ const Link: React.OverrideAbleComponentFC<'a', LinkProps> = ({ component: Compon
 );
 
 export const MethodNavigation: React.FC<MethodNavigationProps> = ({ variant, hide }) => {
-  if (!variant || !methodsTree[variant]) return null;
+  const methodKey =
+    (Object.keys(methodsTree).find((key) => key.toLowerCase() === variant.toLowerCase()) as typeof variant) || null;
 
-  const methodTree = methodsTree[variant] as MethodTree;
+  if (!methodKey) return null;
+
+  const methodTree = methodsTree[methodKey] as MethodTree;
 
   const hasItemsToShow = Object.keys(methodTree).filter((key) => ![hide, 'color'].includes(key)).length > 0;
 
@@ -45,7 +43,7 @@ export const MethodNavigation: React.FC<MethodNavigationProps> = ({ variant, hid
   const canShowItem = (item: keyof MethodTree) => item !== hide && item in methodTree;
 
   return (
-    <div className={cx(variants({ variant, color: methodTree.color }))}>
+    <div className={cx(variants({ color: methodTree.color }))}>
       {canShowItem('docs') && (
         <Link href={methodTree.docs}>
           <IconFileTypeDoc />

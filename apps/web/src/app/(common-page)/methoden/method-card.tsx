@@ -47,8 +47,8 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
 
   return (
     <Card
-      id={slugify(title, { lowercase: true })}
       component="article"
+      id={slugify(title, { lowercase: true })}
       className={`flex gap-x-3 overflow-hidden lg:h-[570px] xl:flex-col ${clsx(className)}`}
     >
       <figure className="-my-4 -ml-3 hidden w-[320px]  shrink-0 items-center justify-center bg-primary-main lg:flex xl:-mx-3 xl:mb-4 xl:h-[200px] xl:w-auto">
@@ -57,7 +57,7 @@ export const MethodCard: React.FC<Props> = ({ title, href, icon, description, da
       <div className="flex flex-1 flex-col items-start gap-y-4 lg:overflow-hidden">
         <div className="flex items-center gap-x-6">
           {tag && <Pill label={tag} variant={chipVariantMap[tag]} className="mt-0 capitalize" />}
-          <MethodNavigation variant={title} />
+          <MethodNavigation variant={title as any} />
         </div>
         <h3 className="text-xl font-bold">{title}</h3>
         <p className="text-base text-grey-dark lg:line-clamp-[7] lg:overflow-hidden">{description}</p>

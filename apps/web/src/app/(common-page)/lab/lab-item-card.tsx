@@ -38,7 +38,7 @@ interface DefaultLabItemCard {
   codeOfConduct?: string;
   licenseVariant?: string;
   icon: keyof typeof iconMap;
-  method: keyof typeof methodsTree;
+  method?: keyof typeof methodsTree;
 }
 
 interface ComingSoonLabItemCard {
@@ -46,7 +46,7 @@ interface ComingSoonLabItemCard {
   description: string;
   variant: 'coming-soon';
   icon: keyof typeof iconMap;
-  method: keyof typeof methodsTree;
+  method?: keyof typeof methodsTree;
 }
 
 type LabItemCardProps = DefaultLabItemCard | ComingSoonLabItemCard;
@@ -124,9 +124,9 @@ const Element: React.FC<ElementProps> = ({ children, isClone, isFlipped, title, 
 
 export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
   const { variant, title, description, icon, method } = props;
-  const pathname = usePathname();
 
-  const [isFlipped, setIsFlipped] = useState(window.location.hash === `#${slugify(method || '')}`);
+  const pathname = usePathname();
+  const [isFlipped, setIsFlipped] = useState(false);
 
   useLayoutEffect(() => {
     if (window.location.hash === `#${slugify(method || '')}` && !isFlipped) setIsFlipped(true);
@@ -136,7 +136,7 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
 
   if (variant === 'coming-soon')
     return (
-      <Card id={slugify(method || '')} className="flex flex-col items-center  px-12 py-6">
+      <Card className="flex flex-col items-center px-12 py-6">
         <div className="mb-4 flex h-[150px] w-[150px] shrink-0 items-center justify-center rounded-full border text-2xl shadow-sm">
           <Icon className="h-16 w-16" />
         </div>
@@ -156,7 +156,7 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
   };
 
   return (
-    <div id={slugify(method || '', { lowercase: true })} className="relative">
+    <div id={method && slugify(method, { lowercase: true })} className="relative">
       <Element isClone Icon={Icon} description={description} title={title} />
       <Element Icon={Icon} description={description} title={title} isFlipped={isFlipped} onClick={handleFlip}>
         <CardFace className="flex flex-col rounded-lg bg-primary-dark text-white">
