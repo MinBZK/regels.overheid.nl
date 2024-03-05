@@ -15,18 +15,14 @@ Sneller dan procesmatige inrichting en toekomstbestendig.
 
 In de video leggen wij de methode uit. 
 
-<video width="100%" height="auto" controls>
-  <source src="https://www.concordialegal.nl/wp-content/uploads/2023/06/Concordia-Legal-methode-met-notes.mp4" type="video/mp4" />
-</video>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/o2ctZOkEeLs?si=FEwXL_jQB3UYAjm5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Werkt het in de praktijk?
 Deze manier van werken gebruiken wij voor onze eigen projecten op het gebied van (o.a.) arbeidsrecht en ook in onze consulting werkzaamheden. Wat we hebben gebouwd, werkt naar tevredenheid.
 
 In de video hieronder lichten we de methode met een praktijkvoorbeeld verder toe.
 
-<video width="100%" height="auto" controls>
-  <source src="https://www.concordialegal.nl/wp-content/uploads/2023/06/Concordia-Legal-uitwerking-ingesproken.mp4" type="video/mp4" />
-</video>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/g3J6yMt5PXU?si=Bkzjb9Us6gfZk9mq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Concordia Legal
 Wij zijn een legal tech bedrijf met als doel juridisch werk te vereenvoudigen.
