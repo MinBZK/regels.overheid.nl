@@ -1,8 +1,13 @@
+import { methodsTree } from '@/common/methods-tree';
+import { Button } from '@/components/button';
 import { Card } from '@/components/card';
+import { Link } from '@/components/link';
+import { MethodNavigation } from '@/components/method-navigation';
 import { Pill } from '@/components/pill';
+import { cva, cx } from '@/cva.config';
+import slugify from '@sindresorhus/slugify';
 import { IconExternalLink } from '@tabler/icons-react';
 import clsx from 'clsx';
-import Link from 'next/link';
 import { Fragment } from 'react';
 
 type Variant = 'published' | 'wip' | 'unavailable';
@@ -31,9 +36,23 @@ interface UnavailableProps {
   variant: 'unavailable';
 }
 
-type PublicationCardProps = PublishedProps | WipProps | UnavailableProps;
+interface Props {
+  method?: keyof typeof methodsTree;
+}
+
+type PublicationCardProps = (PublishedProps | WipProps | UnavailableProps) & Props;
 
 type VariantMappingComponent = 'card' | 'title' | 'description' | 'tag';
+
+const variants = cva({
+  variants: {
+    variant: {
+      wip: {},
+      published: {},
+      unavailable: {},
+    },
+  },
+});
 
 const variantMapping: Record<Variant, Partial<Record<VariantMappingComponent, string>>> = {
   published: {
@@ -74,6 +93,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
   url,
   tag,
   title,
+  method,
   description,
   variant = 'published',
 }) => {
@@ -82,33 +102,31 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
   const Wrapper = wrapperComponentTag(variant);
 
   return (
-    <Wrapper>
-      <Card
-        href={url}
-        target="_blank"
-        component={cardComponentTag(variant)}
-        className={clsx(variantStyles.card, 'group flex h-full transition-all duration-150 ease-linear')}
-      >
-        <div className={clsx('flex flex-col items-start gap-y-2')}>
+    <Card component="article" id={method && slugify(method, { lowercase: true })} className="flex h-full">
+      <div className="flex w-full flex-col items-start gap-y-2">
+        <div className="flex w-full items-center justify-between">
           <h3 className={clsx('text-base font-bold', variantStyles.title)}>{title}</h3>
-          <p className={clsx('mb-2 text-base text-grey-dark', variantStyles.description)}>
-            {variant === 'unavailable'
-              ? 'Binnenkort zal er een publicatie verschijnen op deze kaart, echter is deze momenteel nog in ontwikkeling.'
-              : description}
-          </p>
           {variant !== 'unavailable' && (
-            <Pill label={tag!} variant={variant === 'wip' ? 'warning' : 'info'} className="group-hover:bg-white" />
-          )}
-          {variant === 'unavailable' && (
-            <span className={clsx('mt-auto text-base font-bold', variantStyles.tag)}>Binnenkort beschikbaar</span>
+            <Link component="a" target="_blank" href={url} className="flex gap-x-2">
+              Bekijk publicatie
+              <IconExternalLink />
+            </Link>
           )}
         </div>
-        {variant !== 'unavailable' && (
-          <div className="ml-auto flex w-9 shrink-0 items-center justify-end">
-            <IconExternalLink className="text-primary-main group-hover:text-black" />
-          </div>
-        )}
-      </Card>
-    </Wrapper>
+        <p className={clsx('mb-2 text-base text-grey-dark', variantStyles.description)}>
+          {variant === 'unavailable'
+            ? 'Binnenkort zal er een publicatie verschijnen op deze kaart, echter is deze momenteel nog in ontwikkeling.'
+            : description}
+        </p>
+        <div className="mt-auto flex gap-x-6">
+          <Pill
+            label={tag || 'Binnenkort beschikbaar'}
+            variant={variant === 'wip' ? 'warning' : 'info'}
+            className={cx(variant === 'unavailable' && 'bg-gray-lighter text-grey-main')}
+          />
+          {method && <MethodNavigation hide="publication" variant={method} />}
+        </div>
+      </div>
+    </Card>
   );
 };
