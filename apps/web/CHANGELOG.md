@@ -1,5 +1,11 @@
 # web
 
+## 3.16.0
+
+### Minor Changes
+
+- 98823b2: Added tree navigation for easier navigiation between method <-> docs <-> lab
+
 ## 3.15.1
 
 ### Patch Changes
