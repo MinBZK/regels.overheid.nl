@@ -17,10 +17,10 @@ export async function GET(request: Request) {
     const url = new URL('/404', request.url);
     const response = await fetch(url.toString());
 
-    return new Response(response.body);
+    return new Response(response.body, { headers: { 'Content-Type': 'text/html' } });
   }
 
   const buffer = await fs.readFile(publicationPath);
 
-  return new Response(buffer);
+  return new Response(buffer, { headers: { 'Content-Type': 'text/html' } });
 }
