@@ -4,21 +4,24 @@ import { methodsTree } from '@/common/methods-tree';
 import { Button } from '@/components/button';
 import { Card } from '@/components/card';
 import { Link } from '@/components/link';
+import { MethodNavigation } from '@/components/method-navigation';
 import { Typography } from '@/components/typography';
 import slugify from '@sindresorhus/slugify';
 import {
+  IconApiApp,
+  IconArrowBack,
+  IconArrowRight,
   IconBrandGithub,
   IconEyeEdit,
+  IconFileTypeDoc,
   IconForms,
-  IconApiApp,
   IconHeartHandshake,
   IconPlayerPlay,
   IconScale,
-  IconFileTypeDoc,
   TablerIconsProps,
 } from '@tabler/icons-react';
 import clsx from 'clsx';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import React, { PropsWithChildren, useLayoutEffect, useState } from 'react';
 
 const iconMap = {
@@ -64,6 +67,7 @@ interface ElementProps extends PropsWithChildren {
   isFlipped?: boolean;
   title: string;
   description: string;
+  method?: keyof typeof methodsTree;
   Icon: React.ElementType<TablerIconsProps>;
   onClick?: () => void;
 }
@@ -89,7 +93,16 @@ const CardFace: React.StyleAbleFC<CardFaceProps> = ({ children, front, style, cl
   );
 };
 
-const Element: React.FC<ElementProps> = ({ children, isClone, isFlipped, title, description, Icon, onClick }) => {
+const Element: React.FC<ElementProps> = ({
+  children,
+  isClone,
+  isFlipped,
+  title,
+  description,
+  Icon,
+  method,
+  onClick,
+}) => {
   return (
     <Card
       className={clsx(
@@ -111,8 +124,9 @@ const Element: React.FC<ElementProps> = ({ children, isClone, isFlipped, title, 
             {title}
           </Typography>
           <Typography className="text-center">{description}</Typography>
-          <Button className="mt-auto shrink-0" onClick={onClick}>
-            Colofon
+          {method && <MethodNavigation className="mt-4" variant={method} hide="lab" />}
+          <Button variant="text" className="mt-auto shrink-0" onClick={onClick} endIcon={<IconArrowRight />}>
+            Meer
           </Button>
         </div>
       </CardFace>
@@ -157,8 +171,15 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
 
   return (
     <div id={method && slugify(method, { lowercase: true })} className="relative">
-      <Element isClone Icon={Icon} description={description} title={title} />
-      <Element Icon={Icon} description={description} title={title} isFlipped={isFlipped} onClick={handleFlip}>
+      <Element isClone Icon={Icon} description={description} title={title} method={method} />
+      <Element
+        Icon={Icon}
+        title={title}
+        method={method}
+        onClick={handleFlip}
+        isFlipped={isFlipped}
+        description={description}
+      >
         <CardFace className="flex flex-col rounded-lg bg-primary-dark text-white">
           <Typography className="mb-8 font-bold">{title}</Typography>
           <ul>
@@ -188,7 +209,7 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
               </Li>
             )}
           </ul>
-          <Button className="mt-auto justify-center" onClick={handleFlip}>
+          <Button className="mt-auto justify-center" onClick={handleFlip} endIcon={<IconArrowBack />}>
             Terug
           </Button>
         </CardFace>
