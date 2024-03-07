@@ -1,5 +1,11 @@
 # docs
 
+## 3.5.2
+
+### Patch Changes
+
+- 84deb42: Fix video links
+
 ## 3.5.1
 
 ### Patch Changes
