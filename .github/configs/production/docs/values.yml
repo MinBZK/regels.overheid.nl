@@ -1,15 +1,9 @@
 ingress:
   enabled: true
   className: nginx
-  annotations:
-    nginx.ingress.kubernetes.io/configuration-snippet: |
-      if ($request_uri ~* "^/docs(.*)") {
-        rewrite ^/docs/(.*) /$1 break;
-      }
-  className: nginx
   hosts:
     - paths:
-        - path: /docs/
+        - path: /docs
           pathType: Prefix
 imagePullSecrets:
   - name: regels-overheid-nl
