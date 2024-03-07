@@ -1,5 +1,15 @@
 # web
 
+## 3.17.0
+
+### Minor Changes
+
+- 2779539: Implemented `MethodNavigation` on `LabItemCard`
+
+### Patch Changes
+
+- 3950aee: Added security headers
+
 ## 3.16.0
 
 ### Minor Changes
