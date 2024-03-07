@@ -3,6 +3,11 @@ ingress:
   className: nginx
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    # nginx.ingress.kubernetes.io/configuration-snippet: |
+    #   more_set_headers "X-Frame-Options: SAMEORIGIN";
+    #   more_set_headers "X-Content-Type-Options: nosniff";
+    #   more_set_headers "Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'none'; frame-src 'self'; font-src 'self'; connect-src 'self'";
+    #   more_set_headers "Referrer-Policy: strict-origin-when-cross-origin";
   hosts:
     - paths:
         - path: /
