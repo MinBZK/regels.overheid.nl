@@ -1,5 +1,11 @@
 # docs
 
+## 3.5.3
+
+### Patch Changes
+
+- a3c870b: Fixed kubernetes ingress path configuration
+
 ## 3.5.2
 
 ### Patch Changes
