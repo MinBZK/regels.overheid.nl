@@ -185,7 +185,11 @@ als respons.
 
 ## 5. UX Design
 
-
+<div>
+  <video width="100%" height="100%" playsinline autoplay muted controls>
+    <source src="../../static/video/AOW-Concept-Design.mp4" type="video/mp4" />
+  </video>
+</div>
 
 *Disclaimer en gebruik*  
 Deze microservice is gebaseerd op onze eigen analyse van de regelgeving op 8 februari 2024. Wij staan achter het resultaat, maar hoe het verder door een gebruiker wordt toegepast kunnen wij, uiteraard, niet voor instaan noch voor eventuele gevolgen van een datalek. Geboortedata zijn nou eenmaal persoonsgegevens. 
