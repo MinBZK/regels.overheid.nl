@@ -1,5 +1,5 @@
 ---
-title: micro service AOW
+title: AOW micro service
 description: Lab - Bepaling van de AOW leeftijd
 ---
 
@@ -7,17 +7,19 @@ Ter illustratie van de Concordia Legal methode zoals die wordt gebruikt om de ke
 
 De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling. Bij een aantal tijdelijke contracten of tijd onder tijdelijk contract gewerkt, komt iemand in vaste dienst. Arbeidsovereenkomsten aangegaan boven de AOW leeftijd, tellen niet mee in de ketenregeling.
 
-De AOW leeftijd komt ook op een 100 plekken voor in de regelgeving als een eis of een ingangskwalificatie. We hebben een lijst toegevoegd.
+De AOW leeftijd komt ook op een 100 plekken voor in de regelgeving als een eis of een ingangskwalificatie. We hebben een [lijst (pdf)](../../static/pdf/AOW-Leeftijd-vindplaatsten-in-wetgeving.pdf) toegevoegd.
 
 Om tot een microservice te komen doorlopen we stappen van:
 1. Wet
 2. Analyse
 3. Regels
 4. Deployment als web service
+5. UX Design
 
 ## 1. Wet
 De wet zelf is maar twee artikelen uit de Algemene Ouderdomswet. 
 De Algemene Ouderdomswet:  
+
 [Artikel 7](https://wetten.overheid.nl/jci1.3:c:BWBR0002221&hoofdstuk=III&paragraaf=1&artikel=7&z=2023-01-01&g=2023-01-01)
 
 1. Recht op ouderdomspensioen overeenkomstig de bepalingen van deze wet heeft degene, die  
@@ -50,6 +52,7 @@ Op pensioengerechtigden die in een bepaald kalenderjaar de pensioengerechtigde l
 2. De verhoging van de pensioengerechtigde leeftijd en de aanvangsleeftijd in 2026 en de kalenderjaren daarna wordt jaarlijks, voor de eerste maal uiterlijk op 1 januari 2021 voor het jaar 2026, vastgesteld volgens de formule:
 
     > V = 2/3 * (L – 20,64) – (P – 67)
+    >
     >
     > waarbij:  
     > V staat voor de periode waarmee de pensioengerechtigde leeftijd respectievelijk aanvangsleeftijd wordt verhoogd, uitgedrukt in perioden van een jaar;  
@@ -94,7 +97,8 @@ Hier wordt het schema, verder ingevuld aan de hand van de ketenregeling en je zi
     - Een het aantal tijdelijke arbeidscontracten uit regel 2: ten hoogste zes (*transitie specifiek, red*)
     - Alleen voor de arbeidsovereenkomsten aangegaan na het overschrijden van de **artikel 7, onderdeel a, van de Algemene Ouderdomswet bedoelde leeftijd**. 
 
-*Ingevuld schema*   
+*Ingevuld schema*
+
 Personae:
 - Werkgever
 - Medewerker, kwaliteit leeftijd, aantal contracten, de leeftijd wanneer die contracten zijn aangegaan  
@@ -104,9 +108,9 @@ Aanleiding: peiling van rechtspositie
 Parameters: nvt (er is geen specifieke termijn voor de bepaling)  
 Besluit: wel of niet ketenregeling van toepassing  
 Voorwaarden / plichten: afhankelijk van de toestand in dit voorbeeld.  
-Toestand:
-    - Vast contract en wel op deze datum
-    - Of nog zoveel contracten of zoveel maanden werken onder tijdelijk contract totdat een vast contract ontstaat op deze datum  
+Toestand:  
+  - Vast contract en wel op deze datum
+  - Of nog zoveel contracten of zoveel maanden werken onder tijdelijk contract totdat een vast contract ontstaat op deze datum  
 
 ## 3. Regels
 Voor de regels gebruiken wij Oracle Intelligent Advisor (OIA) en voor de ontsluiting hebben we ook de python code toegevoegd. 
@@ -114,53 +118,55 @@ Voor de regels gebruiken wij Oracle Intelligent Advisor (OIA) en voor de ontslui
 In OIA gaat de bepaling van de AOW leeftijd volgens een tabel en kan dus gebruikt worden als bepaling in arbeid, huurtoeslag etc. Deze tabel wordt dus aangevuld bij mededeling in de Staatscourant, artikel 7a, tweede lid, Algemene Ouderdomswet. 
 
 *OIA tabel*
-| de leeftijd voor AOW in maanden |                                                                |
-|---------------------------------|----------------------------------------------------------------|
-| 66 * 12 + 4                     | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2020  |
-| 66 * 12 + 7                     | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2021  |
-| 66 * 12 + 7                     | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2022  |
-| 66 * 12 + 10                    | ExtraherenJaar(de peildatum van de evaluatie voor AOW ) = 2023 |
-| 67 *12                          | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2024  |
-| 67 *12                          | ExtraherenJaar(de peildatum van de evaluatie voor AOW ) = 2025 |
-| 67 *12                          | ExtraherenJaar(de peildatum van de evaluatie voor AOW ) = 2026 |
-| onzeker                         | anders                                                         |
+
+| de leeftijd voor AOW in maanden |-|
+|---------------------------------|-|
+| 66 * 12 + 4  | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2020 |
+| 66 * 12 + 7 | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2021 |
+| 66 * 12 + 7 | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2022 |
+| 66 * 12 + 10 | ExtraherenJaar(de peildatum van de evaluatie voor AOW ) = 2023 |
+| 67 *12 | ExtraherenJaar(de peildatum van de evaluatie voor AOW) = 2024 |
+| 67 *12 | ExtraherenJaar(de peildatum van de evaluatie voor AOW ) = 2025 |
+| 67 *12 | ExtraherenJaar(de peildatum van de evaluatie voor AOW ) = 2026 |
+| onzeker | anders |
+
 
 *Python Kern*  
 Functie voor toevoegen maanden: 
->> def add_months(current_date, months_to_add):  
->> new_date = date(current_date.year + (current_date.month + months_to_add - 1) // 12, (current_date.month + months_to_add - 1) % 12 + 1, current_date.day)  
->> return new_date
+> def add_months(current_date, months_to_add):  
+> new_date = date(current_date.year + (current_date.month + months_to_add - 1) // 12, (current_date.month + months_to_add - 1) % 12 + 1, current_date.day)  
+> return new_date
 
 Functie vertalen hoe de AOW leeftijd er uit ziet in maanden om jaren en maanden bij elkaar te brengen tot 1 begrip:
->> def leeftijd_AOW_Maanden (currentdate):  
->>  year = currentdate.year  
->>  if year == 2000:  
->>     monthsAgeAOW = 66 * 12 + 4  
->>  elif year == 2021:  
->>     monthsAgeAOW = 66 * 12 + 7  
->>  elif year == 2022:  
->>     monthsAgeAOW = 66 * 12 + 7  
->>  elif year == 2023:  
->>     monthsAgeAOW = 66 * 12 + 10  
->>  elif year == 2024:  
->>     monthsAgeAOW = 67 * 12 + 0  
->>  elif year == 2025:  
->>     monthsAgeAOW = 67 * 12 + 0  
->>  elif year == 2026:  
->>     monthsAgeAOW = 67 * 12 + 0  
->>  else:  
->>     monthsAgeAOW = 67 * 12  
->>  return monthsAgeAOW
+> def leeftijd_AOW_Maanden (currentdate):  
+>  year = currentdate.year  
+>  if year == 2000:  
+>     monthsAgeAOW = 66 * 12 + 4  
+>  elif year == 2021:  
+>     monthsAgeAOW = 66 * 12 + 7  
+>  elif year == 2022:  
+>     monthsAgeAOW = 66 * 12 + 7  
+>  elif year == 2023:  
+>     monthsAgeAOW = 66 * 12 + 10  
+>  elif year == 2024:  
+>     monthsAgeAOW = 67 * 12 + 0  
+>  elif year == 2025:  
+>     monthsAgeAOW = 67 * 12 + 0  
+>  elif year == 2026:  
+>     monthsAgeAOW = 67 * 12 + 0  
+>  else:  
+>     monthsAgeAOW = 67 * 12  
+>  return monthsAgeAOW
 
 Daadwerkelijke berekening in de web service die de parameters van de aanroep pakt, de geboortedatum er uit haalt, en de (huidige) datum waarop de AOW leeftijd moet worden berekend; je krijgt een ander antwoord in 2020 dan in 2024:  
->> cal['calculation'] = add_months(birtdate.date(),  
->> leeftijd_AOW_Maanden(currentdate.date())).strftime(format)
+> cal['calculation'] = add_months(birtdate.date(),  
+> leeftijd_AOW_Maanden(currentdate.date())).strftime(format)
 
 ## 4. Deployment
 
 De micro service zoals gespecificeerd is mbv Python Flask Docker image deployed op https://regels.overheid.nl/lab/aow-leeftijd/resultaat
 
-Een POST Request met body
+Een POST Request naar deze url met body
 
 {  
 "currentdate":"2024-03-08",  
@@ -176,6 +182,8 @@ geeft
 als respons.
 
 ![AOW  Postman](../../static/img/AOWpythonPostman.png)
+
+## 5. UX Design
 
 
 
