@@ -181,6 +181,8 @@ geeft
 
 als respons.
 
+*Hieronder een voorbeeld met [Postman](https://www.postman.com/)*
+
 ![AOW  Postman](../../static/img/AOWpythonPostman.png)
 
 ## 5. UX Design
