@@ -187,6 +187,10 @@ als respons.
 
 ## 5. UX Design
 
+Een manier om deze AOW micro service in dienstverlening toe te passen is laat het volgende [design (Figma)](https://www.figma.com/proto/miuXp5zu2JNhG2t3c29KBS/Design?type=design&node-id=2610-25489&t=gwvgD9qtY9E0MYYq-1&scaling=min-zoom&page-id=2610%3A25487&mode=design) zien.
+
+De schermopname van het design is hieronder in video weergegeven.
+
 <div>
   <video width="100%" height="100%" playsinline autoplay muted controls>
     <source src="../../static/video/AOW-Concept-Design.mp4" type="video/mp4" />
