@@ -1,5 +1,11 @@
 # docs
 
+## 3.6.0
+
+### Minor Changes
+
+- cb396e8: Provide documentation about Software Bill of Materials (SBoM).
+
 ## 3.5.3
 
 ### Patch Changes
