@@ -1,5 +1,11 @@
 # docs
 
+## 3.7.0
+
+### Minor Changes
+
+- 8301431: Added AOW micro service page
+
 ## 3.6.0
 
 ### Minor Changes
