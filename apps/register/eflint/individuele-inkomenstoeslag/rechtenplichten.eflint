@@ -1,0 +1,65 @@
+#require "regels.eflint".
+
+Fact aanvrager Identified by Aanvrager
+Fact zaakbehandelaar Identified by Zaakbehandelaar
+
+Fact aanvraag Identified by aanvrager
+
+Fact leeftijd Identified by 0..100
+Fact kinderen Identified by 1..10
+Fact status Identified by Getrouwd, Geregistreerd, Geen
+
+Act aanvraag-indienen
+  Actor aanvrager
+  Related to leeftijd, kinderen, status
+  Holds when True
+  Creates [Woonplaats](Utrecht) // aanname dat deze aanvraag in Utrecht wordt ingediend
+         ,[AOW leeftijd behaald] When leeftijd > 67
+         ,[Ouder dan 21] When leeftijd > 21
+         ,[Thuiswonende kinderen] When kinderen > 0
+         ,[Alleenstaande] When status == Geen
+         ,aanvraag()
+
+Duty beoordelen-aanvraag
+  Holder zaakbehandelaar
+  Claimant aanvrager
+  Terminated by aanvraag-toekennen, aanvraag-afwijzen
+  Holds when aanvraag()
+
+// informatie vergaren
+
+Fact belasting-gegevens-opgevraagd Identified by aanvrager
+
+Act opvragen-belasting-gegevens
+  Actor zaakbehandelaar
+  Recipient aanvrager
+  Holds when aanvraag()
+  Creates belasting-gegevens-opgevraagd()
+
+Fact belasting-gegevens Identified by aanvrager * [Inkomen per maand] * [Vermogen]
+
+Act verwerken-belasting-gegevens
+  Actor zaakbehandelaar
+  Recipient aanvrager
+  Holds when belasting-gegevens 
+  Conditioned by belasting-gegevens.aanvrager == aanvrager
+  Creates belasting-gegevens.[Inkomen per maand]
+         ,belasting-gegevens.[Vermogen]
+
+// toekennen / afwijzen
+
+Fact [IIT toegekend] Identified by aanvrager * int
+Fact [IIT besluit] Identified by aanvrager * string
+
+Act aanvraag-toekennen
+  Actor zaakbehandelaar 
+  Recipient aanvrager
+  Conditioned by [Recht beschrijving]
+  Creates [IIT toegekend](aanvrager, [Uit te keren individuele inkomenstoeslag])
+         ,[IIT besluit](aanvrager, [Recht beschrijving])
+
+Act aanvraag-afwijzen
+  Actor zaakbehandelaar
+  Recipient aanvrager
+  Creates [IIT besluit](aanvrager, "Recht op IIT €0")
+

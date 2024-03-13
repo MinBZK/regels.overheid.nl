@@ -1,0 +1,18 @@
+#require "rechtenplichten.eflint".
+
+?Enabled(aanvraag-indienen(leeftijd = 30, kinderen = 0, status = Getrouwd)).
+aanvraag-indienen(leeftijd = 30, kinderen = 0, status = Getrouwd).
+?Holds(beoordelen-aanvraag()).
+?Enabled(opvragen-belasting-gegevens()).
+opvragen-belasting-gegevens().
++belasting-gegevens(Aanvrager, 1000, 7000).
+?Enabled(verwerken-belasting-gegevens()).
+verwerken-belasting-gegevens().
+?![Recht op IIT 51].
+?![Recht op IIT 231].
+?[Recht op IIT 591].
+?Enabled(aanvraag-afwijzen()).
+?Enabled(aanvraag-toekennen()).
+aanvraag-toekennen().
+?!Holds(beoordelen-aanvraag()).
+?[IIT toegekend](Aanvrager,591).

@@ -1,0 +1,14 @@
+// alle gemeenten
+Var  [Woonplaats]                               Identified by String
+Bool [AOW leeftijd behaald]
+// Utrecht
+Bool [Aanvrager woonachtig in Utrecht]
+  Holds when [Woonplaats]("Utrecht") 
+       // || [Woonplaats]("utrecht")
+Bool [Thuiswonende kinderen]
+Bool [Alleenstaande]
+Var  [Inkomen per maand]                        Identified by Int
+Var  [Vermogen]                                 Identified by Int
+Bool [Ouder dan 21]
+Var  [Recht beschrijving]                       Identified by String
+Var  [Uit te keren individuele inkomenstoeslag] Identified by Int
