@@ -1,0 +1,246 @@
+{
+  "content": {
+    "metadata": {
+      "version": "0.0.1",
+      "requestId": "INDIVIDUELE-INKOMENSTOESLAG-UTRECHT",
+      "requestName": "IIT",
+      "requestorName": "IIT Gemeente Utrecht",
+      "requestDescription": "Uit te keren individuele inkomenstoeslag",
+      "validFrom": "01-09-2021",
+      "validUntil": "01-09-2022",
+      "startOnQR": true,
+      "exportFormat": "PLAIN-TEXT-MAIL"
+    },
+    "groups": [
+      {
+        "id": "woonplaatst",
+        "label": "Woonplaats"
+      },
+      {
+        "id": "aow-leeftijd-behaald",
+        "label": "AOW leeftijd behaald"
+      },
+      {
+        "id": "thuiswonende-kinderen",
+        "label": "Thuiswonende kinderen"
+      },
+      {
+        "id": "alleenstaande",
+        "label": "Alleenstaande"
+      },
+      {
+        "id": "inkomen-per-maand",
+        "label": "Inkomen per maand"
+      },
+      {
+        "id": "vermogen",
+        "label": "Vermogen"
+      },
+      {
+        "id": "ouder-dan-21",
+        "label": "Ouder dan 21"
+      },
+      {
+        "id": "recht-beschrijving",
+        "label": "Recht beschrijving"
+      },
+      {
+        "id": "uit-te-keren-individuele-inkomenstoeslag",
+        "label": "Uit te keren individuele inkomenstoeslag"
+      }
+    ],
+    "image": "social-benefits",
+    "translations": {
+      "tile": {
+        "nl": {
+          "title": "Individuele Inkomenstoeslag",
+          "text": "Aanvragen van een individuele inkomenstoeslag bij de gemeente Utrecht.",
+          "detail_text": "Hebt u 3 jaar achter elkaar een laag inkomen en bent u jonger dan de AOW-leeftijd? Dan komt u misschien in aanmerking voor de individuele inkomenstoeslag. Dit is een geldbedrag dat u 1 keer in de 12 maanden kunt krijgen.",
+          "detail_title": "Individuele inkomenstoeslag aanvragen"
+        }
+      },
+      "aanvrager": {
+        "nl": {
+          "aanvrager": "Aanvrager",
+          "voornamen": "Voornaam",
+          "achternaam": "Achternaam",
+          "voorvoegselGeslachtsnaam": "Voorvoegsel",
+          "geslacht": "Geslacht",
+          "Man": "Man",
+          "Vrouw": "Vrouw",
+          "geboortedatum": "Geboortedatum",
+          "adres": "Adres",
+          "postcode": "Postcode",
+          "woonplaats": "Woonplaats",
+          "gemeente": "Gemeente",
+          "burgerlijkestaat": "Burgerlijke staat",
+          "gehuwd": "Gehuwd",
+          "geregistreerdPartnerschap": "Geregistreerd partnerschap",
+          "alleenstaand": "Alleenstaand"
+        }
+      },
+      "partner": {
+        "nl": {
+          "partner": "Partner",
+          "voornamenPartner": "Voornaam",
+          "achternaamPartner": "Achternaam",
+          "voorvoegselGeslachtsnaamPartner": "Voorvoegsel",
+          "geslachtPartner": "Geslacht",
+          "Man": "Man",
+          "Vrouw": "Vrouw",
+          "geboortedatumPartner": "Geboortedatum"
+        }
+      },
+      "kinderen": {
+        "nl": {
+          "kinderen": "Kind",
+          "voornamen": "Voornamen",
+          "voorvoegselsGeslachtsnaam": "Voorvoegsel",
+          "geslachtsnaam": "Achternaam",
+          "geslacht": "Geslacht",
+          "geboortedatum": "Geboortedatum",
+          "geboorteplaats": "Geboorteplaats",
+          "geboorteland": "Geboorteland",
+          "geboortelandCode": "Geboortelandcode"
+        }
+      },
+      "financiën": {
+        "nl": {
+          "inkomen": "Geregistreerd Inkomen",
+          "vermogen": "Vastgesteld Vermogen"
+        }
+      }
+    },
+    "data": {
+      "sources": [
+        {
+          "id": "moh",
+          "topics": ["persoonsgegevens", "familiegegevens"]
+        },
+        {
+          "id": "lak",
+          "_comment": "lak = Loonaangifteketen; https://www.loonaangifteketen.nl/de-loonaangifteketen/de-keten-in-kaart",
+          "topics": ["inkomensgegevens", "vermogensgegevens"]
+        }
+      ],
+      "formDefinition": [
+        {
+          "id": "achternaam",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.algemeen.geslachtsnaam"],
+          "vmTransformFunction": "convertGeslachtsnaam"
+        },
+        {
+          "id": "voorvoegselGeslachtsnaam",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.algemeen.voorvoegselsGeslachtsnaam"],
+          "vmTransformFunction": "convertVoorvoegsel"
+        },
+        {
+          "id": "voornamen",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.algemeen.voornamen"],
+          "vmTransformFunction": "convertVoornamen"
+        },
+        {
+          "id": "geslacht",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.algemeen.geslacht"],
+          "vmTransformFunction": "convertGeslacht"
+        },
+        {
+          "id": "geboortedatum",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.algemeen.geboortedatum"],
+          "vmTransformFunction": "convertGeboortedatum"
+        },
+        {
+          "id": "adres",
+          "groupId": "aanvrager",
+          "keys": [
+            "mohGegevens.mohPersoonsgegevens.adres.straat",
+            "mohGegevens.mohPersoonsgegevens.adres.huisnummer",
+            "mohGegevens.mohPersoonsgegevens.adres.huisletter"
+          ],
+          "vmTransformFunction": "convertAdres"
+        },
+        {
+          "id": "postcode",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.adres.postcode"],
+          "vmTransformFunction": "convertPostcode"
+        },
+        {
+          "id": "woonplaats",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.adres.woonplaatsnaam"],
+          "vmTransformFunction": "convertWoonplaats"
+        },
+        {
+          "id": "gemeente",
+          "groupId": "aanvrager",
+          "keys": ["mohGegevens.mohPersoonsgegevens.adres.gemeenteVanInschrijving"],
+          "vmTransformFunction": "convertGemeente"
+        },
+        {
+          "id": "burgerlijkestaat",
+          "groupId": "aanvrager",
+          "keys": [
+            "mohGegevens.mohFamiliegegevens.burgerlijkeStaat.indGehuwd",
+            "mohGegevens.mohFamiliegegevens.burgerlijkeStaat.indGeregistreerdPartnerschap"
+          ],
+          "vmTransformFunction": "convertBurgerlijkestaat"
+        },
+        {
+          "id": "achternaamPartner",
+          "groupId": "partner",
+          "keys": ["mohGegevens.mohFamiliegegevens.burgerlijkeStaat.partner.geslachtsnaam"],
+          "vmTransformFunction": "convertGeslachtsnaam"
+        },
+        {
+          "id": "voorvoegselGeslachtsnaamPartner",
+          "groupId": "partner",
+          "keys": ["mohGegevens.mohFamiliegegevens.burgerlijkeStaat.partner.voorvoegselsGeslachtsnaam"],
+          "vmTransformFunction": "convertVoorvoegsel"
+        },
+        {
+          "id": "voornamenPartner",
+          "groupId": "partner",
+          "keys": ["mohGegevens.mohFamiliegegevens.burgerlijkeStaat.partner.voornamen"],
+          "vmTransformFunction": "convertVoornamen"
+        },
+        {
+          "id": "geboortedatumPartner",
+          "groupId": "partner",
+          "keys": ["mohGegevens.mohFamiliegegevens.burgerlijkeStaat.partner.geboortedatum"],
+          "vmTransformFunction": "convertGeboortedatum"
+        },
+        {
+          "id": "geslachtPartner",
+          "groupId": "partner",
+          "keys": ["mohGegevens.mohFamiliegegevens.burgerlijkeStaat.partner.geslacht"],
+          "vmTransformFunction": "convertGeslacht"
+        },
+        {
+          "id": "kinderen",
+          "groupId": "kinderen",
+          "keys": ["mohGegevens.mohFamiliegegevens.kinderen"],
+          "vmTransformFunction": "convertKinderen"
+        },
+        {
+          "id": "inkomen",
+          "groupId": "financiën",
+          "keys": ["lakGegevens.lakInkomensgegevens.inkomen"],
+          "vmTransformFunction": "convertInkomen"
+        },
+        {
+          "id": "vermogen",
+          "groupId": "financiën",
+          "keys": ["lakGegevens.lakVermogensgegevens.vermogen"],
+          "vmTransformFunction": "convertVermogen"
+        }
+      ]
+    },
+    "signature": "???"
+  }
+}

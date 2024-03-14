@@ -1,0 +1,13 @@
+#require "rechtenplichten.eflint".
+
+?Enabled(aanvraag-indienen(leeftijd = 30, kinderen = 1, status = Geen)).
+aanvraag-indienen(leeftijd = 30, kinderen = 1, status = Geen).
+?Holds(beoordelen-aanvraag()).
+?Enabled(opvragen-belasting-gegevens()).
+opvragen-belasting-gegevens().
++belasting-gegevens(Aanvrager, 1000, 4000).
+?Enabled(verwerken-belasting-gegevens()).
+verwerken-belasting-gegevens().
+?Enabled(aanvraag-toekennen()).
+aanvraag-toekennen().
+?!Holds(beoordelen-aanvraag()).

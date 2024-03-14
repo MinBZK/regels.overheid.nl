@@ -1,0 +1,17 @@
+#require "regels.eflint".
+
++[Woonplaats](Utrecht).
+-[AOW leeftijd behaald].
++[Ouder dan 21].
++[Alleenstaande].
++[Thuiswonende kinderen].
++[Inkomen per maand](1000).
++[Vermogen](4000).
+
+?[Recht op IIT 51].
+?![Recht op IIT 231].
+?[Recht beschrijving] == "Recht op IIT €51".
+?[Recht beschrijving] != "Recht op IIT €231".
+?[Uit te keren individuele inkomenstoeslag] == 51. 
+?[Uit te keren individuele inkomenstoeslag] != 231. 
+

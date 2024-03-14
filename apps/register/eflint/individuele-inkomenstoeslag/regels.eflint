@@ -1,0 +1,47 @@
+#require "model.eflint".
+#require "parameters.eflint".
+
+Bool [Recht op IIT 51]
+  Holds when
+        [Aanvrager woonachtig in Utrecht]
+     && Not([AOW leeftijd behaald])
+     && [Ouder dan 21]
+     && [Alleenstaande]
+     && [Thuiswonende kinderen]
+     && [Inkomen per maand] <= [BOVENGRENS_INKOMEN_ALLEENSTAANDE]
+     && [Vermogen] <= [BOVENGRENS_VERMOGEN_HOOG]
+
+Extend Fact [Recht beschrijving]
+  Derived from [Recht beschrijving]("Recht op IIT €51") When [Recht op IIT 51]
+Extend Fact [Uit te keren individuele inkomenstoeslag]
+  Derived from [Uit te keren individuele inkomenstoeslag](51) When [Recht op IIT 51]
+
+Bool [Recht op IIT 231]
+  Holds when
+        [Aanvrager woonachtig in Utrecht]
+    &&  Not([AOW leeftijd behaald])
+    &&  [Ouder dan 21]
+    &&  [Alleenstaande]
+    &&  Not([Thuiswonende kinderen])
+    &&  [Inkomen per maand] <= [BOVENGRENS_INKOMEN_ALLEENSTAANDE]
+    &&  [Vermogen] <= [BOVENGRENS_VERMOGEN_LAAG]
+
+Extend Fact [Recht beschrijving]
+  Derived from [Recht beschrijving]("Recht op IIT €231") When [Recht op IIT 231]
+Extend Fact [Uit te keren individuele inkomenstoeslag]
+  Derived from [Uit te keren individuele inkomenstoeslag](231) When [Recht op IIT 231]
+
+Bool [Recht op IIT 591]
+  Holds when 
+        [Aanvrager woonachtig in Utrecht]
+    &&  Not([AOW leeftijd behaald])
+    &&  [Ouder dan 21]
+    &&  Not([Alleenstaande])
+//    &&  Not([Thuiswonende kinderen]) // enige verschil tussen bovenstaande versies
+    &&  [Inkomen per maand] <= [BOVENGRENS_INKOMEN_NIET_ALLEENSTAANDE]
+    &&  [Vermogen] <= [BOVENGRENS_VERMOGEN_HOOG]
+
+Extend Fact [Recht beschrijving]
+  Derived from [Recht beschrijving]("Recht op IIT €591") When [Recht op IIT 591]
+Extend Fact [Uit te keren individuele inkomenstoeslag]
+  Derived from [Uit te keren individuele inkomenstoeslag](591) When [Recht op IIT 591]
