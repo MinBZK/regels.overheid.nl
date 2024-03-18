@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "intro": {
+      "type": "text",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "start": {
+      "type": "datetime",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "end": {
+      "type": "datetime",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "subject": {
+      "type": "string",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "address": {
+      "type": "string",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "column": {
+        "notNullable": true
+      },
+      "required": true
+    },
+    "addressName": {
+      "type": "string",
+      "required": true,
+      "column": {
+        "notNullable": true
+      }
+    },
+    "eventbrite": {
+      "type": "text"
+    },
+    "eventbriteTitle": {
+      "type": "string"
+    }
+  }
+}
