@@ -59,7 +59,7 @@ ENV NODE_ENV development
 
 RUN pnpm build
 
-EXPOSE ${PORT}
+EXPOSE 9001
 
 ENTRYPOINT pnpm dev
 
