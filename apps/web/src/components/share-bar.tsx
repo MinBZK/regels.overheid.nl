@@ -2,13 +2,12 @@
 
 import {
   IconBrandFacebook,
-  IconBrandLinkedin,
   IconBrandTwitter,
   IconBrandWhatsapp,
   IconDotsCircleHorizontal,
   IconMail,
 } from '@tabler/icons-react';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 interface Props {
@@ -52,11 +51,6 @@ export const ShareBar: React.FC<Props> = ({ title }) => {
       <li>
         <a href={`https://twitter.com/intent/tweet/?text=${title}&url=${url}`} title="Delen via Twitter">
           <IconBrandTwitter />
-        </a>
-      </li>
-      <li>
-        <a href={`https://www.linkedin.com/shareArticle?url=${url}`} title="Delen via LinkedIn">
-          <IconBrandLinkedin />
         </a>
       </li>
       {showNavigatorShare && (
