@@ -1,5 +1,11 @@
 # cms
 
+## 1.23.0
+
+### Minor Changes
+
+- 5272865: Added event content type
+
 ## 1.22.1
 
 ### Patch Changes
