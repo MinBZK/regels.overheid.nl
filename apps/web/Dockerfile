@@ -37,16 +37,10 @@ FROM root AS base
 
 WORKDIR /app
 
-ARG UID=1001
-ARG GID=1001
-
-RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
-    (getent passwd ${UID} || adduser --system --uid ${UID} app)
-
-COPY --from=builder --chown=${UID}:${GID} /app/out/full .
-COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
-COPY --from=installer --chown=${UID}:${GID} /app/apps/web/node_modules ./apps/web/node_modules
+COPY --from=builder /app/out/full .
+COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=installer /app/node_modules ./node_modules
+COPY --from=installer /app/apps/web/node_modules ./apps/web/node_modules
 
 USER ${UID}
 

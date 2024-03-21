@@ -2,6 +2,8 @@ import { Button } from '@/components/button';
 import { Typography } from '@/components/typography';
 import { IconCalendarPlus, IconChevronRight } from '@tabler/icons-react';
 import { cx } from 'cva';
+import { format } from 'date-fns';
+import { nl } from 'date-fns/locale';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AddToCalendarDropdown } from './add-to-calendar-dropdown';
@@ -21,8 +23,8 @@ export const EventCard: React.FC<Props> = ({ start, end, intro, title, subject, 
   return (
     <div className={cx(['flex min-h-[150px] flex-col overflow-hidden rounded-lg border', 'md:flex-row'])}>
       <div className={cx('relative aspect-[2/1]', 'md:aspect-square md:w-1/5')}>
-        <div className="absolute left-1/2 z-10 flex h-[84px] w-[78px] -translate-x-1/2 flex-col items-center justify-center break-words bg-blue-600 text-center text-3xl uppercase text-white [word-spacing:100vw]">
-          24 apr
+        <div className="absolute left-1/2 z-10 flex h-[84px] w-[78px] -translate-x-1/2 flex-col items-center justify-center break-words bg-primary-main text-center text-3xl uppercase text-white [word-spacing:100vw]">
+          {format(start, 'd MMM', { locale: nl })}
         </div>
         <Image className="object-cover" src={cover} fill alt="" />
       </div>
