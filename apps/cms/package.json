@@ -10,11 +10,11 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "4.19.0",
-    "@strapi/plugin-i18n": "4.19.0",
-    "@strapi/plugin-users-permissions": "4.19.0",
-    "@strapi/strapi": "4.19.0",
-    "@strapi/typescript-utils": "^4.19.0",
+    "@strapi/plugin-cloud": "4.20.5",
+    "@strapi/plugin-i18n": "4.20.5",
+    "@strapi/plugin-users-permissions": "4.20.5",
+    "@strapi/strapi": "4.20.5",
+    "@strapi/typescript-utils": "^4.20.5",
     "@types/node": "^20",
     "pg": "8.8.0",
     "react": "^18.0.0",

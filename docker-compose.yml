@@ -17,8 +17,6 @@ services:
       target: dev
       args:
         PUBLIC_URL: http://localhost/cms/
-        GID: ${GID:-1001}
-        UID: ${UID:-1001}
     volumes:
       - ./apps/cms/config:/app/apps/cms/config
       - ./apps/cms/database:/app/apps/cms/database
@@ -118,9 +116,9 @@ services:
         UID: ${UID:-1001}
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/strapi
-      - CMS_URL=http://cms:1337
+      - CMS_URL=http://cms:9001
       - NEXT_PUBLIC_CMS_URL=http://localhost/cms
-      - WEB_URL=http://localhost:1337
+      - WEB_URL=http://localhost:9000
       - NEXT_PUBLIC_WEB_URL=http://localhost
       - VIRTUAL_HOST=localhost
       - VIRTUAL_PATH=/
@@ -172,7 +170,7 @@ services:
       - '80:80'
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-  adminer: 
+  adminer:
     container_name: regels_adminer
     image: adminer
     restart: unless-stopped

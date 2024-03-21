@@ -398,6 +398,9 @@ export interface PluginContentReleasesRelease extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     releasedAt: Attribute.DateTime;
+    scheduledAt: Attribute.DateTime;
+    timezone: Attribute.String;
+    status: Attribute.Enumeration<['ready', 'blocked', 'failed', 'done', 'empty']> & Attribute.Required;
     actions: Attribute.Relation<
       'plugin::content-releases.release',
       'oneToMany',
@@ -438,6 +441,7 @@ export interface PluginContentReleasesReleaseAction extends Schema.CollectionTyp
       'manyToOne',
       'plugin::content-releases.release'
     >;
+    isEntryValid: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'plugin::content-releases.release-action', 'oneToOne', 'admin::user'> &
@@ -646,6 +650,35 @@ export interface ApiBlogArticleBlogArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cover: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    intro: Attribute.Text & Attribute.Required;
+    start: Attribute.DateTime & Attribute.Required;
+    end: Attribute.DateTime & Attribute.Required;
+    subject: Attribute.String & Attribute.Required;
+    address: Attribute.String & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
+    slug: Attribute.UID<'api::event.event', 'title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::event.event', 'oneToOne', 'admin::user'> & Attribute.Private;
+    updatedBy: Attribute.Relation<'api::event.event', 'oneToOne', 'admin::user'> & Attribute.Private;
+  };
+}
+
 export interface ApiMethodMethod extends Schema.CollectionType {
   collectionName: 'methods';
   info: {
@@ -783,6 +816,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::application-metadata.application-metadata': ApiApplicationMetadataApplicationMetadata;
       'api::blog-article.blog-article': ApiBlogArticleBlogArticle;
+      'api::event.event': ApiEventEvent;
       'api::method.method': ApiMethodMethod;
       'api::page.page': ApiPagePage;
       'api::publisher.publisher': ApiPublisherPublisher;
