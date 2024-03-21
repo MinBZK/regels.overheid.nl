@@ -14,7 +14,7 @@ export default async function CalendarPage() {
     <Container>
       <Typography variant="h1">Agenda</Typography>
       <RemotePage page="agenda" />
-      <div className="mt-4 flex flex-col gap-y-4 border-t-2 border-t-grey-light pt-6">
+      <div className="mt-4 flex flex-col gap-y-4 pt-6">
         {events.map((event) => (
           <EventCard
             key={event.id}
