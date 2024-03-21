@@ -1,5 +1,11 @@
 # web
 
+## 3.18.0
+
+### Minor Changes
+
+- dc14b07: Added agenda pages
+
 ## 3.17.0
 
 ### Minor Changes
