@@ -13,7 +13,7 @@ runs:
       uses: actions/setup-node@v3
       with:
         path: npm
-        node-version: 18
+        node-version: 20.8
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build document
