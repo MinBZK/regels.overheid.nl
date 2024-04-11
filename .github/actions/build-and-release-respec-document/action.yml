@@ -1,10 +1,10 @@
 name: Build and release Respec
 inputs:
   name:
-    description: 'Name of the document, will also be used as the asset label in the release'
+    description: "Name of the document, will also be used as the asset label in the release"
     required: true
   token:
-    description: 'GitHub access token'
+    description: "GitHub access token"
     required: true
 runs:
   using: composite
@@ -13,7 +13,7 @@ runs:
       uses: actions/setup-node@v3
       with:
         path: npm
-        node-version: 18
+        node-version: 20.8
     - name: Checkout
       uses: actions/checkout@v3
     - name: Build document
