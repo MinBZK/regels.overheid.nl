@@ -54,7 +54,7 @@ jobs:
         with:
           token: ${{ secrets.REGELS_PUBLICATION_TOKEN }}
           owner: 'OWNER'
-          repo: 'REPOSiTORY'
+          repo: 'REPOSITORY'
 ```
 
 Vervang OWNER met de github user en REPOSITORY met de naam van de repository. Na het opnemen van deze action zal de publicatie service op regels.overheid.nl genotificeerd worden van elke nieuwe release waarna deze gepubliceerd zal worden.
