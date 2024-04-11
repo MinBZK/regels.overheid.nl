@@ -1,5 +1,11 @@
 # web
 
+## 3.19.0
+
+### Minor Changes
+
+- fb5cc3f: Added publication juridisch analyse schema
+
 ## 3.18.0
 
 ### Minor Changes
