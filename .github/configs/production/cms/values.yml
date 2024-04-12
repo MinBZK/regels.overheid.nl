@@ -14,4 +14,4 @@ imagePullSecrets:
   - name: regels-overheid-nl
 uploadsPersistence:
   enabled: true
-configSecretName: cms-doppler-config
+configSecretName: cms
