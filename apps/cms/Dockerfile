@@ -15,7 +15,7 @@ RUN pnpm install -g turbo
 # ==== Builder ====
 FROM root as builder
 
-WORKDIR /opt/app
+WORKDIR /app
 
 COPY . .
 
@@ -24,11 +24,11 @@ RUN turbo prune cms --docker
 # ==== Installer ====
 FROM root as installer
 
-WORKDIR /opt/app
+WORKDIR /app
 
 COPY .gitignore .gitignore
-COPY --from=builder /opt/app/out/json/ .
-COPY --from=builder /opt/app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=builder /app/out/json/ .
+COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
@@ -43,17 +43,17 @@ RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
 
 USER ${UID}
 
-WORKDIR /opt/app
+WORKDIR /app
 
-COPY --from=builder --chown=${UID}:${GID} /opt/app/out/full .
-COPY --from=builder --chown=${UID}:${GID} /opt/app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=installer --chown=${UID}:${GID} /opt/app/node_modules ./node_modules
-COPY --from=installer --chown=${UID}:${GID} /opt/app/apps/cms/node_modules ./apps/cms/node_modules
+COPY --from=builder --chown=${UID}:${GID} /app/out/full .
+COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
+COPY --from=installer --chown=${UID}:${GID} /app/apps/cms/node_modules ./apps/cms/node_modules
 
 # ==== Dev ====
 FROM base as dev
 
-WORKDIR /opt/app
+WORKDIR /app
 
 ENV NODE_ENV development
 
@@ -66,7 +66,7 @@ ENTRYPOINT pnpm dev
 # ==== Prod ====
 FROM base AS prod
 
-WORKDIR /opt/app
+WORKDIR /app
 
 ARG PUBLIC_URL=http://localhost:9001
 ENV PUBLIC_URL ${PUBLIC_URL}
