@@ -1,5 +1,11 @@
 # web
 
+## 3.19.2
+
+### Patch Changes
+
+- 570c0d3: Fixed fetching media resulting in wrong results for blog and agenda images
+
 ## 3.19.1
 
 ### Patch Changes
