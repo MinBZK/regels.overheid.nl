@@ -35,12 +35,20 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 # ==== Base ====
 FROM root AS base
 
+ARG UID=1001
+ARG GID=1001
+
+RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
+    (getent passwd ${UID} || adduser --system --uid ${UID} app)
+
+USER ${UID}
+
 WORKDIR /app
 
-COPY --from=builder /app/out/full .
-COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=installer /app/node_modules ./node_modules
-COPY --from=installer /app/apps/cms/node_modules ./apps/cms/node_modules
+COPY --from=builder --chown=${UID}:${GID} /app/out/full .
+COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
+COPY --from=installer --chown=${UID}:${GID} /app/apps/cms/node_modules ./apps/cms/node_modules
 
 # ==== Dev ====
 FROM base as dev

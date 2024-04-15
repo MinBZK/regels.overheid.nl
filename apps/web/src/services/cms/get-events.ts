@@ -1,10 +1,10 @@
 import { db } from '@/drizzle/db';
 import { events, files, filesRelatedMorphs } from '@/drizzle/schema';
-import { desc, eq, lte } from 'drizzle-orm';
+import { and, desc, eq, lte } from 'drizzle-orm';
 
 export function getEvents() {
   return db
-    .selectDistinctOn([events.id], {
+    .select({
       id: events.id,
       intro: events.intro,
       title: events.title,
@@ -20,8 +20,10 @@ export function getEvents() {
       },
     })
     .from(events)
-    .orderBy(events.id, desc(events.publishedAt))
+    .orderBy(desc(events.publishedAt))
     .leftJoin(filesRelatedMorphs, eq(events.id, filesRelatedMorphs.relatedId))
     .leftJoin(files, eq(files.id, filesRelatedMorphs.fileId))
-    .where(lte(events.publishedAt, new Date().toISOString()));
+    .where(
+      and(lte(events.publishedAt, new Date().toISOString()), eq(filesRelatedMorphs.relatedType, 'api::event.event'))
+    );
 }

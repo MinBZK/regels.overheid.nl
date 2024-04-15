@@ -35,17 +35,25 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 # ==== Base ====
 FROM root AS base
 
-WORKDIR /app
+ARG UID=1001
+ARG GID=1001
 
-COPY --from=builder /app/out/full .
-COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=installer /app/node_modules ./node_modules
-COPY --from=installer /app/apps/web/node_modules ./apps/web/node_modules
+RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
+    (getent passwd ${UID} || adduser --system --uid ${UID} app)
 
 USER ${UID}
 
+WORKDIR /app
+
+COPY --from=builder --chown=${UID}:${GID} /app/out/full .
+COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
+COPY --from=installer --chown=${UID}:${GID} /app/apps/web/node_modules ./apps/web/node_modules
+
 # ==== Dev ====
 FROM base as dev
+
+USER ${UID}
 
 WORKDIR /app
 
@@ -65,6 +73,8 @@ ENTRYPOINT pnpm --filter=web storybook
 #  ==== Prod ====
 FROM base AS prod
 
+USER ${UID}
+
 WORKDIR /app
 
 ARG DATABASE_URL
@@ -73,7 +83,6 @@ ARG NEXT_PUBLIC_CMS_URL
 ARG WEB_URL
 ARG NEXT_PUBLIC_WEB_URL
 ARG DATABASE_CA_CERT
-
 
 ENV DATABASE_URL ${DATABASE_URL}
 
