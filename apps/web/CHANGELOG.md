@@ -1,5 +1,11 @@
 # web
 
+## 3.19.1
+
+### Patch Changes
+
+- f6bb8ae: Fix url Wetsanalyse publicatie
+
 ## 3.19.0
 
 ### Minor Changes
