@@ -1,5 +1,11 @@
 # docs
 
+## 3.8.0
+
+### Minor Changes
+
+- 20d9e4c: Added user stories legal annotation tool
+
 ## 3.7.0
 
 ### Minor Changes
