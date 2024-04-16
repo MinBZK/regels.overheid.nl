@@ -1,9 +1,8 @@
-import { getNavbarPages } from '@/services/cms/get-navbar-pages';
 import '@total-typescript/ts-reset';
 import localFont from 'next/font/local';
 import { Footer } from './footer';
 import './globals.css';
-import { Navbar } from './navbar';
+import { Header } from './header';
 
 const RoSansWeb = localFont({
   src: [
@@ -20,12 +19,10 @@ const RoSansWeb = localFont({
 });
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const pages = await getNavbarPages();
-
   return (
     <html lang="nl">
-      <body className={`${RoSansWeb.className} flex min-h-screen flex-col`}>
-        <Navbar pages={pages} />
+      <body className={`${RoSansWeb.className} flex min-h-screen min-w-full flex-col`}>
+        <Header />
         {children}
         <Footer />
       </body>
