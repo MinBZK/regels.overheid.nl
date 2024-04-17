@@ -1,5 +1,11 @@
 # cms
 
+## 1.23.1
+
+### Patch Changes
+
+- 4bc1eb0: Switch to latest PublicCode Workflow action
+
 ## 1.23.0
 
 ### Minor Changes
