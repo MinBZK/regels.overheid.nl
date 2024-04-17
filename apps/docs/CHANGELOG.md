@@ -1,5 +1,11 @@
 # docs
 
+## 3.8.1
+
+### Patch Changes
+
+- 7733f24: Fix juriconnect url to wetten.overheid.nl
+
 ## 3.8.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # web
 
+## 3.19.3
+
+### Patch Changes
+
+- f45a8a4: Fixed navigation bugs on both mobile and desktop platforms and enhanced accessibility.
+
 ## 3.19.2
 
 ### Patch Changes
