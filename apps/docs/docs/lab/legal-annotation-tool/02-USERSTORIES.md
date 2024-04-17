@@ -65,7 +65,7 @@ Zie https://regels.overheid.nl/methoden voor de modellen van Wetsanalyse en Calc
 | tekstelement | klasse | begrip | omschrijving |
 | - | - | - | - |
 | Heeft recht op algemene bijstand | Rechtsbetrekking | Recht op algemene bijstand | Het recht op bijstand ter voorziening in de algemeen noodzakelijke kosten van het bestaan |
-| Algemene bijstand | Rechtsobject | Algemene bijstand | Bijstand ter voorziening in de algemeen noodzakelijke kosten van het bestaan ([artikel 5, onderdeel b, Participatiewet](jci1.3:c:BWBR0015703&hoofdstuk=1&paragraaf=1.1&artikel=5&z=2024-01-01&g=2024-01-01)) <mark>omschrijving met Juriconnect bronvermelding</mark>|
+| Algemene bijstand | Rechtsobject | Algemene bijstand | Bijstand ter voorziening in de algemeen noodzakelijke kosten van het bestaan ([artikel 5, onderdeel b, Participatiewet](https://wetten.overheid.nl/jci1.3:c:BWBR0015703&hoofdstuk=1&paragraaf=1.1&artikel=5&z=2024-01-01&g=2024-01-01)) <mark>omschrijving met Juriconnect bronvermelding</mark>|
 
  **NB**  
  De link verwijst naar heel artikel 5 Participatiewet, Juriconnect/wetten.nl heeft nog geen mogelijkheid om te deeplinken naar delen van artikelen.
