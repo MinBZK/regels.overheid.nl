@@ -1,5 +1,4 @@
 import { Container } from '@/components/container';
-import { Notification } from '@/components/notification';
 import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';
 import packageJson from '../../package.json';
@@ -68,7 +67,12 @@ export const Footer: React.FC = () => {
         Deze website is nog volop in ontwikkeling. Laatste release is{' '}
         <a className="font-bold underline" target="_blank" href="https://github.com/MinBZK/regels.overheid.nl/releases">
           web@{packageJson.version}
-        </a><br></br>Mocht er iets niet kloppen, laat het ons weten via <a className="underline" target="_blank" href="https://github.com/MinBZK/regels.overheid.nl/issues">github</a>.
+        </a>
+        <br></br>Mocht er iets niet kloppen, laat het ons weten via{' '}
+        <a className="underline" target="_blank" href="https://github.com/MinBZK/regels.overheid.nl/issues">
+          github
+        </a>
+        .
       </Container>
     </footer>
   );
