@@ -31,14 +31,6 @@ export const Footer: React.FC = () => {
   return (
     <footer className="mt-auto w-full border-t-8 border-t-primary-light bg-primary-lighter py-6">
       <Container className="flex flex-col sm:flex-row-reverse sm:items-start sm:justify-between lg:flex-col lg:items-center lg:gap-y-6">
-        <Notification severity="warning" className="mb-6 sm:w-[300px] lg:w-[664px]">
-          Deze website heeft nog géén officiele status. Dit is work in progress. Heb je vragen of wil je met ons
-          samenwerken? Neem dan contact met{' '}
-          <a href="mailto:steven.gort@ictu.nl" className="underline">
-            Steven Gort
-          </a>
-          .
-        </Notification>
         <nav aria-label="Footer Navigatie" className="flex flex-col gap-y-12 lg:flex-row lg:justify-center lg:gap-x-9">
           <ul>
             <FooterLink href="/over">Over deze website</FooterLink>
@@ -73,10 +65,10 @@ export const Footer: React.FC = () => {
         </nav>
       </Container>
       <Container component="p" className="sm:w-100% mt-12 text-center text-base text-primary-dark lg:mt-8">
-        Onze website is voortdurend in ontwikkeling. Laatste{' '}
+        Deze website is nog volop in ontwikkeling. Laatste release is{' '}
         <a className="font-bold underline" target="_blank" href="https://github.com/MinBZK/regels.overheid.nl/releases">
-          live-versie {packageJson.version}
-        </a>
+          web@{packageJson.version}
+        </a><br></br>Mocht er iets niet kloppen, laat het ons weten via <a className="underline" target="_blank" href="https://github.com/MinBZK/regels.overheid.nl/issues">github</a>.
       </Container>
     </footer>
   );
