@@ -1,5 +1,4 @@
 import { Container } from '@/components/container';
-import { Notification } from '@/components/notification';
 import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';
 import packageJson from '../../package.json';
