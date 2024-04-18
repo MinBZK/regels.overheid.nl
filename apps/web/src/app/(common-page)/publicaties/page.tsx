@@ -30,7 +30,7 @@ export default function PublicatiesPage() {
           title="Wetsanalyse"
           tag="Work in progress"
           variant="wip"
-          url="https://minbzk.github.io/wetsanalyse/"
+          url="/publicaties/wetsanalyse/"
           description="Publicatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
           method="Wetsanalyse"
         />
