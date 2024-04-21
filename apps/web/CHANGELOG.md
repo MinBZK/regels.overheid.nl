@@ -1,5 +1,12 @@
 # web
 
+## 3.19.4
+
+### Patch Changes
+
+- 1643c0e: Fix publication link
+- 61f6ad8: Refactor disclaimer in footer
+
 ## 3.19.3
 
 ### Patch Changes
