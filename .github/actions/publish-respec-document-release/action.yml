@@ -10,7 +10,7 @@ runs:
       id: request
       uses: fjogeleit/http-request-action@main
       with:
-        url: "https://regels.overheid.nl/api/publications?owner=${{ github.repository_owner }}&repo=${{ github.repository }}&secret=${{ inputs.token }}"
+        url: "https://regels.overheid.nl/api/publications?owner=${{ github.repository_owner }}&repo=${{ GITHUB_REPOSITORY##*/ }}&secret=${{ inputs.token }}"
     - name: Validate notify response
       env:
         response: fromJson(steps.request.outputs.response)
