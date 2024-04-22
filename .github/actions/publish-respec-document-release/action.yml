@@ -3,28 +3,19 @@ inputs:
   token:
     description: "The secret publication token"
     required: true
-  owner:
-    required: true
-  repo:
-    required: true
 runs:
   using: composite
   steps:
-    - name: Print repository owner and name
-      shell: bash
-      run: |
-        echo "Repository owner: ${{ github.repository_owner }}"
-        echo "Repository: ${{ github.repository }}"
-    # - name: Send notify request
-    #   id: request
-    #   uses: fjogeleit/http-request-action@main
-    #   with:
-    #     url: 'https://regels.overheid.nl/api/publications?owner=${{ inputs.owner }}&repo=${{ inputs.repo }}&secret=${{ inputs.token }}'
-    # - name: Validate notify response
-    #   env:
-    #     response: fromJson(steps.request.outputs.response)
-    #   if: fromJSON(steps.request.outputs.response).ok != true
-    #   uses: actions/github-script@v3
-    #   with:
-    #     script: |
-    #       core.setFailed(${{ steps.request.outputs.response }})
+    - name: Send notify request
+      id: request
+      uses: fjogeleit/http-request-action@main
+      with:
+        url: "https://regels.overheid.nl/api/publications?owner=${{ github.repository_owner }}&repo=${{ github.repository }}&secret=${{ inputs.token }}"
+    - name: Validate notify response
+      env:
+        response: fromJson(steps.request.outputs.response)
+      if: fromJSON(steps.request.outputs.response).ok != true
+      uses: actions/github-script@v3
+      with:
+        script: |
+          core.setFailed(${{ steps.request.outputs.response }})
