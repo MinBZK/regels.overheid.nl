@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import { Footer } from './footer';
 import './globals.css';
 import { Header } from './header';
+import { MenuBreadcrumbsProvider } from './menu-breadcrumbs';
 
 const RoSansWeb = localFont({
   src: [
@@ -22,9 +23,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="nl">
       <body className={`${RoSansWeb.className} flex min-h-screen min-w-full flex-col`}>
-        <Header />
-        {children}
-        <Footer />
+        <MenuBreadcrumbsProvider>
+          <Header />
+          <main className="pb-8 pt-14">{children}</main>
+          <Footer />
+        </MenuBreadcrumbsProvider>
       </body>
     </html>
   );

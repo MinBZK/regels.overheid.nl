@@ -6,6 +6,7 @@ import Logo from './logo.png';
 import { MenuContext } from './menu-context';
 import { MenuDesktop } from './menu-desktop';
 import { MenuMobile, MenuToggle } from './menu-mobile';
+import { MenuBreadcrumbs } from './menu-breadcrumbs';
 
 export interface Page {
   id: number;
@@ -28,6 +29,7 @@ export const Header: React.FC = async () => {
         </MenuContext>
       </Container>
       <MenuDesktop navbar={navbar} />
+      <MenuBreadcrumbs navbar={navbar} />
     </header>
   );
 };
