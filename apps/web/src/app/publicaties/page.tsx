@@ -30,7 +30,7 @@ export default function PublicatiesPage() {
           title="Wetsanalyse"
           tag="Specificatie"
           url="/publicaties/wetsanalyse/"
-          description="Publicatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
+          description="Specificatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
           method="Wetsanalyse"
         />
         <PublicationCard
