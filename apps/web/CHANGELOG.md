@@ -1,5 +1,12 @@
 # web
 
+## 3.20.0
+
+### Minor Changes
+
+- 76667e6: Added submenu navigation
+- f1a2cde: Refactored breadcrumb component to comply with new navigation structure
+
 ## 3.19.4
 
 ### Patch Changes
