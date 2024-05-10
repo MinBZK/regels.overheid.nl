@@ -90,8 +90,6 @@ interface MenuBreadcrumbsProvider extends PropsWithChildren {}
 export const MenuBreadcrumbsProvider: React.FC<MenuBreadcrumbsProvider> = ({ children }) => {
   const [additionalCrumbs, setAdditionalCrumbs] = useState<string[]>([]);
 
-  console.log({ additionalCrumbs });
-
   return <context.Provider value={{ additionalCrumbs, setAdditionalCrumbs }}>{children}</context.Provider>;
 };
 
@@ -108,7 +106,6 @@ export const EnhanceMenuBreadcrumbs: React.FC<EnhanceMenuBreadcrumbsProps> = ({ 
     setAdditionalCrumbs([append]);
 
     return () => {
-      console.log('cleanup');
       setAdditionalCrumbs([]);
     };
   }, [append, setAdditionalCrumbs]);

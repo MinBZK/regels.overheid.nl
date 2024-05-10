@@ -19,6 +19,8 @@ const RoSansWeb = localFont({
   variable: '--font-sans',
 });
 
+export const revalidate = 300;
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="nl">
