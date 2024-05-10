@@ -1,5 +1,12 @@
 # web
 
+## 3.20.2
+
+### Patch Changes
+
+- ebe700b: Fixed submenus not showing when there is a cover image on the page
+- 15ee557: Fixed breadcrumbs not rendering properly when parent of node isn't present
+
 ## 3.20.1
 
 ### Patch Changes
