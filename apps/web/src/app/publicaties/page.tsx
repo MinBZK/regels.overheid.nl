@@ -14,7 +14,7 @@ export default function PublicatiesPage() {
       <Container className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2">
         <PublicationCard
           title="De Legitimaat"
-          tag="Algoritme"
+          tag="Werkmethode"
           url="/publicaties/legitimaat"
           description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
           method="De LegitiMaat"
@@ -28,8 +28,7 @@ export default function PublicatiesPage() {
         />
         <PublicationCard
           title="Wetsanalyse"
-          tag="Work in progress"
-          variant="wip"
+          tag="Specificatie"
           url="/publicaties/wetsanalyse/"
           description="Publicatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
           method="Wetsanalyse"
