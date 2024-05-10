@@ -1,5 +1,12 @@
 # web
 
+## 3.20.1
+
+### Patch Changes
+
+- 4bf1c6b: Remove `console.log` statements
+- ce3c394: Added missing cache revalidation option
+
 ## 3.20.0
 
 ### Minor Changes
