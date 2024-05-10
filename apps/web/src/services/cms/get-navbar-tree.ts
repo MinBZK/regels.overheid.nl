@@ -10,26 +10,34 @@ export type NavbarNode = {
 
 export async function getNavbarTree() {
   const pages = await getNavbarPages();
+  const root: NavbarNode = { name: 'root', id: 'root', url: '', children: new Map() };
 
-  const root: NavbarNode = { name: 'root', children: new Map(), url: '/', id: '_' };
+  pages.forEach((item) => {
+    const parts = item.name!.split('/');
+    let current = root;
 
-  for (const page of pages) {
-    if (!page.slug || !page.name) continue;
+    parts.forEach((part, index) => {
+      if (!current.children.has(part)) {
+        const nodeId = `synthetic:${Math.random().toString(36).substring(2, 9)}`;
+        const newNode: NavbarNode = {
+          url: '',
+          id: nodeId,
+          name: part,
+          parent: current,
+          children: new Map(),
+        };
 
-    const parts = page.name.split('/').filter(Boolean);
+        current.children.set(part, newNode);
+      }
 
-    let parent = root;
+      current = current.children.get(part)!;
 
-    for (const part of parts) {
-      if (!parent.children.has(part))
-        parent.children.set(part, { name: part, parent, children: new Map(), url: '', id: String(page.id) });
-
-      parent = parent.children.get(part)!;
-    }
-
-    parent.url = page.slug;
-    parent.name = parts.at(-1) || '';
-  }
+      if (index === parts.length - 1) {
+        current.url = item.slug!;
+        current.id = String(item.id);
+      }
+    });
+  });
 
   return root;
 }
