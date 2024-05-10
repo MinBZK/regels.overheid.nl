@@ -60,8 +60,6 @@ export const MenuItem = forwardRef<any, Props>(({ slug, name, variant, omitHover
     return `/${slug}`;
   };
 
-  console.log({ pathName, slug, isActive: isActive() });
-
   return (
     <Slot ref={ref} {...props}>
       <Component href={href() as any} className={cx(variants({ variant, omitHover, isActive: isActive(), className }))}>
