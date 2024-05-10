@@ -2,20 +2,20 @@
 
 import { useMenuContext } from '@/app/menu-context';
 import { Button } from '@/components/button';
-import { getNavbarPages } from '@/services/cms/get-navbar-pages';
+import { Container } from '@/components/container';
+import { NavbarNode } from '@/services/cms/get-navbar-tree';
 import * as Portal from '@radix-ui/react-portal';
 import { Slot } from '@radix-ui/react-slot';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { RemoveScroll } from 'react-remove-scroll';
 import { MenuItem } from './menu-item';
-import { Container } from '@/components/container';
 
 interface Props {
-  pages: Awaited<ReturnType<typeof getNavbarPages>>;
+  navbar: NavbarNode;
 }
 
-export const MenuMobile: React.FC<Props> = ({ pages }) => {
+export const MenuMobile: React.FC<Props> = ({ navbar }) => {
   const pathName = usePathname();
   const { isOpen, toggleMenu } = useMenuContext();
 
@@ -26,15 +26,30 @@ export const MenuMobile: React.FC<Props> = ({ pages }) => {
 
   if (!isOpen) return null;
 
+  const menuItems: React.JSX.Element[] = [];
+  const menuItemsWithChildren: React.JSX.Element[] = [];
+
+  Array.from(navbar.children.values()).forEach((node) => {
+    if (node.children.size === 0)
+      return menuItems.push(<MenuItem key={node.id} name={node.name} slug={node.url} variant="mobile" />);
+
+    menuItemsWithChildren.push(
+      <div key={node.id} className="mb-4">
+        <h4 className="flex h-10 items-center px-2 font-bold text-white">{node.name}</h4>
+        {Array.from(node.children.values()).map((child) => {
+          return <MenuItem key={child.id} name={child.name} slug={child.url} variant="mobile-menu" />;
+        })}
+      </div>
+    );
+  });
+
   return (
     <Portal.Portal className="sm:hidden">
       <RemoveScroll as={Slot} enabled allowPinchZoom className="w-full">
         <div className="fixed bottom-0 left-0 right-0 top-24 z-10 overflow-y-auto bg-primary-main py-3">
           <Container>
-            {pages.map(({ id, slug, name }) => (
-              <MenuItem key={id} name={name} slug={slug} variant="mobile" />
-            ))}
-            <MenuItem name="Beta" slug="/docs-beta" variant="mobile" />
+            <div className="mb-4">{menuItems}</div>
+            {menuItemsWithChildren}
           </Container>
         </div>
       </RemoveScroll>

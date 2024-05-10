@@ -1,6 +1,5 @@
 import { resolveCmsImage } from '@/common/resolve-cms-image';
 import { truncateStringAtWord } from '@/common/truncate-string-at-word';
-import { Breadcrumbs } from '@/components/breadcrumbs';
 import { Button } from '@/components/button';
 import { Container } from '@/components/container';
 import { RemoteMdx } from '@/components/remote-mdx';
@@ -12,7 +11,8 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ShareBar } from '../../../../components/share-bar';
+import { EnhanceMenuBreadcrumbs } from '@/app/menu-breadcrumbs';
+import { ShareBar } from '@/components/share-bar';
 
 interface Props {
   params: {
@@ -30,60 +30,50 @@ export default async function BlogArticlePage(props: Props) {
   if (!blogArticle.title || !blogArticle.content) return notFound();
 
   return (
-    <>
+    <Container component="main" className="pb-8">
+      <EnhanceMenuBreadcrumbs append={blogArticle.title} />
       <header>
-        <nav>
-          <Breadcrumbs>
-            <Link href="/">Home</Link>
-            <Link href="/blog">Blog</Link>
-            <span>{blogArticle.title}</span>
-          </Breadcrumbs>
-        </nav>
-      </header>
-      <Container component="main" className="pb-8 pt-14">
-        <header>
-          <Button component={Link} variant="text" startIcon={<IconArrowLeft />} href="/blog">
-            Overzicht
-          </Button>
-          <Typography variant="h1" className="mb-12 mt-4 ">
-            {blogArticle.title}
-          </Typography>
-          {blogArticle.publishedAt && (
-            <span className="text-grey-light">
-              Publicatiedatum{' '}
-              {new Date(blogArticle.publishedAt).toLocaleDateString('nl-NL', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-              })}
-            </span>
+        <Button component={Link} variant="text" startIcon={<IconArrowLeft />} href="/blog">
+          Overzicht
+        </Button>
+        <Typography variant="h1" className="mb-12 mt-4 ">
+          {blogArticle.title}
+        </Typography>
+        {blogArticle.publishedAt && (
+          <span className="text-grey-light">
+            Publicatiedatum{' '}
+            {new Date(blogArticle.publishedAt).toLocaleDateString('nl-NL', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+              hour: 'numeric',
+              minute: 'numeric',
+            })}
+          </span>
+        )}
+        <figure className="relative mb-12 mt-3 aspect-[308/140] overflow-hidden rounded-lg">
+          {blogArticle.cover.ext && blogArticle.cover.hash && (
+            <Image
+              fill
+              className="object-cover"
+              src={resolveCmsImage({
+                ext: blogArticle.cover.ext,
+                hash: blogArticle.cover.hash,
+                width: 1235,
+              }).toString()}
+              alt={blogArticle.cover.alt || blogArticle?.title}
+            />
           )}
-          <figure className="relative mb-12 mt-3 aspect-[308/140] overflow-hidden rounded-lg">
-            {blogArticle.cover.ext && blogArticle.cover.hash && (
-              <Image
-                fill
-                className="object-cover"
-                src={resolveCmsImage({
-                  ext: blogArticle.cover.ext,
-                  hash: blogArticle.cover.hash,
-                  width: 1235,
-                }).toString()}
-                alt={blogArticle.cover.alt || blogArticle?.title}
-              />
-            )}
-          </figure>
-        </header>
-        <article>
-          <RemoteMdx content={blogArticle?.content || ''} />
-        </article>
-        <div className="mt-6 border-b border-t border-grey-light py-6">Categorie: {blogArticle?.category}</div>
+        </figure>
+      </header>
+      <article>
+        <RemoteMdx content={blogArticle?.content || ''} />
+      </article>
+      <div className="mt-6 border-b border-t border-grey-light py-6">Categorie: {blogArticle?.category}</div>
 
-        <p className="mb-2 mt-12 text-xl">Deel deze pagina</p>
-        <ShareBar title={blogArticle.title} />
-      </Container>
-    </>
+      <p className="mb-2 mt-12 text-xl">Deel deze pagina</p>
+      <ShareBar title={blogArticle.title} />
+    </Container>
   );
 }
 

@@ -16,6 +16,7 @@ import { OpenInMapDropdown } from './open-in-map-dropdown';
 import { Metadata } from 'next';
 import { truncateStringAtWord } from '@/common/truncate-string-at-word';
 import slugify from '@sindresorhus/slugify';
+import { EnhanceMenuBreadcrumbs } from '@/app/menu-breadcrumbs';
 
 interface Props {
   params: { event: string };
@@ -35,6 +36,8 @@ export default async function EventPage({ params }: Props) {
 
   return (
     <>
+      <EnhanceMenuBreadcrumbs append={title} />
+
       <div className="relative -mt-14 h-[300px] w-full overflow-hidden object-fill">
         {cover && (
           <Image

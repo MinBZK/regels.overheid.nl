@@ -1,11 +1,12 @@
 import { Container } from '@/components/container';
-import { getNavbarPages } from '@/services/cms/get-navbar-pages';
+import { getNavbarTree } from '@/services/cms/get-navbar-tree';
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from './logo.png';
 import { MenuContext } from './menu-context';
 import { MenuDesktop } from './menu-desktop';
 import { MenuMobile, MenuToggle } from './menu-mobile';
+import { MenuBreadcrumbs } from './menu-breadcrumbs';
 
 export interface Page {
   id: number;
@@ -14,7 +15,7 @@ export interface Page {
 }
 
 export const Header: React.FC = async () => {
-  const pages = await getNavbarPages();
+  const navbar = await getNavbarTree();
 
   return (
     <header role="banner" className="relative w-full border-b-8 border-primary-light">
@@ -24,10 +25,11 @@ export const Header: React.FC = async () => {
         </Link>
         <MenuContext>
           <MenuToggle />
-          <MenuMobile pages={pages} />
+          <MenuMobile navbar={navbar} />
         </MenuContext>
       </Container>
-      <MenuDesktop pages={pages} />
+      <MenuDesktop navbar={navbar} />
+      <MenuBreadcrumbs navbar={navbar} />
     </header>
   );
 };
