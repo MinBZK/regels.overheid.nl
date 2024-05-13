@@ -18,9 +18,15 @@ export const methodsTree = {
     demo: '/lab/interpretation-editor/',
     docs: '/docs/methods/flint/INTRODUCTIE',
   },
-  Wetsanalyse: {
+  Wetsanalyse_1: {
     color: 'info',
     demo: '/lab/legal-annotation-tool',
+    docs: '/docs/methods/WETSANALYSE',
+    publication: 'https://regels.overheid.nl/publicaties/wetsanalyse',
+  },
+  Wetsanalyse_2: {
+    color: 'info',
+    demo: '/lab/jas-annotatie-tool/',
     docs: '/docs/methods/WETSANALYSE',
     publication: 'https://regels.overheid.nl/publicaties/wetsanalyse',
   },
