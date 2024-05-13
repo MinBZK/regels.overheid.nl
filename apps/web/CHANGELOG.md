@@ -1,5 +1,11 @@
 # web
 
+## 3.20.3
+
+### Patch Changes
+
+- 277eb8b: Correct wrong tagged publications
+
 ## 3.20.2
 
 ### Patch Changes
