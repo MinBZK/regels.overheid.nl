@@ -35,6 +35,17 @@ export default async function LabPage() {
           description="Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door 5 studententeams in één semester gewerkt aan het bouwen van tooling voor Wetsanalyse. De beschikbaar gestelde applicatie is het eindproduct van het team Galactische Zakenpartners dat zonder nadere kwaliteitsslag en/of gebruikerstesten anderszins hier is deployed."
         />
         <LabItemCard
+          method="Wetsanalyse"
+          title="JAS Annotatie Tool"
+          icon="icon-eye-edit"
+          licenseVariant="EU PL 1.2 license"
+          demo="https://regels.overheid.nl/lab/jas-annotatie-tool/"
+          docs="http://regels.overheid.nl/docs/lab/jas-annotatie-tool"
+          repo="https://github.com/MinBZK/HvA-legal-annotation-tool-frontend-json"
+          license="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
+          description="Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door 5 studententeams in één semester gewerkt aan het bouwen van tooling voor Wetsanalyse. De beschikbaar gestelde applicatie is het eindproduct van het team JSON dat zonder nadere kwaliteitsslag en/of gebruikerstesten anderszins hier is deployed."
+        />
+        <LabItemCard
           title="Apache Jena Fuseki"
           icon="icon-api-app"
           description="Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te extraheren uit en te schrijven naar RDF-graphs."
