@@ -24,7 +24,7 @@ export default async function LabPage() {
           description="Norm Editor is een applicatie, gebouwd met behulp van webgebaseerde technologieën, waarmee een gebruiker op een gebruiksvriendelijke en interactieve manier interpretaties van normen in FLINT kan creëren."
         />
         <LabItemCard
-          method="Wetsanalyse"
+          method="Wetsanalyse_1"
           title="Legal Annotation Tool"
           icon="icon-eye-edit"
           licenseVariant="EU PL 1.2 license"
@@ -33,6 +33,17 @@ export default async function LabPage() {
           repo="https://github.com/MinBZK/HvA-legal-annotation-tool-gzp"
           license="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
           description="Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door 5 studententeams in één semester gewerkt aan het bouwen van tooling voor Wetsanalyse. De beschikbaar gestelde applicatie is het eindproduct van het team Galactische Zakenpartners dat zonder nadere kwaliteitsslag en/of gebruikerstesten anderszins hier is deployed."
+        />
+        <LabItemCard
+          method="Wetsanalyse_2"
+          title="JAS Annotatie Tool"
+          icon="icon-eye-edit"
+          licenseVariant="EU PL 1.2 license"
+          demo="https://regels.overheid.nl/lab/jas-annotatie-tool/"
+          docs="http://regels.overheid.nl/docs/lab/jas-annotatie-tool"
+          repo="https://github.com/MinBZK/HvA-legal-annotation-tool-frontend-json"
+          license="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
+          description="Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door 5 studententeams in één semester gewerkt aan het bouwen van tooling voor Wetsanalyse. De beschikbaar gestelde applicatie is het eindproduct van het team JSON dat zonder nadere kwaliteitsslag en/of gebruikerstesten anderszins hier is deployed."
         />
         <LabItemCard
           title="Apache Jena Fuseki"
