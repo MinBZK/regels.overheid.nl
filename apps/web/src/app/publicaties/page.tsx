@@ -31,7 +31,7 @@ export default function PublicatiesPage() {
           tag="Specificatie"
           url="/publicaties/wetsanalyse/"
           description="Specificatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
-          method="Wetsanalyse"
+          method="Wetsanalyse_1"
         />
         <PublicationCard
           title="WetsTaal Handreiking"
