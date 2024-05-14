@@ -1,5 +1,11 @@
 # docs
 
+## 3.9.0
+
+### Minor Changes
+
+- 160a6fa: Added JAS Annotatie Tool to the Lab
+
 ## 3.8.1
 
 ### Patch Changes

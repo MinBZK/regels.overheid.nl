@@ -1,5 +1,11 @@
 # web
 
+## 3.21.0
+
+### Minor Changes
+
+- 160a6fa: Added JAS Annotatie Tool to the Lab
+
 ## 3.20.3
 
 ### Patch Changes
