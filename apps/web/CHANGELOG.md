@@ -1,5 +1,11 @@
 # web
 
+## 3.22.0
+
+### Minor Changes
+
+- 0df87b8: Added Algoritmes Publicatiestandaard in ReSpec format
+
 ## 3.21.0
 
 ### Minor Changes
