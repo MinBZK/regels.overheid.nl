@@ -20,11 +20,10 @@ export default function PublicatiesPage() {
           method="De LegitiMaat"
         />
         <PublicationCard
-          title="DCAT"
-          tag="Work in progress"
-          variant="wip"
-          url="/publicaties/dcat-ap-ronl"
-          description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
+          title="Algoritmes Publicatiestandaard"
+          tag="Standaard"
+          url="/publicaties/algoritmeregister-publicatiestandaard"
+          description="Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij het invullen."
         />
         <PublicationCard
           title="Wetsanalyse"
@@ -32,6 +31,13 @@ export default function PublicatiesPage() {
           url="/publicaties/wetsanalyse/"
           description="Specificatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
           method="Wetsanalyse_1"
+        />
+        <PublicationCard
+          title="DCAT"
+          tag="Work in progress"
+          variant="wip"
+          url="/publicaties/dcat-ap-ronl"
+          description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
         />
         <PublicationCard
           title="WetsTaal Handreiking"
