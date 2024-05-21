@@ -33,40 +33,48 @@ interface Props extends Omit<VariantProps<typeof variants>, 'isActive'> {
   name: string | React.JSX.Element;
   slug?: string;
   className?: string;
+  openInNewTab?: boolean;
 }
 
-export const MenuItem = forwardRef<any, Props>(({ slug, name, variant, omitHover, className, ...props }, ref) => {
-  const pathName = usePathname();
+export const MenuItem = forwardRef<any, Props>(
+  ({ slug, name, variant, omitHover, className, openInNewTab, ...props }, ref) => {
+    const pathName = usePathname();
 
-  const Component = (() => {
-    if (slug == null) return 'div';
+    const Component = (() => {
+      if (slug == null) return 'div';
 
-    return slug.startsWith('http') ? 'a' : Link;
-  })();
+      return slug.startsWith('http') ? 'a' : Link;
+    })();
 
-  const isActive = () => {
-    if (pathName === '/' && slug === 'home') return true;
+    const isActive = () => {
+      if (pathName === '/' && slug === 'home') return true;
 
-    return pathName.startsWith(`/${slug}`);
-  };
+      return pathName.startsWith(`/${slug}`);
+    };
 
-  const href = () => {
-    if (slug == null) return null;
+    const href = () => {
+      if (slug == null) return null;
 
-    if (slug === 'home') return '/';
+      if (slug === 'home') return '/';
 
-    if (slug.startsWith('/') || slug.startsWith('http')) return slug;
+      if (slug.startsWith('/') || slug.startsWith('http')) return slug;
 
-    return `/${slug}`;
-  };
+      return `/${slug}`;
+    };
 
-  return (
-    <Slot ref={ref} {...props}>
-      <Component href={href() as any} className={cx(variants({ variant, omitHover, isActive: isActive(), className }))}>
-        {name}
-      </Component>
-    </Slot>
-  );
-}) as React.FC<Props>;
+    return (
+      <Slot ref={ref} {...props}>
+        <Component
+          href={href() as any}
+          className={cx(variants({ variant, omitHover, isActive: isActive(), className }))}
+          target={openInNewTab ? '_blank' : undefined}
+          rel={openInNewTab ? 'noopener noreferrer' : undefined}
+        >
+          {name}
+        </Component>
+      </Slot>
+    );
+  }
+) as React.FC<Props>;
 
 MenuItem.displayName = 'MenuItem';

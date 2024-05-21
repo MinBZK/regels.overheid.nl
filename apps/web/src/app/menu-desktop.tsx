@@ -27,7 +27,7 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
               return (
                 <NavigationMenuItem key={node.id}>
                   <NavigationMenu.Link asChild>
-                    <MenuItem name={node.name} slug={node.url} variant="desktop" />
+                    <MenuItem name={node.name} slug={node.url} variant="desktop" openInNewTab={node.openInNewTab} />
                   </NavigationMenu.Link>
                 </NavigationMenuItem>
               );
@@ -38,8 +38,9 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
                 <NavigationMenu.Trigger className={styles.trigger}>
                   <NavigationMenu.Link asChild className="gap-x-1">
                     <MenuItem
-                      variant="desktop"
                       omitHover
+                      variant="desktop"
+                      openInNewTab={node.openInNewTab}
                       name={
                         <>
                           {node.name} <IconChevronDown className={styles.chevron} />
@@ -51,7 +52,13 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
                 <NavigationMenu.Content className="absolute left-0 top-0 w-auto">
                   <ul className="w-full overflow-hidden bg-primary-light">
                     {Array.from(node.children.values()).map((child) => (
-                      <MenuItem key={child.id} name={child.name} slug={child.url} variant="desktop-menu" />
+                      <MenuItem
+                        key={child.id}
+                        name={child.name}
+                        slug={child.url}
+                        variant="desktop-menu"
+                        openInNewTab={child.openInNewTab}
+                      />
                     ))}
                   </ul>
                 </NavigationMenu.Content>

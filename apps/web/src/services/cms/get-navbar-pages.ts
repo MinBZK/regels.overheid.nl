@@ -8,6 +8,7 @@ export function getNavbarPages() {
       id: pages.id,
       slug: pages.slug,
       name: pages.name,
+      openInNewTab: pages.openInNewTab,
     })
     .from(pages)
     .where(and(lte(pages.publishedAt, new Date().toISOString()), eq(pages.showInNav, true)))

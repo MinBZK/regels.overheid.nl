@@ -37,7 +37,15 @@ export const MenuMobile: React.FC<Props> = ({ navbar }) => {
       <div key={node.id} className="mb-4">
         <h4 className="flex h-10 items-center px-2 font-bold text-white">{node.name}</h4>
         {Array.from(node.children.values()).map((child) => {
-          return <MenuItem key={child.id} name={child.name} slug={child.url} variant="mobile-menu" />;
+          return (
+            <MenuItem
+              key={child.id}
+              slug={child.url}
+              name={child.name}
+              variant="mobile-menu"
+              openInNewTab={child.openInNewTab}
+            />
+          );
         })}
       </div>
     );
