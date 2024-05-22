@@ -1,5 +1,11 @@
 # cms
 
+## 1.24.0
+
+### Minor Changes
+
+- 5ee2d51: Added `openInNewTab` property to `Page` content-type
+
 ## 1.23.1
 
 ### Patch Changes
