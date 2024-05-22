@@ -1,5 +1,11 @@
 # web
 
+## 3.23.0
+
+### Minor Changes
+
+- b3d3c88: Open navbar items set as `openInNewTab` in a new tab
+
 ## 3.22.0
 
 ### Minor Changes
