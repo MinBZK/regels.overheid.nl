@@ -466,30 +466,6 @@ export const methods = pgTable(
   }
 );
 
-export const pages = pgTable(
-  'pages',
-  {
-    id: serial('id').primaryKey().notNull(),
-    name: varchar('name', { length: 255 }),
-    slug: varchar('slug', { length: 255 }),
-    content: text('content'),
-    order: integer('order'),
-    cmsPage: boolean('cms_page'),
-    showInNav: boolean('show_in_nav'),
-    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
-    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
-    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
-    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-  },
-  (table) => {
-    return {
-      createdByIdFk: index('pages_created_by_id_fk').on(table.createdById),
-      updatedByIdFk: index('pages_updated_by_id_fk').on(table.updatedById),
-    };
-  }
-);
-
 export const publishers = pgTable(
   'publishers',
   {
@@ -764,6 +740,31 @@ export const events = pgTable(
       createdByIdFk: index('events_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('events_updated_by_id_fk').on(table.updatedById),
       eventsSlugUnique: unique('events_slug_unique').on(table.slug),
+    };
+  }
+);
+
+export const pages = pgTable(
+  'pages',
+  {
+    id: serial('id').primaryKey().notNull(),
+    name: varchar('name', { length: 255 }),
+    slug: varchar('slug', { length: 255 }),
+    content: text('content'),
+    order: integer('order'),
+    cmsPage: boolean('cms_page'),
+    showInNav: boolean('show_in_nav'),
+    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
+    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
+    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
+    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    openInNewTab: boolean('open_in_new_tab'),
+  },
+  (table) => {
+    return {
+      createdByIdFk: index('pages_created_by_id_fk').on(table.createdById),
+      updatedByIdFk: index('pages_updated_by_id_fk').on(table.updatedById),
     };
   }
 );

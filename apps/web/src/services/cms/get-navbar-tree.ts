@@ -4,13 +4,14 @@ export type NavbarNode = {
   name: string;
   url: string;
   id: string;
+  openInNewTab: boolean;
   children: Map<string, NavbarNode>;
   parent?: NavbarNode;
 };
 
 export async function getNavbarTree() {
   const pages = await getNavbarPages();
-  const root: NavbarNode = { name: 'root', id: 'root', url: '', children: new Map() };
+  const root: NavbarNode = { name: 'root', id: 'root', url: '', openInNewTab: false, children: new Map() };
 
   pages.forEach((item) => {
     const parts = item.name!.split('/');
@@ -24,6 +25,7 @@ export async function getNavbarTree() {
           id: nodeId,
           name: part,
           parent: current,
+          openInNewTab: Boolean(item.openInNewTab),
           children: new Map(),
         };
 
