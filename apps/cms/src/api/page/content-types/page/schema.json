@@ -39,6 +39,11 @@
       "type": "boolean",
       "default": true,
       "required": true
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }
