@@ -1,5 +1,11 @@
 # web
 
+## 3.24.0
+
+### Minor Changes
+
+- 7ca7dbb: Added pdf routes for publications
+
 ## 3.23.0
 
 ### Minor Changes
