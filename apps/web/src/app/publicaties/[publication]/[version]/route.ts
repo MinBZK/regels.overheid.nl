@@ -1,11 +1,9 @@
+import { notFoundResponse } from '@/common/not-found-response';
 import fs from 'fs/promises';
 import path from 'path';
 
-export async function GET(request: Request) {
-  const enhancedUrl = new URL(request.url);
-
-  const [, , publication, version = 'latest'] = enhancedUrl.pathname.split('/');
-
+export async function GET(request: Request, { params }: { params: { version?: string; publication: string } }) {
+  const { publication, version = 'latest' } = params;
   const publicationPath = path.resolve(process.cwd(), `public/public/publications/${publication}/${version}.html`);
 
   const publicationExists = await fs
@@ -13,12 +11,7 @@ export async function GET(request: Request) {
     .then(() => true)
     .catch(() => false);
 
-  if (!publicationExists) {
-    const url = new URL('/404', request.url);
-    const response = await fetch(url.toString());
-
-    return new Response(response.body, { headers: { 'Content-Type': 'text/html' } });
-  }
+  if (!publicationExists) return notFoundResponse(request);
 
   const buffer = await fs.readFile(publicationPath);
 

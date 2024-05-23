@@ -40,7 +40,22 @@ export async function POST(req: Request) {
 
     const ocktokit = new Octokit();
 
-    await fs.access(publicationDir).catch(() => fs.mkdir(publicationDir, { recursive: true }));
+    // Create the directory if it doesn't exist
+    await fs
+      .stat(publicationDir)
+      .then(async () => {
+        // Remove all files in the directory if it exists
+        return fs.readdir(publicationDir).then((files) => {
+          const unlinkPromises = files.map((file) => fs.unlink(path.join(publicationDir, file)));
+
+          return Promise.all(unlinkPromises);
+        });
+      })
+      .catch((e) => {
+        if (e.code !== 'ENOENT') throw e;
+
+        fs.mkdir(publicationDir, { recursive: true });
+      });
 
     const releases = await ocktokit.rest.repos.listReleases({ owner, repo });
 
@@ -64,8 +79,6 @@ export async function POST(req: Request) {
         .access(releasePath)
         .then(() => true)
         .catch(() => false);
-
-      if (releaseExists) await fs.rm(releasePath);
 
       await fetch(asset.browser_download_url)
         .then((res) => res.arrayBuffer())
