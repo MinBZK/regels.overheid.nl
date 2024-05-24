@@ -4,13 +4,13 @@ FROM node:20.11-alpine as root
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
-RUN corepack enable
-RUN corepack prepare pnpm@8 --activate 
+RUN corepack enable && \
+    corepack prepare pnpm@8 --activate && \
+    apk add --no-cache libc6-compat chromium && \
+    apk update && \
+    pnpm install -g turbo
 
-RUN apk add --no-cache libc6-compat
-RUN apk update
-
-RUN pnpm install -g turbo
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
 # ==== Builder ====
 FROM root as builder
