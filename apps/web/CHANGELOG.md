@@ -1,5 +1,11 @@
 # web
 
+## 3.24.1
+
+### Patch Changes
+
+- f056754: fixed chromium related issue on publication pdf pages
+
 ## 3.24.0
 
 ### Minor Changes
