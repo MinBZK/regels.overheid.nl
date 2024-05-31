@@ -1,5 +1,11 @@
 # docs
 
+## 3.10.0
+
+### Minor Changes
+
+- 1cbc05a: Added Beinformed method & docs intro page
+
 ## 3.9.0
 
 ### Minor Changes
