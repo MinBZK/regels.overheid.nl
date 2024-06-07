@@ -8,7 +8,7 @@ RUN corepack enable && \
     corepack prepare pnpm@8 --activate && \
     apk add --no-cache libc6-compat chromium && \
     apk update && \
-    pnpm install -g turbo
+    pnpm install -g turbo@1.11
 
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 
