@@ -1,5 +1,11 @@
 # web
 
+## 3.25.1
+
+### Patch Changes
+
+- 840b599: specified Turbo version in Dockerfile
+
 ## 3.25.0
 
 ### Minor Changes
