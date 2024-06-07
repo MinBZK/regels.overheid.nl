@@ -1,5 +1,11 @@
 # web
 
+## 3.25.0
+
+### Minor Changes
+
+- e9f4011: Added levensgebeurtenissen CIVI AFS publication
+
 ## 3.24.1
 
 ### Patch Changes
