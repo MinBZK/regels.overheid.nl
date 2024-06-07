@@ -10,7 +10,7 @@ RUN corepack prepare pnpm@8 --activate
 RUN apk add --no-cache libc6-compat
 RUN apk update
 
-RUN pnpm install -g turbo
+RUN pnpm install -g turbo@1.11
 
 # ==== Builder ====
 FROM root as builder
