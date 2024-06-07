@@ -40,6 +40,13 @@ export default function PublicatiesPage() {
           description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
         />
         <PublicationCard
+          title="Levensgebeurtenissen CIVI AFS"
+          tag="Work in progress"
+          variant="wip"
+          url="/publicaties/levensgebeurtenissen-sivi-afs"
+          description="Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)"
+        />
+        <PublicationCard
           title="WetsTaal Handreiking"
           tag="Work in progress"
           variant="wip"
