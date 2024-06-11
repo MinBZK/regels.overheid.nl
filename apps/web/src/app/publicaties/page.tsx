@@ -12,7 +12,7 @@ export default function PublicatiesPage() {
         <RemotePage page="publicaties" />
       </Container>
       <Container className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2">
-      <PublicationCard
+        <PublicationCard
           title="Wetsanalyse"
           tag="Specificatie"
           variant="published"
