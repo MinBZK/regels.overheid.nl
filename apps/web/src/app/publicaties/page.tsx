@@ -42,7 +42,6 @@ export default function PublicatiesPage() {
         <PublicationCard
           title="Levensgebeurtenissen SIVI AFS"
           tag="Standaard"
-          variant="wip"
           url="/publicaties/levensgebeurtenissen-sivi-afs"
           description="Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)"
         />
