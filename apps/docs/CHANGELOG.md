@@ -1,5 +1,11 @@
 # docs
 
+## 3.11.0
+
+### Minor Changes
+
+- 34881de: New content concering BeInformed
+
 ## 3.10.0
 
 ### Minor Changes

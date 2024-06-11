@@ -1,5 +1,11 @@
 # web
 
+## 3.25.2
+
+### Patch Changes
+
+- 34881de: Typo and re-ordering cards
+
 ## 3.25.1
 
 ### Patch Changes
