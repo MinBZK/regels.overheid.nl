@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- 34881de: New content concering BeInformed
+- 34881de: Typo and re-ordering cards
 
 ## 3.25.1
 
