@@ -13,21 +13,9 @@ export default function PublicatiesPage() {
       </Container>
       <Container className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2">
         <PublicationCard
-          title="De Legitimaat"
-          tag="Werkmethode"
-          url="/publicaties/legitimaat"
-          description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
-          method="De LegitiMaat"
-        />
-        <PublicationCard
-          title="Algoritmes Publicatiestandaard"
-          tag="Standaard"
-          url="/publicaties/algoritmeregister-publicatiestandaard"
-          description="Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij het invullen."
-        />
-        <PublicationCard
           title="Wetsanalyse"
           tag="Specificatie"
+          variant="published"
           url="/publicaties/wetsanalyse/"
           description="Specificatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
           method="Wetsanalyse_1"
@@ -40,9 +28,24 @@ export default function PublicatiesPage() {
           description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
         />
         <PublicationCard
-          title="Levensgebeurtenissen CIVI AFS"
-          tag="Work in progress"
-          variant="wip"
+          title="De Legitimaat"
+          tag="Werkmethode"
+          variant="published"
+          url="/publicaties/legitimaat"
+          description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
+          method="De LegitiMaat"
+        />
+        <PublicationCard
+          title="Algoritmes Publicatiestandaard"
+          tag="Standaard"
+          variant="published"
+          url="/publicaties/algoritmeregister-publicatiestandaard"
+          description="Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij het invullen."
+        />
+        <PublicationCard
+          title="Levensgebeurtenissen SIVI AFS"
+          tag="Standaard"
+          variant="published"
           url="/publicaties/levensgebeurtenissen-sivi-afs"
           description="Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)"
         />
