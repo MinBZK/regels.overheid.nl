@@ -22,6 +22,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@tabler/icons-react": "^2.46.0",
     "@total-typescript/ts-reset": "^0.5.1",
+    "cheerio": "1.0.0-rc.12",
     "clsx": "^2.1.0",
     "compare-versions": "^6.1.0",
     "cva": "1.0.0-beta.1",
