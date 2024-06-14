@@ -41,8 +41,13 @@ export const Typography: React.OverrideAbleComponentFC<'p', TypographyProps> = (
   className,
   component,
   variant = 'p',
+  ...componentProps
 }) => {
   const Component = component || variantComponent({ variant });
 
-  return <Component className={cx(variants({ variant, className }))}>{children}</Component>;
+  return (
+    <Component className={cx(variants({ variant, className }))} {...componentProps}>
+      {children}
+    </Component>
+  );
 };
