@@ -6,7 +6,7 @@ interface InfoCardProps extends React.PropsWithChildren {
 
 interface EntryProps {
   name: string;
-  value: string;
+  value: string | React.ReactNode;
   icon: React.ReactNode;
 }
 
@@ -15,7 +15,7 @@ export const Entry: React.FC<EntryProps> = ({ icon, name, value }) => {
     <li className="flex items-center">
       <span className="text-primary-dark">{icon}</span>
       <span className="ml-2 font-bold text-primary-dark">{name}</span>
-      <span className="ml-auto text-right underline">{value}</span>
+      {typeof value === 'string' ? <span className="ml-auto text-right">{value}</span> : value}
     </li>
   );
 };

@@ -134,7 +134,15 @@ export default async function IndividueleInkomenstoeslagPage() {
 
           <InfoCard title="Contactgegevens">
             <Entry name="Naam" value="Steven Gort" icon={<IconId />} />
-            <Entry name="Email" value="Steven.Gort@ictu.nl" icon={<IconMail />} />
+            <Entry
+              name="Email"
+              value={
+                <Link component="a" href="mailto:steven.gort@ictu.nl" className="ml-auto text-right">
+                  Steven.Gort@ictu.nl
+                </Link>
+              }
+              icon={<IconMail />}
+            />
           </InfoCard>
 
           <InfoCard title="Eigenaarschap">
