@@ -11,7 +11,7 @@ export const Link: React.OverrideAbleComponentFC<typeof NextLink, React.PropsWit
   return (
     <Component
       href={href}
-      className={cx('text-primary-dark hover:text-primary-main hover:underline', className)}
+      className={cx('text-primary-dark underline hover:text-primary-main', className)}
       {...componentProps}
     >
       {children}

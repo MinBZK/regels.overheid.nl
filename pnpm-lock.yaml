@@ -145,6 +145,9 @@ importers:
       '@total-typescript/ts-reset':
         specifier: ^0.5.1
         version: 0.5.1
+      cheerio:
+        specifier: 1.0.0-rc.12
+        version: 1.0.0-rc.12
       clsx:
         specifier: ^2.1.0
         version: 2.1.0

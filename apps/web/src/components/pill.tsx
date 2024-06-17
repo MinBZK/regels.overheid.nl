@@ -1,12 +1,13 @@
 import { cva, cx, VariantProps } from '@/cva.config';
 
 export interface PillProps extends VariantProps<typeof pillVariants> {
-  label: string;
+  label?: string;
   className?: string;
+  startIcon?: React.ReactNode;
 }
 
 export const pillVariants = cva({
-  base: 'rounded px-2 py-1 text-base font-bold',
+  base: 'inline-flex gap-x-2 rounded px-2 py-1 text-base font-bold',
   variants: {
     variant: {
       info: 'bg-primary-lighter text-primary-main',
@@ -32,15 +33,17 @@ export const pillVariants = cva({
 });
 
 export const Pill: React.OverrideAbleComponentFC<'span', PillProps> = ({
-  disabled,
   label,
+  disabled,
   className,
+  startIcon,
   component: Component = 'span',
   variant = 'info',
   ...componentProps
 }) => {
   return (
     <Component className={cx(pillVariants({ variant, disabled, className }))} disabled={disabled} {...componentProps}>
+      {startIcon}
       {label}
     </Component>
   );
