@@ -1,5 +1,13 @@
 # web
 
+## 3.26.0
+
+### Minor Changes
+
+- a365852: Pill component now supports startIcon
+- f7deb37: Added demo register and register detail page
+- c7093f9: Restyled links to make them more noticeable
+
 ## 3.25.2
 
 ### Patch Changes
