@@ -4,8 +4,9 @@ import { withClassName } from '@/common/with-class-name';
 import { NavbarNode } from '@/services/cms/get-navbar-tree';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { IconChevronDown } from '@tabler/icons-react';
-import styles from './menu-desktop.module.css';
+import styles from './menu-desktop.module.scss';
 import { MenuItem } from './menu-item';
+import { useRef, useState } from 'react';
 
 interface Props {
   navbar: NavbarNode;
@@ -14,12 +15,33 @@ interface Props {
 export const NavigationMenuItem = withClassName(NavigationMenu.Item, 'text-white active:text-white');
 
 export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
+  const rootRef = useRef<HTMLElement>(null);
+  const [activeItem, setActiveItem] = useState({ left: 0, width: 0, bottom: 0 });
+
+  const onRootValueChange = (value: string) => {
+    if (!value || !rootRef.current) return;
+
+    const trigger = rootRef.current?.querySelector(`#${value}`);
+
+    if (!trigger) return;
+
+    const rect = trigger.getBoundingClientRect();
+
+    setActiveItem({
+      left: rect.left,
+      width: rect.width,
+      bottom: rect.bottom,
+    });
+  };
+
   return (
     <div className="hidden bg-primary-main sm:block">
       <NavigationMenu.Root
+        ref={rootRef}
         className="container relative flex w-full bg-primary-main px-2 lg:max-w-4xl xl:max-w-5xl"
         delayDuration={0}
         skipDelayDuration={0}
+        onValueChange={onRootValueChange}
       >
         <NavigationMenu.List className="flex list-none">
           {Array.from(navbar.children.values()).map((node) => {
@@ -32,9 +54,10 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
                 </NavigationMenuItem>
               );
 
+            const value = node.id.replace(':', '-');
             // For now only single level of children is supported
             return (
-              <NavigationMenuItem key={node.id}>
+              <NavigationMenuItem key={node.id} value={value} id={value}>
                 <NavigationMenu.Trigger className={styles.trigger}>
                   <NavigationMenu.Link asChild className="gap-x-1">
                     <MenuItem
@@ -49,7 +72,8 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
                     />
                   </NavigationMenu.Link>
                 </NavigationMenu.Trigger>
-                <NavigationMenu.Content className="absolute left-0 top-0 w-auto">
+                <NavigationMenu.Content className="absolute left-0 top-0 w-auto min-w-full">
+                  <div className="absolute left-1/2 z-50 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-primary-main" />
                   <ul className="w-full overflow-hidden bg-primary-light">
                     {Array.from(node.children.values()).map((child) => (
                       <MenuItem
@@ -67,20 +91,17 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
           })}
         </NavigationMenu.List>
 
-        <NavigationMenu.Indicator forceMount className={styles.indicator}>
-          <div>
-            <div className="absolute left-1/2 z-50 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-primary-main" />
-            <div className="absolute left-0 top-full flex">
-              <NavigationMenu.Viewport
-                forceMount
-                style={{
-                  height: 'var(--radix-navigation-menu-viewport-height)',
-                  width: 'var(--radix-navigation-menu-viewport-width)',
-                }}
-              />
-            </div>
-          </div>
-        </NavigationMenu.Indicator>
+        <div
+          style={
+            {
+              '--active-item-left': activeItem.left + 'px',
+              '--active-item-width': activeItem.width + 'px',
+              '--active-item-bottom': activeItem.bottom + 'px',
+            } as React.CSSProperties
+          }
+        >
+          <NavigationMenu.Viewport className={styles.viewport} />
+        </div>
       </NavigationMenu.Root>
     </div>
   );
