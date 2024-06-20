@@ -1,5 +1,11 @@
 # web
 
+## 3.26.1
+
+### Patch Changes
+
+- 678cb68: Fixed dangling indicator-triangle in navbar after navigating (Firefox)
+
 ## 3.26.0
 
 ### Minor Changes
