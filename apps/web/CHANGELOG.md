@@ -1,5 +1,11 @@
 # web
 
+## 3.27.0
+
+### Minor Changes
+
+- fbe2199: Added `waardelijsten` page
+
 ## 3.26.1
 
 ### Patch Changes
