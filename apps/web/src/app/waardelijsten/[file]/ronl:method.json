@@ -1,0 +1,116 @@
+{
+  "https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu": {
+    "labels": {
+      "nl-NL": "AKN4EU",
+      "en-US": "AKN4EU"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/ALEF": {
+    "labels": {
+      "nl-NL": "ALEF",
+      "en-US": "ALEF"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/AVOLA": {
+    "labels": {
+      "nl-NL": "Avola",
+      "en-US": "Avola"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/BEINFORMED": {
+    "labels": {
+      "nl-NL": "Beinformed",
+      "en-US": "Beinformed"
+    }
+  },
+  "https://github.com/Lexpedite/blawx": {
+    "labels": {
+      "nl-NL": "Blawx",
+      "en-US": "Blawx"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/BLUERIQ": {
+    "labels": {
+      "nl-NL": "Blueriq",
+      "en-US": "Blueriq"
+    }
+  },
+  "https://catala-lang.org/": {
+    "labels": {
+      "nl-NL": "Catala",
+      "en-US": "Catala"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/CIRCULAW": {
+    "labels": {
+      "nl-NL": "CircuLaw",
+      "en-US": "CircuLaw"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/CONCORDIALEGAL": {
+    "labels": {
+      "nl-NL": "Concordia Legal",
+      "en-US": "Concordia Legal"
+    }
+  },
+  "https://datalex.org/": {
+    "labels": {
+      "nl-NL": "DataLex",
+      "en-US": "DataLex"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/DEMO": {
+    "labels": {
+      "nl-NL": "DEMO",
+      "en-US": "DEMO"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/GPF": {
+    "labels": {
+      "nl-NL": "Gegevensstandaard Persoonlijke Financiën",
+      "en-US": "Gegevensstandaard Persoonlijke Financiën"
+    }
+  },
+  "https://joinup.ec.europa.eu/collection/justice-law-and-security/solution/leos-open-source-software-editing-legislation": {
+    "labels": {
+      "nl-NL": "LEOS",
+      "en-US": "LEOS"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/OPENFISCA": {
+    "labels": {
+      "nl-NL": "OpenFisca",
+      "en-US": "OpenFisca"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/REGELSPRAAK": {
+    "labels": {
+      "nl-NL": "Regelspraak",
+      "en-US": "Regelspraak"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/RMM": {
+    "labels": {
+      "nl-NL": "RuleManagement Methode",
+      "en-US": "RuleManagement Methode"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/RULESPEAK": {
+    "labels": {
+      "nl-NL": "RuleSpeak",
+      "en-US": "RuleSpeak"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/SPARKWISE": {
+    "labels": {
+      "nl-NL": "Sparkwise",
+      "en-US": "Sparkwise"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/USOFT": {
+    "labels": {
+      "nl-NL": "USoft",
+      "en-US": "USoft"
+    }
+  }
+}
