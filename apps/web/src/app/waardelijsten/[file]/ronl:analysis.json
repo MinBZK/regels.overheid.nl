@@ -1,0 +1,20 @@
+{
+  "placeholder-do-not-use-wetsanalyse-jas": {
+    "labels": {
+      "nl-NL": "Wetsanalyse (JAS)",
+      "en-US": "Wetsanalyse (JAS)"
+    }
+  },
+  "placeholder-do-not-use-wetsanalyse-jrm": {
+    "labels": {
+      "nl-NL": "Wetsanalyse (JRM)",
+      "en-US": "Wetsanalyse (JRM)"
+    }
+  },
+  "https://regels.overheid.nl/docs/methods/flint/INTRODUCTIE": {
+    "labels": {
+      "nl-NL": "FLINT",
+      "en-US": "FLINT"
+    }
+  }
+}

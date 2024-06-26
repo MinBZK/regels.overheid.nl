@@ -1,0 +1,44 @@
+{
+  "http://creativecommons.org/licenses/by/4.0/deed.nl": {
+    "labels": {
+      "nl-NL": "CC-BY (4.0)",
+      "en-US": "CC-BY (4.0)"
+    }
+  },
+  "http://creativecommons.org/licenses/by-sa/4.0/deed.nl": {
+    "labels": {
+      "nl-NL": "CC-BY-SA (4.0)",
+      "en-US": "CC-BY-SA (4.0)"
+    }
+  },
+  "https://creativecommons.org/licenses/by-nc/4.0/deed.nl": {
+    "labels": {
+      "nl-NL": "CC-BY-NC (4.0)",
+      "en-US": "CC-BY-NC (4.0)"
+    }
+  },
+  "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.nl": {
+    "labels": {
+      "nl-NL": "CC-BY-NC-SA (4.0)",
+      "en-US": "CC-BY-NC-SA (4.0)"
+    }
+  },
+  "https://creativecommons.org/licenses/by-nd/2.0/deed.nl": {
+    "labels": {
+      "nl-NL": "CC-BY-ND (2.0)",
+      "en-US": "CC-BY-ND (2.0)"
+    }
+  },
+  "https://creativecommons.org/licenses/by-nc-nd/4.0/deed.nl": {
+    "labels": {
+      "nl-NL": "CC-BY-NC-ND (4.0)",
+      "en-US": "CC-BY-NC-ND (4.0)"
+    }
+  },
+  "http://standaarden.overheid.nl/owms/terms/geslotenlicentie": {
+    "labels": {
+      "nl-NL": "Geen open licentie",
+      "en-US": "No open license"
+    }
+  }
+}

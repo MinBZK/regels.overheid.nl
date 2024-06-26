@@ -1,0 +1,56 @@
+{
+  "placeholder-do-not-use-wetsanalyse": {
+    "labels": {
+      "nl-NL": "Wetsanalyse",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-functioneel-ontwerp": {
+    "labels": {
+      "nl-NL": "Functioneel Ontwerp",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-software-code": {
+    "labels": {
+      "nl-NL": "Software code",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-ux-design": {
+    "labels": {
+      "nl-NL": "UX Design",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-communicatiemiddel": {
+    "labels": {
+      "nl-NL": "Communicatiemiddel",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-werkinstructie": {
+    "labels": {
+      "nl-NL": "Werkinstructie",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-kwaliteitseisen": {
+    "labels": {
+      "nl-NL": "Kwaliteitseisen",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-bestuurlijke-informatie": {
+    "labels": {
+      "nl-NL": "Bestuurlijke Informatie",
+      "en-US": ""
+    }
+  },
+  "placeholder-do-not-use-overig": {
+    "labels": {
+      "nl-NL": "Overig",
+      "en-US": ""
+    }
+  }
+}
