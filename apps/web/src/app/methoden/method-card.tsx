@@ -52,6 +52,8 @@ export const MethodCard: React.FC<Props> = ({ title, href, description, date, cl
   const [collapsed, setCollapsed] = useState(false);
   const methodTree = getMethodTree(title);
 
+  const override = href ? { docs: href } : undefined;
+
   return (
     <Card component="article" id={slugify(title, { lowercase: true })} className={rootVariants({ collapsed })}>
       {tag && <Pill label={tag} className="capitalize" variant={methodTree?.color} />}
@@ -61,27 +63,25 @@ export const MethodCard: React.FC<Props> = ({ title, href, description, date, cl
       <div className={bodyVariants({ collapsed })}>
         <div className="grid h-full grid-rows-[1fr,_34px] overflow-hidden">
           <div>
-            <Typography className={methodTree ? 'line-clamp-[7]' : 'line-clamp-[8]'}>{description}</Typography>
+            <Typography className="line-clamp-6">{description}</Typography>
           </div>
           <div className="mt-auto flex">
-            <MethodNavigation method={title} />
+            <MethodNavigation method={title} overrideTreeValue={override} />
           </div>
         </div>
         <div className="overflow-hidden">
-          <MethodNavigation method={title} orientation="vertical" showLabel />
+          <MethodNavigation method={title} orientation="vertical" showLabel overrideTreeValue={override} />
         </div>
       </div>
-      {methodTree && (
-        <Button
-          variant="outlined"
-          className="absolute bottom-4 right-3"
-          onClick={() => {
-            setCollapsed((prev) => !prev);
-          }}
-        >
-          <IconCornerLeftUp className={buttonIconVariants({ collapsed })} />
-        </Button>
-      )}
+      <Button
+        variant="outlined"
+        className="absolute bottom-4 right-3"
+        onClick={() => {
+          setCollapsed((prev) => !prev);
+        }}
+      >
+        <IconCornerLeftUp className={buttonIconVariants({ collapsed })} />
+      </Button>
     </Card>
   );
 };

@@ -13,6 +13,7 @@ interface Props {
   className?: string;
   showLabel?: boolean;
   orientation?: 'vertical' | 'horizontal';
+  overrideTreeValue?: Partial<MethodTree>;
 }
 
 type ItemName = keyof Omit<MethodTree, 'color'> | 'lab';
@@ -23,6 +24,7 @@ interface ItemProps {
 
 interface ContextValue extends Pick<Props, 'showLabel' | 'hide'> {
   methodTree: MethodTree;
+  method: keyof MethodTree;
 }
 
 const iconMap: Record<ItemName, Icon> = {
@@ -62,17 +64,34 @@ const linkVariants = cva({
       success: 'text-success-main',
     },
   },
+  defaultVariants: {
+    color: 'info',
+  },
 });
 
 const context = createContext<ContextValue>({} as any);
 
-export const MethodNavigation: React.FC<Props> = ({ method, className, orientation, showLabel, hide }) => {
+export const MethodNavigation: React.FC<Props> = ({
+  method,
+  className,
+  orientation,
+  showLabel,
+  hide,
+  overrideTreeValue,
+}) => {
   const methodTree = getMethodTree(method || '');
 
-  if (!methodTree) return null;
+  if (!methodTree && !overrideTreeValue) return null;
 
   return (
-    <context.Provider value={{ methodTree, showLabel, hide }}>
+    <context.Provider
+      value={{
+        hide,
+        showLabel,
+        method: method as keyof MethodTree,
+        methodTree: { ...methodTree, ...overrideTreeValue } as MethodTree,
+      }}
+    >
       <ul className={cx(className, listVariants({ orientation }))}>
         <Item name="docs" />
         <Item name="publication" />
@@ -84,14 +103,18 @@ export const MethodNavigation: React.FC<Props> = ({ method, className, orientati
 };
 
 const Item: React.FC<ItemProps> = ({ name }) => {
-  const { methodTree, showLabel, hide } = useContext(context);
+  const { methodTree, showLabel, hide, method } = useContext(context);
 
-  if (!methodTree.hasOwnProperty(name) || hide === name) return null;
+  if (hide === name) return null;
+
+  if (!methodTree.hasOwnProperty(name) && name !== 'lab') return null;
+
+  if (name === 'lab' && !methodTree.hasOwnProperty('demo')) return null;
 
   const Icon = iconMap[name];
 
   const getHref = () => {
-    if (name === 'lab') return `/lab#${slugify(name, { lowercase: true })}`;
+    if (name === 'lab') return `/lab#${slugify(method, { lowercase: true })}`;
 
     return methodTree[name]!;
   };
