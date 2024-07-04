@@ -124,7 +124,7 @@ const Element: React.FC<ElementProps> = ({
             {title}
           </Typography>
           <Typography className="text-center">{description}</Typography>
-          {method && <MethodNavigation className="mt-4" variant={method} hide="lab" />}
+          {method && <MethodNavigation className="mt-4" method={method} hide="lab" />}
           <Button variant="text" className="mt-auto shrink-0" onClick={onClick} endIcon={<IconArrowRight />}>
             Meer
           </Button>

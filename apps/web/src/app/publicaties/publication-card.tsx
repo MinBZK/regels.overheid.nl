@@ -1,10 +1,9 @@
 import { methodsTree } from '@/common/methods-tree';
-import { Button } from '@/components/button';
 import { Card } from '@/components/card';
 import { Link } from '@/components/link';
 import { MethodNavigation } from '@/components/method-navigation';
 import { Pill } from '@/components/pill';
-import { cva, cx } from '@/cva.config';
+import { cx } from '@/cva.config';
 import slugify from '@sindresorhus/slugify';
 import { IconExternalLink } from '@tabler/icons-react';
 import clsx from 'clsx';
@@ -43,16 +42,6 @@ interface Props {
 type PublicationCardProps = (PublishedProps | WipProps | UnavailableProps) & Props;
 
 type VariantMappingComponent = 'card' | 'title' | 'description' | 'tag';
-
-const variants = cva({
-  variants: {
-    variant: {
-      wip: {},
-      published: {},
-      unavailable: {},
-    },
-  },
-});
 
 const variantMapping: Record<Variant, Partial<Record<VariantMappingComponent, string>>> = {
   published: {
@@ -99,8 +88,6 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
 }) => {
   const variantStyles = variantMapping[variant];
 
-  const Wrapper = wrapperComponentTag(variant);
-
   return (
     <Card component="article" id={method && slugify(method, { lowercase: true })} className="flex h-full">
       <div className="flex w-full flex-col items-start gap-y-2">
@@ -124,7 +111,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
             variant={variant === 'wip' ? 'warning' : 'info'}
             className={cx(variant === 'unavailable' && 'bg-gray-lighter text-grey-main')}
           />
-          {method && <MethodNavigation hide="publication" variant={method} />}
+          {method && <MethodNavigation hide="publication" method={method} />}
         </div>
       </div>
     </Card>
