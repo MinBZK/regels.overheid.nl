@@ -1,5 +1,11 @@
 # web
 
+## 3.28.0
+
+### Minor Changes
+
+- cea94ff: Updated method navigation on `methoden` page
+
 ## 3.27.0
 
 ### Minor Changes
