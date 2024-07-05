@@ -31,3 +31,13 @@ export const methodsTree = {
     publication: 'https://regels.overheid.nl/publicaties/wetsanalyse',
   },
 } satisfies Record<string, MethodTree>;
+
+export const getMethodTree = (method: string) => {
+  const methodKey = Object.keys(methodsTree).find((key) => key.toLowerCase() === method.toLowerCase()) as
+    | keyof typeof methodsTree
+    | undefined;
+
+  if (!methodKey) return;
+
+  return methodsTree[methodKey];
+};

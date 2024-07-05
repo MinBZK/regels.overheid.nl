@@ -1,74 +1,130 @@
-import { MethodTree, methodsTree } from '@/common/methods-tree';
-import { VariantProps, cva, cx } from '@/cva.config';
-import slugify from '@sindresorhus/slugify';
-import { IconBook2, IconFileTypeDoc, IconMicroscope, IconPlayerPlay } from '@tabler/icons-react';
-import NextLink from 'next/link';
-import { HTMLProps } from 'react';
+'use client';
 
-const variants = cva({
-  base: 'flex gap-x-6',
+import { MethodTree, getMethodTree } from '@/common/methods-tree';
+import { cva, cx } from '@/cva.config';
+import slugify from '@sindresorhus/slugify';
+import { Icon, IconBook2, IconFileTypeDoc, IconMicroscope, IconPlayerPlay } from '@tabler/icons-react';
+import { createContext, useContext } from 'react';
+import { Link } from './link';
+
+interface Props {
+  method?: string;
+  hide?: ItemName;
+  className?: string;
+  showLabel?: boolean;
+  orientation?: 'vertical' | 'horizontal';
+  overrideTreeValue?: Partial<MethodTree>;
+}
+
+type ItemName = keyof Omit<MethodTree, 'color'> | 'lab';
+
+interface ItemProps {
+  name: ItemName;
+}
+
+interface ContextValue extends Pick<Props, 'showLabel' | 'hide'> {
+  methodTree: MethodTree;
+  method: keyof MethodTree;
+}
+
+const iconMap: Record<ItemName, Icon> = {
+  docs: IconFileTypeDoc,
+  demo: IconPlayerPlay,
+  lab: IconMicroscope,
+  publication: IconBook2,
+};
+
+const labelMap: Record<ItemName, string> = {
+  docs: 'Naar documentatie',
+  demo: 'Naar de demo',
+  lab: 'Naar de tool',
+  publication: 'Naar publicatie',
+};
+
+const listVariants = cva({
+  base: 'flex gap-3',
   variants: {
-    color: {
-      error: 'border-error-main text-error-main',
-      info: 'border-primary-main text-primary-main',
-      success: 'border-success-main text-success-main',
-      warning: 'border-warning-main text-warning-main',
-    } satisfies Record<Exclude<MethodTree['color'], undefined>, string>,
+    orientation: {
+      vertical: 'flex-col',
+      horizontal: 'items-center',
+    },
+  },
+  defaultVariants: {
+    orientation: 'horizontal',
   },
 });
 
-interface MethodNavigationProps extends VariantProps<typeof variants> {
-  hide?: keyof MethodTree | 'lab';
-  variant: keyof typeof methodsTree;
-  className?: string;
-}
+const linkVariants = cva({
+  base: 'flex gap-3',
+  variants: {
+    color: {
+      info: 'text-primary-main',
+      warning: 'text-warning-main',
+      error: 'text-error-main',
+      success: 'text-success-main',
+    },
+  },
+  defaultVariants: {
+    color: 'info',
+  },
+});
 
-interface LinkProps extends HTMLProps<HTMLAnchorElement> {}
+const context = createContext<ContextValue>({} as any);
 
-const Link: React.OverrideAbleComponentFC<'a', LinkProps> = ({ component: Component = 'a', ...props }) => (
-  <Component className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-inherit p-1" {...props} />
-);
+export const MethodNavigation: React.FC<Props> = ({
+  method,
+  className,
+  orientation,
+  showLabel,
+  hide,
+  overrideTreeValue,
+}) => {
+  const methodTree = getMethodTree(method || '');
 
-export const MethodNavigation: React.FC<MethodNavigationProps> = ({ variant, hide, className }) => {
-  const methodKey =
-    (Object.keys(methodsTree).find((key) => key.toLowerCase() === variant.toLowerCase()) as typeof variant) || null;
+  if (!methodTree && !overrideTreeValue) return null;
 
-  if (!methodKey) return null;
+  return (
+    <context.Provider
+      value={{
+        hide,
+        showLabel,
+        method: method as keyof MethodTree,
+        methodTree: { ...methodTree, ...overrideTreeValue } as MethodTree,
+      }}
+    >
+      <ul className={cx(className, listVariants({ orientation }))}>
+        <Item name="docs" />
+        <Item name="publication" />
+        <Item name="demo" />
+        <Item name="lab" />
+      </ul>
+    </context.Provider>
+  );
+};
 
-  const methodTree = methodsTree[methodKey] as MethodTree;
+const Item: React.FC<ItemProps> = ({ name }) => {
+  const { methodTree, showLabel, hide, method } = useContext(context);
 
-  const hasItemsToShow = Object.keys(methodTree).filter((key) => ![hide, 'color'].includes(key)).length > 0;
+  if (hide === name) return null;
 
-  if (!hasItemsToShow) return null;
+  if (!methodTree.hasOwnProperty(name) && name !== 'lab') return null;
 
-  const canShowItem = (item: Exclude<typeof hide, undefined>) => {
-    if (item === 'lab') return item !== hide && 'demo' in methodTree;
+  if (name === 'lab' && !methodTree.hasOwnProperty('demo')) return null;
 
-    return item !== hide && item in methodTree;
+  const Icon = iconMap[name];
+
+  const getHref = () => {
+    if (name === 'lab') return `/lab#${slugify(method, { lowercase: true })}`;
+
+    return methodTree[name]!;
   };
 
   return (
-    <div className={cx(variants({ color: methodTree.color, className }))}>
-      {canShowItem('docs') && (
-        <Link href={methodTree.docs}>
-          <IconFileTypeDoc />
-        </Link>
-      )}
-      {canShowItem('demo') && (
-        <Link href={methodTree.demo}>
-          <IconPlayerPlay />
-        </Link>
-      )}
-      {canShowItem('lab') && (
-        <Link component={NextLink} href={`/lab#${slugify(variant, { lowercase: true })}`}>
-          <IconMicroscope />
-        </Link>
-      )}
-      {canShowItem('publication') && (
-        <Link href={methodTree.publication}>
-          <IconBook2 />
-        </Link>
-      )}
-    </div>
+    <li>
+      <Link href={getHref()} className={linkVariants({ color: methodTree.color })}>
+        <Icon />
+        {showLabel && labelMap[name]}
+      </Link>
+    </li>
   );
 };

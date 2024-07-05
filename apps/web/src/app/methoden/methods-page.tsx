@@ -25,13 +25,12 @@ export const MethodsPage: React.FC<Props> = ({ methods }) => {
       <Container bleed>
         <div className="grid items-start gap-y-4 transition-all md:grid-cols-2 md:gap-x-4 md:gap-y-16 lg:grid-cols-1 lg:gap-y-8 xl:grid-cols-3 xl:gap-x-6 2xl:gap-x-14">
           {filteredMethods.map(
-            ({ id, href, icon, title, tag, description, updatedAt, createdAt }) =>
+            ({ id, href, title, tag, description, updatedAt, createdAt }) =>
               title &&
               description && (
                 <MethodCard
                   key={id}
                   href={href}
-                  icon={icon}
                   title={title}
                   tag={tag || defaultTag}
                   description={description}
