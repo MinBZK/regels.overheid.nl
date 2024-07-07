@@ -1,5 +1,11 @@
 # docs
 
+## 3.12.0
+
+### Minor Changes
+
+- a229007: Added Digitaal Stelsel Omgevingswet (DSO) introduction page"
+
 ## 3.11.0
 
 ### Minor Changes
