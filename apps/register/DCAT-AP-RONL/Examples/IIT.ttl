@@ -25,7 +25,7 @@
     dcat:distribution <https://regels.overheid.nl/register/indInkToesl-regelgroep> ,
                       <https://regels.overheid.nl/register/indInkToesl-parameters> ,
                       <https://regels.overheid.nl/register/indInkToesl-gegevensmodel> ,
-                      <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl> ;
+                      <https://regels.overheid.nl/register/indInkToesl-api> ;
     dct:publisher <https://www.utrecht.nl/> ;
     dct:creator <https://regels.overheid.nl/person/steven-gort> ;
 # dct:subject is used to provide detailed subject information about the dataset's content.
@@ -36,59 +36,59 @@
     dcat:theme <https://regels.overheid.nl/theme/sociale-zekerheid> .
 
 # Distribution 1: Regelgroep
-<https://data.example.org/distribution/health-stats-csv> a dcat:Distribution ;
-    dct:title "Health Statistics CSV Distribution" ;
-    dcat:accessURL <https://data.example.org/dataset/health-stats.csv> ;
-    dcat:mediaType "text/csv" ;
-    dct:format "CSV" ;
-    dct:issued "2024-07-01"^^xsd:date .
+<https://regels.overheid.nl/register/indInkToesl-regelgroep> a dcat:Distribution ;
+    dct:title "HTML weergave van de ALEF regelgroep" ;
+    dcat:accessURL <https://regels.overheid.nl/register/indInkToesl> ;
+    dcat:mediaType "text/html" ;
+    dct:format "HTML" ;
+    dct:issued "2024-01-05"^^xsd:date .
 
-# Distribution 2: Paraameters
-<https://data.example.org/distribution/health-stats-json> a dcat:Distribution ;
-    dct:title "Health Statistics JSON Distribution" ;
-    dcat:accessURL <https://data.example.org/dataset/health-stats.json> ;
-    dcat:mediaType "application/json" ;
-    dct:format "JSON" ;
-    dct:issued "2024-07-01"^^xsd:date .
+# Distribution 2: Parameters
+<https://regels.overheid.nl/register/indInkToesl-parameters> a dcat:Distribution ;
+    dct:title "HTML weergave van de parameters van de ALEF regelgroep" ;
+    dcat:accessURL <https://regels.overheid.nl/register/indInkToesl> ;
+    dcat:mediaType "text/html" ;
+    dct:format "HTML" ;
+    dct:issued "2024-05-01"^^xsd:date .
 
 # Distribution 3: Gegevensmodel
-<https://data.example.org/distribution/health-stats-xml> a dcat:Distribution ;
-    dct:title "Health Statistics XML Distribution" ;
-    dcat:accessURL <https://data.example.org/dataset/health-stats.xml> ;
-    dcat:mediaType "application/xml" ;
-    dct:format "XML" ;
-    dct:issued "2024-07-01"^^xsd:date .
+<https://regels.overheid.nl/register/indInkToesl-gegevensmodel> a dcat:Distribution ;
+    dct:title "Gegevensmodel voor het object: 'Aanvraag'" ;
+    dcat:accessURL <https://regels.overheid.nl/register/indInkToesl> ;
+    dcat:mediaType "text/html" ;
+    dct:format "HTML" ;
+    dct:issued "2024-05-01"^^xsd:date .
 
 # Distribution 4: Regel Service (API)
-<https://data.another.org/service/health-stats-api> a dcat:DataService ;
+<https://regels.overheid.nl/register/indInkToesl-api> a dcat:DataService ;
     dct:title "Health Statistics API" ;
-    dcat:endpointURL <https://api.another.org/health-stats> ;
-    dcat:servesDataset <https://data.example.org/dataset/health-statistics> ;
-    dcat:mediaType "application/json" ;
-    dct:format "API" ;
-    dct:issued "2024-07-01"^^xsd:date ;
-    dct:publisher <https://data.another.org/organization/another-organization> .
+    dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl> ;
+    dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl> ;
+    dcat:mediaType "application/soap+xml" ;
+    dct:format "SOAP" ;
+    dct:issued "2024-05-01"^^xsd:date ;
+    dct:publisher <https://www.blueriq.com/en/> .
 
 # Publisher (organization) definition
-<https://data.example.org/organization/example-health-department> a foaf:Organization ;
-    foaf:name "Example Health Department" .
+<https://www.utrecht.nl/> a foaf:Organization ;
+    foaf:name "Gemeente Utrecht" .
 
-<https://data.another.org/organization/another-organization> a foaf:Organization ;
-    foaf:name "Another Organization" .
+<https://www.blueriq.com/en/> a foaf:Organization ;
+    foaf:name "Blueriq" .
 
 # Creator (person) definition
-<https://data.example.org/person/john-smith> a foaf:Person ;
-    foaf:name "John Smith" .
+<https://regels.overheid.nl/person/steven-gort> a foaf:Person ;
+    foaf:name "Steven M. Gort" .
 
 # Subject (concept) definition
-<https://data.example.org/subject/health> a skos:Concept ;
-    skos:prefLabel "Health" .
+<https://regels.overheid.nl/subject/individuele-inkomenstoeslag> a skos:Concept ;
+    skos:prefLabel "Individuele Inkomsenstoeslag" .
 
 # License definition
-<https://data.example.org/license/open-data-license> a dct:LicenseDocument ;
-    dct:title "Open Data License" ;
-    dct:identifier "https://data.example.org/license/open-data-license" .
+<https://regels.overheid.nl/license/CC-BY-NC-SA> a dct:LicenseDocument ;
+    dct:title "Creative Commons license BY-NC-SA 4.0" ;
+    dct:identifier "https://creativecommons.org/licenses/by-nc-sa/4.0/" .
 
 # Theme definition
-<https://data.example.org/theme/health> a dcat:Theme ;
-    dct:title "Health" .
+<https://regels.overheid.nl/theme/sociale-zekerheid> a dcat:Theme ;
+    dct:title "Sociale Zekerheid" .
