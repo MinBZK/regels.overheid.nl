@@ -3,6 +3,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ex: <http://example.org/>.
 
 #
 # In DCAT you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details within a dataset.
@@ -11,8 +12,8 @@
 #
 # Catalog definition
 <https://regels.overheid.nl/register> a dcat:Catalog;
-    dct:title "Open Regels van de Nederlandse Overheid";
-    dct:description "Open Regels catalogiseert welke regels er zijn, van wie de regels zijn en met welk doel ze worden gebruikt";
+    dct:title "Open Regels van de Nederlandse Overheid"@nl;
+    dct:description "Open Regels catalogiseert welke regels er zijn, van wie de regels zijn en met welk doel ze worden gebruikt"@nl;
     dct:publisher <https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties>;
     dct:issued "2023-01-01"^^xsd:date;
     dct:modified "2024-07-08"^^xsd:date;
@@ -21,11 +22,11 @@
 #
 # Dataset definition
 <https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset;
-    dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF";
-    dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'";
+    dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF"@nl;
+    dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'"@nl;
     dct:issued "2023-06-12"^^xsd:date;
     dct:modified "2024-01-05"^^xsd:date;
-    dct:identifier "indInkToesl";
+    dct:identifier "indInkToesl"^^xsd:token;
     dct:license <https://creativecommons.org/licenses/by-nc-sa/4.0/>;
     dct:creator [
         a foaf:Person;
@@ -34,7 +35,7 @@
     ];
     dct:subject [
         a skos:Concept;
-        skos:prefLabel "Individuele Inkomsenstoeslag";
+        skos:prefLabel "Individuele Inkomsenstoeslag"@nl;
         skos:exactMatch <https://regels.overheid.nl/subject/individuele-inkomenstoeslag>;
     ];
     dct:publisher [
@@ -44,32 +45,32 @@
     ];
     dcat:theme [
         a skos:Concept;
-        skos:prefLabel "Sociale Zekerheid";
+        skos:prefLabel "Social Benefits"@en;
         skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid>;
     ];
     dcat:distribution [
         a dcat:Distribution;
-        dct:title "HTML weergave van de ALEF regelgroep";
+        dct:title "HTML weergave van de ALEF regelgroep"@nl;
         dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-regelgroep>;
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-01-05"^^xsd:date;
     ], [
         a dcat:Distribution;
-        dct:title "HTML weergave van de parameters van de ALEF regelgroep";
+        dct:title "HTML weergave van de parameters van de ALEF regelgroep"@nl;
         dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-parameters>;
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
     ], [
         a dcat:Distribution;
-        dct:title "Gegevensmodel voor het object: 'Aanvraag'";
+        dct:title "Gegevensmodel voor het object: 'Aanvraag'"@nl;
         dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-gegevensmodel>;
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
     ], [
-        dct:title "Service 'Berekenen_IIT'";
+        dct:title "Service 'Berekenen_IIT'"@nl;
         dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl>;
         dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl>;
         dcat:mediaType "application/soap+xml";
@@ -81,3 +82,4 @@
             foaf:homepage <https://www.blueriq.com/en/>;
         ];
     ].
+
