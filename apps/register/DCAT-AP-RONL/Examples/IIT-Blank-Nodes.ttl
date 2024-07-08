@@ -4,6 +4,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix ex: <http://example.org/> .
+
+
+# In DCAT (Data Catalog Vocabulary), you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details
+# within a dataset. This approach is particularly useful when you want to describe distributions that are specific to a particular dataset 
+# but do not have their own unique identifiers (IRIs) in the catalog.
 
 # Catalog definition
 <https://regels.overheid.nl/register> a dcat:Catalog;
@@ -16,7 +22,7 @@
     dcat:dataset <https://regels.overheid.nl/register/indInkToesl>.
 
 # Dataset definition
-<https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset;
+ex:indInkToesl a dcat:Dataset;
     dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF";
     dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'";
     dct:issued "2023-06-12"^^xsd:date;
@@ -29,21 +35,21 @@
     dcat:distribution [
         a dcat:Distribution;
         dct:title "HTML weergave van de ALEF regelgroep";
-        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-regelgroep>;
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-01-05"^^xsd:date;
     ], [
         a dcat:Distribution;
         dct:title "HTML weergave van de parameters van de ALEF regelgroep";
-        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-parameters>;
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
     ], [
         dct:title "Health Statistics API";
         dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl>;
-        dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl-api>;
         dcat:mediaType "application/soap+xml";
         dct:format "SOAP";
         dct:issued "2024-05-01"^^xsd:date;
@@ -51,9 +57,19 @@
     ], [
         a dcat:Distribution;
         dct:title "Gegevensmodel voor het object: 'Aanvraag'";
-        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-gegevensmodel>;
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
     ].
 
+# Explanation:
+#
+# Blank Node Usage: [ ... ] is used to denote a Blank Node in Turtle syntax.
+# 
+# /indInkToesl-regelgroep,
+# /indInkToesl-parameters and
+# /indInkToesl-gegevensmodel: These are placeholders for BNodes that represent  each distribution. They do not have global identifiers (IRIs) 
+# and exist solely within the context of ex:indInkToesl.
+#
+# a dcat:Distribution: Indicates that each BNode represents a distribution using the dcat:Distribution class.
