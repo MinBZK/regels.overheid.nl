@@ -21,7 +21,7 @@
     dcat:dataset <https://regels.overheid.nl/register/indInkToesl>.
 
 # Dataset definition
-ex:indInkToesl a dcat:Dataset;
+<https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset;
     dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF";
     dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'";
     dct:issued "2023-06-12"^^xsd:date;
