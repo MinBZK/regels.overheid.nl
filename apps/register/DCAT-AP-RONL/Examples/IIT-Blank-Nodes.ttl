@@ -1,25 +1,24 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#>.
 @prefix dct: <http://purl.org/dc/terms/>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix ex: <http://example.org/>.
 
-# In DCAT (Data Catalog Vocabulary), you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details
-# within a dataset. This approach is particularly useful when you want to describe distributions that are specific to a particular dataset 
-# but do not have their own unique identifiers (IRIs) in the catalog.
+#
+# In DCAT you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details within a dataset.
+# This approach is particularly useful when you want to describe distributions that are specific to a particular dataset 
+# but do not have their own unique identifiers (IRIs).
 #
 # Catalog definition
 <https://regels.overheid.nl/register> a dcat:Catalog;
     dct:title "Open Regels van de Nederlandse Overheid";
     dct:description "Open Regels catalogiseert welke regels er zijn, van wie de regels zijn en met welk doel ze worden gebruikt";
-    # The entity responsible for publishing the catalog
     dct:publisher <https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties>;
     dct:issued "2023-01-01"^^xsd:date;
     dct:modified "2024-07-08"^^xsd:date;
     dcat:dataset <https://regels.overheid.nl/register/indInkToesl>.
 
+#
 # Dataset definition
 <https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset;
     dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF";
@@ -27,10 +26,26 @@
     dct:issued "2023-06-12"^^xsd:date;
     dct:modified "2024-01-05"^^xsd:date;
     dct:identifier "indInkToesl";
+    dct:license <https://creativecommons.org/licenses/by-nc-sa/4.0/>;
+    dct:creator [
+        a foaf:Person;
+        foaf:name "Steven M. Gort";
+        foaf:homepage <https://regels.overheid.nl/person/steven-gort>;
+    ];
+    dct:subject [
+        a skos:Concept;
+        skos:prefLabel "Individuele Inkomsenstoeslag";
+        skos:exactMatch <https://regels.overheid.nl/subject/individuele-inkomenstoeslag>;
+    ];
     dct:publisher [
         a foaf:Organization;
         foaf:name "Gemeente Utrecht";
         foaf:homepage <https://www.utrecht.nl>;
+    ];
+    dcat:theme [
+        a skos:Concept;
+        skos:prefLabel "Sociale Zekerheid";
+        skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid>;
     ];
     dcat:distribution [
         a dcat:Distribution;
@@ -66,14 +81,3 @@
             foaf:homepage <https://www.blueriq.com/en/>;
         ];
     ].
-
-# Explanation:
-#
-# Blank Node Usage: [ ... ] is used to denote a Blank Node in Turtle syntax.
-# 
-# /indInkToesl-regelgroep,
-# /indInkToesl-parameters and
-# /indInkToesl-gegevensmodel: These are placeholders for BNodes that represent  each distribution. They do not have global identifiers (IRIs) 
-# and exist solely within the context of ex:indInkToesl.
-#
-# a dcat:Distribution: Indicates that each BNode represents a distribution using the dcat:Distribution class.
