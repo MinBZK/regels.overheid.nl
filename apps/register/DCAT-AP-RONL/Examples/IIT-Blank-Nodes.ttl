@@ -1,0 +1,59 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+# Catalog definition
+<https://regels.overheid.nl/register> a dcat:Catalog;
+    dct:title "Open Regels van de Nederlandse Overheid";
+    dct:description "Open Regels catalogiseert welke regels er zijn, van wie de regels zijn en met welk doel ze worden gebruikt";
+    # The entity responsible for publishing the catalog
+    dct:publisher <https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties>;
+    dct:issued "2023-01-01"^^xsd:date;
+    dct:modified "2024-07-08"^^xsd:date;
+    dcat:dataset <https://regels.overheid.nl/register/indInkToesl>.
+
+# Dataset definition
+<https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset;
+    dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF";
+    dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'";
+    dct:issued "2023-06-12"^^xsd:date;
+    dct:modified "2024-01-05"^^xsd:date;
+    dct:identifier "indInkToesl";
+    dct:publisher [
+        a foaf:Organization;
+        foaf:name "Gemeente Utrecht";
+    ];
+    dcat:distribution [
+        a dcat:Distribution;
+        dct:title "HTML weergave van de ALEF regelgroep";
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:mediaType "text/html";
+        dct:format "HTML";
+        dct:issued "2024-01-05"^^xsd:date;
+    ], [
+        a dcat:Distribution;
+        dct:title "HTML weergave van de parameters van de ALEF regelgroep";
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:mediaType "text/html";
+        dct:format "HTML";
+        dct:issued "2024-05-01"^^xsd:date;
+    ], [
+        dct:title "Health Statistics API";
+        dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl>;
+        dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:mediaType "application/soap+xml";
+        dct:format "SOAP";
+        dct:issued "2024-05-01"^^xsd:date;
+        dct:publisher <https://www.blueriq.com/en/>;
+    ], [
+        a dcat:Distribution;
+        dct:title "Gegevensmodel voor het object: 'Aanvraag'";
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:mediaType "text/html";
+        dct:format "HTML";
+        dct:issued "2024-05-01"^^xsd:date;
+    ].
+
