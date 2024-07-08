@@ -1,0 +1,94 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Catalog definition
+<https://regels.overheid.nl/register> a dcat:Catalog ;
+    dct:title "Open Regels van de Nederlandse Overheid" ;
+    dct:description "Open Regels catalogiseert welke regels er zijn, van wie de regels zijn en met welk doel ze worden gebruikt" ;
+# The entity responsible for publishing the catalog
+    dct:publisher <https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties> ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    dct:modified "2024-07-08"^^xsd:date ;
+    dcat:dataset <https://regels.overheid.nl/register/indInkToesl> .
+
+# Dataset definition
+<https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset ;
+    dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF" ;
+    dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'" ;
+    dct:issued "2023-06-12"^^xsd:date ;
+    dct:modified "2024-01-05"^^xsd:date ;
+    dct:identifier "indInkToesl" ;
+    dcat:distribution <https://regels.overheid.nl/register/indInkToesl-regelgroep> ,
+                      <https://regels.overheid.nl/register/indInkToesl-parameters> ,
+                      <https://regels.overheid.nl/register/indInkToesl-gegevensmodel> ,
+                      <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl> ;
+    dct:publisher <https://www.utrecht.nl/> ;
+    dct:creator <https://regels.overheid.nl/person/steven-gort> ;
+# dct:subject is used to provide detailed subject information about the dataset's content.
+    dct:subject <https://regels.overheid.nl/subject/individuele-inkomenstoeslag> ;
+    dct:license <https://regels.overheid.nl/license/CC-BY-NC-SA> ;
+    dcat:keyword "Inidividuele inkomenstoeslag", "Toeslagen", "IIT", "Werk en Inkomen" ;
+# dcat:theme is used to facilitate dataset discovery by grouping datasets into thematic categories within a catalog.
+    dcat:theme <https://regels.overheid.nl/theme/sociale-zekerheid> .
+
+# Distribution 1: Regelgroep
+<https://data.example.org/distribution/health-stats-csv> a dcat:Distribution ;
+    dct:title "Health Statistics CSV Distribution" ;
+    dcat:accessURL <https://data.example.org/dataset/health-stats.csv> ;
+    dcat:mediaType "text/csv" ;
+    dct:format "CSV" ;
+    dct:issued "2024-07-01"^^xsd:date .
+
+# Distribution 2: Paraameters
+<https://data.example.org/distribution/health-stats-json> a dcat:Distribution ;
+    dct:title "Health Statistics JSON Distribution" ;
+    dcat:accessURL <https://data.example.org/dataset/health-stats.json> ;
+    dcat:mediaType "application/json" ;
+    dct:format "JSON" ;
+    dct:issued "2024-07-01"^^xsd:date .
+
+# Distribution 3: Gegevensmodel
+<https://data.example.org/distribution/health-stats-xml> a dcat:Distribution ;
+    dct:title "Health Statistics XML Distribution" ;
+    dcat:accessURL <https://data.example.org/dataset/health-stats.xml> ;
+    dcat:mediaType "application/xml" ;
+    dct:format "XML" ;
+    dct:issued "2024-07-01"^^xsd:date .
+
+# Distribution 4: Regel Service (API)
+<https://data.another.org/service/health-stats-api> a dcat:DataService ;
+    dct:title "Health Statistics API" ;
+    dcat:endpointURL <https://api.another.org/health-stats> ;
+    dcat:servesDataset <https://data.example.org/dataset/health-statistics> ;
+    dcat:mediaType "application/json" ;
+    dct:format "API" ;
+    dct:issued "2024-07-01"^^xsd:date ;
+    dct:publisher <https://data.another.org/organization/another-organization> .
+
+# Publisher (organization) definition
+<https://data.example.org/organization/example-health-department> a foaf:Organization ;
+    foaf:name "Example Health Department" .
+
+<https://data.another.org/organization/another-organization> a foaf:Organization ;
+    foaf:name "Another Organization" .
+
+# Creator (person) definition
+<https://data.example.org/person/john-smith> a foaf:Person ;
+    foaf:name "John Smith" .
+
+# Subject (concept) definition
+<https://data.example.org/subject/health> a skos:Concept ;
+    skos:prefLabel "Health" .
+
+# License definition
+<https://data.example.org/license/open-data-license> a dct:LicenseDocument ;
+    dct:title "Open Data License" ;
+    dct:identifier "https://data.example.org/license/open-data-license" .
+
+# Theme definition
+<https://data.example.org/theme/health> a dcat:Theme ;
+    dct:title "Health" .
