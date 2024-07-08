@@ -4,13 +4,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix ex: <http://example.org/> .
-
+@prefix ex: <http://example.org/>.
 
 # In DCAT (Data Catalog Vocabulary), you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details
 # within a dataset. This approach is particularly useful when you want to describe distributions that are specific to a particular dataset 
 # but do not have their own unique identifiers (IRIs) in the catalog.
-
+#
 # Catalog definition
 <https://regels.overheid.nl/register> a dcat:Catalog;
     dct:title "Open Regels van de Nederlandse Overheid";
@@ -31,6 +30,7 @@ ex:indInkToesl a dcat:Dataset;
     dct:publisher [
         a foaf:Organization;
         foaf:name "Gemeente Utrecht";
+        foaf:homepage <https://www.utrecht.nl>;
     ];
     dcat:distribution [
         a dcat:Distribution;
@@ -47,20 +47,24 @@ ex:indInkToesl a dcat:Dataset;
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
     ], [
-        dct:title "Health Statistics API";
-        dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl>;
-        dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl-api>;
-        dcat:mediaType "application/soap+xml";
-        dct:format "SOAP";
-        dct:issued "2024-05-01"^^xsd:date;
-        dct:publisher <https://www.blueriq.com/en/>;
-    ], [
         a dcat:Distribution;
         dct:title "Gegevensmodel voor het object: 'Aanvraag'";
         dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-gegevensmodel>;
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
+    ], [
+        dct:title "Service 'Berekenen_IIT'";
+        dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl>;
+        dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl>;
+        dcat:mediaType "application/soap+xml";
+        dct:format "SOAP";
+        dct:issued "2024-05-01"^^xsd:date;
+        dct:publisher [
+            a foaf:Organization;
+            foaf:name "Blueriq";
+            foaf:homepage <https://www.blueriq.com/en/>;
+        ];
     ].
 
 # Explanation:
