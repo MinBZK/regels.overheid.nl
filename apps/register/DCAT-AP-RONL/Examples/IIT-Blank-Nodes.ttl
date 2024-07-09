@@ -51,9 +51,8 @@
         skos:prefLabel "Social Benefits"@en ;
         skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid> ;
     ] ;
-    ronl:analysis ex:AnalysisValue1;
-    ronl:method ex:MethodValue1;
-    ronl:specificationType ex:SpecificationTypeValue1;
+    ronl:analysis ex:ALEF;
+    ronl:method ex:WetsanalyseJAS;
     dct:subject [
         a skos:Concept;
         skos:prefLabel "Individuele Inkomsenstoeslag"@nl;
@@ -76,6 +75,7 @@
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-01-05"^^xsd:date;
+        ronl:specificationType ex:FunctioneelOntwerp;
     ], [
         a dcat:Distribution;
         dct:title "HTML weergave van de parameters van de ALEF regelgroep"@nl;
@@ -83,6 +83,7 @@
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
+        ronl:specificationType ex:FunctioneelOntwerp;
     ], [
         a dcat:Distribution;
         dct:title "Gegevensmodel voor het object: 'Aanvraag'"@nl;
@@ -90,6 +91,7 @@
         dcat:mediaType "text/html";
         dct:format "HTML";
         dct:issued "2024-05-01"^^xsd:date;
+        ronl:specificationType ex:FunctioneelOntwerp;
     ], [
         dct:title "Service 'Berekenen_IIT'"@nl;
         dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl>;
@@ -102,9 +104,10 @@
             foaf:name "Blueriq";
             foaf:homepage <https://www.blueriq.com/en/>;
         ];
+        ronl:specificationType ex:SoftwareCode;
     ].
 
-# Define your custom class and properties
+# Define your custom classes and properties
 ronl:RuleSet a rdfs:Class;
     rdfs:label "Rule Set"@en;
     rdfs:comment "A set of rules defined for the dataset."@en.
@@ -113,26 +116,119 @@ ronl:analysis a rdf:Property;
     rdfs:label "analysis"@en;
     rdfs:comment "Analysis property for the dataset."@en;
     rdfs:domain dcat:Dataset;
-    rdfs:range skos:Concept.
+    rdfs:range ronl:AnalysisConcept.  # Use the specific concept scheme for analysis
 
 ronl:method a rdf:Property;
     rdfs:label "method"@en;
     rdfs:comment "Method property for the dataset."@en;
     rdfs:domain dcat:Dataset;
-    rdfs:range skos:Concept.
+    rdfs:range ronl:MethodConcept.  # Use the specific concept scheme for method
 
 ronl:specificationType a rdf:Property;
     rdfs:label "specificationType"@en;
     rdfs:comment "Specification type property for the dataset."@en;
     rdfs:domain dcat:Dataset;
-    rdfs:range skos:Concept.
+    rdfs:range ronl:SpecificationTypeConcept.  # Use the specific concept scheme for specification type
 
-# Define predefined value lists (SKOS concepts)
-ex:AnalysisValue1 a skos:Concept;
-    skos:prefLabel "Qualitative Analysis"@en.
+# Define separate SKOS concept schemes for each property
+ronl:AnalysisConcept a skos:ConceptScheme;
+    skos:prefLabel "Analysis Concept Scheme"@en.
 
-ex:MethodValue1 a skos:Concept;
-    skos:prefLabel "Survey Method"@en.
+ronl:MethodConcept a skos:ConceptScheme;
+    skos:prefLabel "Method Concept Scheme"@en.
 
-ex:SpecificationTypeValue1 a skos:Concept;
-    skos:prefLabel "Detailed Specification"@en.
+ronl:SpecificationTypeConcept a skos:ConceptScheme;
+    skos:prefLabel "Specification Type Concept Scheme"@en.
+
+# Define predefined value lists (SKOS concepts) for each scheme
+#
+# Scheme AnalysisConcept
+ex:WetsanalyseJAS a skos:Concept;
+    skos:inScheme ronl:AnalysisConcept;
+    skos:prefLabel "Wetsanalyse (JAS)"@nl.
+
+ex:WetsanalyseJRM a skos:Concept;
+    skos:inScheme ronl:AnalysisConcept;
+    skos:prefLabel "Wetsanalyse (JRM)"@nl.
+
+ex:FLINT a skos:Concept;
+    skos:inScheme ronl:AnalysisConcept;
+    skos:prefLabel "FLINT"@en.
+
+# Scheme MethodConcept
+ex:AKN4EU a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "AKN4EU"@en.
+
+ex:ALEF a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "ALEF"@en.
+
+ex:AKN4EU a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "AKN4EU"@en.
+
+ex:ALEF a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "ALEF"@en.
+
+ex:Avola a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "Avola"@en.
+
+ex:Beinformed a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "Beinformed"@en.
+
+ex:Blawx a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "Blawx"@en.
+
+ex:Blueriq a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "Blueriq"@en.
+
+ex:Catala a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "Catala"@en.
+
+ex:CircuLaw a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "CircuLaw"@en.
+
+ex:ConcordiaLegal a skos:Concept;
+    skos:inScheme ronl:MethodConcept;
+    skos:prefLabel "Concordia Legal"@en.
+
+# Scheme SpecificationTypeConcept
+ex:FunctioneelOntwerp a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "Functioneel Ontwerp"@nl.
+
+ex:SoftwareCode a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "Software code"@nl.
+
+ex:UXDesign a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "UX Design"@nl.
+
+ex:Communicatiemiddel a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "Communicatiemiddel"@nl.
+
+ex:Werkinstructie a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "Werkinstructie"@nl.
+
+ex:Kwaliteitseisen a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "Kwaliteitseisen"@nl.
+
+ex:BestuurlijkeInformatie a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "Bestuurlijke Informatie"@nl.
+
+ex:Overig a skos:Concept;
+    skos:inScheme ronl:SpecificationTypeConcept;
+    skos:prefLabel "Overig"@nl.
