@@ -146,90 +146,82 @@ ronl:SpecificationTypeConcept a skos:ConceptScheme;
 # Scheme AnalysisConcept
 ex:WetsanalyseJAS a skos:Concept;
     skos:inScheme ronl:AnalysisConcept;
-    skos:prefLabel "Wetsanalyse (JAS)"@nl.
+    skos:prefLabel "Wetsanalyse (JAS)"@nl, "Legal Analysis (JAS)"@en.
 
 ex:WetsanalyseJRM a skos:Concept;
     skos:inScheme ronl:AnalysisConcept;
-    skos:prefLabel "Wetsanalyse (JRM)"@nl.
+    skos:prefLabel "Wetsanalyse (JRM)"@nl, "Legal Analysis (JRM)"@en.
 
 ex:FLINT a skos:Concept;
     skos:inScheme ronl:AnalysisConcept;
-    skos:prefLabel "FLINT"@en.
+    skos:prefLabel "FLINT"@nl, "FLINT"@en.
 
 # Scheme MethodConcept
 ex:AKN4EU a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "AKN4EU"@en.
+    skos:prefLabel "AKN4EU"@nl, "AKN4EU"@en.
 
 ex:ALEF a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "ALEF"@en.
-
-ex:AKN4EU a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "AKN4EU"@en.
-
-ex:ALEF a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "ALEF"@en.
+    skos:prefLabel "ALEF"@nl, "ALEF"@en.
 
 ex:Avola a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Avola"@en.
+    skos:prefLabel "Avola"@nl, "Avola"@en.
 
 ex:Beinformed a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Beinformed"@en.
+    skos:prefLabel "Beinformed"@nl, "Beinformed"@en.
 
 ex:Blawx a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Blawx"@en.
+    skos:prefLabel "Blawx"@nl, "Blawx"@en.
 
 ex:Blueriq a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Blueriq"@en.
+    skos:prefLabel "Blueriq"@nl, "Blueriq"@en.
 
 ex:Catala a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Catala"@en.
+    skos:prefLabel "Catala"@nl, "Catala"@en.
 
 ex:CircuLaw a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "CircuLaw"@en.
+    skos:prefLabel "CircuLaw"@nl, "CircuLaw"@en.
 
 ex:ConcordiaLegal a skos:Concept;
     skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Concordia Legal"@en.
+    skos:prefLabel "Concordia Legal"@nl, "Concordia Legal"@en.
 
 # Scheme SpecificationTypeConcept
 ex:FunctioneelOntwerp a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Functioneel Ontwerp"@nl.
+    skos:prefLabel "Functioneel Ontwerp"@nl, "Functional Design"@en.
 
 ex:SoftwareCode a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Software code"@nl.
+    skos:prefLabel "Software code"@nl, "Software code"@en.
 
 ex:UXDesign a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "UX Design"@nl.
+    skos:prefLabel "UX Design"@nl, "UX Design"@en.
 
 ex:Communicatiemiddel a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Communicatiemiddel"@nl.
+    skos:prefLabel "Communicatiemiddel"@nl, "Communications service"@en.
 
 ex:Werkinstructie a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Werkinstructie"@nl.
+    skos:prefLabel "Werkinstructie"@nl, "work instruction"@en.
 
 ex:Kwaliteitseisen a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Kwaliteitseisen"@nl.
+    skos:prefLabel "Kwaliteitseisen"@nl, "Quality Requirements"@en.
 
 ex:BestuurlijkeInformatie a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Bestuurlijke Informatie"@nl.
+    skos:prefLabel "Bestuurlijke Informatie"@nl, "Business Intelligence"@en.
 
 ex:Overig a skos:Concept;
     skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Overig"@nl.
+    skos:prefLabel "Overig"@nl, "Other"@en.
