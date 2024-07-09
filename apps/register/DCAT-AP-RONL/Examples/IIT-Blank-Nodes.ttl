@@ -4,6 +4,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix ex: <http://example.org/>.
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ronl: <https://regels.overheid.nl/ronl/ns#>.
 
 #
 # In DCAT you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details within a dataset.
@@ -22,17 +25,35 @@
 #
 # Dataset definition
 <https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset;
+    dct:identifier "indInkToesl"^^xsd:token;
     dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF"@nl;
     dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'"@nl;
-    dct:issued "2023-06-12"^^xsd:date;
-    dct:modified "2024-01-05"^^xsd:date;
-    dct:identifier "indInkToesl"^^xsd:token;
     dct:license <https://creativecommons.org/licenses/by-nc-sa/4.0/>;
     dct:creator [
         a foaf:Person;
         foaf:name "Steven M. Gort";
         foaf:homepage <https://regels.overheid.nl/person/steven-gort>;
     ];
+    dct:issued "2023-06-12"^^xsd:date;
+    dct:modified "2024-01-05"^^xsd:date;
+    dcat:contactPoint [
+        a vcard:Organization;
+        vcard:fn "regels.overheid.nl";
+        vcard:hasEmail "regels@minbzk.nl";
+        vcard:hasTelephone [
+            a vcard:Work, vcard:Voice;
+            vcard:hasValue <tel:31701234567>;
+        ];
+        vcard:hasURL "regels.overheid.nl";
+    ];
+    dcat:theme [
+        a skos:Concept ;
+        skos:prefLabel "Social Benefits"@en ;
+        skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid> ;
+    ] ;
+    ronl:analysis ex:AnalysisValue1;
+    ronl:method ex:MethodValue1;
+    ronl:specificationType ex:SpecificationTypeValue1;
     dct:subject [
         a skos:Concept;
         skos:prefLabel "Individuele Inkomsenstoeslag"@nl;
@@ -83,3 +104,35 @@
         ];
     ].
 
+# Define your custom class and properties
+ronl:RuleSet a rdfs:Class;
+    rdfs:label "Rule Set"@en;
+    rdfs:comment "A set of rules defined for the dataset."@en.
+
+ronl:analysis a rdf:Property;
+    rdfs:label "analysis"@en;
+    rdfs:comment "Analysis property for the dataset."@en;
+    rdfs:domain dcat:Dataset;
+    rdfs:range skos:Concept.
+
+ronl:method a rdf:Property;
+    rdfs:label "method"@en;
+    rdfs:comment "Method property for the dataset."@en;
+    rdfs:domain dcat:Dataset;
+    rdfs:range skos:Concept.
+
+ronl:specificationType a rdf:Property;
+    rdfs:label "specificationType"@en;
+    rdfs:comment "Specification type property for the dataset."@en;
+    rdfs:domain dcat:Dataset;
+    rdfs:range skos:Concept.
+
+# Define predefined value lists (SKOS concepts)
+ex:AnalysisValue1 a skos:Concept;
+    skos:prefLabel "Qualitative Analysis"@en.
+
+ex:MethodValue1 a skos:Concept;
+    skos:prefLabel "Survey Method"@en.
+
+ex:SpecificationTypeValue1 a skos:Concept;
+    skos:prefLabel "Detailed Specification"@en.
