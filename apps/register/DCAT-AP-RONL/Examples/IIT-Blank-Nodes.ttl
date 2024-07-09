@@ -108,25 +108,25 @@
     ].
 
 # Define your custom classes and properties
-ronl:RuleSet a rdfs:Class;
-    rdfs:label "Rule Set"@en;
-    rdfs:comment "A set of rules defined for the dataset."@en.
+ronl:RulesSet a rdfs:Class;
+    rdfs:label "Rules Set"@en;
+    rdfs:comment "A set of rulespecifications defined for the dataset."@en.
 
 ronl:analysis a rdf:Property;
     rdfs:label "analysis"@en;
-    rdfs:comment "Analysis property for the dataset."@en;
+    rdfs:comment "Analysis property for the rulesset."@en;
     rdfs:domain dcat:Dataset;
     rdfs:range ronl:AnalysisConcept.  # Use the specific concept scheme for analysis
 
 ronl:method a rdf:Property;
     rdfs:label "method"@en;
-    rdfs:comment "Method property for the dataset."@en;
+    rdfs:comment "Method property for the rulesset."@en;
     rdfs:domain dcat:Dataset;
     rdfs:range ronl:MethodConcept.  # Use the specific concept scheme for method
 
 ronl:specificationType a rdf:Property;
     rdfs:label "specificationType"@en;
-    rdfs:comment "Specification type property for the dataset."@en;
+    rdfs:comment "Specification type property for the rulesset."@en;
     rdfs:domain dcat:Dataset;
     rdfs:range ronl:SpecificationTypeConcept.  # Use the specific concept scheme for specification type
 
