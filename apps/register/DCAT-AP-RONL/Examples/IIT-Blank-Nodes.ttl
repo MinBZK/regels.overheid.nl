@@ -1,241 +1,235 @@
-@prefix dcat: <http://www.w3.org/ns/dcat#>.
-@prefix dct: <http://purl.org/dc/terms/>.
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix ex: <http://example.org/>.
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix ronl: <https://regels.overheid.nl/ronl/ns#>.
-@prefix cpsv: <http://purl.org/vocab/cpsv#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ex: <http://example.org/> .
+@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix cpsv: <http://purl.org/vocab/cpsv#> .
 
-#
-# In DCAT you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details within a dataset.
-# This approach is particularly useful when you want to describe distributions that are specific to a particular dataset 
-# but do not have their own unique identifiers (IRIs).
-#
 # Catalog definition
-<https://regels.overheid.nl/register> a dcat:Catalog;
-    dct:title "Open Regels van de Nederlandse Overheid"@nl;
-    dct:description "Open Regels catalogiseert welke regels er zijn, van wie de regels zijn en met welk doel ze worden gebruikt"@nl;
-    dct:publisher <https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties>;
-    dct:issued "2023-01-01"^^xsd:date;
-    dct:modified "2024-07-08"^^xsd:date;
-    dcat:dataset <https://regels.overheid.nl/register/indInkToesl>.
+<https://regels.overheid.nl/register> a dcat:Catalog ;
+    dct:title "Open Regels van de Nederlandse Overheid"@nl ;
+    dct:description "Open Regels catalogiseert welke regels er zijn, van wie de regels zijn en met welk doel ze worden gebruikt"@nl ;
+    dct:publisher <https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties> ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    dct:modified "2024-07-08"^^xsd:date ;
+    dcat:dataset <https://regels.overheid.nl/register/indInkToesl> .
 
-#
 # Dataset definition
-<https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset;
-    dct:identifier "indInkToesl"^^xsd:token;
-    dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF"@nl;
-    dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'"@nl;
-    dct:license <https://creativecommons.org/licenses/by-nc-sa/4.0/>;
-    dct:creator [
-        a foaf:Person;
-        foaf:name "Steven M. Gort";
-        foaf:homepage <https://regels.overheid.nl/person/steven-gort>;
-    ];
+<https://regels.overheid.nl/register/indInkToesl> a dcat:Dataset ;
+    dct:identifier "indInkToesl"^^xsd:token ;
+    dct:title "Individuele inkomenstoeslag - regelgroepen in ALEF"@nl ;
+    dct:description "Verzameling regels voor 'Individuele inkomenstoeslag' van de Gemeente Utrecht die horen bij het object: 'Aanvraag'"@nl ;
+    dct:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
+    dct:creator [ 
+        a foaf:Person ;
+        foaf:name "Steven M. Gort" ;
+        foaf:homepage <https://regels.overheid.nl/person/steven-gort> 
+    ] ;
     dcat:contactPoint [
-        a vcard:Organization;
-        vcard:fn "regels.overheid.nl";
-        vcard:hasEmail "regels@minbzk.nl";
+        a vcard:Organization ;
+        vcard:fn "regels.overheid.nl" ;
+        vcard:hasEmail "regels@minbzk.nl" ;
         vcard:hasTelephone [
-            a vcard:Work, vcard:Voice;
-            vcard:hasValue <tel:31701234567>;
-        ];
-        vcard:hasURL "regels.overheid.nl";
-    ];
+            a vcard:Work, vcard:Voice ;
+            vcard:hasValue <tel:31701234567> 
+        ] ;
+        vcard:hasURL "https://regels.overheid.nl" 
+    ] ;
     dcat:theme [
         a skos:Concept ;
         skos:prefLabel "Social Benefits"@en, "Sociale zekerheid"@nl ;
-        skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid> ;
+        skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid> 
     ] ;
-    ronl:analysis ex:ALEF;
-    ronl:method ex:WetsanalyseJAS;
-    dct:issued "2023-06-12"^^xsd:date;
-    dct:modified "2024-01-05"^^xsd:date;
+    ronl:analysis ex:ALEF ;
+    ronl:method ex:WetsanalyseJAS ;
+    dct:issued "2023-06-12"^^xsd:date ;
+    dct:modified "2024-01-05"^^xsd:date ;
     dct:subject [
-        a skos:Concept;
-        skos:prefLabel "Individuele Inkomsenstoeslag"@nl;
-        skos:exactMatch <https://regels.overheid.nl/subject/individuele-inkomenstoeslag>;
-    ];
+        a skos:Concept ;
+        skos:prefLabel "Individuele Inkomsenstoeslag"@nl ;
+        skos:exactMatch <https://regels.overheid.nl/subject/individuele-inkomenstoeslag> 
+    ] ;
     dct:publisher [
-        a foaf:Organization;
-        foaf:name "Gemeente Utrecht"@nl;
-        foaf:homepage <https://www.utrecht.nl>;
-    ];
+        a foaf:Organization ;
+        foaf:name "Gemeente Utrecht"@nl ;
+        foaf:homepage <https://www.utrecht.nl> 
+    ] ;
     dcat:distribution [
-        a dcat:Distribution;
-        dct:title "HTML weergave van de ALEF regelgroep"@nl;
-        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-regelgroep>;
-        dcat:mediaType "text/html";
-        dct:format "HTML";
-        dct:issued "2024-01-05"^^xsd:date;
-        ronl:specificationType ex:FunctioneelOntwerp;
+        a dcat:Distribution ;
+        dct:title "HTML weergave van de ALEF regelgroep"@nl ;
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-regelgroep> ;
+        dcat:mediaType "text/html" ;
+        dct:format "HTML" ;
+        dct:issued "2024-01-05"^^xsd:date ;
+        ronl:specificationType ex:FunctioneelOntwerp 
     ], [
-        a dcat:Distribution;
-        dct:title "HTML weergave van de parameters van de ALEF regelgroep"@nl;
-        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-parameters>;
-        dcat:mediaType "text/html";
-        dct:format "HTML";
-        dct:issued "2024-05-01"^^xsd:date;
-        ronl:specificationType ex:FunctioneelOntwerp;
+        a dcat:Distribution ;
+        dct:title "HTML weergave van de parameters van de ALEF regelgroep"@nl ;
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-parameters> ;
+        dcat:mediaType "text/html" ;
+        dct:format "HTML" ;
+        dct:issued "2024-05-01"^^xsd:date ;
+        ronl:specificationType ex:FunctioneelOntwerp 
     ], [
-        a dcat:Distribution;
-        dct:title "Gegevensmodel voor het object: 'Aanvraag'"@nl;
-        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-gegevensmodel>;
-        dcat:mediaType "text/html";
-        dct:format "HTML";
-        dct:issued "2024-05-01"^^xsd:date;
-        ronl:specificationType ex:FunctioneelOntwerp;
+        a dcat:Distribution ;
+        dct:title "Gegevensmodel voor het object: 'Aanvraag'"@nl ;
+        dcat:accessURL <https://regels.overheid.nl/register/indInkToesl-gegevensmodel> ;
+        dcat:mediaType "text/html" ;
+        dct:format "HTML" ;
+        dct:issued "2024-05-01"^^xsd:date ;
+        ronl:specificationType ex:FunctioneelOntwerp 
     ], [
-        dct:title "Service 'Berekenen_IIT'"@nl;
-        dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl>;
-        dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl>;
-        dcat:mediaType "application/soap+xml";
-        dct:format "SOAP";
-        dct:issued "2024-05-01"^^xsd:date;
+        a dcat:Distribution ;
+        dct:title "Service 'Berekenen_IIT'"@nl ;
+        dcat:endpointURL <https://viloketdemo.blueriq.com/runtime/webservices/aaas/BerekenInkomensToeslag/Berekenen_IIT/aaas.wsdl> ;
+        dcat:servesDataset <https://regels.overheid.nl/register/indInkToesl> ;
+        dcat:mediaType "application/soap+xml" ;
+        dct:format "SOAP" ;
+        dct:issued "2024-05-01"^^xsd:date ;
         dct:publisher [
-            a foaf:Organization;
-            foaf:name "Blueriq";
-            foaf:homepage <https://www.blueriq.com/en/>;
-        ];
-        ronl:specificationType ex:SoftwareCode;
-    ].
+            a foaf:Organization ;
+            foaf:name "Blueriq" ;
+            foaf:homepage <https://www.blueriq.com/en/> 
+        ] ;
+        ronl:specificationType ex:SoftwareCode 
+    ] .
 
-# Define your custom classes and properties
-ronl:RuleSet a rdfs:Class;
-    rdfs:label "Rules Set"@en;
-    rdfs:comment "A set of rulespecifications defined for the dataset."@en.
+# Define custom classes and properties
+ronl:RuleSet a rdfs:Class ;
+    rdfs:label "Rules Set"@en ;
+    rdfs:comment "A set of rule specifications defined for the dataset."@en .
 
-ronl:analysis a rdf:Property;
-    rdfs:label "analysis"@en;
-    rdfs:comment "Analysis property for the rulesset."@en;
-    rdfs:domain dcat:Dataset;
-    rdfs:range ronl:AnalysisConcept.  # Use the specific concept scheme for analysis
+ronl:analysis a rdf:Property ;
+    rdfs:label "analysis"@en ;
+    rdfs:comment "Analysis property for the rule set."@en ;
+    rdfs:domain dcat:Dataset ;
+    rdfs:range ronl:AnalysisConcept .
 
-ronl:method a rdf:Property;
-    rdfs:label "method"@en;
-    rdfs:comment "Method property for the rulesset."@en;
-    rdfs:domain dcat:Dataset;
-    rdfs:range ronl:MethodConcept.  # Use the specific concept scheme for method
+ronl:method a rdf:Property ;
+    rdfs:label "method"@en ;
+    rdfs:comment "Method property for the rule set."@en ;
+    rdfs:domain dcat:Dataset ;
+    rdfs:range ronl:MethodConcept .
 
-ronl:specificationType a rdf:Property;
-    rdfs:label "specificationType"@en;
-    rdfs:comment "Specification type property for the rulesset."@en;
-    rdfs:domain dcat:Dataset;
-    rdfs:range ronl:SpecificationTypeConcept.  # Use the specific concept scheme for specification type
+ronl:specificationType a rdf:Property ;
+    rdfs:label "specificationType"@en ;
+    rdfs:comment "Specification type property for the rule set."@en ;
+    rdfs:domain dcat:Dataset ;
+    rdfs:range ronl:SpecificationTypeConcept .
 
-cpsv:PublicServiceIdentifier a rdf:Property;
-    rdfs:label "Public Service Identifier"@en;
-    rdfs:comment "Identifier for a public service."@en;
-    rdfs:domain ronl:RuleSet.
+cpsv:PublicServiceIdentifier a rdf:Property ;
+    rdfs:label "Public Service Identifier"@en ;
+    rdfs:comment "Identifier for a public service."@en ;
+    rdfs:domain ronl:RuleSet .
 
-# Define separate SKOS concept schemes for each property
-ronl:AnalysisConcept a skos:ConceptScheme;
-    skos:prefLabel "Analysis Concept Scheme"@en.
+# Define SKOS concept schemes for each property
+ronl:AnalysisConcept a skos:ConceptScheme ;
+    skos:prefLabel "Analysis Concept Scheme"@en .
 
-ronl:MethodConcept a skos:ConceptScheme;
-    skos:prefLabel "Method Concept Scheme"@en.
+ronl:MethodConcept a skos:ConceptScheme ;
+    skos:prefLabel "Method Concept Scheme"@en .
 
-ronl:SpecificationTypeConcept a skos:ConceptScheme;
-    skos:prefLabel "Specification Type Concept Scheme"@en.
+ronl:SpecificationTypeConcept a skos:ConceptScheme ;
+    skos:prefLabel "Specification Type Concept Scheme"@en .
 
-# Define the public service entity
-ex:publicService_IIT_NL a cpsv:PublicService;
-    dct:description "CPSV voorbeeld van IIT"@nl;
-    dct:identifier "IIT_NL";
-    dct:title "Individuele Inkomenstoeslag Nederland"@nl;
+# Define public service entity
+ex:publicService_IIT_NL a cpsv:PublicService ;
+    dct:description "CPSV voorbeeld van IIT"@nl ;
+    dct:identifier "IIT_NL" ;
+    dct:title "Individuele Inkomenstoeslag Nederland"@nl .
 
-# Define a RuleSet entity using the public service identifier
-<https://regels.overheid.nl/register/indInkToesl#ruleset_cpsv> a ronl:RuleSet;
-    cpsv:PublicServiceIdentifier ex:publicService_IIT_NL;
-    ronl:analysis ex:AKN4EU;
-    ronl:method ex:ALEF;
-    ronl:specificationType ex:Wetsanalyse.
+# Define RuleSet entity using the public service identifier
+<https://regels.overheid.nl/register/indInkToesl#ruleset_cpsv> a ronl:RuleSet ;
+    cpsv:PublicServiceIdentifier ex:publicService_IIT_NL ;
+    ronl:analysis ex:AKN4EU ;
+    ronl:method ex:ALEF ;
+    ronl:specificationType ex:Wetsanalyse .
 
-# Define predefined value lists (SKOS concepts) for each scheme
-#
-# Scheme AnalysisConcept
-ex:WetsanalyseJAS a skos:Concept;
-    skos:inScheme ronl:AnalysisConcept;
-    skos:prefLabel "Wetsanalyse (JAS)"@nl, "Legal Analysis (JAS)"@en.
+# Define SKOS concepts for each scheme
+# AnalysisConcept Scheme
+ex:WetsanalyseJAS a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "Wetsanalyse (JAS)"@nl, "Legal Analysis (JAS)"@en .
 
-ex:WetsanalyseJRM a skos:Concept;
-    skos:inScheme ronl:AnalysisConcept;
-    skos:prefLabel "Wetsanalyse (JRM)"@nl, "Legal Analysis (JRM)"@en.
+ex:WetsanalyseJRM a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "Wetsanalyse (JRM)"@nl, "Legal Analysis (JRM)"@en .
 
-ex:FLINT a skos:Concept;
-    skos:inScheme ronl:AnalysisConcept;
-    skos:prefLabel "FLINT"@nl, "FLINT"@en.
+ex:FLINT a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "FLINT"@nl, "FLINT"@en .
 
-# Scheme MethodConcept
-ex:AKN4EU a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "AKN4EU"@nl, "AKN4EU"@en.
+# MethodConcept Scheme
+ex:AKN4EU a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "AKN4EU"@nl, "AKN4EU"@en .
 
-ex:ALEF a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "ALEF"@nl, "ALEF"@en.
+ex:ALEF a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "ALEF"@nl, "ALEF"@en .
 
-ex:Avola a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Avola"@nl, "Avola"@en.
+ex:Avola a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Avola"@nl, "Avola"@en .
 
-ex:Beinformed a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Beinformed"@nl, "Beinformed"@en.
+ex:Beinformed a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Beinformed"@nl, "Beinformed"@en .
 
-ex:Blawx a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Blawx"@nl, "Blawx"@en.
+ex:Blawx a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Blawx"@nl, "Blawx"@en .
 
-ex:Blueriq a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Blueriq"@nl, "Blueriq"@en.
+ex:Blueriq a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Blueriq"@nl, "Blueriq"@en .
 
-ex:Catala a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Catala"@nl, "Catala"@en.
+ex:Catala a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Catala"@nl, "Catala"@en .
 
-ex:CircuLaw a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "CircuLaw"@nl, "CircuLaw"@en.
+ex:CircuLaw a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "CircuLaw"@nl, "CircuLaw"@en .
 
-ex:ConcordiaLegal a skos:Concept;
-    skos:inScheme ronl:MethodConcept;
-    skos:prefLabel "Concordia Legal"@nl, "Concordia Legal"@en.
+ex:ConcordiaLegal a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Concordia Legal"@nl, "Concordia Legal"@en .
 
-# Scheme SpecificationTypeConcept
-ex:FunctioneelOntwerp a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Functioneel Ontwerp"@nl, "Functional Design"@en.
+# SpecificationTypeConcept Scheme
+ex:FunctioneelOntwerp a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Functioneel Ontwerp"@nl, "Functional Design"@en .
 
-ex:SoftwareCode a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Software code"@nl, "Software code"@en.
+ex:SoftwareCode a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Software code"@nl, "Software code"@en .
 
-ex:UXDesign a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "UX Design"@nl, "UX Design"@en.
+ex:UXDesign a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "UX Design"@nl, "UX Design"@en .
 
-ex:Communicatiemiddel a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Communicatiemiddel"@nl, "Communications service"@en.
+ex:Communicatiemiddel a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Communicatiemiddel"@nl, "Communications service"@en .
 
-ex:Werkinstructie a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Werkinstructie"@nl, "work instruction"@en.
+ex:Werkinstructie a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Werkinstructie"@nl, "Work instruction"@en .
 
-ex:Kwaliteitseisen a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Kwaliteitseisen"@nl, "Quality Requirements"@en.
+ex:Kwaliteitseisen a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Kwaliteitseisen"@nl, "Quality Requirements"@en .
 
-ex:BestuurlijkeInformatie a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Bestuurlijke Informatie"@nl, "Business Intelligence"@en.
+ex:BestuurlijkeInformatie a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Bestuurlijke Informatie"@nl, "Business Intelligence"@en .
 
-ex:Overig a skos:Concept;
-    skos:inScheme ronl:SpecificationTypeConcept;
-    skos:prefLabel "Overig"@nl, "Other"@en.
+ex:Overig a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Overig"@nl, "Other"@en .
