@@ -3,9 +3,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix cpsv: <http://purl.org/vocab/cpsv#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix cv: <http://data.europa.eu/m8g/> .
 @prefix ex: <http://example.org/> .
 
 # Public Service definition
@@ -50,4 +52,27 @@ ex:publicService_UC a cpsv:PublicService ;
         vcard:hasURL <https://www.example.org/contact> 
     ] ;
     dct:issued "2020-01-01"^^xsd:date ;
-    dct:modified "2023-01-01"^^xsd:date .
+    dct:modified "2023-01-01"^^xsd:date ;
+    cv:evidence ex:evidence_UC .
+
+# Evidence definition
+ex:evidence_UC a cv:Evidence ;
+    dct:description "Evidence of unemployment status required for application."@en ;
+    dcat:service ex:dataService_UC .
+
+# Data Service definition
+ex:dataService_UC a dcat:DataService ;
+    dct:title "Unemployment Status Verification Service"@en ;
+    dct:description "This service verifies the unemployment status of applicants."@en ;
+    dcat:endpointURL <https://api.example.org/verify-unemployment-status> ;
+    dcat:servesDataset ex:dataset_UC .
+
+# Dataset definition (optional, providing additional context)
+ex:dataset_UC a dcat:Dataset ;
+    dct:title "Unemployment Records Dataset"@en ;
+    dct:description "A dataset containing records of unemployment statuses."@en ;
+    dcat:distribution [
+        a dcat:Distribution ;
+        dcat:accessURL <https://data.example.org/unemployment-records> ;
+        dcat:mediaType "application/json"
+    ] .
