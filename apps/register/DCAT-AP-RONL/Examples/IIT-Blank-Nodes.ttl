@@ -8,6 +8,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix ronl: <https://regels.overheid.nl/ronl/ns#>.
+@prefix cpsv: <http://purl.org/vocab/cpsv#>.
 
 #
 # In DCAT you can specify a dcat:distribution using a Blank Node (BNode) to represent the distribution details within a dataset.
@@ -35,8 +36,6 @@
         foaf:name "Steven M. Gort";
         foaf:homepage <https://regels.overheid.nl/person/steven-gort>;
     ];
-    dct:issued "2023-06-12"^^xsd:date;
-    dct:modified "2024-01-05"^^xsd:date;
     dcat:contactPoint [
         a vcard:Organization;
         vcard:fn "regels.overheid.nl";
@@ -49,11 +48,13 @@
     ];
     dcat:theme [
         a skos:Concept ;
-        skos:prefLabel "Social Benefits"@en ;
+        skos:prefLabel "Social Benefits"@en, "Sociale zekerheid"@nl ;
         skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid> ;
     ] ;
     ronl:analysis ex:ALEF;
     ronl:method ex:WetsanalyseJAS;
+    dct:issued "2023-06-12"^^xsd:date;
+    dct:modified "2024-01-05"^^xsd:date;
     dct:subject [
         a skos:Concept;
         skos:prefLabel "Individuele Inkomsenstoeslag"@nl;
@@ -61,13 +62,8 @@
     ];
     dct:publisher [
         a foaf:Organization;
-        foaf:name "Gemeente Utrecht";
+        foaf:name "Gemeente Utrecht"@nl;
         foaf:homepage <https://www.utrecht.nl>;
-    ];
-    dcat:theme [
-        a skos:Concept;
-        skos:prefLabel "Social Benefits"@en;
-        skos:exactMatch <https://regels.overheid.nl/theme/sociale-zekerheid>;
     ];
     dcat:distribution [
         a dcat:Distribution;
@@ -109,7 +105,7 @@
     ].
 
 # Define your custom classes and properties
-ronl:RulesSet a rdfs:Class;
+ronl:RuleSet a rdfs:Class;
     rdfs:label "Rules Set"@en;
     rdfs:comment "A set of rulespecifications defined for the dataset."@en.
 
@@ -131,6 +127,11 @@ ronl:specificationType a rdf:Property;
     rdfs:domain dcat:Dataset;
     rdfs:range ronl:SpecificationTypeConcept.  # Use the specific concept scheme for specification type
 
+cpsv:PublicServiceIdentifier a rdf:Property;
+    rdfs:label "Public Service Identifier"@en;
+    rdfs:comment "Identifier for a public service."@en;
+    rdfs:domain ronl:RuleSet.
+
 # Define separate SKOS concept schemes for each property
 ronl:AnalysisConcept a skos:ConceptScheme;
     skos:prefLabel "Analysis Concept Scheme"@en.
@@ -140,6 +141,19 @@ ronl:MethodConcept a skos:ConceptScheme;
 
 ronl:SpecificationTypeConcept a skos:ConceptScheme;
     skos:prefLabel "Specification Type Concept Scheme"@en.
+
+# Define the public service entity
+ex:publicService_IIT_NL a cpsv:PublicService;
+    dct:description "CPSV voorbeeld van IIT"@nl;
+    dct:identifier "IIT_NL";
+    dct:title "Individuele Inkomenstoeslag Nederland"@nl;
+
+# Define a RuleSet entity using the public service identifier
+<https://regels.overheid.nl/register/indInkToesl#ruleset_cpsv> a ronl:RuleSet;
+    cpsv:PublicServiceIdentifier ex:publicService_IIT_NL;
+    ronl:analysis ex:AKN4EU;
+    ronl:method ex:ALEF;
+    ronl:specificationType ex:Wetsanalyse.
 
 # Define predefined value lists (SKOS concepts) for each scheme
 #
