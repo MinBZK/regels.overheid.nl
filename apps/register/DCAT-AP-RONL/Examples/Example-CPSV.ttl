@@ -1,0 +1,53 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix cpsv: <http://purl.org/vocab/cpsv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix ex: <http://example.org/> .
+
+# Public Service definition
+ex:publicService_UC a cpsv:PublicService ;
+    dct:identifier "UC123"^^xsd:token ;
+    dct:title "Unemployment Compensation"@en ;
+    dct:description "This service provides financial assistance to eligible unemployed individuals."@en ;
+    dct:creator [
+        a foaf:Organization ;
+        foaf:name "Department of Labor" ;
+        foaf:homepage <https://www.dol.gov> 
+    ] ;
+    cpsv:sector [
+        a skos:Concept ;
+        skos:prefLabel "Social Security"@en ;
+        skos:exactMatch <http://example.org/sector/social-security>
+    ] ;
+    dct:subject [
+        a skos:Concept ;
+        skos:prefLabel "Unemployment Benefits"@en ;
+        skos:exactMatch <http://example.org/subject/unemployment-benefits>
+    ] ;
+    cpsv:hasChannel [
+        a cpsv:Channel ;
+        dct:title "Online Portal"@en ;
+        cpsv:accessURL <https://portal.example.org/unemployment-compensation> ;
+        dct:description "The online portal where applicants can apply for unemployment compensation."@en ;
+        cpsv:channelType [
+            a skos:Concept ;
+            skos:prefLabel "Web Portal"@en ;
+            skos:exactMatch <http://example.org/channel-type/web-portal>
+        ]
+    ] ;
+    cpsv:hasContactPoint [
+        a vcard:Organization ;
+        vcard:fn "Customer Service" ;
+        vcard:hasEmail <mailto:customerservice@example.org> ;
+        vcard:hasTelephone [
+            a vcard:Work, vcard:Voice ;
+            vcard:hasValue <tel:+1234567890> 
+        ] ;
+        vcard:hasURL <https://www.example.org/contact> 
+    ] ;
+    dct:issued "2020-01-01"^^xsd:date ;
+    dct:modified "2023-01-01"^^xsd:date .
