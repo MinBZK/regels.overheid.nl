@@ -4,6 +4,7 @@ import { Footer } from './footer';
 import './globals.css';
 import { Header } from './header';
 import { MenuBreadcrumbsProvider } from './menu-breadcrumbs';
+import { getPageBySlug } from '@/services/cms/get-page-by-slug';
 
 const RoSansWeb = localFont({
   src: [

@@ -165,8 +165,8 @@ export const strapiApiTokenPermissions = pgTable(
   },
   (table) => {
     return {
-      updatedByIdFk: index('strapi_api_token_permissions_updated_by_id_fk').on(table.updatedById),
       createdByIdFk: index('strapi_api_token_permissions_created_by_id_fk').on(table.createdById),
+      updatedByIdFk: index('strapi_api_token_permissions_updated_by_id_fk').on(table.updatedById),
     };
   }
 );
@@ -466,6 +466,31 @@ export const methods = pgTable(
   }
 );
 
+export const pages = pgTable(
+  'pages',
+  {
+    id: serial('id').primaryKey().notNull(),
+    name: varchar('name', { length: 255 }),
+    slug: varchar('slug', { length: 255 }),
+    content: text('content'),
+    order: integer('order'),
+    cmsPage: boolean('cms_page'),
+    showInNav: boolean('show_in_nav'),
+    openInNewTab: boolean('open_in_new_tab'),
+    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
+    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
+    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
+    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+  },
+  (table) => {
+    return {
+      createdByIdFk: index('pages_created_by_id_fk').on(table.createdById),
+      updatedByIdFk: index('pages_updated_by_id_fk').on(table.updatedById),
+    };
+  }
+);
+
 export const publishers = pgTable(
   'publishers',
   {
@@ -718,6 +743,7 @@ export const events = pgTable(
   'events',
   {
     id: serial('id').primaryKey().notNull(),
+    title: varchar('title', { length: 255 }).notNull(),
     intro: text('intro').notNull(),
     start: timestamp('start', { precision: 6, mode: 'string' }).notNull(),
     end: timestamp('end', { precision: 6, mode: 'string' }).notNull(),
@@ -725,46 +751,21 @@ export const events = pgTable(
     address: varchar('address', { length: 255 }).notNull(),
     content: text('content').notNull(),
     slug: varchar('slug', { length: 255 }).notNull(),
+    addressName: varchar('address_name', { length: 255 }).notNull(),
+    eventbrite: text('eventbrite'),
+    eventbriteTitle: varchar('eventbrite_title', { length: 255 }),
     createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
     updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
     publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
     createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
     updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-    title: varchar('title', { length: 255 }).notNull(),
-    addressName: varchar('address_name', { length: 255 }).notNull(),
-    eventbrite: text('eventbrite'),
-    eventbriteTitle: varchar('eventbrite_title', { length: 255 }),
+    report: text('report'),
   },
   (table) => {
     return {
       createdByIdFk: index('events_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('events_updated_by_id_fk').on(table.updatedById),
       eventsSlugUnique: unique('events_slug_unique').on(table.slug),
-    };
-  }
-);
-
-export const pages = pgTable(
-  'pages',
-  {
-    id: serial('id').primaryKey().notNull(),
-    name: varchar('name', { length: 255 }),
-    slug: varchar('slug', { length: 255 }),
-    content: text('content'),
-    order: integer('order'),
-    cmsPage: boolean('cms_page'),
-    showInNav: boolean('show_in_nav'),
-    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
-    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
-    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
-    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-    openInNewTab: boolean('open_in_new_tab'),
-  },
-  (table) => {
-    return {
-      createdByIdFk: index('pages_created_by_id_fk').on(table.createdById),
-      updatedByIdFk: index('pages_updated_by_id_fk').on(table.updatedById),
     };
   }
 );
