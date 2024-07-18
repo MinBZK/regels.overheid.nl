@@ -16,7 +16,9 @@
       "type": "media",
       "multiple": false,
       "required": true,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "title": {
       "type": "string",
@@ -87,6 +89,12 @@
     },
     "eventbriteTitle": {
       "type": "string"
+    },
+    "report": {
+      "type": "richtext"
+    },
+    "tmp": {
+      "type": "blocks"
     }
   }
 }
