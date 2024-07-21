@@ -24,7 +24,7 @@ ex:publicService_UC a cpsv:PublicService;
         a skos:Concept;
         skos:prefLabel "Social Security"@en;
         skos:exactMatch <http://example.org/sector/social-security>;
-    ] ;
+    ];
     dct:subject [
         a skos:Concept;
         skos:prefLabel "Unemployment Benefits"@en;
