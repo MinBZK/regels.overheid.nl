@@ -1,5 +1,11 @@
 # web
 
+## 3.29.0
+
+### Minor Changes
+
+- 9ed12ea: Added event report page
+
 ## 3.28.0
 
 ### Minor Changes
