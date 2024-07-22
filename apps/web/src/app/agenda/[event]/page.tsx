@@ -1,22 +1,23 @@
+import { EnhanceMenuBreadcrumbs } from '@/app/menu-breadcrumbs';
 import { resolveCmsImage } from '@/common/resolve-cms-image';
+import { truncateStringAtWord } from '@/common/truncate-string-at-word';
 import { Button } from '@/components/button';
 import { Container } from '@/components/container';
 import { RemoteMdx } from '@/components/remote-mdx';
 import { ShareBar } from '@/components/share-bar';
 import { Typography } from '@/components/typography';
+import { cx } from '@/cva.config';
 import { getEventBySlug } from '@/services/cms/get-event-by-slug';
+import slugify from '@sindresorhus/slugify';
 import { IconArrowLeft, IconCalendarEvent, IconMapPin, IconTicket } from '@tabler/icons-react';
 import { format } from 'date-fns';
 import { nl } from 'date-fns/locale';
+import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
+import { default as Link } from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 import { AddToCalendarDropdown } from '../add-to-calendar-dropdown';
 import { OpenInMapDropdown } from './open-in-map-dropdown';
-import { Metadata } from 'next';
-import { truncateStringAtWord } from '@/common/truncate-string-at-word';
-import slugify from '@sindresorhus/slugify';
-import { EnhanceMenuBreadcrumbs } from '@/app/menu-breadcrumbs';
 
 interface Props {
   params: { event: string };
@@ -28,8 +29,10 @@ export default async function EventPage({ params }: Props) {
   const event = await getEventBySlug(params.event);
 
   if (!event) return redirect('/agenda');
+  const { title, subject, intro, content, address, cover, addressName, eventbrite, eventbriteTitle, report } = event;
 
-  const { title, subject, intro, content, address, cover, addressName, eventbrite, eventbriteTitle } = event;
+  const hasPassed = new Date(event.end) < new Date();
+  const showReport = Boolean(report) && hasPassed;
 
   const end = new Date(event.end);
   const start = new Date(event.start);
@@ -38,7 +41,7 @@ export default async function EventPage({ params }: Props) {
     <>
       <EnhanceMenuBreadcrumbs append={title} />
 
-      <div className="relative -mt-14 h-[300px] w-full overflow-hidden object-fill">
+      <div className={cx('relative -mt-14 h-[300px] w-full overflow-hidden object-fill', hasPassed && 'grayscale')}>
         {cover && (
           <Image
             className="object-cover"
@@ -55,48 +58,55 @@ export default async function EventPage({ params }: Props) {
         <Button component={Link} href="/agenda" variant="text" startIcon={<IconArrowLeft />} className="mt-2">
           Overzicht
         </Button>
+        {hasPassed && (
+          <Typography variant="h1" component="span" className="inline-block rounded bg-primary-dark p-3 text-white">
+            {showReport ? 'Raportage' : 'Afgelopen'}
+          </Typography>
+        )}
         <Typography variant="h1" className="mt-12">
           {title}
         </Typography>
-        <ul className="mt-12 flex flex-col gap-y-4 px-4">
-          <li>
-            <OpenInMapDropdown address={address}>
-              <Button variant="text" startIcon={<IconMapPin />} className="h-auto text-left">
-                {addressName}
-              </Button>
-            </OpenInMapDropdown>
-          </li>
-          <li>
-            <AddToCalendarDropdown
-              end={end}
-              start={start}
-              eventTitle={title}
-              eventDetails={intro}
-              eventLocation={address}
-            >
-              <Button variant="text" startIcon={<IconCalendarEvent />} className="h-auto text-left">
-                {format(start, 'eeee d MMMM', { locale: nl })} | {format(start, 'HH:mm')} - {format(end, 'HH:mm')}
-              </Button>
-            </AddToCalendarDropdown>
-          </li>
-          {eventbrite && (
+        {!hasPassed && (
+          <ul className="mt-12 flex flex-col gap-y-4 px-4">
             <li>
-              <Button
-                component="a"
-                variant="text"
-                target="__blank"
-                href={eventbrite}
-                rel="noopener noreferrer"
-                startIcon={<IconTicket />}
-              >
-                {eventbriteTitle || 'Eventbrite'}
-              </Button>
+              <OpenInMapDropdown address={address}>
+                <Button variant="text" startIcon={<IconMapPin />} className="h-auto text-left">
+                  {addressName}
+                </Button>
+              </OpenInMapDropdown>
             </li>
-          )}
-        </ul>
-        <Typography>{intro}</Typography>
+            <li>
+              <AddToCalendarDropdown
+                end={end}
+                start={start}
+                eventTitle={title}
+                eventDetails={intro}
+                eventLocation={address}
+              >
+                <Button variant="text" startIcon={<IconCalendarEvent />} className="h-auto text-left">
+                  {format(start, 'eeee d MMMM', { locale: nl })} | {format(start, 'HH:mm')} - {format(end, 'HH:mm')}
+                </Button>
+              </AddToCalendarDropdown>
+            </li>
+            {eventbrite && (
+              <li>
+                <Button
+                  component="a"
+                  variant="text"
+                  target="__blank"
+                  href={eventbrite}
+                  rel="noopener noreferrer"
+                  startIcon={<IconTicket />}
+                >
+                  {eventbriteTitle || 'Eventbrite'}
+                </Button>
+              </li>
+            )}
+          </ul>
+        )}
+        <Typography className="font-bold">{intro}</Typography>
         <Typography>Onderwerp: {subject}</Typography>
-        <RemoteMdx content={content} />
+        <RemoteMdx content={showReport ? report! : content} />
         <div className="mt-6">
           <ShareBar title={title} />
         </div>

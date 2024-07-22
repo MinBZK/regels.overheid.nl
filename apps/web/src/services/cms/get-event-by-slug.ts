@@ -17,6 +17,7 @@ export async function getEventBySlug(slug: string) {
       addressName: events.addressName,
       eventbrite: events.eventbrite,
       eventbriteTitle: events.eventbriteTitle,
+      report: events.report,
       cover: {
         ext: files.ext,
         hash: files.hash,
