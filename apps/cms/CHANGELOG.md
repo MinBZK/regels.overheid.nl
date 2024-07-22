@@ -1,5 +1,11 @@
 # cms
 
+## 1.25.0
+
+### Minor Changes
+
+- 1907809: Added report to event
+
 ## 1.24.0
 
 ### Minor Changes
