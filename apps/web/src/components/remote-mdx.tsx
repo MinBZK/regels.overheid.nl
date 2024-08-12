@@ -1,9 +1,7 @@
 import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc';
-import NextLink from 'next/link';
 import remarkGfmPlugin from 'remark-gfm';
-import { Link } from './link';
-import { Typography } from './typography';
 import { LinkRemoteMdx } from './link-remote-mdx';
+import { Typography } from './typography';
 
 interface Props extends Omit<MDXRemoteProps, 'source'> {
   content: string;
