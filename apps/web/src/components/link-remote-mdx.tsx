@@ -7,7 +7,7 @@ type Props = DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnch
 
 const fileExtensions = ['pdf'];
 
-export const LinkRemoteMdx: React.FC<Props> = async ({ ...props }) => {
+export const LinkRemoteMdx: React.FC<Props> = async (props) => {
   try {
     const enhancedURL = new URL('', props.href);
     const cmsURL = new URL('', process.env.NEXT_PUBLIC_CMS_URL);
@@ -18,7 +18,7 @@ export const LinkRemoteMdx: React.FC<Props> = async ({ ...props }) => {
     const isFile = fileExtensions.includes(extension || '');
 
     if (isSameOrigin && isFile) return <LinkFile {...props} />;
-  } catch (error) {
+  } finally {
     return (
       <Link component={props.href?.startsWith('/') ? NextLink : 'a'} href={props.href || '#'} {...(props as any)} />
     );
