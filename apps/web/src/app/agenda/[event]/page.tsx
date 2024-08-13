@@ -60,7 +60,7 @@ export default async function EventPage({ params }: Props) {
         </Button>
         {hasPassed && (
           <Typography variant="h1" component="span" className="inline-block rounded bg-primary-dark p-3 text-white">
-            {showReport ? 'Raportage' : 'Afgelopen'}
+            {showReport ? 'Verslag' : 'Afgelopen'}
           </Typography>
         )}
         <Typography variant="h1" className="mt-12">
