@@ -1,5 +1,11 @@
 # web
 
+## 3.29.1
+
+### Patch Changes
+
+- bc5657d: Fixed issue where regular links in CMS content were not rendering correctly.
+
 ## 3.29.0
 
 ### Minor Changes
