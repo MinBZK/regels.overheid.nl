@@ -1,5 +1,11 @@
 # web
 
+## 3.29.2
+
+### Patch Changes
+
+- 4d15e5a: Renamed `Raportage` label into `Verslag` on event report page
+
 ## 3.29.1
 
 ### Patch Changes
