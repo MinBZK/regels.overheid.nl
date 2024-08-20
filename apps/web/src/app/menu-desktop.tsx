@@ -22,15 +22,17 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
     if (!value || !rootRef.current) return;
 
     const trigger = rootRef.current?.querySelector(`#${value}`);
+    const wrapper = rootRef.current?.firstChild as Element | null;
 
-    if (!trigger) return;
+    if (!wrapper || !trigger) return;
 
-    const rect = trigger.getBoundingClientRect();
+    const triggerRect = trigger.getBoundingClientRect();
+    const wrapperRect = wrapper.getBoundingClientRect();
 
     setActiveItem({
-      left: rect.left,
-      width: rect.width,
-      bottom: rect.bottom,
+      left: triggerRect.left - wrapperRect.left,
+      width: triggerRect.width,
+      bottom: triggerRect.bottom - wrapperRect.top,
     });
   };
 
