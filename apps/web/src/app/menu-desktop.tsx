@@ -92,6 +92,7 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
         </NavigationMenu.List>
 
         <div
+          className="z-50"
           style={
             {
               '--active-item-left': activeItem.left + 'px',
