@@ -1,5 +1,12 @@
 # web
 
+## 3.29.3
+
+### Patch Changes
+
+- 0932ad9: Changed the navigation submenu from fixed to absolute positioning (desktop)
+- 0b4fcff: Added z-index to navigation submenu (desktop)
+
 ## 3.29.2
 
 ### Patch Changes
