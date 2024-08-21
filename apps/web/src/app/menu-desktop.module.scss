@@ -3,7 +3,7 @@ $animationIn: scaleIn 150ms ease;
 $animationOut: scaleOut 200ms ease forwards;
 
 .viewport {
-  position: fixed;
+  position: absolute;
   left: var(--active-item-left);
   top: var(--active-item-bottom);
   min-width: var(--active-item-width);
