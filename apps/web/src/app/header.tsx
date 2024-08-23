@@ -2,11 +2,11 @@ import { Container } from '@/components/container';
 import { getNavbarTree } from '@/services/cms/get-navbar-tree';
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from './logo.png';
 import { MenuContext } from './menu-context';
 import { MenuDesktop } from './menu-desktop';
 import { MenuMobile, MenuToggle } from './menu-mobile';
 import { MenuBreadcrumbs } from './menu-breadcrumbs';
+import { Logo } from '@/components/logo';
 
 export interface Page {
   id: number;
@@ -20,8 +20,8 @@ export const Header: React.FC = async () => {
   return (
     <header role="banner" className="relative w-full border-b-8 border-primary-light">
       <Container className="flex h-24 items-center justify-between sm:h-auto">
-        <Link className="relative aspect-[540/190] w-[170px] sm:w-[300px]" href="/">
-          <Image src={Logo} alt="regels.overheid.nl logo" />
+        <Link className="`aspect-[540/19`] relative w-[170px] py-5 sm:w-[300px]" href="/">
+          <Logo />
         </Link>
         <MenuContext>
           <MenuToggle />
