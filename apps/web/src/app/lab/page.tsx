@@ -13,6 +13,16 @@ export default async function LabPage() {
         <RemotePage page="lab" />
       </Container>
       <Container bleed className="mt-20 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 md:grid-cols-3">
+      <LabItemCard
+          title="Open GDC Regelregister"
+          icon="icon-file-database"
+          description="De GDC is in essentie een publicatieplatform voor overheden om actieve en passieve openbaarmaking van data, documenten en informatieproducten te ondersteunen. De live demo bevat een prototpe voor Open Regels"
+          demo="https://regels.dexcat.nl/"
+          docs="http://opengdc.nl"
+          repo="https://gitlab.com/xpertselect/portals"
+          licenseVariant="MIT License"
+          license="https://opensource.org/license/mit"
+        />
         <LabItemCard
           method="FLINT"
           title="Norm Editor"
@@ -76,3 +86,4 @@ export default async function LabPage() {
     </>
   );
 }
+
