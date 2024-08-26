@@ -14,6 +14,7 @@ import {
   IconBrandGithub,
   IconEyeEdit,
   IconFileTypeDoc,
+  IconFileDatabase,
   IconForms,
   IconHeartHandshake,
   IconPlayerPlay,
@@ -28,6 +29,7 @@ const iconMap = {
   'icon-eye-edit': IconEyeEdit,
   'icon-forms': IconForms,
   'icon-api-app': IconApiApp,
+  'icon-file-database': IconFileDatabase,
 };
 
 interface DefaultLabItemCard {
