@@ -39,11 +39,6 @@ export const Footer: React.FC = () => {
             </FooterLink>
           </ul>
           <ul>
-            <FooterLink href="https://regels.dexcat.nl/">Regelregister</FooterLink>
-            <FooterLink href="https://regels.overheid.nl/docs">Documentatie </FooterLink>
-            <FooterLink href="/sitemap.xml">Sitemap</FooterLink>
-          </ul>
-          <ul>
             <FooterLink href="/methoden">Methoden</FooterLink>
             <FooterLink href="https://www.overheid.nl/">Overheid.nl</FooterLink>
             <FooterLink href="https://linkeddata.overheid.nl/front/portal/">Linked Data Overheid</FooterLink>
