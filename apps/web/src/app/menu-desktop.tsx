@@ -30,7 +30,7 @@ export const MenuDesktop: React.FC<Props> = ({ navbar }) => {
     const wrapperRect = wrapper.getBoundingClientRect();
 
     setActiveItem({
-      left: triggerRect.left - wrapperRect.left,
+      left: triggerRect.left - wrapperRect.left + 8,
       width: triggerRect.width,
       bottom: triggerRect.bottom - wrapperRect.top,
     });
