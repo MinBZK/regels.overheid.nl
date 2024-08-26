@@ -56,14 +56,14 @@ export default async function LabPage() {
           description="Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door 5 studententeams in één semester gewerkt aan het bouwen van tooling voor Wetsanalyse. De beschikbaar gestelde applicatie is het eindproduct van het team JSON dat zonder nadere kwaliteitsslag en/of gebruikerstesten anderszins hier is deployed."
         />
         <LabItemCard
-          title="Apache Jena Fuseki"
+          title="Yasgui SPARQL editor"
           icon="icon-api-app"
-          description="Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te extraheren uit en te schrijven naar RDF-graphs."
-          demo="https://regels.overheid.nl/lab/sparql"
-          docs="https://jena.apache.org/documentation/fuseki2/"
-          repo="https://github.com/apache/jena"
-          licenseVariant="Apache License 2.0"
-          license="https://www.apache.org/licenses/LICENSE-2.0"
+          description="Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te extraheren uit en te schrijven naar RDF-graphs. Yasgui biedt diverse geavanceerde functies voor het maken, delen en visualiseren van SPARQL-query's en hun resultaten."
+          demo="https://regels.overheid.nl/lab/sparql/ui/"
+          docs="https://docs.triply.cc/yasgui/"
+          repo="https://github.com/TriplyDB/Yasgui"
+          licenseVariant="MIT License"
+          license="https://opensource.org/license/mit"
         />
         <LabItemCard
           variant="coming-soon"
