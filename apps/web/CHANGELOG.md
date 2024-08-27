@@ -1,5 +1,18 @@
 # web
 
+## 3.30.0
+
+### Minor Changes
+
+- b7c8d03: Updated Apache to Yasgui Editor"
+- ac68bfb: "Added new lab item card for prototype GDC Open Regels"
+- b00d5d0: Use SVG favicon
+- f435b3c: Use SVG logo in header
+
+### Patch Changes
+
+- f97ce15: Fixed navigation submenu being offset to the left
+
 ## 3.29.3
 
 ### Patch Changes
