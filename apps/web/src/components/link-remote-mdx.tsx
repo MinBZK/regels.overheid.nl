@@ -18,9 +18,11 @@ export const LinkRemoteMdx: React.FC<Props> = async (props) => {
     const isFile = fileExtensions.includes(extension || '');
 
     if (isSameOrigin && isFile) return <LinkFile {...props} />;
-  } finally {
+  } catch (error) {
     return (
       <Link component={props.href?.startsWith('/') ? NextLink : 'a'} href={props.href || '#'} {...(props as any)} />
     );
   }
+
+  return <Link component={props.href?.startsWith('/') ? NextLink : 'a'} href={props.href || '#'} {...(props as any)} />;
 };
