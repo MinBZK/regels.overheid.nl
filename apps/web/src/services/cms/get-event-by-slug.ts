@@ -1,6 +1,6 @@
 import { db } from '@/drizzle/db';
 import { events, files, filesRelatedMorphs } from '@/drizzle/schema';
-import { desc, eq } from 'drizzle-orm';
+import { and, desc, eq } from 'drizzle-orm';
 
 export async function getEventBySlug(slug: string) {
   const [event] = await db
@@ -29,7 +29,7 @@ export async function getEventBySlug(slug: string) {
     .orderBy(events.id, desc(events.publishedAt))
     .leftJoin(filesRelatedMorphs, eq(events.id, filesRelatedMorphs.relatedId))
     .leftJoin(files, eq(files.id, filesRelatedMorphs.fileId))
-    .where(eq(events.slug, slug))
+    .where(and(eq(events.slug, slug), eq(filesRelatedMorphs.relatedType, 'api::event.event')))
     .limit(1);
 
   return event;
