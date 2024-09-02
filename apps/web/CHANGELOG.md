@@ -1,5 +1,12 @@
 # web
 
+## 3.30.1
+
+### Patch Changes
+
+- 3badc7c: Fixed an issue where PDF links were not being rendered correctly
+- dc3151a: Fixed an issue on the agenda detail page where the wrong cover image would be shown
+
 ## 3.30.0
 
 ### Minor Changes
