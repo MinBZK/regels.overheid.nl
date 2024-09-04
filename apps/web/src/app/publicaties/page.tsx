@@ -1,8 +1,9 @@
+import { defaultMetaData } from '@/common/default-metadata';
 import { Container } from '@/components/container';
 import { RemotePage } from '@/components/remote-page';
 import { Typography } from '@/components/typography';
-import { Metadata } from 'next';
-import { PublicationCard } from './publication-card';
+import * as CardPublication from './card-publication';
+import { ContainerMethod } from '@/components/container-method';
 
 export default function PublicatiesPage() {
   return (
@@ -11,58 +12,45 @@ export default function PublicatiesPage() {
         <Typography variant="h1">Publicaties</Typography>
         <RemotePage page="publicaties" />
       </Container>
-      <Container className="mt-16 grid gap-x-6 gap-y-12 md:grid-cols-2">
-        <PublicationCard
-          title="Wetsanalyse"
-          tag="Specificatie"
-          variant="published"
-          url="/publicaties/wetsanalyse/"
-          description="Specificatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."
-          method="Wetsanalyse_1"
-        />
-        <PublicationCard
+      <ContainerMethod>
+        <CardPublication.Root title="Wetsanalyse" method="Wetsanalyse_1">
+          Specificatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende
+          juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn.
+        </CardPublication.Root>
+        <CardPublication.Root
           title="DCAT"
-          tag="Work in progress"
-          variant="wip"
-          url="/publicaties/dcat-ap-ronl"
-          description="DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op W3C's Data Catalogue Vocabulary (DCAT)."
-        />
-        <PublicationCard
-          title="De Legitimaat"
-          tag="Werkmethode"
-          variant="published"
-          url="/publicaties/legitimaat"
-          description="Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."
-          method="De LegitiMaat"
-        />
-        <PublicationCard
+          variant="work-in-progress"
+          url="https://regels.overheid.nl/publicaties/dcat-ap-ronl"
+        >
+          DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op
+          W3C&apos;s Data Catalogue Vocabulary (DCAT).
+        </CardPublication.Root>
+        <CardPublication.Root title="De Legitimaat" method="De LegitiMaat">
+          Een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een
+          overheidsorganisatie.
+        </CardPublication.Root>
+        <CardPublication.Root
           title="Algoritmes Publicatiestandaard"
-          tag="Standaard"
-          variant="published"
           url="/publicaties/algoritmeregister-publicatiestandaard"
-          description="Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij het invullen."
-        />
-        <PublicationCard
-          title="Levensgebeurtenissen SIVI AFS"
-          tag="Standaard"
-          variant="published"
-          url="/publicaties/levensgebeurtenissen-sivi-afs"
-          description="Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)"
-        />
-        <PublicationCard
+        >
+          Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij
+          het invullen.
+        </CardPublication.Root>
+        <CardPublication.Root title="Levensgebeurtenissen SIVI AFS" url="/publicaties/levensgebeurtenissen-sivi-afs">
+          Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)
+        </CardPublication.Root>
+        <CardPublication.Root
+          variant="work-in-progress"
           title="WetsTaal Handreiking"
-          tag="Work in progress"
-          variant="wip"
           url="https://diederikd.github.io/wetstaal_1_documentatie/"
-          description="De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal."
-        />
-        <PublicationCard title="Harmonisator" variant="unavailable" />
-        <PublicationCard title="Calculemus Protocol" variant="unavailable" />
-      </Container>
+        >
+          De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal
+        </CardPublication.Root>
+        <CardPublication.Root title="Harmonisator" variant="unavailable" />
+        <CardPublication.Root title="Calculemus Protocol" variant="unavailable" />
+      </ContainerMethod>
     </main>
   );
 }
 
-export const metadata: Metadata = {
-  title: 'Regelregister van de Nederlandse Overheid - Publicaties',
-};
+export const generateMetadata = defaultMetaData('publicaties');
