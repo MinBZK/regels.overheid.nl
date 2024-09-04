@@ -1,47 +1,29 @@
 'use client';
 
-import { MethodTree, getMethodTree } from '@/common/methods-tree';
-import { cva, cx } from '@/cva.config';
+import { getMethodTree, methodsTree, MethodTree } from '@/common/methods-tree';
+import { cva, VariantProps } from '@/cva.config';
 import slugify from '@sindresorhus/slugify';
 import { Icon, IconBook2, IconFileTypeDoc, IconMicroscope, IconPlayerPlay } from '@tabler/icons-react';
-import { createContext, useContext } from 'react';
+import { createContext, forwardRef, PropsWithChildren, useContext } from 'react';
 import { Link } from './link';
+import * as Tooltip from './tooltip';
 
-interface Props {
-  method?: string;
-  hide?: ItemName;
-  className?: string;
-  showLabel?: boolean;
-  orientation?: 'vertical' | 'horizontal';
-  overrideTreeValue?: Partial<MethodTree>;
+interface RootContext {
+  method?: keyof typeof methodsTree | (string & {});
+  methodTree?: MethodTree;
 }
 
-type ItemName = keyof Omit<MethodTree, 'color'> | 'lab';
+const rootContext = createContext<RootContext>({} as any);
 
-interface ItemProps {
-  name: ItemName;
+export const useMethodNavigation = () => useContext(rootContext);
+
+export interface RootProps extends PropsWithChildren, VariantProps<typeof rootVariants> {
+  method?: keyof typeof methodsTree | (string & {});
 }
 
-interface ContextValue extends Pick<Props, 'showLabel' | 'hide'> {
-  methodTree: MethodTree;
-  method: keyof MethodTree;
-}
+export type ItemName = keyof Omit<MethodTree, 'color'> | 'lab';
 
-const iconMap: Record<ItemName, Icon> = {
-  docs: IconFileTypeDoc,
-  demo: IconPlayerPlay,
-  lab: IconMicroscope,
-  publication: IconBook2,
-};
-
-const labelMap: Record<ItemName, string> = {
-  docs: 'Naar documentatie',
-  demo: 'Naar de demo',
-  lab: 'Naar de tool',
-  publication: 'Naar publicatie',
-};
-
-const listVariants = cva({
+const rootVariants = cva({
   base: 'flex gap-3',
   variants: {
     orientation: {
@@ -54,77 +36,117 @@ const listVariants = cva({
   },
 });
 
-const linkVariants = cva({
-  base: 'flex gap-3',
-  variants: {
-    color: {
-      info: 'text-primary-main',
-      warning: 'text-warning-main',
-      error: 'text-error-main',
-      success: 'text-success-main',
-    },
-  },
-  defaultVariants: {
-    color: 'info',
-  },
-});
-
-const context = createContext<ContextValue>({} as any);
-
-export const MethodNavigation: React.FC<Props> = ({
-  method,
-  className,
-  orientation,
-  showLabel,
-  hide,
-  overrideTreeValue,
-}) => {
-  const methodTree = getMethodTree(method || '');
-
-  if (!methodTree && !overrideTreeValue) return null;
+export const Root = forwardRef<HTMLUListElement, RootProps>(({ children, method, orientation }, ref) => {
+  const methodTree = method && getMethodTree(method);
 
   return (
-    <context.Provider
-      value={{
-        hide,
-        showLabel,
-        method: method as keyof MethodTree,
-        methodTree: { ...methodTree, ...overrideTreeValue } as MethodTree,
-      }}
-    >
-      <ul className={cx(className, listVariants({ orientation }))}>
-        <Item name="docs" />
-        <Item name="publication" />
-        <Item name="demo" />
-        <Item name="lab" />
+    <rootContext.Provider value={{ method, methodTree }}>
+      <ul ref={ref} className={rootVariants({ orientation })}>
+        {children}
       </ul>
-    </context.Provider>
+    </rootContext.Provider>
+  );
+});
+
+Root.displayName = 'Root';
+
+interface MethodItemsContext {
+  hide?: ItemName;
+  showLabels?: boolean;
+  methodTree: Partial<MethodTree>;
+}
+
+export const methodItemsContext = createContext<MethodItemsContext>({} as any);
+
+export interface MethodItemsProps extends React.PropsWithChildren {
+  hide?: ItemName;
+  showLabels?: boolean;
+  override?: Partial<MethodTree>;
+}
+
+export const MethodItems: React.FC<MethodItemsProps> = ({ override, showLabels, children, hide }) => {
+  const { methodTree } = useMethodNavigation();
+
+  return (
+    <methodItemsContext.Provider value={{ methodTree: { ...methodTree, ...override }, showLabels, hide }}>
+      <MethodItem name="docs" tooltip="Documentatie" label="Naar documentatie" icon={IconFileTypeDoc} />
+      <MethodItem name="publication" tooltip="Publicatie" label="Naar publicatie" icon={IconBook2} />
+      <MethodItem name="demo" tooltip="Demo" label="Naar de demo" icon={IconPlayerPlay} />
+      <MethodItem name="lab" tooltip="Lab" label="Naar de tool" icon={IconMicroscope} />
+      {children}
+    </methodItemsContext.Provider>
   );
 };
 
-const Item: React.FC<ItemProps> = ({ name }) => {
-  const { methodTree, showLabel, hide, method } = useContext(context);
+type MethodItemProps = { tooltip: string; label: string; icon: Icon } & ({ name: ItemName } | { href: string });
 
-  if (hide === name) return null;
+function itemInMethodTree(item: string, methodTree: Partial<MethodTree>): item is keyof MethodTree {
+  return methodTree.hasOwnProperty(item);
+}
 
-  if (!methodTree.hasOwnProperty(name) && name !== 'lab') return null;
+export const MethodItem: React.FC<MethodItemProps> = (props) => {
+  const { tooltip, icon: Icon, label } = props;
+  const { method } = useMethodNavigation();
+  const { methodTree, showLabels, hide } = useContext(methodItemsContext);
 
-  if (name === 'lab' && !methodTree.hasOwnProperty('demo')) return null;
+  const url = (() => {
+    if ('href' in props) return props.href;
 
-  const Icon = iconMap[name];
+    const { name } = props;
 
-  const getHref = () => {
-    if (name === 'lab') return `/lab#${slugify(method, { lowercase: true })}`;
+    if (hide === name || !methodTree) return null;
 
-    return methodTree[name]!;
-  };
+    if (!methodTree.hasOwnProperty(name) && name !== 'lab') return null;
+
+    if (name === 'lab' && !methodTree.hasOwnProperty('demo')) return null;
+
+    if (name === 'lab' && method) return `/lab#${slugify(method, { lowercase: true })}`;
+
+    if (itemInMethodTree(name, methodTree)) return methodTree[name];
+
+    return '#';
+  })();
+
+  if (!url) return null;
+
+  if (showLabels)
+    return (
+      <li>
+        <Link href={url} className="flex gap-3 text-primary-main">
+          <Icon />
+          {showLabels && label}
+        </Link>
+      </li>
+    );
 
   return (
-    <li>
-      <Link href={getHref()} className={linkVariants({ color: methodTree.color })}>
+    <Item tooltip={tooltip}>
+      <Link href={url} className="flex gap-3 text-primary-main">
         <Icon />
-        {showLabel && labelMap[name]}
+        {showLabels && label}
       </Link>
+    </Item>
+  );
+};
+
+interface ItemProps extends React.PropsWithChildren {
+  tooltip: string;
+}
+
+export const Item: React.FC<ItemProps> = ({ tooltip, children }) => {
+  return (
+    <li>
+      <Tooltip.Provider>
+        <Tooltip.Root>
+          <Tooltip.Trigger asChild>{children}</Tooltip.Trigger>
+          <Tooltip.Portal>
+            <Tooltip.Content sideOffset={5}>
+              {tooltip}
+              <Tooltip.Arrow />
+            </Tooltip.Content>
+          </Tooltip.Portal>
+        </Tooltip.Root>
+      </Tooltip.Provider>
     </li>
   );
 };
