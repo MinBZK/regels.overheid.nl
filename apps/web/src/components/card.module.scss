@@ -1,0 +1,16 @@
+.root {
+  display: grid;
+  grid-template-rows:
+    [header] auto
+    [title] auto
+    [content] 1fr
+    [collapse] 0fr;
+}
+
+.rootOpen {
+  grid-template-rows:
+    [header] auto
+    [title] auto
+    [content] 0fr
+    [collapse] 1fr;
+}
