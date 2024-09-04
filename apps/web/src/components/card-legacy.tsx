@@ -5,7 +5,7 @@ interface Props extends React.PropsWithChildren {
   className?: string;
 }
 
-export const Card = forwardRef<HTMLDivElement, React.OverrideProps<Props & { component: any }, 'div'>>(
+export const CardLegacy = forwardRef<HTMLDivElement, React.OverrideProps<Props & { component: any }, 'div'>>(
   ({ children, className, component: Component = 'div', ...componentProps }, ref) => {
     return (
       <Component
@@ -19,4 +19,4 @@ export const Card = forwardRef<HTMLDivElement, React.OverrideProps<Props & { com
   }
 ) as React.OverrideAbleComponentFC<'div', Props>;
 
-Card.displayName = 'Card';
+CardLegacy.displayName = 'Card';

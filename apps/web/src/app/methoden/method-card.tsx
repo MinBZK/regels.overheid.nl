@@ -1,6 +1,6 @@
 import { getMethodTree } from '@/common/methods-tree';
 import { Button } from '@/components/button';
-import { Card } from '@/components/card';
+import { CardLegacy } from '@/components/card';
 import { MethodNavigation } from '@/components/method-navigation';
 import { Pill } from '@/components/pill';
 import { Typography } from '@/components/typography';
@@ -55,7 +55,7 @@ export const MethodCard: React.FC<Props> = ({ title, href, description, date, cl
   const override = href ? { docs: href } : undefined;
 
   return (
-    <Card component="article" id={slugify(title, { lowercase: true })} className={rootVariants({ collapsed })}>
+    <CardLegacy component="article" id={slugify(title, { lowercase: true })} className={rootVariants({ collapsed })}>
       {tag && <Pill label={tag} className="capitalize" variant={methodTree?.color} />}
       <Typography variant="h4" className="mb-6 text-black">
         {title}
@@ -82,6 +82,6 @@ export const MethodCard: React.FC<Props> = ({ title, href, description, date, cl
       >
         <IconCornerLeftUp className={buttonIconVariants({ collapsed })} />
       </Button>
-    </Card>
+    </CardLegacy>
   );
 };

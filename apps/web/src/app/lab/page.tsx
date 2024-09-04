@@ -1,4 +1,4 @@
-import { Card } from '@/components/card';
+import { CardLegacy } from '@/components/card';
 import { Container } from '@/components/container';
 import { Link } from '@/components/link';
 import { RemotePage } from '@/components/remote-page';
@@ -71,7 +71,7 @@ export default async function LabPage() {
           icon="icon-forms"
           description="Ontwerp conditionele BOLD formulieren sneller en consistenter"
         />
-        <Card className="flex flex-col items-center justify-center">
+        <CardLegacy className="flex flex-col items-center justify-center">
           <Typography variant="large" className="text-center">
             Wil je jouw eigen tool ook op deze pagina zien?
           </Typography>
@@ -81,7 +81,7 @@ export default async function LabPage() {
               Steven Gort.
             </Link>
           </Typography>
-        </Card>
+        </CardLegacy>
       </Container>
     </>
   );

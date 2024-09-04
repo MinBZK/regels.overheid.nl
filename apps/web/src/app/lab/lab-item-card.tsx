@@ -2,7 +2,7 @@
 
 import { methodsTree } from '@/common/methods-tree';
 import { Button } from '@/components/button';
-import { Card } from '@/components/card';
+import { CardLegacy } from '@/components/card';
 import { Link } from '@/components/link';
 import { MethodNavigation } from '@/components/method-navigation';
 import { Typography } from '@/components/typography';
@@ -106,7 +106,7 @@ const Element: React.FC<ElementProps> = ({
   onClick,
 }) => {
   return (
-    <Card
+    <CardLegacy
       className={clsx(
         'absolute bottom-0 left-0 right-0 top-0 px-0 py-0 transition-transform duration-700',
         isClone && 'invisible relative'
@@ -133,7 +133,7 @@ const Element: React.FC<ElementProps> = ({
         </div>
       </CardFace>
       {children}
-    </Card>
+    </CardLegacy>
   );
 };
 ``;
@@ -152,7 +152,7 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
 
   if (variant === 'coming-soon')
     return (
-      <Card className="flex flex-col items-center px-12 py-6">
+      <CardLegacy className="flex flex-col items-center px-12 py-6">
         <div className="mb-4 flex h-[150px] w-[150px] shrink-0 items-center justify-center rounded-full border text-2xl shadow-sm">
           <Icon className="h-16 w-16" />
         </div>
@@ -163,7 +163,7 @@ export const LabItemCard: React.FC<LabItemCardProps> = (props) => {
         <Button disabled className="my-2 mt-auto">
           Binnenkort beschikbaar
         </Button>
-      </Card>
+      </CardLegacy>
     );
 
   const handleFlip = () => {

@@ -1,5 +1,5 @@
 import { methodsTree } from '@/common/methods-tree';
-import { Card } from '@/components/card';
+import { CardLegacy } from '@/components/card';
 import { Link } from '@/components/link';
 import { MethodNavigation } from '@/components/method-navigation';
 import { Pill } from '@/components/pill';
@@ -89,7 +89,7 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
   const variantStyles = variantMapping[variant];
 
   return (
-    <Card component="article" id={method && slugify(method, { lowercase: true })} className="flex h-full">
+    <CardLegacy component="article" id={method && slugify(method, { lowercase: true })} className="flex h-full">
       <div className="flex w-full flex-col items-start gap-y-2">
         <div className="flex w-full items-center justify-between">
           <h3 className={clsx('text-base font-bold', variantStyles.title)}>{title}</h3>
@@ -114,6 +114,6 @@ export const PublicationCard: React.FC<PublicationCardProps> = ({
           {method && <MethodNavigation hide="publication" method={method} />}
         </div>
       </div>
-    </Card>
+    </CardLegacy>
   );
 };
