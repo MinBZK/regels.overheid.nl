@@ -22,7 +22,7 @@ export default async function LabPage() {
             <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
             <CardLab.Demo href="https://regels.dexcat.nl/" />
             <CardLab.Repo href="https://gitlab.com/xpertselect/portals" />
-            <CardLab.Docs href="http://opengdc.nls" />
+            <CardLab.Docs href="http://opengdc.nl" />
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="Norm Editor" method="FLINT">
