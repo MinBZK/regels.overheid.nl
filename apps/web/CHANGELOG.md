@@ -1,5 +1,11 @@
 # web
 
+## 3.30.2
+
+### Patch Changes
+
+- 4312c23: Unified cards on lab, methods and publications
+
 ## 3.30.1
 
 ### Patch Changes
