@@ -37,8 +37,8 @@ export default async function LabPage() {
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="Legal Annotation Tool" method="Wetsanalyse_1">
-          Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door studententeams tooling voor Wetsanalyse gebouwd.
-          Er is een Responsible Disclosure Melding ontvangen die in onderzoek is. Als gevolg daarvan is de tool
+          Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door studententeams tooling voor Wetsanalyse
+          gebouwd. Er is een Responsible Disclosure Melding ontvangen die in onderzoek is. Als gevolg daarvan is de tool
           offline gehaald totdat een patch beschikbaar is.
           <CardLab.MethodItems
             override={{
@@ -53,8 +53,9 @@ export default async function LabPage() {
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="JAS Annotatie Tool" method="Wetsanalyse_2">
-          Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door studententeams tooling voor Wetsanalyse gebouwd.
-          De beschikbaar gestelde applicatie is het eindproduct van het team JSON dat zonder nadere kwaliteitsslag hier is deployed.
+          Voor de opleiding HBO-ICT aan de Hogeschool van Amsterdam is door studententeams tooling voor Wetsanalyse
+          gebouwd. De beschikbaar gestelde applicatie is het eindproduct van het team JSON dat zonder nadere
+          kwaliteitsslag hier is deployed.
           <CardLab.MethodItems
             override={{
               demo: 'https://regels.overheid.nl/lab/jas-annotatie-tool/',
