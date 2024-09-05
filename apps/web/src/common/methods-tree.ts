@@ -20,7 +20,6 @@ export const methodsTree = {
   },
   Wetsanalyse_1: {
     color: 'info',
-    demo: '/lab/legal-annotation-tool',
     docs: '/docs/methods/WETSANALYSE',
     publication: 'https://regels.overheid.nl/publicaties/wetsanalyse',
   },

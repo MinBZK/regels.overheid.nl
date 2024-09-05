@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/button';
-import { Card as RootCard } from '@/components/card';
+import { CardLegacy as RootCard } from '@/components/card-legacy';
 import { Typography } from '@/components/typography';
 import { IconExternalLink } from '@tabler/icons-react';
 import Link from 'next/link';

@@ -1,5 +1,5 @@
 import { Button } from '@/components/button';
-import { Card } from '@/components/card';
+import { CardLegacy } from '@/components/card-legacy';
 import { Container } from '@/components/container';
 import { Link } from '@/components/link';
 import { RemotePage } from '@/components/remote-page';
@@ -13,7 +13,7 @@ export default function RegisterPage() {
       <Typography variant="h1">Register</Typography>
       <RemotePage page="register" />
 
-      <Card className="mt-8">
+      <CardLegacy className="mt-8">
         <Typography component={NextLink} href="/register/indInkToesl" variant="h3">
           Individuele inkomenstoeslag - regelgroepen in ALEF
         </Typography>
@@ -32,7 +32,7 @@ export default function RegisterPage() {
             Lees meer
           </Button>
         </div>
-      </Card>
+      </CardLegacy>
     </Container>
   );
 }

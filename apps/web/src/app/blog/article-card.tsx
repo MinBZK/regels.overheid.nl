@@ -1,4 +1,4 @@
-import { Card } from '@/components/card';
+import { CardLegacy } from '@/components/card-legacy';
 import { Pill } from '@/components/pill';
 import slugify from '@sindresorhus/slugify';
 import { IconClockHour2 } from '@tabler/icons-react';
@@ -22,7 +22,7 @@ interface Props {
 
 export const BlogArticleCard: React.FC<Props> = async ({ id, title, category, date, coverAltText, coverUrl }) => {
   return (
-    <Card component="article" className="group flex w-full flex-col overflow-hidden border-l border-t">
+    <CardLegacy component="article" className="group flex w-full flex-col overflow-hidden border-l border-t">
       <Link href={`/blog/${id}/${slugify(title)}`} className="flex h-full flex-col">
         <figure className="relative -ml-3 -mr-3 -mt-4 mb-2 aspect-[308/140] overflow-hidden">
           {coverUrl && <Image fill className="object-cover" src={coverUrl} alt={coverAltText || title} />}
@@ -40,6 +40,6 @@ export const BlogArticleCard: React.FC<Props> = async ({ id, title, category, da
           </div>
         </div>
       </Link>
-    </Card>
+    </CardLegacy>
   );
 };

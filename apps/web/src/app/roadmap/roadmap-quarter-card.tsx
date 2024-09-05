@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@/components/card';
+import { CardLegacy } from '@/components/card-legacy';
 import { Collapse } from '@/components/collapse';
 import { IconCircleCheckFilled, IconCircleDotted, IconCircleFilled } from '@tabler/icons-react';
 import { clsx } from 'clsx';
@@ -50,7 +50,7 @@ export const RoadmapQuarterCard: React.FC<RoadmapQuarterCardProps> = ({ quarter,
       <div className="hidden items-center justify-center after:absolute after:h-full after:w-full after:bg-white md:relative md:mb-6 md:flex md:h-8">
         {iconComponent}
       </div>
-      <Card
+      <CardLegacy
         className={`${cardColorMap[cardColorMapKey]} relative w-full cursor-pointer  border-b-0 border-r-0 md:cursor-default`}
         onClick={() => {
           setIsOpen((state) => !state);
@@ -74,7 +74,7 @@ export const RoadmapQuarterCard: React.FC<RoadmapQuarterCardProps> = ({ quarter,
             })}
           </ul>
         </Collapse>
-      </Card>
+      </CardLegacy>
     </div>
   );
 };
