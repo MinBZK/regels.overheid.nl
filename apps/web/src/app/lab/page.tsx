@@ -42,7 +42,7 @@ export default async function LabPage() {
          offline gehaald totdat een patch beschikbaar is.
           <CardLab.MethodItems
             override={{
-              docs: 'http://regels.overheid.nl/docs/lab/legal-annotation-tool/INTRODUCTIE',
+              docs: '/docs/lab/legal-annotation-tool/INTRODUCTIE',
             }}
           >
             <CardLab.License
@@ -58,7 +58,7 @@ export default async function LabPage() {
           <CardLab.MethodItems
             override={{
               demo: 'https://regels.overheid.nl/lab/jas-annotatie-tool/',
-              docs: 'http://regels.overheid.nl/docs/lab/jas-annotatie-tool',
+              docs: '/docs/lab/jas-annotatie-tool',
             }}
           >
             <CardLab.License
