@@ -56,7 +56,10 @@ export default async function IndividueleInkomenstoeslagPage() {
           <Typography>Bronnen</Typography>
           <ul className="mb-7 list-disc pl-5">
             <li>
-              <Link component="a" href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina">
+              <Link
+                component="a"
+                href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina"
+              >
                 Individuele inkomenstoeslag aanvragen
               </Link>
             </li>
