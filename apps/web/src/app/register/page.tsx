@@ -24,8 +24,8 @@ export default function RegisterPage() {
             https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina
           </Link>{' '}
           Individuele inkomenstoeslag aanvragen{' '}
-          <Link href="http://lokaleregelgeving.overheid.nl/CVDR642743">
-            http://lokaleregelgeving.overheid.nl/CVDR642743
+          <Link href="https://lokaleregelgeving.overheid.nl/CVDR642743/2">
+            https://lokaleregelgeving.overheid.nl/CVDR642743/2
           </Link>
           Beleidsregel Individuele Inkomenstoeslag gemeente Utrecht
         </Typography>
