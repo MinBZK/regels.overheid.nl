@@ -1,5 +1,11 @@
 # web
 
+## 3.31.0
+
+### Minor Changes
+
+- b92703b: Fix broken links & change button txt
+
 ## 3.30.2
 
 ### Patch Changes
