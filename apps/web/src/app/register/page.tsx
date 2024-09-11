@@ -20,11 +20,13 @@ export default function RegisterPage() {
         <Typography variant="p">
           Verzameling regels voor &quot;Individuele inkomenstoeslag&quot; - Gemeente Utrecht Betreft het object:
           &quot;Aanvraag&quot; Drie regelgroepen met in ALEF uitgewerkte HTML pagina&apos;s. Bronnen:{' '}
-          <Link href="https://pki.utrecht.nl/Loketproduct/0c17f7cd409dc999eb351883a138ca3d">
-            https://pki.utrecht.nl/Loketproduct/0c17f7cd409dc999eb351883a138ca3d
+          <Link href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina">
+            https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina
           </Link>{' '}
           Individuele inkomenstoeslag aanvragen{' '}
-          <Link href="https://lokaleregelgeving.overheid.nl">https://lokaleregelgeving.overheid.nl</Link> CVDR642743
+          <Link href="https://lokaleregelgeving.overheid.nl/CVDR642743/2">
+            https://lokaleregelgeving.overheid.nl/CVDR642743/2
+          </Link>
           Beleidsregel Individuele Inkomenstoeslag gemeente Utrecht
         </Typography>
         <div className="mt-4 flex justify-end">

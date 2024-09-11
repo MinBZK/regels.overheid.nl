@@ -36,7 +36,7 @@ export const SectionItemCollapseButton: React.FC<SectionItemCollapseButtonProps>
             }
       }
     >
-      Data raadplegen
+      Toon specificatie
     </Button>
   );
 };
