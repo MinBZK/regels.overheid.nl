@@ -56,12 +56,12 @@ export default async function IndividueleInkomenstoeslagPage() {
           <Typography>Bronnen</Typography>
           <ul className="mb-7 list-disc pl-5">
             <li>
-              <Link component="a" href="https://pki.utrecht.nl/Loket/product/0c17f7cd409dc999eb351883a138ca3d">
+              <Link component="a" href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina">
                 Individuele inkomenstoeslag aanvragen
               </Link>
             </li>
             <li>
-              <Link component="a" href="https://lokaleregelgeving.overheid.nl/CVDR642743 ">
+              <Link component="a" href="https://lokaleregelgeving.overheid.nl/CVDR642743/2">
                 Beleidsregel | Individuele Inkomenstoeslag gemeente Utrecht
               </Link>
             </li>
