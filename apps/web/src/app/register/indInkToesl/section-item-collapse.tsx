@@ -32,8 +32,8 @@ export const SectionItemCollapseButton: React.FC<SectionItemCollapseButtonProps>
         href
           ? undefined
           : () => {
-            setState((state) => !state);
-          }
+              setState((state) => !state);
+            }
       }
     >
       Toon specificatie
