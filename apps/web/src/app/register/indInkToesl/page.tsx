@@ -56,8 +56,7 @@ export default async function IndividueleInkomenstoeslagPage() {
           <Typography>Overheid.nl Web Metadata Standaard (OWMS)</Typography>
           <ul className="mb-7 list-disc pl-5">
             <li>
-              <Link
-                component="a" href="https://standaarden.overheid.nl/owms/terms/indInkToesl" target="_blank">
+              <Link component="a" href="https://standaarden.overheid.nl/owms/terms/indInkToesl" target="_blank">
                 owms:indInkToesl
               </Link>
             </li>
@@ -65,7 +64,11 @@ export default async function IndividueleInkomenstoeslagPage() {
           <Typography>Bronnen</Typography>
           <ul className="mb-7 list-disc pl-5">
             <li>
-              <Link component="a" href="https://wetten.overheid.nl/jci1.3:c:BWBR0015703&hoofdstuk=4&paragraaf=4.1&artikel=36&z=2024-07-01&g=2024-07-01" target="_blank">
+              <Link
+                component="a"
+                href="https://wetten.overheid.nl/jci1.3:c:BWBR0015703&hoofdstuk=4&paragraaf=4.1&artikel=36&z=2024-07-01&g=2024-07-01"
+                target="_blank"
+              >
                 Artikel 36 Participatiewet
               </Link>
             </li>
@@ -79,7 +82,10 @@ export default async function IndividueleInkomenstoeslagPage() {
           <ul className="mb-7 list-disc pl-5">
             <li>
               <Link
-                component="a" href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina" target="_blank">
+                component="a"
+                href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina"
+                target="_blank"
+              >
                 Individuele inkomenstoeslag aanvragen
               </Link>
             </li>
