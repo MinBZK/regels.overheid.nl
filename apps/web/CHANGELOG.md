@@ -1,5 +1,15 @@
 # web
 
+## 3.32.0
+
+### Minor Changes
+
+- 88355f0: Added sources to ALEF example page IIT
+
+### Patch Changes
+
+- 0a8ca57: Fixed incorrect footer layout
+
 ## 3.31.0
 
 ### Minor Changes
