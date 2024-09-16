@@ -20,6 +20,7 @@
       "type": "enumeration",
       "enum": [
         "Voorbeeld",
+        "Stagiair",
         "Demonstratie",
         "Methode",
         "Wetsanalyse",
