@@ -53,19 +53,40 @@ export default async function IndividueleInkomenstoeslagPage() {
             Gemeente Utrecht Betreft het object: &quot;Aanvraag&quot; <br />
           </Typography>
           <Typography>Drie regelgroepen met in ALEF uitgewerkte HTML pagina&apos;s.</Typography>
+          <Typography>Overheid.nl Web Metadata Standaard (OWMS)</Typography>
+          <ul className="mb-7 list-disc pl-5">
+            <li>
+              <Link component="a" href="https://standaarden.overheid.nl/owms/terms/indInkToesl" target="_blank">
+                owms:indInkToesl
+              </Link>
+            </li>
+          </ul>
           <Typography>Bronnen</Typography>
           <ul className="mb-7 list-disc pl-5">
             <li>
               <Link
                 component="a"
-                href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina"
+                href="https://wetten.overheid.nl/jci1.3:c:BWBR0015703&hoofdstuk=4&paragraaf=4.1&artikel=36&z=2024-07-01&g=2024-07-01"
+                target="_blank"
               >
-                Individuele inkomenstoeslag aanvragen
+                Artikel 36 Participatiewet
               </Link>
             </li>
             <li>
-              <Link component="a" href="https://lokaleregelgeving.overheid.nl/CVDR642743/2">
+              <Link component="a" href="https://lokaleregelgeving.overheid.nl/CVDR642743/2" target="_blank">
                 Beleidsregel | Individuele Inkomenstoeslag gemeente Utrecht
+              </Link>
+            </li>
+          </ul>
+          <Typography>Aanvraag</Typography>
+          <ul className="mb-7 list-disc pl-5">
+            <li>
+              <Link
+                component="a"
+                href="https://loket.digitaal.utrecht.nl/nl/form/individuele-inkomenstoeslag-aanvragen/startpagina"
+                target="_blank"
+              >
+                Individuele inkomenstoeslag aanvragen
               </Link>
             </li>
           </ul>
