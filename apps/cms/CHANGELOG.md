@@ -1,5 +1,11 @@
 # cms
 
+## 1.26.0
+
+### Minor Changes
+
+- f0fd72b: Added stagiair category for blog posts
+
 ## 1.25.0
 
 ### Minor Changes
