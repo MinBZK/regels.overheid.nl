@@ -29,8 +29,8 @@ const FooterLink: React.FC<FooterLinkProps> = ({ children, href, isBlank }) => {
 export const Footer: React.FC = () => {
   return (
     <footer className="mt-auto w-full border-t-8 border-t-primary-light bg-primary-lighter py-6">
-      <Container className="flex flex-col sm:flex-row-reverse sm:items-start sm:justify-between lg:flex-col lg:items-center lg:gap-y-6">
-        <nav aria-label="Footer Navigatie" className="flex flex-col gap-y-12 lg:flex-row lg:justify-center lg:gap-x-9">
+      <Container className="flex flex-col sm:items-center lg:gap-y-6">
+        <nav aria-label="Footer Navigatie" className="flex flex-col gap-y-12 sm:flex-row sm:justify-center sm:gap-x-9">
           <ul>
             <FooterLink href="/over">Over deze website</FooterLink>
             <FooterLink href="mailto:steven.gort@ictu.nl">Contact</FooterLink>
