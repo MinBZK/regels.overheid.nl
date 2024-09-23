@@ -11,6 +11,7 @@ export async function getBlogArticleById(id: number) {
       category: blogArticles.category,
       description: blogArticles.description,
       publishedAt: blogArticles.publishedAt,
+      source: blogArticles.source,
       cover: {
         ext: files.ext,
         hash: files.hash,
