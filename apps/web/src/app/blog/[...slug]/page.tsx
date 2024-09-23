@@ -68,6 +68,11 @@ export default async function BlogArticlePage(props: Props) {
       </header>
       <article>
         <RemoteMdx content={blogArticle?.content || ''} />
+        {blogArticle.source && (
+          <div className="mt-6 border border-primary-main bg-primary-lighter p-6 text-black">
+            <RemoteMdx content={blogArticle.source} />
+          </div>
+        )}
       </article>
       <div className="mt-6 border-b border-t border-grey-light py-6">Categorie: {blogArticle?.category}</div>
 
