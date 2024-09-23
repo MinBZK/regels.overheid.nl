@@ -1,5 +1,12 @@
 # web
 
+## 3.33.0
+
+### Minor Changes
+
+- e58a859: Added blockquote component
+- 0351884: Added source component to blog articles
+
 ## 3.32.0
 
 ### Minor Changes
