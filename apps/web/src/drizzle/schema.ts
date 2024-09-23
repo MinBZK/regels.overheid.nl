@@ -420,28 +420,6 @@ export const applicationMetadatas = pgTable(
   }
 );
 
-export const blogArticles = pgTable(
-  'blog_articles',
-  {
-    id: serial('id').primaryKey().notNull(),
-    title: varchar('title', { length: 255 }),
-    category: varchar('category', { length: 255 }),
-    content: text('content'),
-    description: text('description'),
-    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
-    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
-    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
-    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
-  },
-  (table) => {
-    return {
-      createdByIdFk: index('blog_articles_created_by_id_fk').on(table.createdById),
-      updatedByIdFk: index('blog_articles_updated_by_id_fk').on(table.updatedById),
-    };
-  }
-);
-
 export const methods = pgTable(
   'methods',
   {
@@ -766,6 +744,29 @@ export const events = pgTable(
       createdByIdFk: index('events_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('events_updated_by_id_fk').on(table.updatedById),
       eventsSlugUnique: unique('events_slug_unique').on(table.slug),
+    };
+  }
+);
+
+export const blogArticles = pgTable(
+  'blog_articles',
+  {
+    id: serial('id').primaryKey().notNull(),
+    title: varchar('title', { length: 255 }),
+    category: varchar('category', { length: 255 }),
+    content: text('content'),
+    description: text('description'),
+    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
+    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
+    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
+    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    source: text('source'),
+  },
+  (table) => {
+    return {
+      createdByIdFk: index('blog_articles_created_by_id_fk').on(table.createdById),
+      updatedByIdFk: index('blog_articles_updated_by_id_fk').on(table.updatedById),
     };
   }
 );
