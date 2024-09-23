@@ -20,6 +20,9 @@ export const RemoteMdx: React.FC<Props> = ({ content, components, ...props }) =>
         p: (props) => <Typography variant="p" {...(props as any)} />,
         ol: (props) => <ol className="list-decimal pl-7 text-lg" {...(props as any)} />,
         ul: (props) => <ul className="list-disc pl-7 text-lg" {...(props as any)} />,
+        blockquote: (props) => (
+          <blockquote className="mt-4 border-l-4 border-primary-light pl-4 italic text-gray-700" {...props} />
+        ),
         ...components,
       }}
       {...props}
