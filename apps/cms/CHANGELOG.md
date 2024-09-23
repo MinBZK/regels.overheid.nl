@@ -1,5 +1,15 @@
 # cms
 
+## 1.27.0
+
+### Minor Changes
+
+- 5de0f2c: Added `source` field to `blog-article` content-type
+
+### Patch Changes
+
+- 76fe55f: Removed field `tmp` from `event` content-type
+
 ## 1.26.0
 
 ### Minor Changes
