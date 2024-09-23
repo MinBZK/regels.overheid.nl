@@ -92,9 +92,6 @@
     },
     "report": {
       "type": "richtext"
-    },
-    "tmp": {
-      "type": "blocks"
     }
   }
 }
