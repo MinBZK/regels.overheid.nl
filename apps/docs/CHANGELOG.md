@@ -1,5 +1,11 @@
 # docs
 
+## 3.12.1
+
+### Patch Changes
+
+- 2470eca: Updated docs of Financieel Paspoort
+
 ## 3.12.0
 
 ### Minor Changes
