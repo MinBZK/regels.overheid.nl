@@ -13,9 +13,19 @@ export default function PublicatiesPage() {
         <RemotePage page="publicaties" />
       </Container>
       <ContainerMethod>
-        <CardPublication.Root title="Wetsanalyse" method="Wetsanalyse_1">
-          Specificatie van het juridisch analyseschema dat gebruikt wordt bij Wetsanalyse en waarin verschillende
+        <CardPublication.Root
+          title="Wetsanalyse"
+          method="Wetsanalyse_1"
+        >
+          Specificatie van het juridisch <b>analyseschema</b> dat gebruikt wordt bij Wetsanalyse en waarin verschillende
           juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn.
+        </CardPublication.Root>
+        <CardPublication.Root
+          title="Wetgeving"
+          variant="unavailable"
+        >
+          Specificatie van het juridisch <b>referentiemodel</b> dat met scenario's beschrijft hoe een burger of bedrijf
+          een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardPublication.Root>
         <CardPublication.Root
           title="DCAT"
@@ -36,8 +46,12 @@ export default function PublicatiesPage() {
           Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij
           het invullen.
         </CardPublication.Root>
-        <CardPublication.Root title="Levensgebeurtenissen SIVI AFS" url="/publicaties/levensgebeurtenissen-sivi-afs">
-          Bevat de standaardisatie van levensgebeurtenissen en signalen in SIVI All Finance Standaard (SIVI AFS)
+        <CardPublication.Root
+          variant="work-in-progress"
+          title="Levensgebeurtenissen SIVI AFS"
+          url="/publicaties/levensgebeurtenissen-sivi-afs"
+        >
+          Bevat de standaardisatie van levensgebeurtenissen en signalen in de SIVI All Finance Standaard (SIVI AFS)
         </CardPublication.Root>
         <CardPublication.Root
           variant="work-in-progress"
@@ -47,7 +61,7 @@ export default function PublicatiesPage() {
           De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal
         </CardPublication.Root>
         <CardPublication.Root title="Harmonisator" variant="unavailable" />
-        <CardPublication.Root title="Calculemus Protocol" variant="unavailable" />
+        <CardPublication.Root title="FLINT" variant="unavailable" />
       </ContainerMethod>
     </main>
   );
