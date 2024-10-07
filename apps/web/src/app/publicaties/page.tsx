@@ -24,7 +24,7 @@ export default function PublicatiesPage() {
           title="Wetgeving"
           variant="unavailable"
         >
-          Specificatie van het juridisch <b>referentiemodel</b> dat met scenario's beschrijft hoe een burger of bedrijf
+          Specificatie van het juridisch <b>referentiemodel</b> dat met scenario&apos;s beschrijft hoe een burger of bedrijf
           een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardPublication.Root>
         <CardPublication.Root
