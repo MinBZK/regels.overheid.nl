@@ -1,0 +1,50 @@
+name: Changesets
+on:
+  push:
+    branches:
+      - main
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+jobs:
+  changesets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.9.0
+          run_install: true
+      - uses: actions/setup-node@v3
+        with:
+          cache: pnpm
+          node-version: 20.11
+      - name: changesets
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          createGithubReleases: true
+          publish: pnpm changeset publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    outputs:
+      published: ${{ steps.changesets.outputs.published || 'false' }}
+      publishedPackages: ${{ steps.changesets.outputs.publishedPackages || '[{}]' }}
+  transform-changesets-output: 
+    needs: changesets
+    if: needs.changesets.outputs.published
+    runs-on: ubuntu-latest
+    steps: 
+      - id: transform
+        run: |
+          transformed=$(echo '${{ needs.changesets.outputs.publishedPackages }}' | jq -c 'map({(.name): {version: .version}}) | add')
+          echo "transformed=$transformed" >> "$GITHUB_OUTPUT"
+    outputs: 
+      publishedPackages: ${{ steps.transform.outputs.transformed }}
+  deploy-apps:
+    needs: 
+      - changesets
+      - transform-changesets-output
+    if: needs.changesets.outputs.published
+    uses: ./.github/workflows/changesets-gateway.yml
+    secrets: inherit
+    with: 
+      packages: ${{ needs.transform-changesets-output.outputs.publishedPackages }}

@@ -1,0 +1,41 @@
+name: Docker Build and Push to ACR
+description: Builds and pushes a Docker image of the given app (inside apps/) to Azure Container Registry (ACR).
+inputs:
+  tag:
+    description: Tag of the image, should be the version number of app
+    required: true
+  app:
+    description: The name of the app to push, should match the folder name in apps/
+    required: true
+  acr-login-server:
+    description: Azure Container Registry access key login server
+    required: true
+  acr-username:
+    description: Azure Container Registry access key admin username
+    required: true
+  acr-password:
+    description: Azure Container Registry access key admin password
+    required: true
+  build-args:
+    required: false
+    description: Build-args to pass to the Docker build command
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - uses: azure/docker-login@v1
+      with:
+        login-server: ${{ inputs.acr-login-server }}
+        username: ${{ inputs.acr-username }}
+        password: ${{ inputs.acr-password }}
+    - uses: docker/setup-buildx-action@v2
+    - uses: docker/build-push-action@v3
+      with:
+        context: .
+        target: prod
+        file: apps/${{ inputs.app }}/Dockerfile
+        push: true
+        tags: regels.azurecr.io/${{ inputs.app }}:${{ inputs.tag }},regels.azurecr.io/${{ inputs.app }}:latest
+        build-args: ${{ inputs.build-args }}
+        cache-from: type=registry,ref=regels.azurecr.io/${{ inputs.app }}:buildcache
+        cache-to: type=registry,ref=regels.azurecr.io/${{ inputs.app }}:buildcache,mode=max

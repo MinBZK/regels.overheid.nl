@@ -1,0 +1,49 @@
+name: Helm Upgrade/Install Release
+description: This action upgrades or installs a Helm release on an AKS cluster using Azure authentication, setting the desired Docker image tag for the release.
+inputs:
+  azure-client-id:
+    description: Azure Service Principal client ID for authentication.
+    required: true
+  azure-tenant-id:
+    description: Azure tenant ID for authentication.
+    required: true
+  azure-subscription-id:
+    description: Azure subscription ID for selecting the correct subscription.
+    required: true
+  github-token:
+    description: GitHub token for authenticating with GitHub Actions to manage identity and access control.
+    required: true
+  tag:
+    description: The Docker image tag to use for the release (e.g., 'latest' or a version number).
+    required: true
+  release-name:
+    description: The name of the Helm release to upgrade or install.
+    required: true
+permissions:
+  id-token: write
+  contents: read
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - uses: azure/login@v1
+      with:
+        client-id: ${{ inputs.azure-client-id }}
+        tenant-id: ${{ inputs.azure-tenant-id }}
+        subscription-id: ${{ inputs.azure-subscription-id }}
+    - uses: azure/setup-kubectl@v3
+    - uses: azure/use-kubelogin@v1
+      env:
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+    - uses: azure/aks-set-context@v3
+      with:
+        resource-group: regels.overheid.nl
+        cluster-name: regels
+        admin: false
+        use-kubelogin: true
+    - run: curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+      shell: sh
+    - run: helm repo add regels-overheid-nl https://minbzk.github.io/helm.regels.overheid.nl/
+      shell: sh
+    - run: helm upgrade --install --atomic --wait ${{ inputs.release-name }} regels-overheid-nl/${{ inputs.release-name }} --namespace app --set image.tag=${{ inputs.tag }}
+      shell: sh

@@ -1,25 +1,25 @@
 name: Publish Respec document to regels.overheid.nl
 inputs:
   token:
-    description: 'The secret publication token'
-    required: true
-  owner:
-    required: true
-  repo:
+    description: "The secret publication token"
     required: true
 runs:
-  using: composite
+  using: "composite"
   steps:
-    - name: Send notify request
+    - name: Extract repository name and send notify request
       id: request
-      uses: fjogeleit/http-request-action@main
-      with:
-        url: 'https://regels.overheid.nl/api/publications?owner=${{ inputs.owner }}&repo=${{ inputs.repo }}&secret=${{ inputs.token }}'
-    - name: Validate notify response
+      shell: bash
+      run: |
+        REPO_NAME="${GITHUB_REPOSITORY##*/}"
+        echo "Extracted Repository Name: $REPO_NAME"
+        RESPONSE=$(curl -s -X POST -H "Content-Type: application/json" -d '{"owner":"${{ github.repository_owner }}","repo":"'$REPO_NAME'","secret":"${{ inputs.token }}"}' "https://regels.overheid.nl/api/publications")
+        echo "::set-output name=response::$RESPONSE"
       env:
-        response: fromJson(steps.request.outputs.response)
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_TOKEN: ${{ inputs.token }}
+    - name: Validate notify response
       if: fromJSON(steps.request.outputs.response).ok != true
       uses: actions/github-script@v3
       with:
         script: |
-          core.setFailed(${{ steps.request.outputs.response }})
+          core.setFailed('Request failed with response: ${{ steps.request.outputs.response }}')
