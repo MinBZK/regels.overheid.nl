@@ -14,12 +14,12 @@ export default function PublicatiesPage() {
       </Container>
       <ContainerMethod>
         <CardPublication.Root title="Wetsanalyse" method="Wetsanalyse_1">
-          Specificatie van het juridisch <b>analyseschema</b> dat gebruikt wordt bij Wetsanalyse en waarin verschillende
-          juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn.
+          Specificatie van het <b>juridisch analyseschema</b> (JAS) dat gebruikt wordt bij Wetsanalyse en waarin
+          verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn.
         </CardPublication.Root>
         <CardPublication.Root title="Wetgeving" variant="unavailable">
-          Specificatie van het juridisch <b>referentiemodel</b> dat met scenario&apos;s beschrijft hoe een burger of
-          bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
+          Specificatie van het <b>juridisch referentiemodel</b> (JRM) dat met scenario&apos;s beschrijft hoe een burger
+          of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardPublication.Root>
         <CardPublication.Root
           title="DCAT"
