@@ -1,5 +1,11 @@
 # web
 
+## 3.34.0
+
+### Minor Changes
+
+- 022099b: Added new card for Wetgeving publication (to be expected soon!)
+
 ## 3.33.0
 
 ### Minor Changes
