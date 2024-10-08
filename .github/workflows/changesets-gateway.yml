@@ -1,0 +1,37 @@
+name: Changesets - Gateway
+on: 
+  workflow_call:
+    inputs: 
+      packages: 
+        type: string
+        required: true
+jobs:
+  release-cms:
+    if: ${{ fromJson(inputs.packages).cms != null }}
+    name: Release CMS (${{ fromJson(inputs.packages).cms.version }})
+    uses: ./.github/workflows/build-push-deploy-cms.yml
+    secrets: inherit
+    with: 
+      version: ${{ fromJson(inputs.packages).cms.version }}
+  release-web:
+    if: ${{ fromJson(inputs.packages).web != null }}
+    name: Release Web (${{ fromJson(inputs.packages).web.version }})
+    uses: ./.github/workflows/build-push-deploy-web.yml
+    secrets: inherit
+    with: 
+      version: ${{ fromJson(inputs.packages).web.version }}
+  release-docs:
+    if: ${{ fromJson(inputs.packages).docs != null }}
+    name: Release Docs (${{ fromJson(inputs.packages).docs.version }})
+    uses: ./.github/workflows/build-push-deploy-docs.yml
+    secrets: inherit
+    with: 
+      version: ${{ fromJson(inputs.packages).docs.version }}
+  release-docs-beta:
+    if: ${{ fromJson(inputs.packages).docs-beta != null }}
+    name: Release Docs-Beta (${{ fromJson(inputs.packages).docs-beta.version }})
+    uses: ./.github/workflows/build-push-deploy-docs-beta.yml
+    secrets: inherit
+    with: 
+      version: ${{ fromJson(inputs.packages).docs-beta.version }}
+

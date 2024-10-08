@@ -1,0 +1,62 @@
+name: "Build, Push and Deploy - Docs Beta"
+on: 
+  workflow_call:
+    inputs: 
+      version: 
+        type: string
+        description: ""
+        required: true
+      build-push:
+        type: boolean
+        required: false
+        default: true
+      deploy:
+        type: boolean
+        required: false
+        default: true
+  workflow_dispatch:
+    inputs: 
+      version: 
+        type: string
+        description: ""
+        required: true
+      build-push:
+        type: boolean
+        required: true
+        default: true
+      deploy:
+        type: boolean
+        required: true
+        default: true
+permissions:
+  id-token: write
+  contents: read
+jobs: 
+  build-push-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push to registry
+        uses: ./.github/actions/docker-build-push-acr
+        if: inputs.build-push
+        with: 
+          app: docs-beta
+          tag: ${{ inputs.version }}
+          acr-username: ${{ secrets.ACR_USERNAME }}
+          acr-password: ${{ secrets.ACR_PASSWORD }}
+          acr-login-server:  ${{ secrets.ACR_LOGIN_SERVER }}
+      - name: Deploy/Upgrade Helm release
+        if: inputs.deploy
+        uses: ./.github/actions/helm-upgrade-install-release
+        with: 
+          release-name: docs-beta
+          tag: ${{ inputs.version }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+
+
+
+          
