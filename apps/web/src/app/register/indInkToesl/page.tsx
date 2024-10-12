@@ -105,7 +105,7 @@ export default async function IndividueleInkomenstoeslagPage() {
               <Section.ItemBadges>
                 <Pill startIcon={<IconFileTypeXml />} />
                 <Pill startIcon={<IconScale />} label="CC-0 (1.0)" />
-                <Pill label="2024" />
+                <Pill label="2021" />
               </Section.ItemBadges>
             </Section.Item>
           </Section.Root>
@@ -117,19 +117,19 @@ export default async function IndividueleInkomenstoeslagPage() {
               <Section.ItemBadges>
                 <Pill startIcon={<IconFileTypeXml />} />
                 <Pill startIcon={<IconScale />} label="CC-0 (1.0)" />
-                <Pill label="2024" />
+                <Pill label="2021" />
               </Section.ItemBadges>
             </Section.Item>
 
             <Section.Item title="Parameters van de regelgroep" html={parameters}>
               <Section.ItemDescription>
-                Dit is een HTML weergave van de parameters van de ALEF regels voor groep Uit te keren individuele
+                Dit is een HTML weergave van de parameters van de ALEF regels voor groep uit te keren individuele
                 inkomenstoeslag.
               </Section.ItemDescription>
               <Section.ItemBadges>
                 <Pill startIcon={<IconFileTypeXml />} />
                 <Pill startIcon={<IconScale />} label="CC-0 (1.0)" />
-                <Pill label="2024" />
+                <Pill label="2021" />
               </Section.ItemBadges>
             </Section.Item>
           </Section.Root>
@@ -139,7 +139,7 @@ export default async function IndividueleInkomenstoeslagPage() {
               <Section.ItemBadges>
                 <Pill startIcon={<IconFileTypeXml />} />
                 <Pill startIcon={<IconScale />} label="CC-0 (1.0)" />
-                <Pill label="2024" />
+                <Pill label="2021" />
               </Section.ItemBadges>
             </Section.Item>
           </Section.Root>
@@ -152,7 +152,7 @@ export default async function IndividueleInkomenstoeslagPage() {
           </InfoCard>
 
           <InfoCard title="Kenmerk">
-            <Entry name="Classificaties" value="Geen" icon={<IconTagStarred />} />
+            <Entry name="Classificaties" value="Demo" icon={<IconTagStarred />} />
             <Entry name="Thema" value="Sociale zekerheid" icon={<IconTag />} />
           </InfoCard>
 
