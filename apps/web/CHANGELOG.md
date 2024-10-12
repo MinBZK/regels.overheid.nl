@@ -1,5 +1,11 @@
 # web
 
+## 3.35.0
+
+### Minor Changes
+
+- 6df13a0: Fixed rendering HTML for regelgroepen ALEF
+
 ## 3.34.0
 
 ### Minor Changes
