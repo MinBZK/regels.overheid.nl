@@ -17,7 +17,7 @@ export default function PublicatiesPage() {
           Specificatie van het <b>juridisch analyseschema</b> (JAS) dat gebruikt wordt bij Wetsanalyse en waarin
           verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn.
         </CardPublication.Root>
-        <CardPublication.Root title="Wetgeving" variant="unavailable">
+        <CardPublication.Root title="Wetsuitvoering" variant="unavailable">
           Specificatie van het <b>juridisch referentiemodel</b> (JRM) dat met scenario&apos;s beschrijft hoe een burger
           of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardPublication.Root>
