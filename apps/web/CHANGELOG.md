@@ -1,5 +1,11 @@
 # web
 
+## 3.36.0
+
+### Minor Changes
+
+- ae308fb: Renamed wetgeving publication to wetsuitvoering
+
 ## 3.35.0
 
 ### Minor Changes
