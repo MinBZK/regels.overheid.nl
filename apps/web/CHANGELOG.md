@@ -1,5 +1,11 @@
 # web
 
+## 3.38.0
+
+### Minor Changes
+
+- 34987b7: Added Lab card for AOW microservice
+
 ## 3.37.0
 
 ### Minor Changes
