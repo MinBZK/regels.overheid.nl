@@ -27,8 +27,8 @@ export default async function LabPage() {
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="AOW microservice">
-          De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling.
-          Met deze microservice illustreren we een landelijke service voor de bepaling van de AOW leeftijd.
+          De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling. Met deze
+          microservice illustreren we een landelijke service voor de bepaling van de AOW leeftijd.
           <CardLab.MethodItems>
             <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
             <CardLab.Demo href="https://regels.overheid.nl/lab/aow-leeftijd/resultaat" />
