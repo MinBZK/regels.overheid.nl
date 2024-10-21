@@ -1,5 +1,11 @@
 # web
 
+## 3.37.0
+
+### Minor Changes
+
+- f843639: Updated gegevensmodel to match only IIT for Utrecht
+
 ## 3.36.0
 
 ### Minor Changes
