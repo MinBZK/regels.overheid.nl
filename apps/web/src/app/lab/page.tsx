@@ -15,6 +15,27 @@ export default async function LabPage() {
         <RemotePage page="lab" />
       </Container>
       <ContainerMethod>
+        <CardLab.Root title="Yasgui SPARQL editor">
+          Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te
+          extraheren uit en te schrijven naar RDF-graphs. Yasgui biedt diverse geavanceerde functies voor het maken,
+          delen en visualiseren van SPARQL-query&apos;s en hun resultaten.
+          <CardLab.MethodItems>
+            <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
+            <CardLab.Repo href="https://github.com/TriplyDB/Yasgui" />
+            <CardLab.Docs href="https://docs.triply.cc/yasgui/" />
+            <CardLab.Demo href="https://regels.overheid.nl/lab/sparql/ui/" />
+          </CardLab.MethodItems>
+        </CardLab.Root>
+        <CardLab.Root title="AOW microservice">
+          De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling.
+          Met deze microservice illustreren we een landelijke service voor de bepaling van de AOW leeftijd.
+          <CardLab.MethodItems>
+            <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
+            <CardLab.Demo href="https://regels.overheid.nl/lab/aow-leeftijd/resultaat" />
+            <CardLab.Repo href="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py" />
+            <CardLab.Docs href="https://regels.overheid.nl/docs/lab/AOW" />
+          </CardLab.MethodItems>
+        </CardLab.Root>
         <CardLab.Root title="Open GDC Regelregister">
           De GDC is in essentie een publicatieplatform voor overheden om actieve en passieve openbaarmaking van data,
           documenten en informatieproducten te ondersteunen. De live demo bevat een prototpe voor Open Regels
@@ -67,17 +88,6 @@ export default async function LabPage() {
               href="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
             />
             <CardLab.Repo href="https://github.com/MinBZK/HvA-legal-annotation-tool-frontend-json" />
-          </CardLab.MethodItems>
-        </CardLab.Root>
-        <CardLab.Root title="Yasgui SPARQL editor">
-          Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te
-          extraheren uit en te schrijven naar RDF-graphs. Yasgui biedt diverse geavanceerde functies voor het maken,
-          delen en visualiseren van SPARQL-query&apos;s en hun resultaten.
-          <CardLab.MethodItems>
-            <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
-            <CardLab.Repo href="https://github.com/TriplyDB/Yasgui" />
-            <CardLab.Docs href="https://docs.triply.cc/yasgui/" />
-            <CardLab.Demo href="https://regels.overheid.nl/lab/sparql/ui/" />
           </CardLab.MethodItems>
         </CardLab.Root>
         <Card.Root>
