@@ -1,0 +1,117 @@
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<#social_benefit_service> a cpsv-ap:PublicService ;
+    dct:title "Social Benefit Allocation Service"@en ;
+    dct:description "This service automatically calculates and awards social benefits using a predefined algorithm based on inputs such as income, family status, and employment status from various datasets."@en ;
+    cpsv-ap:hasInput <#income_dataset>, <#family_status_dataset>, <#employment_status_dataset> ;
+    cpsv-ap:hasOutput [
+        a cpsv-ap:Output ;
+        dct:description "Decision on social benefit eligibility and amount."@en
+    ] ;
+    cpsv-ap:hasChannel [
+        a cpsv-ap:Channel ;
+        dct:description "Mass process through a digital system with an algorithm for automated processing of applications."@en ;
+        dcat:accessURL <https://www.socialbenefits.gov/application>
+    ] ;
+    cpsv-ap:implements <#business_rules> ;
+    cpsv-ap:hasCriterionRequirement [
+        a cpsv-ap:CriterionRequirement ;
+        dct:description "Criteria such as income limits, family size, and employment status must be met for eligibility."@en
+    ] ;
+    cpsv-ap:hasLegalResource [
+        a cpsv-ap:LegalResource ;
+        dct:title "Social Benefit Law"@en ;
+        dct:source <https://www.examplelaw.gov/social_benefit_law>
+    ] ;
+    dct:rights "Data use and processing are in line with privacy regulations (GDPR)."@en ;
+    cpsv-ap:hasCost [
+        a cpsv-ap:Cost ;
+        dct:description "The service is free of charge."@en
+    ] .
+
+<#business_rules> a cpsv-ap:Rule ;
+    dct:title "Business Rules for Social Benefit Calculation"@en ;
+    dct:description "The algorithm uses predefined business rules based on the input data model to calculate the right, duration, and amount of the social benefit."@en ;
+    cpsv-ap:specifies [
+        a cpsv-ap:RuleSpecification ;
+        dct:title "Data Model for Business Rules"@en ;
+        dct:description "This model defines the required data (income, family size, employment status) that the business rules operate on."@en ;
+        dct:conformsTo <https://schema.example.org/BenefitRulesModel> ;
+        cpsv-ap:hasInput <#income_dataset>, <#family_status_dataset>, <#employment_status_dataset>
+    ], [
+        a cpsv-ap:RuleSpecification ;
+        dct:title "Parameters for Business Rules"@en ;
+        dct:description "Parameters used in the business rules include income thresholds, family size, and employment duration."@en ;
+        cpsv-ap:hasParameter [
+            a cpsv-ap:Parameter ;
+            dct:title "Income Threshold"@en ;
+            dct:description "Maximum allowed income for eligibility."@en ;
+            dct:value "50000"^^xsd:decimal ;
+        ], [
+            a cpsv-ap:Parameter ;
+            dct:title "Family Size Factor"@en ;
+            dct:description "Number of dependents in the family affects the benefit amount."@en ;
+            dct:value "2"^^xsd:integer
+        ], [
+            a cpsv-ap:Parameter ;
+            dct:title "Employment Duration"@en ;
+            dct:description "Number of months employed, affects eligibility and benefit duration."@en ;
+            dct:value "12"^^xsd:integer
+        ]
+    ], [
+        a cpsv-ap:RuleSpecification ;
+        dct:title "Groups of Business Rules"@en ;
+        dct:description "Different groups of business rules determine eligibility, benefit amount, and duration based on input data."@en ;
+        cpsv-ap:hasGroup [
+            a cpsv-ap:RuleGroup ;
+            dct:title "Eligibility Rules"@en ;
+            dct:description "This group of rules determines whether the applicant is eligible based on income and employment status."@en ;
+        ], [
+            a cpsv-ap:RuleGroup ;
+            dct:title "Benefit Amount Rules"@en ;
+            dct:description "This group of rules calculates the benefit amount based on income and family size."@en ;
+        ], [
+            a cpsv-ap:RuleGroup ;
+            dct:title "Benefit Duration Rules"@en ;
+            dct:description "This group of rules defines the duration for which the benefit is provided, depending on employment duration."@en ;
+        ]
+    ] .
+
+<#income_dataset> a dcat:Dataset ;
+    dct:title "Income Data"@en ;
+    dct:description "Dataset containing income information for individuals."@en ;
+    dct:publisher [ 
+        a foaf:Organization ;
+        foaf:name "Tax Authority"
+    ] ;
+    dcat:accessURL <https://data.taxauthority.gov/income> ;
+    dct:accrualPeriodicity dct:Annual ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    dct:conformsTo <https://schema.example.org/IncomeSchema> .
+
+<#family_status_dataset> a dcat:Dataset ;
+    dct:title "Family Status Data"@en ;
+    dct:description "Dataset containing family and household information."@en ;
+    dct:publisher [ 
+        a foaf:Organization ;
+        foaf:name "Civil Registry"
+    ] ;
+    dcat:accessURL <https://data.civilregistry.gov/family-status> ;
+    dct:accrualPeriodicity dct:Monthly ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    dct:conformsTo <https://schema.example.org/FamilyStatusSchema> .
+
+<#employment_status_dataset> a dcat:Dataset ;
+    dct:title "Employment Status Data"@en ;
+    dct:description "Dataset containing employment status and job-related information."@en ;
+    dct:publisher [ 
+        a foaf:Organization ;
+        foaf:name "Employment Agency"
+    ] ;
+    dcat:accessURL <https://data.employmentagency.gov/employment-status> ;
+    dct:accrualPeriodicity dct:Quarterly ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    dct:conformsTo <https://schema.example.org/EmploymentSchema> .
