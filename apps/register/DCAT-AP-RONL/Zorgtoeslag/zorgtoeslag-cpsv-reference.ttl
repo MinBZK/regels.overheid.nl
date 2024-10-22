@@ -2,6 +2,8 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <#social_benefit_service> a cpsv-ap:PublicService ;
     dct:title "Social Benefit Allocation Service"@en ;
@@ -69,14 +71,20 @@
             a cpsv-ap:RuleGroup ;
             dct:title "Eligibility Rules"@en ;
             dct:description "This group of rules determines whether the applicant is eligible based on income and employment status."@en ;
+            dct:source <https://rules.example.org/eligibility-rules> ;
+            rdfs:seeAlso <https://docs.example.org/rulespeak/eligibility_rules> ;
         ], [
             a cpsv-ap:RuleGroup ;
             dct:title "Benefit Amount Rules"@en ;
             dct:description "This group of rules calculates the benefit amount based on income and family size."@en ;
+            dct:source <https://rules.example.org/benefit-amount-rules> ;
+            rdfs:seeAlso <https://docs.example.org/rulespeak/benefit_amount_rules> ;
         ], [
             a cpsv-ap:RuleGroup ;
             dct:title "Benefit Duration Rules"@en ;
             dct:description "This group of rules defines the duration for which the benefit is provided, depending on employment duration."@en ;
+            dct:source <https://rules.example.org/benefit-duration-rules> ;
+            rdfs:seeAlso <https://docs.example.org/rulespeak/benefit_duration_rules> ;
         ]
     ] .
 
