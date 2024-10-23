@@ -1,6 +1,7 @@
-# Steps followed to create the mapping to cpsv
+# Steps followed to create the cpsv file
+
 1. Download csv from [algoritmes.overheid.nl](https://algoritmes.overheid.nl/nl/algoritme/berekenen-zorgtoeslag-dienst-toeslagen/39548375) concerning Zorgtoeslag
-2. Conversion csv --> xml
+2. Convert csv --> xml
 3. Map the metadata into appropriate DCAT terms
 4. Adapt to Core Publice Service Vocabulary (CPSV)
 5. Extend and apply CPSV to describe **algorithms, business rules**, and the **data models** needed to award social benefits
@@ -60,3 +61,15 @@ The **CPSV-AP** (Application Profile for public services) vocabulary introduces 
 ### Additional Changes:
 - **Temporal Coverage**: The start date of the service is represented using the `dct:temporal` property.
 - **Rights and Legal Compliance**: Descriptions about privacy, non-discrimination, and data minimization are captured using `dct:rights` and `cpsv:hasLegalResource`.
+
+## Algorithms, business rules, and data models 
+### 1. Algorithm for Awarding Social Benefits
+The algorithm can be described using the **CPSV** core class `cpsv:PublicService` in combination with properties to capture the fact that the service uses an algorithm to process social benefit claims.
+
+## 2. Business Rules Applied in the Algorithm
+The **business rules** that govern how the algorithm determines eligibility, amount, and duration of the social benefit can be described using the **cpsv** class. This allows for the formalization of the rules that are applied by the algorithm.
+
+### 3. Data Model for Determining Benefit
+The **data model** or required input data can be described using the **cpsv** class to specify what data is required to determine the right to, and the amount/duration of, the benefit based on the business rules.
+
+
