@@ -66,7 +66,7 @@ The **CPSV-AP** (Application Profile for public services) vocabulary introduces 
 ### 1. Algorithm for Awarding Social Benefits
 The algorithm can be described using the **CPSV** core class `cpsv:PublicService` in combination with properties to capture the fact that the service uses an algorithm to process social benefit claims.
 
-## 2. Business Rules Applied in the Algorithm
+### 2. Business Rules Applied in the Algorithm
 The **business rules** that govern how the algorithm determines eligibility, amount, and duration of the social benefit can be described using the **cpsv** class. This allows for the formalization of the rules that are applied by the algorithm.
 
 ### 3. Data Model for Determining Benefit
