@@ -1,5 +1,11 @@
 # web
 
+## 3.39.0
+
+### Minor Changes
+
+- cf55b85: Enhanced Eventbrite visibility on Agenda detail page
+
 ## 3.38.0
 
 ### Minor Changes
