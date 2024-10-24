@@ -9,7 +9,7 @@ import { Typography } from '@/components/typography';
 import { cx } from '@/cva.config';
 import { getEventBySlug } from '@/services/cms/get-event-by-slug';
 import slugify from '@sindresorhus/slugify';
-import { IconArrowLeft, IconCalendarEvent, IconMapPin, IconTicket } from '@tabler/icons-react';
+import { IconArrowLeft, IconCalendarEvent, IconExternalLink, IconMapPin, IconTicket } from '@tabler/icons-react';
 import { format } from 'date-fns';
 import { nl } from 'date-fns/locale';
 import { Metadata } from 'next';
@@ -67,42 +67,40 @@ export default async function EventPage({ params }: Props) {
           {title}
         </Typography>
         {!hasPassed && (
-          <ul className="mt-12 flex flex-col gap-y-4 px-4">
-            <li>
-              <OpenInMapDropdown address={address}>
-                <Button variant="text" startIcon={<IconMapPin />} className="h-auto text-left">
-                  {addressName}
-                </Button>
-              </OpenInMapDropdown>
-            </li>
-            <li>
-              <AddToCalendarDropdown
-                end={end}
-                start={start}
-                eventTitle={title}
-                eventDetails={intro}
-                eventLocation={address}
-              >
-                <Button variant="text" startIcon={<IconCalendarEvent />} className="h-auto text-left">
-                  {format(start, 'eeee d MMMM', { locale: nl })} | {format(start, 'HH:mm')} - {format(end, 'HH:mm')}
-                </Button>
-              </AddToCalendarDropdown>
-            </li>
+          <div className="mt-12 flex flex-wrap gap-4 px-4">
+            <Button component="span" className="hover:bg-primary-dark focus:bg-primary-dark">
+              {format(start, 'eeee d MMMM', { locale: nl })} | {format(start, 'HH:mm')} - {format(end, 'HH:mm')}
+            </Button>
+            <OpenInMapDropdown address={address}>
+              <Button variant="outlined" startIcon={<IconMapPin />}>
+                {addressName}
+              </Button>
+            </OpenInMapDropdown>
             {eventbrite && (
-              <li>
-                <Button
-                  component="a"
-                  variant="text"
-                  target="__blank"
-                  href={eventbrite}
-                  rel="noopener noreferrer"
-                  startIcon={<IconTicket />}
-                >
-                  {eventbriteTitle || 'Eventbrite'}
-                </Button>
-              </li>
+              <Button
+                component="a"
+                variant="outlined"
+                target="__blank"
+                href={eventbrite}
+                rel="noopener noreferrer"
+                startIcon={<IconTicket />}
+                endIcon={<IconExternalLink size={16} />}
+              >
+                Ticket bestellen
+              </Button>
             )}
-          </ul>
+            <AddToCalendarDropdown
+              end={end}
+              start={start}
+              eventTitle={title}
+              eventDetails={intro}
+              eventLocation={address}
+            >
+              <Button variant="outlined" startIcon={<IconCalendarEvent />}>
+                Save the date
+              </Button>
+            </AddToCalendarDropdown>
+          </div>
         )}
         <Typography className="font-bold">{intro}</Typography>
         <Typography>Onderwerp: {subject}</Typography>
