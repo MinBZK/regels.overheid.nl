@@ -5,6 +5,8 @@
 3. Map the metadata into appropriate DCAT terms
 4. Adapt to Core Publice Service Vocabulary (CPSV)
 5. Extend and apply CPSV to describe **algorithms, business rules**, and the **data models** needed to award social benefits
+6. CPSV-AP 3.2.0 alignment
+7. Update TTL with Multiple Datasets
 
 ## Key Notes:
 - **Dataset IRI**: The `<https://www.belastingdienst.nl/...>` acts as the dataset's URI. Can be adjusted as needed.
@@ -72,4 +74,38 @@ The **business rules** that govern how the algorithm determines eligibility, amo
 ### 3. Data Model for Determining Benefit
 The **data model** or required input data can be described using the **cpsv** class to specify what data is required to determine the right to, and the amount/duration of, the benefit based on the business rules.
 
+## Key Points on CPSV-AP 3.2.0 Alignment
+
+- **cpsv-ap**: The public service is described as **PublicService** and uses formal properties like `cpsv-ap:hasInput`, `cpsv-ap:hasOutput`, and `cpsv-ap:hasChannel`.
+- **cpsv-ap**: This property is used to describe the business rules implemented by the algorithm, adhering to **CPSV-AP** standards.
+- **cpsv-ap**: Introduces the concept of a **Business Event** (the process of applying for benefits), as specified in **CPSV-AP 3.2.0**.
+- **cpsv-ap**: Clearly describes eligibility conditions, as per **CPSV-AP**.
+- **cpsv-ap**: Links to the legal basis of the service, as required by the **CPSV-AP** profile.
+- **cpsv-ap**: Specifies whether the service is free or paid, a property required by the **CPSV-AP**.
+
+## Update TTL with Multiple Datasets
+
+To represent the **input data** using different **DCAT datasets** as sources, we use the `cpsv-ap:hasInput` property to connect the public service with multiple **datasets**. These datasets can then be described according to the **DCAT** (Data Catalog Vocabulary) model, either from the same catalog or different ones.
+
+### Breakdown
+1. `cpsv-ap:hasInput`:
+    - The `cpsv-ap:hasInput` property of the **PublicService** now links to three different datasets: `#income_dataset`, `#family_status_dataset`, and `#employment_status_dataset`.
+
+2. **Each Dataset**:
+    - Each input dataset is described using the **DCAT vocabulary**. For example:
+        - `#income_dataset`: Describes income data provided by the **Tax Authority**.- `#family_status_dataset`: Describes family and household information provided by the **Civil Registry**.
+        - `#employment_status_dataset`: Describes employment status information provided by the **Employment Agency**.
+3. **DCAT Properties**:
+    - **dct**: Title of the dataset (e.g., "Income Data").
+    - **dct**: A description of the dataset (e.g., "Dataset containing income information for individuals").
+    - **dct**: The organization responsible for publishing the dataset.
+    - **dcat**: URL where the dataset can be accessed.
+    - **dct**: The date when the dataset was issued.
+    - **dct**: Specifies how often the dataset is updated.
+    - **dct**: Specifies the schema or standard to which the dataset conforms.
+
+### Key Points:
+- **Modularity**: This approach allows you to describe different types of input data from various sources or catalogs (income, family status, employment status), each as a separate dataset.
+- **Data Sources**: Each dataset is linked to its respective publisher and access URL, making it clear where the data is coming from.
+- **Data Standards**: Using `dct:conformsTo`, you can specify which schema or data model each dataset follows, ensuring interoperability and clarity in terms of structure.
 
