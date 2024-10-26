@@ -7,6 +7,9 @@
 5. Extend and apply CPSV to describe **algorithms, business rules**, and the **data models** needed to award social benefits
 6. CPSV-AP 3.2.0 alignment
 7. Update TTL with Multiple Datasets
+8. Add  1. data model of the business rules, 2. parameters used, and 3. groups of business rules
+9. Add DSL (like Rulespeak)
+10. Adjust for consistency and clarity
 
 ## Key Notes:
 - **Dataset IRI**: The `<https://www.belastingdienst.nl/...>` acts as the dataset's URI. Can be adjusted as needed.
@@ -109,3 +112,41 @@ To represent the **input data** using different **DCAT datasets** as sources, we
 - **Data Sources**: Each dataset is linked to its respective publisher and access URL, making it clear where the data is coming from.
 - **Data Standards**: Using `dct:conformsTo`, you can specify which schema or data model each dataset follows, ensuring interoperability and clarity in terms of structure.
 
+This approach enables us  to describe multiple datasets as inputs for the public service, adhering to CPSV-AP and DCAT standards. Each input is linked to its corresponding dataset, allowing for a clear and structured description of where the data comes from and how it contributes to the public service.
+
+## Breakdown after adding Business Rules details
+1. `cpsv-ap:Rule`:
+    - The business rules are described as a **cpsv-ap** connected to the public service using `cpsv-ap:implements`.
+2. **Data Model for Business Rules**:
+    - The data model is described using **cpsv-ap**. It specifies the required input data (income, family status, employment status), and can reference an external schema or standard (e.g., `dct:conformsTo` pointing to the data model schema).
+3. **Parameters for Business Rules**:
+    - The parameters (e.g., **income thresholds**, **family size**, **employment duration**) are represented as instances of **cpsv-ap**, with properties like `dct:title`, `dct:description`, and `dct:value` to describe each one.
+4. **Groups of Business Rules**:
+    - The business rules are divided into different **cpsv-ap** entities, each representing a different aspect of the calculation (eligibility, amount, duration). This allows flexibility in organizing the rules based on the different inputs and outputs.
+
+This structure captures the complexity of business rules, breaking them down into their **data model**, **parameters**, and **groups** of rules, all while aligning with **CPSV-AP** standards. Each component can be further linked to datasets or external schemas, providing a clear representation of how the social benefit service is processed.
+
+## Add DSL (Like Rulespeak)
+
+- `dct:source`: Used to specify the **URI** where the actual rules in **Rulespeak** (or any other DSL) are stored or described. This URI might point to a formal repository or a rules engine that contains the logic.
+- `rdfs:seeAlso`: Optionally used for linking to additional documentation, such as a page or document that provides further explanation of the rules in **Rulespeak** syntax or any other DSL.
+
+### Example of Rules URIs:
+- **Eligibility Rules URI**: `<https://rules.example.org/eligibility-rules>` (a URI where the rules are implemented or documented).
+- **Benefit Amount Rules URI**: `<https://rules.example.org/benefit-amount-rules>`.
+- **Benefit Duration Rules URI**: `<https://rules.example.org/benefit-duration-rules>`.
+
+Each **RuleGroup** can reference its own URI for its corresponding rules. You can substitute these placeholders with the actual URIs where your business rules are defined or stored.
+
+### Breakdown
+1. **Eligibility Rules**: The rules governing eligibility, based on inputs like income and employment status. This group can link to a specific resource or API where these rules are stored.
+2. **Benefit Amount Rules**: This rule group governs how the amount of benefit is calculated. The URI points to the location where these calculations are defined (using Rulespeak, for example).
+3. **Benefit Duration Rules**: Rules that define the duration of the social benefit, based on criteria such as employment duration.
+
+## Minor adjustments for consistency and clarity
+
+- **Language Tags**: Added `@en` consistently to all literals for clarity.
+- **Clarified** `cpsv-ap:RuleGroup` **Structure**: The rule groups (`Eligibility Rules`, `Benefit Amount Rules`, and `Benefit Duration Rules`) now clearly link to their DSL URI using `dct:source`, and `rdfs:seeAlso` provides further documentation.
+- **General Tidying**: Made sure all properties are applied in the proper way per the CPSV-AP structure, ensuring clarity in dataset and rule relationships.
+
+This structure should now align well with **CPSV-AP** best practices for describing public services with multiple datasets, rules, and algorithmic processing.
