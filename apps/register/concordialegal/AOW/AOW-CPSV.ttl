@@ -14,6 +14,11 @@
     dct:title "Bepaling leeftijd AOW"@nl ;
     dct:description "Bepaling van de leeftijd AOW (Algemene Ouderdomswet)."@nl ;
     #
+    # The unique identifier for this service as given by Uniforme Productnamenlijst (UPL)
+    # https://standaarden.overheid.nl/owms/terms/aow-uitkering is a real example, (.../)/aow-leeftijd doesn't excist
+    #
+    dct:identifier <https://standaarden.overheid.nl/owms/terms/aow-leeftijd> ;
+    #
     # ronl:analysis and ronl:method are defined as RDF properties with their respective domains (dcat:Dataset) and  ranges (ronl:AnalysisConcept
     # and ronl:MethodConcept).
     # 
