@@ -115,6 +115,7 @@
     dcat:keyword "System Date", "Current Date"@en ;
     dct:publisher [ 
         a foaf:Organization ;
+        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143>
         foaf:name "Sociale Verzekeringsbank"@nl 
     ] .
 
@@ -126,6 +127,7 @@
     dcat:keyword "Search with surname, first names and municipality of registration"@en ;
     dct:publisher [ 
         a foaf:Organization ;
+        foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103>
         foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)"@nl 
     ] ;
     ronl:source <http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/geboortedatum_persoon-geboorte> .
