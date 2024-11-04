@@ -22,6 +22,7 @@
     #
     dct:creator [ 
         a foaf:Organization ; 
+        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143>
         foaf:name "Sociale Verzekeringsbank"@nl 
     ] ;
     dct:subject "Sociale zekerheid"@nl ;
