@@ -8,18 +8,21 @@
 #
 ronl:source a owl:ObjectProperty ;
     rdfs:label "source"@en ;
+    rdfs:comment "Een eigenschap om de gezaghebbende bron of oorsprong van een dataset, regelspecificatie of model in de ronl namespace op te geven."@nl ;
     rdfs:comment "A property to specify the authoritative source or origin of a dataset, rule, or model in the ronl namespace."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
     rdfs:range rdfs:Resource .  # flexible range for URLs, documents, etc.
 
 ronl:analysis a owl:ObjectProperty ;
     rdfs:label "analysis"@en ;
+    rdfs:comment "Analyse eigenschap voor de regelspecificatie set"@nl ;
     rdfs:comment "Analysis property for the rule set."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
     rdfs:range ronl:AnalysisConcept .
 
 ronl:method a owl:ObjectProperty ;
     rdfs:label "method"@en ;
+    rdfs:comment "Methode eigenschap voor de regelspecificatie set"@nl ;
     rdfs:comment "Method property for the rule set."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
     rdfs:range ronl:MethodConcept .
