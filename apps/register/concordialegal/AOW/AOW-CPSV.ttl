@@ -143,26 +143,3 @@
     dct:title "Data Protection Impact Assessment (DPIA) for AOW Age Determination Algorithm"@en ;
     dct:description "Assessment of data protection risks and compliance with privacy regulations."@en ;
     dcat:accessURL <https://dpia.example.org/aow_age_determination> .
-#
-# Define ronl:source, ronl:analysis and ronl:mehtod as RDF properties
-# use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-#
-# ronl:source is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace
-#
-ronl:source a owl:ObjectProperty ;
-    rdfs:label "source"@en ;
-    rdfs:comment "A property to specify the authoritative source or origin of a dataset, rule, or model in the ronl namespace."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range rdfs:Resource .  # flexible range for URLs, documents, etc.
-
-ronl:analysis a owl:ObjectProperty ;
-    rdfs:label "analysis"@en ;
-    rdfs:comment "Analysis property for the rule set."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range ronl:AnalysisConcept .
-
-ronl:method a owl:ObjectProperty ;
-    rdfs:label "method"@en ;
-    rdfs:comment "Method property for the rule set."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range ronl:MethodConcept .

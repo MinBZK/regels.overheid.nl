@@ -1,7 +1,30 @@
 @prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 #
-# Define a concept scheme for analysis methods as skos:ConceptScheme.
+# Define ronl:source, ronl:analysis and ronl:mehtod as RDF properties
+# use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+#
+# ronl:source is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace
+#
+ronl:source a owl:ObjectProperty ;
+    rdfs:label "source"@en ;
+    rdfs:comment "A property to specify the authoritative source or origin of a dataset, rule, or model in the ronl namespace."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range rdfs:Resource .  # flexible range for URLs, documents, etc.
+
+ronl:analysis a owl:ObjectProperty ;
+    rdfs:label "analysis"@en ;
+    rdfs:comment "Analysis property for the rule set."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:AnalysisConcept .
+
+ronl:method a owl:ObjectProperty ;
+    rdfs:label "method"@en ;
+    rdfs:comment "Method property for the rule set."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:MethodConcept .
+#
+# Define a concept scheme for analysis methods as skos:ConceptScheme
 #
 ronl:AnalysisConcept a skos:ConceptScheme ;
     skos:prefLabel "Analysis Concept Scheme"@en .
@@ -23,7 +46,8 @@ ex:FLINT a skos:Concept ;
     skos:prefLabel "FLINT"@nl ;
     skos:prefLabel "FLINT"@en .
 #
-# Define a concept scheme for methods
+# Define a concept scheme for methods as skos:ConceptScheme
+#
 #
 ronl:MethodConcept a skos:ConceptScheme ;
     skos:prefLabel "Method Concept Scheme"@en .
@@ -32,36 +56,45 @@ ronl:MethodConcept a skos:ConceptScheme ;
 #
 ex:AKN4EU a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "AKN4EU"@nl, "AKN4EU"@en .
+    skos:prefLabel "AKN4EU"@nl ;
+    skos:prefLabel "AKN4EU"@en .
 
 ex:ALEF a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "ALEF"@nl, "ALEF"@en .
+    skos:prefLabel "ALEF"@nl ;
+    skos:prefLabel "ALEF"@en .
 
 ex:Avola a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "Avola"@nl, "Avola"@en .
+    skos:prefLabel "Avola"@nl ;
+    skos:prefLabel "Avola"@en .
 
 ex:Beinformed a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "Beinformed"@nl, "Beinformed"@en .
+    skos:prefLabel "Beinformed"@nl ;
+    skos:prefLabel "Beinformed"@en .
 
 ex:Blawx a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "Blawx"@nl, "Blawx"@en .
+    skos:prefLabel "Blawx"@nl ;
+    skos:prefLabel "Blawx"@en .
 
 ex:Blueriq a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "Blueriq"@nl, "Blueriq"@en .
+    skos:prefLabel "Blueriq"@nl ;
+    skos:prefLabel "Blueriq"@en .
 
 ex:Catala a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "Catala"@nl, "Catala"@en .
+    skos:prefLabel "Catala"@nl ;
+    skos:prefLabel "Catala"@en .
 
 ex:CircuLaw a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "CircuLaw"@nl, "CircuLaw"@en .
+    skos:prefLabel "CircuLaw"@nl; 
+    skos:prefLabel "CircuLaw"@en .
 
 ex:ConcordiaLegal a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
-    skos:prefLabel "Concordia Legal"@nl, "Concordia Legal"@en .
+    skos:prefLabel "Concordia Legal"@nl ;
+    skos:prefLabel, "Concordia Legal"@en .
