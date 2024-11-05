@@ -1,0 +1,75 @@
+@prefix cpsv: <http://purl.org/vocab/cpsv#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> a cpsv:PublicService ;
+    dct:title "Berekenen Zorgtoeslag"@nl ;
+    dct:description "Het algoritme ‘Berekenen Zorgtoeslag’ berekent met zorgtoeslagregels het recht op en de hoogte van de zorgtoeslag. Dit gebeurt met zorgverzekeringsgegevens van en over de aanvrager en toeslagpartner."@nl ;
+    dct:issued "2011-11"^^xsd:date ;
+    dct:modified ""^^xsd:date ;
+    dct:language "nld" ;
+    dct:identifier "39548375" ;
+    dct:publisher [ 
+        a foaf:Organization ;
+        foaf:name "Dienst Toeslagen"
+    ] ;
+    dct:contactPoint [
+        a vcard:Individual ;
+        vcard:hasEmail <mailto:algoritmeregister.toeslagen@toeslagen.nl> 
+    ] ;
+    cpsv:hasCompetentAuthority [
+        a foaf:Organization ;
+        foaf:name "Dienst Toeslagen"
+    ] ;
+    cpsv:sector <http://example.org/sectors/social-security> ;
+    cpsv:produces [
+        a cpsv:Output ;
+        dct:description "Besluit over zorgtoeslag (recht en hoogte)."
+    ] ;
+    cpsv:implements [
+        a cpsv:Rule ;
+        dct:title "Algemene wet inkomensafhankelijke regelingen (Awir)" ;
+        dct:source <https://wetten.overheid.nl>
+    ] ;
+    cpsv:implements [
+        a cpsv:Rule ;
+        dct:title "Wet zorgtoeslag" ;
+        dct:source <https://wetten.overheid.nl>
+    ] ;
+    cpsv:input "Zorgverzekeringsgegevens van de aanvrager en toeslagpartner, inkomen, vermogen."@nl ;
+    cpsv:channel [
+        a cpsv:Channel ;
+        dct:description "Aanvragen en berekeningen worden automatisch uitgevoerd door het algoritme via een digitale aanvraag."@nl ;
+        dcat:accessURL <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag>
+    ] ;
+    cpsv:follows [
+        a cpsv:Procedure ;
+        dct:description "Snel en efficiënt toekennen van zorgtoeslag, met menselijke tussenkomst indien nodig."@nl ;
+        cpsv:hasLegalResource [
+            dct:title "AVG: Algemene Verordening Gegevensbescherming" ;
+            dct:source <https://wetten.overheid.nl>
+        ]
+    ] ;
+    dct:temporal [
+        dct:startDate "2011-11"^^xsd:date
+    ] ;
+    dct:provenance "Gegevensgebruik wordt getoetst aan de Algemene Verordening Gegevensbescherming (AVG)."@nl ;
+    dct:rights "Gelijkheid, non-discriminatie, en privacy. Het gebruik van gegevens wordt getoetst aan de AVG."@nl ;
+    cpsv:hasContactPoint [
+        a vcard:Organization ;
+        vcard:hasEmail <mailto:algoritmeregister.toeslagen@toeslagen.nl> ;
+        vcard:fn "Dienst Toeslagen"
+    ] ;
+    dct:goal "Snel, efficiënt en consistent toekennen van het recht op zorgtoeslag voor ongeveer 4,6 miljoen huishoudens."@nl ;
+    cpsv:hasCriterion [
+        a cpsv:CriterionRequirement ;
+        dct:description "Burgers moeten een zorgverzekering hebben en voldoen aan de eisen voor inkomens- en vermogensgrenzen."@nl
+    ] ;
+    cpsv:humanIntervention "Een ambtenaar kan handmatig de zorgtoeslag berekenen als het algoritme faalt."@nl ;
+    cpsv:hasLegalResource [
+        dct:title "Wet zorgtoeslag" ;
+        dct:source <https://wetten.overheid.nl>
+    ] ;
+    dct:hasVersion "1.0" .
