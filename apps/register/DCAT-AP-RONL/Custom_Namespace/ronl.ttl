@@ -1,5 +1,10 @@
 @prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/ns#> .
 #
 # Define ronl:source, ronl:analysis and ronl:mehtod as RDF properties
 # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
