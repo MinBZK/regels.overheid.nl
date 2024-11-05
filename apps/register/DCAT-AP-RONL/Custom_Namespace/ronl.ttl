@@ -1,0 +1,67 @@
+@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+#
+# Define a concept scheme for analysis methods as skos:ConceptScheme.
+#
+ronl:AnalysisConcept a skos:ConceptScheme ;
+    skos:prefLabel "Analysis Concept Scheme"@en .
+#
+# Define individual concepts within the AnalysisConceptScheme
+# 
+ex:WetsanalyseJAS a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "Wetsanalyse (JAS)"@nl ;
+    skos:prefLabel "Legal Analysis (JAS)"@en .
+
+ex:WetsanalyseJRM a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "Wetsanalyse (JRM)"@nl ;
+    skos:prefLabel "Legal Analysis (JRM)"@en .
+
+ex:FLINT a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "FLINT"@nl ;
+    skos:prefLabel "FLINT"@en .
+#
+# Define a concept scheme for methods
+#
+ronl:MethodConcept a skos:ConceptScheme ;
+    skos:prefLabel "Method Concept Scheme"@en .
+#
+# Define individual concepts within the MethodConcept Scheme
+#
+ex:AKN4EU a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "AKN4EU"@nl, "AKN4EU"@en .
+
+ex:ALEF a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "ALEF"@nl, "ALEF"@en .
+
+ex:Avola a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Avola"@nl, "Avola"@en .
+
+ex:Beinformed a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Beinformed"@nl, "Beinformed"@en .
+
+ex:Blawx a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Blawx"@nl, "Blawx"@en .
+
+ex:Blueriq a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Blueriq"@nl, "Blueriq"@en .
+
+ex:Catala a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Catala"@nl, "Catala"@en .
+
+ex:CircuLaw a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "CircuLaw"@nl, "CircuLaw"@en .
+
+ex:ConcordiaLegal a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Concordia Legal"@nl, "Concordia Legal"@en .
