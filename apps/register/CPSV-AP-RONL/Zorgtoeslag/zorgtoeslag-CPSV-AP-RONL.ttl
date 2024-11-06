@@ -9,6 +9,7 @@
 @prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 #
 # Define Directoraat-generaal Toeslagen (DGTSL)
 #
@@ -94,12 +95,17 @@
         dct:description "The dienst is gratis."@nl ;
         dct:description "The service is free of charge."@en ;
     ] ;
-    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> .
+    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    #
+    # Link to the algorithm that processes the rules for this service
+    #
+    prov:wasGeneratedBy <https://algorithms.overheid.nl/nl/algorithm/berekenen-zorgtoeslag-dienst-toeslagen/39548375> .
+
 #
 # Define business rules
 #
 <#BerekenRechtEnHoogteZorg> a cpsv-ap:Rule ;
-    dct:title "Bedrijfsregels die recht, duur en hoogte van de zorgtoeslag vaststellen."@nl ;
+    dct:title "Bedrijfsregels die recht, duur en hoogte van de zorgtoeslag bepalen."@nl ;
     dct:title "Business rules that determine the right, duration and amount of the health care allowance."@en ;
     dct:description "Het is de taak van de Dienst Toeslagen om ervoor te zorgen dat burgers die een aanvraag doen de zorgtoeslag krijgen waar zij recht op hebben. Met deze bedrijfsregels stellen we snel, efficiënt en consistent het recht op zorgtoeslag vast voor ongeveer 4,6 miljoen huishoudens."@nl ;
     dct:description "It is the task of the Allowances Service to ensure that citizens who apply receive the healthcare allowance to which they are entitled. With these business rules, we quickly, efficiently and consistently determine the right to healthcare allowance for approximately 4.6 million households."@en ;
@@ -136,6 +142,10 @@
         #
         rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
         rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> ;
+        #
+        # Link to the publication explaining the data used for these rules
+        #
+        dct:relation <https://gegevensbijbesluiten.overheid.nl/besluit/61720422> ;
         cpsv-ap:hasCriterionRequirement <#ingezetene_requirement>, <#leeftijd_requirement>, <#betalingsregeling_requirement>, <#inkomen_en_vermogen_requirement>, <#detentie_requirement>, <#verzekering_requirement> ;
         cpsv-ap:hasInput <#persoonlijke_gegevens_dataset>, <#betalingsgegevens_dataset>, <#inkomens_en_vermogensgegevens_dataset>, <#justitiële_gegevens_dataset>, <#verzekeringsgegevens_dataset> ;
     ] ;
@@ -201,6 +211,14 @@
     foaf:homepage <https://www.dji.nl/> ;
     foaf:uri <https://organisaties.overheid.nl/13080/Dienst_Justitiele_Inrichtingen> ;
     dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
+#
+# Define CAK
+#
+<https://identifier.overheid.nl/tooi/id/zbo/zb000211> a foaf:Organization ;
+    foaf:name "CAK"@nl ;
+    foaf:homepage <https://www.hetcak.nl/> ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000211> .
+
 #
 # Define dataset
 #
@@ -330,3 +348,26 @@
 <#verzekeringsbewijs> a ex:Attribute ;
     rdfs:label "Verzekeringsbewijs."@nl ;
     rdfs:comment "Bewijs van het hebben van een zorgverzekering."@nl .
+
+<#verzekeringsgegevens_buitenland_dataset> a dcat:Dataset ;
+    dct:title "Verzekeringsgegevens."@nl ;
+    dct:description "Alle verzekeringsgegevens met betrekking tot de Wet langdurige zorg (Wlz) en andere verzekeringen die gericht zijn op bijvoorbeeld zorg en wonen."@nl ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://cak-api.github.io/Haal-Centraal-CAK-bevragen/> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/zbo/zb000211> ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    #
+    # Placeholder!
+    #
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/CAK> ;
+    ex:hasAttribute <#verdragsgerechtigde_zorgverzekering>, <#woonland_verzekerde> .
+
+<#verdragsgerechtigde_zorgverzekering> a ex:Attribute ;
+    rdfs:label "Verdragsgerechtigde zorgverzekering."@nl ;
+    rdfs:comment "Buitenlandregeling voor zorgverzekering."@nl .
+
+<#woonland_verzekerde> a ex:Attribute ;
+    rdfs:label "Woonland verzekerde."@nl ;
+    rdfs:comment "Woonland van een persoon voor wat betreft de zorgverzekering."@nl .

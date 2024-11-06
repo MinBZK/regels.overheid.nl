@@ -32,6 +32,43 @@ ronl:method a owl:ObjectProperty ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
     rdfs:range ronl:MethodConcept .
 #
+# ronl:implementedBy is meant to indicate that a particular rule specification is implemented by some resource (like a public service or execution entity).
+# rdfs:domain should be the type of entity that "is implemented by" something else. In this case, it would be a cpsv-ap:RuleSpecification.
+# rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility.
+#
+# By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will "mirror" each other, meaning:
+# The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa.
+#
+ronl:implementedBy a owl:ObjectProperty ;
+    rdfs:label "implementatie"@nl ;
+    rdfs:label "implementation"@en ;
+    rdfs:comment "Specificeert de implementatie door een bepaalde uitvoering of dienst van de bedrijfsregel."@nl ;
+    rdfs:comment "Specifies the implementation by a particular execution or service of the business rule."@en ;
+    #
+    # Specifies that ronl:implementedBy should be used with instances of cpsv-ap:RuleSpecification.
+    #
+    rdfs:domain cpsv-ap:RuleSpecification ;
+    rdfs:range rdfs:Resource ;
+    owl:inverseOf ronl:implements ;
+    rdfs:isDefinedBy <http://regels.overheid.nl/ronl> .
+#
+# ronl:implements is the inverse, meaning it should indicate that a specific resource implements a certain rule specification.
+# rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability.
+# rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification.
+#
+# By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will "mirror" each other, meaning:
+# The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa.
+#
+ronl:implements a owl:ObjectProperty ;
+    rdfs:label "implementeert"@nl ;
+    rdfs:label "implements"@en ;
+    rdfs:comment "Specificeert de bedrijfsregel die wordt geïmplementeerd door een bepaalde uitvoering of dienst."@nl ;
+    rdfs:comment "Specifies the business rule that is implemented by a given execution or service."@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range cpsv-ap:RuleSpecification ;
+    owl:inverseOf ronl:implementedBy ;
+    rdfs:isDefinedBy <http://regels.overheid.nl/ronl> .
+#
 # Define a concept scheme for analysis concepts as skos:ConceptScheme
 #
 ronl:AnalysisConcept a skos:ConceptScheme ;
@@ -59,8 +96,8 @@ ex:FLINT a skos:Concept ;
 # Define a concept scheme for method concepts as skos:ConceptScheme
 #
 ronl:MethodConcept a skos:ConceptScheme ;
-    skos:prefLabel "AMethoden Concepten Schema"@nl ;
-    skos:prefLabel "Method Concept Scheme"@en .
+    skos:prefLabel "Methoden Concepten Schema"@nl ;
+    skos:prefLabel "Method Concept Scheme"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
 #
 # Define individual concepts within the MethodConcept scheme
@@ -108,48 +145,48 @@ ex:CircuLaw a skos:Concept ;
 ex:ConcordiaLegal a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "Concordia Legal"@nl ;
-    skos:prefLabel, "Concordia Legal"@en .
+    skos:prefLabel "Concordia Legal"@en .
 
 ex:DataLex a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "DataLex"@nl ;
-    skos:prefLabel, "DataLex"@en .
+    skos:prefLabel "DataLex"@en .
 
 ex:Demo a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "DEMO"@nl ;
-    skos:prefLabel, "DEMO"@en .
+    skos:prefLabel "DEMO"@en .
 
 ex:Leos a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "LEOS"@nl ;
-    skos:prefLabel, "LEOS"@en .
+    skos:prefLabel "LEOS"@en .
 
 ex:OpenFisca a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "OpenFisca"@nl ;
-    skos:prefLabel, "OpenFisca"@en .
+    skos:prefLabel "OpenFisca"@en .
 
 ex:RuleSpeak a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "RuleSpeak®"@nl ;
-    skos:prefLabel, "RuleSpeak®"@en .
+    skos:prefLabel "RuleSpeak®"@en .
 
 ex:Sparkwise a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "Sparkwise"@nl ;
-    skos:prefLabel, "Sparkwise"@en .
+    skos:prefLabel "Sparkwise"@en .
     
 ex:USoft a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "USoft"@nl ;
-    skos:prefLabel, "USoft"@en .
+    skos:prefLabel "USoft"@en .
 #
 # Define a concept scheme for specification type concepts as skos:ConceptScheme
 #
 ronl:SpecificationTypeConcept a skos:ConceptScheme ;
     skos:prefLabel "Specificatie Type Concept Schema"@nl ;
-    skos:prefLabel "Specification Type Concept Scheme"@en .
+    skos:prefLabel "Specification Type Concept Scheme"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> .
 #
 # Define individual concepts within the SpecificationTypeConcept scheme
