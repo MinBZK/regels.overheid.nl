@@ -1,5 +1,6 @@
 @prefix cpsv-ap: <http://data.europa.eu/m8g/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -30,7 +31,7 @@
     dct:title "Vaststellen beschikking zorgtoeslag."@nl ;
     dct:title "Determine health care allowance decision."@en ;
     dct:description "Berekent recht, duur en hoogte van de zorgtoeslag. Dit gebeurt met zorgverzekeringsgegevens van en over de aanvrager en toeslagpartner."@nl ;
-    dct:description "Calculates the right, duration and amount of the health care allowance. This is done with health insurance data from and about the applicant and allowance partner".@en ;
+    dct:description "Calculates the right, duration and amount of the health care allowance. This is done with health insurance data from and about the applicant and allowance partner."@en ;
     #
     # The unique identifier for this service as given by Uniforme Productnamenlijst (UPL)
     #
@@ -93,7 +94,7 @@
         dct:description "The dienst is gratis."@nl ;
         dct:description "The service is free of charge."@en ;
     ] ;
-    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> .
 #
 # Define business rules
 #
