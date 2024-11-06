@@ -209,6 +209,7 @@
     dct:description "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer."@nl ;
     dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
     dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:issued "2023-01-01"^^xsd:date ;
     ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRP> ;
     ex:hasAttribute <#verblijfsvergunning>, <#partners>, <#woonadres>, <#nationaliteit>, <#personalia>, <#kinderen> .
 
@@ -246,6 +247,7 @@
     #
     dcat:accessURL <https://cjib-api.github.io/Haal-Centraal-CJIB-bevragen/> ;
     dct:publisher <https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> ;
+    dct:issued "2023-01-01"^^xsd:date ;
     #
     # Placeholder!
     #
@@ -266,6 +268,7 @@
     #
     dcat:accessURL <https://bri-api.github.io/Haal-Centraal-BRI-bevragen/> ;
     dct:publisher <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
+    dct:issued "2023-01-01"^^xsd:date ;
     ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRI> ;
     ex:hasAttribute <#inkomensgegeven_authentiek>, <#vermogen_box_3>, <#niet_in_Nederland_belastbaar_inkomen> .
 
@@ -291,6 +294,7 @@
     #
     dcat:accessURL <https://dji-api.github.io/Haal-Centraal-DJI-bevragen/> ;
     dct:publisher <https://organisaties.overheid.nl/13080/Dienst_Justitiele_Inrichtingen> ;
+    dct:issued "2023-01-01"^^xsd:date ;
     #
     # Placeholder!
     #
@@ -319,6 +323,7 @@
         foaf:homepage <https://www.vecozo.nl/diensten/controle-op-verzekeringsgegevens/> ;
         foaf:name "zorgverzekeraar."@nl ;
     ] ;
+    dct:issued "2023-01-01"^^xsd:date ;
     ronl:source <https://decor.nictiz.nl/art-decor/decor-datasets--zvg-?id=2.16.840.1.113883.2.4.3.11.60.108.1.1&effectiveDate=2015-09-16T14:21:51> ;
     ex:hasAttribute <#verzekeringsbewijs> .
 
