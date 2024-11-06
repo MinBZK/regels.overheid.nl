@@ -60,7 +60,7 @@ ex:FLINT a skos:Concept ;
 #
 ronl:MethodConcept a skos:ConceptScheme ;
     skos:prefLabel "AMethoden Concepten Schema"@nl ;
-    skos:prefLabel "Method Concept Scheme"@en .
+    skos:prefLabel "Method Concept Scheme"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
 #
 # Define individual concepts within the MethodConcept scheme
@@ -108,48 +108,48 @@ ex:CircuLaw a skos:Concept ;
 ex:ConcordiaLegal a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "Concordia Legal"@nl ;
-    skos:prefLabel, "Concordia Legal"@en .
+    skos:prefLabel "Concordia Legal"@en .
 
 ex:DataLex a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "DataLex"@nl ;
-    skos:prefLabel, "DataLex"@en .
+    skos:prefLabel "DataLex"@en .
 
 ex:Demo a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "DEMO"@nl ;
-    skos:prefLabel, "DEMO"@en .
+    skos:prefLabel "DEMO"@en .
 
 ex:Leos a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "LEOS"@nl ;
-    skos:prefLabel, "LEOS"@en .
+    skos:prefLabel "LEOS"@en .
 
 ex:OpenFisca a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "OpenFisca"@nl ;
-    skos:prefLabel, "OpenFisca"@en .
+    skos:prefLabel "OpenFisca"@en .
 
 ex:RuleSpeak a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "RuleSpeak®"@nl ;
-    skos:prefLabel, "RuleSpeak®"@en .
+    skos:prefLabel "RuleSpeak®"@en .
 
 ex:Sparkwise a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "Sparkwise"@nl ;
-    skos:prefLabel, "Sparkwise"@en .
+    skos:prefLabel "Sparkwise"@en .
     
 ex:USoft a skos:Concept ;
     skos:inScheme ronl:MethodConcept ;
     skos:prefLabel "USoft"@nl ;
-    skos:prefLabel, "USoft"@en .
+    skos:prefLabel "USoft"@en .
 #
 # Define a concept scheme for specification type concepts as skos:ConceptScheme
 #
 ronl:SpecificationTypeConcept a skos:ConceptScheme ;
     skos:prefLabel "Specificatie Type Concept Schema"@nl ;
-    skos:prefLabel "Specification Type Concept Scheme"@en .
+    skos:prefLabel "Specification Type Concept Scheme"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> .
 #
 # Define individual concepts within the SpecificationTypeConcept scheme
