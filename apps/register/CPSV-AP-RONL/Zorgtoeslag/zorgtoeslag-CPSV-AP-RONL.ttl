@@ -9,13 +9,12 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 #
-# Define Directoraat-generaal Toeslagen
+# Define Directoraat-generaal Toeslagen (DGTSL)
 #
 <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> a foaf:Organization ;
-    foaf:name "Directoraat-generaal Toeslagen"@nl ;
+    foaf:name "Directoraat-generaal Toeslagen (DGTSL)"@nl ;
     foaf:uri <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
     dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
-
 #
 # Define Ministerie van Financiën
 #
@@ -80,7 +79,7 @@
     ] ;
     dct:issued "2023-06-12"^^xsd:date ;
     dct:modified "2024-11-06"^^xsd:date ;
-    dct:language "nld" ;  # Dutch language code
+    dct:language "nld" ;
     cpsv-ap:implements <#BerekenRechtEnHoogteZorg> ;
     cpsv-ap:hasOutput [
         a cpsv-ap:Output ;
@@ -140,51 +139,117 @@
     cpsv-ap:hasHumanIntervention "Niet van toepassing."@nl ;
     dct:version "1.0" .
 #
-# Define criteria and datasets
+# Define criteria
 #
 <#ingezetene_requirement> a cpsv-ap:CriterionRequirement ;
-    dct:description "Het al dan niet bezitten van een Nederlandse of buitenlandse nationaliteit(en) én verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
+    dct:description "De aanvrager bezit een Nederlandse of buitenlandse nationaliteit(en) én heeft verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
 
 <#leeftijd_requirement> a cpsv-ap:CriterionRequirement ;
-    dct:description "De aanvrager is ouder dan 18 jaar en heeft nog niet de pensioengerechtigde leeftijd bereikt."@nl .
+    dct:description "De aanvrager is ouder dan 18 jaar."@nl .
 
 <#betalingsregeling_requirement> a cpsv-ap:CriterionRequirement ;
-    dct:description "De aanvrager is ouder dan 18 jaar en heeft nog niet de pensioengerechtigde leeftijd bereikt."@nl .
+    dct:description "Vereist zorgtoeslag uit te betalen aan het CJIB, tbv de premiebetaling van de zorgverzekering, als er sprake is van een betalingsregeling."@nl .
 
 <#inkomen_en_vermogen_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "Inkomensgegeven (authentiek), het niet in Nederland belastbaar inkomen én het vermogen (box 3) zijn niet hoger dan de normbedragen."@nl .
+
 <#detentie_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager is niet gedetineerd."@nl .
+
 <#verzekering_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager heeft een zorgverzekering bij een in Nederland gevestigde zorgverzekeraar."@nl .
+#
+# Define registrars and datasets that hold the evidence for the applicable criteria
+#
+# Define Rijksdienst voor Identiteitsgegevens (RvIG)
+#
+<https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl .
+#
+# Define Centraal Justitieel Incassobureau (CJIB)
+#
+<https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> a foaf:Organization ;
+    foaf:name "Centraal Justitieel Incassobureau (CJIB)"@nl ;
+    foaf:uri <https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
+#
+# Define Ministerie van van Justitie en Veiligheid
+#
+<https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> a foaf:Organization ;
+    foaf:name "Ministerie van Justitie en Veiligheid"@nl ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
+#
+# Define Directoraat-generaal Belastingdienst (DGBD)
+#
+<https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> a foaf:Organization ;
+    foaf:name "Directoraat-generaal Belastingdienst (DGBD)"@nl ;
+    foaf:uri <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
 
-<#system_date_dataset> a dcat:Dataset ;
-    dct:title "System Date for Age Calculation"@en ;
-    dct:description "The current date is used as a reference to determine eligibility age for AOW."@en ;
-    dct:issued "1990-01-01"^^xsd:date ; # start date of service
-    dcat:theme <http://eurovoc.europa.eu/100141> ; # Optional theme, if desired
-    dct:temporal [
-        a dct:PeriodOfTime ;
-        dct:startDate "1990-01-01"^^xsd:date ; # Date when the rule started
-    ] ;
-    dcat:keyword "System Date", "Current Date"@en ;
-    dct:publisher [ 
-        a foaf:Organization ;
-        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143>
-        foaf:name "Sociale Verzekeringsbank"@nl 
-    ] .
 
-<#birthcertificate_date_dataset> a dcat:Dataset ;
-    dct:title "Birth Certificate Date"@en ;
-    dct:description "Dataset containing birth certificate dates used for age determination."@en ;
-    dct:issued "1990-01-01"^^xsd:date ;
-    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/v2/features/zoek-met-geslachtsnaam-voornamen-en-gemeente-van-inschrijving/overzicht.feature> ;
-    dcat:keyword "Search with surname, first names and municipality of registration"@en ;
-    dct:publisher [ 
-        a foaf:Organization ;
-        foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103>
-        foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)"@nl 
-    ] ;
-    ronl:source <http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/geboortedatum_persoon-geboorte> .
+<#persoonlijke_gegevens_dataset> a dcat:Dataset ;
+    dct:title "Persoonlijke gegevens"@nl ;
+    dct:description "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer."@nl ;
+    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRP> ;
+    ex:hasAttribute <#verblijfsvergunning>, <#partners>, <#woonadres>, <#nationaliteit>, <#personalia>, <#kinderen> .
 
-<#aow_dpia> a cpsv-ap:DataProtectionImpactAssessment ;
-    dct:title "Data Protection Impact Assessment (DPIA) for AOW Age Determination Algorithm"@en ;
-    dct:description "Assessment of data protection risks and compliance with privacy regulations."@en ;
-    dcat:accessURL <https://dpia.example.org/aow_age_determination> .
+<#verblijfsvergunning> a ex:Attribute ;
+    rdfs:label "Verblijfsvergunning"@nl ;
+    rdfs:comment "Verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
+
+<#partners> a ex:Attribute ;
+    rdfs:label "Partner(s)"@nl ;
+    rdfs:comment "Bevat gegevens over huwelijkspartners of geregistreerde partners, personalia partners, datum einde huwelijk."@nl .
+
+<#woonadres> a ex:Attribute ;
+    rdfs:label "Woonadres"@nl ;
+    rdfs:comment "Bevat gegevens als straatnaam, huisnummer/letter, postcode en woonplaats en eventueel land."@nl .
+
+<#nationaliteit> a ex:Attribute ;
+    rdfs:label "Nationaliteit"@nl ;
+    rdfs:comment "Het al dan niet bezitten van een Nederlandse of buitenlandse nationaliteit(en)."@nl .
+
+<#personalia> a ex:Attribute ;
+    rdfs:label "Personalia"@nl ;
+    rdfs:comment "Naam, geslacht, geboortedatum, geboorteplaats."@nl .
+
+<#kinderen> a ex:Attribute ;
+    rdfs:label "Kind(eren)"@nl ;
+    rdfs:comment "Familierelatie tussen ouder(s) en kind(eren)."@nl .
+
+
+<#betalingsgegevens_dataset> a dcat:Dataset ;
+    dct:title "Betalingsregeling(en)."@nl ;
+    dct:description "Gegevens over de betalingsregeling voor zorgtoeslag."@nl ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://cjib-api.github.io/Haal-Centraal-CJIB-bevragen/> ;
+    dct:publisher <https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> ;
+    #
+    # Placeholder!
+    #
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/CJIB> ;
+    ex:hasAttribute <#betalingsregeling_zorgtoeslag> .
+
+<#betalingsregeling_zorgtoeslag> a ex:Attribute ;
+    rdfs:label "Personalia"@nl ;
+    rdfs:comment "Verzoek om zorgtoeslag uit te betalen aan het CJIB, tbv de premiebetaling van de zorgverzekering."@nl .
+
+<#inkomens_en_vermogensgegevens_dataset> a dcat:Dataset ;
+    dct:title "Inkomens- en vermogensgegevens."@nl ;
+    dct:description "Alle gegevens over inkomsten uit werk en uw bezittingen."@nl ;
+    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    dct:publisher <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRP> ;
+    ex:hasAttribute <#verblijfsvergunning>, <#partners>, <#woonadres>, <#nationaliteit>, <#personalia>, <#kinderen> .
+
+    
+   
+    
+    <#justitiële_gegevens_dataset>
+    
+    <#verzekeringsgegevens_dataset> ;
