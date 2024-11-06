@@ -9,6 +9,7 @@
 @prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 #
 # Define Directoraat-generaal Toeslagen (DGTSL)
 #
@@ -94,7 +95,12 @@
         dct:description "The dienst is gratis."@nl ;
         dct:description "The service is free of charge."@en ;
     ] ;
-    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> .
+    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    #
+    # Link to the algorithm that processes the rules for this service
+    #
+    prov:wasGeneratedBy <https://algorithms.overheid.nl/nl/algorithm/berekenen-zorgtoeslag-dienst-toeslagen/39548375> .
+
 #
 # Define business rules
 #
@@ -136,6 +142,10 @@
         #
         rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
         rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> ;
+        #
+        # Link to the publication explaining the data used for these rules
+        #
+        dct:relation <https://gegevensbijbesluiten.overheid.nl/besluit/61720422> ;
         cpsv-ap:hasCriterionRequirement <#ingezetene_requirement>, <#leeftijd_requirement>, <#betalingsregeling_requirement>, <#inkomen_en_vermogen_requirement>, <#detentie_requirement>, <#verzekering_requirement> ;
         cpsv-ap:hasInput <#persoonlijke_gegevens_dataset>, <#betalingsgegevens_dataset>, <#inkomens_en_vermogensgegevens_dataset>, <#justitiële_gegevens_dataset>, <#verzekeringsgegevens_dataset> ;
     ] ;
