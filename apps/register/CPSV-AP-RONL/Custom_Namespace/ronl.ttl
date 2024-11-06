@@ -31,6 +31,32 @@ ronl:method a owl:ObjectProperty ;
     rdfs:comment "Method property for the rule set."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
     rdfs:range ronl:MethodConcept .
+
+ronl:implementedBy a owl:ObjectProperty ;
+    rdfs:label "implementatie"@nl ;
+    rdfs:label "implementation"@en ;
+    rdfs:comment "Specificeert de implementatie door een bepaalde uitvoering of dienst van de bedrijfsregel."@nl ;
+    rdfs:comment "Specifies the implementation by a particular execution or service of the business rule."@en ;
+    #
+    # Specifies that ronl:implementedBy should be used with instances of cpsv-ap:RuleSpecification.
+    #
+    rdfs:domain cpsv-ap:RuleSpecification ;
+    rdfs:range rdfs:Resource ;
+    owl:inverseOf ronl:implements ;
+    rdfs:isDefinedBy <http://regels.overheid.nl/ronl> .
+
+ronl:implements a owl:ObjectProperty ;
+    rdfs:label "implementeert"@nl ;
+    rdfs:label "implements"@en ;
+    rdfs:comment "Specificeert de bedrijfsregel die wordt geïmplementeerd door een bepaalde uitvoering of dienst."@nl ;
+    rdfs:comment "Specifies the business rule that is implemented by a given execution or service."@en ;
+    rdfs:domain rdfs:Resource ;
+    #
+    # Specifies that ronl:implementedBy should be used with instances of cpsv-ap:RuleSpecification.
+    #
+    rdfs:range cpsv-ap:RuleSpecification ;
+    owl:inverseOf ronl:implementedBy ;
+    rdfs:isDefinedBy <http://regels.overheid.nl/ronl> .
 #
 # Define a concept scheme for analysis concepts as skos:ConceptScheme
 #
@@ -59,7 +85,7 @@ ex:FLINT a skos:Concept ;
 # Define a concept scheme for method concepts as skos:ConceptScheme
 #
 ronl:MethodConcept a skos:ConceptScheme ;
-    skos:prefLabel "AMethoden Concepten Schema"@nl ;
+    skos:prefLabel "Methoden Concepten Schema"@nl ;
     skos:prefLabel "Method Concept Scheme"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
 #
