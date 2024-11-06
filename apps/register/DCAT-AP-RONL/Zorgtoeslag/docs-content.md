@@ -3,7 +3,7 @@
 1. Download [csv](./zorgtoeslag.csv) from [algoritmes.overheid.nl](https://algoritmes.overheid.nl/nl/algoritme/berekenen-zorgtoeslag-dienst-toeslagen/39548375) concerning Zorgtoeslag
 2. Convert csv --> [xml](./zorgtoeslag.xml)
 3. Map the metadata into appropriate DCAT terms
-4. Adapt [ttl]](./zorgtoeslag-cpsv.ttl) to Core Publice Service Vocabulary (CPSV)
+4. Adapt [ttl](./zorgtoeslag-cpsv.ttl) to Core Publice Service Vocabulary (CPSV)
 5. Extend and apply CPSV to describe **algorithms, business rules**, and the **data models** needed to award social benefits
 6. CPSV-AP 3.2.0 alignment
 7. Update ttl with Multiple Datasets
