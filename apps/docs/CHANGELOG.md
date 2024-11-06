@@ -1,5 +1,12 @@
 # docs
 
+## 3.12.3
+
+### Patch Changes
+
+- 6dc5852: added CAK dataset to zorgtoeslag
+- 52d0d6b: Validated content of zorgtoeslag turtle and ronl namespace
+
 ## 3.12.2
 
 ### Patch Changes
