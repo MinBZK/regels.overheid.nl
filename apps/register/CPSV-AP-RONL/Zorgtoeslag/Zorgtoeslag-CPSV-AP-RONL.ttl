@@ -1,5 +1,6 @@
 @prefix cpsv-ap: <http://data.europa.eu/m8g/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -8,31 +9,44 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 #
-# Public serivce area
+# Define Directoraat-generaal Toeslagen
 #
-<#aow_age_determination_service> a cpsv-ap:PublicService ;
-    dct:title "Bepaling leeftijd AOW"@nl ;
-    dct:description "Bepaling van de leeftijd AOW (Algemene Ouderdomswet)."@nl ;
+<https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> a foaf:Organization ;
+    foaf:name "Directoraat-generaal Toeslagen"@nl ;
+    foaf:uri <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+
+#
+# Define Ministerie van Financiën
+#
+<https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> a foaf:Organization ;
+    foaf:name "Ministerie van Financiën"@nl ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+
+#
+# Define public serivce
+#
+<#health_care_allowance_service> a cpsv-ap:PublicService ;
+    dct:title "Vaststellen beschikking zorgtoeslag."@nl ;
+    dct:title "Determine health care allowance decision."@en ;
+    dct:description "Berekent recht, duur en hoogte van de zorgtoeslag. Dit gebeurt met zorgverzekeringsgegevens van en over de aanvrager en toeslagpartner."@nl ;
+    dct:description "Calculates the right, duration and amount of the health care allowance. This is done with health insurance data from and about the applicant and allowance partner".@en ;
     #
     # The unique identifier for this service as given by Uniforme Productnamenlijst (UPL)
-    # https://standaarden.overheid.nl/owms/terms/aow-uitkering is a real example, (.../)/aow-leeftijd doesn't excist
     #
-    dct:identifier <https://standaarden.overheid.nl/owms/terms/aow-leeftijd> ;
+    dct:identifier <https://standaarden.overheid.nl/owms/terms/zorgtoeslag> ;
     #
-    # ronl:analysis and ronl:method are defined as RDF properties with their respective domains (dcat:Dataset) and  ranges (ronl:AnalysisConcept
-    # and ronl:MethodConcept).
+    # ronl:analysis and ronl:method are defined as RDF properties with their respective domains (dcat:Dataset) and  ranges (ronl:AnalysisConcept and ronl:MethodConcept).
     # 
     ronl:analysis ex:WetsanalyseJAS ;
-    ronl:method ex:ConcordiaLegal ;
+    ronl:method ex:ALEF ;
     #
-    dct:creator [ 
-        a foaf:Organization ; 
-        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143>
-        foaf:name "Sociale Verzekeringsbank"@nl 
-    ] ;
+    dct:creator <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
     dct:subject "Sociale zekerheid"@nl ;
-    cpsv-ap:status <https://regels.overheid.nl/placeholder/status-value> ;
-    cpsv-ap:goal "Landelijk herbruikbare service voor gevalideerde bepaling van de leeftijd AOW."@nl ;
+    dct:subject "Social security"@en ;
+    cpsv-ap:status <https://regels.overheid.nl/placeholder/health-care-allowance-value> ;
+    cpsv-ap:goal "Berekent recht, duur en hoogte van de zorgtoeslag."@nl ;
+    cpsv-ap:goal "Calculates the right, duration and amount of the health care allowance."@nl ;
     cpsv-ap:proportionality <https://regels.overheid.nl/placeholder/proportionality-value> ;
     cpsv-ap:hasLegalResource [
         a cpsv-ap:LegalResource ;
