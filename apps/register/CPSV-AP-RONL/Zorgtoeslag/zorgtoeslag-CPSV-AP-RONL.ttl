@@ -245,11 +245,22 @@
     dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
     dct:publisher <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
     ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRP> ;
-    ex:hasAttribute <#verblijfsvergunning>, <#partners>, <#woonadres>, <#nationaliteit>, <#personalia>, <#kinderen> .
+    ex:hasAttribute <#inkomensgegeven_authentiek>, <#vermogen_box_3>, <#niet_in_Nederland_belastbaar_inkomen> .
 
-    
-   
-    
-    <#justitiële_gegevens_dataset>
-    
-    <#verzekeringsgegevens_dataset> ;
+<#inkomensgegeven_authentiek> a ex:Attribute ;
+    rdfs:label "Inkomensgegeven (authentiek)."@nl ;
+    rdfs:comment "Het authentieke inkomensgegeven is het inkomen, dit kan bestaan uit het verzamelinkomen of uit het belastbaar jaarloon."@nl .
+
+<#vermogen_box_3> a ex:Attribute ;
+    rdfs:label "Vermogen (box 3)."@nl ;
+    rdfs:comment "Het vermogen is de waarde van bezittingen (zoals spaargeld, aandelen of een tweede woning) minus schulden."@nl .
+
+ <#niet_in_Nederland_belastbaar_inkomen> a ex:Attribute ;
+    rdfs:label "Niet in Nederland Belastbaar Inkomen."@nl ;
+    rdfs:comment "Wereldinkomen."@nl .
+#
+# To do's
+#
+#    <#justitiële_gegevens_dataset> ;
+#    
+#    <#verzekeringsgegevens_dataset> ;
