@@ -1,5 +1,11 @@
 # docs
 
+## 3.12.2
+
+### Patch Changes
+
+- 22094c6: CPSV-AP-RONL zorgtoeslag example (WIP)
+
 ## 3.12.1
 
 ### Patch Changes
