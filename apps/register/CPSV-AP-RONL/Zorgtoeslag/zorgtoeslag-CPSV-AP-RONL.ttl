@@ -1,0 +1,190 @@
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+#
+# Define Directoraat-generaal Toeslagen
+#
+<https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> a foaf:Organization ;
+    foaf:name "Directoraat-generaal Toeslagen"@nl ;
+    foaf:uri <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+
+#
+# Define Ministerie van Financiën
+#
+<https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> a foaf:Organization ;
+    foaf:name "Ministerie van Financiën"@nl ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+#
+# Define public serivce
+#
+<#zorgtoeslag_service> a cpsv-ap:PublicService ;
+    dct:title "Vaststellen beschikking zorgtoeslag."@nl ;
+    dct:title "Determine health care allowance decision."@en ;
+    dct:description "Berekent recht, duur en hoogte van de zorgtoeslag. Dit gebeurt met zorgverzekeringsgegevens van en over de aanvrager en toeslagpartner."@nl ;
+    dct:description "Calculates the right, duration and amount of the health care allowance. This is done with health insurance data from and about the applicant and allowance partner".@en ;
+    #
+    # The unique identifier for this service as given by Uniforme Productnamenlijst (UPL)
+    #
+    dct:identifier <https://standaarden.overheid.nl/owms/terms/zorgtoeslag> ;
+    #
+    # ronl:analysis and ronl:method are defined as RDF properties with their respective domains (dcat:Dataset) and  ranges (ronl:AnalysisConcept and ronl:MethodConcept).
+    # 
+    ronl:analysis ex:WetsanalyseJAS ;
+    ronl:method ex:ALEF ;
+    #
+    dct:creator <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    dct:subject "Sociale zekerheid."@nl ;
+    dct:subject "Social security."@en ;
+    cpsv:hasChannel [
+        a cpsv:Channel ;
+        dct:title "Online portaal."@nl ;
+        dct:title "Online portal."@en ;
+        cpsv:accessURL <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> ;
+        dct:description "Het online portaal waar aanvragers een aanvraag voor zorgtoeslag kunnen indienen."@nl ;
+        dct:description "The online portal where applicants can apply for health care allowance."@en ;
+        cpsv:channelType [
+            a skos:Concept ;
+            skos:prefLabel "Web Portal"@en ;
+            skos:exactMatch <http://example.org/channel-type/web-portal>
+        ]
+    ] ;
+    cpsv:hasContactPoint [
+        #
+        # Placeholder!
+        #
+        a vcard:Organization ;
+        vcard:fn "Customer Service"@en ;
+        vcard:hasEmail <mailto:customerservice@example.org> ;
+        vcard:hasTelephone [
+            a vcard:Work, vcard:Voice ;
+            vcard:hasValue <tel:+1234567890> 
+        ] ;
+        vcard:hasURL <https://www.example.org/contact> 
+    ] ;
+    cpsv-ap:goal "Berekent recht, duur en hoogte van de zorgtoeslag."@nl ;
+    cpsv-ap:goal "Calculates the right, duration and amount of the health care allowance."@nl ;
+    cpsv-ap:hasLegalResource [
+        a cpsv-ap:LegalResource ;
+        dct:title "Algemene wet inkomensafhankelijke regelingen"@nl ;
+        dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0018472&z=2024-01-01&g=2024-01-01> ;
+        dct:title "Wet op de zorgtoeslag"@nl ;
+        dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0018451&z=2024-01-01&g=2024-01-01> ;
+    ] ;
+    dct:issued "2023-06-12"^^xsd:date ;
+    dct:modified "2024-11-06"^^xsd:date ;
+    dct:language "nld" ;  # Dutch language code
+    cpsv-ap:implements <#BerekenRechtEnHoogteZorg> ;
+    cpsv-ap:hasOutput [
+        a cpsv-ap:Output ;
+        dct:description "Besluit recht, duur en hoogte van de zorgtoeslag."@nl ;
+        dct:description "Decision right, duration and amount of the health care allowance."@en ;
+    ] ;
+    cpsv-ap:hasCost [
+        a cpsv-ap:Cost ;
+        dct:description "The dienst is gratis."@nl ;
+        dct:description "The service is free of charge."@en ;
+    ] ;
+    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+#
+# Define business rules
+#
+<#BerekenRechtEnHoogteZorg> a cpsv-ap:Rule ;
+    dct:title "Bedrijfsregels die recht, duur en hoogte van de zorgtoeslag vaststellen."@nl ;
+    dct:title "Business rules that determine the right, duration and amount of the health care allowance."@en ;
+    dct:description "Het is de taak van de Dienst Toeslagen om ervoor te zorgen dat burgers die een aanvraag doen de zorgtoeslag krijgen waar zij recht op hebben. Met deze bedrijfsregels stellen we snel, efficiënt en consistent het recht op zorgtoeslag vast voor ongeveer 4,6 miljoen huishoudens."@nl ;
+    dct:description "It is the task of the Allowances Service to ensure that citizens who apply receive the healthcare allowance to which they are entitled. With these business rules, we quickly, efficiently and consistently determine the right to healthcare allowance for approximately 4.6 million households."@nl ;
+    #
+    #  dct:conformsTo has a placeholder URI that should point to a document or description of the BerekenRechtEnHoogteZorg SOAP operation
+    #
+    dct:conformsTo <http://brm.tsl.bszorg.belastingdienst.nl> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
+    dcat:mediaType "application/soap+xml" ;
+    cpsv-ap:specifies [
+        a cpsv-ap:RuleSpecification ;
+        dct:title "Besturingsflow Beslissen zorg."@nl ;
+        dct:description "Verzameling regels en Objectmodel Zorgtoeslag t.b.v. Beslissen zorg objecttype: toeslagaanvraag."@nl ;
+        #
+        # ronl:source: Points to the authoritative, conceptual origin of the rule or model, like an official government document 
+        # or regulation that legitimizes the rule
+        #
+        ronl:source <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/kan-ik-zorgtoeslag-krijgen> ;
+        #
+        # dct:source: Used to specify the URI where the actual rules in are stored or described
+        #
+        # Placeholder!
+        #
+        dct:source <https://regels.overheid.nl/register/placeholder/zorgtoeslag> ;
+        #
+        # ronl:implementedBy specifies the software system involved in the calculations
+        #
+        # Placeholder!
+        #
+        ronl:implementedBy <https://regels.overheid.nl/placeholder/berekenrechtenhoogtezorg-service> ;
+        #
+        # rdfs:seeAlso: Optionally used for linking to additional documentation, such as a page or document that provides further 
+        # explanation of the rules
+        #
+        rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
+        rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> ;
+        cpsv-ap:hasCriterionRequirement <#ingezetene_requirement>, <#leeftijd_requirement>, <#betalingsregeling_requirement>, <#inkomen_en_vermogen_requirement>, <#detentie_requirement>, <#verzekering_requirement> ;
+        cpsv-ap:hasInput <#persoonlijke_gegevens_dataset>, <#betalingsgegevens_dataset>, <#inkomens_en_vermogensgegevens_dataset>, <#justitiële_gegevens_dataset>, <#verzekeringsgegevens_dataset> ;
+    ] ;
+    cpsv-ap:hasHumanIntervention "Niet van toepassing."@nl ;
+    dct:version "1.0" .
+#
+# Define criteria and datasets
+#
+<#ingezetene_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "Het al dan niet bezitten van een Nederlandse of buitenlandse nationaliteit(en) én verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
+
+<#leeftijd_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager is ouder dan 18 jaar en heeft nog niet de pensioengerechtigde leeftijd bereikt."@nl .
+
+<#betalingsregeling_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager is ouder dan 18 jaar en heeft nog niet de pensioengerechtigde leeftijd bereikt."@nl .
+
+<#inkomen_en_vermogen_requirement> a cpsv-ap:CriterionRequirement ;
+<#detentie_requirement> a cpsv-ap:CriterionRequirement ;
+<#verzekering_requirement> a cpsv-ap:CriterionRequirement ;
+
+<#system_date_dataset> a dcat:Dataset ;
+    dct:title "System Date for Age Calculation"@en ;
+    dct:description "The current date is used as a reference to determine eligibility age for AOW."@en ;
+    dct:issued "1990-01-01"^^xsd:date ; # start date of service
+    dcat:theme <http://eurovoc.europa.eu/100141> ; # Optional theme, if desired
+    dct:temporal [
+        a dct:PeriodOfTime ;
+        dct:startDate "1990-01-01"^^xsd:date ; # Date when the rule started
+    ] ;
+    dcat:keyword "System Date", "Current Date"@en ;
+    dct:publisher [ 
+        a foaf:Organization ;
+        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143>
+        foaf:name "Sociale Verzekeringsbank"@nl 
+    ] .
+
+<#birthcertificate_date_dataset> a dcat:Dataset ;
+    dct:title "Birth Certificate Date"@en ;
+    dct:description "Dataset containing birth certificate dates used for age determination."@en ;
+    dct:issued "1990-01-01"^^xsd:date ;
+    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/v2/features/zoek-met-geslachtsnaam-voornamen-en-gemeente-van-inschrijving/overzicht.feature> ;
+    dcat:keyword "Search with surname, first names and municipality of registration"@en ;
+    dct:publisher [ 
+        a foaf:Organization ;
+        foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103>
+        foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)"@nl 
+    ] ;
+    ronl:source <http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/geboortedatum_persoon-geboorte> .
+
+<#aow_dpia> a cpsv-ap:DataProtectionImpactAssessment ;
+    dct:title "Data Protection Impact Assessment (DPIA) for AOW Age Determination Algorithm"@en ;
+    dct:description "Assessment of data protection risks and compliance with privacy regulations."@en ;
+    dcat:accessURL <https://dpia.example.org/aow_age_determination> .
