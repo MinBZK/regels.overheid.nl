@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Modified Beoordeling AOW-verstrekking -->
+<!-- Source: csv download via https://algoritmes.overheid.nl/nl/algoritme/beoordeling-aowverstrekking-sociale-verzekeringsbank/71631383 -->
+<root>
+  <row>
+    <name>Bepaling leeftijd AOW.</name>
+    <organization>Sociale Verzekeringsbank</organization>
+    <description_short>Bepaling van de leeftijd AOW (Algemene Ouderdomswet).</description_short>
+    <category>Sociale zekerheid</category>
+    <website>AOW home | AOW | SVB</website>
+    <status>In gebruik</status>
+    <goal>Landelijk herbruikbare service voor gevalideerde bepaling van de leeftijd AOW.</goal>
+    <proportionality>Niet van toepassing.</proportionality>
+    <lawful_basis>Algemene Ouderdomswet (AOW)</lawful_basis>
+    <lawful_basis_detail_1>https://wetten.overheid.nl/jci1.3:c:BWBR0002221&amp;hoofdstuk=III&amp;paragraaf=1&amp;artikel=7&amp;z=2023-01-01&amp;g=2023-01-01</lawful_basis_detail_1>
+    <lawful_basis_detail_2>https://wetten.overheid.nl/jci1.3:c:BWBR0002221&amp;hoofdstuk=III&amp;paragraaf=1&amp;artikel=7a&amp;z=2023-01-01&amp;g=2023-01-01</lawful_basis_detail_2>
+    <standard_version>1.0</standard_version>
+    <url>https://www.svb.nl/nl/over-de-svb/hoe-werken-we/algoritmes-aow</url>
+    <contact_email>algoritmenenai@svb.nl</contact_email>
+    <lang>nld</lang>
+    <publiccode></publiccode>
+    <source_data>Onze belangrijkste bronnen om gegevens uit te halen zijn:- de bevolkingsadministratie van de Nederlandse gemeenten- de administratie die wij bijhouden over de verzekering voor de volksverzekeringen- internationale systemen voor klanten buiten Nederland- gegevens die u zelf aanlevert</source_data>
+    <methods_and_models>Beslisboom (regelgebaseerd) op basis van de Algemene Ouderdomswet (AOW).</methods_and_models>
+    <human_intervention>Niet van toepassing.</human_intervention>
+    <risks></risks>
+    <provider></provider>
+    <process_index_url></process_index_url>
+    <tags></tags>
+    <source_id></source_id>
+    <begin_date>1990</begin_date>
+    <end_date></end_date>
+    <impacttoetsen></impacttoetsen>
+    <publication_category>Overige algoritmes</publication_category>
+    <lawful_basis_grouping></lawful_basis_grouping>
+    <impacttoetsen_grouping>1: Data Protection Impact Assessment (DPIA)</impacttoetsen_grouping>
+    <source_data_grouping></source_data_grouping>
+    <algorithm_id></algorithm_id>
+  </row>
+</root>

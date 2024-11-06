@@ -1,0 +1,195 @@
+@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex: <http://example.org/ns#> .
+#
+# Define ronl:source, ronl:analysis and ronl:mehtod as RDF properties
+# use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+#
+# ronl:source is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace
+#
+ronl:source a owl:ObjectProperty ;
+    rdfs:label "source"@en ;
+    rdfs:comment "Een eigenschap om de gezaghebbende bron of oorsprong van een dataset, regelspecificatie of model in de ronl namespace op te geven."@nl ;
+    rdfs:comment "A property to specify the authoritative source or origin of a dataset, rule, or model in the ronl namespace."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range rdfs:Resource .  # flexible range for URLs, documents, etc.
+
+ronl:analysis a owl:ObjectProperty ;
+    rdfs:label "analysis"@en ;
+    rdfs:comment "Analyse eigenschap voor de regelspecificatie set"@nl ;
+    rdfs:comment "Analysis property for the rule set."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:AnalysisConcept .
+
+ronl:method a owl:ObjectProperty ;
+    rdfs:label "method"@en ;
+    rdfs:comment "Methode eigenschap voor de regelspecificatie set"@nl ;
+    rdfs:comment "Method property for the rule set."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:MethodConcept .
+#
+# Define a concept scheme for analysis concepts as skos:ConceptScheme
+#
+ronl:AnalysisConcept a skos:ConceptScheme ;
+    skos:prefLabel "Analyse Concepten Schema"@nl ;
+    skos:prefLabel "Analysis Concept Scheme"@en ;
+    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
+#
+# Define individual concepts within the AnalysisConcept scheme
+# 
+ex:WetsanalyseJAS a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "Wetsanalyse (JAS)"@nl ;
+    skos:prefLabel "Legal Analysis (JAS)"@en .
+
+ex:WetsanalyseJRM a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "Wetsanalyse (JRM)"@nl ;
+    skos:prefLabel "Legal Analysis (JRM)"@en .
+
+ex:FLINT a skos:Concept ;
+    skos:inScheme ronl:AnalysisConcept ;
+    skos:prefLabel "FLINT"@nl ;
+    skos:prefLabel "FLINT"@en .
+#
+# Define a concept scheme for method concepts as skos:ConceptScheme
+#
+ronl:MethodConcept a skos:ConceptScheme ;
+    skos:prefLabel "AMethoden Concepten Schema"@nl ;
+    skos:prefLabel "Method Concept Scheme"@en .
+    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
+#
+# Define individual concepts within the MethodConcept scheme
+#
+ex:AKN4EU a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "AKN4EU"@nl ;
+    skos:prefLabel "AKN4EU"@en .
+
+ex:ALEF a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "ALEF"@nl ;
+    skos:prefLabel "ALEF"@en .
+
+ex:Avola a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Avola"@nl ;
+    skos:prefLabel "Avola"@en .
+
+ex:Beinformed a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Beinformed"@nl ;
+    skos:prefLabel "Beinformed"@en .
+
+ex:Blawx a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Blawx"@nl ;
+    skos:prefLabel "Blawx"@en .
+
+ex:Blueriq a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Blueriq"@nl ;
+    skos:prefLabel "Blueriq"@en .
+
+ex:Catala a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Catala"@nl ;
+    skos:prefLabel "Catala"@en .
+
+ex:CircuLaw a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "CircuLaw"@nl; 
+    skos:prefLabel "CircuLaw"@en .
+
+ex:ConcordiaLegal a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Concordia Legal"@nl ;
+    skos:prefLabel, "Concordia Legal"@en .
+
+ex:DataLex a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "DataLex"@nl ;
+    skos:prefLabel, "DataLex"@en .
+
+ex:Demo a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "DEMO"@nl ;
+    skos:prefLabel, "DEMO"@en .
+
+ex:Leos a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "LEOS"@nl ;
+    skos:prefLabel, "LEOS"@en .
+
+ex:OpenFisca a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "OpenFisca"@nl ;
+    skos:prefLabel, "OpenFisca"@en .
+
+ex:RuleSpeak a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "RuleSpeak®"@nl ;
+    skos:prefLabel, "RuleSpeak®"@en .
+
+ex:Sparkwise a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "Sparkwise"@nl ;
+    skos:prefLabel, "Sparkwise"@en .
+    
+ex:USoft a skos:Concept ;
+    skos:inScheme ronl:MethodConcept ;
+    skos:prefLabel "USoft"@nl ;
+    skos:prefLabel, "USoft"@en .
+#
+# Define a concept scheme for specification type concepts as skos:ConceptScheme
+#
+ronl:SpecificationTypeConcept a skos:ConceptScheme ;
+    skos:prefLabel "Specificatie Type Concept Schema"@nl ;
+    skos:prefLabel "Specification Type Concept Scheme"@en .
+    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> .
+#
+# Define individual concepts within the SpecificationTypeConcept scheme
+#
+ex:FunctioneelOntwerp a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Functioneel Ontwerp"@nl ;
+    skos:prefLabel "Functional Design"@en .
+
+ex:SoftwareCode a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Software code"@nl ;
+    skos:prefLabel "Software code"@en .
+
+ex:UXDesign a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "UX Design"@nl ;
+    skos:prefLabel "UX Design"@en .
+
+ex:Communicatiemiddel a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Communicatiemiddel"@nl ;
+    skos:prefLabel "Communications service"@en .
+
+ex:Werkinstructie a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Werkinstructie"@nl ;
+    skos:prefLabel "Work instruction"@en .
+
+ex:Kwaliteitseisen a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Kwaliteitseisen"@nl ;
+    skos:prefLabel "Quality Requirements"@en .
+
+ex:BestuurlijkeInformatie a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Bestuurlijke Informatie"@nl ;
+    skos:prefLabel "Business Intelligence"@en .
+
+ex:Overig a skos:Concept ;
+    skos:inScheme ronl:SpecificationTypeConcept ;
+    skos:prefLabel "Overig"@nl ;
+    skos:prefLabel "Other"@en .

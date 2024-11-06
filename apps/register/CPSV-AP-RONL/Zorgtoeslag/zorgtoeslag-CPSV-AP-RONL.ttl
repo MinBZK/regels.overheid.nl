@@ -1,0 +1,273 @@
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+#
+# Define Directoraat-generaal Toeslagen (DGTSL)
+#
+<https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> a foaf:Organization ;
+    foaf:name "Directoraat-generaal Toeslagen (DGTSL)"@nl ;
+    foaf:uri <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+#
+# Define Ministerie van Financiën
+#
+<https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> a foaf:Organization ;
+    foaf:name "Ministerie van Financiën"@nl ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+#
+# Define public serivce
+#
+<#zorgtoeslag_service> a cpsv-ap:PublicService ;
+    dct:title "Vaststellen beschikking zorgtoeslag."@nl ;
+    dct:title "Determine health care allowance decision."@en ;
+    dct:description "Berekent recht, duur en hoogte van de zorgtoeslag. Dit gebeurt met zorgverzekeringsgegevens van en over de aanvrager en toeslagpartner."@nl ;
+    dct:description "Calculates the right, duration and amount of the health care allowance. This is done with health insurance data from and about the applicant and allowance partner".@en ;
+    #
+    # The unique identifier for this service as given by Uniforme Productnamenlijst (UPL)
+    #
+    dct:identifier <https://standaarden.overheid.nl/owms/terms/zorgtoeslag> ;
+    #
+    # ronl:analysis and ronl:method are defined as RDF properties with their respective domains (dcat:Dataset) and  ranges (ronl:AnalysisConcept and ronl:MethodConcept).
+    # 
+    ronl:analysis ex:WetsanalyseJAS ;
+    ronl:method ex:ALEF ;
+    #
+    dct:creator <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+    dct:subject "Sociale zekerheid."@nl ;
+    dct:subject "Social security."@en ;
+    cpsv:hasChannel [
+        a cpsv:Channel ;
+        dct:title "Online portaal."@nl ;
+        dct:title "Online portal."@en ;
+        cpsv:accessURL <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> ;
+        dct:description "Het online portaal waar aanvragers een aanvraag voor zorgtoeslag kunnen indienen."@nl ;
+        dct:description "The online portal where applicants can apply for health care allowance."@en ;
+        cpsv:channelType [
+            a skos:Concept ;
+            skos:prefLabel "Web Portal"@en ;
+            skos:exactMatch <http://example.org/channel-type/web-portal>
+        ]
+    ] ;
+    cpsv:hasContactPoint [
+        #
+        # Placeholder!
+        #
+        a vcard:Organization ;
+        vcard:fn "Customer Service"@en ;
+        vcard:hasEmail <mailto:customerservice@example.org> ;
+        vcard:hasTelephone [
+            a vcard:Work, vcard:Voice ;
+            vcard:hasValue <tel:+1234567890> 
+        ] ;
+        vcard:hasURL <https://www.example.org/contact> 
+    ] ;
+    cpsv-ap:goal "Berekent recht, duur en hoogte van de zorgtoeslag."@nl ;
+    cpsv-ap:goal "Calculates the right, duration and amount of the health care allowance."@nl ;
+    cpsv-ap:hasLegalResource [
+        a cpsv-ap:LegalResource ;
+        dct:title "Algemene wet inkomensafhankelijke regelingen"@nl ;
+        dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0018472&z=2024-01-01&g=2024-01-01> ;
+        dct:title "Wet op de zorgtoeslag"@nl ;
+        dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0018451&z=2024-01-01&g=2024-01-01> ;
+    ] ;
+    dct:issued "2023-06-12"^^xsd:date ;
+    dct:modified "2024-11-06"^^xsd:date ;
+    dct:language "nld" ;
+    cpsv-ap:implements <#BerekenRechtEnHoogteZorg> ;
+    cpsv-ap:hasOutput [
+        a cpsv-ap:Output ;
+        dct:description "Besluit recht, duur en hoogte van de zorgtoeslag."@nl ;
+        dct:description "Decision right, duration and amount of the health care allowance."@en ;
+    ] ;
+    cpsv-ap:hasCost [
+        a cpsv-ap:Cost ;
+        dct:description "The dienst is gratis."@nl ;
+        dct:description "The service is free of charge."@en ;
+    ] ;
+    dct:publisher <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
+#
+# Define business rules
+#
+<#BerekenRechtEnHoogteZorg> a cpsv-ap:Rule ;
+    dct:title "Bedrijfsregels die recht, duur en hoogte van de zorgtoeslag vaststellen."@nl ;
+    dct:title "Business rules that determine the right, duration and amount of the health care allowance."@en ;
+    dct:description "Het is de taak van de Dienst Toeslagen om ervoor te zorgen dat burgers die een aanvraag doen de zorgtoeslag krijgen waar zij recht op hebben. Met deze bedrijfsregels stellen we snel, efficiënt en consistent het recht op zorgtoeslag vast voor ongeveer 4,6 miljoen huishoudens."@nl ;
+    dct:description "It is the task of the Allowances Service to ensure that citizens who apply receive the healthcare allowance to which they are entitled. With these business rules, we quickly, efficiently and consistently determine the right to healthcare allowance for approximately 4.6 million households."@nl ;
+    #
+    #  dct:conformsTo has a placeholder URI that should point to a document or description of the BerekenRechtEnHoogteZorg SOAP operation
+    #
+    dct:conformsTo <http://brm.tsl.bszorg.belastingdienst.nl> ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/XML> ;
+    dcat:mediaType "application/soap+xml" ;
+    cpsv-ap:specifies [
+        a cpsv-ap:RuleSpecification ;
+        dct:title "Besturingsflow Beslissen zorg."@nl ;
+        dct:description "Verzameling regels en Objectmodel Zorgtoeslag t.b.v. Beslissen zorg objecttype: toeslagaanvraag."@nl ;
+        #
+        # ronl:source: Points to the authoritative, conceptual origin of the rule or model, like an official government document 
+        # or regulation that legitimizes the rule
+        #
+        ronl:source <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/content/kan-ik-zorgtoeslag-krijgen> ;
+        #
+        # dct:source: Used to specify the URI where the actual rules in are stored or described
+        #
+        # Placeholder!
+        #
+        dct:source <https://regels.overheid.nl/register/placeholder/zorgtoeslag> ;
+        #
+        # ronl:implementedBy specifies the software system involved in the calculations
+        #
+        # Placeholder!
+        #
+        ronl:implementedBy <https://regels.overheid.nl/placeholder/berekenrechtenhoogtezorg-service> ;
+        #
+        # rdfs:seeAlso: Optionally used for linking to additional documentation, such as a page or document that provides further 
+        # explanation of the rules
+        #
+        rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
+        rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> ;
+        cpsv-ap:hasCriterionRequirement <#ingezetene_requirement>, <#leeftijd_requirement>, <#betalingsregeling_requirement>, <#inkomen_en_vermogen_requirement>, <#detentie_requirement>, <#verzekering_requirement> ;
+        cpsv-ap:hasInput <#persoonlijke_gegevens_dataset>, <#betalingsgegevens_dataset>, <#inkomens_en_vermogensgegevens_dataset>, <#justitiële_gegevens_dataset>, <#verzekeringsgegevens_dataset> ;
+    ] ;
+    cpsv-ap:hasHumanIntervention "Niet van toepassing."@nl ;
+    dct:version "1.0" .
+#
+# Define criteria
+#
+<#ingezetene_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager bezit een Nederlandse of buitenlandse nationaliteit(en) én heeft verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
+
+<#leeftijd_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager is ouder dan 18 jaar."@nl .
+
+<#betalingsregeling_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "Vereist zorgtoeslag uit te betalen aan het CJIB, tbv de premiebetaling van de zorgverzekering, als er sprake is van een betalingsregeling."@nl .
+
+<#inkomen_en_vermogen_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "Inkomensgegeven (authentiek), het niet in Nederland belastbaar inkomen én het vermogen (box 3) zijn niet hoger dan de normbedragen."@nl .
+
+<#detentie_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager is niet gedetineerd."@nl .
+
+<#verzekering_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "De aanvrager heeft een zorgverzekering bij een in Nederland gevestigde zorgverzekeraar."@nl .
+#
+# Define registrars and datasets that hold the evidence for the applicable criteria
+#
+# Define Rijksdienst voor Identiteitsgegevens (RvIG)
+#
+<https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
+    foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl .
+    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+#
+# Define Centraal Justitieel Incassobureau (CJIB)
+#
+<https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> a foaf:Organization ;
+    foaf:name "Centraal Justitieel Incassobureau (CJIB)"@nl ;
+    foaf:uri <https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
+#
+# Define Ministerie van van Justitie en Veiligheid
+#
+<https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> a foaf:Organization ;
+    foaf:name "Ministerie van Justitie en Veiligheid"@nl ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
+#
+# Define Directoraat-generaal Belastingdienst (DGBD)
+#
+<https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> a foaf:Organization ;
+    foaf:name "Directoraat-generaal Belastingdienst (DGBD)"@nl ;
+    foaf:uri <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+#
+# Define dataset
+#
+<#persoonlijke_gegevens_dataset> a dcat:Dataset ;
+    dct:title "Persoonlijke gegevens."@nl ;
+    dct:description "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer."@nl ;
+    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRP> ;
+    ex:hasAttribute <#verblijfsvergunning>, <#partners>, <#woonadres>, <#nationaliteit>, <#personalia>, <#kinderen> .
+
+<#verblijfsvergunning> a ex:Attribute ;
+    rdfs:label "Verblijfsvergunning."@nl ;
+    rdfs:comment "Verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
+
+<#partners> a ex:Attribute ;
+    rdfs:label "Partner(s)."@nl ;
+    rdfs:comment "Bevat gegevens over huwelijkspartners of geregistreerde partners, personalia partners, datum einde huwelijk."@nl .
+
+<#woonadres> a ex:Attribute ;
+    rdfs:label "Woonadres."@nl ;
+    rdfs:comment "Bevat gegevens als straatnaam, huisnummer/letter, postcode en woonplaats en eventueel land."@nl .
+
+<#nationaliteit> a ex:Attribute ;
+    rdfs:label "Nationaliteit."@nl ;
+    rdfs:comment "Het al dan niet bezitten van een Nederlandse of buitenlandse nationaliteit(en)."@nl .
+
+<#personalia> a ex:Attribute ;
+    rdfs:label "Personalia."@nl ;
+    rdfs:comment "Naam, geslacht, geboortedatum, geboorteplaats."@nl .
+
+<#kinderen> a ex:Attribute ;
+    rdfs:label "Kind(eren)."@nl ;
+    rdfs:comment "Familierelatie tussen ouder(s) en kind(eren)."@nl .
+#
+# Define dataset
+#
+<#betalingsgegevens_dataset> a dcat:Dataset ;
+    dct:title "Betalingsregeling(en)."@nl ;
+    dct:description "Gegevens over de betalingsregeling voor zorgtoeslag."@nl ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://cjib-api.github.io/Haal-Centraal-CJIB-bevragen/> ;
+    dct:publisher <https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> ;
+    #
+    # Placeholder!
+    #
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/CJIB> ;
+    ex:hasAttribute <#betalingsregeling_zorgtoeslag> .
+
+<#betalingsregeling_zorgtoeslag> a ex:Attribute ;
+    rdfs:label "Personalia"@nl ;
+    rdfs:comment "Verzoek om zorgtoeslag uit te betalen aan het CJIB, tbv de premiebetaling van de zorgverzekering."@nl .
+#
+# Define dataset
+#
+<#inkomens_en_vermogensgegevens_dataset> a dcat:Dataset ;
+    dct:title "Inkomens- en vermogensgegevens."@nl ;
+    dct:description "Alle gegevens over inkomsten uit werk en uw bezittingen."@nl ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://bri-api.github.io/Haal-Centraal-BRI-bevragen/> ;
+    dct:publisher <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRI> ;
+    ex:hasAttribute <#inkomensgegeven_authentiek>, <#vermogen_box_3>, <#niet_in_Nederland_belastbaar_inkomen> .
+
+<#inkomensgegeven_authentiek> a ex:Attribute ;
+    rdfs:label "Inkomensgegeven (authentiek)."@nl ;
+    rdfs:comment "Het authentieke inkomensgegeven is het inkomen, dit kan bestaan uit het verzamelinkomen of uit het belastbaar jaarloon."@nl .
+
+<#vermogen_box_3> a ex:Attribute ;
+    rdfs:label "Vermogen (box 3)."@nl ;
+    rdfs:comment "Het vermogen is de waarde van bezittingen (zoals spaargeld, aandelen of een tweede woning) minus schulden."@nl .
+
+ <#niet_in_Nederland_belastbaar_inkomen> a ex:Attribute ;
+    rdfs:label "Niet in Nederland Belastbaar Inkomen."@nl ;
+    rdfs:comment "Wereldinkomen."@nl .
+#
+# To do's
+#
+#    <#justitiële_gegevens_dataset> ;
+#    
+#    <#verzekeringsgegevens_dataset> ;

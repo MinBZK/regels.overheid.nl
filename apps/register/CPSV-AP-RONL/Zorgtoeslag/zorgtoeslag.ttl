@@ -1,0 +1,62 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+
+<https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> a dcat:Dataset ;
+    dct:title "Berekenen Zorgtoeslag"@nl ;
+    dct:description "Het algoritme ‘Berekenen Zorgtoeslag’ berekent met zorgtoeslagregels het recht op en de hoogte van de zorgtoeslag. Dit gebeurt met zorgverzekeringsgegevens van en over de aanvrager en toeslagpartner."@nl ;
+    dct:issued "2011-11"^^xsd:date ;
+    dct:modified ""^^xsd:date ;
+    dct:language "nld" ;
+    dct:identifier "39548375" ;
+    dct:publisher [ 
+        a foaf:Organization ;
+        foaf:name "Dienst Toeslagen"
+    ] ;
+    dct:contactPoint [
+        a vcard:Individual ;
+        vcard:hasEmail <mailto:algoritmeregister.toeslagen@toeslagen.nl> 
+    ] ;
+    dcat:landingPage <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> ;
+    dcat:keyword "Zorgtoeslag", "Impactvolle algoritmes" ;
+    dcat:theme <http://example.org/themes/social-security> ;
+    dct:provenance "Het gebruik van gegevens wordt getoetst aan de Algemene Verordening Gegevensbescherming (AVG)."@nl ;
+    dct:conformsTo [
+        dct:title "Algemene wet inkomensafhankelijke regelingen (Awir)" ;
+        dct:source <https://wetten.overheid.nl>
+    ] ;
+    dct:conformsTo [
+        dct:title "Wet zorgtoeslag" ;
+        dct:source <https://wetten.overheid.nl>
+    ] ;
+    dcat:distribution [
+        a dcat:Distribution ;
+        dct:format "HTML" ;
+        dcat:accessURL <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> ;
+        dct:license <https://creativecommons.org/publicdomain/zero/1.0/> 
+    ] ;
+    dcat:contactPoint [
+        a vcard:Organization ;
+        vcard:hasEmail <mailto:algoritmeregister.toeslagen@toeslagen.nl> ;
+        vcard:fn "Dienst Toeslagen"
+    ] ;
+    dcat:accessRights <http://publications.europa.eu/resource/authority/access-right/PUBLIC> ;
+    dct:status "In gebruik"@nl ;
+    dct:rights "Gelijkheid, non-discriminatie en privacy: Het gebruik van gegevens wordt getoetst aan de AVG. Het algoritme gebruikt alleen noodzakelijke gegevens."@nl ;
+    dct:temporal [
+        dct:startDate "2011-11"^^xsd:date
+    ] ;
+    dct:accrualPeriodicity <http://purl.org/cld/freq/annual> ;
+    dct:hasVersion "1.0" ;
+    dct:goal "Snel, efficiënt en consistent toekennen van het recht op zorgtoeslag voor ongeveer 4,6 miljoen huishoudens."@nl ;
+    dct:source "Het gebruik van gegevens wordt getoetst aan de AVG. De gebruikte gegevens zijn: persoonsgegevens van aanvrager en toeslagpartner, zorgverzekering, inkomen, vermogen, justitiële gegevens."@nl ;
+    dct:proportionality "Efficiëntie, snelheid, consistentie, traceerbaarheid. Het algoritme automatiseert de zorgtoeslagberekening en schakelt ambtenaren in bij technische fouten."@nl ;
+    dct:methodology "Het algoritme berekent recht op en hoogte van de zorgtoeslag aan de hand van gegevens en regels uit de Awir en Wet zorgtoeslag. Er zijn redelijkheidscorrecties voor fouten."@nl ;
+    dct:risks "Risico's beheerst door kwaliteitseisen, testprocedures, AVG-toetsing, en waarborgen tegen onbedoelde fouten en profilering."@nl ;
+    dct:humanIntervention "Een ambtenaar kan handmatig ingrijpen bij ontbrekende gegevens of technische fouten."@nl ;
+    dcat:quality "De bedrijfsregels worden getest en onderhouden volgens wet- en regelgeving."@nl ;
+    dcat:impactAssessment [
+        dct:type "Data Protection Impact Assessment (DPIA)"@nl
+    ] .
