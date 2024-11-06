@@ -242,9 +242,12 @@
 <#inkomens_en_vermogensgegevens_dataset> a dcat:Dataset ;
     dct:title "Inkomens- en vermogensgegevens."@nl ;
     dct:description "Alle gegevens over inkomsten uit werk en uw bezittingen."@nl ;
-    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://bri-api.github.io/Haal-Centraal-BRI-bevragen/> ;
     dct:publisher <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
-    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRP> ;
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/BRI> ;
     ex:hasAttribute <#inkomensgegeven_authentiek>, <#vermogen_box_3>, <#niet_in_Nederland_belastbaar_inkomen> .
 
 <#inkomensgegeven_authentiek> a ex:Attribute ;
