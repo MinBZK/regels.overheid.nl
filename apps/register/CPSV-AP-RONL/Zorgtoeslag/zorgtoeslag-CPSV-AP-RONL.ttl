@@ -99,7 +99,7 @@
     #
     # Link to the algorithm that processes the rules for this service
     #
-    prov:wasGeneratedBy <https://algorithms.overheid.nl/nl/algorithm/berekenen-zorgtoeslag-dienst-toeslagen/39548375> .
+    prov:wasGeneratedBy <https://algoritmes.overheid.nl/nl/algoritme/berekenen-zorgtoeslag-dienst-toeslagen/39548375> .
 
 #
 # Define business rules
