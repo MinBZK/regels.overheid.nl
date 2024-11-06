@@ -1,15 +1,15 @@
 # Steps followed to create the cpsv file
 
-1. Download csv from [algoritmes.overheid.nl](https://algoritmes.overheid.nl/nl/algoritme/berekenen-zorgtoeslag-dienst-toeslagen/39548375) concerning Zorgtoeslag
-2. Convert csv --> xml
+1. Download [csv](./zorgtoeslag.csv) from [algoritmes.overheid.nl](https://algoritmes.overheid.nl/nl/algoritme/berekenen-zorgtoeslag-dienst-toeslagen/39548375) concerning Zorgtoeslag
+2. Convert csv --> [xml](./zorgtoeslag.xml)
 3. Map the metadata into appropriate DCAT terms
-4. Adapt to Core Publice Service Vocabulary (CPSV)
+4. Adapt [ttl]](./zorgtoeslag-cpsv.ttl) to Core Publice Service Vocabulary (CPSV)
 5. Extend and apply CPSV to describe **algorithms, business rules**, and the **data models** needed to award social benefits
 6. CPSV-AP 3.2.0 alignment
-7. Update TTL with Multiple Datasets
+7. Update ttl with Multiple Datasets
 8. Add  1. data model of the business rules, 2. parameters used, and 3. groups of business rules
 9. Add DSL (like Rulespeak)
-10. Adjust for consistency and clarity
+10. Adjust [ttl](./zorgtoeslag-cpsv-reference.ttl) for consistency and clarity
 
 ## Key Notes:
 - **Dataset IRI**: The `<https://www.belastingdienst.nl/...>` acts as the dataset's URI. Can be adjusted as needed.

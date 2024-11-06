@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Modified Beoordeling AOW-verstrekking -->
+<!-- Source: csv download via https://algoritmes.overheid.nl/nl/algoritme/beoordeling-aowverstrekking-sociale-verzekeringsbank/71631383 -->
 <root>
   <row>
     <name>Bepaling leeftijd AOW.</name>
