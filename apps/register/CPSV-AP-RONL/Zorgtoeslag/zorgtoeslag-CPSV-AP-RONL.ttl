@@ -105,7 +105,7 @@
 # Define business rules
 #
 <#BerekenRechtEnHoogteZorg> a cpsv-ap:Rule ;
-    dct:title "Bedrijfsregels die recht, duur en hoogte van de zorgtoeslag vaststellen."@nl ;
+    dct:title "Bedrijfsregels die recht, duur en hoogte van de zorgtoeslag bepalen."@nl ;
     dct:title "Business rules that determine the right, duration and amount of the health care allowance."@en ;
     dct:description "Het is de taak van de Dienst Toeslagen om ervoor te zorgen dat burgers die een aanvraag doen de zorgtoeslag krijgen waar zij recht op hebben. Met deze bedrijfsregels stellen we snel, efficiënt en consistent het recht op zorgtoeslag vast voor ongeveer 4,6 miljoen huishoudens."@nl ;
     dct:description "It is the task of the Allowances Service to ensure that citizens who apply receive the healthcare allowance to which they are entitled. With these business rules, we quickly, efficiently and consistently determine the right to healthcare allowance for approximately 4.6 million households."@en ;
