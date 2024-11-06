@@ -164,8 +164,8 @@
 # Define Rijksdienst voor Identiteitsgegevens (RvIG)
 #
 <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
-    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
     foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl .
+    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
 #
 # Define Centraal Justitieel Incassobureau (CJIB)
 #
@@ -186,10 +186,11 @@
     foaf:name "Directoraat-generaal Belastingdienst (DGBD)"@nl ;
     foaf:uri <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
     dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
-
-
+#
+# Define dataset
+#
 <#persoonlijke_gegevens_dataset> a dcat:Dataset ;
-    dct:title "Persoonlijke gegevens"@nl ;
+    dct:title "Persoonlijke gegevens."@nl ;
     dct:description "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer."@nl ;
     dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
     dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
@@ -197,30 +198,31 @@
     ex:hasAttribute <#verblijfsvergunning>, <#partners>, <#woonadres>, <#nationaliteit>, <#personalia>, <#kinderen> .
 
 <#verblijfsvergunning> a ex:Attribute ;
-    rdfs:label "Verblijfsvergunning"@nl ;
+    rdfs:label "Verblijfsvergunning."@nl ;
     rdfs:comment "Verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
 
 <#partners> a ex:Attribute ;
-    rdfs:label "Partner(s)"@nl ;
+    rdfs:label "Partner(s)."@nl ;
     rdfs:comment "Bevat gegevens over huwelijkspartners of geregistreerde partners, personalia partners, datum einde huwelijk."@nl .
 
 <#woonadres> a ex:Attribute ;
-    rdfs:label "Woonadres"@nl ;
+    rdfs:label "Woonadres."@nl ;
     rdfs:comment "Bevat gegevens als straatnaam, huisnummer/letter, postcode en woonplaats en eventueel land."@nl .
 
 <#nationaliteit> a ex:Attribute ;
-    rdfs:label "Nationaliteit"@nl ;
+    rdfs:label "Nationaliteit."@nl ;
     rdfs:comment "Het al dan niet bezitten van een Nederlandse of buitenlandse nationaliteit(en)."@nl .
 
 <#personalia> a ex:Attribute ;
-    rdfs:label "Personalia"@nl ;
+    rdfs:label "Personalia."@nl ;
     rdfs:comment "Naam, geslacht, geboortedatum, geboorteplaats."@nl .
 
 <#kinderen> a ex:Attribute ;
-    rdfs:label "Kind(eren)"@nl ;
+    rdfs:label "Kind(eren)."@nl ;
     rdfs:comment "Familierelatie tussen ouder(s) en kind(eren)."@nl .
-
-
+#
+# Define dataset
+#
 <#betalingsgegevens_dataset> a dcat:Dataset ;
     dct:title "Betalingsregeling(en)."@nl ;
     dct:description "Gegevens over de betalingsregeling voor zorgtoeslag."@nl ;
@@ -238,7 +240,9 @@
 <#betalingsregeling_zorgtoeslag> a ex:Attribute ;
     rdfs:label "Personalia"@nl ;
     rdfs:comment "Verzoek om zorgtoeslag uit te betalen aan het CJIB, tbv de premiebetaling van de zorgverzekering."@nl .
-
+#
+# Define dataset
+#
 <#inkomens_en_vermogensgegevens_dataset> a dcat:Dataset ;
     dct:title "Inkomens- en vermogensgegevens."@nl ;
     dct:description "Alle gegevens over inkomsten uit werk en uw bezittingen."@nl ;
