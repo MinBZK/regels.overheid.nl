@@ -212,6 +212,14 @@
     foaf:uri <https://organisaties.overheid.nl/13080/Dienst_Justitiele_Inrichtingen> ;
     dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
 #
+# Define CAK
+#
+<https://identifier.overheid.nl/tooi/id/zbo/zb000211> a foaf:Organization ;
+    foaf:name "CAK"@nl ;
+    foaf:homepage <https://www.hetcak.nl/> ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000211> .
+
+#
 # Define dataset
 #
 <#persoonlijke_gegevens_dataset> a dcat:Dataset ;
@@ -340,3 +348,26 @@
 <#verzekeringsbewijs> a ex:Attribute ;
     rdfs:label "Verzekeringsbewijs."@nl ;
     rdfs:comment "Bewijs van het hebben van een zorgverzekering."@nl .
+
+<#verzekeringsgegevens_buitenland_dataset> a dcat:Dataset ;
+    dct:title "Verzekeringsgegevens."@nl ;
+    dct:description "Alle verzekeringsgegevens met betrekking tot de Wet langdurige zorg (Wlz) en andere verzekeringen die gericht zijn op bijvoorbeeld zorg en wonen."@nl ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://cak-api.github.io/Haal-Centraal-CAK-bevragen/> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/zbo/zb000211> ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    #
+    # Placeholder!
+    #
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/CAK> ;
+    ex:hasAttribute <#verdragsgerechtigde_zorgverzekering>, <#woonland_verzekerde> .
+
+<#verdragsgerechtigde_zorgverzekering> a ex:Attribute ;
+    rdfs:label "Verdragsgerechtigde zorgverzekering."@nl ;
+    rdfs:comment "Buitenlandregeling voor zorgverzekering."@nl .
+
+<#woonland_verzekerde> a ex:Attribute ;
+    rdfs:label "Woonland verzekerde."@nl ;
+    rdfs:comment "Woonland van een persoon voor wat betreft de zorgverzekering."@nl .
