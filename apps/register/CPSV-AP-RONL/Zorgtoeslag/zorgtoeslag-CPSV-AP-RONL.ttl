@@ -13,6 +13,7 @@
 #
 <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> a foaf:Organization ;
     foaf:name "Directoraat-generaal Toeslagen (DGTSL)"@nl ;
+    foaf:homepage <https://www.belastingdienst.nl/wps/wcm/connect/nl/toeslagen/toeslagen> ;
     foaf:uri <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
     dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
 #
@@ -20,9 +21,10 @@
 #
 <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> a foaf:Organization ;
     foaf:name "Ministerie van Financiën"@nl ;
+    foaf:homepage <https://www.rijksoverheid.nl/ministeries/ministerie-van-financien> ;
     foaf:uri <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
 #
-# Define public serivce
+# Define public service
 #
 <#zorgtoeslag_service> a cpsv-ap:PublicService ;
     dct:title "Vaststellen beschikking zorgtoeslag."@nl ;
@@ -42,20 +44,20 @@
     dct:creator <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
     dct:subject "Sociale zekerheid."@nl ;
     dct:subject "Social security."@en ;
-    cpsv:hasChannel [
-        a cpsv:Channel ;
+    cpsv-ap:hasChannel [
+        a cpsv-ap:Channel ;
         dct:title "Online portaal."@nl ;
         dct:title "Online portal."@en ;
-        cpsv:accessURL <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> ;
+        cpsv-ap:accessURL <https://www.belastingdienst.nl/wps/wcm/connect/nl/zorgtoeslag/zorgtoeslag> ;
         dct:description "Het online portaal waar aanvragers een aanvraag voor zorgtoeslag kunnen indienen."@nl ;
         dct:description "The online portal where applicants can apply for health care allowance."@en ;
-        cpsv:channelType [
+        cpsv-ap:channelType [
             a skos:Concept ;
             skos:prefLabel "Web Portal"@en ;
-            skos:exactMatch <http://example.org/channel-type/web-portal>
+            skos:exactMatch <http://example.org/channel-type/web-portal> ;
         ]
     ] ;
-    cpsv:hasContactPoint [
+    cpsv-ap:hasContactPoint [
         #
         # Placeholder!
         #
@@ -64,12 +66,12 @@
         vcard:hasEmail <mailto:customerservice@example.org> ;
         vcard:hasTelephone [
             a vcard:Work, vcard:Voice ;
-            vcard:hasValue <tel:+1234567890> 
+            vcard:hasValue <tel:+1234567890> ;
         ] ;
-        vcard:hasURL <https://www.example.org/contact> 
+        vcard:hasURL <https://www.example.org/contact> ;
     ] ;
     cpsv-ap:goal "Berekent recht, duur en hoogte van de zorgtoeslag."@nl ;
-    cpsv-ap:goal "Calculates the right, duration and amount of the health care allowance."@nl ;
+    cpsv-ap:goal "Calculates the right, duration and amount of the health care allowance."@en ;
     cpsv-ap:hasLegalResource [
         a cpsv-ap:LegalResource ;
         dct:title "Algemene wet inkomensafhankelijke regelingen"@nl ;
@@ -99,7 +101,7 @@
     dct:title "Bedrijfsregels die recht, duur en hoogte van de zorgtoeslag vaststellen."@nl ;
     dct:title "Business rules that determine the right, duration and amount of the health care allowance."@en ;
     dct:description "Het is de taak van de Dienst Toeslagen om ervoor te zorgen dat burgers die een aanvraag doen de zorgtoeslag krijgen waar zij recht op hebben. Met deze bedrijfsregels stellen we snel, efficiënt en consistent het recht op zorgtoeslag vast voor ongeveer 4,6 miljoen huishoudens."@nl ;
-    dct:description "It is the task of the Allowances Service to ensure that citizens who apply receive the healthcare allowance to which they are entitled. With these business rules, we quickly, efficiently and consistently determine the right to healthcare allowance for approximately 4.6 million households."@nl ;
+    dct:description "It is the task of the Allowances Service to ensure that citizens who apply receive the healthcare allowance to which they are entitled. With these business rules, we quickly, efficiently and consistently determine the right to healthcare allowance for approximately 4.6 million households."@en ;
     #
     #  dct:conformsTo has a placeholder URI that should point to a document or description of the BerekenRechtEnHoogteZorg SOAP operation
     #
@@ -164,28 +166,40 @@
 # Define Rijksdienst voor Identiteitsgegevens (RvIG)
 #
 <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
-    foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl .
-    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl ;
+    foaf:homepage <https://www.rvig.nl/> ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> .
 #
 # Define Centraal Justitieel Incassobureau (CJIB)
 #
-<https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> a foaf:Organization ;
+<https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau> a foaf:Organization ;
     foaf:name "Centraal Justitieel Incassobureau (CJIB)"@nl ;
-    foaf:uri <https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau/> ;
+    foaf:homepage <https://www.cjib.nl/> ;
+    foaf:uri <https://organisaties.overheid.nl/12583/Centraal_Justitieel_Incassobureau> ;
     dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
 #
 # Define Ministerie van van Justitie en Veiligheid
 #
-<https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> a foaf:Organization ;
+<https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> a foaf:Organization ;
     foaf:name "Ministerie van Justitie en Veiligheid"@nl ;
+    foaf:homepage <https://www.rijksoverheid.nl/ministeries/ministerie-van-justitie-en-veiligheid> ;
     foaf:uri <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
 #
 # Define Directoraat-generaal Belastingdienst (DGBD)
 #
 <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> a foaf:Organization ;
     foaf:name "Directoraat-generaal Belastingdienst (DGBD)"@nl ;
+    foaf:homepage <https://www.belastingdienst.nl/wps/wcm/connect/nl/home/home> ;
     foaf:uri <https://organisaties.overheid.nl/68888/Directoraat-generaal_Belastingdienst> ;
     dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1090> .
+#
+# Define Centraal Justitieel Incassobureau (CJIB)
+#
+<https://organisaties.overheid.nl/13080/Dienst_Justitiele_Inrichtingen> a foaf:Organization ;
+    foaf:name "Dienst Justitiële Inrichtingen (DJI)"@nl ;
+    foaf:homepage <https://www.dji.nl/> ;
+    foaf:uri <https://organisaties.overheid.nl/13080/Dienst_Justitiele_Inrichtingen> ;
+    dct:isPartOf <https://identifier.overheid.nl/tooi/id/ministerie/mnre1058> .
 #
 # Define dataset
 #
@@ -266,8 +280,47 @@
     rdfs:label "Niet in Nederland Belastbaar Inkomen."@nl ;
     rdfs:comment "Wereldinkomen."@nl .
 #
-# To do's
+# Define dataset
 #
-#    <#justitiële_gegevens_dataset> ;
-#    
-#    <#verzekeringsgegevens_dataset> ;
+<#justitiële_gegevens_dataset> a dcat:Dataset ;
+    dct:title "Justitiële gegevens."@nl ;
+    dct:description "Van een verkeersovertreding tot een strafblad. Justitiële gegevens hebben betrekking op strafrechtelijke zaken en veroordelingen."@nl ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://dji-api.github.io/Haal-Centraal-DJI-bevragen/> ;
+    dct:publisher <https://organisaties.overheid.nl/13080/Dienst_Justitiele_Inrichtingen> ;
+    #
+    # Placeholder!
+    #
+    ronl:source <https://opendata.stelselcatalogus.nl/doc/registratie/DJI> ;
+    ex:hasAttribute <#startdatum_detentie>, <#einddatum_detentie> .
+
+<#startdatum_detentie> a ex:Attribute ;
+    rdfs:label "Startdatum detentie."@nl ;
+    rdfs:comment "Startdatum van een detentie."@nl .
+
+<#einddatum_detentie> a ex:Attribute ;
+    rdfs:label "Einddatum detentie."@nl ;
+    rdfs:comment "Einddatum van een detentie."@nl .
+#
+# Define dataset
+#
+<#verzekeringsgegevens_dataset> a dcat:Dataset ;
+    dct:title "Verzekeringsgegevens."@nl ;
+    dct:description "Alle verzekeringsgegevens met betrekking tot de Wet langdurige zorg (Wlz) en andere verzekeringen die gericht zijn op bijvoorbeeld zorg en wonen."@nl ;
+    #
+    # Placeholder!
+    #
+    dcat:accessURL <https://vecozo-api.github.io/Haal-Centraal-VECOZO-bevragen/> ;
+    dct:publisher [ 
+        a foaf:Organization ; 
+        foaf:homepage <https://www.vecozo.nl/diensten/controle-op-verzekeringsgegevens/> ;
+        foaf:name "zorgverzekeraar."@nl ;
+    ] ;
+    ronl:source <https://decor.nictiz.nl/art-decor/decor-datasets--zvg-?id=2.16.840.1.113883.2.4.3.11.60.108.1.1&effectiveDate=2015-09-16T14:21:51> ;
+    ex:hasAttribute <#verzekeringsbewijs> .
+
+<#verzekeringsbewijs> a ex:Attribute ;
+    rdfs:label "Verzekeringsbewijs."@nl ;
+    rdfs:comment "Bewijs van het hebben van een zorgverzekering."@nl .
