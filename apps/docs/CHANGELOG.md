@@ -1,5 +1,11 @@
 # docs
 
+## 3.12.4
+
+### Patch Changes
+
+- fcf1cee: Fix translated link
+
 ## 3.12.3
 
 ### Patch Changes
