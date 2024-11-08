@@ -1,5 +1,16 @@
 # web
 
+## 3.40.0
+
+### Minor Changes
+
+- 68f001c: Titles upcoming and ending removed, line spacing maintained
+- 4141491: Added demo page & changed the license
+
+### Patch Changes
+
+- c053e13: Added new codeowner @bkaptijn
+
 ## 3.39.0
 
 ### Minor Changes
