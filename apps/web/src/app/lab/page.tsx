@@ -30,8 +30,11 @@ export default async function LabPage() {
           De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling. Met deze
           microservice illustreren we een landelijke service voor de bepaling van de AOW leeftijd.
           <CardLab.MethodItems>
-            <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
-            <CardLab.Demo href="https://regels.overheid.nl/lab/aow-leeftijd/resultaat" />
+            <CardLab.License
+              label="EU PL 1.2 license"
+              href="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
+            />
+            <CardLab.Demo href="https://regels.overheid.nl/lab/aow-leeftijd/" />
             <CardLab.Repo href="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py" />
             <CardLab.Docs href="https://regels.overheid.nl/docs/lab/AOW" />
           </CardLab.MethodItems>
