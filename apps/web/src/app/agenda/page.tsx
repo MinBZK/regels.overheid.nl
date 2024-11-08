@@ -16,7 +16,7 @@ export default async function CalendarPage() {
       <Typography variant="h1">Agenda</Typography>
       <RemotePage page="agenda" />
 
-      <Typography variant="h2">Aankomend</Typography>
+      <Typography variant="h2">{/* Empty to keep line spacing */}</Typography>
       <div className="flex flex-col gap-y-4 pt-6">
         {futureEvents.map((event) => (
           <EventCard
@@ -33,7 +33,7 @@ export default async function CalendarPage() {
           />
         ))}
       </div>
-      <Typography variant="h2">Afgelopen</Typography>
+      <Typography variant="h2">{/* Empty to keep line spacing */}</Typography> 
       <div className="flex flex-col gap-y-4 pt-6">
         {pastEvents.map((event) => (
           <EventCard
