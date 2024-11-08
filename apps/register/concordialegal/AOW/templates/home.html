@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AOW Leeftijd Berekening</title>
+    <script>
+      async function calculateAge(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+
+        const currentDate = document.getElementById('currentDate').value;
+        const birthDate = document.getElementById('birthDate').value;
+
+        const data = {
+          currentdate: currentDate,
+          birthdate: birthDate,
+        };
+
+        try {
+          const response = await fetch('https://regels.overheid.nl/lab/aow-leeftijd/resultaat', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+
+          if (!response.ok) {
+            throw new Error('Er is iets misgegaan. Probeer het opnieuw.');
+          }
+
+          const result = await response.json();
+
+          // Parse the result date and reformat to day-month-year
+          const calculationDate = new Date(result.calculation);
+          const formattedDate = calculationDate.toLocaleDateString('nl-NL', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+          });
+
+          document.getElementById('result').innerText = 'AOW leeftijd: ' + formattedDate;
+        } catch (error) {
+          document.getElementById('result').innerText = error.message;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>AOW Leeftijd Berekening</h1>
+    <form onsubmit="calculateAge(event)">
+      <label for="currentDate">Huidige datum (dd-mm-jjjj):</label>
+      <input type="date" id="currentDate" name="currentdate" required /><br /><br />
+
+      <label for="birthDate">Geboortedatum (dd-mm-jjjj):</label>
+      <input type="date" id="birthDate" name="birthdate" required /><br /><br />
+
+      <button type="submit">Bereken</button>
+    </form>
+
+    <h2>Resultaat</h2>
+    <p id="result"></p>
+  </body>
+</html>
