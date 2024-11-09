@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Field Lab FDS zorgtoeslag</title>
+  </head>
+  <body>
+    <h1>Evaluate DMN BerekenRechtEnHoogteZorg</h1>
+
+    <!-- Section to show input variables -->
+    <h2>Input Variables</h2>
+    <pre id="inputVariables"></pre>
+
+    <!-- Button to trigger evaluation -->
+    <button onclick="evaluateDecision()">Evaluate BerekenRechtEnHoogteZorg</button>
+
+    <h2>Resultaat</h2>
+    <pre id="output"></pre>
+
+    <!-- Footer notice with link -->
+    <footer style="margin-top: 40px; padding: 10px; background-color: #f4f4f4; text-align: center;">
+      <p>
+        This is a hard coded example, please read the 
+        <a href="https://regels.overheid.nl/docs/lab/zorgtoeslag" target="_blank">documentation page</a> 
+        for further explanation.
+      </p>
+    </footer>
+
+    <script>
+      // Define the input variables
+      const inputVariables = {
+        ingezetene_requirement: { value: true, type: 'Boolean' },
+        leeftijd_requirement: { value: true, type: 'Boolean' },
+        betalingsregeling_requirement: { value: false, type: 'Boolean' },
+        detentie_requirement: { value: false, type: 'Boolean' },
+        verzekering_requirement: { value: true, type: 'Boolean' },
+        inkomen_en_vermogen_requirement: { value: 25000, type: 'Double' },
+      };
+
+      // Function to display input variables in a user-friendly way
+      function displayInputVariables() {
+        const inputVariablesElement = document.getElementById('inputVariables');
+        inputVariablesElement.textContent = JSON.stringify(inputVariables, null, 2);
+      }
+
+      // Call the function to display input variables when the page loads
+      displayInputVariables();
+
+      // Function to send the POST request to evaluate the decision
+      async function evaluateDecision() {
+        try {
+          const response = await fetch(
+            'http://open-regels.nl:8080/engine-rest/decision-definition/key/berekenrechtenhoogtezorg/evaluate',
+            {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                variables: inputVariables, // Send the defined input variables
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error(`Error ${response.status}: ${response.statusText}`);
+          }
+
+          const result = await response.json();
+          document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        } catch (error) {
+          document.getElementById('output').textContent = `Error: ${error.message}`;
+        }
+      }
+    </script>
+  </body>
+</html>
