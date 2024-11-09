@@ -40,7 +40,8 @@ export default async function LabPage() {
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="Field Lab FDS zorgtoeslag">
-          Op basis van de ALEF rapportage van Dienst Toeslagen is voor Field Lab FDS is een zorgtoeslag service beschikbaar gemaakt.
+          Op basis van de ALEF rapportage van Dienst Toeslagen is voor Field Lab FDS is een zorgtoeslag service
+          beschikbaar gemaakt.
           <CardLab.MethodItems>
             <CardLab.License
               label="EU PL 1.2 license"
