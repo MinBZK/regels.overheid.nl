@@ -11,7 +11,7 @@ Voor Field Lab FDS is een zorgtoeslag service beschikbaar gemaakt. Hier vind je 
 Op basis van de ALEF rapportage van Dienst Toeslagen én de beschikbare gegevens van het [Besluit Zorgtoeslag](https://gegevensbijbesluiten.overheid.nl/besluit/61720422) is een [CPSV-AP-RONL metadata beschrijving](https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/CPSV-AP-RONL/Zorgtoeslag/zorgtoeslag-CPSV-AP-RONL.ttl) gemaakt.
 
 ## DMN
-Aan de hand van de metdata beschrijving is een eenvoudige DMN tabel gemaakt en deployed in Camunda 7.22.
+Aan de hand van de metadata beschrijving is een eenvoudige [DMN](https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/CPSV-AP-RONL/Zorgtoeslag/BerekenRechtEnHoogteZorg.dmn) tabel gemaakt en deployed in Camunda 7.22.
 
 ![zorgtoeslag-DMN](../../static/img/zorgtoeslag-DMN.png)
 
