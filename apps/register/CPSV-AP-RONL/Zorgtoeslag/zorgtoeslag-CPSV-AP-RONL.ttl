@@ -134,9 +134,10 @@
         #
         # ronl:implementedBy specifies the software system involved in the calculations
         #
-        # Placeholder!
+        # for the FDS field lab and other demo purposes a DMN table has been deployed in Camunda 7.22 which can be evaluated with a POST request
+        # The authorization header requires Basic Auth Type with Username: demo and Password: demo
         #
-        ronl:implementedBy <https://regels.overheid.nl/placeholder/berekenrechtenhoogtezorg-service> ;
+        ronl:implementedBy <http://open-regels.nl:8080/engine-rest/decision-definition/key/berekenrechtenhoogtezorg/evaluate> ;
         #
         # rdfs:seeAlso: Optionally used for linking to additional documentation, such as a page or document that provides further 
         # explanation of the rules
