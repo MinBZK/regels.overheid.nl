@@ -128,9 +128,9 @@
         #
         # dct:source: Used to specify the URI where the actual rules in are stored or described
         #
-        # Placeholder!
+        # This is a DMN table that matches the requirements stated in this file
         #
-        dct:source <https://regels.overheid.nl/register/placeholder/zorgtoeslag> ;
+        dct:source <https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/CPSV-AP-RONL/Zorgtoeslag/BerekenRechtEnHoogteZorg.dmn> ;
         #
         # ronl:implementedBy specifies the software system involved in the calculations
         #
