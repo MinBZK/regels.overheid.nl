@@ -1,0 +1,234 @@
+{
+  "test_cases": [
+    {
+      "context": "Test case 1: Persona meets all requirements.",
+      "bsn": 123456789,
+      "input": {
+        "variables": {
+          "ingezetene_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "leeftijd_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "betalingsregeling_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "detentie_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "verzekering_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "inkomen_en_vermogen_requirement": {
+            "value": 25000,
+            "type": "Double"
+          }
+        }
+      },
+      "output": [
+        {
+          "annotation": {
+            "type": "String",
+            "value": "Provides allowance to eligible residents over 18 years old.",
+            "valueInfo": {}
+          },
+          "zorgtoeslag": {
+            "type": "Double",
+            "value": 1250.0,
+            "valueInfo": {}
+          }
+        }
+      ]
+    },
+    {
+      "context": "Test case 2: Persona does not meet residentship in the Dutch state.",
+      "bsn": 234567891,
+      "input": {
+        "variables": {
+          "ingezetene_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "leeftijd_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "betalingsregeling_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "detentie_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "verzekering_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "inkomen_en_vermogen_requirement": {
+            "value": 25000,
+            "type": "Double"
+          }
+        }
+      },
+      "output": [
+        {
+          "annotation": {
+            "type": "String",
+            "value": "No allowance due to non-residentship in the Dutch state.",
+            "valueInfo": {}
+          },
+          "zorgtoeslag": {
+            "type": "Null",
+            "value": null,
+            "valueInfo": {}
+          }
+        }
+      ]
+    },
+    {
+      "context": "Test case 3: Persona does not meet age requirement.",
+      "bsn": 345678912,
+      "input": {
+        "variables": {
+          "ingezetene_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "leeftijd_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "betalingsregeling_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "detentie_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "verzekering_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "inkomen_en_vermogen_requirement": {
+            "value": 25000,
+            "type": "Double"
+          }
+        }
+      },
+      "output": [
+        {
+          "annotation": {
+            "type": "String",
+            "value": "No allowance due to not yet reaching the age of 18.",
+            "valueInfo": {}
+          },
+          "zorgtoeslag": {
+            "type": "Null",
+            "value": null,
+            "valueInfo": {}
+          }
+        }
+      ]
+    },
+    {
+      "context": "Test case 4: Persona does not meet insurance policy requirement.",
+      "bsn": 456789123,
+      "input": {
+        "variables": {
+          "ingezetene_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "leeftijd_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "betalingsregeling_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "detentie_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "verzekering_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "inkomen_en_vermogen_requirement": {
+            "value": 25000,
+            "type": "Double"
+          }
+        }
+      },
+      "output": [
+        {
+          "annotation": {
+            "type": "String",
+            "value": "No allowance due to the lack of an active insurance policy.",
+            "valueInfo": {}
+          },
+          "zorgtoeslag": {
+            "type": "Null",
+            "value": null,
+            "valueInfo": {}
+          }
+        }
+      ]
+    },
+    {
+      "context": "Test case 5: Persona does not meet income and/or assets requirement.",
+      "bsn": 456789123,
+      "input": {
+        "variables": {
+          "ingezetene_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "leeftijd_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "betalingsregeling_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "detentie_requirement": {
+            "value": false,
+            "type": "Boolean"
+          },
+          "verzekering_requirement": {
+            "value": true,
+            "type": "Boolean"
+          },
+          "inkomen_en_vermogen_requirement": {
+            "value": 35000,
+            "type": "Double"
+          }
+        }
+      },
+      "output": [
+        {
+          "annotation": {
+            "type": "String",
+            "value": "No allowance because income and/or assets exceed the threshold value.",
+            "valueInfo": {}
+          },
+          "zorgtoeslag": {
+            "type": "Null",
+            "value": null,
+            "valueInfo": {}
+          }
+        }
+      ]
+    }
+  ]
+}
