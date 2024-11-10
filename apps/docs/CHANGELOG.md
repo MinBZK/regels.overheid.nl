@@ -1,5 +1,11 @@
 # docs
 
+## 3.13.0
+
+### Minor Changes
+
+- 784827e: Added renteberekening content from MyClarityPal
+
 ## 3.12.4
 
 ### Patch Changes
