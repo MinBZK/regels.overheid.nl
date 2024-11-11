@@ -1,5 +1,15 @@
 # docs
 
+## 3.14.0
+
+### Minor Changes
+
+- 334c5b5: Added Camnunda DMN deployment to the CPSV-AP-RONL of zorgtoeslag
+
+### Patch Changes
+
+- 5fa15de: Added JSON file with applicable test cases
+
 ## 3.13.0
 
 ### Minor Changes

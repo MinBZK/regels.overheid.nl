@@ -1,5 +1,11 @@
 # web
 
+## 3.40.1
+
+### Patch Changes
+
+- e7e4aa4: Added lab card & demo page for Field Lab FDS zorgtoeslag service'
+
 ## 3.40.0
 
 ### Minor Changes
