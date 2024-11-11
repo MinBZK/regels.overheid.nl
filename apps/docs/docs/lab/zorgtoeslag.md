@@ -78,6 +78,12 @@ Een check in de Camunda Cockpit toont tenslotte de succesvolle hit.
 
 ![zorgtoeslag-Cockpit](../../static/img/zorgtoeslag-Cockpit.png)
 
+## OpenAPI
+
+Download OpenAPI specification is op [deze pagina](https://docs.camunda.org/rest/camunda-bpm-platform/7.22/) beschikbaar.
+
+Wij gebruiken voor nu enkel [Evaluate By Key](https://docs.camunda.org/rest/camunda-bpm-platform/7.22/#tag/Decision-Definition/operation/evaluateDecisionByKey)
+
 ## Testgevallen
 
 Een nog te completeren lijst test gevallen is als [JSON](https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/CPSV-AP-RONL/Zorgtoeslag/zorgtoeslag-testcases.json) beschikbaar. De JSON bevat én de input voor de POST request én de te verwachten output (ie respons).
