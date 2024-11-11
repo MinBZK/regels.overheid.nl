@@ -47,7 +47,6 @@ export default async function LabPage() {
               label="EU PL 1.2 license"
               href="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
             />
-            <CardLab.Demo href="https://regels.overheid.nl/lab/berekenrechtenhoogtezorg/" />
             <CardLab.Repo href="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/CPSV-AP-RONL/Zorgtoeslag/BerekenRechtEnHoogteZorg.dmn" />
             <CardLab.Docs href="https://regels.overheid.nl/docs/lab/zorgtoeslag" />
           </CardLab.MethodItems>
