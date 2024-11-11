@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="definitions" name="definitions" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.28.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.22.0">
+  <decision id="berekenrechtenhoogtezorg" name="berekenrechtenhoogtezorg" camunda:historyTimeToLive="P180D">
+    <decisionTable id="decisionTable">
+      <input id="input1" label="ingezetene">
+        <inputExpression id="inputExpression1" typeRef="boolean">
+          <text>ingezetene_requirement</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0hmkumv" label="leeftijd">
+        <inputExpression id="LiteralExpression_0m7s53h" typeRef="boolean">
+          <text>leeftijd_requirement</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0il6ms9" label="betalingsregeling">
+        <inputExpression id="LiteralExpression_0lc5vin" typeRef="boolean">
+          <text>betalingsregeling_requirement</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_06ty658" label="detentie">
+        <inputExpression id="LiteralExpression_0b2p2wg" typeRef="boolean">
+          <text>detentie_requirement</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_18s3tci" label="verzekering">
+        <inputExpression id="LiteralExpression_1lkprwh" typeRef="boolean">
+          <text>verzekering_requirement</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_03n5yni" label="inkomen_en_vermogen">
+        <inputExpression id="LiteralExpression_0ixdcy6" typeRef="double">
+          <text>inkomen_en_vermogen_requirement</text>
+        </inputExpression>
+      </input>
+      <output id="output1" label="zorgtoeslag" name="zorgtoeslag" typeRef="double" />
+      <output id="OutputClause_16aaspu" label="annotation" name="annotation" typeRef="string" biodi:width="689" />
+      <rule id="row-950612891-1">
+        <description></description>
+        <inputEntry id="UnaryTests_0c1o054">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lod0sz">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bjqoux">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cal9bs">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mgi3bp">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_080wkhu">
+          <text>&lt;= 26819</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_065u3ym">
+          <text>1250</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gdofz9">
+          <text>"Provides allowance to eligible residents over 18 years old."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1qqnji5">
+        <inputEntry id="UnaryTests_0899epy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tqt11h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r03rnk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sjflji">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0js9pg8">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1n1s5hb">
+          <text>&gt; 26819</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_063da0j">
+          <text>Null</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14vb9on">
+          <text>"No allowance because income and/or assets exceed the threshold value."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bni0xo">
+        <inputEntry id="UnaryTests_1xswap8">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g3694s">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tk5g8p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0nrv858">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_097vidn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yu35gb">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_05jj74l">
+          <text>Null</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qsw0fh">
+          <text>"No allowance due to non-residentship in the Dutch state."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wslutg">
+        <inputEntry id="UnaryTests_08z1s86">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1018109">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11g8qih">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12cpytx">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gz2c7p">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0giqqbf">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1365jfu">
+          <text>Null</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tvkgjg">
+          <text>"No allowance due to not yet reaching the age of 18."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1nxaei7">
+        <inputEntry id="UnaryTests_0etgjgp">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06cfmua">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b8csqk">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_13vqyvc">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07buimq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zqvgp3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1h82dtv">
+          <text>Null</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1m4pi7z">
+          <text>"No allowance due to active payment arrangement."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0eshvpp">
+        <inputEntry id="UnaryTests_06e2ukz">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01yrhqy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x0kymq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1usvzsc">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19uhbyb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zjffiv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0u6a9te">
+          <text>Null</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xon9ri">
+          <text>"No allowance due to being detained."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lnxdpr">
+        <inputEntry id="UnaryTests_1tmg6mn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0pkqcmo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1547y7y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19q77wg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mnd70p">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0s1xomv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_076w01v">
+          <text>Null</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02spf11">
+          <text>"No allowance due to the lack of an active insurance policy."</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

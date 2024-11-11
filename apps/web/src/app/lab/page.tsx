@@ -39,6 +39,18 @@ export default async function LabPage() {
             <CardLab.Docs href="https://regels.overheid.nl/docs/lab/AOW" />
           </CardLab.MethodItems>
         </CardLab.Root>
+        <CardLab.Root title="Field Lab FDS zorgtoeslag">
+          Op basis van de ALEF rapportage van Dienst Toeslagen is voor Field Lab FDS is een zorgtoeslag service
+          beschikbaar gemaakt.
+          <CardLab.MethodItems>
+            <CardLab.License
+              label="EU PL 1.2 license"
+              href="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
+            />
+            <CardLab.Repo href="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/CPSV-AP-RONL/Zorgtoeslag/BerekenRechtEnHoogteZorg.dmn" />
+            <CardLab.Docs href="https://regels.overheid.nl/docs/lab/zorgtoeslag" />
+          </CardLab.MethodItems>
+        </CardLab.Root>
         <CardLab.Root title="Open GDC Regelregister">
           De GDC is in essentie een publicatieplatform voor overheden om actieve en passieve openbaarmaking van data,
           documenten en informatieproducten te ondersteunen. De live demo bevat een prototpe voor Open Regels
