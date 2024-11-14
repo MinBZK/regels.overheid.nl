@@ -5,9 +5,8 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/ns#> .
-@prefix dct: <http://purl.org/dc/terms/> .  # Adding this line for Dublin Core Terms
-@prefix iso-thes: <http://purl.org/iso25964/skos-thes#> .
-
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 #
 # Define ronl:source, ronl:analysis and ronl:method as RDF properties
 # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
@@ -34,13 +33,13 @@ ronl: a skos:ConceptScheme ;
 ronl:AnalysisConcept a iso-thes:ConceptGroup ;
     skos:prefLabel "Analyse Concepten Schema"@nl ;
     skos:prefLabel "Analysis Concept Scheme"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept ;
+    isothes:member ronl:SpecificationTypeConcept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
 
 ronl:MethodConcept a iso-thes:ConceptGroup ;
     skos:prefLabel "Methoden Concepten Schema"@nl ;
     skos:prefLabel "Method Concept Scheme"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept ;
+    isothes:member ronl:SpecificationTypeConcept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
 #
 # Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
@@ -123,19 +122,19 @@ ex:WetsanalyseJAS a skos: ;
     skos:inScheme ronl: ;
     skos:prefLabel "Wetsanalyse (JAS)"@nl ;
     skos:prefLabel "Legal Analysis (JAS)"@en ;
-    iso-thes:member ronl:AnalysisConcept .
+    isothes:member ronl:AnalysisConcept .
 
 ex:WetsanalyseJRM a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Wetsanalyse (JRM)"@nl ;
     skos:prefLabel "Legal Analysis (JRM)"@en ;
-    iso-thes:member ronl:AnalysisConcept .
+    isothes:member ronl:AnalysisConcept .
 
 ex:FLINT a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "FLINT"@nl ;
     skos:prefLabel "FLINT"@en ;
-    iso-thes:member ronl:AnalysisConcept .
+    isothes:member ronl:AnalysisConcept .
 #
 # Define individual concepts within the MethodConcept scheme
 #
@@ -143,96 +142,96 @@ ex:AKN4EU a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "AKN4EU"@nl ;
     skos:prefLabel "AKN4EU"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 ex:ALEF a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "ALEF"@nl ;
     skos:prefLabel "ALEF"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Avola a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Avola"@nl ;
     skos:prefLabel "Avola"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Beinformed a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Beinformed"@nl ;
     skos:prefLabel "Beinformed"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Blawx a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Blawx"@nl ;
     skos:prefLabel "Blawx"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Blueriq a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Blueriq"@nl ;
     skos:prefLabel "Blueriq"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Catala a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Catala"@nl ;
     skos:prefLabel "Catala"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:CircuLaw a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "CircuLaw"@nl; 
     skos:prefLabel "CircuLaw"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:ConcordiaLegal a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Concordia Legal"@nl ;
     skos:prefLabel "Concordia Legal"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:DataLex a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "DataLex"@nl ;
     skos:prefLabel "DataLex"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Demo a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "DEMO"@nl ;
     skos:prefLabel "DEMO"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Leos a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "LEOS"@nl ;
     skos:prefLabel "LEOS"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:OpenFisca a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "OpenFisca"@nl ;
     skos:prefLabel "OpenFisca"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:RuleSpeak a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "RuleSpeak"@nl ;
     skos:prefLabel "RuleSpeak"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 
 ex:Sparkwise a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Sparkwise"@nl ;
     skos:prefLabel "Sparkwise"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
     
 ex:USoft a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "USoft"@nl ;
     skos:prefLabel "USoft"@en ;
-    iso-thes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept .
 #
 # Define individual concepts within the SpecificationTypeConcept scheme
 #
@@ -240,47 +239,46 @@ ex:FunctioneelOntwerp a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Functioneel Ontwerp"@nl ;
     skos:prefLabel "Functional Design"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
+    isothes:member ronl:SpecificationTypeConcept .
 
 ex:SoftwareCode a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Software code"@nl ;
     skos:prefLabel "Software code"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
+    isothes:member ronl:SpecificationTypeConcept .
 
 ex:UXDesign a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "UX Design"@nl ;
     skos:prefLabel "UX Design"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
+    isothes:member ronl:SpecificationTypeConcept .
 
 ex:Communicatiemiddel a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Communicatiemiddel"@nl ;
     skos:prefLabel "Communications service"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
+    isothes:member ronl:SpecificationTypeConcept .
 
 ex:Werkinstructie a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Werkinstructie"@nl ;
     skos:prefLabel "Work instruction"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
+    isothes:member ronl:SpecificationTypeConcept .
 
 ex:Kwaliteitseisen a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Kwaliteitseisen"@nl ;
     skos:prefLabel "Quality Requirements"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
+    isothes:member ronl:SpecificationTypeConcept .
 
 ex:BestuurlijkeInformatie a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Bestuurlijke Informatie"@nl ;
     skos:prefLabel "Business Intelligence"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
+    isothes:member ronl:SpecificationTypeConcept .
 
 ex:Overig a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Overig"@nl ;
     skos:prefLabel "Other"@en ;
-    iso-thes:member ronl:SpecificationTypeConcept .
-
+    isothes:member ronl:SpecificationTypeConcept .
