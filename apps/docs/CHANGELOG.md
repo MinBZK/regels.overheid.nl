@@ -1,5 +1,11 @@
 # docs
 
+## 3.14.1
+
+### Patch Changes
+
+- 84bb0fa: Added OpenAPI specification links
+
 ## 3.14.0
 
 ### Minor Changes
