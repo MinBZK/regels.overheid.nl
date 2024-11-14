@@ -1,5 +1,11 @@
 # docs
 
+## 3.14.2
+
+### Patch Changes
+
+- 17c05be: Added SKOS concepts to ronl namespace
+
 ## 3.14.1
 
 ### Patch Changes
