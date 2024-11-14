@@ -32,7 +32,7 @@ ronl: a skos:ConceptScheme ;
 ronl:AnalysisConcept a skos:Concept ;
     skos:prefLabel "Analyse Concepten Schema"@nl ;
     skos:prefLabel "Analysis Concept Scheme"@en ;
-    skos:narrower ronl:SpecificationTypeConcept .
+    skos:narrower ronl:SpecificationTypeConcept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
 
 ronl:MethodConcept a skos:Concept ;
