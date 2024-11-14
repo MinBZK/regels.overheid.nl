@@ -30,13 +30,13 @@ ronl: a skos:ConceptScheme ;
 #
 # Define AnalysisConcept and MethodConcept as top-level concepts under ronl
 #
-ronl:AnalysisConcept a iso-thes:ConceptGroup ;
+ronl:AnalysisConcept a isothes:ConceptGroup ;
     skos:prefLabel "Analyse Concepten Schema"@nl ;
     skos:prefLabel "Analysis Concept Scheme"@en ;
     isothes:member ronl:SpecificationTypeConcept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
 
-ronl:MethodConcept a iso-thes:ConceptGroup ;
+ronl:MethodConcept a isothes:ConceptGroup ;
     skos:prefLabel "Methoden Concepten Schema"@nl ;
     skos:prefLabel "Method Concept Scheme"@en ;
     isothes:member ronl:SpecificationTypeConcept ;
