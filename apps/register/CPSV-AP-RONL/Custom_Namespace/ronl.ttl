@@ -45,7 +45,7 @@ ronl:MethodConcept a skos:Concept ;
 ronl:SpecificationTypeConcept a skos:Concept ;
     skos:prefLabel "Specificatie Type Concept Schema"@nl ;
     skos:prefLabel "Specification Type Concept Scheme"@en ;
-    skos:broader ronl:AnalysisConcept, ronl:MethodConcept .
+    skos:broader ronl:AnalysisConcept, ronl:MethodConcept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> .
 #
 #
