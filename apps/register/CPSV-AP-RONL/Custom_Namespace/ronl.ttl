@@ -5,12 +5,24 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .  # Adding this line for Dublin Core Terms
 #
 # Define ronl:source, ronl:analysis and ronl:mehtod as RDF properties
 # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
 #
 # ronl:source is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace
 #
+# Declare vocabulary metadata for Skosmos
+#
+ronl: a skos:ConceptScheme ;
+    dct:title "RONL Vocabulary"@en ;
+    dct:description "Vocabulary for rules, methods, and concepts in the context of government regulation."@en ;
+    dct:creator <https://overheid.nl> ;
+    dct:publisher <https://overheid.nl> ;
+    dct:language "en", "nl" ;
+    dct:license <http://creativecommons.org/licenses/by/4.0/> ;
+    dct:source <https://regels.overheid.nl/ronl/ns> .
+
 ronl:source a owl:ObjectProperty ;
     rdfs:label "source"@en ;
     rdfs:comment "Een eigenschap om de gezaghebbende bron of oorsprong van een dataset, regelspecificatie of model in de ronl namespace op te geven."@nl ;
