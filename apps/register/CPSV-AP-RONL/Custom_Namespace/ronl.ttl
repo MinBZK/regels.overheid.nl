@@ -41,36 +41,78 @@ ronl: a skos:ConceptScheme ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:source <https://regels.overheid.nl/ronl/ns> .
 #
-# Define AnalysisConcept and MethodConcept as top-level concepts under ronl
+# Define AnalysisConcept as top-level concepts under ronl
 #
 ronl:AnalysisConcept a isothes:ConceptGroup ;
-    rdfs:label "RONL Wetsanalyse"@nl ;
-    rdfs:label "RONL Law analysis"@nl ;
-    skos:prefLabel "Wetsanalyse Concepten Schema"@nl ;
-    skos:prefLabel "Law analysis Concepts Scheme"@en ;
-    skos:altLabel "wetsanalyse"@nl ;
-    skos:altLabel "law analysis"@en ;
+    rdfs:label
+        "RONL Wetsanalyse"@nl ,
+        "RONL Legislative analysis"@nl ;
+    rdfs:comment
+        "Bevat alle voorkomende gevallen van methodieken voor wetsanalyse die bekend zijn."@nl ,
+        "Contains all known common cases of methodologies for legal analysis."@en ;
+    skos:prefLabel
+        "Wetsanalyse Concepten Schema"@nl ,
+        "Legislative analysis Concepts Scheme"@en ;
+    skos:altLabel
+        "wetsanalyse"@nl ,
+        "legal analysis"@en ;
+    skos:definition
+        "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
+        "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
     isothes:member ronl:SpecificationTypeConcept ;
-    skos:scopeNote "NOG INVULLEN"@nl ;
+    skos:scopeNote
+        "Het doel is om een nagenoeg complete verzameling van wetsanalyse methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
+        "The aim is to group a nearly complete collection of legislative analysis methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
-
+#
+# Define MethodConcept as top-level concepts under ronl
+#
 ronl:MethodConcept a isothes:ConceptGroup ;
-    rdfs:label "RONL Methoden"@nl ;
-    rdfs:label "RONL Methods"@en ;
-    skos:prefLabel "Methoden Concepten Schema"@nl ;
-    skos:prefLabel "Method Concept Scheme"@en ;
-    skos:altLabel "wetsanalyse"@nl ;
+    rdfs:label
+        "RONL Methodieken voor Regelbeheer"@nl ,
+        "RONL Methodologies for Rules management"@nl ;
+    rdfs:comment
+        "Bevat alle voorkomende gevallen van methodieken voor regelbeheer die bekend zijn."@nl ,
+        "Contains all known common cases of methodologies for rules management."@en ;
+    skos:prefLabel
+        "Methodieken voor regelbeheer Concepten Schema"@nl ,
+        "Methodologies for rules mannagement Concepts Scheme"@en ;
+    skos:altLabel
+        "regelbeheer"@nl ,
+        "rules management"@en ;
+    skos:definition
+        "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
+        "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
     isothes:member ronl:SpecificationTypeConcept ;
-    skos:scopeNote "NOG INVULLEN"@nl ;
+    skos:scopeNote
+        "Het doel is om een nagenoeg complete verzameling van regelbeheer methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
+        "The aim is to group a nearly complete collection of rules management methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
 #
 # Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
 #
 ronl:SpecificationTypeConcept a skos:Concept ;
-    skos:prefLabel "Specificatie Type Concept Schema"@nl ;
-    skos:prefLabel "Specification Type Concept Scheme"@en ;
+    rdfs:label
+        "RONL Specificatie soorten"@nl ,
+        "RONL Specification types"@nl ;
+    rdfs:comment
+        "Bevat alle soorten mogelijke documenten die bij elkaar én in onderlinge gekende relatie een complete regelspecificatie set omvatten."@nl ,
+        "Contains all types of possible documents that together and in known mutual relationships comprise a complete set of rule specifications."@en ;
+    skos:prefLabel
+        "Document soorten die in een regelspecificatie set kunnen voorkomen"@nl ,
+        "Document types that can appear in a rule specification set"@en ;
+    skos:altLabel
+        "specificatie soorten"@nl ,
+        "specification types"@en ;
+    skos:definition
+        "Deze document specificatie soorten biedt een gestructureerd raamwerk voor het documenteren en communiceren van de regelspecificatie sets."@nl ,
+        "These document specification types provides a structured framework for documenting and communicating the rule specification sets."@en ;
     skos:broader ronl:AnalysisConcept, ronl:MethodConcept ;
+    skos:scopeNote
+        "De lijst vind zijn herkomst uit De LegitiMaat, een werkmethode voor het doen van onderzoek door derden naar het gebruik van algoritmen door een overheidsorganisatie."@nl ,
+        "The list originates from De LegitiMaat, a working method for conducting research by third parties into the use of algorithms by a government organization."@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> .
+    rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst>
 #
 #
 # Define ronl:source, ronl:analysis and ronl:method as RDF properties
