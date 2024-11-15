@@ -235,20 +235,39 @@ ronl:implements a owl:ObjectProperty ;
 # 
 ex:WetsanalyseJAS a skos: ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Wetsanalyse (JAS)"@nl ;
-    skos:prefLabel "Legal Analysis (JAS)"@en ;
+    skos:prefLabel
+        "Wetsanalyse (JAS)"@nl ,
+        "Legislative Analysis (JAS)"@en ;
+    rdfs:comment
+        "Het juridisch analyse schema komt uit het boek Wetsanalyse, Voor een werkbare uitvoering van wetgeving met ICT, van de auteur(s): Anouschka Ausems, John Bulles en Mariette Lokin."@nl ,
+        "The legal analysis scheme comes from the book Legal Analysis, For a workable implementation of legislation with ICT (Dutch only), by the author(s): Anouschka Ausems, John Bulles and Mariette Lokin."@en ;
+    skos:definition
+        "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
+        "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
     isothes:member ronl:AnalysisConcept .
+    rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> .
 
 ex:WetsanalyseJRM a skos:Concept ;
     skos:inScheme ronl: ;
     skos:prefLabel "Wetsanalyse (JRM)"@nl ;
-    skos:prefLabel "Legal Analysis (JRM)"@en ;
+    skos:prefLabel "Legislative Analysis (JRM)"@en ;
+    rdfs:comment
+        "In de periode zomer 2021 zomer 2024 is Wetsanalyse (JAS) op een behoorlijk aantal praktijktoepassingen uitgetest. De voornaamste conclusies van die praktijktoepassingen, doorontwikkeling en voortschrijdend inzicht zijn de basis van JRM."@nl ,
+        "In the period summer 2021 summer 2024, Legal Analysis (JAS) was tested on a considerable number of practical applications. The main conclusions of these practical applications, further development and progressive insight are the basis of JRM."@en ;
+    skos:definition
+        "Specificatie van het juridisch referentiemodel (JRM) dat met scenario's beschrijft hoe een burger of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering."@nl ,
+        "Specification of the Legal Reference Model (JRM) that describes in scenarios how a citizen or company experiences a specific piece of legislation or regulations or goes through it in the implementation of the law."@en ;
     isothes:member ronl:AnalysisConcept .
+    rdfs:seeAlso <https://minbzk.github.io/wetsuitvoering/> .
 
 ex:FLINT a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "FLINT"@nl ;
-    skos:prefLabel "FLINT"@en ;
+    skos:prefLabel
+        "FLINT"@nl ,
+        "FLINT"@en ;
+    skos:definition
+        "FLINT is onderdeel van een protocol voor het uitvoeren van normatieve taken (Calculemus) en een expliciete taal om interpretaties van juridische bronnen vast te leggen (FLINT)."@nl ,
+        "FLINT is part of a protocol for performing normative tasks (Calculemus) and an explicit language for recording interpretations of legal sources (FLINT)."@en ;
     isothes:member ronl:AnalysisConcept .
 #
 # Define individual concepts within the MethodConcept scheme
