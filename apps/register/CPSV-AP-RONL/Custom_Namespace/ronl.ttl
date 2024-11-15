@@ -182,41 +182,53 @@ ronl:method a owl:ObjectProperty ;
     rdfs:range ronl:MethodConcept ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 #
-# ronl:implementedBy is meant to indicate that a particular rule specification is implemented by some resource (like a public service or execution entity).
-# rdfs:domain should be the type of entity that "is implemented by" something else. In this case, it would be a cpsv-ap:RuleSpecification.
-# rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility.
-#
-# By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will "mirror" each other, meaning:
-# The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa.
+# Define ronl:implementedBy and ronl:implements as RDF property
 #
 ronl:implementedBy a owl:ObjectProperty ;
-    rdfs:label "implementatie"@nl ;
-    rdfs:label "implementation"@en ;
-    rdfs:comment "Specificeert de implementatie door een bepaalde uitvoering of dienst van de bedrijfsregel."@nl ;
-    rdfs:comment "Specifies the implementation by a particular execution or service of the business rule."@en ;
-    #
-    # Specifies that ronl:implementedBy should be used with instances of cpsv-ap:RuleSpecification.
-    #
+    rdfs:label
+        "RONL Geïmplementeerd door"@nl ,
+        "RONL Implemented by"@nl ;
+    rdfs:comment
+        "Bedoeld om aan te geven waarmee een bepaalde set regels wordt geïmplementeerd (zoals een openbare dienst of uitvoeringsentiteit)."@nl ,
+        "Intended to indicate what a particular set of rules is implemented with (like a public service or execution entity)."@en ;
+    skos:prefLabel
+        "Is geïmplementeerd door"@nl ,
+        "Is implememnted by"@en ;
+    skos:altLabel
+        "geïmplementeerd"@nl ,
+        "implemented"@en ;
     rdfs:domain cpsv-ap:RuleSpecification ;
     rdfs:range rdfs:Resource ;
     owl:inverseOf ronl:implements ;
+    skos:editorialNote
+        "rdfs:domain moet het type entiteit zijn dat `wordt geïmplementeerd door` iets anders. In dit geval moet het een cpsv-ap:RuleSpecification zijn."@nl ,
+        "rdfs:range moet het type entiteit zijn dat de implementatie uitvoert (bijvoorbeeld een uitvoerende service, resource of algoritme), die opgeven als rdfs:Resource om flexibiliteit mogelijk te maken."@nl ,
+        "Door ronl:implementedBy te definiëren als de inverse van ronl:implements, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: het domein van ronl:implements wordt het bereik van ronl:implementedBy, en vice versa."@nl ,
+        "rdfs:domain should be the type of entity that `is implemented by` something else. In this case, it must be a cpsv-ap:RuleSpecification."@en ,
+        "rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility."@en ,
+        "By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will `mirror` each other, meaning: The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa."@en ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
-#
-# ronl:implements is the inverse, meaning it should indicate that a specific resource implements a certain rule specification.
-# rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability.
-# rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification.
-#
-# By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will "mirror" each other, meaning:
-# The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa.
-#
+
 ronl:implements a owl:ObjectProperty ;
-    rdfs:label "implementeert"@nl ;
-    rdfs:label "implements"@en ;
-    rdfs:comment "Specificeert de bedrijfsregel die wordt geïmplementeerd door een bepaalde uitvoering of dienst."@nl ;
-    rdfs:comment "Specifies the business rule that is implemented by a given execution or service."@en ;
+    rdfs:label
+        "RONL Implementeert"@nl ,
+        "RONL Implements"@nl ;
+    rdfs:comment
+        "Bedoeld om aan te geven dat een specifieke resource een bepaalde set regels implementeert."@nl ,
+        "Intended to indicate that a specific resource implements a certain rule specification."@en ;
+    skos:prefLabel
+        "Implementeerd"@nl ,
+        "Implements"@en ;
     rdfs:domain rdfs:Resource ;
     rdfs:range cpsv-ap:RuleSpecification ;
     owl:inverseOf ronl:implementedBy ;
+    skos:editorialNote
+        "rdfs:domain moet de entiteit zijn die de implementatie uitvoert, een algemene rdfs:Resource in dit model, wat bredere toepasbaarheid mogelijk maakt."@nl ,
+        "rdfs:range moet terugverwijzen naar de entiteit die is geïmplementeerd, namelijk cpsv-ap:RuleSpecification."@nl ,
+        "Door ronl:implements te definiëren als de inverse van ronl:implementedBy, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: Het domein van ronl:implementedBy wordt het bereik van ronl:implements, en vice versa."@nl ;
+        "rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability."@en ,
+        "rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification."@en ,
+        "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 #
 # Define individual concepts within the AnalysisConcept scheme
