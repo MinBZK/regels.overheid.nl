@@ -216,7 +216,7 @@ ronl:implements a owl:ObjectProperty ;
         "Bedoeld om aan te geven dat een specifieke resource een bepaalde set regels implementeert."@nl ,
         "Intended to indicate that a specific resource implements a certain rule specification."@en ;
     skos:prefLabel
-        "Implementeerd"@nl ,
+        "Implementeert"@nl ,
         "Implements"@en ;
     rdfs:domain rdfs:Resource ;
     rdfs:range cpsv-ap:RuleSpecification ;
@@ -243,20 +243,21 @@ ex:WetsanalyseJAS a skos: ;
     skos:definition
         "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
         "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
-    isothes:member ronl:AnalysisConcept .
+    isothes:member ronl:AnalysisConcept ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> .
 
 ex:WetsanalyseJRM a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Wetsanalyse (JRM)"@nl ;
-    skos:prefLabel "Legislative Analysis (JRM)"@en ;
+    skos:prefLabel
+        "Wetsanalyse (JRM)"@nl ,
+        "Legislative Analysis (JRM)"@en ;
     rdfs:comment
         "In de periode zomer 2021 zomer 2024 is Wetsanalyse (JAS) op een behoorlijk aantal praktijktoepassingen uitgetest. De voornaamste conclusies van die praktijktoepassingen, doorontwikkeling en voortschrijdend inzicht zijn de basis van JRM."@nl ,
         "In the period summer 2021 summer 2024, Legal Analysis (JAS) was tested on a considerable number of practical applications. The main conclusions of these practical applications, further development and progressive insight are the basis of JRM."@en ;
     skos:definition
         "Specificatie van het juridisch referentiemodel (JRM) dat met scenario's beschrijft hoe een burger of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering."@nl ,
         "Specification of the Legal Reference Model (JRM) that describes in scenarios how a citizen or company experiences a specific piece of legislation or regulations or goes through it in the implementation of the law."@en ;
-    isothes:member ronl:AnalysisConcept .
+    isothes:member ronl:AnalysisConcept ;
     rdfs:seeAlso <https://minbzk.github.io/wetsuitvoering/> .
 
 ex:FLINT a skos:Concept ;
@@ -264,10 +265,14 @@ ex:FLINT a skos:Concept ;
     skos:prefLabel
         "FLINT"@nl ,
         "FLINT"@en ;
+    rdfs:comment
+        "Dit is werk in uitvoering. Als je vragen of opmerkingen hebt, horen we het graag. Als je wilt meedoen nog liever! We werken aan een internationale standaard voor het werken met normen."@nl ,
+        "This is a work in progress. If you have any questions or comments, we would love to hear from you. If you would like to participate, even better! We are working on an international standard for working with standards."@en ;
     skos:definition
         "FLINT is onderdeel van een protocol voor het uitvoeren van normatieve taken (Calculemus) en een expliciete taal om interpretaties van juridische bronnen vast te leggen (FLINT)."@nl ,
         "FLINT is part of a protocol for performing normative tasks (Calculemus) and an explicit language for recording interpretations of legal sources (FLINT)."@en ;
-    isothes:member ronl:AnalysisConcept .
+    isothes:member ronl:AnalysisConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/flint/INTRODUCTIE> .
 #
 # Define individual concepts within the MethodConcept scheme
 #
@@ -279,7 +284,8 @@ ex:AKN4EU a skos:Concept ;
     skos:definition
         "Akoma Ntoso (`verbonden harten` in de Akan-taal van West-Afrika) definieert een set van eenvoudige technologieneutrale elektronische representaties in XML-formaat van parlementaire, wetgevende en rechterlijke documenten. AKN4EU kan worden beschouwd als de lokalisatie van Akoma Ntoso voor EU-wetgeving."@nl ,
         "Akoma Ntoso (`linked hearts` in the Akan language of West Africa) defines a set of simple technology-neutral electronic representations in XML format of parliamentary, legislative and judiciary documents. AKN4EU can be considered as the localisation of Akoma Ntoso for EU legislation."@en ;
-    isothes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept ;
+    rfds:seeAlso <https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu> .
 
 ex:ALEF a skos:Concept ;
     skos:inScheme ronl: ;
@@ -289,37 +295,63 @@ ex:ALEF a skos:Concept ;
     skos:definition
         "In ALEF worden specificaties opgesteld die bestaan uit regels, datadefinities en testgevallen. De regels zijn opgesteld in de taal RegelSpraak. Dit is een gecontroleerde Nederlandse taal die zowel voor juristen als voor computersystemen goed leesbaar is."@nl ,
         "In ALEF, specifications are drawn up that consist of rules, data definitions and test cases. The rules are written in the RegelSpraak language. This is a controlled Dutch language that is easy to read for both lawyers and computer systems."@en ;
-    isothes:member ronl:MethodConcept .
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> .
 
 ex:Avola a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Avola"@nl ;
-    skos:prefLabel "Avola"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "Avola"@nl ,
+        "Avola"@en ;
+    skos:definition
+        "Avola is een platform waarmee regels binnen een organisatie op een gestandaardiseerde wijze vertaald kunnen worden naar een toetsbaar beslismodel. Er wordt gebruik gemaakt van de bekende DMN-standaard om logica van regels vast te leggen in beslistabellen die het model vormen."@nl ,
+        "Avola is a platform that allows rules within an organization to be translated into a testable decision model in a standardized manner. The well-known DMN standard is used to record the logic of rules in decision tables that form the model."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/AVOLA> .
 
 ex:Beinformed a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Beinformed"@nl ;
-    skos:prefLabel "Beinformed"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "Beinformed"@nl ,
+        "Beinformed"@en ;
+    skos:definition
+        "Het Be Informed-platform is een direct modelgestuurd automatiseringsplatform. Deze modellen (en de processen die ze vertegenwoordigen) zijn direct bruikbaar, zonder extra programmering of conversie naar code. Bedrijfsregels worden semantisch vastgelegd en gemodelleerd en kunnen op elk moment worden getest en aangepast."@nl ,
+        "The Be Informed platform is a direct model-driven automation platform. These models (and the processes they represent) are immediately usable, without additional programming or conversion to code. Business rules are semantically captured and modeled and can be tested and modified at any time."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BEINFORMED> .
 
 ex:Blawx a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Blawx"@nl ;
-    skos:prefLabel "Blawx"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "Blawx"@nl ,
+        "Blawx"@en ;
+    skos:definition
+        "Blawx is een open source, gebruiksvriendelijke, webgebaseerde declaratieve logica kennisrepresentatietool die speciaal is ontworpen voor het coderen, testen en gebruiken van regels. Het is geïmplementeerd als een set applicaties."@nl ,
+        "Blawx is an open source, user-friendly, web-based declarative logic knowledge representation tool designed specifically for encoding, testing and using rules. It is implemented as a set of applications."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://github.com/Lexpedite/blawx> .
 
 ex:Blueriq a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Blueriq"@nl ;
-    skos:prefLabel "Blueriq"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "Blueriq"@nl ,
+        "Blueriq"@en ;
+    skos:definition
+        "Het Blueriq platform is een regelgedreven software platform ontworpen voor dynamische, zakelijke oplossingen voor organisaties met kennisintensieve processen. Het stelt jou en je organisatie in staat snel en kosteneffectief te reageren op veranderende omstandigheden en regelgevingen zodat je een persoonlijke en efficiënte dienstverlening kunt bieden aan iedere klant."@nl ,
+        "The Blueriq platform is a rule-driven software platform designed for dynamic, business solutions for organizations with knowledge-intensive processes. It enables you and your organization to respond quickly and cost-effectively to changing circumstances and regulations so that you can offer a personal and efficient service to every customer."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BLUERIQ> .
 
 ex:Catala a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Catala"@nl ;
-    skos:prefLabel "Catala"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "Catala"@nl ,
+        "Catala"@en ;
+    skos:definition
+        "Catala is een domeinspecifieke programmeertaal die is ontworpen voor het afleiden van constructief correcte implementaties uit wetteksten."@nl ,
+        "Catala is a domain-specific programming language designed for deriving correct-by-construction implementations from legislative texts."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://catala-lang.org/> .
 
 ex:CircuLaw a skos:Concept ;
     skos:inScheme ronl: ;
