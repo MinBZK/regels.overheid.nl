@@ -46,16 +46,16 @@ ronl: a skos:ConceptScheme ;
 ronl:AnalysisConcept a isothes:ConceptGroup ;
     rdfs:label
         "RONL Wetsanalyse"@nl ,
-        "RONL Legislative analysis"@nl ;
+        "RONL Legislative analysis"@en ;
     rdfs:comment
         "Bevat alle voorkomende gevallen van methodieken voor wetsanalyse die bekend zijn."@nl ,
-        "Contains all known common cases of methodologies for legal analysis."@en ;
+        "Contains all known common cases of methodologies for legislative analysis."@en ;
     skos:prefLabel
         "Wetsanalyse Concepten Schema"@nl ,
         "Legislative analysis Concepts Scheme"@en ;
     skos:altLabel
         "wetsanalyse"@nl ,
-        "legal analysis"@en ;
+        "legislative analysis"@en ;
     skos:definition
         "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
         "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
@@ -94,7 +94,7 @@ ronl:MethodConcept a isothes:ConceptGroup ;
 ronl:SpecificationTypeConcept a skos:Concept ;
     rdfs:label
         "RONL Specificatie soorten"@nl ,
-        "RONL Specification types"@nl ;
+        "RONL Specification types"@en ;
     rdfs:comment
         "Bevat alle soorten mogelijke documenten die bij elkaar én in onderlinge gekende relatie een complete regelspecificatie set omvatten."@nl ,
         "Contains all types of possible documents that together and in known mutual relationships comprise a complete set of rule specifications."@en ;
@@ -114,36 +114,71 @@ ronl:SpecificationTypeConcept a skos:Concept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> .
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst>
 #
-#
 # Define ronl:source, ronl:analysis and ronl:method as RDF properties
-# use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-#
-# ronl:source is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace
 #
 ronl:source a owl:ObjectProperty ;
-    rdfs:label "bron"@nl ;
-    rdfs:label "source"@en ;
-    rdfs:comment "Een eigenschap om de gezaghebbende bron of oorsprong van een dataset, regelspecificatie of model in de ronl namespace op te geven."@nl ;
-    rdfs:comment "A property to specify the authoritative source or origin of a dataset, rule, or model in the ronl namespace."@en ;
+    rdfs:label
+        "RONL Bron"@nl ,
+        "RONL Source"@nl ;
+    rdfs:comment
+        "Is bedoeld om een gezaghebbende bron of herkomst aan te geven en kan worden gebruikt voor alle elementen in de ronl naamruimte."@nl ,
+        "Is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace."@en ;
+    skos:prefLabel
+        "Gezaghebbende bron of herkomst"@nl ,
+        "Authoritative source or origin"@en ;
+    skos:altLabel
+        "bron of herkomst soorten"@nl ,
+        "source or origin"@en ;
+    skos:definition
+        "Verwijst naar de gezaghebbende, conceptuele herkomst van de regels of het model, zoals een officieel overheidsdocument of een verordening die de regelspecificatie set legitimeert"@nl ,
+        "Points to the authoritative, conceptual origin of the rules or model, like an official government document or regulation that legitimizes the rule specification set."@en ;
+    skos:broader ronl:AnalysisConcept, ronl:MethodConcept ;
+    skos:scopeNote
+        "Niet zelden zal er (nog) niet een openbare plek zijn om naar te verwijzen. In dat geval volstaat de link naar een algemene uitleg pagina die het dichtst in de buurt komt van de bedoelde bron."@nl ,
+        "Quite often there will not be a public place to refer to (yet). In that case, the link to a general explanation page that comes closest to the intended source will suffice."@en ;
+    # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
     rdfs:range dct:BibliographicResource ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 
 ronl:analysis a owl:ObjectProperty ;
-    rdfs:label "analyse"@nl ;
-    rdfs:label "analysis"@en ;
-    rdfs:comment "Analyse eigenschap voor de regelspecificatie set"@nl ;
-    rdfs:comment "Analysis property for the rule set."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:label
+        "RONL Wetsanalyse"@nl ,
+        "RONL Legislative analysis"@en ;
+    rdfs:comment
+        "Is een methodiek voor wetsanalyse."@nl ,
+        "Is a methodology for legislative analysis."@en ;
+    skos:prefLabel
+        "Wetsanalyse eigenschap"@nl ,
+        "Legislative analysis property"@en ;
+    skos:altLabel
+        "wetsanalyse"@nl ,
+        "legal analysis"@en ;
+    skos:definition
+        "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
+        "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:range ronl:AnalysisConcept ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 
 ronl:method a owl:ObjectProperty ;
-    rdfs:label "methode"@nl ;
-    rdfs:label "method"@en ;
-    rdfs:comment "Methode eigenschap voor de regelspecificatie set"@nl ;
-    rdfs:comment "Method property for the rule set."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:label
+        "RONL Methodiek voor Regelbeheer"@nl ,
+        "RONL Methodology for Rules management"@nl ;
+    rdfs:comment
+        "Is een methodiek voor regelbeheer."@nl ,
+        "Is a methodology for rules management."@en ;
+    skos:prefLabel
+        "Methodiek voor regelbeheer eigenschap"@nl ,
+        "Methodology for rules mannagement property"@en ;
+    skos:altLabel
+        "regelbeheer"@nl ,
+        "rules management"@en ;
+    skos:definition
+        "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
+        "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
+    isothes:member ronl:SpecificationTypeConcept ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:range ronl:MethodConcept ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 #
