@@ -355,39 +355,69 @@ ex:Catala a skos:Concept ;
 
 ex:CircuLaw a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "CircuLaw"@nl; 
-    skos:prefLabel "CircuLaw"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "CircuLaw"@nl ,
+        "CircuLaw"@en ;
+    skos:definition
+        "CircuLaw is een kennisplatform waarmee beleidsmakers, projectleiders en inkopers worden geholpen bij het meer en beter gebruikmaken van regelgeving teneinde de circulaire economie te bevorderen. Wet- en regelgeving biedt goede mogelijkheden om effectief circulair beleid te maken. CircuLaw ontsluit die complexe wet-en regelgeving zodat beleidsmakers er mee aan de slag kunnen."@nl ,
+        "CircuLaw is a knowledge platform that helps policymakers, project leaders and purchasers to make more and better use of regulations in order to promote the circular economy. Laws and regulations offer good opportunities to create effective circular policy. CircuLaw unlocks these complex laws and regulations so that policymakers can get started with them."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CIRCULAW> .
 
 ex:ConcordiaLegal a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Concordia Legal"@nl ;
-    skos:prefLabel "Concordia Legal"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "Concordia Legal"@nl ,
+        "Concordia Legal"@en ;
+    skos:definition
+        "Regelgeving kan snel en consistent worden overgezet in massabesluitvormingsprocessen, door te werken vanuit een Rule Engine in natuurlijke taal en vanuit die regels de gegevens en processen op te bouwen."@nl ,
+        "Regulations can be translated quickly and consistently into mass decision-making processes by working from a natural language Rule Engine and building the data and processes from those rules."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CONCORDIALEGAL> .
 
 ex:DataLex a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "DataLex"@nl ;
-    skos:prefLabel "DataLex"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "DataLex"@nl ,
+        "DataLex"@en ;
+    skos:definition
+        "AustLII's DataLex kan worden gebruikt om juridische redeneringsapplicaties te ontwikkelen op gebieden zoals juridische adviesdiensten, naleving van regelgeving, beslissingsondersteuning en Rules as Code. AustLII is een gezamenlijke faciliteit van UTS en UNSW Faculties of Law."@nl ,
+        "AustLII's DataLex can be used to develop legal reasoning applications in areas such as legal advisory services, regulatory compliance, decision support and Rules as Code. AustLII is a joint facility of UTS and UNSW Faculties of Law."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://datalex.org/> .
 
 ex:Demo a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "DEMO"@nl ;
-    skos:prefLabel "DEMO"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "DEMO"@nl ,
+        "DEMO"@en ;
+    skos:definition
+        "DEMO (Design and Engineering Methodology for Organizations) is een methode voor het analyseren en (her)ontwerpen van organisaties. Een DEMO model vormt een consistent geheel van producten, verantwoordelijkheden, processen, informatie en bedrijfsregels."@nl ,
+        "DEMO (Design and Engineering Methodology for Organizations) is a method for analyzing and (re)designing organizations. A DEMO model forms a consistent whole of products, responsibilities, processes, information and business rules."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/DEMO> .
 
 ex:Leos a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "LEOS"@nl ;
-    skos:prefLabel "LEOS"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "LEOS"@nl ,
+        "LEOS"@en ;
+    skos:definition
+        "LEOS is een webtool ter ondersteuning van het opstellen van wetgeving in de EU met online samenwerking, versiebeheer en co-editing. Het maakt gebruik van Akoma Ntoso XML-schema. Het is een EC-oplossing."@nl ,
+        "LEOS is a web tool to support the legislative drafting in the EU with online collaboration, version control, and co-editing. It utilises Akoma Ntoso XML schema. It is an EC solution."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://joinup.ec.europa.eu/collection/justice-law-and-security/solution/leos-open-source-software-editing-legislation> .
 
 ex:OpenFisca a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "OpenFisca"@nl ;
-    skos:prefLabel "OpenFisca"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "OpenFisca"@nl ,
+        "OpenFisca"@en ;
+    skos:definition
+        "OpenFisca is een open-source softwareframework voor het modelleren van belasting- en uitkeringssystemen op een manier die zowel leesbaar is voor mensen als uitvoerbaar is voor computers. Het maakt het mogelijk om wetten en regels te vertalen naar uitvoerbare Python-code, waardoor ze toegankelijk worden voor zowel juridische als technische experts."@nl ,
+        "OpenFisca is an open-source software framework for modelling tax and benefit systems in a way that is both readable by humans and executable by computers. It enables translating laws and regulations into executable Python code, making them accessible for both legal and technical experts."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/OPENFISCA> .
 
 ex:RuleSpeak a skos:Concept ;
     skos:inScheme ronl: ;
