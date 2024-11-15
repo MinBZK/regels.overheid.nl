@@ -177,7 +177,6 @@ ronl:method a owl:ObjectProperty ;
     skos:definition
         "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
         "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
-    isothes:member ronl:SpecificationTypeConcept ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:range ronl:MethodConcept ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
@@ -274,13 +273,22 @@ ex:FLINT a skos:Concept ;
 #
 ex:AKN4EU a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "AKN4EU"@nl ;
-    skos:prefLabel "AKN4EU"@en ;
+    skos:prefLabel
+        "AKN4EU"@nl ,
+        "AKN4EU"@en ;
+    skos:definition
+        "Akoma Ntoso (`verbonden harten` in de Akan-taal van West-Afrika) definieert een set van eenvoudige technologieneutrale elektronische representaties in XML-formaat van parlementaire, wetgevende en rechterlijke documenten. AKN4EU kan worden beschouwd als de lokalisatie van Akoma Ntoso voor EU-wetgeving."@nl ,
+        "Akoma Ntoso (`linked hearts` in the Akan language of West Africa) defines a set of simple technology-neutral electronic representations in XML format of parliamentary, legislative and judiciary documents. AKN4EU can be considered as the localisation of Akoma Ntoso for EU legislation."@en ;
     isothes:member ronl:MethodConcept .
+
 ex:ALEF a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "ALEF"@nl ;
-    skos:prefLabel "ALEF"@en ;
+    skos:prefLabel
+        "ALEF"@nl ,
+        "ALEF"@en ;
+    skos:definition
+        "In ALEF worden specificaties opgesteld die bestaan uit regels, datadefinities en testgevallen. De regels zijn opgesteld in de taal RegelSpraak. Dit is een gecontroleerde Nederlandse taal die zowel voor juristen als voor computersystemen goed leesbaar is."@nl ,
+        "In ALEF, specifications are drawn up that consist of rules, data definitions and test cases. The rules are written in the RegelSpraak language. This is a controlled Dutch language that is easy to read for both lawyers and computer systems."@en ;
     isothes:member ronl:MethodConcept .
 
 ex:Avola a skos:Concept ;
