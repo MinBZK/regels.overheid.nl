@@ -421,21 +421,36 @@ ex:OpenFisca a skos:Concept ;
 
 ex:RuleSpeak a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "RuleSpeak"@nl ;
-    skos:prefLabel "RuleSpeak"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "RuleSpeak"@nl ,
+        "RuleSpeak"@en ;
+    skos:definition
+        "RuleSpeak® is een verzameling richtlijnen voor het formuleren van bedrijfsregels op een bedrijfsvriendelijke en precieze manier. Het is geen taal of syntax maar eerder een verzameling voorschriften voor Nederlandstalige formulering van bedrijfsregels gebaseerd op ervaringen in de praktijk."@nl ,
+        "RuleSpeak® is a set of guidelines for formulating business rules in a business-friendly and precise way. It is not a language or syntax but rather a set of prescriptions for Dutch-language formulation of business rules based on practical experience."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/RULESPEAK> .
 
 ex:Sparkwise a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Sparkwise"@nl ;
-    skos:prefLabel "Sparkwise"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "Sparkwise"@nl ,
+        "Sparkwise"@en ;
+    skos:definition
+        "Sparkwise is een Decision Intelligence SaaS platform waarmee beleidregels en bedrijfslogica, met 1 druk op de knop, geautomatiseerd omgezet worden naar uitvoerbare beslisservices (APIs) en ondersteunt daarmee Legislation to Operation (LegOps) kwaliteit en versnelling. Geïnspireerd op de DMN standaard."@nl ,
+        "Sparkwise is a Decision Intelligence SaaS platform that automatically converts policies and business logic into executable decision services (APIs) at the push of a button, thereby supporting Legislation to Operation (LegOps) quality and acceleration. Inspired by the DMN standard."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/SPARKWISE> .
     
 ex:USoft a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "USoft"@nl ;
-    skos:prefLabel "USoft"@en ;
-    isothes:member ronl:MethodConcept .
+    skos:prefLabel
+        "USoft"@nl ,
+        "USoft"@en ;
+    skos:definition
+        "USoft biedt een low-code platform voor regelgestuurde software obv SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@nl ,
+        "USoft offers a low-code platform for rule-driven software based on SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@en ;
+    isothes:member ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/USOFT> .
 #
 # Define individual concepts within the SpecificationTypeConcept scheme
 #
