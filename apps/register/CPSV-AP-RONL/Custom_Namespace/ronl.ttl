@@ -8,38 +8,60 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 #
-# Define ronl:source, ronl:analysis and ronl:method as RDF properties
-# use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-#
-# ronl:source is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace
-#
-# Declare vocabulary metadata for Skosmos
+# Declare ronl vocabulary metadata
 #
 ronl: a skos:ConceptScheme ;
-    dct:title "RONL Vocabulaire"@nl ;
-    dct:title "RONL Vocabulary"@en ;
-    dct:description "Vocabulaire voor regels, methoden en concepten in de context van overheidsregulering."@nl ;
-    dct:description "Vocabulary for rules, methods, and concepts in the context of government regulation."@en ;
-    skos:prefLabel "RONL Vocabulary"@en ;
+    rdfs:label
+        "RONL Vocabulaire"@nl ,
+        "RONL Vocabulary"@en ;
+    rdfs:comment
+        "Vocabulaire voor regels, methoden en concepten in de context van overheidsregulering."@nl ,
+        "Vocabulary for rules, methods, and concepts in the context of government regulation."@en ;
+    skos:prefLabel
+        "Vocabulaire voor regels.overheid.nl"@nl ,
+        "Vocabulary for regels.overheid.nl"@en ;
+    skos:altLabel
+        "ronl"@nl ,
+        "ronl"@en ;
+    skos:altLabel
+        "ronl aangepaste naamruimte"@nl ,
+        "ronl custom namespace"@en ;
+    skos:definition
+        "Een aangepaste naamruimte met onze eigen skos:ConceptScheme om te voorkomen dat informatie in elk afzonderlijk exemplaar van cpsv-ap:PublicService wordt herhaald."@nl ,
+        "A custom namespace with our own skos:ConceptScheme to avoid repeating information in each individual cpsv-ap:PublicService instance."@en ,
     skos:hasTopConcept ronl:SpecificationTypeConcept ;
+    skos:scopeNote
+        "Het doel van deze ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl."@nl ,
+        "The purpose of this ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl."@en ;
     dct:creator <https://regels.overheid.nl> ;
     dct:publisher <https://regels.overheid.nl> ;
-    dct:language "nl", "en" ;
+    dct:language
+        "nl" ,
+        "en" ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:source <https://regels.overheid.nl/ronl/ns> .
 #
 # Define AnalysisConcept and MethodConcept as top-level concepts under ronl
 #
 ronl:AnalysisConcept a isothes:ConceptGroup ;
-    skos:prefLabel "Analyse Concepten Schema"@nl ;
-    skos:prefLabel "Analysis Concept Scheme"@en ;
+    rdfs:label "RONL Wetsanalyse"@nl ;
+    rdfs:label "RONL Law analysis"@nl ;
+    skos:prefLabel "Wetsanalyse Concepten Schema"@nl ;
+    skos:prefLabel "Law analysis Concepts Scheme"@en ;
+    skos:altLabel "wetsanalyse"@nl ;
+    skos:altLabel "law analysis"@en ;
     isothes:member ronl:SpecificationTypeConcept ;
+    skos:scopeNote "NOG INVULLEN"@nl ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
 
 ronl:MethodConcept a isothes:ConceptGroup ;
+    rdfs:label "RONL Methoden"@nl ;
+    rdfs:label "RONL Methods"@en ;
     skos:prefLabel "Methoden Concepten Schema"@nl ;
     skos:prefLabel "Method Concept Scheme"@en ;
+    skos:altLabel "wetsanalyse"@nl ;
     isothes:member ronl:SpecificationTypeConcept ;
+    skos:scopeNote "NOG INVULLEN"@nl ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
 #
 # Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
@@ -51,6 +73,10 @@ ronl:SpecificationTypeConcept a skos:Concept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> .
 #
 #
+# Define ronl:source, ronl:analysis and ronl:method as RDF properties
+# use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+#
+# ronl:source is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace
 #
 ronl:source a owl:ObjectProperty ;
     rdfs:label "bron"@nl ;
@@ -58,7 +84,7 @@ ronl:source a owl:ObjectProperty ;
     rdfs:comment "Een eigenschap om de gezaghebbende bron of oorsprong van een dataset, regelspecificatie of model in de ronl namespace op te geven."@nl ;
     rdfs:comment "A property to specify the authoritative source or origin of a dataset, rule, or model in the ronl namespace."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range dct:BibliographicResource ;  # Expecting sources to be bibliographic or documentation resources
+    rdfs:range dct:BibliographicResource ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 
 ronl:analysis a owl:ObjectProperty ;
