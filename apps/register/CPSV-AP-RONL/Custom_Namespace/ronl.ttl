@@ -285,7 +285,7 @@ ex:AKN4EU a skos:Concept ;
         "Akoma Ntoso (`verbonden harten` in de Akan-taal van West-Afrika) definieert een set van eenvoudige technologieneutrale elektronische representaties in XML-formaat van parlementaire, wetgevende en rechterlijke documenten. AKN4EU kan worden beschouwd als de lokalisatie van Akoma Ntoso voor EU-wetgeving."@nl ,
         "Akoma Ntoso (`linked hearts` in the Akan language of West Africa) defines a set of simple technology-neutral electronic representations in XML format of parliamentary, legislative and judiciary documents. AKN4EU can be considered as the localisation of Akoma Ntoso for EU legislation."@en ;
     isothes:member ronl:MethodConcept ;
-    rfds:seeAlso <https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu> .
+    rdfs:seeAlso <https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu> .
 
 ex:ALEF a skos:Concept ;
     skos:inScheme ronl: ;
@@ -456,48 +456,85 @@ ex:USoft a skos:Concept ;
 #
 ex:FunctioneelOntwerp a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Functioneel Ontwerp"@nl ;
-    skos:prefLabel "Functional Design"@en ;
+    skos:prefLabel
+        "Functioneel Ontwerp"@nl ,
+        "Functional Design"@en ;
+    skos:definition
+        "Hierin worden alle eisen en wensen waaraan een product moet voldoen verzameld en geordend. Er wordt beschreven op welke manier, welke verwachten de gebruiker heeft, welke handelingen hij uitvoert en welke resultaten die oplevert."@nl ,
+        "In this, all requirements and wishes that a product must meet are collected and arranged. It describes in what way, what expectations the user has, what actions he performs and what results that produces."@en ;
     isothes:member ronl:SpecificationTypeConcept .
 
 ex:SoftwareCode a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Software code"@nl ;
-    skos:prefLabel "Software code"@en ;
+    skos:prefLabel
+        "Software code"@nl ,
+        "Software code"@en ;
+    skos:definition
+        "Code is in algemene zin de taal die door de computer wordt begrepen."@nl ,
+        "Software code, in a general sense, is the language understood by the computer."@en ;
+    skos:comment
+        "In context hier beschrijft het tevens de gehanteerde Git workflow voor CI/CD én het corresponderende versiebeheer van toetsscenario's, beslisregelsets en testgevallen. Legt ook uit wat de gehanteerde test strategie is. Beschikt over de KPI's / rapportage items van het proces toetsen en testen (BiSL)."@nl ,
+        "In context here it also describes the Git workflow used for CI/CD and the corresponding version control of test scenarios, decision rule sets and test cases. Also explains what the test strategy used is. Has the KPIs / reporting items of the process of testing and reviewing (BiSL)."@en ;
     isothes:member ronl:SpecificationTypeConcept .
 
 ex:UXDesign a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "UX Design"@nl ;
-    skos:prefLabel "UX Design"@en ;
+    skos:prefLabel
+        "UX Design"@nl ,
+        "UX Design"@en ;
+    skos:definition
+        "De interactie schermen (screenprints) van de website waar de informatie gegeven wordt aan de aanvrager en de interactie plaats vindt."@nl ,
+        "The interaction screens (screen prints) of the website where the information is given to the applicant and the interaction takes place."@en ;
     isothes:member ronl:SpecificationTypeConcept .
 
 ex:Communicatiemiddel a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Communicatiemiddel"@nl ;
-    skos:prefLabel "Communications service"@en ;
+    skos:prefLabel
+        "Communicatiemiddel"@nl ,
+        "Communications service"@en ;
+    skos:definition
+        "De brieven die de individuele persoon kan krijgen hierover (besluiten in de zin van artikel 1:3 Awb)."@nl ,
+        "The letters that the individual can receive about this (decisions within the meaning of article 1:3 Awb)"@en ;
+    ronl:source <https://wetten.overheid.nl/jci1.3:c:BWBR0005537&hoofdstuk=1&titeldeel=1.1&artikel=1:3&z=2024-11-08&g=2024-11-08> ;
+    rdfs:seeAlso <https://gegevensbijbesluiten.overheid.nl/besluit> ;
     isothes:member ronl:SpecificationTypeConcept .
 
 ex:Werkinstructie a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Werkinstructie"@nl ;
-    skos:prefLabel "Work instruction"@en ;
+    skos:prefLabel
+        "Werkinstructie"@nl ,
+        "Work instruction"@en ;
+    skos:definition
+        "De gedetailleerde, stapsgewijze handleiding die beschrijft hoe een specifieke taak of activiteit binnen het proces of procedure van de onderhavige dienst en/of het product moet worden uitgevoerd door alle betrokkenen (ie aanvrager, ontvanger, verstrekker)."@nl ,
+        "The detailed, step-by-step guide describing how a specific task or activity within the process or procedure of the service and/or product in question should be performed by all involved (i.e. requester, recipient, provider)."@en ;
     isothes:member ronl:SpecificationTypeConcept .
 
 ex:Kwaliteitseisen a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Kwaliteitseisen"@nl ;
-    skos:prefLabel "Quality Requirements"@en ;
+    skos:prefLabel
+        "Kwaliteitseisen"@nl ,
+        "Quality Requirements"@en ;
+    skos:definition
+        "Definiëren de voorwaarden die worden gebruikt om de conformiteit van een project met de beoogde kwaliteitsnormen te beoordelen. Ze specificeren de kenmerken, karakteristieken en processen die moeten worden gehaald of overtroffen om de kwaliteit van een product, dienst of resultaat te garanderen."@nl ,    
+        "Define the conditions used to assess the conformance of a project to its intended quality standards. They specify the attributes, characteristics, and processes that must be met or exceeded to ensure the quality of a product, service, or outcome."@en ;
     isothes:member ronl:SpecificationTypeConcept .
 
 ex:BestuurlijkeInformatie a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Bestuurlijke Informatie"@nl ;
-    skos:prefLabel "Business Intelligence"@en ;
+    skos:prefLabel
+        "Bestuurlijke Informatie"@nl ,
+        "Business Intelligence"@en ;
+    skos:definition
+        "Alle verzamelde, vastgelegde en gearchiveerde informatie ten behoeve van het besturen, het doen functioneren en het beheersen van het onderhavige proces alsmede ten behoeve van het afleggen van verantwoording."@nl ,
+        "All information collected, recorded and archived for the purpose of managing, operating and controlling the process in question, as well as for the purpose of accountability."@en ;
     isothes:member ronl:SpecificationTypeConcept .
 
 ex:Overig a skos:Concept ;
     skos:inScheme ronl: ;
-    skos:prefLabel "Overig"@nl ;
-    skos:prefLabel "Other"@en ;
+    skos:prefLabel
+        "Overig"@nl ,
+        "Other"@en ;
+    skos:definition
+        "Bevat relevante informatie over organisatie, dienst en/of product, process of anderszins, dat om moverende redenen niet in de beschikbare ronl:SpecificationTypeConcept concepten past."@nl ,
+        "Contains relevant information about organization, service and/or product, process or otherwise, that for compelling reasons does not fit into the available ronl:SpecificationTypeConcept concepts."@en ;
     isothes:member ronl:SpecificationTypeConcept .
