@@ -61,6 +61,9 @@ ronl:AnalysisConcept a skos:Concept;
     skos:definition
         "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
         "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
+    skos:narrower
+        ronl:SpecificationTypeConcept ,
+        ronl:source ;
     skos:inScheme ronl:Vocabulary ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:scopeNote
@@ -86,6 +89,9 @@ ronl:MethodConcept a skos:Concept ;
     skos:definition
         "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
         "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
+    skos:narrower
+        ronl:SpecificationTypeConcept ,
+        ronl:source ;
     skos:inScheme ronl:Vocabulary ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:scopeNote
