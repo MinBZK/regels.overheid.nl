@@ -6,6 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix ex: <http://example.org/ns#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix isothes: <http://purl.org/iso25964/skos-thes#> .
 #
 # Declare ronl vocabulary metadata
 #
@@ -45,7 +46,7 @@ ronl:Vocabulary a skos:ConceptScheme ;
 #
 # Define AnalysisConcept as top-level concepts under ronl
 #
-ronl:AnalysisConcept a skos:Concept;
+ronl:AnalysisConcept a isothes:ConceptGroup ;
     rdfs:label
         "RONL Wetsanalyse"@nl ,
         "RONL Legislative analysis"@en ;
@@ -61,9 +62,10 @@ ronl:AnalysisConcept a skos:Concept;
     skos:definition
         "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
         "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
-    skos:narrower
-        ronl:SpecificationTypeConcept ,
-        ronl:source ;
+    isothes:member
+        ex:WetsanalyseJAS ,
+        ex:WetsanalyseJRM ,
+        ex:FLINT ;
     skos:inScheme ronl:Vocabulary ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:scopeNote
@@ -73,7 +75,7 @@ ronl:AnalysisConcept a skos:Concept;
 #
 # Define MethodConcept as top-level concepts under ronl
 #
-ronl:MethodConcept a skos:Concept ;
+ronl:MethodConcept a isothes:ConceptGroup ;
     rdfs:label
         "RONL Methodieken voor Regelbeheer"@nl ,
         "RONL Methodologies for Rules management"@nl ;
@@ -89,9 +91,23 @@ ronl:MethodConcept a skos:Concept ;
     skos:definition
         "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
         "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
-    skos:narrower
-        ronl:SpecificationTypeConcept ,
-        ronl:source ;
+    isothes:member
+        ex:AKN4EU ,
+        ex:ALEF ,
+        ex:Avola ,
+        ex:Beinformed ,
+        ex:Blawx ,
+        ex:Blueriq ,
+        ex:Catala ,
+        ex:CircuLaw ,
+        ex:ConcordiaLegal ,
+        ex:DataLex ,
+        ex:DEMO ,
+        ex:Leos ,
+        ex:OpenFisca ,
+        ex:RuleSpeak ,
+        ex:Sparkwise ,
+        ex:USoft ;
     skos:inScheme ronl:Vocabulary ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:scopeNote
@@ -101,7 +117,7 @@ ronl:MethodConcept a skos:Concept ;
 #
 # Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
 #
-ronl:SpecificationTypeConcept a skos:Concept ;
+ronl:SpecificationTypeConcept a isothes:ConceptGroup ;
     rdfs:label
         "RONL Specificatie soorten"@nl ,
         "RONL Specification types"@en ;
@@ -120,12 +136,331 @@ ronl:SpecificationTypeConcept a skos:Concept ;
     skos:broader
         ronl:AnalysisConcept ,
         ronl:MethodConcept ;
+    isothes:member
+        ex:FunctioneelOntwerp ,
+        ex:SoftwareCode ,
+        ex:UXDesign ,
+        ex:Communicatiemiddel ,
+        ex:Werkinstructie ,
+        ex:Kwaliteitseisen ,
+        ex:BestuurlijkeInformatie ,
+        ex:Overig ;
     skos:inScheme ronl:Vocabulary ;
+    skos:topConceptOf ronl:Vocabulary ;
     skos:scopeNote
         "De lijst is afkomstig van De LegitiMaat, een werkmethode voor het doen van onderzoek naar het gebruik van algoritmes door overheidsorganisaties."@nl ,
         "The list originates from De LegitiMaat, a working method for conducting research into the use of algorithms by government organizations."@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> .
+#
+# Define individual concepts within the AnalysisConcept scheme
+# 
+ex:WetsanalyseJAS a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Wetsanalyse (JAS)"@nl ,
+        "Legislative Analysis (JAS)"@en ;
+    rdfs:comment
+        "Het juridisch analyse schema komt uit het boek Wetsanalyse, Voor een werkbare uitvoering van wetgeving met ICT, van de auteur(s): Anouschka Ausems, John Bulles en Mariette Lokin."@nl ,
+        "The legal analysis scheme comes from the book Legal Analysis, For a workable implementation of legislation with ICT (Dutch only), by the author(s): Anouschka Ausems, John Bulles and Mariette Lokin."@en ;
+    skos:definition
+        "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
+        "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
+    isothes:superGroup ronl:AnalysisConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> .
+
+ex:WetsanalyseJRM a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Wetsanalyse (JRM)"@nl ,
+        "Legislative Analysis (JRM)"@en ;
+    rdfs:comment
+        "In de periode zomer 2021 zomer 2024 is Wetsanalyse (JAS) op een behoorlijk aantal praktijktoepassingen uitgetest. De voornaamste conclusies van die praktijktoepassingen, doorontwikkeling en voortschrijdend inzicht zijn de basis van JRM."@nl ,
+        "In the period summer 2021 summer 2024, Legal Analysis (JAS) was tested on a considerable number of practical applications. The main conclusions of these practical applications, further development and progressive insight are the basis of JRM."@en ;
+    skos:definition
+        "Specificatie van het juridisch referentiemodel (JRM) dat met scenario's beschrijft hoe een burger of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering."@nl ,
+        "Specification of the Legal Reference Model (JRM) that describes in scenarios how a citizen or company experiences a specific piece of legislation or regulations or goes through it in the implementation of the law."@en ;
+    isothes:superGroup ronl:AnalysisConcept ;
+    rdfs:seeAlso <https://minbzk.github.io/wetsuitvoering/> .
+
+ex:FLINT a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "FLINT"@nl ,
+        "FLINT"@en ;
+    rdfs:comment
+        "Dit is werk in uitvoering. Als je vragen of opmerkingen hebt, horen we het graag. Als je wilt meedoen nog liever! We werken aan een internationale standaard voor het werken met normen."@nl ,
+        "This is a work in progress. If you have any questions or comments, we would love to hear from you. If you would like to participate, even better! We are working on an international standard for working with standards."@en ;
+    skos:definition
+        "FLINT is onderdeel van een protocol voor het uitvoeren van normatieve taken (Calculemus) en een expliciete taal om interpretaties van juridische bronnen vast te leggen (FLINT)."@nl ,
+        "FLINT is part of a protocol for performing normative tasks (Calculemus) and an explicit language for recording interpretations of legal sources (FLINT)."@en ;
+    isothes:superGroup ronl:AnalysisConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/flint/INTRODUCTIE> .
+#
+# Define individual concepts within the MethodConcept scheme
+#
+ex:AKN4EU a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "AKN4EU"@nl ,
+        "AKN4EU"@en ;
+    skos:definition
+        "Akoma Ntoso (`verbonden harten` in de Akan-taal van West-Afrika) definieert een set van eenvoudige technologieneutrale elektronische representaties in XML-formaat van parlementaire, wetgevende en rechterlijke documenten. AKN4EU kan worden beschouwd als de lokalisatie van Akoma Ntoso voor EU-wetgeving."@nl ,
+        "Akoma Ntoso (`linked hearts` in the Akan language of West Africa) defines a set of simple technology-neutral electronic representations in XML format of parliamentary, legislative and judiciary documents. AKN4EU can be considered as the localisation of Akoma Ntoso for EU legislation."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu> .
+
+ex:ALEF a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "ALEF"@nl ,
+        "ALEF"@en ;
+    skos:definition
+        "In ALEF worden specificaties opgesteld die bestaan uit regels, datadefinities en testgevallen. De regels zijn opgesteld in de taal RegelSpraak. Dit is een gecontroleerde Nederlandse taal die zowel voor juristen als voor computersystemen goed leesbaar is."@nl ,
+        "In ALEF, specifications are drawn up that consist of rules, data definitions and test cases. The rules are written in the RegelSpraak language. This is a controlled Dutch language that is easy to read for both lawyers and computer systems."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> .
+
+ex:Avola a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Avola"@nl ,
+        "Avola"@en ;
+    skos:definition
+        "Avola is een platform waarmee regels binnen een organisatie op een gestandaardiseerde wijze vertaald kunnen worden naar een toetsbaar beslismodel. Er wordt gebruik gemaakt van de bekende DMN-standaard om logica van regels vast te leggen in beslistabellen die het model vormen."@nl ,
+        "Avola is a platform that allows rules within an organization to be translated into a testable decision model in a standardized manner. The well-known DMN standard is used to record the logic of rules in decision tables that form the model."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/AVOLA> .
+
+ex:Beinformed a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Beinformed"@nl ,
+        "Beinformed"@en ;
+    skos:definition
+        "Het Be Informed-platform is een direct modelgestuurd automatiseringsplatform. Deze modellen (en de processen die ze vertegenwoordigen) zijn direct bruikbaar, zonder extra programmering of conversie naar code. Bedrijfsregels worden semantisch vastgelegd en gemodelleerd en kunnen op elk moment worden getest en aangepast."@nl ,
+        "The Be Informed platform is a direct model-driven automation platform. These models (and the processes they represent) are immediately usable, without additional programming or conversion to code. Business rules are semantically captured and modeled and can be tested and modified at any time."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BEINFORMED> .
+
+ex:Blawx a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Blawx"@nl ,
+        "Blawx"@en ;
+    skos:definition
+        "Blawx is een open source, gebruiksvriendelijke, webgebaseerde declaratieve logica kennisrepresentatietool die speciaal is ontworpen voor het coderen, testen en gebruiken van regels. Het is geïmplementeerd als een set applicaties."@nl ,
+        "Blawx is an open source, user-friendly, web-based declarative logic knowledge representation tool designed specifically for encoding, testing and using rules. It is implemented as a set of applications."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://github.com/Lexpedite/blawx> .
+
+ex:Blueriq a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Blueriq"@nl ,
+        "Blueriq"@en ;
+    skos:definition
+        "Het Blueriq platform is een regelgedreven software platform ontworpen voor dynamische, zakelijke oplossingen voor organisaties met kennisintensieve processen. Het stelt jou en je organisatie in staat snel en kosteneffectief te reageren op veranderende omstandigheden en regelgevingen zodat je een persoonlijke en efficiënte dienstverlening kunt bieden aan iedere klant."@nl ,
+        "The Blueriq platform is a rule-driven software platform designed for dynamic, business solutions for organizations with knowledge-intensive processes. It enables you and your organization to respond quickly and cost-effectively to changing circumstances and regulations so that you can offer a personal and efficient service to every customer."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BLUERIQ> .
+
+ex:Catala a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Catala"@nl ,
+        "Catala"@en ;
+    skos:definition
+        "Catala is een domeinspecifieke programmeertaal die is ontworpen voor het afleiden van constructief correcte implementaties uit wetteksten."@nl ,
+        "Catala is a domain-specific programming language designed for deriving correct-by-construction implementations from legislative texts."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://catala-lang.org/> .
+
+ex:CircuLaw a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "CircuLaw"@nl ,
+        "CircuLaw"@en ;
+    skos:definition
+        "CircuLaw is een kennisplatform waarmee beleidsmakers, projectleiders en inkopers worden geholpen bij het meer en beter gebruikmaken van regelgeving teneinde de circulaire economie te bevorderen. Wet- en regelgeving biedt goede mogelijkheden om effectief circulair beleid te maken. CircuLaw ontsluit die complexe wet-en regelgeving zodat beleidsmakers er mee aan de slag kunnen."@nl ,
+        "CircuLaw is a knowledge platform that helps policymakers, project leaders and purchasers to make more and better use of regulations in order to promote the circular economy. Laws and regulations offer good opportunities to create effective circular policy. CircuLaw unlocks these complex laws and regulations so that policymakers can get started with them."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CIRCULAW> .
+
+ex:ConcordiaLegal a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Concordia Legal"@nl ,
+        "Concordia Legal"@en ;
+    skos:definition
+        "Regelgeving kan snel en consistent worden overgezet in massabesluitvormingsprocessen, door te werken vanuit een Rule Engine in natuurlijke taal en vanuit die regels de gegevens en processen op te bouwen."@nl ,
+        "Regulations can be translated quickly and consistently into mass decision-making processes by working from a natural language Rule Engine and building the data and processes from those rules."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CONCORDIALEGAL> .
+
+ex:DataLex a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "DataLex"@nl ,
+        "DataLex"@en ;
+    skos:definition
+        "AustLII's DataLex kan worden gebruikt om juridische redeneringsapplicaties te ontwikkelen op gebieden zoals juridische adviesdiensten, naleving van regelgeving, beslissingsondersteuning en Rules as Code. AustLII is een gezamenlijke faciliteit van UTS en UNSW Faculties of Law."@nl ,
+        "AustLII's DataLex can be used to develop legal reasoning applications in areas such as legal advisory services, regulatory compliance, decision support and Rules as Code. AustLII is a joint facility of UTS and UNSW Faculties of Law."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://datalex.org/> .
+
+ex:Demo a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "DEMO"@nl ,
+        "DEMO"@en ;
+    skos:definition
+        "DEMO (Design and Engineering Methodology for Organizations) is een methode voor het analyseren en (her)ontwerpen van organisaties. Een DEMO model vormt een consistent geheel van producten, verantwoordelijkheden, processen, informatie en bedrijfsregels."@nl ,
+        "DEMO (Design and Engineering Methodology for Organizations) is a method for analyzing and (re)designing organizations. A DEMO model forms a consistent whole of products, responsibilities, processes, information and business rules."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/DEMO> .
+
+ex:Leos a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "LEOS"@nl ,
+        "LEOS"@en ;
+    skos:definition
+        "LEOS is een webtool ter ondersteuning van het opstellen van wetgeving in de EU met online samenwerking, versiebeheer en co-editing. Het maakt gebruik van Akoma Ntoso XML-schema. Het is een EC-oplossing."@nl ,
+        "LEOS is a web tool to support the legislative drafting in the EU with online collaboration, version control, and co-editing. It utilises Akoma Ntoso XML schema. It is an EC solution."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://joinup.ec.europa.eu/collection/justice-law-and-security/solution/leos-open-source-software-editing-legislation> .
+
+ex:OpenFisca a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "OpenFisca"@nl ,
+        "OpenFisca"@en ;
+    skos:definition
+        "OpenFisca is een open-source softwareframework voor het modelleren van belasting- en uitkeringssystemen op een manier die zowel leesbaar is voor mensen als uitvoerbaar is voor computers. Het maakt het mogelijk om wetten en regels te vertalen naar uitvoerbare Python-code, waardoor ze toegankelijk worden voor zowel juridische als technische experts."@nl ,
+        "OpenFisca is an open-source software framework for modelling tax and benefit systems in a way that is both readable by humans and executable by computers. It enables translating laws and regulations into executable Python code, making them accessible for both legal and technical experts."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/OPENFISCA> .
+
+ex:RuleSpeak a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "RuleSpeak"@nl ,
+        "RuleSpeak"@en ;
+    skos:definition
+        "RuleSpeak® is een verzameling richtlijnen voor het formuleren van bedrijfsregels op een bedrijfsvriendelijke en precieze manier. Het is geen taal of syntax maar eerder een verzameling voorschriften voor Nederlandstalige formulering van bedrijfsregels gebaseerd op ervaringen in de praktijk."@nl ,
+        "RuleSpeak® is a set of guidelines for formulating business rules in a business-friendly and precise way. It is not a language or syntax but rather a set of prescriptions for Dutch-language formulation of business rules based on practical experience."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/RULESPEAK> .
+
+ex:Sparkwise a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Sparkwise"@nl ,
+        "Sparkwise"@en ;
+    skos:definition
+        "Sparkwise is een Decision Intelligence SaaS platform waarmee beleidregels en bedrijfslogica, met 1 druk op de knop, geautomatiseerd omgezet worden naar uitvoerbare beslisservices (APIs) en ondersteunt daarmee Legislation to Operation (LegOps) kwaliteit en versnelling. Geïnspireerd op de DMN standaard."@nl ,
+        "Sparkwise is a Decision Intelligence SaaS platform that automatically converts policies and business logic into executable decision services (APIs) at the push of a button, thereby supporting Legislation to Operation (LegOps) quality and acceleration. Inspired by the DMN standard."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/SPARKWISE> .
+    
+ex:USoft a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "USoft"@nl ,
+        "USoft"@en ;
+    skos:definition
+        "USoft biedt een low-code platform voor regelgestuurde software obv SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@nl ,
+        "USoft offers a low-code platform for rule-driven software based on SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@en ;
+    isothes:superGroup ronl:MethodConcept ;
+    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/USOFT> .
+#
+# Define individual concepts within the SpecificationTypeConcept scheme
+#
+ex:FunctioneelOntwerp a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Functioneel Ontwerp"@nl ,
+        "Functional Design"@en ;
+    skos:definition
+        "Hierin worden alle eisen en wensen waaraan een product moet voldoen verzameld en geordend. Er wordt beschreven op welke manier, welke verwachten de gebruiker heeft, welke handelingen hij uitvoert en welke resultaten die oplevert."@nl ,
+        "In this, all requirements and wishes that a product must meet are collected and arranged. It describes in what way, what expectations the user has, what actions he performs and what results that produces."@en ;
+    isothes:superGroup ronl:SpecificationTypeConcept .
+
+ex:SoftwareCode a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Software code"@nl ,
+        "Software code"@en ;
+    skos:definition
+        "Code is in algemene zin de taal die door de computer wordt begrepen."@nl ,
+        "Software code, in a general sense, is the language understood by the computer."@en ;
+    skos:scopeNote
+        "In context hier beschrijft het tevens de gehanteerde Git workflow voor CI/CD én het corresponderende versiebeheer van toetsscenario's, beslisregelsets en testgevallen. Legt ook uit wat de gehanteerde test strategie is. Beschikt over de KPI's / rapportage items van het proces toetsen en testen (BiSL)."@nl ,
+        "In context here it also describes the Git workflow used for CI/CD and the corresponding version control of test scenarios, decision rule sets and test cases. Also explains what the test strategy used is. Has the KPIs / reporting items of the process of testing and reviewing (BiSL)."@en ;
+    isothes:superGroup ronl:SpecificationTypeConcept .
+
+ex:UXDesign a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "UX Design"@nl ,
+        "UX Design"@en ;
+    skos:definition
+        "De interactie schermen (screenprints) van de website waar de informatie gegeven wordt aan de aanvrager en de interactie plaats vindt."@nl ,
+        "The interaction screens (screen prints) of the website where the information is given to the applicant and the interaction takes place."@en ;
+    isothes:superGroup ronl:SpecificationTypeConcept .
+
+ex:Communicatiemiddel a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Communicatiemiddel"@nl ,
+        "Communications service"@en ;
+    skos:definition
+        "De brieven die de individuele persoon kan krijgen hierover (besluiten in de zin van artikel 1:3 Awb)."@nl ,
+        "The letters that the individual can receive about this (decisions within the meaning of article 1:3 Awb)"@en ;
+    ronl:source <https://wetten.overheid.nl/jci1.3:c:BWBR0005537&hoofdstuk=1&titeldeel=1.1&artikel=1:3&z=2024-11-08&g=2024-11-08> ;
+    isothes:superGroup ronl:SpecificationTypeConcept ;
+    rdfs:seeAlso <https://gegevensbijbesluiten.overheid.nl/besluit> .
+
+ex:Werkinstructie a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Werkinstructie"@nl ,
+        "Work instruction"@en ;
+    skos:definition
+        "De gedetailleerde, stapsgewijze handleiding die beschrijft hoe een specifieke taak of activiteit binnen het proces of procedure van de onderhavige dienst en/of het product moet worden uitgevoerd door alle betrokkenen (ie aanvrager, ontvanger, verstrekker)."@nl ,
+        "The detailed, step-by-step guide describing how a specific task or activity within the process or procedure of the service and/or product in question should be performed by all involved (i.e. requester, recipient, provider)."@en ;
+    isothes:superGroup ronl:SpecificationTypeConcept .
+
+ex:Kwaliteitseisen a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Kwaliteitseisen"@nl ,
+        "Quality Requirements"@en ;
+    skos:definition
+        "Definiëren de voorwaarden die worden gebruikt om de conformiteit van een project met de beoogde kwaliteitsnormen te beoordelen. Ze specificeren de kenmerken, karakteristieken en processen die moeten worden gehaald of overtroffen om de kwaliteit van een product, dienst of resultaat te garanderen."@nl ,    
+        "Define the conditions used to assess the conformance of a project to its intended quality standards. They specify the attributes, characteristics, and processes that must be met or exceeded to ensure the quality of a product, service, or outcome."@en ;
+    isothes:superGroup ronl:SpecificationTypeConcept .
+
+ex:BestuurlijkeInformatie a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Bestuurlijke Informatie"@nl ,
+        "Business Intelligence"@en ;
+    skos:definition
+        "Alle verzamelde, vastgelegde en gearchiveerde informatie ten behoeve van het besturen, het doen functioneren en het beheersen van het onderhavige proces alsmede ten behoeve van het afleggen van verantwoording."@nl ,
+        "All information collected, recorded and archived for the purpose of managing, operating and controlling the process in question, as well as for the purpose of accountability."@en ;
+    isothes:superGroup ronl:SpecificationTypeConcept .
+
+ex:Overig a skos:Concept ;
+    skos:inScheme ronl: ;
+    skos:prefLabel
+        "Overig"@nl ,
+        "Other"@en ;
+    skos:definition
+        "Bevat relevante informatie over organisatie, dienst en/of product, process of anderszins, dat om moverende redenen niet in de beschikbare ronl:SpecificationTypeConcept concepten past."@nl ,
+        "Contains relevant information about organization, service and/or product, process or otherwise, that for compelling reasons does not fit into the available ronl:SpecificationTypeConcept concepts."@en ;
+    isothes:superGroup ronl:SpecificationTypeConcept .
 #
 # Define ronl:source, ronl:analysis and ronl:method as RDF properties
 #
@@ -244,312 +579,3 @@ ronl:implements a owl:ObjectProperty ;
         "rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification."@en ,
         "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
-#
-# Define individual concepts within the AnalysisConcept scheme
-# 
-ex:WetsanalyseJAS a skos: ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Wetsanalyse (JAS)"@nl ,
-        "Legislative Analysis (JAS)"@en ;
-    rdfs:comment
-        "Het juridisch analyse schema komt uit het boek Wetsanalyse, Voor een werkbare uitvoering van wetgeving met ICT, van de auteur(s): Anouschka Ausems, John Bulles en Mariette Lokin."@nl ,
-        "The legal analysis scheme comes from the book Legal Analysis, For a workable implementation of legislation with ICT (Dutch only), by the author(s): Anouschka Ausems, John Bulles and Mariette Lokin."@en ;
-    skos:definition
-        "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
-        "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
-    skos:member ronl:AnalysisConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> .
-
-ex:WetsanalyseJRM a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Wetsanalyse (JRM)"@nl ,
-        "Legislative Analysis (JRM)"@en ;
-    rdfs:comment
-        "In de periode zomer 2021 zomer 2024 is Wetsanalyse (JAS) op een behoorlijk aantal praktijktoepassingen uitgetest. De voornaamste conclusies van die praktijktoepassingen, doorontwikkeling en voortschrijdend inzicht zijn de basis van JRM."@nl ,
-        "In the period summer 2021 summer 2024, Legal Analysis (JAS) was tested on a considerable number of practical applications. The main conclusions of these practical applications, further development and progressive insight are the basis of JRM."@en ;
-    skos:definition
-        "Specificatie van het juridisch referentiemodel (JRM) dat met scenario's beschrijft hoe een burger of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering."@nl ,
-        "Specification of the Legal Reference Model (JRM) that describes in scenarios how a citizen or company experiences a specific piece of legislation or regulations or goes through it in the implementation of the law."@en ;
-    skos:member ronl:AnalysisConcept ;
-    rdfs:seeAlso <https://minbzk.github.io/wetsuitvoering/> .
-
-ex:FLINT a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "FLINT"@nl ,
-        "FLINT"@en ;
-    rdfs:comment
-        "Dit is werk in uitvoering. Als je vragen of opmerkingen hebt, horen we het graag. Als je wilt meedoen nog liever! We werken aan een internationale standaard voor het werken met normen."@nl ,
-        "This is a work in progress. If you have any questions or comments, we would love to hear from you. If you would like to participate, even better! We are working on an international standard for working with standards."@en ;
-    skos:definition
-        "FLINT is onderdeel van een protocol voor het uitvoeren van normatieve taken (Calculemus) en een expliciete taal om interpretaties van juridische bronnen vast te leggen (FLINT)."@nl ,
-        "FLINT is part of a protocol for performing normative tasks (Calculemus) and an explicit language for recording interpretations of legal sources (FLINT)."@en ;
-    skos:member ronl:AnalysisConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/flint/INTRODUCTIE> .
-#
-# Define individual concepts within the MethodConcept scheme
-#
-ex:AKN4EU a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "AKN4EU"@nl ,
-        "AKN4EU"@en ;
-    skos:definition
-        "Akoma Ntoso (`verbonden harten` in de Akan-taal van West-Afrika) definieert een set van eenvoudige technologieneutrale elektronische representaties in XML-formaat van parlementaire, wetgevende en rechterlijke documenten. AKN4EU kan worden beschouwd als de lokalisatie van Akoma Ntoso voor EU-wetgeving."@nl ,
-        "Akoma Ntoso (`linked hearts` in the Akan language of West Africa) defines a set of simple technology-neutral electronic representations in XML format of parliamentary, legislative and judiciary documents. AKN4EU can be considered as the localisation of Akoma Ntoso for EU legislation."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu> .
-
-ex:ALEF a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "ALEF"@nl ,
-        "ALEF"@en ;
-    skos:definition
-        "In ALEF worden specificaties opgesteld die bestaan uit regels, datadefinities en testgevallen. De regels zijn opgesteld in de taal RegelSpraak. Dit is een gecontroleerde Nederlandse taal die zowel voor juristen als voor computersystemen goed leesbaar is."@nl ,
-        "In ALEF, specifications are drawn up that consist of rules, data definitions and test cases. The rules are written in the RegelSpraak language. This is a controlled Dutch language that is easy to read for both lawyers and computer systems."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> .
-
-ex:Avola a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Avola"@nl ,
-        "Avola"@en ;
-    skos:definition
-        "Avola is een platform waarmee regels binnen een organisatie op een gestandaardiseerde wijze vertaald kunnen worden naar een toetsbaar beslismodel. Er wordt gebruik gemaakt van de bekende DMN-standaard om logica van regels vast te leggen in beslistabellen die het model vormen."@nl ,
-        "Avola is a platform that allows rules within an organization to be translated into a testable decision model in a standardized manner. The well-known DMN standard is used to record the logic of rules in decision tables that form the model."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/AVOLA> .
-
-ex:Beinformed a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Beinformed"@nl ,
-        "Beinformed"@en ;
-    skos:definition
-        "Het Be Informed-platform is een direct modelgestuurd automatiseringsplatform. Deze modellen (en de processen die ze vertegenwoordigen) zijn direct bruikbaar, zonder extra programmering of conversie naar code. Bedrijfsregels worden semantisch vastgelegd en gemodelleerd en kunnen op elk moment worden getest en aangepast."@nl ,
-        "The Be Informed platform is a direct model-driven automation platform. These models (and the processes they represent) are immediately usable, without additional programming or conversion to code. Business rules are semantically captured and modeled and can be tested and modified at any time."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BEINFORMED> .
-
-ex:Blawx a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Blawx"@nl ,
-        "Blawx"@en ;
-    skos:definition
-        "Blawx is een open source, gebruiksvriendelijke, webgebaseerde declaratieve logica kennisrepresentatietool die speciaal is ontworpen voor het coderen, testen en gebruiken van regels. Het is geïmplementeerd als een set applicaties."@nl ,
-        "Blawx is an open source, user-friendly, web-based declarative logic knowledge representation tool designed specifically for encoding, testing and using rules. It is implemented as a set of applications."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://github.com/Lexpedite/blawx> .
-
-ex:Blueriq a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Blueriq"@nl ,
-        "Blueriq"@en ;
-    skos:definition
-        "Het Blueriq platform is een regelgedreven software platform ontworpen voor dynamische, zakelijke oplossingen voor organisaties met kennisintensieve processen. Het stelt jou en je organisatie in staat snel en kosteneffectief te reageren op veranderende omstandigheden en regelgevingen zodat je een persoonlijke en efficiënte dienstverlening kunt bieden aan iedere klant."@nl ,
-        "The Blueriq platform is a rule-driven software platform designed for dynamic, business solutions for organizations with knowledge-intensive processes. It enables you and your organization to respond quickly and cost-effectively to changing circumstances and regulations so that you can offer a personal and efficient service to every customer."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BLUERIQ> .
-
-ex:Catala a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Catala"@nl ,
-        "Catala"@en ;
-    skos:definition
-        "Catala is een domeinspecifieke programmeertaal die is ontworpen voor het afleiden van constructief correcte implementaties uit wetteksten."@nl ,
-        "Catala is a domain-specific programming language designed for deriving correct-by-construction implementations from legislative texts."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://catala-lang.org/> .
-
-ex:CircuLaw a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "CircuLaw"@nl ,
-        "CircuLaw"@en ;
-    skos:definition
-        "CircuLaw is een kennisplatform waarmee beleidsmakers, projectleiders en inkopers worden geholpen bij het meer en beter gebruikmaken van regelgeving teneinde de circulaire economie te bevorderen. Wet- en regelgeving biedt goede mogelijkheden om effectief circulair beleid te maken. CircuLaw ontsluit die complexe wet-en regelgeving zodat beleidsmakers er mee aan de slag kunnen."@nl ,
-        "CircuLaw is a knowledge platform that helps policymakers, project leaders and purchasers to make more and better use of regulations in order to promote the circular economy. Laws and regulations offer good opportunities to create effective circular policy. CircuLaw unlocks these complex laws and regulations so that policymakers can get started with them."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CIRCULAW> .
-
-ex:ConcordiaLegal a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Concordia Legal"@nl ,
-        "Concordia Legal"@en ;
-    skos:definition
-        "Regelgeving kan snel en consistent worden overgezet in massabesluitvormingsprocessen, door te werken vanuit een Rule Engine in natuurlijke taal en vanuit die regels de gegevens en processen op te bouwen."@nl ,
-        "Regulations can be translated quickly and consistently into mass decision-making processes by working from a natural language Rule Engine and building the data and processes from those rules."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CONCORDIALEGAL> .
-
-ex:DataLex a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "DataLex"@nl ,
-        "DataLex"@en ;
-    skos:definition
-        "AustLII's DataLex kan worden gebruikt om juridische redeneringsapplicaties te ontwikkelen op gebieden zoals juridische adviesdiensten, naleving van regelgeving, beslissingsondersteuning en Rules as Code. AustLII is een gezamenlijke faciliteit van UTS en UNSW Faculties of Law."@nl ,
-        "AustLII's DataLex can be used to develop legal reasoning applications in areas such as legal advisory services, regulatory compliance, decision support and Rules as Code. AustLII is a joint facility of UTS and UNSW Faculties of Law."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://datalex.org/> .
-
-ex:Demo a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "DEMO"@nl ,
-        "DEMO"@en ;
-    skos:definition
-        "DEMO (Design and Engineering Methodology for Organizations) is een methode voor het analyseren en (her)ontwerpen van organisaties. Een DEMO model vormt een consistent geheel van producten, verantwoordelijkheden, processen, informatie en bedrijfsregels."@nl ,
-        "DEMO (Design and Engineering Methodology for Organizations) is a method for analyzing and (re)designing organizations. A DEMO model forms a consistent whole of products, responsibilities, processes, information and business rules."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/DEMO> .
-
-ex:Leos a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "LEOS"@nl ,
-        "LEOS"@en ;
-    skos:definition
-        "LEOS is een webtool ter ondersteuning van het opstellen van wetgeving in de EU met online samenwerking, versiebeheer en co-editing. Het maakt gebruik van Akoma Ntoso XML-schema. Het is een EC-oplossing."@nl ,
-        "LEOS is a web tool to support the legislative drafting in the EU with online collaboration, version control, and co-editing. It utilises Akoma Ntoso XML schema. It is an EC solution."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://joinup.ec.europa.eu/collection/justice-law-and-security/solution/leos-open-source-software-editing-legislation> .
-
-ex:OpenFisca a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "OpenFisca"@nl ,
-        "OpenFisca"@en ;
-    skos:definition
-        "OpenFisca is een open-source softwareframework voor het modelleren van belasting- en uitkeringssystemen op een manier die zowel leesbaar is voor mensen als uitvoerbaar is voor computers. Het maakt het mogelijk om wetten en regels te vertalen naar uitvoerbare Python-code, waardoor ze toegankelijk worden voor zowel juridische als technische experts."@nl ,
-        "OpenFisca is an open-source software framework for modelling tax and benefit systems in a way that is both readable by humans and executable by computers. It enables translating laws and regulations into executable Python code, making them accessible for both legal and technical experts."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/OPENFISCA> .
-
-ex:RuleSpeak a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "RuleSpeak"@nl ,
-        "RuleSpeak"@en ;
-    skos:definition
-        "RuleSpeak® is een verzameling richtlijnen voor het formuleren van bedrijfsregels op een bedrijfsvriendelijke en precieze manier. Het is geen taal of syntax maar eerder een verzameling voorschriften voor Nederlandstalige formulering van bedrijfsregels gebaseerd op ervaringen in de praktijk."@nl ,
-        "RuleSpeak® is a set of guidelines for formulating business rules in a business-friendly and precise way. It is not a language or syntax but rather a set of prescriptions for Dutch-language formulation of business rules based on practical experience."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/RULESPEAK> .
-
-ex:Sparkwise a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Sparkwise"@nl ,
-        "Sparkwise"@en ;
-    skos:definition
-        "Sparkwise is een Decision Intelligence SaaS platform waarmee beleidregels en bedrijfslogica, met 1 druk op de knop, geautomatiseerd omgezet worden naar uitvoerbare beslisservices (APIs) en ondersteunt daarmee Legislation to Operation (LegOps) kwaliteit en versnelling. Geïnspireerd op de DMN standaard."@nl ,
-        "Sparkwise is a Decision Intelligence SaaS platform that automatically converts policies and business logic into executable decision services (APIs) at the push of a button, thereby supporting Legislation to Operation (LegOps) quality and acceleration. Inspired by the DMN standard."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/SPARKWISE> .
-    
-ex:USoft a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "USoft"@nl ,
-        "USoft"@en ;
-    skos:definition
-        "USoft biedt een low-code platform voor regelgestuurde software obv SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@nl ,
-        "USoft offers a low-code platform for rule-driven software based on SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@en ;
-    skos:member ronl:MethodConcept ;
-    rdfs:seeAlso <https://regels.overheid.nl/docs/methods/USOFT> .
-#
-# Define individual concepts within the SpecificationTypeConcept scheme
-#
-ex:FunctioneelOntwerp a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Functioneel Ontwerp"@nl ,
-        "Functional Design"@en ;
-    skos:definition
-        "Hierin worden alle eisen en wensen waaraan een product moet voldoen verzameld en geordend. Er wordt beschreven op welke manier, welke verwachten de gebruiker heeft, welke handelingen hij uitvoert en welke resultaten die oplevert."@nl ,
-        "In this, all requirements and wishes that a product must meet are collected and arranged. It describes in what way, what expectations the user has, what actions he performs and what results that produces."@en ;
-    skos:member ronl:SpecificationTypeConcept .
-
-ex:SoftwareCode a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Software code"@nl ,
-        "Software code"@en ;
-    skos:definition
-        "Code is in algemene zin de taal die door de computer wordt begrepen."@nl ,
-        "Software code, in a general sense, is the language understood by the computer."@en ;
-    skos:scopeNote
-        "In context hier beschrijft het tevens de gehanteerde Git workflow voor CI/CD én het corresponderende versiebeheer van toetsscenario's, beslisregelsets en testgevallen. Legt ook uit wat de gehanteerde test strategie is. Beschikt over de KPI's / rapportage items van het proces toetsen en testen (BiSL)."@nl ,
-        "In context here it also describes the Git workflow used for CI/CD and the corresponding version control of test scenarios, decision rule sets and test cases. Also explains what the test strategy used is. Has the KPIs / reporting items of the process of testing and reviewing (BiSL)."@en ;
-    skos:member ronl:SpecificationTypeConcept .
-
-ex:UXDesign a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "UX Design"@nl ,
-        "UX Design"@en ;
-    skos:definition
-        "De interactie schermen (screenprints) van de website waar de informatie gegeven wordt aan de aanvrager en de interactie plaats vindt."@nl ,
-        "The interaction screens (screen prints) of the website where the information is given to the applicant and the interaction takes place."@en ;
-    skos:member ronl:SpecificationTypeConcept .
-
-ex:Communicatiemiddel a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Communicatiemiddel"@nl ,
-        "Communications service"@en ;
-    skos:definition
-        "De brieven die de individuele persoon kan krijgen hierover (besluiten in de zin van artikel 1:3 Awb)."@nl ,
-        "The letters that the individual can receive about this (decisions within the meaning of article 1:3 Awb)"@en ;
-    ronl:source <https://wetten.overheid.nl/jci1.3:c:BWBR0005537&hoofdstuk=1&titeldeel=1.1&artikel=1:3&z=2024-11-08&g=2024-11-08> ;
-    rdfs:seeAlso <https://gegevensbijbesluiten.overheid.nl/besluit> ;
-    skos:member ronl:SpecificationTypeConcept .
-
-ex:Werkinstructie a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Werkinstructie"@nl ,
-        "Work instruction"@en ;
-    skos:definition
-        "De gedetailleerde, stapsgewijze handleiding die beschrijft hoe een specifieke taak of activiteit binnen het proces of procedure van de onderhavige dienst en/of het product moet worden uitgevoerd door alle betrokkenen (ie aanvrager, ontvanger, verstrekker)."@nl ,
-        "The detailed, step-by-step guide describing how a specific task or activity within the process or procedure of the service and/or product in question should be performed by all involved (i.e. requester, recipient, provider)."@en ;
-    skos:member ronl:SpecificationTypeConcept .
-
-ex:Kwaliteitseisen a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Kwaliteitseisen"@nl ,
-        "Quality Requirements"@en ;
-    skos:definition
-        "Definiëren de voorwaarden die worden gebruikt om de conformiteit van een project met de beoogde kwaliteitsnormen te beoordelen. Ze specificeren de kenmerken, karakteristieken en processen die moeten worden gehaald of overtroffen om de kwaliteit van een product, dienst of resultaat te garanderen."@nl ,    
-        "Define the conditions used to assess the conformance of a project to its intended quality standards. They specify the attributes, characteristics, and processes that must be met or exceeded to ensure the quality of a product, service, or outcome."@en ;
-    skos:member ronl:SpecificationTypeConcept .
-
-ex:BestuurlijkeInformatie a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Bestuurlijke Informatie"@nl ,
-        "Business Intelligence"@en ;
-    skos:definition
-        "Alle verzamelde, vastgelegde en gearchiveerde informatie ten behoeve van het besturen, het doen functioneren en het beheersen van het onderhavige proces alsmede ten behoeve van het afleggen van verantwoording."@nl ,
-        "All information collected, recorded and archived for the purpose of managing, operating and controlling the process in question, as well as for the purpose of accountability."@en ;
-    skos:member ronl:SpecificationTypeConcept .
-
-ex:Overig a skos:Concept ;
-    skos:inScheme ronl: ;
-    skos:prefLabel
-        "Overig"@nl ,
-        "Other"@en ;
-    skos:definition
-        "Bevat relevante informatie over organisatie, dienst en/of product, process of anderszins, dat om moverende redenen niet in de beschikbare ronl:SpecificationTypeConcept concepten past."@nl ,
-        "Contains relevant information about organization, service and/or product, process or otherwise, that for compelling reasons does not fit into the available ronl:SpecificationTypeConcept concepts."@en ;
-    skos:member ronl:SpecificationTypeConcept .
