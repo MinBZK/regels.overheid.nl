@@ -1,5 +1,11 @@
 # web
 
+## 3.41.0
+
+### Minor Changes
+
+- d518f70: Updated custome name space RONL and added Labcard for Skosmos"
+
 ## 3.40.1
 
 ### Patch Changes
