@@ -149,11 +149,11 @@
         #
         dct:relation <https://gegevensbijbesluiten.overheid.nl/besluit/61720422> ;
         cpsv-ap:hasCriterionRequirement
-            ronl:Ingezetene ,
-            ronl:Leeftijd18 ,
-            ronl:Betalingsregeling ,
+            ex:Ingezetene ,
+            ex:Leeftijd18 ,
+            ex:Betalingsregeling ,
             <#inkomen_en_vermogen_requirement> ,
-            ronl:Detentie ,
+            ex:Detentie ,
             <#verzekering_requirement> ;
         cpsv-ap:hasInput <#persoonlijke_gegevens_dataset>, <#betalingsgegevens_dataset>, <#inkomens_en_vermogensgegevens_dataset>, <#justitiële_gegevens_dataset>, <#verzekeringsgegevens_dataset> ;
     ] ;
