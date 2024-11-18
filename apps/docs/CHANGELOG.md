@@ -1,5 +1,11 @@
 # docs
 
+## 3.15.0
+
+### Minor Changes
+
+- 73bc2cc: Restructuring custom ronl namespace & complete in 2 languages"
+
 ## 3.14.2
 
 ### Patch Changes
