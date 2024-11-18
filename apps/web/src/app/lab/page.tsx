@@ -27,8 +27,8 @@ export default async function LabPage() {
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="Skosmos">
-          Skosmos is een open source webgebaseerde SKOS-browser en publicatietool.
-          Deze demo bevat oa de vocabulaire van regels.overheid.nl en de Standaard voor het beschrijven van begrippen (NL-SBB).
+          Skosmos is een open source webgebaseerde SKOS-browser en publicatietool. Deze demo bevat oa de vocabulaire van
+          regels.overheid.nl en de Standaard voor het beschrijven van begrippen (NL-SBB).
           <CardLab.MethodItems>
             <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
             <CardLab.Repo href="https://github.com/NatLibFi/Skosmos" />
