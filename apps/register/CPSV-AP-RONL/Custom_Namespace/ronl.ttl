@@ -29,10 +29,6 @@ ronl:Vocabulary a skos:ConceptScheme ;
     skos:definition
         "Een aangepaste naamruimte met onze eigen skos:ConceptScheme om te voorkomen dat informatie in elk afzonderlijk exemplaar van cpsv-ap:PublicService wordt herhaald."@nl ,
         "A custom namespace with our own skos:ConceptScheme to avoid repeating information in each individual cpsv-ap:PublicService instance."@en ;
-    skos:hasTopConcept
-        ronl:AnalysisConcept ,
-        ronl:MethodConcept ,
-        ronl:SpecificationTypeConcept ;
     skos:scopeNote
         "Het doel van deze ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl."@nl ,
         "The purpose of this ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl."@en ;
@@ -43,7 +39,11 @@ ronl:Vocabulary a skos:ConceptScheme ;
         "en" ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:source <https://regels.overheid.nl/ronl/ns> ;
-    owl:versionInfo "Work In Progres - v1" .
+    skos:hasTopConcept
+        ronl:AnalysisConcept ,
+        ronl:MethodConcept ,
+        ronl:SpecificationTypeConcept ;
+    owl:versionInfo "Work In Progres - v2" .
 
 #
 # Define AnalysisConcept as top-level concept
@@ -64,18 +64,17 @@ ronl:AnalysisConcept a skos:Concept ;
     skos:definition
         "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
         "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
+    skos:scopeNote
+        "Het doel is om een nagenoeg complete verzameling van wetsanalyse methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
+        "The aim is to group a nearly complete collection of legislative analysis methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
+    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
     skos:narrower ronl:SpecificationTypeConcept ;
     skos:member
         ex:WetsanalyseJAS ,
         ex:WetsanalyseJRM ,
         ex:FLINT ;
-    skos:inScheme ronl:Vocabulary ;
-    skos:scopeNote
-        "Het doel is om een nagenoeg complete verzameling van wetsanalyse methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
-        "The aim is to group a nearly complete collection of legislative analysis methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
-    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
-    skos:topConceptOf ronl:Vocabulary .
-
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
 #
 # Define MethodConcept as top-level concept
 #
@@ -95,6 +94,10 @@ ronl:MethodConcept a skos:Concept ;
     skos:definition
         "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
         "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
+    skos:scopeNote
+        "Het doel is om een nagenoeg complete verzameling van regelbeheer methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
+        "The aim is to group a nearly complete collection of rules management methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
+    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
     skos:narrower ronl:SpecificationTypeConcept ;
     skos:member
         ex:AKN4EU ,
@@ -113,12 +116,8 @@ ronl:MethodConcept a skos:Concept ;
         ex:RuleSpeak ,
         ex:Sparkwise ,
         ex:USoft ;
-    skos:inScheme ronl:Vocabulary ;
-    skos:scopeNote
-        "Het doel is om een nagenoeg complete verzameling van regelbeheer methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
-        "The aim is to group a nearly complete collection of rules management methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
-    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
-    skos:topConceptOf ronl:Vocabulary .
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
 #
 # Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
 #
@@ -138,6 +137,11 @@ ronl:SpecificationTypeConcept a skos:Concept ;
     skos:definition
         "Deze document specificatie soorten biedt een gestructureerd raamwerk voor het documenteren en communiceren van de regelspecificatie sets."@nl ,
         "These document specification types provides a structured framework for documenting and communicating the rule specification sets."@en ;
+    skos:scopeNote
+        "De lijst is afkomstig van De LegitiMaat, een werkmethode voor het doen van onderzoek naar het gebruik van algoritmes door overheidsorganisaties."@nl ,
+        "The list originates from De LegitiMaat, a working method for conducting research into the use of algorithms by government organizations."@en ;
+    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
+    rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> ;
     skos:broader
         ronl:AnalysisConcept ,
         ronl:MethodConcept ;
@@ -150,13 +154,8 @@ ronl:SpecificationTypeConcept a skos:Concept ;
         ex:Kwaliteitseisen ,
         ex:BestuurlijkeInformatie ,
         ex:Overig ;
-    skos:inScheme ronl:Vocabulary ;
-    skos:scopeNote
-        "De lijst is afkomstig van De LegitiMaat, een werkmethode voor het doen van onderzoek naar het gebruik van algoritmes door overheidsorganisaties."@nl ,
-        "The list originates from De LegitiMaat, a working method for conducting research into the use of algorithms by government organizations."@en ;
-    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
-    rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> ;
-    skos:topConceptOf ronl:Vocabulary .
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
 #
 # Define individual concepts within the AnalysisConcept scheme
 # 
@@ -170,7 +169,8 @@ ex:WetsanalyseJAS a skos:Concept ;
     skos:definition
         "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
         "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
-    skos:member:
+    rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
+    skos:narrower:
         ex:Rechtssubject ,
         ex:Rechtsobject ,
         ex:Rechtsbetrekking ,
@@ -184,7 +184,6 @@ ex:WetsanalyseJAS a skos:Concept ;
         ex:Plaatsaanduiding ,
         ex:Delegatiebevoegdheid ,
         ex:Brondefinitie ;
-    rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
     skos:inScheme ronl:Vocabulary .
 
 ex:WetsanalyseJRM a skos:Concept ;
@@ -457,53 +456,224 @@ ex:Overig a skos:Concept ;
 # Hierarchical occurring concepts within ex:WetsanalyseJAS
 #
 ex:Rechtssubject a skos:Concept ;
-    rdfs:label
-        "Rechtssubject"@nl ,
-        "Legal Subject"@en ;
-    rdfs:comment
-        "Vragen voor het vinden van een rechtssubject kunnen zijn: Wie heeft het recht? Wie heeft de plicht? Van wie is een rechtsobject? Bij wie hoort een waarde?"@nl ,
-        "Questions for finding a legal subject can be: Who has the right? Who has the duty? Who owns a legal object? Who owns a value?"@en ;
     skos:prefLabel
         "Rechtssubject"@nl ,
         "Legal Subject"@en ;
     skos:definition
         "Een rechtssubject is de drager van rechten en plichten. Het is een partij in een rechtsbetrekking."@nl ,
         "A legal subject is the bearer of rights and obligations. It is a party in a legal relationship."@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een rechtssubject kunnen zijn: Wie heeft het recht? Wie heeft de plicht? Van wie is een rechtsobject? Bij wie hoort een waarde?"@nl ,
+        "Questions for finding a legal subject can be: Who has the right? Who has the duty? Who owns a legal object? Who owns a value?"@en ;
     skos:scopeNote
         "Een rechtssubject is te herkennen aan een zelfstandig naamwoord waarmee een persoon of andere entiteit wordt beschreven, of aan een persoonlijk voornaamwoord zoals 'hij', 'zij' en soms ook 'het'. Maar ook een onbepaald of betrekkelijk voornaamwoord kan wijzen op een rechtssubject, bijvoorbeeld 'iemand', 'een ieder' of 'degene'."@nl ,
         "A legal subject can be recognized by a noun that describes a person or other entity, or by a personal pronoun such as 'he', 'she' and sometimes also 'it'. But an indefinite or relative pronoun can also indicate a legal subject, for example 'someone', 'anyone' or 'the one'."@en ;
+    skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
 ex:Rechtsobject a skos:Concept ;
-    rdfs:label
-        "Rechtsobject"@nl ,
-        "Legal Object"@en ;
-    rdfs:comment
-        "Vragen voor het vinden van een rechtsobject kunnen zijn: Wat is het voorwerp van een recht of plicht? Waar is het rechtssubject eigenaar of houder van? Waar heeft een waarde betrekking op? Waarover is iets verschuldigd?"@nl ,
-        "Questions for finding a legal object can be: What is the object of a right or obligation? What is the legal subject the owner or holder of? What does a value relate to? What is something owed for?"@en ;
     skos:prefLabel
         "Rechtsobject"@nl ,
         "Legal Object"@en ;
     skos:definition
         "Een rechtsobject is het voorwerp van een rechtsbetrekking en/of rechtsfeit. Een rechtsobject kan zowel een fysieke (bijvoorbeeld een personenauto of een huis) als een niet-fysieke verschijningsvorm (bijvoorbeeld medische zorg) hebben."@nl ,
         "A legal object is the subject of a legal relationship and/or legal fact. A legal object can have both a physical (for example a car or a house) and a non-physical (for example medical care) manifestation."@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een rechtsobject kunnen zijn: Wat is het voorwerp van een recht of plicht? Waar is het rechtssubject eigenaar of houder van? Waar heeft een waarde betrekking op? Waarover is iets verschuldigd?"@nl ,
+        "Questions for finding a legal object can be: What is the object of a right or obligation? What is the legal subject the owner or holder of? What does a value relate to? What is something owed for?"@en ;
     skos:scopeNote
         "Een rechtsobject is te herkennen aan een zelfstandig naamwoord waarmee het voorwerp van een recht of plicht wordt omschreven, bijvoorbeeld een studie, een woning of een dienstbetrekking. Ook een aanwijzend of betrekkelijk voornaamwoord kan wijzen op een rechtsobject, bijvoorbeeld 'dat', 'hetgeen' en 'welk(e)'."@nl ,
         "A legal object can be recognized by a noun that describes the object of a right or obligation, for example a study, a home or an employment relationship. A demonstrative or relative pronoun can also point to a legal object, for example 'that', 'the thing' and 'which'."@en ;
+    skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-#ex:Rechtsbetrekking ,
-#ex:Rechtsfeit ,
-#ex:Voorwaarde ,
-#ex:Afleidingsregel ,
-#ex:VariabeleWaarde ,
-#ex:ParameterWaarde ,
-#ex:Operator ,
-#ex:Tijdsaanduiding ,
-#ex:Plaatsaanduiding ,
-#ex:Delegatiebevoegdheid ,
-#ex:Brondefinitie ;
+ex:Rechtsbetrekking a skos:Concept ;
+    skos:prefLabel
+        "Rechtsbetrekking"@nl ,
+        "Legal Relationship"@en ;
+    skos:definition
+        "Een rechtsbetrekking is een juridische relatie tussen twee rechtssubjecten en beschrijft een specifieke juridische toestand tussen deze rechtssubjecten. Een van deze rechtssubjecten heeft een plicht en de ander het bijbehorend recht. De algemene juridische toestand van een rechtssubject is de verzameling van alle specifieke rechtsbetrekkingen waarin dit rechtssubject als rechthebbende of plichthebbende partij optreedt."@nl ,
+        "A legal relationship is a legal relationship between two legal subjects and describes a specific legal situation between these legal subjects. One of these legal subjects has an obligation and the other the corresponding right. The general legal situation of a legal subject is the collection of all specific legal relationships in which this legal subject acts as a right holder or obligated party."@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een rechtsbetrekking kunnen zijn: Hoe verhouden twee rechtssubjecten zich tot elkaar? Welke relatie(s) hebben twee rechtssubjecten met elkaar?"@nl ,
+        "Questions for finding a legal relationship can be: How do two legal entities relate to each other? What relationship(s) do two legal entities have with each other?"@en ;
+    skos:scopeNote
+        "Een rechtsbetrekking is te herkennen aan een of meer werkwoorden. Bijvoorbeeld in de vorm van een combinatie van een hoofdwerkwoord met een hulpwerkwoord: 1. bij een recht: 'kan verzoeken' of 'mag wijzigen'; 2. bij een plicht: 'stelt vast', 'mag niet inhalen', 'is verplicht informatie te verstrekken', 'moet informeren' of 'dient te voldoen'. Daarnaast is een rechtsbetrekking bijvoorbeeld te herkennen aan een samengesteld werkwoord: 1. bij een recht: 'heeft recht op' of 'heeft aanspraak op'; 2. bij een plicht: 'heeft de plicht om' of 'draagt de last om'."@nl ,
+        "A legal relationship can be recognized by one or more verbs. For example, in the form of a combination of a main verb with an auxiliary verb: 1. for a right: 'may request' or 'may change'; 2. for an obligation: 'establishes', 'may not overtake', 'is obliged to provide information', 'must inform' or 'must comply'. In addition, a legal relationship can be recognized by a compound verb, for example: 1. for a right: 'has the right to' or 'has the claim to'; 2. for an obligation: 'has the duty to' or 'bears the burden to'."@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
 
+ex:Rechtsfeit a skos:Concept ;
+    skos:prefLabel
+        "Rechtsfeit"@nl ,
+        "Legal Fact"@en ;
+    skos:definition
+        "Een rechtsfeit is een handeling of gebeurtenis die, of tijdsverloop dat een wijziging in de juridische toestand teweegbrengt. Aan een rechtsfeit zijn dus rechtsgevolgen verbonden die een rechtsbetrekking creëren, wijzigen of beëindigen."@nl ,
+        "A legal fact is an act or event, or a passage of time, that brings about a change in the legal situation. A legal fact therefore has legal consequences that create, change or end a legal relationship."@en ;
+    rdfs:comment
+        "Een vraag voor het vinden van een rechtsfeit kan zijn: Wat is de gebeurtenis of handeling die, of het tijdsverloop dat gevolgen heeft voor de rechtsbetrekking?"@nl ,
+        "A question for finding a legal fact can be: What is the event or action, or the passage of time that has consequences for the legal relationship?"@en ;
+    skos:scopeNote
+        "Een rechtsfeit is te herkennen aan een actieve werkwoordsvorm, al dan niet in combinatie met een zelfstandig naamwoord, zoals ‘indienen van een bezwaarschrift’, ‘toekennen van een subsidie’, ‘horen van belanghebbende’ of ‘kenbaar maken van elektronische bereikbaarheid’."@nl ,
+        "A legal fact can be recognized by an active verb form, with or without a noun, such as 'filing an objection', 'granting a subsidy', 'hearing an interested party' or 'making electronic accessibility known'."@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Voorwaarde a skos:Concept ;
+    skos:prefLabel
+        "Voorwaarde"@nl ,
+        "Condition"@en ;
+    skos:definition
+        "Een voorwaarde is een conditie die beschrijft aan welke omstandigheid voldaan moet zijn voor het intreden van een rechtsgevolg. Een voor waarde kan ook betrekking hebben op een rechtssubject of op een waarde die bij een rechtsobject of bij een afleidingsregel hoort. Een voorwaarde bevat vaste elementen, die in de logica operanden en operatoren worden genoemd. Operanden kunnen rechtssubjecten of rechtsobjecten, eigenschappen van rechtssubjecten of rechtsobjecten, berekeningen of waarden zijn. Een operator is de beschrijving van een vergelijking die in de voorwaarde voorkomt, zoals ‘groter dan’, ‘kleiner dan’ en ‘gelijk aan’."@nl ,
+        "A condition is a condition that describes which circumstance must be met for a legal consequence to occur. A condition can also relate to a legal subject or to a value that belongs to a legal object or to a derivation rule. A condition contains fixed elements, which in logic are called operands and operators. Operands can be legal subjects or legal objects, properties of legal subjects or legal objects, calculations or values. An operator is the description of a comparison that occurs in the condition, such as 'greater than', 'less than' and 'equal to'."@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een voorwaarde kunnen zijn: Welke eisen worden gesteld aan een rechtssubject, een rechtsobject, een rechtsbetrekking of een rechtsfeit? Onder welke omstandigheden geldt een waarde bij een rechtsobject?"@nl ,
+        "Questions for finding a condition can be: What requirements are set for a legal subject, a legal object, a legal relationship or a legal fact? Under what circumstances does a value apply to a legal object?"@en ;
+    skos:scopeNote
+        "Een voorwaarde is te herkennen aan een voorwaardelijke bijzin, in de meeste gevallen ingeleid door een voegwoord zoals ‘indien’, ‘als’, ‘tenzij’, ‘mits’ of een combinatie van woorden, zoals ‘met dien verstande dat’ of ‘met uitzondering van’. Ook kan een voorwaarde afgeleid worden uit een bijwoord bij een werkwoord, zoals ‘schriftelijk’ of ‘elektronisch’. Voorwaarden kunnen enkelvoudig of samengesteld zijn. Een samengestelde voorwaarde bestaat uit verschillende eisen die alle vervuld moeten zijn (cumulatief) of waarvan er één vervuld moet zijn (alternatief)."@nl ,
+        "A condition can be recognized by a conditional clause, in most cases introduced by a conjunction such as ‘if’, ‘if’, ‘unless’, ‘provided’ or a combination of words, such as ‘with the understanding that’ or ‘with the exception of’. A condition can also be derived from an adverb with a verb, such as ‘written’ or ‘electronic’. Conditions can be simple or compound. A compound condition consists of several requirements that must all be fulfilled (cumulative) or of which one must be fulfilled (alternative)."@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Afleidingsregel a skos:Concept ;
+    skos:prefLabel
+        "Afleidingsregel"@nl ,
+        "Derivation Rule"@en ;
+    skos:definition
+        "Een afleidingsregel is een regel die nieuwe feiten of waarden creëert met behulp van bestaande feiten of waarden. Te denken valt aan regels die bepalen of een recht bestaat (een beslisregel), of die de hoogte en duur van een recht bepalen (een rekenregel). De variabele die vastgesteld wordt door de afleidingsregels, noemen we uitvoervariabele. Bij een rekenregel is dit de uitkomst van de rekensom. Bij een beslisregel is dit een conclusie als ja/nee, of waar/onwaar. De variabelen die gebruikt worden voor de vaststelling, noemen we invoervariabelen. In geval van een rekenregel zijn dit in feite de getallen waarmee wordt gerekend. Als sprake is van vaste getallen of waarden in een afleidingsregel die over een periode gelijk zijn voor alle rechtssubjecten en rechtsobjecten, noemen we deze parameters. Afleidingsregels worden ook gebruikt om te bepalen of een rechtssubject of rechtsobject tot een bepaalde doelgroep behoort; het gaat dan om het afleiden van specialisaties van rechtssubjecten en rechtsobjecten op basis van bepaalde kenmerken."@nl ,
+        "A derivation rule is a rule that creates new facts or values ​​using existing facts or values. Examples include rules that determine whether a right exists (a decision rule), or that determine the amount and duration of a right (a calculation rule). The variable that is determined by the derivation rules is called an output variable. In the case of a calculation rule, this is the outcome of the calculation. In the case of a decision rule, this is a conclusion such as yes/no or true/false. The variables that are used for the determination are called input variables. In the case of a calculation rule, these are in fact the numbers that are used for the calculation. If there are fixed numbers or values ​​in a derivation rule that are the same for all legal subjects and legal objects over a period of time, we call these parameters. Derivation rules are also used to determine whether a legal subject or legal object belongs to a specific target group; this involves deriving specializations of legal subjects and legal objects based on specific characteristics."@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een afleidingsregel kunnen zijn: Hoe wordt een variabele berekend of afgeleid? Hoe wordt een specifiek rechtssubject of rechtsobject bepaald?"@nl ,
+        "Questions for finding a derivation rule can be: How is a variable calculated or derived? How is a specific legal subject or legal object determined?"@en ;
+    skos:scopeNote
+        "Een afleidingsregel is te herkennen aan woorden die duiden op een berekening of afleiding, zoals ‘is (…) verminderd met’, ‘bedraagt (…) vermeerderd met’, ‘wordt gesteld op’ of ‘is het gezamenlijke bedrag van’, maar ook eenvoudigweg ‘en’."@nl ,
+        "A derivation rule can be recognized by words that indicate a calculation or derivation, such as 'is (...) reduced by', 'amounts (...) increased by', 'is set at' or 'is the total amount of', but also simply 'and'."@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:VariabeleWaarde a skos:Concept ;
+    skos:prefLabel
+        "Variabele"@nl ,
+        "Variable"@en ;
+    skos:altLabel
+        "Variabele waarde"@nl ,
+        "Variable Value"@en ;
+    skos:definition
+        "Een variabele is een kenmerk van een rechtssubject, rechtsobject, rechtsbetrekking of rechtsfeit dat voor verschillende instanties daarvan (dus voor specifieke personen, zaken, relaties, handelingen of gebeurtenissen in de werkelijkheid) een andere waarde kan hebben. Een variabelewaarde geeft de waarde aan die een bepaalde variabele kan hebben. De wijze waarop een variabelewaarde is omschreven in wetgeving kan een beperking in de mogelijke waarden voor een variabele inhouden, of een voorwaarde aan een variabele stellen. Variabele en variabelewaarde zijn verschillende klassen, maar vanwege de nauwe samenhang beschouwen we ze hier tezamen."@nl ,
+        "A variable is a characteristic of a legal subject, legal object, legal relationship or legal fact that can have a different value for different instances thereof (i.e. for specific persons, matters, relationships, actions or events in reality). A variable value indicates the value that a certain variable can have. The way in which a variable value is described in legislation can contain a restriction in the possible values ​​for a variable, or impose a condition on a variable. Variable and variable value are different classes, but because of the close connection we consider them together here."@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een variabele kunnen zijn: Wat zijn de specifieke kenmerken van een rechtsobject, rechtssubject, rechtsbetrekking of rechtsfeit? Welke eigenschappen worden genoemd? Welke waarde heeft een rechtsobject? Hoe lang of hoe hoog is een rechtsobject? Een variabelewaarde kan worden gedetecteerd met vragen als: Welk bedrag, welke duur of welke hoogte hoort bij deze variabele?"@nl ,
+        "Questions for finding a variable can be: What are the specific characteristics of a legal object, legal subject, legal relationship or legal fact? Which properties are mentioned? What value does a legal object have? How long or how high is a legal object? A variable value can be detected with questions such as: What amount, what duration or what height belongs to this variable?"@en ;
+    skos:scopeNote
+        "Een getal of datum: Soms bevat de wetgeving termen die een omvang, duur of andere grootheid tot uitdrukking brengen, zoals een bedrag, een datum of een aantal dagen. Dan is een variabelewaarde te herkennen aan een concreet bedrag, een concrete datum, een concrete tijdsduur of een andere numerieke waarde."@nl ,
+        "A number or date: Sometimes the legislation contains terms that express a size, duration or other quantity, such as an amount, a date or a number of days. In that case, a variable value can be recognised by a specific amount, a specific date, a specific time period or another numerical value."@en ;
+    skos:scopeNote
+        "Een tekst: Een variabele kan een variabelewaarde hebben die bestaat uit een tekst. Een voorbeeld van zo’n variabele is ‘naam van een werkgever’."@nl ,
+        "A text: A variable can have a variable value that consists of a text. An example of such a variable is ‘name of an employer’."@en ;
+    skos:scopeNote
+        "Een enumeratiewaarde: Soms bevat de wetgeving een limitatieve opsomming van de mogelijke waarden van een variabele. Deze limitatieve opsomming van variabelewaarden wordt in de logica geduid met de term enumeratiewaarde. Enumeratiewaarden kunnen bijvoorbeeld in getallen of in tekst worden uitgedrukt."@nl ,
+        "An enumeration value: Sometimes legislation contains an exhaustive list of the possible values ​​of a variable. This exhaustive list of variable values ​​is referred to in logic as an enumeration value. Enumeration values ​​can be expressed in numbers or text, for example."@en ;
+    skos:scopeNote
+        "Een booleaanse waarde: Een bijzondere enumeratiewaarde in tekst is een booleaanse waarde. Deze heeft slechts twee mogelijke waarden, te weten ‘ja’ (waar) of ‘nee’ (onwaar). Hiermee kunnen we uitdrukken of een bepaald kenmerk van een rechtssubject, rechtsobject, rechtsbetrekking of rechtsfeit van toepassing of aanwezig is. Een voorbeeld van zo’n variabele is ‘geregistreerd in het donorregister’. De variabelewaarden zijn hier ‘ja’ of ‘nee’."@nl ,
+        "A Boolean value: A special enumeration value in text is a Boolean value. It has only two possible values, namely 'yes' (true) or 'no' (false). This allows us to express whether a certain characteristic of a legal subject, legal object, legal relationship or legal fact is applicable or present. An example of such a variable is 'registered in the donor register'. The variable values ​​here are 'yes' or 'no'."@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:ParameterWaarde a skos:Concept ;
+    skos:prefLabel
+        "Parameter waarde"@nl ,
+        "Parameter Value"@en ;
+    skos:definition
+        "Een parameter is een beschrijving van een waarde die gelijk is voor alle rechtssubjecten, rechtsobjecten, rechtsbetrekkingen en rechtsfeiten. Vanwege de stabiele waarde wordt een parameter ook wel constante genoemd. Parameters worden gebruikt in afleidingsregels en voorwaarden. In de regel geldt een parameter voor een bepaalde periode, bijvoorbeeld een kalenderjaar, maar hij kan ook voor een onbepaalde duur gelden (bijvoorbeeld voor de hele geldigheidsduur van de wettelijke regel). De waarde die een parameter in de desbetreffende periode heeft, is een parameterwaarde. De parameter is dus de omschrijving van de waarde, en de parameterwaarde is de concrete waarde die daaraan is toegekend. Ook deze klassen beschouwen we tezamen vanwege de nauwe samenhang tussen beide."@nl ,
+        "A parameter is a description of a value that is the same for all legal subjects, legal objects, legal relationships and legal facts. Because of its stable value, a parameter is also called a constant. Parameters are used in derivation rules and conditions. As a rule, a parameter applies for a certain period, for example a calendar year, but it can also apply for an indefinite period (for example for the entire validity period of the legal rule). The value that a parameter has in the relevant period is a parameter value. The parameter is therefore the description of the value, and the parameter value is the concrete value that is assigned to it. We also consider these classes together because of the close relationship between the two."@en ;
+    rdfs:comment
+        "Een vraag voor het vinden van een parameter of parameterwaarde kan zijn: Is sprake van een waarde die gedurende een periode een vaste hoogte heeft voor alle rechtssubjecten en rechtsobjecten?"@nl ,
+        "A question for finding a parameter or parameter value could be: Is there a value that has a fixed height for all legal subjects and legal objects over a period of time?"@en ;
+    skos:scopeNote
+        "Een parameter heeft een vaste waarde over een periode. Een parameter is te herkennen aan een beschrijving van een waarde, bijvoorbeeld van een tarief, een (drempel)bedrag (eventueel met een maximum of een minimum) of een vrijstelling. Een parameterwaarde drukt de waarde van de parameter(beschrijving) uit over een periode. Een parameterwaarde is te herkennen aan bijvoorbeeld een bedrag in geld, een percentage en een datum."@nl ,
+        "A parameter has a fixed value over a period. A parameter can be recognized by a description of a value, for example a rate, a (threshold) amount (possibly with a maximum or a minimum) or an exemption. A parameter value expresses the value of the parameter (description) over a period. A parameter value can be recognized by, for example, an amount in money, a percentage and a date."@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Operator a skos:Concept ;
+    skos:prefLabel
+        "Operator"@nl ,
+        "Operator"@en ;
+    skos:definition
+        ""@nl ,
+        ""@en ;
+    rdfs:comment
+        ""@nl ,
+        ""@en ;
+    skos:scopeNote
+        ""@nl ,
+        ""@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Tijdsaanduiding a skos:Concept ;
+    skos:prefLabel
+        "Tijdsaanduiding"@nl ,
+        "Time Indication"@en ;
+    skos:definition
+        ""@nl ,
+        ""@en ;
+    rdfs:comment
+        ""@nl ,
+        ""@en ;
+    skos:scopeNote
+        ""@nl ,
+        ""@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Plaatsaanduiding a skos:Concept ;
+    skos:prefLabel
+        "Plaatsaanduiding"@nl ,
+        "Location Indication"@en ;
+    skos:definition
+        ""@nl ,
+        ""@en ;
+    rdfs:comment
+        ""@nl ,
+        ""@en ;
+    skos:scopeNote
+        ""@nl ,
+        ""@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Delegatiebevoegdheid a skos:Concept ;
+    skos:prefLabel
+        "Delegatiebevoegdheid"@nl ,
+        "Delegation Authority"@en ;
+    skos:definition
+        ""@nl ,
+        ""@en ;
+    rdfs:comment
+        ""@nl ,
+        ""@en ;
+    skos:scopeNote
+        ""@nl ,
+        ""@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Brondefinitie a skos:Concept ;
+    skos:prefLabel
+        "Brondefinitie"@nl ,
+        "Source Definition"@en ;
+    skos:definition
+        ""@nl ,
+        ""@en ;
+    rdfs:comment
+        ""@nl ,
+        ""@en ;
+    skos:scopeNote
+        ""@nl ,
+        ""@en ;
+    skos:broader ex:WetsanalyseJAS ;
+    skos:inScheme ronl:Vocabulary .
 #
 # Define ronl:source, ronl:analysis and ronl:method as RDF properties
 #
