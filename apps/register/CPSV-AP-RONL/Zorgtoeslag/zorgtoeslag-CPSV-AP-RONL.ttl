@@ -148,28 +148,22 @@
         # Link to the publication explaining the data used for these rules
         #
         dct:relation <https://gegevensbijbesluiten.overheid.nl/besluit/61720422> ;
-        cpsv-ap:hasCriterionRequirement <#ingezetene_requirement>, <#leeftijd_requirement>, <#betalingsregeling_requirement>, <#inkomen_en_vermogen_requirement>, <#detentie_requirement>, <#verzekering_requirement> ;
+        cpsv-ap:hasCriterionRequirement
+            ronl:Ingezetene ,
+            ronl:Leeftijd18 ,
+            ronl:Betalingsregeling ,
+            <#inkomen_en_vermogen_requirement> ,
+            ronl:Detentie ,
+            <#verzekering_requirement> ;
         cpsv-ap:hasInput <#persoonlijke_gegevens_dataset>, <#betalingsgegevens_dataset>, <#inkomens_en_vermogensgegevens_dataset>, <#justitiële_gegevens_dataset>, <#verzekeringsgegevens_dataset> ;
     ] ;
     cpsv-ap:hasHumanIntervention "Niet van toepassing."@nl ;
     dct:version "1.0" .
 #
-# Define criteria
+# Define service specific criteria
 #
-<#ingezetene_requirement> a cpsv-ap:CriterionRequirement ;
-    dct:description "De aanvrager bezit een Nederlandse of buitenlandse nationaliteit(en) én heeft verblijfstitel voor rechtmatig verblijf in Nederland."@nl .
-
-<#leeftijd_requirement> a cpsv-ap:CriterionRequirement ;
-    dct:description "De aanvrager is ouder dan 18 jaar."@nl .
-
-<#betalingsregeling_requirement> a cpsv-ap:CriterionRequirement ;
-    dct:description "Vereist zorgtoeslag uit te betalen aan het CJIB, tbv de premiebetaling van de zorgverzekering, als er sprake is van een betalingsregeling."@nl .
-
 <#inkomen_en_vermogen_requirement> a cpsv-ap:CriterionRequirement ;
     dct:description "Inkomensgegeven (authentiek), het niet in Nederland belastbaar inkomen én het vermogen (box 3) zijn niet hoger dan de normbedragen."@nl .
-
-<#detentie_requirement> a cpsv-ap:CriterionRequirement ;
-    dct:description "De aanvrager is niet gedetineerd."@nl .
 
 <#verzekering_requirement> a cpsv-ap:CriterionRequirement ;
     dct:description "De aanvrager heeft een zorgverzekering bij een in Nederland gevestigde zorgverzekeraar."@nl .
