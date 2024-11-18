@@ -514,7 +514,7 @@ ex:Rechtsfeit a skos:Concept ;
         "Een vraag voor het vinden van een rechtsfeit kan zijn: Wat is de gebeurtenis of handeling die, of het tijdsverloop dat gevolgen heeft voor de rechtsbetrekking?"@nl ,
         "A question for finding a legal fact can be: What is the event or action, or the passage of time that has consequences for the legal relationship?"@en ;
     skos:scopeNote
-        "Een rechtsfeit is te herkennen aan een actieve werkwoordsvorm, al dan niet in combinatie met een zelfstandig naamwoord, zoals ‘indienen van een bezwaarschrift’, ‘toekennen van een subsidie’, ‘horen van belanghebbende’ of ‘kenbaar maken van elektronische bereikbaarheid’."@nl ,
+        "Een rechtsfeit is te herkennen aan een actieve werkwoordsvorm, al dan niet in combinatie met een zelfstandig naamwoord, zoals 'indienen van een bezwaarschrift', 'toekennen van een subsidie', 'horen van belanghebbende' of 'kenbaar maken van elektronische bereikbaarheid'."@nl ,
         "A legal fact can be recognized by an active verb form, with or without a noun, such as 'filing an objection', 'granting a subsidy', 'hearing an interested party' or 'making electronic accessibility known'."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
@@ -524,14 +524,14 @@ ex:Voorwaarde a skos:Concept ;
         "Voorwaarde"@nl ,
         "Condition"@en ;
     skos:definition
-        "Een voorwaarde is een conditie die beschrijft aan welke omstandigheid voldaan moet zijn voor het intreden van een rechtsgevolg. Een voor waarde kan ook betrekking hebben op een rechtssubject of op een waarde die bij een rechtsobject of bij een afleidingsregel hoort. Een voorwaarde bevat vaste elementen, die in de logica operanden en operatoren worden genoemd. Operanden kunnen rechtssubjecten of rechtsobjecten, eigenschappen van rechtssubjecten of rechtsobjecten, berekeningen of waarden zijn. Een operator is de beschrijving van een vergelijking die in de voorwaarde voorkomt, zoals ‘groter dan’, ‘kleiner dan’ en ‘gelijk aan’."@nl ,
+        "Een voorwaarde is een conditie die beschrijft aan welke omstandigheid voldaan moet zijn voor het intreden van een rechtsgevolg. Een voor waarde kan ook betrekking hebben op een rechtssubject of op een waarde die bij een rechtsobject of bij een afleidingsregel hoort. Een voorwaarde bevat vaste elementen, die in de logica operanden en operatoren worden genoemd. Operanden kunnen rechtssubjecten of rechtsobjecten, eigenschappen van rechtssubjecten of rechtsobjecten, berekeningen of waarden zijn. Een operator is de beschrijving van een vergelijking die in de voorwaarde voorkomt, zoals 'groter dan', 'kleiner dan' en 'gelijk aan'."@nl ,
         "A condition is a condition that describes which circumstance must be met for a legal consequence to occur. A condition can also relate to a legal subject or to a value that belongs to a legal object or to a derivation rule. A condition contains fixed elements, which in logic are called operands and operators. Operands can be legal subjects or legal objects, properties of legal subjects or legal objects, calculations or values. An operator is the description of a comparison that occurs in the condition, such as 'greater than', 'less than' and 'equal to'."@en ;
     rdfs:comment
         "Vragen voor het vinden van een voorwaarde kunnen zijn: Welke eisen worden gesteld aan een rechtssubject, een rechtsobject, een rechtsbetrekking of een rechtsfeit? Onder welke omstandigheden geldt een waarde bij een rechtsobject?"@nl ,
         "Questions for finding a condition can be: What requirements are set for a legal subject, a legal object, a legal relationship or a legal fact? Under what circumstances does a value apply to a legal object?"@en ;
     skos:scopeNote
-        "Een voorwaarde is te herkennen aan een voorwaardelijke bijzin, in de meeste gevallen ingeleid door een voegwoord zoals ‘indien’, ‘als’, ‘tenzij’, ‘mits’ of een combinatie van woorden, zoals ‘met dien verstande dat’ of ‘met uitzondering van’. Ook kan een voorwaarde afgeleid worden uit een bijwoord bij een werkwoord, zoals ‘schriftelijk’ of ‘elektronisch’. Voorwaarden kunnen enkelvoudig of samengesteld zijn. Een samengestelde voorwaarde bestaat uit verschillende eisen die alle vervuld moeten zijn (cumulatief) of waarvan er één vervuld moet zijn (alternatief)."@nl ,
-        "A condition can be recognized by a conditional clause, in most cases introduced by a conjunction such as ‘if’, ‘if’, ‘unless’, ‘provided’ or a combination of words, such as ‘with the understanding that’ or ‘with the exception of’. A condition can also be derived from an adverb with a verb, such as ‘written’ or ‘electronic’. Conditions can be simple or compound. A compound condition consists of several requirements that must all be fulfilled (cumulative) or of which one must be fulfilled (alternative)."@en ;
+        "Een voorwaarde is te herkennen aan een voorwaardelijke bijzin, in de meeste gevallen ingeleid door een voegwoord zoals 'indien', 'als', 'tenzij', 'mits' of een combinatie van woorden, zoals 'met dien verstande dat' of 'met uitzondering van'. Ook kan een voorwaarde afgeleid worden uit een bijwoord bij een werkwoord, zoals 'schriftelijk' of 'elektronisch'. Voorwaarden kunnen enkelvoudig of samengesteld zijn. Een samengestelde voorwaarde bestaat uit verschillende eisen die alle vervuld moeten zijn (cumulatief) of waarvan er één vervuld moet zijn (alternatief)."@nl ,
+        "A condition can be recognized by a conditional clause, in most cases introduced by a conjunction such as 'if', 'if', 'unless', 'provided' or a combination of words, such as 'with the understanding that' or 'with the exception of'. A condition can also be derived from an adverb with a verb, such as 'written' or 'electronic'. Conditions can be simple or compound. A compound condition consists of several requirements that must all be fulfilled (cumulative) or of which one must be fulfilled (alternative)."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
@@ -546,7 +546,7 @@ ex:Afleidingsregel a skos:Concept ;
         "Vragen voor het vinden van een afleidingsregel kunnen zijn: Hoe wordt een variabele berekend of afgeleid? Hoe wordt een specifiek rechtssubject of rechtsobject bepaald?"@nl ,
         "Questions for finding a derivation rule can be: How is a variable calculated or derived? How is a specific legal subject or legal object determined?"@en ;
     skos:scopeNote
-        "Een afleidingsregel is te herkennen aan woorden die duiden op een berekening of afleiding, zoals ‘is (…) verminderd met’, ‘bedraagt (…) vermeerderd met’, ‘wordt gesteld op’ of ‘is het gezamenlijke bedrag van’, maar ook eenvoudigweg ‘en’."@nl ,
+        "Een afleidingsregel is te herkennen aan woorden die duiden op een berekening of afleiding, zoals 'is (…) verminderd met', 'bedraagt (…) vermeerderd met', 'wordt gesteld op' of 'is het gezamenlijke bedrag van', maar ook eenvoudigweg 'en'."@nl ,
         "A derivation rule can be recognized by words that indicate a calculation or derivation, such as 'is (...) reduced by', 'amounts (...) increased by', 'is set at' or 'is the total amount of', but also simply 'and'."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
@@ -568,13 +568,13 @@ ex:VariabeleWaarde a skos:Concept ;
         "Een getal of datum: Soms bevat de wetgeving termen die een omvang, duur of andere grootheid tot uitdrukking brengen, zoals een bedrag, een datum of een aantal dagen. Dan is een variabelewaarde te herkennen aan een concreet bedrag, een concrete datum, een concrete tijdsduur of een andere numerieke waarde."@nl ,
         "A number or date: Sometimes the legislation contains terms that express a size, duration or other quantity, such as an amount, a date or a number of days. In that case, a variable value can be recognised by a specific amount, a specific date, a specific time period or another numerical value."@en ;
     skos:scopeNote
-        "Een tekst: Een variabele kan een variabelewaarde hebben die bestaat uit een tekst. Een voorbeeld van zo’n variabele is ‘naam van een werkgever’."@nl ,
-        "A text: A variable can have a variable value that consists of a text. An example of such a variable is ‘name of an employer’."@en ;
+        "Een tekst: Een variabele kan een variabelewaarde hebben die bestaat uit een tekst. Een voorbeeld van zo'n variabele is 'naam van een werkgever'."@nl ,
+        "A text: A variable can have a variable value that consists of a text. An example of such a variable is 'name of an employer'."@en ;
     skos:scopeNote
         "Een enumeratiewaarde: Soms bevat de wetgeving een limitatieve opsomming van de mogelijke waarden van een variabele. Deze limitatieve opsomming van variabelewaarden wordt in de logica geduid met de term enumeratiewaarde. Enumeratiewaarden kunnen bijvoorbeeld in getallen of in tekst worden uitgedrukt."@nl ,
         "An enumeration value: Sometimes legislation contains an exhaustive list of the possible values ​​of a variable. This exhaustive list of variable values ​​is referred to in logic as an enumeration value. Enumeration values ​​can be expressed in numbers or text, for example."@en ;
     skos:scopeNote
-        "Een booleaanse waarde: Een bijzondere enumeratiewaarde in tekst is een booleaanse waarde. Deze heeft slechts twee mogelijke waarden, te weten ‘ja’ (waar) of ‘nee’ (onwaar). Hiermee kunnen we uitdrukken of een bepaald kenmerk van een rechtssubject, rechtsobject, rechtsbetrekking of rechtsfeit van toepassing of aanwezig is. Een voorbeeld van zo’n variabele is ‘geregistreerd in het donorregister’. De variabelewaarden zijn hier ‘ja’ of ‘nee’."@nl ,
+        "Een booleaanse waarde: Een bijzondere enumeratiewaarde in tekst is een booleaanse waarde. Deze heeft slechts twee mogelijke waarden, te weten 'ja' (waar) of 'nee' (onwaar). Hiermee kunnen we uitdrukken of een bepaald kenmerk van een rechtssubject, rechtsobject, rechtsbetrekking of rechtsfeit van toepassing of aanwezig is. Een voorbeeld van zo'n variabele is 'geregistreerd in het donorregister'. De variabelewaarden zijn hier 'ja' of 'nee'."@nl ,
         "A Boolean value: A special enumeration value in text is a Boolean value. It has only two possible values, namely 'yes' (true) or 'no' (false). This allows us to express whether a certain characteristic of a legal subject, legal object, legal relationship or legal fact is applicable or present. An example of such a variable is 'registered in the donor register'. The variable values ​​here are 'yes' or 'no'."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
@@ -600,14 +600,14 @@ ex:Operator a skos:Concept ;
         "Operator"@nl ,
         "Operator"@en ;
     skos:definition
-        ""@nl ,
-        ""@en ;
+        "Een operator is een woord, een combinatie van woorden of een teken dat een rekenkundige bewerking, een samengestelde voorwaarde, een gelijkstelling of een vergelijking van twee waarden of berekeningen uitdrukt. Een operator beschrijft hoe verschillende elementen van een berekening, voorwaarde of samengestelde voorwaarde met elkaar verbonden worden om tot een resultaat te leiden. Er zijn verschillende typen operatoren: rekenkundige operatoren: deze voeren een rekenkundige bewerking uit, zoals bijvoorbeeld optellen, aftrekken en vermenigvuldigen; vergelijkingsoperatoren: deze vergelijken variabelen met elkaar of een variabele met een parameter (variabele is groter dan parameter of variabele is kleiner dan parameter); logische operatoren: deze bepalen bij samengestelde voorwaarden of aan (tenminste) één van de voorwaarden moet worden voldaan (OF, disjunctie, alternatief) of aan alle voorwaarden (EN, conjunctie, cumulatief). Ook kan er sprake zijn van een voorwaarde waaraan niet voldaan mag zijn (NIET, negatie)."@nl ,
+        "An operator is a word, a combination of words or a symbol that expresses an arithmetic operation, a compound condition, an equation or a comparison of two values ​​or calculations. An operator describes how different elements of a calculation, condition or compound condition are connected to each other to produce a result. There are different types of operators: arithmetic operators: these perform an arithmetic operation, such as addition, subtraction and multiplication; comparison operators: these compare variables with each other or a variable with a parameter (variable is greater than parameter or variable is less than parameter); logical operators: these determine in compound conditions whether (at least) one of the conditions must be met (OR, disjunction, alternative) or all of the conditions (AND, conjunction, cumulative). There may also be a condition that may not be met (NOT, negation)."@en ;
     rdfs:comment
-        ""@nl ,
-        ""@en ;
+        "Vragen voor het vinden van operatoren zijn: Hoe worden variabelen of parameters verbonden in een berekening? In welke verhouding staan voorwaarden tot elkaar? Welke vergelijking wordt in een voorwaarde gemaakt?"@nl ,
+        "Questions for finding operators are: How are variables or parameters connected in a calculation? How are conditions related to each other? What comparison is made in a condition?"@en ;
     skos:scopeNote
-        ""@nl ,
-        ""@en ;
+        "Een rekenkundige operator is te herkennen aan formuleringen zoals 'het gezamenlijke bedrag van', 'de som van', 'vermeerderd met', 'verminderd met' of 'percentage van'. Een vergelijkingsoperator is te herkennen aan de woorden 'groter dan', 'kleiner dan', 'meer bedraagt dan' of 'is gelijk aan'. Een logische operator is te herkennen aan de woorden 'en', 'of', 'niet' of 'ten minste'."@nl ,
+        "An arithmetic operator can be recognized by formulations such as 'the total amount of', 'the sum of', 'increased by', 'decreased by' or 'percentage of'. A comparison operator can be recognized by the words 'greater than', 'less than', 'more than' or 'equals'. A logical operator can be recognized by the words 'and', 'or', 'not' or 'at least'."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
@@ -616,14 +616,14 @@ ex:Tijdsaanduiding a skos:Concept ;
         "Tijdsaanduiding"@nl ,
         "Time Indication"@en ;
     skos:definition
-        ""@nl ,
-        ""@en ;
+        "Een tijdsaanduiding is een omschrijving van een tijdstip of tijdvak. Een tijdsaanduiding is nodig om de geldigheid van een rechtsbetrekking te duiden, om een tijdsverloop met rechtsgevolg uit te drukken of als variabele bij een specifiek rechtssubject of rechtsobject. Ook kan een tijdsaanduiding (met name een tijdstip) een parameterwaarde zijn. Een voorbeeld is een peildatum die wordt vergeleken met een andere datum (als variabele) in een voorwaarde. De tijdsaanduiding is als aparte klasse opgenomen, hoewel deze ook beschouwd zou kunnen worden als een verduidelijking van de klassen variabele of parameter. Gelet op het belang van de tijdsaanduiding voor het bepalen van de duur van een rechtsbetrekking of het tijdstip van een tijdsverloop met rechtsgevolgen, is tijdsaanduiding als aparte klasse opgenomen. Een formulering kan zowel tot de klasse tijdsaanduiding als tot de klasse parameter of variabele behoren. Als dat zich voordoet, kiezen we bij de analyse voor de meest specifieke klasse, dus de tijdsaanduiding."@nl ,
+        "A time indication is a description of a point in time or period. A time indication is necessary to indicate the validity of a legal relationship, to express a passage of time with legal consequences or as a variable for a specific legal subject or legal object. A time indication (particularly a point in time) can also be a parameter value. An example is a reference date that is compared with another date (as a variable) in a condition. The time indication is included as a separate class, although it could also be considered as a clarification of the classes variable or parameter. Given the importance of the time indication for determining the duration of a legal relationship or the point in time of a passage of time with legal consequences, the time indication is included as a separate class. A formulation can belong to both the time indication class and the parameter or variable class. If this is the case, we opt for the most specific class, i.e. the time indication, in the analysis."@en ;
     rdfs:comment
-        ""@nl ,
-        ""@en ;
+        "Vragen voor het vinden van tijdsaanduidingen kunnen zijn: Wanneer, op welk moment? Sinds wanneer of tot wanneer, vanaf welk moment of tot welk moment?"@nl ,
+        "Questions for finding time indications can be: When, at what time? Since when or until when, from what time or until what time?"@en ;
     skos:scopeNote
-        ""@nl ,
-        ""@en ;
+        "Tijdsaanduidingen zijn te herkennen aan een concrete datum (bijvoorbeeld 1 september 2009), of aan een omschrijving die een datum beschrijft (de eerste maandag van de maand). Tijdvakken zijn vaak te herkennen aan woorden die een periode duiden, zoals jaar, maand, week en dag of specialisaties van dit soort woorden, zoals kalenderjaar."@nl ,
+        "Time indications can be recognized by a concrete date (for example, September 1, 2009), or by a description that describes a date (the first Monday of the month). Periods of time can often be recognized by words that indicate a period, such as year, month, week and day or specializations of these types of words, such as calendar year."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
@@ -632,14 +632,14 @@ ex:Plaatsaanduiding a skos:Concept ;
         "Plaatsaanduiding"@nl ,
         "Location Indication"@en ;
     skos:definition
-        ""@nl ,
-        ""@en ;
+        "Een plaatsaanduiding is een plaats of een gebied waar bepaalde wetgeving betrekking op heeft. Zij bepaalt het toepassingsbereik van de regels voor rechtssubjecten, rechtsobjecten, rechtsbetrekkingen of rechtsfeiten. De meeste wetgeving geldt voor heel Nederland en heeft daarom geen expliciete plaatsaanduiding. Zodra het werkingsgebied beperkter of ruimer moet zijn, wordt in wetgeving wel een expliciete plaatsaanduiding opgenomen. Net als de tijdsaanduiding is de plaatsaanduiding apart opgenomen in het juridisch analyseschema, hoewel deze gezien zou kunnen worden als een variabele of parameter. Een formulering in de wetgeving kan zowel tot de klasse plaatsaanduiding als tot de klasse parameter of variabele behoren. Als dit zich voordoet, kiezen we voor de meest specifieke klasse, namelijk de plaatsaanduiding."@nl ,
+        "A place designation is a place or area to which certain legislation applies. It determines the scope of application of the rules for legal subjects, legal objects, legal relationships or legal facts. Most legislation applies to the whole of the Netherlands and therefore does not have an explicit place designation. As soon as the scope of application must be more limited or broader, an explicit place designation is included in legislation. Just like the time designation, the place designation is included separately in the legal analysis scheme, although it could be seen as a variable or parameter. A formulation in legislation can belong to both the place designation class and the parameter or variable class. If this occurs, we opt for the most specific class, namely the place designation."@en ;
     rdfs:comment
-        ""@nl ,
-        ""@en ;
+        "Een vraag voor het vinden van een plaatsaanduiding kan zijn: Waar (voor welk gebied of welke plaats) geldt de wettelijke regel (niet)?"@nl ,
+        "A question for finding a place designation could be: Where (for which area or place) does the legal rule (not) apply?"@en ;
     skos:scopeNote
-        ""@nl ,
-        ""@en ;
+        "De plaatsaanduiding wordt uitgedrukt met een algemene beschrijving van het gebied (een lidstaat van de EU) of met de naam van een specifiek gebied (de gemeente Amsterdam, de provincie Limburg, Nederland, Zwitserland)."@nl ,
+        "The place name is expressed with a general description of the area (a member state of the EU) or with the name of a specific area (the municipality of Amsterdam, the province of Limburg, the Netherlands, Switzerland)."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
@@ -648,14 +648,14 @@ ex:Delegatiebevoegdheid a skos:Concept ;
         "Delegatiebevoegdheid"@nl ,
         "Delegation Authority"@en ;
     skos:definition
-        ""@nl ,
-        ""@en ;
+        "Een delegatiebevoegdheid maakt het mogelijk of schrijft voor dat (nadere) regels worden gesteld over een rechtsbetrekking, rechtsfeit of afleidingsregel. Met delegatie-invulling duiden we de regeling of het regelingsonderdeel aan waarin de delegatiebevoegdheid is gebruikt. Hoewel de delegatiebevoegdheid en de delegatie-invulling aparte klassen zijn, beschouwen we ze hier gezamenlijk vanwege hun nauwe samenhang. Een delegatiebevoegdheid wordt altijd aan een specifiek rechtssubject toegekend; dat kan de regering zijn (bij een amvb, vastgesteld door de Koning) of een minister (bij een ministeriële regeling). Het kan gaan om verplichte of een facultatieve delegatie (zie onder het kopje Uitdrukkingswijze). In het eerste geval moeten de in de wet genoemde onderwerpen worden uitgewerkt in een lagere regeling. In het tweede geval is er een keuze om de wettelijke regels al dan niet uit te werken. Ook is vaak subdelegatie mogelijk. Dat betekent dat bepalingen in een amvb verder kunnen worden uitgewerkt in een ministeriële regeling (zie ook bij uitdrukkingswijze). Het herkennen van delegatiebevoegdheden is vooral van belang voor het bepalen van het werkgebied van de Wets analyse. Als de delegatiebevoegdheid daadwerkelijk is gebruikt, moet de op grond daarvan vastgestelde gedelegeerde regelgeving in het werkgebied worden betrokken. De delegerende wet bevat logischerwijs geen concrete verwijzingen naar de delegatie-invulling. Die is immers op het moment van voorbereiden van die wet nog niet vastgesteld. Ook in de delegerende regeling zijn de grondslagen niet altijd eenvoudig op artikelniveau terug te vinden. In hoofdstuk 5 gaan we in op mogelijk heden om de kenbaarheid van delegatiegrondslagen in gedelegeerde regelingen te verbeteren. Voor het in kaart brengen van de gedelegeerde regelingen die tot het werkgebied behoren, kan gebruik gemaakt worden van de wetsinformatie die in wetten.nl bij een artikel is opgenomen. Deze is echter niet altijd volledig. Afstemming met wetgevingsjuristen om het werkgebied compleet te maken is daarom van belang."@nl ,
+        "A delegation power enables or prescribes that (additional) rules are established regarding a legal relationship, legal fact or derivation rule. With delegation interpretation we indicate the regulation or the regulation component in which the delegation power is used. Although the delegation power and the delegation interpretation are separate classes, we consider them together here because of their close connection. A delegation power is always granted to a specific legal entity; this can be the government (in a general administrative order, established by the King) or a minister (in a ministerial regulation). This can involve mandatory or optional delegation (see under the heading Method of expression). In the first case, the subjects mentioned in the law must be elaborated in a lower regulation. In the second case, there is a choice whether or not to elaborate the statutory rules. Subdelegation is also often possible. This means that provisions in a general administrative order can be further elaborated in a ministerial regulation (see also Method of expression). Recognizing delegation powers is mainly important for determining the scope of the Legal Analysis. If the delegation power has actually been used, the delegated regulations established on the basis thereof must be included in the field of work. The delegating law logically does not contain any specific references to the delegation content. After all, this had not yet been established at the time of preparation of that law. The foundations are also not always easy to find at article level in the delegating regulation. In Chapter 5, we discuss possibilities to improve the recognisability of delegation foundations in delegated regulations. To map out the delegated regulations that belong to the field of work, use can be made of the legal information included in wetten.nl for an article. However, this is not always complete. Coordination with legislative lawyers to complete the field of work is therefore important."@en ;
     rdfs:comment
-        ""@nl ,
-        ""@en ;
+        "Vragen voor het vinden van delegatiebevoegdheden of -invullingen kunnen zijn: Geeft een wetsartikel de opdracht om (nadere) regels te stellen? Verwijst een bepaling in een gedelegeerde regeling naar een artikel in de bovenliggende wet?"@nl ,
+        "Questions for finding delegation powers or interpretations may include: Does a statutory provision mandate the establishment of (additional) rules? Does a provision in a delegated regulation refer to an article in the parent law?"@en ;
     skos:scopeNote
-        ""@nl ,
-        ""@en ;
+        "Verplichte delegatie wordt geformuleerd met de zinsnede 'bij (of krachtens) algemene maatregel van bestuur/bij ministeriële regeling worden regels gesteld (…)'. Een facultatieve bevoegdheid wordt geformuleerd met de woorden 'kunnen regels worden gesteld'. Indien de formulering 'bij of krachtens' wordt gebruikt in een delegatiebevoegdheid, kan subdelegatie plaatsvinden. Als op grond van een dergelijke delegatiebevoegdheid in een wet een amvb wordt vastgesteld, dan kunnen in de amvb bepaalde zaken worden doorgedelegeerd naar een ministeriële regeling. In de delegatie-invulling wordt niet met standaard uitdrukkingswijzen gewerkt."@nl ,
+        "Mandatory delegation is formulated with the phrase 'by (or pursuant to) general administrative order/by ministerial regulation, rules are laid down (…)'. An optional power is formulated with the words 'rules can be laid down'. If the phrase 'by or pursuant to' is used in a delegation power, subdelegation can take place. If, on the basis of such a delegation power, a general administrative order is established in a law, certain matters can be delegated in the general administrative order to a ministerial regulation. Standard expressions are not used in the delegation interpretation."@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
@@ -664,14 +664,14 @@ ex:Brondefinitie a skos:Concept ;
         "Brondefinitie"@nl ,
         "Source Definition"@en ;
     skos:definition
-        ""@nl ,
-        ""@en ;
+        "Een brondefinitie is een begripsomschrijving die expliciet is opgenomen in de wetgeving en een eenduidige betekenis geeft aan een in de wetgeving (veel) gebruikte term. Brondefinities staan in de regel in een of meer artikelen aan het begin van een wet of gedelegeerde regeling. Als in de wet een term is gedefinieerd, wordt deze definitie standaard hergebruikt in de daarop gebaseerde gedelegeerde regelingen. De definities worden in de gedelegeerde regeling niet opnieuw opgenomen. Brondefinities moeten worden onderscheiden van de begrippen en begripsomschrijvingen die bij de Wetsanalyse worden gemaakt voor geclassificeerde formuleringen in de wetgeving. Deze begrippen hebben geen directe wettelijke bron,maar zijn nodig om formuleringen uniek te kunnen aanduiden."@nl ,
+        "Mandatory delegation is formulated with the phrase 'by (or pursuant to) general administrative order/by ministerial regulation, rules are laid down (…)'. An optional power is formulated with the words 'rules can be laid down'. If the phrase 'by or pursuant to' is used in a delegation power, subdelegation can take place. If, on the basis of such a delegation power, a general administrative order is established in a law, certain matters can be delegated in the general administrative order to a ministerial regulation. Standard expressions are not used in the delegation interpretation."@en ;
     rdfs:comment
-        ""@nl ,
-        ""@en ;
+        "De logische vraag voor het vinden van een brondefinitie is: Is deze term uitdrukkelijk omschreven in de wetgeving?"@nl ,
+        "The logical question for finding a source definition is: Is this term explicitly defined in legislation?"@en ;
     skos:scopeNote
-        ""@nl ,
-        ""@en ;
+        "Een artikel met brondefinities bestaat in de regel uit een aanhef en verschillende onderdelen, bij voorkeur in alfabetische volgorde. Vaak is dit artikel aan het begin van de wettelijke regeling opgenomen, maar er kunnen ook brondefinities worden geformuleerd die voor een specifiek onderdeel (een hoofdstuk, paragraaf of zelfs een artikel) gelden."@nl ,
+        "The logical question for finding a source definition is: Is this term explicitly defined in legislation?"@en ;
     skos:broader ex:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 #
