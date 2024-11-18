@@ -1,10 +1,9 @@
-@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix ronl: <https://regels.overheid.nl/waardelijsten#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cpsv-ap: <http://data.europa.eu/m8g/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/ns#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#>.
 #
@@ -38,7 +37,7 @@ ronl:Vocabulary a skos:ConceptScheme ;
         "nl" ,
         "en" ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://regels.overheid.nl/ronl/ns> ;
+    dct:source <https://regels.overheid.nl/waardelijsten> ;
     skos:hasTopConcept
         ronl:AnalysisConcept ,
         ronl:MethodConcept ,
@@ -73,7 +72,7 @@ ronl:source a owl:ObjectProperty ;
     skos:broader
         ronl:AnalysisConcept,
         ronl:MethodConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
 
 ronl:analysis a owl:ObjectProperty ;
     skos:prefLabel
@@ -93,7 +92,7 @@ ronl:analysis a owl:ObjectProperty ;
         "Is a methodology for legislative analysis."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:range ronl:AnalysisConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
 
 ronl:method a owl:ObjectProperty ;
     skos:prefLabel
@@ -113,7 +112,7 @@ ronl:method a owl:ObjectProperty ;
         "Is a methodology for rules management."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:range ronl:MethodConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
 #
 # Define ronl:implementedBy and ronl:implements as RDF property
 #
@@ -139,7 +138,7 @@ ronl:implementedBy a owl:ObjectProperty ;
         "By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will `mirror` each other, meaning: The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa."@en ;
     rdfs:domain cpsv-ap:RuleSpecification ;
     rdfs:range rdfs:Resource ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> ;
     owl:inverseOf ronl:implements .
 
 ronl:implements a owl:ObjectProperty ;
@@ -161,7 +160,7 @@ ronl:implements a owl:ObjectProperty ;
         "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
     rdfs:domain rdfs:Resource ;
     rdfs:range cpsv-ap:RuleSpecification ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> ;
     owl:inverseOf ronl:implementedBy .
 #
 # Define AnalysisConcept as top-level concept
@@ -187,9 +186,9 @@ ronl:AnalysisConcept a skos:Concept ;
         "The aim is to group a nearly complete collection of legislative analysis methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
     skos:narrower
-        ex:WetsanalyseJAS ,
-        ex:WetsanalyseJRM ,
-        ex:FLINT ;
+        ronl:WetsanalyseJAS ,
+        ronl:WetsanalyseJRM ,
+        ronl:FLINT ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
@@ -216,22 +215,22 @@ ronl:MethodConcept a skos:Concept ;
         "The aim is to group a nearly complete collection of rules management methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
     skos:narrower
-        ex:AKN4EU ,
-        ex:ALEF ,
-        ex:Avola ,
-        ex:Beinformed ,
-        ex:Blawx ,
-        ex:Blueriq ,
-        ex:Catala ,
-        ex:CircuLaw ,
-        ex:ConcordiaLegal ,
-        ex:DataLex ,
-        ex:Demo ,
-        ex:Leos ,
-        ex:OpenFisca ,
-        ex:RuleSpeak ,
-        ex:Sparkwise ,
-        ex:USoft ;
+        ronl:AKN4EU ,
+        ronl:ALEF ,
+        ronl:Avola ,
+        ronl:Beinformed ,
+        ronl:Blawx ,
+        ronl:Blueriq ,
+        ronl:Catala ,
+        ronl:CircuLaw ,
+        ronl:ConcordiaLegal ,
+        ronl:DataLex ,
+        ronl:Demo ,
+        ronl:Leos ,
+        ronl:OpenFisca ,
+        ronl:RuleSpeak ,
+        ronl:Sparkwise ,
+        ronl:USoft ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
@@ -259,20 +258,20 @@ ronl:SpecificationTypeConcept a skos:Concept ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> ;
     skos:narrower
-        ex:FunctioneelOntwerp ,
-        ex:SoftwareCode ,
-        ex:UXDesign ,
-        ex:Communicatiemiddel ,
-        ex:Werkinstructie ,
-        ex:Kwaliteitseisen ,
-        ex:BestuurlijkeInformatie ,
-        ex:Overig ;
+        ronl:FunctioneelOntwerp ,
+        ronl:SoftwareCode ,
+        ronl:UXDesign ,
+        ronl:Communicatiemiddel ,
+        ronl:Werkinstructie ,
+        ronl:Kwaliteitseisen ,
+        ronl:BestuurlijkeInformatie ,
+        ronl:Overig ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
 # Define individual concepts within the AnalysisConcept scheme
 # 
-ex:WetsanalyseJAS a skos:Concept ;
+ronl:WetsanalyseJAS a skos:Concept ;
     skos:prefLabel
         "Wetsanalyse (JAS)"@nl ,
         "Legislative Analysis (JAS)"@en ;
@@ -285,22 +284,22 @@ ex:WetsanalyseJAS a skos:Concept ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
     skos:broader ronl:AnalysisConcept ;
     skos:narrower:
-        ex:Rechtssubject ,
-        ex:Rechtsobject ,
-        ex:Rechtsbetrekking ,
-        ex:Rechtsfeit ,
-        ex:Voorwaarde ,
-        ex:Afleidingsregel ,
-        ex:VariabeleWaarde ,
-        ex:ParameterWaarde ,
-        ex:Operator ,
-        ex:Tijdsaanduiding ,
-        ex:Plaatsaanduiding ,
-        ex:Delegatiebevoegdheid ,
-        ex:Brondefinitie ;
+        ronl:Rechtssubject ,
+        ronl:Rechtsobject ,
+        ronl:Rechtsbetrekking ,
+        ronl:Rechtsfeit ,
+        ronl:Voorwaarde ,
+        ronl:Afleidingsregel ,
+        ronl:VariabeleWaarde ,
+        ronl:ParameterWaarde ,
+        ronl:Operator ,
+        ronl:Tijdsaanduiding ,
+        ronl:Plaatsaanduiding ,
+        ronl:Delegatiebevoegdheid ,
+        ronl:Brondefinitie ;
     skos:inScheme ronl:Vocabulary .
 
-ex:WetsanalyseJRM a skos:Concept ;
+ronl:WetsanalyseJRM a skos:Concept ;
     skos:prefLabel
         "Wetsanalyse (JRM)"@nl ,
         "Legislative Analysis (JRM)"@en ;
@@ -314,7 +313,7 @@ ex:WetsanalyseJRM a skos:Concept ;
     skos:broader ronl:AnalysisConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:FLINT a skos:Concept ;
+ronl:FLINT a skos:Concept ;
     skos:prefLabel
         "FLINT"@nl ,
         "FLINT"@en ;
@@ -330,7 +329,7 @@ ex:FLINT a skos:Concept ;
 #
 # Define individual concepts within the MethodConcept scheme
 #
-ex:AKN4EU a skos:Concept ;
+ronl:AKN4EU a skos:Concept ;
     skos:prefLabel
         "AKN4EU"@nl ,
         "AKN4EU"@en ;
@@ -341,7 +340,7 @@ ex:AKN4EU a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:ALEF a skos:Concept ;
+ronl:ALEF a skos:Concept ;
     skos:prefLabel
         "ALEF"@nl ,
         "ALEF"@en ;
@@ -352,7 +351,7 @@ ex:ALEF a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Avola a skos:Concept ;
+ronl:Avola a skos:Concept ;
     skos:prefLabel
         "Avola"@nl ,
         "Avola"@en ;
@@ -363,7 +362,7 @@ ex:Avola a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Beinformed a skos:Concept ;
+ronl:Beinformed a skos:Concept ;
     skos:prefLabel
         "Beinformed"@nl ,
         "Beinformed"@en ;
@@ -374,7 +373,7 @@ ex:Beinformed a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Blawx a skos:Concept ;
+ronl:Blawx a skos:Concept ;
     skos:prefLabel
         "Blawx"@nl ,
         "Blawx"@en ;
@@ -385,7 +384,7 @@ ex:Blawx a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Blueriq a skos:Concept ;
+ronl:Blueriq a skos:Concept ;
     skos:prefLabel
         "Blueriq"@nl ,
         "Blueriq"@en ;
@@ -396,7 +395,7 @@ ex:Blueriq a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Catala a skos:Concept ;
+ronl:Catala a skos:Concept ;
     skos:prefLabel
         "Catala"@nl ,
         "Catala"@en ;
@@ -407,7 +406,7 @@ ex:Catala a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:CircuLaw a skos:Concept ;
+ronl:CircuLaw a skos:Concept ;
     skos:prefLabel
         "CircuLaw"@nl ,
         "CircuLaw"@en ;
@@ -418,7 +417,7 @@ ex:CircuLaw a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:ConcordiaLegal a skos:Concept ;
+ronl:ConcordiaLegal a skos:Concept ;
     skos:prefLabel
         "Concordia Legal"@nl ,
         "Concordia Legal"@en ;
@@ -429,7 +428,7 @@ ex:ConcordiaLegal a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:DataLex a skos:Concept ;
+ronl:DataLex a skos:Concept ;
     skos:prefLabel
         "DataLex"@nl ,
         "DataLex"@en ;
@@ -440,7 +439,7 @@ ex:DataLex a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Demo a skos:Concept ;
+ronl:Demo a skos:Concept ;
     skos:prefLabel
         "DEMO"@nl ,
         "DEMO"@en ;
@@ -451,7 +450,7 @@ ex:Demo a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Leos a skos:Concept ;
+ronl:Leos a skos:Concept ;
     skos:prefLabel
         "LEOS"@nl ,
         "LEOS"@en ;
@@ -462,7 +461,7 @@ ex:Leos a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:OpenFisca a skos:Concept ;
+ronl:OpenFisca a skos:Concept ;
     skos:prefLabel
         "OpenFisca"@nl ,
         "OpenFisca"@en ;
@@ -473,7 +472,7 @@ ex:OpenFisca a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:RuleSpeak a skos:Concept ;
+ronl:RuleSpeak a skos:Concept ;
     skos:prefLabel
         "RuleSpeak"@nl ,
         "RuleSpeak"@en ;
@@ -484,7 +483,7 @@ ex:RuleSpeak a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Sparkwise a skos:Concept ;
+ronl:Sparkwise a skos:Concept ;
     skos:prefLabel
         "Sparkwise"@nl ,
         "Sparkwise"@en ;
@@ -495,7 +494,7 @@ ex:Sparkwise a skos:Concept ;
     skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
     
-ex:USoft a skos:Concept ;
+ronl:USoft a skos:Concept ;
     skos:prefLabel
         "USoft"@nl ,
         "USoft"@en ;
@@ -508,7 +507,7 @@ ex:USoft a skos:Concept ;
 #
 # Define individual concepts within the SpecificationTypeConcept scheme
 #
-ex:FunctioneelOntwerp a skos:Concept ;
+ronl:FunctioneelOntwerp a skos:Concept ;
     skos:prefLabel
         "Functioneel Ontwerp"@nl ,
         "Functional Design"@en ;
@@ -518,7 +517,7 @@ ex:FunctioneelOntwerp a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:SoftwareCode a skos:Concept ;
+ronl:SoftwareCode a skos:Concept ;
     skos:prefLabel
         "Software code"@nl ,
         "Software code"@en ;
@@ -531,7 +530,7 @@ ex:SoftwareCode a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:UXDesign a skos:Concept ;
+ronl:UXDesign a skos:Concept ;
     skos:prefLabel
         "UX Design"@nl ,
         "UX Design"@en ;
@@ -541,7 +540,7 @@ ex:UXDesign a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Communicatiemiddel a skos:Concept ;
+ronl:Communicatiemiddel a skos:Concept ;
     skos:prefLabel
         "Communicatiemiddel"@nl ,
         "Communications service"@en ;
@@ -553,7 +552,7 @@ ex:Communicatiemiddel a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Werkinstructie a skos:Concept ;
+ronl:Werkinstructie a skos:Concept ;
     skos:prefLabel
         "Werkinstructie"@nl ,
         "Work instruction"@en ;
@@ -563,7 +562,7 @@ ex:Werkinstructie a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Kwaliteitseisen a skos:Concept ;
+ronl:Kwaliteitseisen a skos:Concept ;
     skos:prefLabel
         "Kwaliteitseisen"@nl ,
         "Quality Requirements"@en ;
@@ -573,7 +572,7 @@ ex:Kwaliteitseisen a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:BestuurlijkeInformatie a skos:Concept ;
+ronl:BestuurlijkeInformatie a skos:Concept ;
     skos:prefLabel
         "Bestuurlijke Informatie"@nl ,
         "Business Intelligence"@en ;
@@ -583,7 +582,7 @@ ex:BestuurlijkeInformatie a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Overig a skos:Concept ;
+ronl:Overig a skos:Concept ;
     skos:prefLabel
         "Overig"@nl ,
         "Other"@en ;
@@ -593,9 +592,9 @@ ex:Overig a skos:Concept ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 #
-# Hierarchical occurring concepts within ex:WetsanalyseJAS
+# Hierarchical occurring concepts within ronl:WetsanalyseJAS
 #
-ex:Rechtssubject a skos:Concept ;
+ronl:Rechtssubject a skos:Concept ;
     skos:prefLabel
         "Rechtssubject"@nl ,
         "Legal Subject"@en ;
@@ -608,10 +607,10 @@ ex:Rechtssubject a skos:Concept ;
     skos:scopeNote
         "Een rechtssubject is te herkennen aan een zelfstandig naamwoord waarmee een persoon of andere entiteit wordt beschreven, of aan een persoonlijk voornaamwoord zoals 'hij', 'zij' en soms ook 'het'. Maar ook een onbepaald of betrekkelijk voornaamwoord kan wijzen op een rechtssubject, bijvoorbeeld 'iemand', 'een ieder' of 'degene'."@nl ,
         "A legal subject can be recognized by a noun that describes a person or other entity, or by a personal pronoun such as 'he', 'she' and sometimes also 'it'. But an indefinite or relative pronoun can also indicate a legal subject, for example 'someone', 'anyone' or 'the one'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Rechtsobject a skos:Concept ;
+ronl:Rechtsobject a skos:Concept ;
     skos:prefLabel
         "Rechtsobject"@nl ,
         "Legal Object"@en ;
@@ -624,10 +623,10 @@ ex:Rechtsobject a skos:Concept ;
     skos:scopeNote
         "Een rechtsobject is te herkennen aan een zelfstandig naamwoord waarmee het voorwerp van een recht of plicht wordt omschreven, bijvoorbeeld een studie, een woning of een dienstbetrekking. Ook een aanwijzend of betrekkelijk voornaamwoord kan wijzen op een rechtsobject, bijvoorbeeld 'dat', 'hetgeen' en 'welk(e)'."@nl ,
         "A legal object can be recognized by a noun that describes the object of a right or obligation, for example a study, a home or an employment relationship. A demonstrative or relative pronoun can also point to a legal object, for example 'that', 'the thing' and 'which'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Rechtsbetrekking a skos:Concept ;
+ronl:Rechtsbetrekking a skos:Concept ;
     skos:prefLabel
         "Rechtsbetrekking"@nl ,
         "Legal Relationship"@en ;
@@ -640,10 +639,10 @@ ex:Rechtsbetrekking a skos:Concept ;
     skos:scopeNote
         "Een rechtsbetrekking is te herkennen aan een of meer werkwoorden. Bijvoorbeeld in de vorm van een combinatie van een hoofdwerkwoord met een hulpwerkwoord: 1. bij een recht: 'kan verzoeken' of 'mag wijzigen'; 2. bij een plicht: 'stelt vast', 'mag niet inhalen', 'is verplicht informatie te verstrekken', 'moet informeren' of 'dient te voldoen'. Daarnaast is een rechtsbetrekking bijvoorbeeld te herkennen aan een samengesteld werkwoord: 1. bij een recht: 'heeft recht op' of 'heeft aanspraak op'; 2. bij een plicht: 'heeft de plicht om' of 'draagt de last om'."@nl ,
         "A legal relationship can be recognized by one or more verbs. For example, in the form of a combination of a main verb with an auxiliary verb: 1. for a right: 'may request' or 'may change'; 2. for an obligation: 'establishes', 'may not overtake', 'is obliged to provide information', 'must inform' or 'must comply'. In addition, a legal relationship can be recognized by a compound verb, for example: 1. for a right: 'has the right to' or 'has the claim to'; 2. for an obligation: 'has the duty to' or 'bears the burden to'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Rechtsfeit a skos:Concept ;
+ronl:Rechtsfeit a skos:Concept ;
     skos:prefLabel
         "Rechtsfeit"@nl ,
         "Legal Fact"@en ;
@@ -656,10 +655,10 @@ ex:Rechtsfeit a skos:Concept ;
     skos:scopeNote
         "Een rechtsfeit is te herkennen aan een actieve werkwoordsvorm, al dan niet in combinatie met een zelfstandig naamwoord, zoals 'indienen van een bezwaarschrift', 'toekennen van een subsidie', 'horen van belanghebbende' of 'kenbaar maken van elektronische bereikbaarheid'."@nl ,
         "A legal fact can be recognized by an active verb form, with or without a noun, such as 'filing an objection', 'granting a subsidy', 'hearing an interested party' or 'making electronic accessibility known'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Voorwaarde a skos:Concept ;
+ronl:Voorwaarde a skos:Concept ;
     skos:prefLabel
         "Voorwaarde"@nl ,
         "Condition"@en ;
@@ -672,10 +671,10 @@ ex:Voorwaarde a skos:Concept ;
     skos:scopeNote
         "Een voorwaarde is te herkennen aan een voorwaardelijke bijzin, in de meeste gevallen ingeleid door een voegwoord zoals 'indien', 'als', 'tenzij', 'mits' of een combinatie van woorden, zoals 'met dien verstande dat' of 'met uitzondering van'. Ook kan een voorwaarde afgeleid worden uit een bijwoord bij een werkwoord, zoals 'schriftelijk' of 'elektronisch'. Voorwaarden kunnen enkelvoudig of samengesteld zijn. Een samengestelde voorwaarde bestaat uit verschillende eisen die alle vervuld moeten zijn (cumulatief) of waarvan er één vervuld moet zijn (alternatief)."@nl ,
         "A condition can be recognized by a conditional clause, in most cases introduced by a conjunction such as 'if', 'if', 'unless', 'provided' or a combination of words, such as 'with the understanding that' or 'with the exception of'. A condition can also be derived from an adverb with a verb, such as 'written' or 'electronic'. Conditions can be simple or compound. A compound condition consists of several requirements that must all be fulfilled (cumulative) or of which one must be fulfilled (alternative)."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Afleidingsregel a skos:Concept ;
+ronl:Afleidingsregel a skos:Concept ;
     skos:prefLabel
         "Afleidingsregel"@nl ,
         "Derivation Rule"@en ;
@@ -688,10 +687,10 @@ ex:Afleidingsregel a skos:Concept ;
     skos:scopeNote
         "Een afleidingsregel is te herkennen aan woorden die duiden op een berekening of afleiding, zoals 'is (…) verminderd met', 'bedraagt (…) vermeerderd met', 'wordt gesteld op' of 'is het gezamenlijke bedrag van', maar ook eenvoudigweg 'en'."@nl ,
         "A derivation rule can be recognized by words that indicate a calculation or derivation, such as 'is (...) reduced by', 'amounts (...) increased by', 'is set at' or 'is the total amount of', but also simply 'and'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:VariabeleWaarde a skos:Concept ;
+ronl:VariabeleWaarde a skos:Concept ;
     skos:prefLabel
         "Variabele"@nl ,
         "Variable"@en ;
@@ -716,10 +715,10 @@ ex:VariabeleWaarde a skos:Concept ;
     skos:scopeNote
         "Een booleaanse waarde: Een bijzondere enumeratiewaarde in tekst is een booleaanse waarde. Deze heeft slechts twee mogelijke waarden, te weten 'ja' (waar) of 'nee' (onwaar). Hiermee kunnen we uitdrukken of een bepaald kenmerk van een rechtssubject, rechtsobject, rechtsbetrekking of rechtsfeit van toepassing of aanwezig is. Een voorbeeld van zo'n variabele is 'geregistreerd in het donorregister'. De variabelewaarden zijn hier 'ja' of 'nee'."@nl ,
         "A Boolean value: A special enumeration value in text is a Boolean value. It has only two possible values, namely 'yes' (true) or 'no' (false). This allows us to express whether a certain characteristic of a legal subject, legal object, legal relationship or legal fact is applicable or present. An example of such a variable is 'registered in the donor register'. The variable values ​​here are 'yes' or 'no'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:ParameterWaarde a skos:Concept ;
+ronl:ParameterWaarde a skos:Concept ;
     skos:prefLabel
         "Parameter waarde"@nl ,
         "Parameter Value"@en ;
@@ -732,10 +731,10 @@ ex:ParameterWaarde a skos:Concept ;
     skos:scopeNote
         "Een parameter heeft een vaste waarde over een periode. Een parameter is te herkennen aan een beschrijving van een waarde, bijvoorbeeld van een tarief, een (drempel)bedrag (eventueel met een maximum of een minimum) of een vrijstelling. Een parameterwaarde drukt de waarde van de parameter(beschrijving) uit over een periode. Een parameterwaarde is te herkennen aan bijvoorbeeld een bedrag in geld, een percentage en een datum."@nl ,
         "A parameter has a fixed value over a period. A parameter can be recognized by a description of a value, for example a rate, a (threshold) amount (possibly with a maximum or a minimum) or an exemption. A parameter value expresses the value of the parameter (description) over a period. A parameter value can be recognized by, for example, an amount in money, a percentage and a date."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Operator a skos:Concept ;
+ronl:Operator a skos:Concept ;
     skos:prefLabel
         "Operator"@nl ,
         "Operator"@en ;
@@ -748,10 +747,10 @@ ex:Operator a skos:Concept ;
     skos:scopeNote
         "Een rekenkundige operator is te herkennen aan formuleringen zoals 'het gezamenlijke bedrag van', 'de som van', 'vermeerderd met', 'verminderd met' of 'percentage van'. Een vergelijkingsoperator is te herkennen aan de woorden 'groter dan', 'kleiner dan', 'meer bedraagt dan' of 'is gelijk aan'. Een logische operator is te herkennen aan de woorden 'en', 'of', 'niet' of 'ten minste'."@nl ,
         "An arithmetic operator can be recognized by formulations such as 'the total amount of', 'the sum of', 'increased by', 'decreased by' or 'percentage of'. A comparison operator can be recognized by the words 'greater than', 'less than', 'more than' or 'equals'. A logical operator can be recognized by the words 'and', 'or', 'not' or 'at least'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Tijdsaanduiding a skos:Concept ;
+ronl:Tijdsaanduiding a skos:Concept ;
     skos:prefLabel
         "Tijdsaanduiding"@nl ,
         "Time Indication"@en ;
@@ -764,10 +763,10 @@ ex:Tijdsaanduiding a skos:Concept ;
     skos:scopeNote
         "Tijdsaanduidingen zijn te herkennen aan een concrete datum (bijvoorbeeld 1 september 2009), of aan een omschrijving die een datum beschrijft (de eerste maandag van de maand). Tijdvakken zijn vaak te herkennen aan woorden die een periode duiden, zoals jaar, maand, week en dag of specialisaties van dit soort woorden, zoals kalenderjaar."@nl ,
         "Time indications can be recognized by a concrete date (for example, September 1, 2009), or by a description that describes a date (the first Monday of the month). Periods of time can often be recognized by words that indicate a period, such as year, month, week and day or specializations of these types of words, such as calendar year."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Plaatsaanduiding a skos:Concept ;
+ronl:Plaatsaanduiding a skos:Concept ;
     skos:prefLabel
         "Plaatsaanduiding"@nl ,
         "Location Indication"@en ;
@@ -780,10 +779,10 @@ ex:Plaatsaanduiding a skos:Concept ;
     skos:scopeNote
         "De plaatsaanduiding wordt uitgedrukt met een algemene beschrijving van het gebied (een lidstaat van de EU) of met de naam van een specifiek gebied (de gemeente Amsterdam, de provincie Limburg, Nederland, Zwitserland)."@nl ,
         "The place name is expressed with a general description of the area (a member state of the EU) or with the name of a specific area (the municipality of Amsterdam, the province of Limburg, the Netherlands, Switzerland)."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Delegatiebevoegdheid a skos:Concept ;
+ronl:Delegatiebevoegdheid a skos:Concept ;
     skos:prefLabel
         "Delegatiebevoegdheid"@nl ,
         "Delegation Authority"@en ;
@@ -796,10 +795,10 @@ ex:Delegatiebevoegdheid a skos:Concept ;
     skos:scopeNote
         "Verplichte delegatie wordt geformuleerd met de zinsnede 'bij (of krachtens) algemene maatregel van bestuur/bij ministeriële regeling worden regels gesteld (…)'. Een facultatieve bevoegdheid wordt geformuleerd met de woorden 'kunnen regels worden gesteld'. Indien de formulering 'bij of krachtens' wordt gebruikt in een delegatiebevoegdheid, kan subdelegatie plaatsvinden. Als op grond van een dergelijke delegatiebevoegdheid in een wet een amvb wordt vastgesteld, dan kunnen in de amvb bepaalde zaken worden doorgedelegeerd naar een ministeriële regeling. In de delegatie-invulling wordt niet met standaard uitdrukkingswijzen gewerkt."@nl ,
         "Mandatory delegation is formulated with the phrase 'by (or pursuant to) general administrative order/by ministerial regulation, rules are laid down (…)'. An optional power is formulated with the words 'rules can be laid down'. If the phrase 'by or pursuant to' is used in a delegation power, subdelegation can take place. If, on the basis of such a delegation power, a general administrative order is established in a law, certain matters can be delegated in the general administrative order to a ministerial regulation. Standard expressions are not used in the delegation interpretation."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Brondefinitie a skos:Concept ;
+ronl:Brondefinitie a skos:Concept ;
     skos:prefLabel
         "Brondefinitie"@nl ,
         "Source Definition"@en ;
@@ -812,7 +811,7 @@ ex:Brondefinitie a skos:Concept ;
     skos:scopeNote
         "Een artikel met brondefinities bestaat in de regel uit een aanhef en verschillende onderdelen, bij voorkeur in alfabetische volgorde. Vaak is dit artikel aan het begin van de wettelijke regeling opgenomen, maar er kunnen ook brondefinities worden geformuleerd die voor een specifiek onderdeel (een hoofdstuk, paragraaf of zelfs een artikel) gelden."@nl ,
         "The logical question for finding a source definition is: Is this term explicitly defined in legislation?"@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 #
 # Extend ronl:Vocabulary with hasCriterionRequirementConcept as top-level concept
@@ -825,14 +824,14 @@ ronl:hasCriterionRequirementConcept a skos:Concept ;
         "Dit concept vertegenwoordigt een relatie tussen een openbare dienst en een criterium of vereiste waaraan moet worden voldaan om die dienst te kunnen verlenen. Met andere woorden, cpsv-ap:hasCriterionRequirement geeft aan dat een specifieke openbare dienst (bijv. 'Een verblijfsvergunning verkrijgen') een specifiek criterium of vereiste heeft (bijv. 'Bewijs van inkomen') waaraan moet worden voldaan voordat de dienst kan worden verleend."@nl ,
         "This concept represents a relationship between a public service and a criterion or requirement that must be met in order to provide that service. In other words, cpsv-ap:hasCriterionRequirement indicates that a specific public service (e.g. 'Obtain a residence permit') has a specific criterion or requirement (e.g. 'Proof of income') that must be met before the service can be provided."@en ;
     skos:narrower
-        ex:Ingezetene,
-        ex:Leeftijd18,
-        ex:Betalingsregeling ,
-        ex:Detentie ;
+        ronl:Ingezetene,
+        ronl:Leeftijd18,
+        ronl:Betalingsregeling ,
+        ronl:Detentie ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Ingezetene a skos:Concept ;
+ronl:Ingezetene a skos:Concept ;
     skos:prefLabel
         "Ingezetene Nederlandse Staat"@nl ,
         "Ingezetene"@en ;
@@ -842,7 +841,7 @@ ex:Ingezetene a skos:Concept ;
     skos:broader ronl:hasCriterionRequirementConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Leeftijd18 a skos:Concept ;
+ronl:Leeftijd18 a skos:Concept ;
     skos:prefLabel
         "Ouder dan 18 jaar"@nl ,
         "Older than 18 years"@en ;
@@ -852,7 +851,7 @@ ex:Leeftijd18 a skos:Concept ;
     skos:broader ronl:hasCriterionRequirementConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Betalingsregeling a skos:Concept ;
+ronl:Betalingsregeling a skos:Concept ;
     skos:prefLabel
         "Betalingsregeling"@nl ,
         "Payment arrangement"@en ;
@@ -862,7 +861,7 @@ ex:Betalingsregeling a skos:Concept ;
     skos:broader ronl:hasCriterionRequirementConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Detentie a skos:Concept ;
+ronl:Detentie a skos:Concept ;
     skos:prefLabel
         "In gevangenschap"@nl ,
         "Incarcerated"@en ;
