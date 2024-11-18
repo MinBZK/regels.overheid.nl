@@ -43,7 +43,7 @@ ronl:Vocabulary a skos:ConceptScheme ;
         ronl:AnalysisConcept ,
         ronl:MethodConcept ,
         ronl:SpecificationTypeConcept ;
-    owl:versionInfo "Work In Progres - v2" .
+    owl:versionInfo "Work In Progres - v3" .
 
 #
 # Define AnalysisConcept as top-level concept
