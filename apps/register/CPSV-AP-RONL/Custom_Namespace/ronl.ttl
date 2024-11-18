@@ -8,10 +8,9 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#>.
 #
-# Declare ronl vocabulary metadata
+# Declare ronl:Vocabulary as the overarching skos:ConceptScheme
 #
-ronl:Vocabulary
-    a skos:ConceptScheme ;
+ronl:Vocabulary a skos:ConceptScheme ;
     rdfs:label
         "RONL Vocabulaire"@nl ,
         "RONL Vocabulary"@en ;
@@ -47,7 +46,7 @@ ronl:Vocabulary
     owl:versionInfo "Work In Progres - v1" .
 
 #
-# Define AnalysisConcept as top-level concepts under ronl
+# Define AnalysisConcept as top-level concept
 #
 ronl:AnalysisConcept a skos:Concept ;
     rdfs:label
@@ -78,7 +77,7 @@ ronl:AnalysisConcept a skos:Concept ;
     skos:topConceptOf ronl:Vocabulary .
 
 #
-# Define MethodConcept as top-level concepts under ronl
+# Define MethodConcept as top-level concept
 #
 ronl:MethodConcept a skos:Concept ;
     rdfs:label
@@ -171,6 +170,20 @@ ex:WetsanalyseJAS a skos:Concept ;
     skos:definition
         "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
         "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
+    skos:member:
+        ex:Rechtssubject ,
+        ex:Rechtsobject ,
+        ex:Rechtsbetrekking ,
+        ex:Rechtsfeit ,
+        ex:Voorwaarde ,
+        ex:Afleidingsregel ,
+        ex:VariabeleWaarde ,
+        ex:ParameterWaarde ,
+        ex:Operator ,
+        ex:Tijdsaanduiding ,
+        ex:Plaatsaanduiding ,
+        ex:Delegatiebevoegdheid ,
+        ex:Brondefinitie ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
     skos:inScheme ronl:Vocabulary .
 
@@ -440,6 +453,57 @@ ex:Overig a skos:Concept ;
         "Bevat relevante informatie over organisatie, dienst en/of product, process of anderszins, dat om moverende redenen niet in de beschikbare ronl:SpecificationTypeConcept concepten past."@nl ,
         "Contains relevant information about organization, service and/or product, process or otherwise, that for compelling reasons does not fit into the available ronl:SpecificationTypeConcept concepts."@en ;
     skos:inScheme ronl:Vocabulary .
+#
+# Hierarchical occurring concepts within ex:WetsanalyseJAS
+#
+ex:Rechtssubject a skos:Concept ;
+    rdfs:label
+        "Rechtssubject"@nl ,
+        "Legal Subject"@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een rechtssubject kunnen zijn: Wie heeft het recht? Wie heeft de plicht? Van wie is een rechtsobject? Bij wie hoort een waarde?"@nl ,
+        "Questions for finding a legal subject can be: Who has the right? Who has the duty? Who owns a legal object? Who owns a value?"@en ;
+    skos:prefLabel
+        "Rechtssubject"@nl ,
+        "Legal Subject"@en ;
+    skos:definition
+        "Een rechtssubject is de drager van rechten en plichten. Het is een partij in een rechtsbetrekking."@nl ,
+        "A legal subject is the bearer of rights and obligations. It is a party in a legal relationship."@en ;
+    skos:scopeNote
+        "Een rechtssubject is te herkennen aan een zelfstandig naamwoord waarmee een persoon of andere entiteit wordt beschreven, of aan een persoonlijk voornaamwoord zoals 'hij', 'zij' en soms ook 'het'. Maar ook een onbepaald of betrekkelijk voornaamwoord kan wijzen op een rechtssubject, bijvoorbeeld 'iemand', 'een ieder' of 'degene'."@nl ,
+        "A legal subject can be recognized by a noun that describes a person or other entity, or by a personal pronoun such as 'he', 'she' and sometimes also 'it'. But an indefinite or relative pronoun can also indicate a legal subject, for example 'someone', 'anyone' or 'the one'."@en ;
+    skos:inScheme ronl:Vocabulary .
+
+ex:Rechtsobject a skos:Concept ;
+    rdfs:label
+        "Rechtsobject"@nl ,
+        "Legal Object"@en ;
+    rdfs:comment
+        "Vragen voor het vinden van een rechtsobject kunnen zijn: Wat is het voorwerp van een recht of plicht? Waar is het rechtssubject eigenaar of houder van? Waar heeft een waarde betrekking op? Waarover is iets verschuldigd?"@nl ,
+        "Questions for finding a legal object can be: What is the object of a right or obligation? What is the legal subject the owner or holder of? What does a value relate to? What is something owed for?"@en ;
+    skos:prefLabel
+        "Rechtsobject"@nl ,
+        "Legal Object"@en ;
+    skos:definition
+        "Een rechtsobject is het voorwerp van een rechtsbetrekking en/of rechtsfeit. Een rechtsobject kan zowel een fysieke (bijvoorbeeld een personenauto of een huis) als een niet-fysieke verschijningsvorm (bijvoorbeeld medische zorg) hebben."@nl ,
+        "A legal object is the subject of a legal relationship and/or legal fact. A legal object can have both a physical (for example a car or a house) and a non-physical (for example medical care) manifestation."@en ;
+    skos:scopeNote
+        "Een rechtsobject is te herkennen aan een zelfstandig naamwoord waarmee het voorwerp van een recht of plicht wordt omschreven, bijvoorbeeld een studie, een woning of een dienstbetrekking. Ook een aanwijzend of betrekkelijk voornaamwoord kan wijzen op een rechtsobject, bijvoorbeeld 'dat', 'hetgeen' en 'welk(e)'."@nl ,
+        "A legal object can be recognized by a noun that describes the object of a right or obligation, for example a study, a home or an employment relationship. A demonstrative or relative pronoun can also point to a legal object, for example 'that', 'the thing' and 'which'."@en ;
+    skos:inScheme ronl:Vocabulary .
+
+#ex:Rechtsbetrekking ,
+#ex:Rechtsfeit ,
+#ex:Voorwaarde ,
+#ex:Afleidingsregel ,
+#ex:VariabeleWaarde ,
+#ex:ParameterWaarde ,
+#ex:Operator ,
+#ex:Tijdsaanduiding ,
+#ex:Plaatsaanduiding ,
+#ex:Delegatiebevoegdheid ,
+#ex:Brondefinitie ;
+
 #
 # Define ronl:source, ronl:analysis and ronl:method as RDF properties
 #
