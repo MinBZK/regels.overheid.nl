@@ -26,6 +26,16 @@ export default async function LabPage() {
             <CardLab.Demo href="https://regels.overheid.nl/lab/sparql/ui/" />
           </CardLab.MethodItems>
         </CardLab.Root>
+        <CardLab.Root title="Skosmos">
+          Skosmos is een open source webgebaseerde SKOS-browser en publicatietool. Deze demo bevat oa de vocabulaire van
+          regels.overheid.nl en de Standaard voor het beschrijven van begrippen (NL-SBB).
+          <CardLab.MethodItems>
+            <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
+            <CardLab.Repo href="https://github.com/NatLibFi/Skosmos" />
+            <CardLab.Docs href="https://github.com/NatLibFi/Skosmos/wiki/Data-Model" />
+            <CardLab.Demo href="http://open-regels.nl:9090/en/" />
+          </CardLab.MethodItems>
+        </CardLab.Root>
         <CardLab.Root title="AOW microservice">
           De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling. Met deze
           microservice illustreren we een landelijke service voor de bepaling van de AOW leeftijd.
@@ -34,9 +44,9 @@ export default async function LabPage() {
               label="EU PL 1.2 license"
               href="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
             />
-            <CardLab.Demo href="https://regels.overheid.nl/lab/aow-leeftijd/" />
             <CardLab.Repo href="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py" />
             <CardLab.Docs href="https://regels.overheid.nl/docs/lab/AOW" />
+            <CardLab.Demo href="https://regels.overheid.nl/lab/aow-leeftijd/" />
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="Field Lab FDS zorgtoeslag">
@@ -56,9 +66,9 @@ export default async function LabPage() {
           documenten en informatieproducten te ondersteunen. De live demo bevat een prototpe voor Open Regels
           <CardLab.MethodItems>
             <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
-            <CardLab.Demo href="https://regels.dexcat.nl/" />
             <CardLab.Repo href="https://gitlab.com/xpertselect/portals" />
             <CardLab.Docs href="http://opengdc.nl" />
+            <CardLab.Demo href="https://regels.dexcat.nl/" />
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="Norm Editor" method="FLINT">
