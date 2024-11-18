@@ -678,68 +678,68 @@ ex:Brondefinitie a skos:Concept ;
 # Define ronl:source, ronl:analysis and ronl:method as RDF properties
 #
 ronl:source a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Bron"@nl ,
-        "RONL Source"@nl ;
-    rdfs:comment
-        "Is bedoeld om een gezaghebbende bron of herkomst aan te geven en kan worden gebruikt voor alle elementen in de ronl naamruimte."@nl ,
-        "Is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace."@en ;
     skos:prefLabel
         "Gezaghebbende bron of herkomst"@nl ,
         "Authoritative source or origin"@en ;
+    rdfs:label
+        "RONL Bron"@nl ,
+        "RONL Source"@nl ;
     skos:altLabel
         "bron of herkomst soorten"@nl ,
         "source or origin"@en ;
     skos:definition
         "Verwijst naar de gezaghebbende, conceptuele herkomst van de regels of het model, zoals een officieel overheidsdocument of een verordening die de regelspecificatie set legitimeert"@nl ,
         "Points to the authoritative, conceptual origin of the rules or model, like an official government document or regulation that legitimizes the rule specification set."@en ;
-    skos:broader
-        ronl:AnalysisConcept,
-        ronl:MethodConcept ;
+    rdfs:comment
+        "Is bedoeld om een gezaghebbende bron of herkomst aan te geven en kan worden gebruikt voor alle elementen in de ronl naamruimte."@nl ,
+        "Is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace."@en ;
     skos:scopeNote
         "Niet zelden zal er (nog) niet een openbare plek zijn om naar te verwijzen. In dat geval volstaat de link naar een algemene uitleg pagina die het dichtst in de buurt komt van de bedoelde bron."@nl ,
         "Quite often there will not be a public place to refer to (yet). In that case, the link to a general explanation page that comes closest to the intended source will suffice."@en ;
     # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
     rdfs:range dct:BibliographicResource ;
+    skos:broader
+        ronl:AnalysisConcept,
+        ronl:MethodConcept ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 
 ronl:analysis a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Wetsanalyse"@nl ,
-        "RONL Legislative analysis"@en ;
-    rdfs:comment
-        "Is een methodiek voor wetsanalyse."@nl ,
-        "Is a methodology for legislative analysis."@en ;
     skos:prefLabel
         "Wetsanalyse eigenschap"@nl ,
         "Legislative analysis property"@en ;
+    rdfs:label
+        "RONL Wetsanalyse"@nl ,
+        "RONL Legislative analysis"@en ;
     skos:altLabel
         "wetsanalyse"@nl ,
         "legal analysis"@en ;
     skos:definition
         "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
         "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
+    rdfs:comment
+        "Is een methodiek voor wetsanalyse."@nl ,
+        "Is a methodology for legislative analysis."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:range ronl:AnalysisConcept ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
 
 ronl:method a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Methodiek voor Regelbeheer"@nl ,
-        "RONL Methodology for Rules management"@nl ;
-    rdfs:comment
-        "Is een methodiek voor regelbeheer."@nl ,
-        "Is a methodology for rules management."@en ;
     skos:prefLabel
         "Methodiek voor regelbeheer eigenschap"@nl ,
         "Methodology for rules mannagement property"@en ;
+    rdfs:label
+        "RONL Methodiek voor Regelbeheer"@nl ,
+        "RONL Methodology for Rules management"@nl ;
     skos:altLabel
         "regelbeheer"@nl ,
         "rules management"@en ;
     skos:definition
         "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
         "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
+    rdfs:comment
+        "Is een methodiek voor regelbeheer."@nl ,
+        "Is a methodology for rules management."@en ;
     rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
     rdfs:range ronl:MethodConcept ;
     rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
@@ -747,21 +747,18 @@ ronl:method a owl:ObjectProperty ;
 # Define ronl:implementedBy and ronl:implements as RDF property
 #
 ronl:implementedBy a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Geïmplementeerd door"@nl ,
-        "RONL Implemented by"@nl ;
-    rdfs:comment
-        "Bedoeld om aan te geven waarmee een bepaalde set regels wordt geïmplementeerd (zoals een openbare dienst of uitvoeringsentiteit)."@nl ,
-        "Intended to indicate what a particular set of rules is implemented with (like a public service or execution entity)."@en ;
     skos:prefLabel
         "Is geïmplementeerd door"@nl ,
         "Is implememnted by"@en ;
+    rdfs:label
+        "RONL Geïmplementeerd door"@nl ,
+        "RONL Implemented by"@nl ;
     skos:altLabel
         "geïmplementeerd"@nl ,
         "implemented"@en ;
-    rdfs:domain cpsv-ap:RuleSpecification ;
-    rdfs:range rdfs:Resource ;
-    owl:inverseOf ronl:implements ;
+    rdfs:comment
+        "Bedoeld om aan te geven waarmee een bepaalde set regels wordt geïmplementeerd (zoals een openbare dienst of uitvoeringsentiteit)."@nl ,
+        "Intended to indicate what a particular set of rules is implemented with (like a public service or execution entity)."@en ;
     skos:editorialNote
         "rdfs:domain moet het type entiteit zijn dat `wordt geïmplementeerd door` iets anders. In dit geval moet het een cpsv-ap:RuleSpecification zijn."@nl ,
         "rdfs:range moet het type entiteit zijn dat de implementatie uitvoert (bijvoorbeeld een uitvoerende service, resource of algoritme), die opgeven als rdfs:Resource om flexibiliteit mogelijk te maken."@nl ,
@@ -769,21 +766,21 @@ ronl:implementedBy a owl:ObjectProperty ;
         "rdfs:domain should be the type of entity that `is implemented by` something else. In this case, it must be a cpsv-ap:RuleSpecification."@en ,
         "rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility."@en ,
         "By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will `mirror` each other, meaning: The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa."@en ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+    rdfs:domain cpsv-ap:RuleSpecification ;
+    rdfs:range rdfs:Resource ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> ;
+    owl:inverseOf ronl:implements .
 
 ronl:implements a owl:ObjectProperty ;
+    skos:prefLabel
+        "Implementeert"@nl ,
+        "Implements"@en ;
     rdfs:label
         "RONL Implementeert"@nl ,
         "RONL Implements"@nl ;
     rdfs:comment
         "Bedoeld om aan te geven dat een specifieke resource een bepaalde set regels implementeert."@nl ,
         "Intended to indicate that a specific resource implements a certain rule specification."@en ;
-    skos:prefLabel
-        "Implementeert"@nl ,
-        "Implements"@en ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:range cpsv-ap:RuleSpecification ;
-    owl:inverseOf ronl:implementedBy ;
     skos:editorialNote
         "rdfs:domain moet de entiteit zijn die de implementatie uitvoert, een algemene rdfs:Resource in dit model, wat bredere toepasbaarheid mogelijk maakt."@nl ,
         "rdfs:range moet terugverwijzen naar de entiteit die is geïmplementeerd, namelijk cpsv-ap:RuleSpecification."@nl ,
@@ -791,4 +788,60 @@ ronl:implements a owl:ObjectProperty ;
         "rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability."@en ,
         "rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification."@en ,
         "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+    rdfs:domain rdfs:Resource ;
+    rdfs:range cpsv-ap:RuleSpecification ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> ;
+    owl:inverseOf ronl:implementedBy .
+#
+# Extend ronl:Vocabulary with hasCriterionRequirementConcept
+#
+ronl:hasCriterionRequirementConcept a skos:Concept ;
+    skos:prefLabel
+        "Criterium Vereiste Concept"@nl ,
+        "Criterion Requirement Concept"@en ;
+    skos:scopeNote
+        "Dit concept vertegenwoordigt een relatie tussen een openbare dienst en een criterium of vereiste waaraan moet worden voldaan om die dienst te kunnen verlenen. Met andere woorden, cpsv-ap:hasCriterionRequirement geeft aan dat een specifieke openbare dienst (bijv. 'Een verblijfsvergunning verkrijgen') een specifiek criterium of vereiste heeft (bijv. 'Bewijs van inkomen') waaraan moet worden voldaan voordat de dienst kan worden verleend."@nl ,
+        "This concept represents a relationship between a public service and a criterion or requirement that must be met in order to provide that service. In other words, cpsv-ap:hasCriterionRequirement indicates that a specific public service (e.g. 'Obtain a residence permit') has a specific criterion or requirement (e.g. 'Proof of income') that must be met before the service can be provided."@en ;
+    skos:member
+        ronl:Ingezetene,
+        ronl:Leeftijd18,
+        ronl:Betalingsregeling ,
+        ronl:Detentie ;
+    skos:inScheme ronl:Vocabulary .
+
+ronl:Ingezetene a skos:Concept ;
+    skos:prefLabel
+        "Ingezetene Nederlandse Staat"@nl ,
+        "Ingezetene"@en ;
+    skos:definition
+        "De aanvrager bezit de Nederlandse of buitenlandse nationaliteit en beschikt over een verblijfsvergunning voor rechtmatig verblijf in Nederland."@nl ,
+        "The applicant possesses Dutch or foreign nationality and has a residence permit for lawful residence in the Netherlands."@en ;
+    skos:inScheme ronl:Vocabulary .
+
+ronl:Leeftijd18 a skos:Concept ;
+    skos:prefLabel
+        "Ouder dan 18 jaar"@nl ,
+        "Older than 18 years"@en ;
+    skos:definition
+        "De aanvrager is ouder dan 18 jaar."@nl ,
+        "The applicant is over 18 years old."@en ;
+    skos:inScheme ronl:Vocabulary .
+
+ronl:Betalingsregeling a skos:Concept ;
+    skos:prefLabel
+        "Ingezetene Nederlandse Staat"@nl ,
+        "Ingezetene"@en ;
+    skos:definition
+        "Vereist toeslag uit te betalen aan het CJIB als er sprake is van een betalingsregeling."@nl ,
+        "Requires allowance to be paid to CJIB if there is a payment arrangement."@en ;
+    skos:inScheme ronl:Vocabulary .
+
+ronl:Detentie a skos:Concept ;
+    skos:prefLabel
+        "In gevangenschap"@nl ,
+        "Incarcerated"@en ;
+    skos:definition
+        "De aanvrager is niet gedetineerd."@nl ,
+        "The applicant is not incarcerated."@en ;
+    skos:inScheme ronl:Vocabulary .
+
