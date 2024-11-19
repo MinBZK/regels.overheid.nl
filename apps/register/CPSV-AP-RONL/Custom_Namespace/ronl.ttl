@@ -1,10 +1,9 @@
-@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix ronl: <https://regels.overheid.nl/waardelijsten#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cpsv-ap: <http://data.europa.eu/m8g/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ex: <http://example.org/ns#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#>.
 #
@@ -38,13 +37,131 @@ ronl:Vocabulary a skos:ConceptScheme ;
         "nl" ,
         "en" ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
-    dct:source <https://regels.overheid.nl/ronl/ns> ;
+    dct:source <https://regels.overheid.nl/waardelijsten> ;
     skos:hasTopConcept
         ronl:AnalysisConcept ,
         ronl:MethodConcept ,
-        ronl:SpecificationTypeConcept ;
-    owl:versionInfo "Work In Progres - v3" .
+        ronl:SpecificationTypeConcept ,
+        ronl:hasCriterionRequirementConcept ;
+    owl:versionInfo "Work In Progres - v5" .
+#
+# Define ronl:source, ronl:analysis and ronl:method as RDF properties
+#
+ronl:source a owl:ObjectProperty ;
+    skos:prefLabel
+        "Gezaghebbende bron of herkomst"@nl ,
+        "Authoritative source or origin"@en ;
+    rdfs:label
+        "RONL Bron"@nl ,
+        "RONL Source"@nl ;
+    skos:altLabel
+        "bron of herkomst soorten"@nl ,
+        "source or origin"@en ;
+    skos:definition
+        "Verwijst naar de gezaghebbende, conceptuele herkomst van de regels of het model, zoals een officieel overheidsdocument of een verordening die de regelspecificatie set legitimeert"@nl ,
+        "Points to the authoritative, conceptual origin of the rules or model, like an official government document or regulation that legitimizes the rule specification set."@en ;
+    rdfs:comment
+        "Is bedoeld om een gezaghebbende bron of herkomst aan te geven en kan worden gebruikt voor alle elementen in de ronl naamruimte."@nl ,
+        "Is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace."@en ;
+    skos:scopeNote
+        "Niet zelden zal er (nog) niet een openbare plek zijn om naar te verwijzen. In dat geval volstaat de link naar een algemene uitleg pagina die het dichtst in de buurt komt van de bedoelde bron."@nl ,
+        "Quite often there will not be a public place to refer to (yet). In that case, the link to a general explanation page that comes closest to the intended source will suffice."@en ;
+    # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range dct:BibliographicResource ;
+    skos:broader
+        ronl:AnalysisConcept,
+        ronl:MethodConcept ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
 
+ronl:analysis a owl:ObjectProperty ;
+    skos:prefLabel
+        "Wetsanalyse eigenschap"@nl ,
+        "Legislative analysis property"@en ;
+    rdfs:label
+        "RONL Wetsanalyse"@nl ,
+        "RONL Legislative analysis"@en ;
+    skos:altLabel
+        "wetsanalyse"@nl ,
+        "legal analysis"@en ;
+    skos:definition
+        "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
+        "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
+    rdfs:comment
+        "Is een methodiek voor wetsanalyse."@nl ,
+        "Is a methodology for legislative analysis."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+    rdfs:range ronl:AnalysisConcept ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
+
+ronl:method a owl:ObjectProperty ;
+    skos:prefLabel
+        "Methodiek voor regelbeheer eigenschap"@nl ,
+        "Methodology for rules mannagement property"@en ;
+    rdfs:label
+        "RONL Methodiek voor Regelbeheer"@nl ,
+        "RONL Methodology for Rules management"@nl ;
+    skos:altLabel
+        "regelbeheer"@nl ,
+        "rules management"@en ;
+    skos:definition
+        "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
+        "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
+    rdfs:comment
+        "Is een methodiek voor regelbeheer."@nl ,
+        "Is a methodology for rules management."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+    rdfs:range ronl:MethodConcept ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
+#
+# Define ronl:implementedBy and ronl:implements as RDF property
+#
+ronl:implementedBy a owl:ObjectProperty ;
+    skos:prefLabel
+        "Is geïmplementeerd door"@nl ,
+        "Is implememnted by"@en ;
+    rdfs:label
+        "RONL Geïmplementeerd door"@nl ,
+        "RONL Implemented by"@nl ;
+    skos:altLabel
+        "geïmplementeerd"@nl ,
+        "implemented"@en ;
+    rdfs:comment
+        "Bedoeld om aan te geven waarmee een bepaalde set regels wordt geïmplementeerd (zoals een openbare dienst of uitvoeringsentiteit)."@nl ,
+        "Intended to indicate what a particular set of rules is implemented with (like a public service or execution entity)."@en ;
+    skos:editorialNote
+        "rdfs:domain moet het type entiteit zijn dat `wordt geïmplementeerd door` iets anders. In dit geval moet het een cpsv-ap:RuleSpecification zijn."@nl ,
+        "rdfs:range moet het type entiteit zijn dat de implementatie uitvoert (bijvoorbeeld een uitvoerende service, resource of algoritme), die opgeven als rdfs:Resource om flexibiliteit mogelijk te maken."@nl ,
+        "Door ronl:implementedBy te definiëren als de inverse van ronl:implements, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: het domein van ronl:implements wordt het bereik van ronl:implementedBy, en vice versa."@nl ,
+        "rdfs:domain should be the type of entity that `is implemented by` something else. In this case, it must be a cpsv-ap:RuleSpecification."@en ,
+        "rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility."@en ,
+        "By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will `mirror` each other, meaning: The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa."@en ;
+    rdfs:domain cpsv-ap:RuleSpecification ;
+    rdfs:range rdfs:Resource ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> ;
+    owl:inverseOf ronl:implements .
+
+ronl:implements a owl:ObjectProperty ;
+    skos:prefLabel
+        "Implementeert"@nl ,
+        "Implements"@en ;
+    rdfs:label
+        "RONL Implementeert"@nl ,
+        "RONL Implements"@nl ;
+    rdfs:comment
+        "Bedoeld om aan te geven dat een specifieke resource een bepaalde set regels implementeert."@nl ,
+        "Intended to indicate that a specific resource implements a certain rule specification."@en ;
+    skos:editorialNote
+        "rdfs:domain moet de entiteit zijn die de implementatie uitvoert, een algemene rdfs:Resource in dit model, wat bredere toepasbaarheid mogelijk maakt."@nl ,
+        "rdfs:range moet terugverwijzen naar de entiteit die is geïmplementeerd, namelijk cpsv-ap:RuleSpecification."@nl ,
+        "Door ronl:implements te definiëren als de inverse van ronl:implementedBy, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: Het domein van ronl:implementedBy wordt het bereik van ronl:implements, en vice versa."@nl ,
+        "rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability."@en ,
+        "rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification."@en ,
+        "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range cpsv-ap:RuleSpecification ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> ;
+    owl:inverseOf ronl:implementedBy .
 #
 # Define AnalysisConcept as top-level concept
 #
@@ -68,11 +185,10 @@ ronl:AnalysisConcept a skos:Concept ;
         "Het doel is om een nagenoeg complete verzameling van wetsanalyse methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
         "The aim is to group a nearly complete collection of legislative analysis methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
-    skos:narrower ronl:SpecificationTypeConcept ;
-    skos:member
-        ex:WetsanalyseJAS ,
-        ex:WetsanalyseJRM ,
-        ex:FLINT ;
+    skos:narrower
+        ronl:WetsanalyseJAS ,
+        ronl:WetsanalyseJRM ,
+        ronl:FLINT ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
@@ -98,24 +214,23 @@ ronl:MethodConcept a skos:Concept ;
         "Het doel is om een nagenoeg complete verzameling van regelbeheer methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
         "The aim is to group a nearly complete collection of rules management methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
-    skos:narrower ronl:SpecificationTypeConcept ;
-    skos:member
-        ex:AKN4EU ,
-        ex:ALEF ,
-        ex:Avola ,
-        ex:Beinformed ,
-        ex:Blawx ,
-        ex:Blueriq ,
-        ex:Catala ,
-        ex:CircuLaw ,
-        ex:ConcordiaLegal ,
-        ex:DataLex ,
-        ex:Demo ,
-        ex:Leos ,
-        ex:OpenFisca ,
-        ex:RuleSpeak ,
-        ex:Sparkwise ,
-        ex:USoft ;
+    skos:narrower
+        ronl:AKN4EU ,
+        ronl:ALEF ,
+        ronl:Avola ,
+        ronl:Beinformed ,
+        ronl:Blawx ,
+        ronl:Blueriq ,
+        ronl:Catala ,
+        ronl:CircuLaw ,
+        ronl:ConcordiaLegal ,
+        ronl:DataLex ,
+        ronl:Demo ,
+        ronl:Leos ,
+        ronl:OpenFisca ,
+        ronl:RuleSpeak ,
+        ronl:Sparkwise ,
+        ronl:USoft ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
@@ -142,24 +257,21 @@ ronl:SpecificationTypeConcept a skos:Concept ;
         "The list originates from De LegitiMaat, a working method for conducting research into the use of algorithms by government organizations."@en ;
     ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> ;
-    skos:broader
-        ronl:AnalysisConcept ,
-        ronl:MethodConcept ;
-    skos:member
-        ex:FunctioneelOntwerp ,
-        ex:SoftwareCode ,
-        ex:UXDesign ,
-        ex:Communicatiemiddel ,
-        ex:Werkinstructie ,
-        ex:Kwaliteitseisen ,
-        ex:BestuurlijkeInformatie ,
-        ex:Overig ;
+    skos:narrower
+        ronl:FunctioneelOntwerp ,
+        ronl:SoftwareCode ,
+        ronl:UXDesign ,
+        ronl:Communicatiemiddel ,
+        ronl:Werkinstructie ,
+        ronl:Kwaliteitseisen ,
+        ronl:BestuurlijkeInformatie ,
+        ronl:Overig ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
 # Define individual concepts within the AnalysisConcept scheme
 # 
-ex:WetsanalyseJAS a skos:Concept ;
+ronl:WetsanalyseJAS a skos:Concept ;
     skos:prefLabel
         "Wetsanalyse (JAS)"@nl ,
         "Legislative Analysis (JAS)"@en ;
@@ -170,23 +282,24 @@ ex:WetsanalyseJAS a skos:Concept ;
         "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
         "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
+    skos:broader ronl:AnalysisConcept ;
     skos:narrower:
-        ex:Rechtssubject ,
-        ex:Rechtsobject ,
-        ex:Rechtsbetrekking ,
-        ex:Rechtsfeit ,
-        ex:Voorwaarde ,
-        ex:Afleidingsregel ,
-        ex:VariabeleWaarde ,
-        ex:ParameterWaarde ,
-        ex:Operator ,
-        ex:Tijdsaanduiding ,
-        ex:Plaatsaanduiding ,
-        ex:Delegatiebevoegdheid ,
-        ex:Brondefinitie ;
+        ronl:Rechtssubject ,
+        ronl:Rechtsobject ,
+        ronl:Rechtsbetrekking ,
+        ronl:Rechtsfeit ,
+        ronl:Voorwaarde ,
+        ronl:Afleidingsregel ,
+        ronl:VariabeleWaarde ,
+        ronl:ParameterWaarde ,
+        ronl:Operator ,
+        ronl:Tijdsaanduiding ,
+        ronl:Plaatsaanduiding ,
+        ronl:Delegatiebevoegdheid ,
+        ronl:Brondefinitie ;
     skos:inScheme ronl:Vocabulary .
 
-ex:WetsanalyseJRM a skos:Concept ;
+ronl:WetsanalyseJRM a skos:Concept ;
     skos:prefLabel
         "Wetsanalyse (JRM)"@nl ,
         "Legislative Analysis (JRM)"@en ;
@@ -197,9 +310,10 @@ ex:WetsanalyseJRM a skos:Concept ;
         "Specificatie van het juridisch referentiemodel (JRM) dat met scenario's beschrijft hoe een burger of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering."@nl ,
         "Specification of the Legal Reference Model (JRM) that describes in scenarios how a citizen or company experiences a specific piece of legislation or regulations or goes through it in the implementation of the law."@en ;
     rdfs:seeAlso <https://minbzk.github.io/wetsuitvoering/> ;
+    skos:broader ronl:AnalysisConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:FLINT a skos:Concept ;
+ronl:FLINT a skos:Concept ;
     skos:prefLabel
         "FLINT"@nl ,
         "FLINT"@en ;
@@ -210,11 +324,12 @@ ex:FLINT a skos:Concept ;
         "FLINT is onderdeel van een protocol voor het uitvoeren van normatieve taken (Calculemus) en een expliciete taal om interpretaties van juridische bronnen vast te leggen (FLINT)."@nl ,
         "FLINT is part of a protocol for performing normative tasks (Calculemus) and an explicit language for recording interpretations of legal sources (FLINT)."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/flint/INTRODUCTIE> ;
+    skos:broader ronl:AnalysisConcept ;
     skos:inScheme ronl:Vocabulary .
 #
 # Define individual concepts within the MethodConcept scheme
 #
-ex:AKN4EU a skos:Concept ;
+ronl:AKN4EU a skos:Concept ;
     skos:prefLabel
         "AKN4EU"@nl ,
         "AKN4EU"@en ;
@@ -222,9 +337,10 @@ ex:AKN4EU a skos:Concept ;
         "Akoma Ntoso (`verbonden harten` in de Akan-taal van West-Afrika) definieert een set van eenvoudige technologieneutrale elektronische representaties in XML-formaat van parlementaire, wetgevende en rechterlijke documenten. AKN4EU kan worden beschouwd als de lokalisatie van Akoma Ntoso voor EU-wetgeving."@nl ,
         "Akoma Ntoso (`linked hearts` in the Akan language of West Africa) defines a set of simple technology-neutral electronic representations in XML format of parliamentary, legislative and judiciary documents. AKN4EU can be considered as the localisation of Akoma Ntoso for EU legislation."@en ;
     rdfs:seeAlso <https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/akn4eu> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:ALEF a skos:Concept ;
+ronl:ALEF a skos:Concept ;
     skos:prefLabel
         "ALEF"@nl ,
         "ALEF"@en ;
@@ -232,9 +348,10 @@ ex:ALEF a skos:Concept ;
         "In ALEF worden specificaties opgesteld die bestaan uit regels, datadefinities en testgevallen. De regels zijn opgesteld in de taal RegelSpraak. Dit is een gecontroleerde Nederlandse taal die zowel voor juristen als voor computersystemen goed leesbaar is."@nl ,
         "In ALEF, specifications are drawn up that consist of rules, data definitions and test cases. The rules are written in the RegelSpraak language. This is a controlled Dutch language that is easy to read for both lawyers and computer systems."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/ALEF> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Avola a skos:Concept ;
+ronl:Avola a skos:Concept ;
     skos:prefLabel
         "Avola"@nl ,
         "Avola"@en ;
@@ -242,9 +359,10 @@ ex:Avola a skos:Concept ;
         "Avola is een platform waarmee regels binnen een organisatie op een gestandaardiseerde wijze vertaald kunnen worden naar een toetsbaar beslismodel. Er wordt gebruik gemaakt van de bekende DMN-standaard om logica van regels vast te leggen in beslistabellen die het model vormen."@nl ,
         "Avola is a platform that allows rules within an organization to be translated into a testable decision model in a standardized manner. The well-known DMN standard is used to record the logic of rules in decision tables that form the model."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/AVOLA> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Beinformed a skos:Concept ;
+ronl:Beinformed a skos:Concept ;
     skos:prefLabel
         "Beinformed"@nl ,
         "Beinformed"@en ;
@@ -252,9 +370,10 @@ ex:Beinformed a skos:Concept ;
         "Het Be Informed-platform is een direct modelgestuurd automatiseringsplatform. Deze modellen (en de processen die ze vertegenwoordigen) zijn direct bruikbaar, zonder extra programmering of conversie naar code. Bedrijfsregels worden semantisch vastgelegd en gemodelleerd en kunnen op elk moment worden getest en aangepast."@nl ,
         "The Be Informed platform is a direct model-driven automation platform. These models (and the processes they represent) are immediately usable, without additional programming or conversion to code. Business rules are semantically captured and modeled and can be tested and modified at any time."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BEINFORMED> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Blawx a skos:Concept ;
+ronl:Blawx a skos:Concept ;
     skos:prefLabel
         "Blawx"@nl ,
         "Blawx"@en ;
@@ -262,9 +381,10 @@ ex:Blawx a skos:Concept ;
         "Blawx is een open source, gebruiksvriendelijke, webgebaseerde declaratieve logica kennisrepresentatietool die speciaal is ontworpen voor het coderen, testen en gebruiken van regels. Het is geïmplementeerd als een set applicaties."@nl ,
         "Blawx is an open source, user-friendly, web-based declarative logic knowledge representation tool designed specifically for encoding, testing and using rules. It is implemented as a set of applications."@en ;
     rdfs:seeAlso <https://github.com/Lexpedite/blawx> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Blueriq a skos:Concept ;
+ronl:Blueriq a skos:Concept ;
     skos:prefLabel
         "Blueriq"@nl ,
         "Blueriq"@en ;
@@ -272,9 +392,10 @@ ex:Blueriq a skos:Concept ;
         "Het Blueriq platform is een regelgedreven software platform ontworpen voor dynamische, zakelijke oplossingen voor organisaties met kennisintensieve processen. Het stelt jou en je organisatie in staat snel en kosteneffectief te reageren op veranderende omstandigheden en regelgevingen zodat je een persoonlijke en efficiënte dienstverlening kunt bieden aan iedere klant."@nl ,
         "The Blueriq platform is a rule-driven software platform designed for dynamic, business solutions for organizations with knowledge-intensive processes. It enables you and your organization to respond quickly and cost-effectively to changing circumstances and regulations so that you can offer a personal and efficient service to every customer."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/BLUERIQ> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Catala a skos:Concept ;
+ronl:Catala a skos:Concept ;
     skos:prefLabel
         "Catala"@nl ,
         "Catala"@en ;
@@ -282,9 +403,10 @@ ex:Catala a skos:Concept ;
         "Catala is een domeinspecifieke programmeertaal die is ontworpen voor het afleiden van constructief correcte implementaties uit wetteksten."@nl ,
         "Catala is a domain-specific programming language designed for deriving correct-by-construction implementations from legislative texts."@en ;
     rdfs:seeAlso <https://catala-lang.org/> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:CircuLaw a skos:Concept ;
+ronl:CircuLaw a skos:Concept ;
     skos:prefLabel
         "CircuLaw"@nl ,
         "CircuLaw"@en ;
@@ -292,9 +414,10 @@ ex:CircuLaw a skos:Concept ;
         "CircuLaw is een kennisplatform waarmee beleidsmakers, projectleiders en inkopers worden geholpen bij het meer en beter gebruikmaken van regelgeving teneinde de circulaire economie te bevorderen. Wet- en regelgeving biedt goede mogelijkheden om effectief circulair beleid te maken. CircuLaw ontsluit die complexe wet-en regelgeving zodat beleidsmakers er mee aan de slag kunnen."@nl ,
         "CircuLaw is a knowledge platform that helps policymakers, project leaders and purchasers to make more and better use of regulations in order to promote the circular economy. Laws and regulations offer good opportunities to create effective circular policy. CircuLaw unlocks these complex laws and regulations so that policymakers can get started with them."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CIRCULAW> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:ConcordiaLegal a skos:Concept ;
+ronl:ConcordiaLegal a skos:Concept ;
     skos:prefLabel
         "Concordia Legal"@nl ,
         "Concordia Legal"@en ;
@@ -302,9 +425,10 @@ ex:ConcordiaLegal a skos:Concept ;
         "Regelgeving kan snel en consistent worden overgezet in massabesluitvormingsprocessen, door te werken vanuit een Rule Engine in natuurlijke taal en vanuit die regels de gegevens en processen op te bouwen."@nl ,
         "Regulations can be translated quickly and consistently into mass decision-making processes by working from a natural language Rule Engine and building the data and processes from those rules."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CONCORDIALEGAL> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:DataLex a skos:Concept ;
+ronl:DataLex a skos:Concept ;
     skos:prefLabel
         "DataLex"@nl ,
         "DataLex"@en ;
@@ -312,9 +436,10 @@ ex:DataLex a skos:Concept ;
         "AustLII's DataLex kan worden gebruikt om juridische redeneringsapplicaties te ontwikkelen op gebieden zoals juridische adviesdiensten, naleving van regelgeving, beslissingsondersteuning en Rules as Code. AustLII is een gezamenlijke faciliteit van UTS en UNSW Faculties of Law."@nl ,
         "AustLII's DataLex can be used to develop legal reasoning applications in areas such as legal advisory services, regulatory compliance, decision support and Rules as Code. AustLII is a joint facility of UTS and UNSW Faculties of Law."@en ;
     rdfs:seeAlso <https://datalex.org/> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Demo a skos:Concept ;
+ronl:Demo a skos:Concept ;
     skos:prefLabel
         "DEMO"@nl ,
         "DEMO"@en ;
@@ -322,9 +447,10 @@ ex:Demo a skos:Concept ;
         "DEMO (Design and Engineering Methodology for Organizations) is een methode voor het analyseren en (her)ontwerpen van organisaties. Een DEMO model vormt een consistent geheel van producten, verantwoordelijkheden, processen, informatie en bedrijfsregels."@nl ,
         "DEMO (Design and Engineering Methodology for Organizations) is a method for analyzing and (re)designing organizations. A DEMO model forms a consistent whole of products, responsibilities, processes, information and business rules."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/DEMO> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Leos a skos:Concept ;
+ronl:Leos a skos:Concept ;
     skos:prefLabel
         "LEOS"@nl ,
         "LEOS"@en ;
@@ -332,9 +458,10 @@ ex:Leos a skos:Concept ;
         "LEOS is een webtool ter ondersteuning van het opstellen van wetgeving in de EU met online samenwerking, versiebeheer en co-editing. Het maakt gebruik van Akoma Ntoso XML-schema. Het is een EC-oplossing."@nl ,
         "LEOS is a web tool to support the legislative drafting in the EU with online collaboration, version control, and co-editing. It utilises Akoma Ntoso XML schema. It is an EC solution."@en ;
     rdfs:seeAlso <https://joinup.ec.europa.eu/collection/justice-law-and-security/solution/leos-open-source-software-editing-legislation> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:OpenFisca a skos:Concept ;
+ronl:OpenFisca a skos:Concept ;
     skos:prefLabel
         "OpenFisca"@nl ,
         "OpenFisca"@en ;
@@ -342,9 +469,10 @@ ex:OpenFisca a skos:Concept ;
         "OpenFisca is een open-source softwareframework voor het modelleren van belasting- en uitkeringssystemen op een manier die zowel leesbaar is voor mensen als uitvoerbaar is voor computers. Het maakt het mogelijk om wetten en regels te vertalen naar uitvoerbare Python-code, waardoor ze toegankelijk worden voor zowel juridische als technische experts."@nl ,
         "OpenFisca is an open-source software framework for modelling tax and benefit systems in a way that is both readable by humans and executable by computers. It enables translating laws and regulations into executable Python code, making them accessible for both legal and technical experts."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/OPENFISCA> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:RuleSpeak a skos:Concept ;
+ronl:RuleSpeak a skos:Concept ;
     skos:prefLabel
         "RuleSpeak"@nl ,
         "RuleSpeak"@en ;
@@ -352,9 +480,10 @@ ex:RuleSpeak a skos:Concept ;
         "RuleSpeak® is een verzameling richtlijnen voor het formuleren van bedrijfsregels op een bedrijfsvriendelijke en precieze manier. Het is geen taal of syntax maar eerder een verzameling voorschriften voor Nederlandstalige formulering van bedrijfsregels gebaseerd op ervaringen in de praktijk."@nl ,
         "RuleSpeak® is a set of guidelines for formulating business rules in a business-friendly and precise way. It is not a language or syntax but rather a set of prescriptions for Dutch-language formulation of business rules based on practical experience."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/RULESPEAK> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Sparkwise a skos:Concept ;
+ronl:Sparkwise a skos:Concept ;
     skos:prefLabel
         "Sparkwise"@nl ,
         "Sparkwise"@en ;
@@ -362,9 +491,10 @@ ex:Sparkwise a skos:Concept ;
         "Sparkwise is een Decision Intelligence SaaS platform waarmee beleidregels en bedrijfslogica, met 1 druk op de knop, geautomatiseerd omgezet worden naar uitvoerbare beslisservices (APIs) en ondersteunt daarmee Legislation to Operation (LegOps) kwaliteit en versnelling. Geïnspireerd op de DMN standaard."@nl ,
         "Sparkwise is a Decision Intelligence SaaS platform that automatically converts policies and business logic into executable decision services (APIs) at the push of a button, thereby supporting Legislation to Operation (LegOps) quality and acceleration. Inspired by the DMN standard."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/SPARKWISE> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
     
-ex:USoft a skos:Concept ;
+ronl:USoft a skos:Concept ;
     skos:prefLabel
         "USoft"@nl ,
         "USoft"@en ;
@@ -372,20 +502,22 @@ ex:USoft a skos:Concept ;
         "USoft biedt een low-code platform voor regelgestuurde software obv SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@nl ,
         "USoft offers a low-code platform for rule-driven software based on SBVR (Semantics of Business Vocabulary and Business Rules Specification)."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/USOFT> ;
+    skos:broader ronl:MethodConcept ;
     skos:inScheme ronl:Vocabulary .
 #
 # Define individual concepts within the SpecificationTypeConcept scheme
 #
-ex:FunctioneelOntwerp a skos:Concept ;
+ronl:FunctioneelOntwerp a skos:Concept ;
     skos:prefLabel
         "Functioneel Ontwerp"@nl ,
         "Functional Design"@en ;
     skos:definition
         "Hierin worden alle eisen en wensen waaraan een product moet voldoen verzameld en geordend. Er wordt beschreven op welke manier, welke verwachten de gebruiker heeft, welke handelingen hij uitvoert en welke resultaten die oplevert."@nl ,
         "In this, all requirements and wishes that a product must meet are collected and arranged. It describes in what way, what expectations the user has, what actions he performs and what results that produces."@en ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:SoftwareCode a skos:Concept ;
+ronl:SoftwareCode a skos:Concept ;
     skos:prefLabel
         "Software code"@nl ,
         "Software code"@en ;
@@ -395,18 +527,20 @@ ex:SoftwareCode a skos:Concept ;
     skos:scopeNote
         "In context hier beschrijft het tevens de gehanteerde Git workflow voor CI/CD én het corresponderende versiebeheer van toetsscenario's, beslisregelsets en testgevallen. Legt ook uit wat de gehanteerde test strategie is. Beschikt over de KPI's / rapportage items van het proces toetsen en testen (BiSL)."@nl ,
         "In context here it also describes the Git workflow used for CI/CD and the corresponding version control of test scenarios, decision rule sets and test cases. Also explains what the test strategy used is. Has the KPIs / reporting items of the process of testing and reviewing (BiSL)."@en ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:UXDesign a skos:Concept ;
+ronl:UXDesign a skos:Concept ;
     skos:prefLabel
         "UX Design"@nl ,
         "UX Design"@en ;
     skos:definition
         "De interactie schermen (screenprints) van de website waar de informatie gegeven wordt aan de aanvrager en de interactie plaats vindt."@nl ,
         "The interaction screens (screen prints) of the website where the information is given to the applicant and the interaction takes place."@en ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Communicatiemiddel a skos:Concept ;
+ronl:Communicatiemiddel a skos:Concept ;
     skos:prefLabel
         "Communicatiemiddel"@nl ,
         "Communications service"@en ;
@@ -415,47 +549,52 @@ ex:Communicatiemiddel a skos:Concept ;
         "The letters that the individual can receive about this (decisions within the meaning of article 1:3 Awb)"@en ;
     ronl:source <https://wetten.overheid.nl/jci1.3:c:BWBR0005537&hoofdstuk=1&titeldeel=1.1&artikel=1:3&z=2024-11-08&g=2024-11-08> ;
     rdfs:seeAlso <https://gegevensbijbesluiten.overheid.nl/besluit> ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Werkinstructie a skos:Concept ;
+ronl:Werkinstructie a skos:Concept ;
     skos:prefLabel
         "Werkinstructie"@nl ,
         "Work instruction"@en ;
     skos:definition
         "De gedetailleerde, stapsgewijze handleiding die beschrijft hoe een specifieke taak of activiteit binnen het proces of procedure van de onderhavige dienst en/of het product moet worden uitgevoerd door alle betrokkenen (ie aanvrager, ontvanger, verstrekker)."@nl ,
         "The detailed, step-by-step guide describing how a specific task or activity within the process or procedure of the service and/or product in question should be performed by all involved (i.e. requester, recipient, provider)."@en ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Kwaliteitseisen a skos:Concept ;
+ronl:Kwaliteitseisen a skos:Concept ;
     skos:prefLabel
         "Kwaliteitseisen"@nl ,
         "Quality Requirements"@en ;
     skos:definition
         "Definiëren de voorwaarden die worden gebruikt om de conformiteit van een project met de beoogde kwaliteitsnormen te beoordelen. Ze specificeren de kenmerken, karakteristieken en processen die moeten worden gehaald of overtroffen om de kwaliteit van een product, dienst of resultaat te garanderen."@nl ,    
         "Define the conditions used to assess the conformance of a project to its intended quality standards. They specify the attributes, characteristics, and processes that must be met or exceeded to ensure the quality of a product, service, or outcome."@en ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:BestuurlijkeInformatie a skos:Concept ;
+ronl:BestuurlijkeInformatie a skos:Concept ;
     skos:prefLabel
         "Bestuurlijke Informatie"@nl ,
         "Business Intelligence"@en ;
     skos:definition
         "Alle verzamelde, vastgelegde en gearchiveerde informatie ten behoeve van het besturen, het doen functioneren en het beheersen van het onderhavige proces alsmede ten behoeve van het afleggen van verantwoording."@nl ,
         "All information collected, recorded and archived for the purpose of managing, operating and controlling the process in question, as well as for the purpose of accountability."@en ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Overig a skos:Concept ;
+ronl:Overig a skos:Concept ;
     skos:prefLabel
         "Overig"@nl ,
         "Other"@en ;
     skos:definition
         "Bevat relevante informatie over organisatie, dienst en/of product, process of anderszins, dat om moverende redenen niet in de beschikbare ronl:SpecificationTypeConcept concepten past."@nl ,
         "Contains relevant information about organization, service and/or product, process or otherwise, that for compelling reasons does not fit into the available ronl:SpecificationTypeConcept concepts."@en ;
+    skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
 #
-# Hierarchical occurring concepts within ex:WetsanalyseJAS
+# Hierarchical occurring concepts within ronl:WetsanalyseJAS
 #
-ex:Rechtssubject a skos:Concept ;
+ronl:Rechtssubject a skos:Concept ;
     skos:prefLabel
         "Rechtssubject"@nl ,
         "Legal Subject"@en ;
@@ -468,10 +607,10 @@ ex:Rechtssubject a skos:Concept ;
     skos:scopeNote
         "Een rechtssubject is te herkennen aan een zelfstandig naamwoord waarmee een persoon of andere entiteit wordt beschreven, of aan een persoonlijk voornaamwoord zoals 'hij', 'zij' en soms ook 'het'. Maar ook een onbepaald of betrekkelijk voornaamwoord kan wijzen op een rechtssubject, bijvoorbeeld 'iemand', 'een ieder' of 'degene'."@nl ,
         "A legal subject can be recognized by a noun that describes a person or other entity, or by a personal pronoun such as 'he', 'she' and sometimes also 'it'. But an indefinite or relative pronoun can also indicate a legal subject, for example 'someone', 'anyone' or 'the one'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Rechtsobject a skos:Concept ;
+ronl:Rechtsobject a skos:Concept ;
     skos:prefLabel
         "Rechtsobject"@nl ,
         "Legal Object"@en ;
@@ -484,10 +623,10 @@ ex:Rechtsobject a skos:Concept ;
     skos:scopeNote
         "Een rechtsobject is te herkennen aan een zelfstandig naamwoord waarmee het voorwerp van een recht of plicht wordt omschreven, bijvoorbeeld een studie, een woning of een dienstbetrekking. Ook een aanwijzend of betrekkelijk voornaamwoord kan wijzen op een rechtsobject, bijvoorbeeld 'dat', 'hetgeen' en 'welk(e)'."@nl ,
         "A legal object can be recognized by a noun that describes the object of a right or obligation, for example a study, a home or an employment relationship. A demonstrative or relative pronoun can also point to a legal object, for example 'that', 'the thing' and 'which'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Rechtsbetrekking a skos:Concept ;
+ronl:Rechtsbetrekking a skos:Concept ;
     skos:prefLabel
         "Rechtsbetrekking"@nl ,
         "Legal Relationship"@en ;
@@ -500,10 +639,10 @@ ex:Rechtsbetrekking a skos:Concept ;
     skos:scopeNote
         "Een rechtsbetrekking is te herkennen aan een of meer werkwoorden. Bijvoorbeeld in de vorm van een combinatie van een hoofdwerkwoord met een hulpwerkwoord: 1. bij een recht: 'kan verzoeken' of 'mag wijzigen'; 2. bij een plicht: 'stelt vast', 'mag niet inhalen', 'is verplicht informatie te verstrekken', 'moet informeren' of 'dient te voldoen'. Daarnaast is een rechtsbetrekking bijvoorbeeld te herkennen aan een samengesteld werkwoord: 1. bij een recht: 'heeft recht op' of 'heeft aanspraak op'; 2. bij een plicht: 'heeft de plicht om' of 'draagt de last om'."@nl ,
         "A legal relationship can be recognized by one or more verbs. For example, in the form of a combination of a main verb with an auxiliary verb: 1. for a right: 'may request' or 'may change'; 2. for an obligation: 'establishes', 'may not overtake', 'is obliged to provide information', 'must inform' or 'must comply'. In addition, a legal relationship can be recognized by a compound verb, for example: 1. for a right: 'has the right to' or 'has the claim to'; 2. for an obligation: 'has the duty to' or 'bears the burden to'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Rechtsfeit a skos:Concept ;
+ronl:Rechtsfeit a skos:Concept ;
     skos:prefLabel
         "Rechtsfeit"@nl ,
         "Legal Fact"@en ;
@@ -516,10 +655,10 @@ ex:Rechtsfeit a skos:Concept ;
     skos:scopeNote
         "Een rechtsfeit is te herkennen aan een actieve werkwoordsvorm, al dan niet in combinatie met een zelfstandig naamwoord, zoals 'indienen van een bezwaarschrift', 'toekennen van een subsidie', 'horen van belanghebbende' of 'kenbaar maken van elektronische bereikbaarheid'."@nl ,
         "A legal fact can be recognized by an active verb form, with or without a noun, such as 'filing an objection', 'granting a subsidy', 'hearing an interested party' or 'making electronic accessibility known'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Voorwaarde a skos:Concept ;
+ronl:Voorwaarde a skos:Concept ;
     skos:prefLabel
         "Voorwaarde"@nl ,
         "Condition"@en ;
@@ -532,10 +671,10 @@ ex:Voorwaarde a skos:Concept ;
     skos:scopeNote
         "Een voorwaarde is te herkennen aan een voorwaardelijke bijzin, in de meeste gevallen ingeleid door een voegwoord zoals 'indien', 'als', 'tenzij', 'mits' of een combinatie van woorden, zoals 'met dien verstande dat' of 'met uitzondering van'. Ook kan een voorwaarde afgeleid worden uit een bijwoord bij een werkwoord, zoals 'schriftelijk' of 'elektronisch'. Voorwaarden kunnen enkelvoudig of samengesteld zijn. Een samengestelde voorwaarde bestaat uit verschillende eisen die alle vervuld moeten zijn (cumulatief) of waarvan er één vervuld moet zijn (alternatief)."@nl ,
         "A condition can be recognized by a conditional clause, in most cases introduced by a conjunction such as 'if', 'if', 'unless', 'provided' or a combination of words, such as 'with the understanding that' or 'with the exception of'. A condition can also be derived from an adverb with a verb, such as 'written' or 'electronic'. Conditions can be simple or compound. A compound condition consists of several requirements that must all be fulfilled (cumulative) or of which one must be fulfilled (alternative)."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Afleidingsregel a skos:Concept ;
+ronl:Afleidingsregel a skos:Concept ;
     skos:prefLabel
         "Afleidingsregel"@nl ,
         "Derivation Rule"@en ;
@@ -548,10 +687,10 @@ ex:Afleidingsregel a skos:Concept ;
     skos:scopeNote
         "Een afleidingsregel is te herkennen aan woorden die duiden op een berekening of afleiding, zoals 'is (…) verminderd met', 'bedraagt (…) vermeerderd met', 'wordt gesteld op' of 'is het gezamenlijke bedrag van', maar ook eenvoudigweg 'en'."@nl ,
         "A derivation rule can be recognized by words that indicate a calculation or derivation, such as 'is (...) reduced by', 'amounts (...) increased by', 'is set at' or 'is the total amount of', but also simply 'and'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:VariabeleWaarde a skos:Concept ;
+ronl:VariabeleWaarde a skos:Concept ;
     skos:prefLabel
         "Variabele"@nl ,
         "Variable"@en ;
@@ -576,10 +715,10 @@ ex:VariabeleWaarde a skos:Concept ;
     skos:scopeNote
         "Een booleaanse waarde: Een bijzondere enumeratiewaarde in tekst is een booleaanse waarde. Deze heeft slechts twee mogelijke waarden, te weten 'ja' (waar) of 'nee' (onwaar). Hiermee kunnen we uitdrukken of een bepaald kenmerk van een rechtssubject, rechtsobject, rechtsbetrekking of rechtsfeit van toepassing of aanwezig is. Een voorbeeld van zo'n variabele is 'geregistreerd in het donorregister'. De variabelewaarden zijn hier 'ja' of 'nee'."@nl ,
         "A Boolean value: A special enumeration value in text is a Boolean value. It has only two possible values, namely 'yes' (true) or 'no' (false). This allows us to express whether a certain characteristic of a legal subject, legal object, legal relationship or legal fact is applicable or present. An example of such a variable is 'registered in the donor register'. The variable values ​​here are 'yes' or 'no'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:ParameterWaarde a skos:Concept ;
+ronl:ParameterWaarde a skos:Concept ;
     skos:prefLabel
         "Parameter waarde"@nl ,
         "Parameter Value"@en ;
@@ -592,10 +731,10 @@ ex:ParameterWaarde a skos:Concept ;
     skos:scopeNote
         "Een parameter heeft een vaste waarde over een periode. Een parameter is te herkennen aan een beschrijving van een waarde, bijvoorbeeld van een tarief, een (drempel)bedrag (eventueel met een maximum of een minimum) of een vrijstelling. Een parameterwaarde drukt de waarde van de parameter(beschrijving) uit over een periode. Een parameterwaarde is te herkennen aan bijvoorbeeld een bedrag in geld, een percentage en een datum."@nl ,
         "A parameter has a fixed value over a period. A parameter can be recognized by a description of a value, for example a rate, a (threshold) amount (possibly with a maximum or a minimum) or an exemption. A parameter value expresses the value of the parameter (description) over a period. A parameter value can be recognized by, for example, an amount in money, a percentage and a date."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Operator a skos:Concept ;
+ronl:Operator a skos:Concept ;
     skos:prefLabel
         "Operator"@nl ,
         "Operator"@en ;
@@ -608,10 +747,10 @@ ex:Operator a skos:Concept ;
     skos:scopeNote
         "Een rekenkundige operator is te herkennen aan formuleringen zoals 'het gezamenlijke bedrag van', 'de som van', 'vermeerderd met', 'verminderd met' of 'percentage van'. Een vergelijkingsoperator is te herkennen aan de woorden 'groter dan', 'kleiner dan', 'meer bedraagt dan' of 'is gelijk aan'. Een logische operator is te herkennen aan de woorden 'en', 'of', 'niet' of 'ten minste'."@nl ,
         "An arithmetic operator can be recognized by formulations such as 'the total amount of', 'the sum of', 'increased by', 'decreased by' or 'percentage of'. A comparison operator can be recognized by the words 'greater than', 'less than', 'more than' or 'equals'. A logical operator can be recognized by the words 'and', 'or', 'not' or 'at least'."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Tijdsaanduiding a skos:Concept ;
+ronl:Tijdsaanduiding a skos:Concept ;
     skos:prefLabel
         "Tijdsaanduiding"@nl ,
         "Time Indication"@en ;
@@ -624,10 +763,10 @@ ex:Tijdsaanduiding a skos:Concept ;
     skos:scopeNote
         "Tijdsaanduidingen zijn te herkennen aan een concrete datum (bijvoorbeeld 1 september 2009), of aan een omschrijving die een datum beschrijft (de eerste maandag van de maand). Tijdvakken zijn vaak te herkennen aan woorden die een periode duiden, zoals jaar, maand, week en dag of specialisaties van dit soort woorden, zoals kalenderjaar."@nl ,
         "Time indications can be recognized by a concrete date (for example, September 1, 2009), or by a description that describes a date (the first Monday of the month). Periods of time can often be recognized by words that indicate a period, such as year, month, week and day or specializations of these types of words, such as calendar year."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Plaatsaanduiding a skos:Concept ;
+ronl:Plaatsaanduiding a skos:Concept ;
     skos:prefLabel
         "Plaatsaanduiding"@nl ,
         "Location Indication"@en ;
@@ -640,10 +779,10 @@ ex:Plaatsaanduiding a skos:Concept ;
     skos:scopeNote
         "De plaatsaanduiding wordt uitgedrukt met een algemene beschrijving van het gebied (een lidstaat van de EU) of met de naam van een specifiek gebied (de gemeente Amsterdam, de provincie Limburg, Nederland, Zwitserland)."@nl ,
         "The place name is expressed with a general description of the area (a member state of the EU) or with the name of a specific area (the municipality of Amsterdam, the province of Limburg, the Netherlands, Switzerland)."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Delegatiebevoegdheid a skos:Concept ;
+ronl:Delegatiebevoegdheid a skos:Concept ;
     skos:prefLabel
         "Delegatiebevoegdheid"@nl ,
         "Delegation Authority"@en ;
@@ -656,10 +795,10 @@ ex:Delegatiebevoegdheid a skos:Concept ;
     skos:scopeNote
         "Verplichte delegatie wordt geformuleerd met de zinsnede 'bij (of krachtens) algemene maatregel van bestuur/bij ministeriële regeling worden regels gesteld (…)'. Een facultatieve bevoegdheid wordt geformuleerd met de woorden 'kunnen regels worden gesteld'. Indien de formulering 'bij of krachtens' wordt gebruikt in een delegatiebevoegdheid, kan subdelegatie plaatsvinden. Als op grond van een dergelijke delegatiebevoegdheid in een wet een amvb wordt vastgesteld, dan kunnen in de amvb bepaalde zaken worden doorgedelegeerd naar een ministeriële regeling. In de delegatie-invulling wordt niet met standaard uitdrukkingswijzen gewerkt."@nl ,
         "Mandatory delegation is formulated with the phrase 'by (or pursuant to) general administrative order/by ministerial regulation, rules are laid down (…)'. An optional power is formulated with the words 'rules can be laid down'. If the phrase 'by or pursuant to' is used in a delegation power, subdelegation can take place. If, on the basis of such a delegation power, a general administrative order is established in a law, certain matters can be delegated in the general administrative order to a ministerial regulation. Standard expressions are not used in the delegation interpretation."@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 
-ex:Brondefinitie a skos:Concept ;
+ronl:Brondefinitie a skos:Concept ;
     skos:prefLabel
         "Brondefinitie"@nl ,
         "Source Definition"@en ;
@@ -672,123 +811,65 @@ ex:Brondefinitie a skos:Concept ;
     skos:scopeNote
         "Een artikel met brondefinities bestaat in de regel uit een aanhef en verschillende onderdelen, bij voorkeur in alfabetische volgorde. Vaak is dit artikel aan het begin van de wettelijke regeling opgenomen, maar er kunnen ook brondefinities worden geformuleerd die voor een specifiek onderdeel (een hoofdstuk, paragraaf of zelfs een artikel) gelden."@nl ,
         "The logical question for finding a source definition is: Is this term explicitly defined in legislation?"@en ;
-    skos:broader ex:WetsanalyseJAS ;
+    skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 #
-# Define ronl:source, ronl:analysis and ronl:method as RDF properties
+# Extend ronl:Vocabulary with hasCriterionRequirementConcept as top-level concept
 #
-ronl:source a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Bron"@nl ,
-        "RONL Source"@nl ;
-    rdfs:comment
-        "Is bedoeld om een gezaghebbende bron of herkomst aan te geven en kan worden gebruikt voor alle elementen in de ronl naamruimte."@nl ,
-        "Is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace."@en ;
+ronl:hasCriterionRequirementConcept a skos:Concept ;
     skos:prefLabel
-        "Gezaghebbende bron of herkomst"@nl ,
-        "Authoritative source or origin"@en ;
-    skos:altLabel
-        "bron of herkomst soorten"@nl ,
-        "source or origin"@en ;
+        "Criterium Vereiste Concept"@nl ,
+        "Criterion Requirement Concept"@en ;
     skos:definition
-        "Verwijst naar de gezaghebbende, conceptuele herkomst van de regels of het model, zoals een officieel overheidsdocument of een verordening die de regelspecificatie set legitimeert"@nl ,
-        "Points to the authoritative, conceptual origin of the rules or model, like an official government document or regulation that legitimizes the rule specification set."@en ;
-    skos:broader
-        ronl:AnalysisConcept,
-        ronl:MethodConcept ;
+        "Dit concept vertegenwoordigt een relatie tussen een openbare dienst en een criterium of vereiste waaraan moet worden voldaan om die dienst te kunnen verlenen. Met andere woorden, cpsv-ap:hasCriterionRequirement geeft aan dat een specifieke openbare dienst (bijv. 'Een verblijfsvergunning verkrijgen') een specifiek criterium of vereiste heeft (bijv. 'Bewijs van inkomen') waaraan moet worden voldaan voordat de dienst kan worden verleend."@nl ,
+        "This concept represents a relationship between a public service and a criterion or requirement that must be met in order to provide that service. In other words, cpsv-ap:hasCriterionRequirement indicates that a specific public service (e.g. 'Obtain a residence permit') has a specific criterion or requirement (e.g. 'Proof of income') that must be met before the service can be provided."@en ;
     skos:scopeNote
-        "Niet zelden zal er (nog) niet een openbare plek zijn om naar te verwijzen. In dat geval volstaat de link naar een algemene uitleg pagina die het dichtst in de buurt komt van de bedoelde bron."@nl ,
-        "Quite often there will not be a public place to refer to (yet). In that case, the link to a general explanation page that comes closest to the intended source will suffice."@en ;
-    # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range dct:BibliographicResource ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+        "De eigenschap cpsv-ap:hasCriterionRequirement is gedefinieerd als onderdeel van het Core Public Service Vocabulary Application Profile (CPSV-AP), een standaard die is ontwikkeld door de Europese Unie voor het beschrijven van openbare diensten en de daaraan gerelateerde concepten."@nl ,
+        "The property cpsv-ap:hasCriterionRequirement is defined as part of the Core Public Service Vocabulary Application Profile (CPSV-AP), which is a standard developed by the European Union for describing public services and their related concepts."@en ;
+    skos:narrower
+        ronl:Ingezetene,
+        ronl:Leeftijd18,
+        ronl:Betalingsregeling ,
+        ronl:Detentie ;
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
 
-ronl:analysis a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Wetsanalyse"@nl ,
-        "RONL Legislative analysis"@en ;
-    rdfs:comment
-        "Is een methodiek voor wetsanalyse."@nl ,
-        "Is a methodology for legislative analysis."@en ;
+ronl:Ingezetene a skos:Concept ;
     skos:prefLabel
-        "Wetsanalyse eigenschap"@nl ,
-        "Legislative analysis property"@en ;
-    skos:altLabel
-        "wetsanalyse"@nl ,
-        "legal analysis"@en ;
+        "Ingezetene Nederlandse Staat"@nl ,
+        "Ingezetene"@en ;
     skos:definition
-        "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
-        "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:range ronl:AnalysisConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+        "De aanvrager bezit de Nederlandse of buitenlandse nationaliteit en beschikt over een verblijfsvergunning voor rechtmatig verblijf in Nederland."@nl ,
+        "The applicant possesses Dutch or foreign nationality and has a residence permit for lawful residence in the Netherlands."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .
 
-ronl:method a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Methodiek voor Regelbeheer"@nl ,
-        "RONL Methodology for Rules management"@nl ;
-    rdfs:comment
-        "Is een methodiek voor regelbeheer."@nl ,
-        "Is a methodology for rules management."@en ;
+ronl:Leeftijd18 a skos:Concept ;
     skos:prefLabel
-        "Methodiek voor regelbeheer eigenschap"@nl ,
-        "Methodology for rules mannagement property"@en ;
-    skos:altLabel
-        "regelbeheer"@nl ,
-        "rules management"@en ;
+        "Ouder dan 18 jaar"@nl ,
+        "Older than 18 years"@en ;
     skos:definition
-        "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
-        "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:range ronl:MethodConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
-#
-# Define ronl:implementedBy and ronl:implements as RDF property
-#
-ronl:implementedBy a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Geïmplementeerd door"@nl ,
-        "RONL Implemented by"@nl ;
-    rdfs:comment
-        "Bedoeld om aan te geven waarmee een bepaalde set regels wordt geïmplementeerd (zoals een openbare dienst of uitvoeringsentiteit)."@nl ,
-        "Intended to indicate what a particular set of rules is implemented with (like a public service or execution entity)."@en ;
-    skos:prefLabel
-        "Is geïmplementeerd door"@nl ,
-        "Is implememnted by"@en ;
-    skos:altLabel
-        "geïmplementeerd"@nl ,
-        "implemented"@en ;
-    rdfs:domain cpsv-ap:RuleSpecification ;
-    rdfs:range rdfs:Resource ;
-    owl:inverseOf ronl:implements ;
-    skos:editorialNote
-        "rdfs:domain moet het type entiteit zijn dat `wordt geïmplementeerd door` iets anders. In dit geval moet het een cpsv-ap:RuleSpecification zijn."@nl ,
-        "rdfs:range moet het type entiteit zijn dat de implementatie uitvoert (bijvoorbeeld een uitvoerende service, resource of algoritme), die opgeven als rdfs:Resource om flexibiliteit mogelijk te maken."@nl ,
-        "Door ronl:implementedBy te definiëren als de inverse van ronl:implements, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: het domein van ronl:implements wordt het bereik van ronl:implementedBy, en vice versa."@nl ,
-        "rdfs:domain should be the type of entity that `is implemented by` something else. In this case, it must be a cpsv-ap:RuleSpecification."@en ,
-        "rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility."@en ,
-        "By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will `mirror` each other, meaning: The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa."@en ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+        "De aanvrager is ouder dan 18 jaar."@nl ,
+        "The applicant is over 18 years old."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .
 
-ronl:implements a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Implementeert"@nl ,
-        "RONL Implements"@nl ;
-    rdfs:comment
-        "Bedoeld om aan te geven dat een specifieke resource een bepaalde set regels implementeert."@nl ,
-        "Intended to indicate that a specific resource implements a certain rule specification."@en ;
+ronl:Betalingsregeling a skos:Concept ;
     skos:prefLabel
-        "Implementeert"@nl ,
-        "Implements"@en ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:range cpsv-ap:RuleSpecification ;
-    owl:inverseOf ronl:implementedBy ;
-    skos:editorialNote
-        "rdfs:domain moet de entiteit zijn die de implementatie uitvoert, een algemene rdfs:Resource in dit model, wat bredere toepasbaarheid mogelijk maakt."@nl ,
-        "rdfs:range moet terugverwijzen naar de entiteit die is geïmplementeerd, namelijk cpsv-ap:RuleSpecification."@nl ,
-        "Door ronl:implements te definiëren als de inverse van ronl:implementedBy, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: Het domein van ronl:implementedBy wordt het bereik van ronl:implements, en vice versa."@nl ,
-        "rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability."@en ,
-        "rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification."@en ,
-        "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/ronl> .
+        "Betalingsregeling"@nl ,
+        "Payment arrangement"@en ;
+    skos:definition
+        "Vereist toeslag uit te betalen aan het CJIB als er sprake is van een betalingsregeling."@nl ,
+        "Requires allowance to be paid to CJIB if there is a payment arrangement."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .
+
+ronl:Detentie a skos:Concept ;
+    skos:prefLabel
+        "In gevangenschap"@nl ,
+        "Incarcerated"@en ;
+    skos:definition
+        "De aanvrager is gedetineerd."@nl ,
+        "The applicant is incarcerated."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .
