@@ -41,8 +41,8 @@
     #
     # ronl:analysis and ronl:method are defined as RDF properties with their respective domains (dcat:Dataset) and  ranges (ronl:AnalysisConcept and ronl:MethodConcept).
     # 
-    ronl:analysis ex:WetsanalyseJAS ;
-    ronl:method ex:ALEF ;
+    ronl:analysis ronl:WetsanalyseJAS ;
+    ronl:method ronl:ALEF ;
     #
     dct:creator <https://organisaties.overheid.nl/71117/Directoraat-generaal_Toeslagen> ;
     dct:subject "Sociale zekerheid."@nl ;
@@ -84,7 +84,7 @@
     ] ;
     dct:issued "2023-06-12"^^xsd:date ;
     dct:modified "2024-11-06"^^xsd:date ;
-    dct:language "nld" ;
+    dct:language "nl" ;
     cpsv-ap:implements <#BerekenRechtEnHoogteZorg> ;
     cpsv-ap:hasOutput [
         a cpsv-ap:Output ;
@@ -149,11 +149,11 @@
         #
         dct:relation <https://gegevensbijbesluiten.overheid.nl/besluit/61720422> ;
         cpsv-ap:hasCriterionRequirement
-            ex:Ingezetene ,
-            ex:Leeftijd18 ,
-            ex:Betalingsregeling ,
+            ronl:Ingezetene ,
+            ronl:Leeftijd18 ,
+            ronl:Betalingsregeling ,
             <#inkomen_en_vermogen_requirement> ,
-            ex:Detentie ,
+            ronl:Detentie ,
             <#verzekering_requirement> ;
         cpsv-ap:hasInput <#persoonlijke_gegevens_dataset>, <#betalingsgegevens_dataset>, <#inkomens_en_vermogensgegevens_dataset>, <#justitiële_gegevens_dataset>, <#verzekeringsgegevens_dataset> ;
     ] ;
