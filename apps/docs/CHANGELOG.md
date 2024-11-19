@@ -1,5 +1,12 @@
 # docs
 
+## 3.15.1
+
+### Patch Changes
+
+- 09f813c: Added general criterion requirements in ronl namespace and re-used them in zorgtoeslag
+- 811255e: Adding hasCriterionRequirementConcept to ronl:Vocabulary and use them in zorgtoeslag example"
+
 ## 3.15.0
 
 ### Minor Changes
