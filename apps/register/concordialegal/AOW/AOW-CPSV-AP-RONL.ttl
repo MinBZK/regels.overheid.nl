@@ -3,7 +3,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ex: <http://example.org/ns#> .
 @prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -22,8 +21,8 @@
     # ronl:analysis and ronl:method are defined as RDF properties with their respective domains (dcat:Dataset) and  ranges (ronl:AnalysisConcept
     # and ronl:MethodConcept).
     # 
-    ronl:analysis ex:WetsanalyseJAS ;
-    ronl:method ex:ConcordiaLegal ;
+    ronl:analysis ronl:WetsanalyseJAS ;
+    ronl:method ronl:ConcordiaLegal ;
     #
     dct:creator [ 
         a foaf:Organization ; 
