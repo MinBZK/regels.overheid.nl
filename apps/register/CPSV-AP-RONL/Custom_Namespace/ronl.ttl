@@ -820,9 +820,12 @@ ronl:hasCriterionRequirementConcept a skos:Concept ;
     skos:prefLabel
         "Criterium Vereiste Concept"@nl ,
         "Criterion Requirement Concept"@en ;
-    skos:scopeNote
+    skos:definition
         "Dit concept vertegenwoordigt een relatie tussen een openbare dienst en een criterium of vereiste waaraan moet worden voldaan om die dienst te kunnen verlenen. Met andere woorden, cpsv-ap:hasCriterionRequirement geeft aan dat een specifieke openbare dienst (bijv. 'Een verblijfsvergunning verkrijgen') een specifiek criterium of vereiste heeft (bijv. 'Bewijs van inkomen') waaraan moet worden voldaan voordat de dienst kan worden verleend."@nl ,
         "This concept represents a relationship between a public service and a criterion or requirement that must be met in order to provide that service. In other words, cpsv-ap:hasCriterionRequirement indicates that a specific public service (e.g. 'Obtain a residence permit') has a specific criterion or requirement (e.g. 'Proof of income') that must be met before the service can be provided."@en ;
+    skos:scopeNote
+        "De eigenschap cpsv-ap:hasCriterionRequirement is gedefinieerd als onderdeel van het Core Public Service Vocabulary Application Profile (CPSV-AP), een standaard die is ontwikkeld door de Europese Unie voor het beschrijven van openbare diensten en de daaraan gerelateerde concepten."@nl ,
+        "The property cpsv-ap:hasCriterionRequirement is defined as part of the Core Public Service Vocabulary Application Profile (CPSV-AP), which is a standard developed by the European Union for describing public services and their related concepts."@en ;
     skos:narrower
         ronl:Ingezetene,
         ronl:Leeftijd18,
