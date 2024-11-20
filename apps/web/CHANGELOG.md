@@ -1,5 +1,11 @@
 # web
 
+## 3.41.1
+
+### Patch Changes
+
+- 4c191fa: Skosmos switch from 'en' to 'nl'
+
 ## 3.41.0
 
 ### Minor Changes
