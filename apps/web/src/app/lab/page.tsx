@@ -33,7 +33,7 @@ export default async function LabPage() {
             <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
             <CardLab.Repo href="https://github.com/NatLibFi/Skosmos" />
             <CardLab.Docs href="https://github.com/NatLibFi/Skosmos/wiki/Data-Model" />
-            <CardLab.Demo href="http://open-regels.nl:9090/en/" />
+            <CardLab.Demo href="http://open-regels.nl:9090/nl/" />
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="AOW microservice">
