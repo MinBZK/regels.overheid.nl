@@ -23,7 +23,7 @@ export default function Home() {
         <div className={styles.blueBallTwo} />
         <a
           className={styles.card}
-          href="https://www.figma.com/proto/miuXp5zu2JNhG2t3c29KBS/Design?page-id=74%3A712&type=design&node-id=2169-12846&viewport=-10733%2C-2367%2C0.34&t=SV4aiY37RcXrCxjE-1&scaling=min-zoom&starting-point-node-id=2169%3A12846&mode=design"
+          href="https://www.figma.com/proto/miuXp5zu2JNhG2t3c29KBS/Design?page-id=74%3A712&node-id=4477-35003&node-type=canvas&viewport=27%2C388%2C0.02&t=MHrQhFB8hKldUU0Y-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=4477%3A35003"
         >
           <h2 className={styles.cardTitle}>Bekijk het ontwerp</h2>
           <p className={styles.cardText}>
