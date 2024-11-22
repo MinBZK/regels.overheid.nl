@@ -1,5 +1,11 @@
 # docs-beta
 
+## 1.1.2
+
+### Patch Changes
+
+- 6e20612: Updated outdated link to design
+
 ## 1.1.1
 
 ### Patch Changes
