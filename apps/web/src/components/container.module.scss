@@ -1,0 +1,14 @@
+.columns {
+  --padding: calc(1rem / 3);
+  --max-w: 900px;
+
+  grid-template-columns:
+    [left-0-start] minmax(var(--padding), 1fr)
+    [left-1] minmax(var(--padding), 1fr)
+    [left-2] minmax(var(--padding), 1fr)
+    [left-3 left-0-end content-start] min(100% - (var(--padding) * 6), var(--max-w))
+    [content-end right-0-start] minmax(var(--padding), 1fr)
+    [right-1] minmax(var(--padding), 1fr)
+    [right-2] minmax(var(--padding), 1fr)
+    [right-3 right-end];
+}
