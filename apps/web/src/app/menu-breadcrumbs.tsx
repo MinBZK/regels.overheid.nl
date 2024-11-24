@@ -56,23 +56,25 @@ export const MenuBreadcrumbs: React.FC<MenuBreadcrumbsProps> = ({ navbar }) => {
 
   return (
     <div className="bg-primary-lighter">
-      <Container component="nav" className="flex h-14 items-center gap-x-4 text-base font-bold text-primary-dark">
-        {nodes.toReversed().map((node, i) => {
-          return (
-            <Fragment key={node.id}>
-              {i > 0 && <IconChevronRight size={24} />}
-              <Crumb name={node.name} href={node.url} />
-            </Fragment>
-          );
-        })}
-        {additionalCrumbs.map((name, i) => {
-          return (
-            <Fragment key={name}>
-              <IconChevronRight size={24} />
-              <Crumb name={name} />
-            </Fragment>
-          );
-        })}
+      <Container component="nav">
+        <div className="flex h-14 items-center gap-x-4 text-base font-bold text-primary-dark">
+          {nodes.toReversed().map((node, i) => {
+            return (
+              <Fragment key={node.id}>
+                {i > 0 && <IconChevronRight size={24} />}
+                <Crumb name={node.name} href={node.url} />
+              </Fragment>
+            );
+          })}
+          {additionalCrumbs.map((name, i) => {
+            return (
+              <Fragment key={name}>
+                <IconChevronRight size={24} />
+                <Crumb name={name} />
+              </Fragment>
+            );
+          })}
+        </div>
       </Container>
     </div>
   );

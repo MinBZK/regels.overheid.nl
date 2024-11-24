@@ -19,14 +19,16 @@ export const Header: React.FC = async () => {
 
   return (
     <header role="banner" className="relative w-full border-b-8 border-primary-light">
-      <Container className="flex h-24 items-center justify-between sm:h-auto">
-        <Link className="`aspect-[540/19`] relative w-[170px] py-5 sm:w-[300px]" href="/">
-          <Logo />
-        </Link>
-        <MenuContext>
-          <MenuToggle />
-          <MenuMobile navbar={navbar} />
-        </MenuContext>
+      <Container>
+        <div className="flex h-24 items-center justify-between sm:h-auto">
+          <Link className="`aspect-[540/19`] relative w-[170px] py-5 sm:w-[300px]" href="/">
+            <Logo />
+          </Link>
+          <MenuContext>
+            <MenuToggle />
+            <MenuMobile navbar={navbar} />
+          </MenuContext>
+        </div>
       </Container>
       <MenuDesktop navbar={navbar} />
       <MenuBreadcrumbs navbar={navbar} />
