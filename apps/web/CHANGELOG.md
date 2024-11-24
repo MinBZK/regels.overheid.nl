@@ -1,5 +1,13 @@
 # web
 
+## 3.42.0
+
+### Minor Changes
+
+- ec6ab70: Implemented new homepage design
+- d636a98: Concatenate past en future events
+- b4c2886: Improved container functionality
+
 ## 3.41.1
 
 ### Patch Changes
