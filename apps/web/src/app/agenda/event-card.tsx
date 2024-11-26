@@ -86,7 +86,7 @@ export const EventCard: React.FC<Props> = ({
               </Button>
             </AddToCalendarDropdown>
             <Button component={Link} href={`/agenda/${slug}`} variant="text" endIcon={<IconChevronRight />}>
-              {hasReport ? 'Lees raport' : 'Lees meer'}
+              {hasReport ? 'Lees verslag' : 'Lees meer'}
             </Button>
           </div>
         </div>

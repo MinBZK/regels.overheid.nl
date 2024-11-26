@@ -47,7 +47,7 @@ export const CardEvent: React.FC<Props> = ({ event }) => {
             endIcon={<IconArrowRight />}
             href={`/agenda/${event.slug}`}
           >
-            {hasReport ? 'Lees rapport' : 'Lees meer'}
+            {hasReport ? 'Lees verslag' : 'Lees meer'}
           </Button>
         </div>
       </div>
