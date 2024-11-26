@@ -70,7 +70,7 @@ export default async function Home() {
       <Container className="mt-12">
         <Typography variant="h2">Wensen of feedback?</Typography>
         <Typography>
-          Iedereen die geïnteresseerd is in dit product kan de roadmap bekijken of zelf ideën aandragen.
+          Iedereen die geïnteresseerd is in dit product kan de roadmap bekijken of zelf ideeën aandragen.
         </Typography>
         <div className="mt-6 flex w-full justify-center gap-6">
           {/* <CardLink href="#">Deel je wens of idee op het forum!</CardLink> */}
