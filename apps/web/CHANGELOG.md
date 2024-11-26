@@ -1,5 +1,11 @@
 # web
 
+## 3.42.1
+
+### Patch Changes
+
+- eb701d9: Small typos fixed
+
 ## 3.42.0
 
 ### Minor Changes
