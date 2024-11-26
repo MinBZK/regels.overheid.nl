@@ -1,5 +1,11 @@
 # web
 
+## 3.42.2
+
+### Patch Changes
+
+- ac353fe: Fixed event sorting
+
 ## 3.42.1
 
 ### Patch Changes
