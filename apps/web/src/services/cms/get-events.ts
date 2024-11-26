@@ -21,7 +21,7 @@ export function getEvents() {
       },
     })
     .from(events)
-    .orderBy(desc(events.publishedAt))
+    .orderBy(desc(events.start))
     .leftJoin(filesRelatedMorphs, eq(events.id, filesRelatedMorphs.relatedId))
     .leftJoin(files, eq(files.id, filesRelatedMorphs.fileId))
     .where(
