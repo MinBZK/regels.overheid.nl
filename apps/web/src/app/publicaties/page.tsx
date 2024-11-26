@@ -25,11 +25,7 @@ export default function PublicatiesPage() {
           Specificatie van het <b>juridisch referentiemodel</b> (JRM) dat met scenario&apos;s beschrijft hoe een burger
           of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardPublication.Root>
-        <CardPublication.Root
-          title="DCAT"
-          variant="work-in-progress"
-          url="/publicaties/dcat-ap-ronl"
-        >
+        <CardPublication.Root title="DCAT" variant="work-in-progress" url="/publicaties/dcat-ap-ronl">
           DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op
           W3C&apos;s Data Catalogue Vocabulary (DCAT).
         </CardPublication.Root>
