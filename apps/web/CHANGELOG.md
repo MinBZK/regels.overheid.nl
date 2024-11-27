@@ -1,5 +1,11 @@
 # web
 
+## 3.43.0
+
+### Minor Changes
+
+- e46b296: Added wetsuitvoering work in progress publication
+
 ## 3.42.2
 
 ### Patch Changes
