@@ -17,15 +17,15 @@ export default function PublicatiesPage() {
           Specificatie van het <b>juridisch analyseschema</b> (JAS) dat gebruikt wordt bij Wetsanalyse en waarin
           verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn.
         </CardPublication.Root>
-        <CardPublication.Root title="Wetsuitvoering" variant="unavailable">
+        <CardPublication.Root
+          title="Wetsuitvoering"
+          variant="work-in-progress"
+          url="https://minbzk.github.io/wetsuitvoering/"
+        >
           Specificatie van het <b>juridisch referentiemodel</b> (JRM) dat met scenario&apos;s beschrijft hoe een burger
           of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardPublication.Root>
-        <CardPublication.Root
-          title="DCAT"
-          variant="work-in-progress"
-          url="https://regels.overheid.nl/publicaties/dcat-ap-ronl"
-        >
+        <CardPublication.Root title="DCAT" variant="work-in-progress" url="/publicaties/dcat-ap-ronl">
           DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op
           W3C&apos;s Data Catalogue Vocabulary (DCAT).
         </CardPublication.Root>
@@ -50,7 +50,7 @@ export default function PublicatiesPage() {
         <CardPublication.Root
           variant="work-in-progress"
           title="WetsTaal Handreiking"
-          url="https://diederikd.github.io/wetstaal_1_documentatie/"
+          url="https://minbzk.github.io/wetstaal/"
         >
           De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal
         </CardPublication.Root>

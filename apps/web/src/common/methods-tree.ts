@@ -21,13 +21,13 @@ export const methodsTree = {
   Wetsanalyse_1: {
     color: 'info',
     docs: '/docs/methods/WETSANALYSE',
-    publication: 'https://regels.overheid.nl/publicaties/wetsanalyse',
+    publication: '/publicaties/wetsanalyse',
   },
   Wetsanalyse_2: {
     color: 'info',
     demo: '/lab/jas-annotatie-tool/',
     docs: '/docs/methods/WETSANALYSE',
-    publication: 'https://regels.overheid.nl/publicaties/wetsanalyse',
+    publication: '/publicaties/wetsanalyse',
   },
 } satisfies Record<string, MethodTree>;
 
