@@ -18,10 +18,10 @@ export const Root: React.FC<Props> = ({ variant = 'published', children, method,
   const computedUrl = (() => {
     if (url) return url;
 
-    if (method && 'publication') {
+    if (method && 'standard') {
       const tree = getMethodTree(method);
 
-      if (tree && 'publication' in tree) return tree.publication;
+      if (tree && 'standard' in tree) return tree.standard;
     }
   })();
 
@@ -57,7 +57,7 @@ export const Root: React.FC<Props> = ({ variant = 'published', children, method,
         <Card.Footer>
           {method && (
             <MethodNavigation.Root method={method}>
-              <MethodNavigation.MethodItems hide="publication" />
+              <MethodNavigation.MethodItems hide="standard" />
             </MethodNavigation.Root>
           )}
           {variant === 'unavailable' && <Typography>Binnenkort beschikbaar.</Typography>}
@@ -67,7 +67,7 @@ export const Root: React.FC<Props> = ({ variant = 'published', children, method,
         <>
           <Card.Collapse>
             <MethodNavigation.Root method={method} orientation="vertical">
-              <MethodNavigation.MethodItems showLabels hide="publication" />
+              <MethodNavigation.MethodItems showLabels hide="standard" />
             </MethodNavigation.Root>
           </Card.Collapse>
           <Card.CollapseButton />
