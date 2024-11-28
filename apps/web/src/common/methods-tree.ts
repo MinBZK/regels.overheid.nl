@@ -11,7 +11,7 @@ export const methodsTree = {
   'De LegitiMaat': {
     color: 'info',
     docs: '/docs/methods/LEGITIMAAT',
-    standard: '/publicaties/legitimaat',
+    standard: '/standaarden/legitimaat',
   },
   FLINT: {
     color: 'info',
@@ -21,13 +21,13 @@ export const methodsTree = {
   Wetsanalyse_1: {
     color: 'info',
     docs: '/docs/methods/WETSANALYSE',
-    standard: '/publicaties/wetsanalyse',
+    standard: '/standaarden/wetsanalyse',
   },
   Wetsanalyse_2: {
     color: 'info',
     demo: '/lab/jas-annotatie-tool/',
     docs: '/docs/methods/WETSANALYSE',
-    standard: '/publicaties/wetsanalyse',
+    standard: '/standaarden/wetsanalyse',
   },
 } satisfies Record<string, MethodTree>;
 

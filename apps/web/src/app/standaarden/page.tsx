@@ -5,12 +5,12 @@ import { Typography } from '@/components/typography';
 import * as CardStandard from './card-standard';
 import { ContainerMethod } from '@/components/container-method';
 
-export default function PublicatiesPage() {
+export default function StandaardenPage() {
   return (
     <main>
       <Container>
         <Typography variant="h1">Standaarden</Typography>
-        <RemotePage page="publicaties" />
+        <RemotePage page="standaarden" />
       </Container>
       <ContainerMethod>
         <CardStandard.Root title="Wetsanalyse" method="Wetsanalyse_1">
@@ -25,7 +25,7 @@ export default function PublicatiesPage() {
           Specificatie van het <b>juridisch referentiemodel</b> (JRM) dat met scenario&apos;s beschrijft hoe een burger
           of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardStandard.Root>
-        <CardStandard.Root title="DCAT" variant="work-in-progress" url="/publicaties/dcat-ap-ronl">
+        <CardStandard.Root title="DCAT" variant="work-in-progress" url="/standaarden/dcat-ap-ronl">
           DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op
           W3C&apos;s Data Catalogue Vocabulary (DCAT).
         </CardStandard.Root>
@@ -35,7 +35,7 @@ export default function PublicatiesPage() {
         </CardStandard.Root>
         <CardStandard.Root
           title="Algoritmes Publicatiestandaard"
-          url="/publicaties/algoritmeregister-publicatiestandaard"
+          url="/standaarden/algoritmeregister-publicatiestandaard"
         >
           Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij
           het invullen.
@@ -43,7 +43,7 @@ export default function PublicatiesPage() {
         <CardStandard.Root
           variant="work-in-progress"
           title="Levensgebeurtenissen SIVI AFS"
-          url="/publicaties/levensgebeurtenissen-sivi-afs"
+          url="/standaarden/levensgebeurtenissen-sivi-afs"
         >
           Bevat de standaardisatie van levensgebeurtenissen en signalen in de SIVI All Finance Standaard (SIVI AFS)
         </CardStandard.Root>
