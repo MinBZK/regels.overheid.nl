@@ -70,7 +70,7 @@ export const MethodItems: React.FC<MethodItemsProps> = ({ override, showLabels, 
   return (
     <methodItemsContext.Provider value={{ methodTree: { ...methodTree, ...override }, showLabels, hide }}>
       <MethodItem name="docs" tooltip="Documentatie" label="Naar documentatie" icon={IconFileTypeDoc} />
-      <MethodItem name="publication" tooltip="Publicatie" label="Naar publicatie" icon={IconBook2} />
+      <MethodItem name="standard" tooltip="Publicatie" label="Naar standaard" icon={IconBook2} />
       <MethodItem name="demo" tooltip="Demo" label="Naar de demo" icon={IconPlayerPlay} />
       <MethodItem name="lab" tooltip="Lab" label="Naar de tool" icon={IconMicroscope} />
       {children}
