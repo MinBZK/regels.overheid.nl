@@ -1,5 +1,11 @@
 # web
 
+## 3.44.1
+
+### Patch Changes
+
+- b799d69: Rename publication to standard in method navigation
+
 ## 3.44.0
 
 ### Minor Changes
