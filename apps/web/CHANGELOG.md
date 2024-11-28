@@ -1,5 +1,11 @@
 # web
 
+## 3.44.0
+
+### Minor Changes
+
+- 6c68b3b: Restructuring ReSpec to standaarden instead of publications
+
 ## 3.43.0
 
 ### Minor Changes
