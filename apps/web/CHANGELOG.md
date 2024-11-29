@@ -1,5 +1,11 @@
 # web
 
+## 3.44.2
+
+### Patch Changes
+
+- cde19ca: Link fix for ReSpec standards"
+
 ## 3.44.1
 
 ### Patch Changes
