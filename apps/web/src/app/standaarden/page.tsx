@@ -20,7 +20,7 @@ export default function StandaardenPage() {
         <CardStandard.Root
           title="Wetsuitvoering"
           variant="work-in-progress"
-          url="https://minbzk.github.io/wetsuitvoering/"
+          url="/standaarden/wetsuitvoering"
         >
           Specificatie van het <b>juridisch referentiemodel</b> (JRM) dat met scenario&apos;s beschrijft hoe een burger
           of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
@@ -50,7 +50,7 @@ export default function StandaardenPage() {
         <CardStandard.Root
           variant="work-in-progress"
           title="WetsTaal Handreiking"
-          url="https://minbzk.github.io/wetstaal/"
+          url="/standaarden/wetstaal"
         >
           De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal
         </CardStandard.Root>
