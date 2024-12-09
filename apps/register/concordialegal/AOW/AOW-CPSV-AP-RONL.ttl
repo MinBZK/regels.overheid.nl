@@ -192,8 +192,4 @@
         dct:startDate "1990-01-01"^^xsd:date ; # Date when the rule started
     ] ;
     dcat:keyword "System Date", "Current Date"@en ;
-    dct:publisher [ 
-        a foaf:Organization ;
-        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143> ;
-        foaf:name "Sociale Verzekeringsbank"@nl 
-    ] .
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> .
