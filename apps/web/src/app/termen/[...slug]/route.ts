@@ -37,8 +37,8 @@ export async function GET(req: NextRequest, { params }: { params: { slug: string
       filesRelatedMorphs,
       and(eq(terms.id, filesRelatedMorphs.relatedId), eq(filesRelatedMorphs.relatedType, 'api::term.term'))
     )
-    .leftJoin(files, and(eq(files.id, filesRelatedMorphs.fileId), eq(files.ext, extension)))
-    .where(eq(terms.slug, pureSlug))
+    .leftJoin(files, and(eq(files.id, filesRelatedMorphs.fileId)))
+    .where(and(eq(terms.slug, pureSlug), eq(files.ext, extension)))
     .limit(1);
 
   const fetchResponse = await fetch(resolveCmsImage(term.files as any), {
