@@ -1,0 +1,28 @@
+@prefix ronl: <https://regels.overheid.nl/termen/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ronl:Ingezetene a skos:Concept ;
+    rdfs:label
+        "Ingezetene"@nl ,
+        "Resident"@en ;
+    rdfs:comment
+        "Voorbeeld term voor test doeleinden."@nl ,
+        "Sample term for testing purposes."@en ;
+    skos:prefLabel
+        "Ingezetene Nederlandse staat"@nl ,
+        "Resident of the Dutch state"@en ;
+    skos:altLabel
+        "Ingezetene_altLabel_1"@nl ,
+        "Resident_altLabel_1"@en ;
+    skos:altLabel
+        "Ingezetene_altLabel_2"@nl ,
+        "Resident_altLabel_2"@en ;
+    skos:definition
+        "De persoon bezit de Nederlandse of buitenlandse nationaliteit en beschikt over een verblijfsvergunning voor rechtmatig verblijf in Nederland."@nl ,
+        "The resident possesses Dutch or foreign nationality and has a residence permit for lawful residence in the Netherlands."@en ;
+    skos:scopeNote
+        "Het doel van deze term in het ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl."@nl ,
+        "The purpose of this term in the ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <skos:Concept rdf:about="https://regels.overheid.nl/termen/Ingezetene">
+    <rdfs:label xml:lang="nl">Ingezetene</rdfs:label>
+    <rdfs:label xml:lang="en">Resident</rdfs:label>
+    <rdfs:comment xml:lang="nl">Voorbeeld term voor test doeleinden.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Sample term for testing purposes.</rdfs:comment>
+    <skos:prefLabel xml:lang="nl">Ingezetene Nederlandse staat</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Resident of the Dutch state</skos:prefLabel>
+    <skos:altLabel xml:lang="nl">Ingezetene_altLabel_1</skos:altLabel>
+    <skos:altLabel xml:lang="en">Resident_altLabel_1</skos:altLabel>
+    <skos:altLabel xml:lang="nl">Ingezetene_altLabel_2</skos:altLabel>
+    <skos:altLabel xml:lang="en">Resident_altLabel_2</skos:altLabel>
+    <skos:definition xml:lang="nl">De persoon bezit de Nederlandse of buitenlandse nationaliteit en beschikt over een verblijfsvergunning voor rechtmatig verblijf in Nederland.</skos:definition>
+    <skos:definition xml:lang="en">The resident possesses Dutch or foreign nationality and has a residence permit for lawful residence in the Netherlands.</skos:definition>
+    <skos:scopeNote xml:lang="nl">Het doel van deze term in het ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl.</skos:scopeNote>
+    <skos:scopeNote xml:lang="en">The purpose of this term in the ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl.</skos:scopeNote>
+    <skos:broader rdf:resource="https://regels.overheid.nl/termen/hasCriterionRequirementConcept"/>
+    <skos:inScheme rdf:resource="https://regels.overheid.nl/termen/Vocabulary"/>
+  </skos:Concept>
+
+</rdf:RDF>
