@@ -1,4 +1,4 @@
-@prefix ronl: <https://regels.overheid.nl/waardelijsten#> .
+@prefix ronl: <https://regels.overheid.nl/termen/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix cpsv-ap: <http://data.europa.eu/m8g/> .
