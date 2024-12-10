@@ -1,0 +1,748 @@
+[
+    {
+        "@id": "_:b0",
+        "@type": [
+            "http://data.europa.eu/m8g/Channel"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Online portaal.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Online portal.",
+                "@language": "en"
+            }
+        ],
+        "http://data.europa.eu/m8g/accessURL": [
+            {
+                "@id": "https://regels.overheid.nl/lab/aow-leeftijd/"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Het online portaal waar iedereen zijn/haar AOW leeftijd kan berekenen.",
+                "@language": "nl"
+            },
+            {
+                "@value": "The online portal where everyone can calculate his/her AOW age.",
+                "@language": "nl"
+            }
+        ],
+        "http://data.europa.eu/m8g/channelType": [
+            {
+                "@id": "_:b5"
+            }
+        ]
+    },
+    {
+        "@id": "_:b1",
+        "@type": [
+            "http://www.w3.org/2006/vcard/ns#Organization"
+        ],
+        "http://www.w3.org/2006/vcard/ns#fn": [
+            {
+                "@value": "Customer Service",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2006/vcard/ns#hasEmail": [
+            {
+                "@id": "mailto:algoritmenenai@svb.nl"
+            }
+        ],
+        "http://www.w3.org/2006/vcard/ns#hasTelephone": [
+            {
+                "@id": "_:b6"
+            }
+        ],
+        "http://www.w3.org/2006/vcard/ns#hasURL": [
+            {
+                "@id": "https://www.example.org/contact"
+            }
+        ]
+    },
+    {
+        "@id": "_:b2",
+        "@type": [
+            "http://data.europa.eu/m8g/LegalResource"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Algemene Ouderdomswet (AOW)",
+                "@language": "nl"
+            },
+            {
+                "@value": "General Old Age Pensions Act (AOW)",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#accessURL": [
+            {
+                "@id": "https://wetten.overheid.nl/jci1.3:c:BWBR0002221"
+            },
+            {
+                "@id": "https://wetten.overheid.nl/jci1.3:c:BWBR0002221&hoofdstuk=III&paragraaf=1&artikel=7&z=2023-01-01&g=2023-01-01"
+            },
+            {
+                "@id": "https://wetten.overheid.nl/jci1.3:c:BWBR0002221&hoofdstuk=III&paragraaf=1&artikel=7a&z=2023-01-01&g=2023-01-01"
+            }
+        ]
+    },
+    {
+        "@id": "_:b3",
+        "@type": [
+            "http://data.europa.eu/m8g/Output"
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Vastgestelde AOW-leeftijd op peildatum.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Established AOW age on reference date.",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "_:b4",
+        "@type": [
+            "http://data.europa.eu/m8g/Cost"
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "The dienst is gratis.",
+                "@language": "nl"
+            },
+            {
+                "@value": "The service is free of charge.",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "_:b5",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Web Portal",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#exactMatch": [
+            {
+                "@id": "http://example.org/channel-type/web-portal"
+            }
+        ]
+    },
+    {
+        "@id": "_:b6",
+        "@type": [
+            "http://www.w3.org/2006/vcard/ns#Work",
+            "http://www.w3.org/2006/vcard/ns#Voice"
+        ],
+        "http://www.w3.org/2006/vcard/ns#hasValue": [
+            {
+                "@id": "tel:+1234567890"
+            }
+        ]
+    },
+    {
+        "@id": "_:b7",
+        "@type": [
+            "http://data.europa.eu/m8g/RuleSpecification"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Datamodel voor bedrijfsregels",
+                "@language": "nl"
+            },
+            {
+                "@value": "Data Model for Business Rules",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Dit model definieert de vereiste gegevensbronnen voor het bepalen van AOW-gerechtigdheid en leeftijd.",
+                "@language": "nl"
+            },
+            {
+                "@value": "This model defines the required data sources for determining AOW eligibility and age.",
+                "@language": "en"
+            }
+        ],
+        "https://regels.overheid.nl/ronl/ns#source": [
+            {
+                "@id": "https://www.svb.nl/nl/aow/"
+            }
+        ],
+        "http://purl.org/dc/terms/source": [
+            {
+                "@id": "https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py"
+            }
+        ],
+        "https://regels.overheid.nl/ronl/ns#implementedBy": [
+            {
+                "@id": "https://regels.overheid.nl/lab/aow-leeftijd/resultaat"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+            {
+                "@id": "https://regels.overheid.nl/docs/lab/AOW"
+            },
+            {
+                "@id": "https://regels.overheid.nl/publicaties/wetsanalyse"
+            },
+            {
+                "@id": "https://regels.overheid.nl/docs/methods/CONCORDIALEGAL"
+            }
+        ],
+        "http://data.europa.eu/m8g/hasCriterionRequirement": [
+            {
+                "@id": "https://regels.overheid.nl/termen/birthcertificate_date_requirement"
+            },
+            {
+                "@id": "https://regels.overheid.nl/termen/system_date_requirement"
+            }
+        ],
+        "http://data.europa.eu/m8g/hasInput": [
+            {
+                "@id": "https://regels.overheid.nl/termen/persoonlijke_gegevens_dataset"
+            },
+            {
+                "@id": "https://regels.overheid.nl/termen/system_date_dataset"
+            }
+        ]
+    },
+    {
+        "@id": "_:b8",
+        "@type": [
+            "http://purl.org/dc/terms/PeriodOfTime"
+        ],
+        "http://purl.org/dc/terms/startDate": [
+            {
+                "@value": "1990-01-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ]
+    },
+    {
+        "@id": "_:b9",
+        "@type": [
+            "http://xmlns.com/foaf/0.1/Organization"
+        ],
+        "http://xmlns.com/foaf/0.1/uri": [
+            {
+                "@id": "https://identifier.overheid.nl/tooi/id/zbo/zb000143"
+            }
+        ],
+        "http://xmlns.com/foaf/0.1/name": [
+            {
+                "@value": "Sociale Verzekeringsbank",
+                "@language": "nl"
+            }
+        ]
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/Channel"
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/Cost"
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/CriterionRequirement"
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/LegalResource"
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/Output"
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/PublicService"
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/Rule"
+    },
+    {
+        "@id": "http://data.europa.eu/m8g/RuleSpecification"
+    },
+    {
+        "@id": "http://eurovoc.europa.eu/100141"
+    },
+    {
+        "@id": "http://example.org/channel-type/web-portal"
+    },
+    {
+        "@id": "http://example.org/ns#Attribute"
+    },
+    {
+        "@id": "http://publications.europa.eu/resource/authority/file-type/MD"
+    },
+    {
+        "@id": "http://purl.org/dc/terms/PeriodOfTime"
+    },
+    {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+        "@id": "http://www.w3.org/2006/vcard/ns#Organization"
+    },
+    {
+        "@id": "http://www.w3.org/2006/vcard/ns#Voice"
+    },
+    {
+        "@id": "http://www.w3.org/2006/vcard/ns#Work"
+    },
+    {
+        "@id": "http://www.w3.org/ns/dcat#Dataset"
+    },
+    {
+        "@id": "http://xmlns.com/foaf/0.1/Organization"
+    },
+    {
+        "@id": "https://brp-api.github.io/Haal-Centraal-BRP-bevragen/"
+    },
+    {
+        "@id": "https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py"
+    },
+    {
+        "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103",
+        "@type": [
+            "http://xmlns.com/foaf/0.1/Organization"
+        ],
+        "http://xmlns.com/foaf/0.1/name": [
+            {
+                "@value": "Rijksdienst voor Identiteitsgegevens (RvIG).",
+                "@language": "nl"
+            }
+        ],
+        "http://xmlns.com/foaf/0.1/homepage": [
+            {
+                "@id": "https://www.rvig.nl/"
+            }
+        ],
+        "http://xmlns.com/foaf/0.1/uri": [
+            {
+                "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103"
+            }
+        ]
+    },
+    {
+        "@id": "https://identifier.overheid.nl/tooi/id/zbo/zb000143"
+    },
+    {
+        "@id": "https://opendata.stelselcatalogus.nl/brp/doc/begrip/geboorte"
+    },
+    {
+        "@id": "https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank",
+        "@type": [
+            "http://xmlns.com/foaf/0.1/Organization"
+        ],
+        "http://xmlns.com/foaf/0.1/name": [
+            {
+                "@value": "Sociale Verzekeringsbank (SVB)",
+                "@language": "nl"
+            },
+            {
+                "@value": "Social insurance bank (SVB)",
+                "@language": "en"
+            }
+        ],
+        "http://xmlns.com/foaf/0.1/homepage": [
+            {
+                "@id": "https://www.svb.nl/nl/"
+            }
+        ],
+        "http://xmlns.com/foaf/0.1/uri": [
+            {
+                "@id": "https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/docs/lab/AOW"
+    },
+    {
+        "@id": "https://regels.overheid.nl/docs/methods/CONCORDIALEGAL"
+    },
+    {
+        "@id": "https://regels.overheid.nl/lab/aow-leeftijd/"
+    },
+    {
+        "@id": "https://regels.overheid.nl/lab/aow-leeftijd/resultaat"
+    },
+    {
+        "@id": "https://regels.overheid.nl/publicaties/wetsanalyse"
+    },
+    {
+        "@id": "https://regels.overheid.nl/ronl/ns#ConcordiaLegal"
+    },
+    {
+        "@id": "https://regels.overheid.nl/ronl/ns#WetsanalyseJAS"
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/BerekenAOW",
+        "@type": [
+            "http://data.europa.eu/m8g/Rule"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Bedrijfsregels voor bepaling van de AOW-leeftijd",
+                "@language": "nl"
+            },
+            {
+                "@value": "Business Rules for AOW Age Determination",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Een op regels gebaseerd beslismodel voor het vaststellen van de AOW-leeftijd volgens de Algemene Ouderdomswet (AOW).",
+                "@language": "nl"
+            },
+            {
+                "@value": "A rules-based decision model for determining the AOW age according to the Algemene Ouderdomswet (AOW).",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/conformsTo": [
+            {
+                "@id": "https://schema.example.org/AOWRulesModel"
+            }
+        ],
+        "http://purl.org/dc/terms/format": [
+            {
+                "@id": "http://publications.europa.eu/resource/authority/file-type/MD"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#mediaType": [
+            {
+                "@value": "text/markdown"
+            }
+        ],
+        "http://data.europa.eu/m8g/specifies": [
+            {
+                "@id": "_:b7"
+            }
+        ],
+        "http://purl.org/dc/terms/version": [
+            {
+                "@value": "1.0"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/Geboortedatum",
+        "@type": [
+            "http://example.org/ns#Attribute"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Geboortedaum.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Date of birth.",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "De datum waarop de persoon volgens het brondocument is geboren.",
+                "@language": "nl"
+            },
+            {
+                "@value": "The date on which the person was born according to the source document.",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/aow_leeftijd_service",
+        "@type": [
+            "http://data.europa.eu/m8g/PublicService"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Bepaling leeftijd AOW",
+                "@language": "nl"
+            },
+            {
+                "@value": "Determination of AOW age",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Bepaling van de leeftijd AOW (Algemene Ouderdomswet).",
+                "@language": "nl"
+            },
+            {
+                "@value": "Determination of AOW age (General Old Age Act).",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/identifier": [
+            {
+                "@id": "https://standaarden.overheid.nl/owms/terms/aow-leeftijd"
+            }
+        ],
+        "https://regels.overheid.nl/ronl/ns#analysis": [
+            {
+                "@id": "https://regels.overheid.nl/ronl/ns#WetsanalyseJAS"
+            }
+        ],
+        "https://regels.overheid.nl/ronl/ns#method": [
+            {
+                "@id": "https://regels.overheid.nl/ronl/ns#ConcordiaLegal"
+            }
+        ],
+        "http://purl.org/dc/terms/creator": [
+            {
+                "@id": "https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank"
+            }
+        ],
+        "http://purl.org/dc/terms/subject": [
+            {
+                "@value": "Sociale zekerheid",
+                "@language": "nl"
+            },
+            {
+                "@value": "Social security.",
+                "@language": "en"
+            }
+        ],
+        "http://data.europa.eu/m8g/hasChannel": [
+            {
+                "@id": "_:b0"
+            }
+        ],
+        "http://data.europa.eu/m8g/hasContactPoint": [
+            {
+                "@id": "_:b1"
+            }
+        ],
+        "http://data.europa.eu/m8g/goal": [
+            {
+                "@value": "Landelijk herbruikbare service voor gevalideerde bepaling van de leeftijd AOW.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Nationally reusable service for validated determination of the AOW age.",
+                "@language": "en"
+            }
+        ],
+        "http://data.europa.eu/m8g/hasLegalResource": [
+            {
+                "@id": "_:b2"
+            }
+        ],
+        "http://purl.org/dc/terms/issued": [
+            {
+                "@value": "2023-06-12",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/modified": [
+            {
+                "@value": "2024-12-09",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://purl.org/dc/terms/language": [
+            {
+                "@value": "nld"
+            }
+        ],
+        "http://data.europa.eu/m8g/implements": [
+            {
+                "@id": "https://regels.overheid.nl/termen/BerekenAOW"
+            }
+        ],
+        "http://data.europa.eu/m8g/hasOutput": [
+            {
+                "@id": "_:b3"
+            }
+        ],
+        "http://data.europa.eu/m8g/hasCost": [
+            {
+                "@id": "_:b4"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/birthcertificate_date_requirement",
+        "@type": [
+            "http://data.europa.eu/m8g/CriterionRequirement"
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Geboortecertificaat datum die wordt gebruikt voor leeftijdsbepaling.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Birth certificate date used for age determination.",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/persoonlijke_gegevens_dataset",
+        "@type": [
+            "http://www.w3.org/ns/dcat#Dataset"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Persoonlijke gegevens.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Personal data.",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer.",
+                "@language": "nl"
+            },
+            {
+                "@value": "All your personal data, such as name, address and date of birth, but also fingerprints and citizen service number.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#accessURL": [
+            {
+                "@id": "https://brp-api.github.io/Haal-Centraal-BRP-bevragen/"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103"
+            }
+        ],
+        "http://purl.org/dc/terms/issued": [
+            {
+                "@value": "2023-01-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://regels.overheid.nl/ronl/ns#source": [
+            {
+                "@id": "https://opendata.stelselcatalogus.nl/brp/doc/begrip/geboorte"
+            }
+        ],
+        "http://example.org/ns#hasAttribute": [
+            {
+                "@id": "https://regels.overheid.nl/termen/Geboortedatum"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/system_date_dataset",
+        "@type": [
+            "http://www.w3.org/ns/dcat#Dataset"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "System Date for Age Calculation",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "The current date is used as a reference to determine eligibility age for AOW.",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/issued": [
+            {
+                "@value": "1990-01-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#theme": [
+            {
+                "@id": "http://eurovoc.europa.eu/100141"
+            }
+        ],
+        "http://purl.org/dc/terms/temporal": [
+            {
+                "@id": "_:b8"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#keyword": [
+            {
+                "@value": "System Date"
+            },
+            {
+                "@value": "Current Date",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "_:b9"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/system_date_requirement",
+        "@type": [
+            "http://data.europa.eu/m8g/CriterionRequirement"
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Peildatum.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Reference date.",
+                "@language": "en"
+            }
+        ]
+    },
+    {
+        "@id": "https://schema.example.org/AOWRulesModel"
+    },
+    {
+        "@id": "https://standaarden.overheid.nl/owms/terms/aow-leeftijd"
+    },
+    {
+        "@id": "https://wetten.overheid.nl/jci1.3:c:BWBR0002221"
+    },
+    {
+        "@id": "https://wetten.overheid.nl/jci1.3:c:BWBR0002221&hoofdstuk=III&paragraaf=1&artikel=7&z=2023-01-01&g=2023-01-01"
+    },
+    {
+        "@id": "https://wetten.overheid.nl/jci1.3:c:BWBR0002221&hoofdstuk=III&paragraaf=1&artikel=7a&z=2023-01-01&g=2023-01-01"
+    },
+    {
+        "@id": "https://www.example.org/contact"
+    },
+    {
+        "@id": "https://www.rvig.nl/"
+    },
+    {
+        "@id": "https://www.svb.nl/nl/"
+    },
+    {
+        "@id": "https://www.svb.nl/nl/aow/"
+    },
+    {
+        "@id": "mailto:algoritmenenai@svb.nl"
+    },
+    {
+        "@id": "tel:+1234567890"
+    }
+]

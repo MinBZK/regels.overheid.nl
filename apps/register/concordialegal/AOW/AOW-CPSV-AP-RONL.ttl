@@ -1,17 +1,32 @@
 @prefix cpsv-ap: <http://data.europa.eu/m8g/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
 @prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+#
+# Define Sociale Verzekeringsbank (SVB)
+#
+<https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank> a foaf:Organization ;
+    foaf:name "Sociale Verzekeringsbank (SVB)"@nl ;
+    foaf:name "Social insurance bank (SVB)"@en ;
+    foaf:homepage <https://www.svb.nl/nl/> ;
+    foaf:uri <https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank> .
 #
 # Public serivce area
 #
-<#aow_age_determination_service> a cpsv-ap:PublicService ;
+<aow_leeftijd_service> a cpsv-ap:PublicService ;
     dct:title "Bepaling leeftijd AOW"@nl ;
+    dct:title "Determination of AOW age"@en ;
     dct:description "Bepaling van de leeftijd AOW (Algemene Ouderdomswet)."@nl ;
+    dct:description "Determination of AOW age (General Old Age Act)."@en ;
     #
     # The unique identifier for this service as given by Uniforme Productnamenlijst (UPL)
     # https://standaarden.overheid.nl/owms/terms/aow-uitkering is a real example, (.../)/aow-leeftijd doesn't excist
@@ -24,59 +39,67 @@
     ronl:analysis ronl:WetsanalyseJAS ;
     ronl:method ronl:ConcordiaLegal ;
     #
-    dct:creator [ 
-        a foaf:Organization ; 
-        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143> ;
-        foaf:name "Sociale Verzekeringsbank"@nl 
-    ] ;
+    dct:creator <https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank> ;
     dct:subject "Sociale zekerheid"@nl ;
-    cpsv-ap:status <https://regels.overheid.nl/placeholder/status-value> ;
+    dct:subject "Social security."@en ;
+    cpsv-ap:hasChannel [
+        a cpsv-ap:Channel ;
+        dct:title "Online portaal."@nl ;
+        dct:title "Online portal."@en ;
+        cpsv-ap:accessURL <https://regels.overheid.nl/lab/aow-leeftijd/> ;
+        dct:description "Het online portaal waar iedereen zijn/haar AOW leeftijd kan berekenen."@nl ;
+        dct:description "The online portal where everyone can calculate his/her AOW age."@nl ;
+        cpsv-ap:channelType [
+            a skos:Concept ;
+            skos:prefLabel "Web Portal"@en ;
+            skos:exactMatch <http://example.org/channel-type/web-portal> ;
+        ]
+    ] ;
+    cpsv-ap:hasContactPoint [
+        #
+        # Placeholder!
+        #
+        a vcard:Organization ;
+        vcard:fn "Customer Service"@en ;
+        vcard:hasEmail <mailto:algoritmenenai@svb.nl> ;
+        vcard:hasTelephone [
+            a vcard:Work, vcard:Voice ;
+            vcard:hasValue <tel:+1234567890> ;
+        ] ;
+        vcard:hasURL <https://www.example.org/contact> ;
+    ] ;
     cpsv-ap:goal "Landelijk herbruikbare service voor gevalideerde bepaling van de leeftijd AOW."@nl ;
-    cpsv-ap:proportionality <https://regels.overheid.nl/placeholder/proportionality-value> ;
+    cpsv-ap:goal "Nationally reusable service for validated determination of the AOW age."@en ;    
     cpsv-ap:hasLegalResource [
         a cpsv-ap:LegalResource ;
         dct:title "Algemene Ouderdomswet (AOW)"@nl ;
+        dct:title "General Old Age Pensions Act (AOW)"@en ;
         dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0002221> ;
         dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0002221&hoofdstuk=III&paragraaf=1&artikel=7&z=2023-01-01&g=2023-01-01> ;
         dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0002221&hoofdstuk=III&paragraaf=1&artikel=7a&z=2023-01-01&g=2023-01-01>
     ] ;
     dct:issued "2023-06-12"^^xsd:date ;
-    dct:modified "2024-01-05"^^xsd:date ;
-    dct:language "nld" ;  # Dutch language code
-    cpsv-ap:hasContactPoint [
-        a foaf:Person ;
-        foaf:mbox "mailto:algoritmenenai@svb.nl"
-    ] ;
-    cpsv-ap:hasInput <#birthcertificate_date_dataset>, <#system_date_dataset> ;
+    dct:modified "2024-12-09"^^xsd:date ;
+    dct:language "nld" ;
+    cpsv-ap:implements <BerekenAOW> ;
     cpsv-ap:hasOutput [
         a cpsv-ap:Output ;
-        dct:description "Established AOW age on reference date."@en
+        dct:description "Vastgestelde AOW-leeftijd op peildatum."@nl ;
+        dct:description "Established AOW age on reference date."@en ;
     ] ;
-    cpsv-ap:hasChannel [
-        a cpsv-ap:Channel ;
-        dcat:accessURL <https://regels.overheid.nl/lab/aow-leeftijd/resultaat> ;
-        dct:description "AOW age determination via the Social Insurance Bank (SVB) microservice."@en
-    ] ;
-    cpsv-ap:implements <#aow_business_rules> ;
-    cpsv-ap:hasCriterionRequirement [
-        a cpsv-ap:CriterionRequirement ;
-        dct:description "AOW age is determined based on criteria defined in the Algemene Ouderdomswet (AOW)."@nl
-    ] ;
-    dct:rights "Data use and processing are in line with privacy regulations (GDPR)."@en ;
     cpsv-ap:hasCost [
         a cpsv-ap:Cost ;
-        dct:description "The service is free of charge."@en
+        dct:description "The dienst is gratis."@nl ;
+        dct:description "The service is free of charge."@en ;
     ] ;
-    dct:publisher [ 
-        a foaf:Organization ;
-        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143> ;
-        foaf:name "Sociale Verzekeringsbank"@nl 
-    ] .
+    dct:publisher <https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank> .
 #
-# Business rules area
+# Define business rules
 #
-<#aow_business_rules> a cpsv-ap:Rule ;
+<BerekenAOW> a cpsv-ap:Rule ;
+    dct:title "Bedrijfsregels voor bepaling van de AOW-leeftijd"@nl ;
     dct:title "Business Rules for AOW Age Determination"@en ;
+    dct:description "Een op regels gebaseerd beslismodel voor het vaststellen van de AOW-leeftijd volgens de Algemene Ouderdomswet (AOW)."@nl ;    
     dct:description "A rules-based decision model for determining the AOW age according to the Algemene Ouderdomswet (AOW)."@en ;
     #
     #  dct:conformsTo has a placeholder URI that could hypothetically point to a document or description of the AOWRulesModel
@@ -86,7 +109,9 @@
     dcat:mediaType "text/markdown" ;
     cpsv-ap:specifies [
         a cpsv-ap:RuleSpecification ;
+        dct:title "Datamodel voor bedrijfsregels"@nl ;
         dct:title "Data Model for Business Rules"@en ;
+        dct:description "Dit model definieert de vereiste gegevensbronnen voor het bepalen van AOW-gerechtigdheid en leeftijd."@nl ;
         dct:description "This model defines the required data sources for determining AOW eligibility and age."@en ;
         #
         # ronl:source: Points to the authoritative, conceptual origin of the rule or model, like an official government document 
@@ -98,18 +123,66 @@
         #
         dct:source <https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py> ;
         #
+        # ronl:implementedBy specifies the software system involved in the calculations
+        #
+        ronl:implementedBy <https://regels.overheid.nl/lab/aow-leeftijd/resultaat> ;
+        #
         # rdfs:seeAlso: Optionally used for linking to additional documentation, such as a page or document that provides further 
         # explanation of the rules
         #
         rdfs:seeAlso <https://regels.overheid.nl/docs/lab/AOW> ;
-        cpsv-ap:hasInput <#birthcertificate_date_dataset>, <#system_date_dataset>
+        rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
+        rdfs:seeAlso <https://regels.overheid.nl/docs/methods/CONCORDIALEGAL> ;
+
+        cpsv-ap:hasCriterionRequirement
+            <birthcertificate_date_requirement> ,
+            <system_date_requirement> ;
+        cpsv-ap:hasInput <persoonlijke_gegevens_dataset>, <system_date_dataset> ;
     ] ;
-    cpsv-ap:hasHumanIntervention "Niet van toepassing."@nl ;
     dct:version "1.0" .
 #
-# Dataset area
+# Define service specific criteria
 #
-<#system_date_dataset> a dcat:Dataset ;
+<birthcertificate_date_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "Geboortecertificaat datum die wordt gebruikt voor leeftijdsbepaling."@nl ;
+    dct:description "Birth certificate date used for age determination."@en .
+
+<system_date_requirement> a cpsv-ap:CriterionRequirement ;
+    dct:description "Peildatum."@nl ;
+    dct:description "Reference date."@en .
+#
+# Define registrars and datasets that hold the evidence for the applicable criteria
+#
+#
+# Define Rijksdienst voor Identiteitsgegevens (RvIG)
+#
+<https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
+    foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl ;
+    foaf:homepage <https://www.rvig.nl/> ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> .
+#
+# Define dataset
+#
+<persoonlijke_gegevens_dataset> a dcat:Dataset ;
+    dct:title "Persoonlijke gegevens."@nl ;
+    dct:title "Personal data."@en ;
+    dct:description "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer."@nl ;
+    dct:description "All your personal data, such as name, address and date of birth, but also fingerprints and citizen service number."@en ;
+    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    ronl:source <https://opendata.stelselcatalogus.nl/brp/doc/begrip/geboorte> ;
+    ex:hasAttribute <Geboortedatum> .
+
+<Geboortedatum> a ex:Attribute ;
+    rdfs:label "Geboortedaum."@nl ;
+    rdfs:label "Date of birth."@en ;
+    dct:description "De datum waarop de persoon volgens het brondocument is geboren."@nl ;
+    dct:description "The date on which the person was born according to the source document."@en .
+#
+# Defifne dataset
+#
+<system_date_dataset> a dcat:Dataset ;
     dct:title "System Date for Age Calculation"@en ;
     dct:description "The current date is used as a reference to determine eligibility age for AOW."@en ;
     dct:issued "1990-01-01"^^xsd:date ; # start date of service
@@ -119,26 +192,4 @@
         dct:startDate "1990-01-01"^^xsd:date ; # Date when the rule started
     ] ;
     dcat:keyword "System Date", "Current Date"@en ;
-    dct:publisher [ 
-        a foaf:Organization ;
-        foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143> ;
-        foaf:name "Sociale Verzekeringsbank"@nl 
-    ] .
-
-<#birthcertificate_date_dataset> a dcat:Dataset ;
-    dct:title "Birth Certificate Date"@en ;
-    dct:description "Dataset containing birth certificate dates used for age determination."@en ;
-    dct:issued "1990-01-01"^^xsd:date ;
-    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/v2/features/zoek-met-geslachtsnaam-voornamen-en-gemeente-van-inschrijving/overzicht.feature> ;
-    dcat:keyword "Search with surname, first names and municipality of registration"@en ;
-    dct:publisher [ 
-        a foaf:Organization ;
-        foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
-        foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)"@nl 
-    ] ;
-    ronl:source <http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/geboortedatum_persoon-geboorte> .
-
-<#aow_dpia> a cpsv-ap:DataProtectionImpactAssessment ;
-    dct:title "Data Protection Impact Assessment (DPIA) for AOW Age Determination Algorithm"@en ;
-    dct:description "Assessment of data protection risks and compliance with privacy regulations."@en ;
-    dcat:accessURL <https://dpia.example.org/aow_age_determination> .
+    dct:publisher <https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank> .
