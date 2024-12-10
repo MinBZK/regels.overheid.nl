@@ -1,0 +1,95 @@
+[
+    {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/Ingezetene",
+        "@type": [
+            "http://www.w3.org/2004/02/skos/core#Concept"
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#label": [
+            {
+                "@value": "Ingezetene",
+                "@language": "nl"
+            },
+            {
+                "@value": "Resident",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2000/01/rdf-schema#comment": [
+            {
+                "@value": "Voorbeeld term voor test doeleinden.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Sample term for testing purposes.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#prefLabel": [
+            {
+                "@value": "Ingezetene Nederlandse staat",
+                "@language": "nl"
+            },
+            {
+                "@value": "Resident of the Dutch state",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#altLabel": [
+            {
+                "@value": "Ingezetene_altLabel_1",
+                "@language": "nl"
+            },
+            {
+                "@value": "Resident_altLabel_1",
+                "@language": "en"
+            },
+            {
+                "@value": "Ingezetene_altLabel_2",
+                "@language": "nl"
+            },
+            {
+                "@value": "Resident_altLabel_2",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#definition": [
+            {
+                "@value": "De persoon bezit de Nederlandse of buitenlandse nationaliteit en beschikt over een verblijfsvergunning voor rechtmatig verblijf in Nederland.",
+                "@language": "nl"
+            },
+            {
+                "@value": "The resident possesses Dutch or foreign nationality and has a residence permit for lawful residence in the Netherlands.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#scopeNote": [
+            {
+                "@value": "Het doel van deze term in het ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl.",
+                "@language": "nl"
+            },
+            {
+                "@value": "The purpose of this term in the ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#broader": [
+            {
+                "@id": "https://regels.overheid.nl/termen/hasCriterionRequirementConcept"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#inScheme": [
+            {
+                "@id": "https://regels.overheid.nl/termen/Vocabulary"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/Vocabulary"
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/hasCriterionRequirementConcept"
+    }
+]
