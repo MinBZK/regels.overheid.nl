@@ -1,5 +1,11 @@
 # cms
 
+## 1.28.0
+
+### Minor Changes
+
+- fd7f40c: Added `terms` entity type
+
 ## 1.27.0
 
 ### Minor Changes

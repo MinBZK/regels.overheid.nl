@@ -1,5 +1,11 @@
 # web
 
+## 3.45.0
+
+### Minor Changes
+
+- 5663bcf: Added `termen` pages
+
 ## 3.44.2
 
 ### Patch Changes
