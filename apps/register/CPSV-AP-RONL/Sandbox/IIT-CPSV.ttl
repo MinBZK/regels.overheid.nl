@@ -9,7 +9,7 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix cv: <http://data.europa.eu/m8g/> .
 @prefix ex: <http://example.org/> .
-@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix ronl: <https://regels.overheid.nl/termen/> .
 
 
 # Public Service definition

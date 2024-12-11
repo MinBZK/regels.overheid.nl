@@ -845,12 +845,21 @@ ronl:Ingezetene a skos:Concept ;
     skos:inScheme ronl:Vocabulary .
 
 ronl:Leeftijd18 a skos:Concept ;
+    rdfs:label
+        "Ouder18"@nl ,
+        "Older18"@en ;
+    rdfs:comment
+        "Voorbeeld term voor test doeleinden."@nl ,
+        "Sample term for testing purposes."@en ;
     skos:prefLabel
         "Ouder dan 18 jaar"@nl ,
         "Older than 18 years"@en ;
     skos:definition
         "De aanvrager is ouder dan 18 jaar."@nl ,
         "The applicant is over 18 years old."@en ;
+    skos:scopeNote
+        "Het doel van deze term in het ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl."@nl ,
+        "The purpose of this term in the ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl."@en ;
     skos:broader ronl:hasCriterionRequirementConcept ;
     skos:inScheme ronl:Vocabulary .
 
