@@ -7,7 +7,7 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix ex: <http://example.org/> .
-@prefix ronl: <https://regels.overheid.nl/ronl/ns#> .
+@prefix ronl: <https://regels.overheid.nl/termen/> .
 @prefix cpsv: <http://purl.org/vocab/cpsv#> .
 
 # Catalog definition

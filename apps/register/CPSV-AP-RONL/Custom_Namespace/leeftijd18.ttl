@@ -1,0 +1,112 @@
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+@prefix ronl: <https://regels.overheid.nl/termen/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+ronl:Leeftijd18 a skos:Concept ;
+    rdfs:label
+        "Ouder18"@nl ,
+        "Older18"@en ;
+    rdfs:comment
+        "Voorbeeld term voor test doeleinden."@nl ,
+        "Sample term for testing purposes."@en ;
+    skos:prefLabel
+        "Ouder dan 18 jaar"@nl ,
+        "Older than 18 years"@en ;
+    skos:definition
+        "De aanvrager is ouder dan 18 jaar."@nl ,
+        "The applicant is over 18 years old."@en ;
+    skos:scopeNote
+        "Het doel van deze term in het ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl."@nl ,
+        "The purpose of this term in the ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary ;
+    cpsv-ap:hasCriterionRequirement
+        ronl:birthcertificate_date_requirement ,
+        ronl:boolean_age_requirement ;
+    cpsv-ap:hasInput ronl:persoonlijke_gegevens_dataset .
+#
+# Define service specific criteria
+#
+#
+# Option 1: Date of Birth
+#
+ronl:birthcertificate_date_requirement a cpsv-ap:CriterionRequirement ;
+    dct:description
+        "Geboortecertificaat datum die wordt gebruikt voor leeftijdsbepaling."@nl ,
+        "Birth certificate date used for age determination."@en ;
+    cpsv-ap:requiresInput <Geboortedatum> .
+#
+# Option 2: Boolean Value
+#
+ronl:boolean_age_requirement a cpsv-ap:CriterionRequirement ;
+    dct:description
+        "Een boolean waarde die aangeeft of de aanvrager ouder dan 18 jaar is."@nl ,
+        "A boolean value indicating whether the applicant is older than 18 years."@en ;
+    cpsv-ap:requiresInput ronl:boolean_age_input .
+#
+# Define registrars and datasets that hold the evidence for the applicable criteria
+#
+#
+# Define Rijksdienst voor Identiteitsgegevens (RvIG)
+#
+<https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
+    foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl ;
+    foaf:homepage <https://www.rvig.nl/> ;
+    foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> .
+#
+# Define dataset
+#
+ronl:persoonlijke_gegevens_dataset a dcat:Dataset ;
+    dct:title
+        "Persoonlijke gegevens."@nl ,
+        "Personal data."@en ;
+    dct:description
+        "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer."@nl ,
+        "All your personal data, such as name, address and date of birth, but also fingerprints and citizen service number."@en ;
+    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    ronl:source <https://opendata.stelselcatalogus.nl/brp/doc/begrip/geboorte> ;
+    ex:hasAttribute <Geboortedatum> .
+#
+# Option 1: Date of Birth
+#
+<Geboortedatum> a ex:Attribute ;
+    rdfs:label
+        "Geboortedatum."@nl ,
+        "Date of birth."@en ;
+    dct:description
+        "De datum waarop de persoon volgens het brondocument is geboren."@nl ,
+        "The date on which the person was born according to the source document."@en .
+#
+# Option 2: Boolean Value
+#
+ronl:boolean_age_input a dcat:Dataset ;
+    dct:title
+        "Boolean leeftijd gegevens."@nl ,
+        "Boolean age data."@en ;
+    dct:description
+        "Een dataset met een boolean waarde die aangeeft of iemand ouder is dan 18 jaar."@nl ,
+        "A dataset containing a boolean value indicating whether someone is older than 18 years."@en ;
+    dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
+    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:issued "2023-01-01"^^xsd:date ;
+    ex:hasAttribute <BooleanAge> .
+
+<BooleanAge> a ex:Attribute ;
+    rdfs:label
+        "Leeftijd boolean."@nl ,
+        "Age boolean."@en ;
+    dct:description
+        "Een boolean waarde die aangeeft of de leeftijd van de persoon groter dan of gelijk aan 18 is."@nl ,
+        "A boolean value indicating whether the person's age is greater than or equal to 18."@en .

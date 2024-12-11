@@ -2,7 +2,7 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:foaf="http://xmlns.com/foaf/0.1/"
          xmlns:dc="http://purl.org/dc/terms/"
-         xmlns:ns0="https://regels.overheid.nl/ronl/ns#"
+         xmlns:ns0="https://regels.overheid.nl/termen/"
          xmlns:ns1="http://data.europa.eu/m8g/"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
          xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
@@ -24,8 +24,8 @@
     <dc:description xml:lang="nl">Bepaling van de leeftijd AOW (Algemene Ouderdomswet).</dc:description>
     <dc:description xml:lang="en">Determination of AOW age (General Old Age Act).</dc:description>
     <dc:identifier rdf:resource="https://standaarden.overheid.nl/owms/terms/aow-leeftijd"/>
-    <ns0:analysis rdf:resource="https://regels.overheid.nl/ronl/ns#WetsanalyseJAS"/>
-    <ns0:method rdf:resource="https://regels.overheid.nl/ronl/ns#ConcordiaLegal"/>
+    <ns0:analysis rdf:resource="https://regels.overheid.nl/termen/WetsanalyseJAS"/>
+    <ns0:method rdf:resource="https://regels.overheid.nl/termen/ConcordiaLegal"/>
     <dc:creator rdf:resource="https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank"/>
     <dc:subject xml:lang="nl">Sociale zekerheid</dc:subject>
     <dc:subject xml:lang="en">Social security.</dc:subject>
