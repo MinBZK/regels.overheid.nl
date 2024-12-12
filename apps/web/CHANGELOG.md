@@ -1,5 +1,11 @@
 # web
 
+## 3.46.0
+
+### Minor Changes
+
+- f8308d7: Added GGHH specification
+
 ## 3.45.0
 
 ### Minor Changes
