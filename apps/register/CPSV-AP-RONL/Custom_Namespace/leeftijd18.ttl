@@ -37,7 +37,7 @@ ronl:leeftijd18 a skos:Concept ;
 # Links the CriterionRequirement to its inputs.
 #
     cpsv-ap:requiresInput
-        ronl:geboortecertificaat_datum,
+        ronl:geboortecertificaat_datum ,
         ronl:boolean_leeftijd18 .
 #
 # Define service specific criteria
@@ -64,8 +64,10 @@ ronl:boolean_leeftijd18_vereiste a cpsv-ap:CriterionRequirement ;
 #
 # Define Rijksdienst voor Identiteitsgegevens (RvIG)
 #
-<https://identifier.overheid.nl/tooi/id/oorg/oorg10103> a foaf:Organization ;
-    foaf:name "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl ;
+<https://organisaties.overheid.nl/96832/Rijksdienst_voor_Identiteitsgegevens> a foaf:Organization ;
+    foaf:name
+        "Rijksdienst voor Identiteitsgegevens (RvIG)."@nl ,
+        "National Office for Identity Data (RvIG)."@en ;
     foaf:homepage <https://www.rvig.nl/> ;
     foaf:uri <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> .
 #
@@ -82,12 +84,12 @@ ronl:geboortecertificaat_datum a dcat:Dataset ;
         "De gegevens over de geboorte van de persoon."@nl ,
         "The data about the person's birth."@en ;
     dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
-    dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
+    dct:publisher <https://organisaties.overheid.nl/96832/Rijksdienst_voor_Identiteitsgegevens> ;
     dct:issued "2023-01-01"^^xsd:date ;
     ronl:source <http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/geboortedatum-geboorte> ;
-    ex:hasAttribute <geboortedatum-geboorte> .
+    ex:hasAttribute ronl:geboortecertificaat_datum_attribute .
 
-<geboortedatum-geboorte> a ex:Attribute ;
+ronl:geboortecertificaat_datum_attribute a ex:Attribute ;
     rdfs:label
         "Geboortedatum."@nl ,
         "Date of birth."@en ;
@@ -111,9 +113,9 @@ ronl:boolean_leeftijd18 a dcat:Dataset ;
     dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
     ronl:source <placeholder-do-not-use> ;
     dct:issued "2023-01-01"^^xsd:date ;
-    ex:hasAttribute <booleanleeftijd18> .
+    ex:hasAttribute ronl:boolean_leeftijd18_attribute .
 
-<booleanleeftijd18> a ex:Attribute ;
+ronl:boolean_leeftijd18_attribute a ex:Attribute ;
     rdfs:label
         "Leeftijd boolean."@nl ,
         "Age boolean."@en ;
