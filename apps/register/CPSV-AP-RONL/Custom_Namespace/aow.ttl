@@ -18,7 +18,7 @@
     foaf:name "Sociale Verzekeringsbank (SVB)"@nl ;
     foaf:name "Social insurance bank (SVB)"@en ;
     foaf:homepage <https://www.svb.nl/nl/> ;
-    foaf:uri <https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank> .
+    foaf:uri <https://identifier.overheid.nl/tooi/id/zbo/zb000143> .
 #
 # Public serivce area
 #

@@ -105,7 +105,7 @@ ronl:boolean_leeftijd18 a dcat:Dataset ;
         "Een dataset met een boolean waarde die aangeeft of iemand ouder is dan 18 jaar."@nl ,
         "A dataset containing a boolean value indicating whether someone is older than 18 years."@en ;
     skos:scopeNote
-        "Er is (nog) helemaal geen attribuut dat antwoord geeft op de vraag of iemand ouder is dan 18. Voor illustratie doeleinden toegevoegd hier."@nl ,
+        "Er is (nog) geen attribuut dat antwoord geeft op de vraag of iemand ouder is dan 18. Voor illustratie doeleinden toegevoegd hier."@nl ,
         "There is (still) no attribute that answers the question of whether someone is over 18. Added here for illustration purposes."@en ;
     dcat:accessURL <https://brp-api.github.io/Haal-Centraal-BRP-bevragen/> ;
     dct:publisher <https://identifier.overheid.nl/tooi/id/oorg/oorg10103> ;
