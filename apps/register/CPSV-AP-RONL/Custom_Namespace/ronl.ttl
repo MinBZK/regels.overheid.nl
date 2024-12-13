@@ -1,11 +1,16 @@
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
 @prefix ronl: <https://regels.overheid.nl/termen/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix dcat: <http://www.w3.org/ns/dcat#>.
 #
 # Declare ronl:Vocabulary as the overarching skos:ConceptScheme
 #
@@ -861,7 +866,7 @@ ronl:Leeftijd18 a skos:Concept ;
         "Het doel van deze term in het ronl vocabulaire is om nagenoeg volledige beschrijvingen van regelspecificatie sets te kunnen maken in de vorm van cpsv-ap:PublicService die geschikt zijn voor publicatie op regels.overheid.nl."@nl ,
         "The purpose of this term in the ronl vocabulary is to be able to create nearly complete descriptions of rule specification sets in the form of cpsv-ap:PublicService that are suitable for publication on regels.overheid.nl."@en ;
     skos:broader ronl:hasCriterionRequirementConcept ;
-    skos:inScheme ronl:Vocabulary .
+    skos:inScheme ronl:Vocabulary ;
     cpsv-ap:hasCriterionRequirement
         ronl:geboortecertificaat_datum_vereiste ,
         ronl:boolean_leeftijd18_vereiste ;
