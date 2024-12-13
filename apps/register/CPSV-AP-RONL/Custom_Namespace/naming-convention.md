@@ -1,5 +1,13 @@
 # Naming convention
 
+## Filename
+
+1. Preferred filename = `{UPL}.ttl` for Turtle, `{UPL}.rdf` for RDF/XML and `{UPL}.json` for JSON-LD.
+
+2. Where UPL is missing we use `{ronl:term}` as an alternative, and where `{ronl:term}` itself is missing we first add this `term` to the `ronl:` custom namespace.
+
+## Content
+
 1. No capital letters in `{name}` in `ronl:{name} a skos:Concept`.
     - example: `ronl:leeftijd18 a skos:Concept ;`
 
@@ -37,4 +45,8 @@
     - example: `ronl:analysis ronl:WetsanalyseJAS ;`
     - example: `ronl:method ronl:ConcordiaLegal ;`
 
-13. 
+13. `ronl:implements` is intended to indicate that a specific resource implements a certain rule specification, and is defined as `<{UPL}_regels>`
+    - example: `ronl:implements <aow_uitkering_regels>`, where `<aow_uitkering_regels> a cpsv-ap:Rule ;`
+
+14. If `{ronl:term} a dcat:Dataset ;` holds a single `ex:hasAttribute` item than attribute = `{ronl:term}_attribute`.
+    - example: `ronl:geboortecertificaat_datum a dcat:Dataset ;` => `ex:hasAttribute ronl:geboortecertificaat_datum_attribute .`
