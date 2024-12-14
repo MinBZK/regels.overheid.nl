@@ -3,7 +3,13 @@
         "@id": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-        "@id": "https://regels.overheid.nl/termen/Ingezetene",
+        "@id": "https://regels.overheid.nl/termen/Vocabulary"
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/hasCriterionRequirementConcept"
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/ingezetene",
         "@type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -85,11 +91,5 @@
                 "@id": "https://regels.overheid.nl/termen/Vocabulary"
             }
         ]
-    },
-    {
-        "@id": "https://regels.overheid.nl/termen/Vocabulary"
-    },
-    {
-        "@id": "https://regels.overheid.nl/termen/hasCriterionRequirementConcept"
     }
 ]
