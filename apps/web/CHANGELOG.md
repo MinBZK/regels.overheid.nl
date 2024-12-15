@@ -1,5 +1,11 @@
 # web
 
+## 3.47.0
+
+### Minor Changes
+
+- 2309f8c: Added human friendly Term page ui
+
 ## 3.46.0
 
 ### Minor Changes
