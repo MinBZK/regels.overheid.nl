@@ -62,6 +62,18 @@ export default async function TermenPage({ params }: { params: { slug: string[] 
     value: 'nl',
   });
 
+  const nlLabelNode = findNodeWithField({
+    input: rootNode?.['http://www.w3.org/2000/01/rdf-schema#label'] || {},
+    key: '@language',
+    value: 'nl',
+  });
+
+  const nlScopeNoteNode = findNodeWithField({
+    input: rootNode?.['http://www.w3.org/2004/02/skos/core#scopeNote'] || {},
+    key: '@language',
+    value: 'nl',
+  });
+
   const nlDefinitionNode = findNodeWithField({
     input: rootNode?.['http://www.w3.org/2004/02/skos/core#definition'] || {},
     key: '@language',
@@ -78,8 +90,12 @@ export default async function TermenPage({ params }: { params: { slug: string[] 
         <Typography variant="h1">{nlPrefLabel}</Typography>
         <Pill label="Term" className="justify-self-start" />
       </div>
+      <Typography variant="h2">Label</Typography>
+      <Typography>{nlLabelNode?.['@value']}</Typography>
       <Typography variant="h2">Definitie</Typography>
       <Typography>{nlDefinitionNode?.['@value']}</Typography>
+      <Typography variant="h2">Scope notitie</Typography>
+      <Typography>{nlScopeNoteNode?.['@value']}</Typography>
       <Typography variant="h3">Download</Typography>
       <div className="mt-4 flex gap-x-2">
         <Button component="a" href={`/termen/download/rdf${slug}`}>
