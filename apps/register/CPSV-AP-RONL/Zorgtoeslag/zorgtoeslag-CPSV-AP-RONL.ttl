@@ -85,7 +85,7 @@
     dct:issued "2023-06-12"^^xsd:date ;
     dct:modified "2024-11-06"^^xsd:date ;
     dct:language "nl" ;
-    cpsv-ap:implements <#BerekenRechtEnHoogteZorg> ;
+    ronl:implements <#BerekenRechtEnHoogteZorg> ;
     cpsv-ap:hasOutput [
         a cpsv-ap:Output ;
         dct:description "Besluit recht, duur en hoogte van de zorgtoeslag."@nl ;
