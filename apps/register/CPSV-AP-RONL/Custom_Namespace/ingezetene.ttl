@@ -1,6 +1,9 @@
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
 @prefix ronl: <https://regels.overheid.nl/termen/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 
 ronl:ingezetene a skos:Concept ;
     rdfs:label
@@ -18,6 +21,17 @@ ronl:ingezetene a skos:Concept ;
     skos:altLabel
         "Ingezetene_altLabel_2"@nl ,
         "Resident_altLabel_2"@en ;
+    cpsv-ap:hasLegalResource [
+        a cpsv-ap:LegalResource ;
+        dct:title
+            "Afdeling 1 Besluit basisregistratie personen"@nl ,
+            "Section 1 Decree on the Basic Registration of Persons"@en ;
+        dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0034306&hoofdstuk=2&afdeling=1&z=2024-04-01&g=2024-04-01> ;
+        dct:title
+            "Artikel 2.3 Wet basisregistratie personen"@nl ,
+            "Article 2.3 of the Personal Records Database Act"@en ;
+        dcat:accessURL <https://wetten.overheid.nl/jci1.3:c:BWBR0033715&hoofdstuk=2&afdeling=1&paragraaf=2&artikel=2.3&z=2023-10-01&g=2023-10-01> ;
+    ] ;
     skos:definition
         "De persoon bezit de Nederlandse of buitenlandse nationaliteit en beschikt over een verblijfsvergunning voor rechtmatig verblijf in Nederland."@nl ,
         "The resident possesses Dutch or foreign nationality and has a residence permit for lawful residence in the Netherlands."@en ;
