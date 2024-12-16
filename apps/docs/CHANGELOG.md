@@ -1,5 +1,11 @@
 # docs
 
+## 3.15.2
+
+### Patch Changes
+
+- c0a6f65: Added design documentation
+
 ## 3.15.1
 
 ### Patch Changes
