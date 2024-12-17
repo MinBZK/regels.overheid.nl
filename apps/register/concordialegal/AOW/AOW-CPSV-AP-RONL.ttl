@@ -81,7 +81,7 @@
     dct:issued "2023-06-12"^^xsd:date ;
     dct:modified "2024-12-09"^^xsd:date ;
     dct:language "nld" ;
-    cpsv-ap:implements <aow_leeftijd_regels> ;
+    ronl:implements <aow_leeftijd_regels> ;
     cpsv-ap:hasOutput [
         a cpsv-ap:Output ;
         dct:description "Vastgestelde AOW-leeftijd op peildatum."@nl ;
