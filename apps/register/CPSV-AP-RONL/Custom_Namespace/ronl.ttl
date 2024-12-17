@@ -15,12 +15,6 @@
 # Declare ronl:Vocabulary as the overarching skos:ConceptScheme
 #
 ronl:Vocabulary a skos:ConceptScheme ;
-    rdfs:label
-        "RONL Vocabulaire"@nl ,
-        "RONL Vocabulary"@en ;
-    rdfs:comment
-        "Vocabulaire voor regels, methoden en concepten in de context van overheidsregulering."@nl ,
-        "Vocabulary for rules, methods, and concepts in the context of government regulation."@en ;
     skos:prefLabel
         "Vocabulaire voor regels.overheid.nl"@nl ,
         "Vocabulary for regels.overheid.nl"@en ;
@@ -30,6 +24,9 @@ ronl:Vocabulary a skos:ConceptScheme ;
     skos:altLabel
         "ronl aangepaste naamruimte"@nl ,
         "ronl custom namespace"@en ;
+    skos:altLabel
+        "Vocabulaire voor regels, methoden en concepten in de context van overheidsregulering."@nl ,
+        "Vocabulary for rules, methods, and concepts in the context of government regulation."@en ;
     skos:definition
         "Een aangepaste naamruimte met onze eigen skos:ConceptScheme om te voorkomen dat informatie in elk afzonderlijk exemplaar van cpsv-ap:PublicService wordt herhaald."@nl ,
         "A custom namespace with our own skos:ConceptScheme to avoid repeating information in each individual cpsv-ap:PublicService instance."@en ;
@@ -44,19 +41,20 @@ ronl:Vocabulary a skos:ConceptScheme ;
     dct:license <http://creativecommons.org/licenses/by/4.0/> ;
     dct:source <https://regels.overheid.nl/waardelijsten> ;
     skos:hasTopConcept
+        ronl:SourceConcept ,
         ronl:AnalysisConcept ,
         ronl:MethodConcept ,
         ronl:SpecificationTypeConcept ,
         ronl:hasCriterionRequirementConcept ;
-    owl:versionInfo "Work In Progres - v5" .
+    owl:versionInfo "Work In Progres - v6" .
 #
-# Define ronl:source, ronl:analysis and ronl:method as RDF properties
+# Define ronl:SourceConcept as skos:Concept.
 #
-ronl:source a owl:ObjectProperty ;
+ronl:SourceConcept a skos:Concept ;
     skos:prefLabel
         "Gezaghebbende bron of herkomst"@nl ,
         "Authoritative source or origin"@en ;
-    rdfs:label
+    skos:altLabel
         "RONL Bron"@nl ,
         "RONL Source"@nl ;
     skos:altLabel
@@ -65,25 +63,22 @@ ronl:source a owl:ObjectProperty ;
     skos:definition
         "Verwijst naar de gezaghebbende, conceptuele herkomst van de regels of het model, zoals een officieel overheidsdocument of een verordening die de regelspecificatie set legitimeert"@nl ,
         "Points to the authoritative, conceptual origin of the rules or model, like an official government document or regulation that legitimizes the rule specification set."@en ;
-    rdfs:comment
-        "Is bedoeld om een gezaghebbende bron of herkomst aan te geven en kan worden gebruikt voor alle elementen in de ronl naamruimte."@nl ,
-        "Is intended to indicate an authoritative source or origin and can be used across resources in the ronl namespace."@en ;
     skos:scopeNote
         "Niet zelden zal er (nog) niet een openbare plek zijn om naar te verwijzen. In dat geval volstaat de link naar een algemene uitleg pagina die het dichtst in de buurt komt van de bedoelde bron."@nl ,
         "Quite often there will not be a public place to refer to (yet). In that case, the link to a general explanation page that comes closest to the intended source will suffice."@en ;
-    # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range dct:BibliographicResource ;
     skos:broader
-        ronl:AnalysisConcept,
+        ronl:AnalysisConcept ,
         ronl:MethodConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
-
-ronl:analysis a owl:ObjectProperty ;
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
+#
+# Define ronl:AnalysisConcept as skos:Concept.
+#
+ronl:AnalysisConcept a skos:Concept ;
     skos:prefLabel
         "Wetsanalyse eigenschap"@nl ,
         "Legislative analysis property"@en ;
-    rdfs:label
+    skos:altLabel
         "RONL Wetsanalyse"@nl ,
         "RONL Legislative analysis"@en ;
     skos:altLabel
@@ -92,18 +87,33 @@ ronl:analysis a owl:ObjectProperty ;
     skos:definition
         "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
         "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
+    skos:narrower
+        ronl:SourceConcept ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
+#
+# Define ronl:AnalysisProperty as RDF property.
+#
+ronl:AnalysisProperty a owl:ObjectProperty ;
+    rdfs:label
+        "RONL Wetsanalyse"@nl ,
+        "RONL Legislative analysis"@en ;
+#   Use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:AnalysisConcept ;
     rdfs:comment
         "Is een methodiek voor wetsanalyse."@nl ,
         "Is a methodology for legislative analysis."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:range ronl:AnalysisConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
-
-ronl:method a owl:ObjectProperty ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
+#
+# Define ronl:MethodConcept as skos:Concept.
+#
+ronl:MethodConcept a skos:Concept ;
     skos:prefLabel
         "Methodiek voor regelbeheer eigenschap"@nl ,
         "Methodology for rules mannagement property"@en ;
-    rdfs:label
+    skos:altLabel
         "RONL Methodiek voor Regelbeheer"@nl ,
         "RONL Methodology for Rules management"@nl ;
     skos:altLabel
@@ -112,12 +122,28 @@ ronl:method a owl:ObjectProperty ;
     skos:definition
         "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
         "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
+    skos:narrower
+        ronl:SourceConcept ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
+#
+# Define ronl:MethodProperty as RDF property.
+#
+ronl:MethodProperty a owl:ObjectProperty ;
+    rdfs:label
+        "RONL Methodiek voor Regelbeheer"@nl ,
+        "RONL Methodology for Rules management"@nl ;
+#   Use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:MethodConcept ;
     rdfs:comment
         "Is een methodiek voor regelbeheer."@nl ,
         "Is a methodology for rules management."@en ;
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;  # use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:range ronl:MethodConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> .
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
+
+# HIER VERDER / Dec 17th 2024
+
 #
 # Define ronl:implementedBy and ronl:implements as RDF property
 #
