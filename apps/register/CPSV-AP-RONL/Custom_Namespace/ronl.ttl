@@ -11,6 +11,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 #
 # Declare ronl:Vocabulary as the overarching skos:ConceptScheme
 #
@@ -47,6 +48,12 @@ ronl:Vocabulary a skos:ConceptScheme ;
         ronl:SpecificationTypeConcept ,
         ronl:hasCriterionRequirementConcept ;
     owl:versionInfo "Work In Progres - v6" .
+#
+# Define a custom property to explicitly link concepts to a JSON file.
+#
+ex:hasValueSet a rdf:Property ;
+    rdfs:label "Has Value Set" ;
+    rdfs:comment "Links a concept to a JSON file that defines all possible values for the concept." .
 #
 # Define ronl:SourceConcept as top-level concept.
 #
@@ -91,6 +98,7 @@ ronl:AnalysisConcept a skos:Concept ;
         ronl:WetsanalyseJAS ,
         ronl:WetsanalyseJRM ,
         ronl:FLINT ;
+    ex:hasValueSet <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
@@ -143,6 +151,7 @@ ronl:MethodConcept a skos:Concept ;
         ronl:RuleSpeak ,
         ronl:Sparkwise ,
         ronl:USoft ;
+    ex:hasValueSet <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
@@ -199,15 +208,12 @@ ronl:implements a owl:ObjectProperty ;
 # Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
 #
 ronl:SpecificationTypeConcept a skos:Concept ;
-    rdfs:label
-        "RONL Specificatie soorten"@nl ,
-        "RONL Specification types"@en ;
-    rdfs:comment
-        "Bevat alle soorten mogelijke documenten die bij elkaar én in onderlinge gekende relatie een complete regelspecificatie set omvatten."@nl ,
-        "Contains all types of possible documents that together and in known mutual relationships comprise a complete set of rule specifications."@en ;
     skos:prefLabel
         "Document soorten die in een regelspecificatie set kunnen voorkomen"@nl ,
         "Document types that can appear in a rule specification set"@en ;
+    skos:altLabel
+        "RONL Specificatie soorten"@nl ,
+        "RONL Specification types"@en ;
     skos:altLabel
         "specificatie soorten"@nl ,
         "specification types"@en ;
@@ -215,9 +221,11 @@ ronl:SpecificationTypeConcept a skos:Concept ;
         "Deze document specificatie soorten biedt een gestructureerd raamwerk voor het documenteren en communiceren van de regelspecificatie sets."@nl ,
         "These document specification types provides a structured framework for documenting and communicating the rule specification sets."@en ;
     skos:scopeNote
+        "Bevat alle soorten mogelijke documenten die bij elkaar én in onderlinge gekende relatie een complete regelspecificatie set omvatten."@nl ,
         "De lijst is afkomstig van De LegitiMaat, een werkmethode voor het doen van onderzoek naar het gebruik van algoritmes door overheidsorganisaties."@nl ,
+        "Contains all types of possible documents that together and in known mutual relationships comprise a complete set of rule specifications."@en ;
         "The list originates from De LegitiMaat, a working method for conducting research into the use of algorithms by government organizations."@en ;
-    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
+    ex:hasValueSet <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
     rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> ;
     skos:narrower
         ronl:FunctioneelOntwerp ,
@@ -237,13 +245,13 @@ ronl:WetsanalyseJAS a skos:Concept ;
     skos:prefLabel
         "Wetsanalyse (JAS)"@nl ,
         "Legislative Analysis (JAS)"@en ;
-    rdfs:comment
-        "Het juridisch analyse schema komt uit het boek Wetsanalyse, Voor een werkbare uitvoering van wetgeving met ICT, van de auteur(s): Anouschka Ausems, John Bulles en Mariette Lokin."@nl ,
-        "The legal analysis scheme comes from the book Legal Analysis, For a workable implementation of legislation with ICT (Dutch only), by the author(s): Anouschka Ausems, John Bulles and Mariette Lokin."@en ;
     skos:definition
         "Specificatie van het juridisch analyseschema (JAS) dat gebruikt wordt bij Wetsanalyse en waarin verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn."@nl ,
         "Specification of the legal analysis scheme (JAS) used in legislative analysis, in which various legal elements that occur in legislation are arranged in a coherent manner."@en ;
-    rdfs:seeAlso <https://regels.overheid.nl/publicaties/wetsanalyse> ;
+    skos:editorialNote
+        "Het juridisch analyse schema komt uit het boek Wetsanalyse, Voor een werkbare uitvoering van wetgeving met ICT, van de auteur(s): Anouschka Ausems, John Bulles en Mariette Lokin."@nl ,
+        "The legal analysis scheme comes from the book Legal Analysis, For a workable implementation of legislation with ICT (Dutch only), by the author(s): Anouschka Ausems, John Bulles and Mariette Lokin."@en ;
+    rdfs:seeAlso <https://regels.overheid.nl/standaarden/wetsanalyse> ;
     skos:broader ronl:AnalysisConcept ;
     skos:narrower:
         ronl:Rechtssubject ,
@@ -265,13 +273,13 @@ ronl:WetsanalyseJRM a skos:Concept ;
     skos:prefLabel
         "Wetsanalyse (JRM)"@nl ,
         "Legislative Analysis (JRM)"@en ;
-    rdfs:comment
-        "In de periode zomer 2021 zomer 2024 is Wetsanalyse (JAS) op een behoorlijk aantal praktijktoepassingen uitgetest. De voornaamste conclusies van die praktijktoepassingen, doorontwikkeling en voortschrijdend inzicht zijn de basis van JRM."@nl ,
-        "In the period summer 2021 summer 2024, Legal Analysis (JAS) was tested on a considerable number of practical applications. The main conclusions of these practical applications, further development and progressive insight are the basis of JRM."@en ;
     skos:definition
         "Specificatie van het juridisch referentiemodel (JRM) dat met scenario's beschrijft hoe een burger of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering."@nl ,
         "Specification of the Legal Reference Model (JRM) that describes in scenarios how a citizen or company experiences a specific piece of legislation or regulations or goes through it in the implementation of the law."@en ;
-    rdfs:seeAlso <https://minbzk.github.io/wetsuitvoering/> ;
+    skos:editorialNote
+        "In de periode zomer 2021 zomer 2024 is Wetsanalyse (JAS) op een behoorlijk aantal praktijktoepassingen uitgetest. De voornaamste conclusies van die praktijktoepassingen, doorontwikkeling en voortschrijdend inzicht zijn de basis van JRM."@nl ,
+        "In the period summer 2021 summer 2024, Legal Analysis (JAS) was tested on a considerable number of practical applications. The main conclusions of these practical applications, further development and progressive insight are the basis of JRM."@en ;
+    rdfs:seeAlso <https://regels.overheid.nl/standaarden/wetsuitvoering> ;
     skos:broader ronl:AnalysisConcept ;
     skos:inScheme ronl:Vocabulary .
 
@@ -279,12 +287,12 @@ ronl:FLINT a skos:Concept ;
     skos:prefLabel
         "FLINT"@nl ,
         "FLINT"@en ;
-    rdfs:comment
-        "Dit is werk in uitvoering. Als je vragen of opmerkingen hebt, horen we het graag. Als je wilt meedoen nog liever! We werken aan een internationale standaard voor het werken met normen."@nl ,
-        "This is a work in progress. If you have any questions or comments, we would love to hear from you. If you would like to participate, even better! We are working on an international standard for working with standards."@en ;
     skos:definition
         "FLINT is onderdeel van een protocol voor het uitvoeren van normatieve taken (Calculemus) en een expliciete taal om interpretaties van juridische bronnen vast te leggen (FLINT)."@nl ,
         "FLINT is part of a protocol for performing normative tasks (Calculemus) and an explicit language for recording interpretations of legal sources (FLINT)."@en ;
+    skos:scopeNote
+        "Dit is werk in uitvoering. Als je vragen of opmerkingen hebt, horen we het graag. Als je wilt meedoen nog liever! We werken aan een internationale standaard voor het werken met normen."@nl ,
+        "This is a work in progress. If you have any questions or comments, we would love to hear from you. If you would like to participate, even better! We are working on an international standard for working with standards."@en ;
     rdfs:seeAlso <https://regels.overheid.nl/docs/methods/flint/INTRODUCTIE> ;
     skos:broader ronl:AnalysisConcept ;
     skos:inScheme ronl:Vocabulary .
@@ -509,7 +517,7 @@ ronl:Communicatiemiddel a skos:Concept ;
     skos:definition
         "De brieven die de individuele persoon kan krijgen hierover (besluiten in de zin van artikel 1:3 Awb)."@nl ,
         "The letters that the individual can receive about this (decisions within the meaning of article 1:3 Awb)"@en ;
-    ronl:source <https://wetten.overheid.nl/jci1.3:c:BWBR0005537&hoofdstuk=1&titeldeel=1.1&artikel=1:3&z=2024-11-08&g=2024-11-08> ;
+    dcterms:source <https://wetten.overheid.nl/jci1.3:c:BWBR0005537&hoofdstuk=1&titeldeel=1.1&artikel=1:3&z=2024-11-08&g=2024-11-08> ;
     rdfs:seeAlso <https://gegevensbijbesluiten.overheid.nl/besluit> ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
@@ -553,6 +561,9 @@ ronl:Overig a skos:Concept ;
         "Contains relevant information about organization, service and/or product, process or otherwise, that for compelling reasons does not fit into the available ronl:SpecificationTypeConcept concepts."@en ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
+
+# TOT HIER - Dec 18 2024
+
 #
 # Hierarchical occurring concepts within ronl:WetsanalyseJAS
 #
