@@ -834,6 +834,8 @@ ronl:Brondefinitie a skos:Concept ;
 #
 # HIER VERDER - DEC 18
 #
+# EERST MIM NADER BESCHOUWEN
+#
 ronl:Ingezetene a skos:Concept ;
     skos:prefLabel
         "Ingezetene Nederlandse Staat"@nl ,
