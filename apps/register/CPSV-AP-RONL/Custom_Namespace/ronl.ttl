@@ -13,7 +13,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 #
-# Declare ronl:Vocabulary as the overarching skos:ConceptScheme
+#################################################################################
+#                                                                               #
+# CONCEPT SCHEME                                                                #
+#                                                                               #
+#################################################################################
+#
+# Define ronl:vocabulary as the overarching skos:conceptscheme
 #
 ronl:Vocabulary a skos:ConceptScheme ;
     skos:prefLabel
@@ -52,10 +58,20 @@ ronl:Vocabulary a skos:ConceptScheme ;
 # Define a custom property to explicitly link concepts to a JSON file.
 #
 ex:hasValueSet a rdf:Property ;
-    rdfs:label "Has Value Set" ;
-    rdfs:comment "Links a concept to a JSON file that defines all possible values for the concept." .
+    rdfs:label
+        "Heeft waardelijst"@nl ,
+        "Has Value Set"@en ;
+    rdfs:comment
+        "Koppelt een concept aan een JSON-bestand dat alle mogelijke waarden voor het concept definieert."@nl ,
+        "Links a concept to a JSON file that defines all possible values for the concept."@en .
 #
-# Define ronl:SourceConcept as top-level concept.
+#################################################################################
+#                                                                               #
+# CONCEPTS                                                                      #
+#                                                                               #
+#################################################################################
+#
+# Define SourceConcept as top-level concept.
 #
 ronl:SourceConcept a skos:Concept ;
     skos:prefLabel
@@ -102,20 +118,6 @@ ronl:AnalysisConcept a skos:Concept ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
-# Define ronl:AnalysisProperty as RDF property.
-#
-ronl:AnalysisProperty a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Wetsanalyse"@nl ,
-        "RONL Legislative analysis"@en ;
-#   Use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range ronl:AnalysisConcept ;
-    rdfs:comment
-        "Is een methodiek voor wetsanalyse."@nl ,
-        "Is a methodology for legislative analysis."@en ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
-#
 # Define MethodConcept as top-level concept
 #
 ronl:MethodConcept a skos:Concept ;
@@ -154,6 +156,80 @@ ronl:MethodConcept a skos:Concept ;
     ex:hasValueSet <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
+#
+# Define SpecificationTypeConcept as top-level concept
+#
+ronl:SpecificationTypeConcept a skos:Concept ;
+    skos:prefLabel
+        "Document soorten die in een regelspecificatie set kunnen voorkomen"@nl ,
+        "Document types that can appear in a rule specification set"@en ;
+    skos:altLabel
+        "RONL Specificatie soorten"@nl ,
+        "RONL Specification types"@en ;
+    skos:altLabel
+        "specificatie soorten"@nl ,
+        "specification types"@en ;
+    skos:definition
+        "Deze document specificatie soorten biedt een gestructureerd raamwerk voor het documenteren en communiceren van de regelspecificatie sets."@nl ,
+        "These document specification types provides a structured framework for documenting and communicating the rule specification sets."@en ;
+    skos:scopeNote
+        "Bevat alle soorten mogelijke documenten die bij elkaar én in onderlinge gekende relatie een complete regelspecificatie set omvatten."@nl ,
+        "De lijst is afkomstig van De LegitiMaat, een werkmethode voor het doen van onderzoek naar het gebruik van algoritmes door overheidsorganisaties."@nl ,
+        "Contains all types of possible documents that together and in known mutual relationships comprise a complete set of rule specifications."@en ;
+        "The list originates from De LegitiMaat, a working method for conducting research into the use of algorithms by government organizations."@en ;
+    ex:hasValueSet <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
+    rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> ;
+    skos:narrower
+        ronl:FunctioneelOntwerp ,
+        ronl:SoftwareCode ,
+        ronl:UXDesign ,
+        ronl:Communicatiemiddel ,
+        ronl:Werkinstructie ,
+        ronl:Kwaliteitseisen ,
+        ronl:BestuurlijkeInformatie ,
+        ronl:Overig ;
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
+#
+# Define hasCriterionRequirementConcept as top-level concept
+#
+ronl:hasCriterionRequirementConcept a skos:Concept ;
+    skos:prefLabel
+        "Criterium Vereiste Concept"@nl ,
+        "Criterion Requirement Concept"@en ;
+    skos:definition
+        "Dit concept vertegenwoordigt een relatie tussen een openbare dienst en een criterium of vereiste waaraan moet worden voldaan om die dienst te kunnen verlenen. Met andere woorden, cpsv-ap:hasCriterionRequirement geeft aan dat een specifieke openbare dienst (bijv. 'Een verblijfsvergunning verkrijgen') een specifiek criterium of vereiste heeft (bijv. 'Bewijs van inkomen') waaraan moet worden voldaan voordat de dienst kan worden verleend."@nl ,
+        "This concept represents a relationship between a public service and a criterion or requirement that must be met in order to provide that service. In other words, cpsv-ap:hasCriterionRequirement indicates that a specific public service (e.g. 'Obtain a residence permit') has a specific criterion or requirement (e.g. 'Proof of income') that must be met before the service can be provided."@en ;
+    skos:scopeNote
+        "De eigenschap cpsv-ap:hasCriterionRequirement is gedefinieerd als onderdeel van het Core Public Service Vocabulary Application Profile (CPSV-AP), een standaard die is ontwikkeld door de Europese Unie voor het beschrijven van openbare diensten en de daaraan gerelateerde concepten."@nl ,
+        "The property cpsv-ap:hasCriterionRequirement is defined as part of the Core Public Service Vocabulary Application Profile (CPSV-AP), which is a standard developed by the European Union for describing public services and their related concepts."@en ;
+    skos:narrower
+        ronl:Ingezetene,
+        ronl:Leeftijd18,
+        ronl:Betalingsregeling ,
+        ronl:Detentie ;
+    skos:topConceptOf ronl:Vocabulary ;
+    skos:inScheme ronl:Vocabulary .
+#
+#################################################################################
+#                                                                               #
+# RDF PROPERTIES                                                                #
+#                                                                               #
+#################################################################################
+#
+# Define ronl:AnalysisProperty as RDF property.
+#
+ronl:AnalysisProperty a owl:ObjectProperty ;
+    rdfs:label
+        "RONL Wetsanalyse"@nl ,
+        "RONL Legislative analysis"@en ;
+#   Use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:AnalysisConcept ;
+    rdfs:comment
+        "Is een methodiek voor wetsanalyse."@nl ,
+        "Is a methodology for legislative analysis."@en ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
 #
 # Define ronl:MethodProperty as RDF property.
 #
@@ -205,39 +281,11 @@ ronl:implements a owl:ObjectProperty ;
     rdfs:range cpsv-ap:RuleSpecification ;
     owl:inverseOf ronl:implementedBy .
 #
-# Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
-#
-ronl:SpecificationTypeConcept a skos:Concept ;
-    skos:prefLabel
-        "Document soorten die in een regelspecificatie set kunnen voorkomen"@nl ,
-        "Document types that can appear in a rule specification set"@en ;
-    skos:altLabel
-        "RONL Specificatie soorten"@nl ,
-        "RONL Specification types"@en ;
-    skos:altLabel
-        "specificatie soorten"@nl ,
-        "specification types"@en ;
-    skos:definition
-        "Deze document specificatie soorten biedt een gestructureerd raamwerk voor het documenteren en communiceren van de regelspecificatie sets."@nl ,
-        "These document specification types provides a structured framework for documenting and communicating the rule specification sets."@en ;
-    skos:scopeNote
-        "Bevat alle soorten mogelijke documenten die bij elkaar én in onderlinge gekende relatie een complete regelspecificatie set omvatten."@nl ,
-        "De lijst is afkomstig van De LegitiMaat, een werkmethode voor het doen van onderzoek naar het gebruik van algoritmes door overheidsorganisaties."@nl ,
-        "Contains all types of possible documents that together and in known mutual relationships comprise a complete set of rule specifications."@en ;
-        "The list originates from De LegitiMaat, a working method for conducting research into the use of algorithms by government organizations."@en ;
-    ex:hasValueSet <https://regels.overheid.nl/waardelijsten/ronl:specification-type.json> ;
-    rdfs:seeAlso <https://regels.overheid.nl/publicaties/legitimaat#de-legitimaat-documentenlijst> ;
-    skos:narrower
-        ronl:FunctioneelOntwerp ,
-        ronl:SoftwareCode ,
-        ronl:UXDesign ,
-        ronl:Communicatiemiddel ,
-        ronl:Werkinstructie ,
-        ronl:Kwaliteitseisen ,
-        ronl:BestuurlijkeInformatie ,
-        ronl:Overig ;
-    skos:topConceptOf ronl:Vocabulary ;
-    skos:inScheme ronl:Vocabulary .
+#################################################################################
+#                                                                               #
+# INDIVIDUAL CONCEPTS                                                           #
+#                                                                               #
+#################################################################################
 #
 # Define individual concepts within the AnalysisConcept scheme
 # 
@@ -561,9 +609,6 @@ ronl:Overig a skos:Concept ;
         "Contains relevant information about organization, service and/or product, process or otherwise, that for compelling reasons does not fit into the available ronl:SpecificationTypeConcept concepts."@en ;
     skos:broader ronl:SpecificationTypeConcept ;
     skos:inScheme ronl:Vocabulary .
-
-# TOT HIER - Dec 18 2024
-
 #
 # Hierarchical occurring concepts within ronl:WetsanalyseJAS
 #
@@ -574,7 +619,7 @@ ronl:Rechtssubject a skos:Concept ;
     skos:definition
         "Een rechtssubject is de drager van rechten en plichten. Het is een partij in een rechtsbetrekking."@nl ,
         "A legal subject is the bearer of rights and obligations. It is a party in a legal relationship."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van een rechtssubject kunnen zijn: Wie heeft het recht? Wie heeft de plicht? Van wie is een rechtsobject? Bij wie hoort een waarde?"@nl ,
         "Questions for finding a legal subject can be: Who has the right? Who has the duty? Who owns a legal object? Who owns a value?"@en ;
     skos:scopeNote
@@ -590,7 +635,7 @@ ronl:Rechtsobject a skos:Concept ;
     skos:definition
         "Een rechtsobject is het voorwerp van een rechtsbetrekking en/of rechtsfeit. Een rechtsobject kan zowel een fysieke (bijvoorbeeld een personenauto of een huis) als een niet-fysieke verschijningsvorm (bijvoorbeeld medische zorg) hebben."@nl ,
         "A legal object is the subject of a legal relationship and/or legal fact. A legal object can have both a physical (for example a car or a house) and a non-physical (for example medical care) manifestation."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van een rechtsobject kunnen zijn: Wat is het voorwerp van een recht of plicht? Waar is het rechtssubject eigenaar of houder van? Waar heeft een waarde betrekking op? Waarover is iets verschuldigd?"@nl ,
         "Questions for finding a legal object can be: What is the object of a right or obligation? What is the legal subject the owner or holder of? What does a value relate to? What is something owed for?"@en ;
     skos:scopeNote
@@ -606,7 +651,7 @@ ronl:Rechtsbetrekking a skos:Concept ;
     skos:definition
         "Een rechtsbetrekking is een juridische relatie tussen twee rechtssubjecten en beschrijft een specifieke juridische toestand tussen deze rechtssubjecten. Een van deze rechtssubjecten heeft een plicht en de ander het bijbehorend recht. De algemene juridische toestand van een rechtssubject is de verzameling van alle specifieke rechtsbetrekkingen waarin dit rechtssubject als rechthebbende of plichthebbende partij optreedt."@nl ,
         "A legal relationship is a legal relationship between two legal subjects and describes a specific legal situation between these legal subjects. One of these legal subjects has an obligation and the other the corresponding right. The general legal situation of a legal subject is the collection of all specific legal relationships in which this legal subject acts as a right holder or obligated party."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van een rechtsbetrekking kunnen zijn: Hoe verhouden twee rechtssubjecten zich tot elkaar? Welke relatie(s) hebben twee rechtssubjecten met elkaar?"@nl ,
         "Questions for finding a legal relationship can be: How do two legal entities relate to each other? What relationship(s) do two legal entities have with each other?"@en ;
     skos:scopeNote
@@ -622,7 +667,7 @@ ronl:Rechtsfeit a skos:Concept ;
     skos:definition
         "Een rechtsfeit is een handeling of gebeurtenis die, of tijdsverloop dat een wijziging in de juridische toestand teweegbrengt. Aan een rechtsfeit zijn dus rechtsgevolgen verbonden die een rechtsbetrekking creëren, wijzigen of beëindigen."@nl ,
         "A legal fact is an act or event, or a passage of time, that brings about a change in the legal situation. A legal fact therefore has legal consequences that create, change or end a legal relationship."@en ;
-    rdfs:comment
+    skos:note
         "Een vraag voor het vinden van een rechtsfeit kan zijn: Wat is de gebeurtenis of handeling die, of het tijdsverloop dat gevolgen heeft voor de rechtsbetrekking?"@nl ,
         "A question for finding a legal fact can be: What is the event or action, or the passage of time that has consequences for the legal relationship?"@en ;
     skos:scopeNote
@@ -638,7 +683,7 @@ ronl:Voorwaarde a skos:Concept ;
     skos:definition
         "Een voorwaarde is een conditie die beschrijft aan welke omstandigheid voldaan moet zijn voor het intreden van een rechtsgevolg. Een voor waarde kan ook betrekking hebben op een rechtssubject of op een waarde die bij een rechtsobject of bij een afleidingsregel hoort. Een voorwaarde bevat vaste elementen, die in de logica operanden en operatoren worden genoemd. Operanden kunnen rechtssubjecten of rechtsobjecten, eigenschappen van rechtssubjecten of rechtsobjecten, berekeningen of waarden zijn. Een operator is de beschrijving van een vergelijking die in de voorwaarde voorkomt, zoals 'groter dan', 'kleiner dan' en 'gelijk aan'."@nl ,
         "A condition is a condition that describes which circumstance must be met for a legal consequence to occur. A condition can also relate to a legal subject or to a value that belongs to a legal object or to a derivation rule. A condition contains fixed elements, which in logic are called operands and operators. Operands can be legal subjects or legal objects, properties of legal subjects or legal objects, calculations or values. An operator is the description of a comparison that occurs in the condition, such as 'greater than', 'less than' and 'equal to'."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van een voorwaarde kunnen zijn: Welke eisen worden gesteld aan een rechtssubject, een rechtsobject, een rechtsbetrekking of een rechtsfeit? Onder welke omstandigheden geldt een waarde bij een rechtsobject?"@nl ,
         "Questions for finding a condition can be: What requirements are set for a legal subject, a legal object, a legal relationship or a legal fact? Under what circumstances does a value apply to a legal object?"@en ;
     skos:scopeNote
@@ -654,7 +699,7 @@ ronl:Afleidingsregel a skos:Concept ;
     skos:definition
         "Een afleidingsregel is een regel die nieuwe feiten of waarden creëert met behulp van bestaande feiten of waarden. Te denken valt aan regels die bepalen of een recht bestaat (een beslisregel), of die de hoogte en duur van een recht bepalen (een rekenregel). De variabele die vastgesteld wordt door de afleidingsregels, noemen we uitvoervariabele. Bij een rekenregel is dit de uitkomst van de rekensom. Bij een beslisregel is dit een conclusie als ja/nee, of waar/onwaar. De variabelen die gebruikt worden voor de vaststelling, noemen we invoervariabelen. In geval van een rekenregel zijn dit in feite de getallen waarmee wordt gerekend. Als sprake is van vaste getallen of waarden in een afleidingsregel die over een periode gelijk zijn voor alle rechtssubjecten en rechtsobjecten, noemen we deze parameters. Afleidingsregels worden ook gebruikt om te bepalen of een rechtssubject of rechtsobject tot een bepaalde doelgroep behoort; het gaat dan om het afleiden van specialisaties van rechtssubjecten en rechtsobjecten op basis van bepaalde kenmerken."@nl ,
         "A derivation rule is a rule that creates new facts or values ​​using existing facts or values. Examples include rules that determine whether a right exists (a decision rule), or that determine the amount and duration of a right (a calculation rule). The variable that is determined by the derivation rules is called an output variable. In the case of a calculation rule, this is the outcome of the calculation. In the case of a decision rule, this is a conclusion such as yes/no or true/false. The variables that are used for the determination are called input variables. In the case of a calculation rule, these are in fact the numbers that are used for the calculation. If there are fixed numbers or values ​​in a derivation rule that are the same for all legal subjects and legal objects over a period of time, we call these parameters. Derivation rules are also used to determine whether a legal subject or legal object belongs to a specific target group; this involves deriving specializations of legal subjects and legal objects based on specific characteristics."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van een afleidingsregel kunnen zijn: Hoe wordt een variabele berekend of afgeleid? Hoe wordt een specifiek rechtssubject of rechtsobject bepaald?"@nl ,
         "Questions for finding a derivation rule can be: How is a variable calculated or derived? How is a specific legal subject or legal object determined?"@en ;
     skos:scopeNote
@@ -673,7 +718,7 @@ ronl:VariabeleWaarde a skos:Concept ;
     skos:definition
         "Een variabele is een kenmerk van een rechtssubject, rechtsobject, rechtsbetrekking of rechtsfeit dat voor verschillende instanties daarvan (dus voor specifieke personen, zaken, relaties, handelingen of gebeurtenissen in de werkelijkheid) een andere waarde kan hebben. Een variabelewaarde geeft de waarde aan die een bepaalde variabele kan hebben. De wijze waarop een variabelewaarde is omschreven in wetgeving kan een beperking in de mogelijke waarden voor een variabele inhouden, of een voorwaarde aan een variabele stellen. Variabele en variabelewaarde zijn verschillende klassen, maar vanwege de nauwe samenhang beschouwen we ze hier tezamen."@nl ,
         "A variable is a characteristic of a legal subject, legal object, legal relationship or legal fact that can have a different value for different instances thereof (i.e. for specific persons, matters, relationships, actions or events in reality). A variable value indicates the value that a certain variable can have. The way in which a variable value is described in legislation can contain a restriction in the possible values ​​for a variable, or impose a condition on a variable. Variable and variable value are different classes, but because of the close connection we consider them together here."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van een variabele kunnen zijn: Wat zijn de specifieke kenmerken van een rechtsobject, rechtssubject, rechtsbetrekking of rechtsfeit? Welke eigenschappen worden genoemd? Welke waarde heeft een rechtsobject? Hoe lang of hoe hoog is een rechtsobject? Een variabelewaarde kan worden gedetecteerd met vragen als: Welk bedrag, welke duur of welke hoogte hoort bij deze variabele?"@nl ,
         "Questions for finding a variable can be: What are the specific characteristics of a legal object, legal subject, legal relationship or legal fact? Which properties are mentioned? What value does a legal object have? How long or how high is a legal object? A variable value can be detected with questions such as: What amount, what duration or what height belongs to this variable?"@en ;
     skos:scopeNote
@@ -698,7 +743,7 @@ ronl:ParameterWaarde a skos:Concept ;
     skos:definition
         "Een parameter is een beschrijving van een waarde die gelijk is voor alle rechtssubjecten, rechtsobjecten, rechtsbetrekkingen en rechtsfeiten. Vanwege de stabiele waarde wordt een parameter ook wel constante genoemd. Parameters worden gebruikt in afleidingsregels en voorwaarden. In de regel geldt een parameter voor een bepaalde periode, bijvoorbeeld een kalenderjaar, maar hij kan ook voor een onbepaalde duur gelden (bijvoorbeeld voor de hele geldigheidsduur van de wettelijke regel). De waarde die een parameter in de desbetreffende periode heeft, is een parameterwaarde. De parameter is dus de omschrijving van de waarde, en de parameterwaarde is de concrete waarde die daaraan is toegekend. Ook deze klassen beschouwen we tezamen vanwege de nauwe samenhang tussen beide."@nl ,
         "A parameter is a description of a value that is the same for all legal subjects, legal objects, legal relationships and legal facts. Because of its stable value, a parameter is also called a constant. Parameters are used in derivation rules and conditions. As a rule, a parameter applies for a certain period, for example a calendar year, but it can also apply for an indefinite period (for example for the entire validity period of the legal rule). The value that a parameter has in the relevant period is a parameter value. The parameter is therefore the description of the value, and the parameter value is the concrete value that is assigned to it. We also consider these classes together because of the close relationship between the two."@en ;
-    rdfs:comment
+    skos:note
         "Een vraag voor het vinden van een parameter of parameterwaarde kan zijn: Is sprake van een waarde die gedurende een periode een vaste hoogte heeft voor alle rechtssubjecten en rechtsobjecten?"@nl ,
         "A question for finding a parameter or parameter value could be: Is there a value that has a fixed height for all legal subjects and legal objects over a period of time?"@en ;
     skos:scopeNote
@@ -714,7 +759,7 @@ ronl:Operator a skos:Concept ;
     skos:definition
         "Een operator is een woord, een combinatie van woorden of een teken dat een rekenkundige bewerking, een samengestelde voorwaarde, een gelijkstelling of een vergelijking van twee waarden of berekeningen uitdrukt. Een operator beschrijft hoe verschillende elementen van een berekening, voorwaarde of samengestelde voorwaarde met elkaar verbonden worden om tot een resultaat te leiden. Er zijn verschillende typen operatoren: rekenkundige operatoren: deze voeren een rekenkundige bewerking uit, zoals bijvoorbeeld optellen, aftrekken en vermenigvuldigen; vergelijkingsoperatoren: deze vergelijken variabelen met elkaar of een variabele met een parameter (variabele is groter dan parameter of variabele is kleiner dan parameter); logische operatoren: deze bepalen bij samengestelde voorwaarden of aan (tenminste) één van de voorwaarden moet worden voldaan (OF, disjunctie, alternatief) of aan alle voorwaarden (EN, conjunctie, cumulatief). Ook kan er sprake zijn van een voorwaarde waaraan niet voldaan mag zijn (NIET, negatie)."@nl ,
         "An operator is a word, a combination of words or a symbol that expresses an arithmetic operation, a compound condition, an equation or a comparison of two values ​​or calculations. An operator describes how different elements of a calculation, condition or compound condition are connected to each other to produce a result. There are different types of operators: arithmetic operators: these perform an arithmetic operation, such as addition, subtraction and multiplication; comparison operators: these compare variables with each other or a variable with a parameter (variable is greater than parameter or variable is less than parameter); logical operators: these determine in compound conditions whether (at least) one of the conditions must be met (OR, disjunction, alternative) or all of the conditions (AND, conjunction, cumulative). There may also be a condition that may not be met (NOT, negation)."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van operatoren zijn: Hoe worden variabelen of parameters verbonden in een berekening? In welke verhouding staan voorwaarden tot elkaar? Welke vergelijking wordt in een voorwaarde gemaakt?"@nl ,
         "Questions for finding operators are: How are variables or parameters connected in a calculation? How are conditions related to each other? What comparison is made in a condition?"@en ;
     skos:scopeNote
@@ -730,7 +775,7 @@ ronl:Tijdsaanduiding a skos:Concept ;
     skos:definition
         "Een tijdsaanduiding is een omschrijving van een tijdstip of tijdvak. Een tijdsaanduiding is nodig om de geldigheid van een rechtsbetrekking te duiden, om een tijdsverloop met rechtsgevolg uit te drukken of als variabele bij een specifiek rechtssubject of rechtsobject. Ook kan een tijdsaanduiding (met name een tijdstip) een parameterwaarde zijn. Een voorbeeld is een peildatum die wordt vergeleken met een andere datum (als variabele) in een voorwaarde. De tijdsaanduiding is als aparte klasse opgenomen, hoewel deze ook beschouwd zou kunnen worden als een verduidelijking van de klassen variabele of parameter. Gelet op het belang van de tijdsaanduiding voor het bepalen van de duur van een rechtsbetrekking of het tijdstip van een tijdsverloop met rechtsgevolgen, is tijdsaanduiding als aparte klasse opgenomen. Een formulering kan zowel tot de klasse tijdsaanduiding als tot de klasse parameter of variabele behoren. Als dat zich voordoet, kiezen we bij de analyse voor de meest specifieke klasse, dus de tijdsaanduiding."@nl ,
         "A time indication is a description of a point in time or period. A time indication is necessary to indicate the validity of a legal relationship, to express a passage of time with legal consequences or as a variable for a specific legal subject or legal object. A time indication (particularly a point in time) can also be a parameter value. An example is a reference date that is compared with another date (as a variable) in a condition. The time indication is included as a separate class, although it could also be considered as a clarification of the classes variable or parameter. Given the importance of the time indication for determining the duration of a legal relationship or the point in time of a passage of time with legal consequences, the time indication is included as a separate class. A formulation can belong to both the time indication class and the parameter or variable class. If this is the case, we opt for the most specific class, i.e. the time indication, in the analysis."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van tijdsaanduidingen kunnen zijn: Wanneer, op welk moment? Sinds wanneer of tot wanneer, vanaf welk moment of tot welk moment?"@nl ,
         "Questions for finding time indications can be: When, at what time? Since when or until when, from what time or until what time?"@en ;
     skos:scopeNote
@@ -746,7 +791,7 @@ ronl:Plaatsaanduiding a skos:Concept ;
     skos:definition
         "Een plaatsaanduiding is een plaats of een gebied waar bepaalde wetgeving betrekking op heeft. Zij bepaalt het toepassingsbereik van de regels voor rechtssubjecten, rechtsobjecten, rechtsbetrekkingen of rechtsfeiten. De meeste wetgeving geldt voor heel Nederland en heeft daarom geen expliciete plaatsaanduiding. Zodra het werkingsgebied beperkter of ruimer moet zijn, wordt in wetgeving wel een expliciete plaatsaanduiding opgenomen. Net als de tijdsaanduiding is de plaatsaanduiding apart opgenomen in het juridisch analyseschema, hoewel deze gezien zou kunnen worden als een variabele of parameter. Een formulering in de wetgeving kan zowel tot de klasse plaatsaanduiding als tot de klasse parameter of variabele behoren. Als dit zich voordoet, kiezen we voor de meest specifieke klasse, namelijk de plaatsaanduiding."@nl ,
         "A place designation is a place or area to which certain legislation applies. It determines the scope of application of the rules for legal subjects, legal objects, legal relationships or legal facts. Most legislation applies to the whole of the Netherlands and therefore does not have an explicit place designation. As soon as the scope of application must be more limited or broader, an explicit place designation is included in legislation. Just like the time designation, the place designation is included separately in the legal analysis scheme, although it could be seen as a variable or parameter. A formulation in legislation can belong to both the place designation class and the parameter or variable class. If this occurs, we opt for the most specific class, namely the place designation."@en ;
-    rdfs:comment
+    skos:note
         "Een vraag voor het vinden van een plaatsaanduiding kan zijn: Waar (voor welk gebied of welke plaats) geldt de wettelijke regel (niet)?"@nl ,
         "A question for finding a place designation could be: Where (for which area or place) does the legal rule (not) apply?"@en ;
     skos:scopeNote
@@ -762,7 +807,7 @@ ronl:Delegatiebevoegdheid a skos:Concept ;
     skos:definition
         "Een delegatiebevoegdheid maakt het mogelijk of schrijft voor dat (nadere) regels worden gesteld over een rechtsbetrekking, rechtsfeit of afleidingsregel. Met delegatie-invulling duiden we de regeling of het regelingsonderdeel aan waarin de delegatiebevoegdheid is gebruikt. Hoewel de delegatiebevoegdheid en de delegatie-invulling aparte klassen zijn, beschouwen we ze hier gezamenlijk vanwege hun nauwe samenhang. Een delegatiebevoegdheid wordt altijd aan een specifiek rechtssubject toegekend; dat kan de regering zijn (bij een amvb, vastgesteld door de Koning) of een minister (bij een ministeriële regeling). Het kan gaan om verplichte of een facultatieve delegatie (zie onder het kopje Uitdrukkingswijze). In het eerste geval moeten de in de wet genoemde onderwerpen worden uitgewerkt in een lagere regeling. In het tweede geval is er een keuze om de wettelijke regels al dan niet uit te werken. Ook is vaak subdelegatie mogelijk. Dat betekent dat bepalingen in een amvb verder kunnen worden uitgewerkt in een ministeriële regeling (zie ook bij uitdrukkingswijze). Het herkennen van delegatiebevoegdheden is vooral van belang voor het bepalen van het werkgebied van de Wets analyse. Als de delegatiebevoegdheid daadwerkelijk is gebruikt, moet de op grond daarvan vastgestelde gedelegeerde regelgeving in het werkgebied worden betrokken. De delegerende wet bevat logischerwijs geen concrete verwijzingen naar de delegatie-invulling. Die is immers op het moment van voorbereiden van die wet nog niet vastgesteld. Ook in de delegerende regeling zijn de grondslagen niet altijd eenvoudig op artikelniveau terug te vinden. In hoofdstuk 5 gaan we in op mogelijk heden om de kenbaarheid van delegatiegrondslagen in gedelegeerde regelingen te verbeteren. Voor het in kaart brengen van de gedelegeerde regelingen die tot het werkgebied behoren, kan gebruik gemaakt worden van de wetsinformatie die in wetten.nl bij een artikel is opgenomen. Deze is echter niet altijd volledig. Afstemming met wetgevingsjuristen om het werkgebied compleet te maken is daarom van belang."@nl ,
         "A delegation power enables or prescribes that (additional) rules are established regarding a legal relationship, legal fact or derivation rule. With delegation interpretation we indicate the regulation or the regulation component in which the delegation power is used. Although the delegation power and the delegation interpretation are separate classes, we consider them together here because of their close connection. A delegation power is always granted to a specific legal entity; this can be the government (in a general administrative order, established by the King) or a minister (in a ministerial regulation). This can involve mandatory or optional delegation (see under the heading Method of expression). In the first case, the subjects mentioned in the law must be elaborated in a lower regulation. In the second case, there is a choice whether or not to elaborate the statutory rules. Subdelegation is also often possible. This means that provisions in a general administrative order can be further elaborated in a ministerial regulation (see also Method of expression). Recognizing delegation powers is mainly important for determining the scope of the Legal Analysis. If the delegation power has actually been used, the delegated regulations established on the basis thereof must be included in the field of work. The delegating law logically does not contain any specific references to the delegation content. After all, this had not yet been established at the time of preparation of that law. The foundations are also not always easy to find at article level in the delegating regulation. In Chapter 5, we discuss possibilities to improve the recognisability of delegation foundations in delegated regulations. To map out the delegated regulations that belong to the field of work, use can be made of the legal information included in wetten.nl for an article. However, this is not always complete. Coordination with legislative lawyers to complete the field of work is therefore important."@en ;
-    rdfs:comment
+    skos:note
         "Vragen voor het vinden van delegatiebevoegdheden of -invullingen kunnen zijn: Geeft een wetsartikel de opdracht om (nadere) regels te stellen? Verwijst een bepaling in een gedelegeerde regeling naar een artikel in de bovenliggende wet?"@nl ,
         "Questions for finding delegation powers or interpretations may include: Does a statutory provision mandate the establishment of (additional) rules? Does a provision in a delegated regulation refer to an article in the parent law?"@en ;
     skos:scopeNote
@@ -778,7 +823,7 @@ ronl:Brondefinitie a skos:Concept ;
     skos:definition
         "Een brondefinitie is een begripsomschrijving die expliciet is opgenomen in de wetgeving en een eenduidige betekenis geeft aan een in de wetgeving (veel) gebruikte term. Brondefinities staan in de regel in een of meer artikelen aan het begin van een wet of gedelegeerde regeling. Als in de wet een term is gedefinieerd, wordt deze definitie standaard hergebruikt in de daarop gebaseerde gedelegeerde regelingen. De definities worden in de gedelegeerde regeling niet opnieuw opgenomen. Brondefinities moeten worden onderscheiden van de begrippen en begripsomschrijvingen die bij de Wetsanalyse worden gemaakt voor geclassificeerde formuleringen in de wetgeving. Deze begrippen hebben geen directe wettelijke bron,maar zijn nodig om formuleringen uniek te kunnen aanduiden."@nl ,
         "Mandatory delegation is formulated with the phrase 'by (or pursuant to) general administrative order/by ministerial regulation, rules are laid down (…)'. An optional power is formulated with the words 'rules can be laid down'. If the phrase 'by or pursuant to' is used in a delegation power, subdelegation can take place. If, on the basis of such a delegation power, a general administrative order is established in a law, certain matters can be delegated in the general administrative order to a ministerial regulation. Standard expressions are not used in the delegation interpretation."@en ;
-    rdfs:comment
+    skos:note
         "De logische vraag voor het vinden van een brondefinitie is: Is deze term uitdrukkelijk omschreven in de wetgeving?"@nl ,
         "The logical question for finding a source definition is: Is this term explicitly defined in legislation?"@en ;
     skos:scopeNote
@@ -787,26 +832,8 @@ ronl:Brondefinitie a skos:Concept ;
     skos:broader ronl:WetsanalyseJAS ;
     skos:inScheme ronl:Vocabulary .
 #
-# Extend ronl:Vocabulary with hasCriterionRequirementConcept as top-level concept
+# HIER VERDER - DEC 18
 #
-ronl:hasCriterionRequirementConcept a skos:Concept ;
-    skos:prefLabel
-        "Criterium Vereiste Concept"@nl ,
-        "Criterion Requirement Concept"@en ;
-    skos:definition
-        "Dit concept vertegenwoordigt een relatie tussen een openbare dienst en een criterium of vereiste waaraan moet worden voldaan om die dienst te kunnen verlenen. Met andere woorden, cpsv-ap:hasCriterionRequirement geeft aan dat een specifieke openbare dienst (bijv. 'Een verblijfsvergunning verkrijgen') een specifiek criterium of vereiste heeft (bijv. 'Bewijs van inkomen') waaraan moet worden voldaan voordat de dienst kan worden verleend."@nl ,
-        "This concept represents a relationship between a public service and a criterion or requirement that must be met in order to provide that service. In other words, cpsv-ap:hasCriterionRequirement indicates that a specific public service (e.g. 'Obtain a residence permit') has a specific criterion or requirement (e.g. 'Proof of income') that must be met before the service can be provided."@en ;
-    skos:scopeNote
-        "De eigenschap cpsv-ap:hasCriterionRequirement is gedefinieerd als onderdeel van het Core Public Service Vocabulary Application Profile (CPSV-AP), een standaard die is ontwikkeld door de Europese Unie voor het beschrijven van openbare diensten en de daaraan gerelateerde concepten."@nl ,
-        "The property cpsv-ap:hasCriterionRequirement is defined as part of the Core Public Service Vocabulary Application Profile (CPSV-AP), which is a standard developed by the European Union for describing public services and their related concepts."@en ;
-    skos:narrower
-        ronl:Ingezetene,
-        ronl:Leeftijd18,
-        ronl:Betalingsregeling ,
-        ronl:Detentie ;
-    skos:topConceptOf ronl:Vocabulary ;
-    skos:inScheme ronl:Vocabulary .
-
 ronl:Ingezetene a skos:Concept ;
     skos:prefLabel
         "Ingezetene Nederlandse Staat"@nl ,
@@ -821,7 +848,7 @@ ronl:Leeftijd18 a skos:Concept ;
     rdfs:label
         "Ouder18"@nl ,
         "Older18"@en ;
-    rdfs:comment
+    skos:note
         "Voorbeeld term voor test doeleinden."@nl ,
         "Sample term for testing purposes."@en ;
     skos:prefLabel
