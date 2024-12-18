@@ -48,7 +48,7 @@ ronl:Vocabulary a skos:ConceptScheme ;
         ronl:hasCriterionRequirementConcept ;
     owl:versionInfo "Work In Progres - v6" .
 #
-# Define ronl:SourceConcept as skos:Concept.
+# Define ronl:SourceConcept as top-level concept.
 #
 ronl:SourceConcept a skos:Concept ;
     skos:prefLabel
@@ -66,30 +66,31 @@ ronl:SourceConcept a skos:Concept ;
     skos:scopeNote
         "Niet zelden zal er (nog) niet een openbare plek zijn om naar te verwijzen. In dat geval volstaat de link naar een algemene uitleg pagina die het dichtst in de buurt komt van de bedoelde bron."@nl ,
         "Quite often there will not be a public place to refer to (yet). In that case, the link to a general explanation page that comes closest to the intended source will suffice."@en ;
-    skos:broader
-        ronl:AnalysisConcept ,
-        ronl:MethodConcept ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
-# Define ronl:AnalysisConcept as skos:Concept.
+# Define AnalysisConcept as top-level concept
 #
 ronl:AnalysisConcept a skos:Concept ;
     skos:prefLabel
-        "Wetsanalyse eigenschap"@nl ,
-        "Legislative analysis property"@en ;
+        "Wetsanalyse Concepten Schema"@nl ,
+        "Legislative analysis Concepts Scheme"@en ;
     skos:altLabel
         "RONL Wetsanalyse"@nl ,
         "RONL Legislative analysis"@en ;
     skos:altLabel
-        "wetsanalyse"@nl ,
-        "legal analysis"@en ;
+        "Wetsanalyse"@nl ,
+        "Legislative analysis"@en ;
     skos:definition
         "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
         "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
+    skos:scopeNote
+        "Het doel is om een nagenoeg complete verzameling van wetsanalyse methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
+        "The aim is to group a nearly complete collection of legislative analysis methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
     skos:narrower
-        ronl:SourceConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
+        ronl:WetsanalyseJAS ,
+        ronl:WetsanalyseJRM ,
+        ronl:FLINT ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
 #
@@ -107,134 +108,15 @@ ronl:AnalysisProperty a owl:ObjectProperty ;
         "Is a methodology for legislative analysis."@en ;
     rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
 #
-# Define ronl:MethodConcept as skos:Concept.
-#
-ronl:MethodConcept a skos:Concept ;
-    skos:prefLabel
-        "Methodiek voor regelbeheer eigenschap"@nl ,
-        "Methodology for rules mannagement property"@en ;
-    skos:altLabel
-        "RONL Methodiek voor Regelbeheer"@nl ,
-        "RONL Methodology for Rules management"@nl ;
-    skos:altLabel
-        "regelbeheer"@nl ,
-        "rules management"@en ;
-    skos:definition
-        "Regelbeheer is het geheel aan methoden, technieken, hulpmiddelen en voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren, uit te rollen, uit te voeren, te beheren en te evalueren"@nl ,
-        "Rules management is the set of methods, techniques, tools and regulations for designing, analyzing, validating, verifying, deploying, executing, managing and evaluating rules."@en ;
-    skos:narrower
-        ronl:SourceConcept ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
-    skos:topConceptOf ronl:Vocabulary ;
-    skos:inScheme ronl:Vocabulary .
-#
-# Define ronl:MethodProperty as RDF property.
-#
-ronl:MethodProperty a owl:ObjectProperty ;
-    rdfs:label
-        "RONL Methodiek voor Regelbeheer"@nl ,
-        "RONL Methodology for Rules management"@nl ;
-#   Use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
-    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
-    rdfs:range ronl:MethodConcept ;
-    rdfs:comment
-        "Is een methodiek voor regelbeheer."@nl ,
-        "Is a methodology for rules management."@en ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> .
-
-# HIER VERDER / Dec 17th 2024
-
-#
-# Define ronl:implementedBy and ronl:implements as RDF property
-#
-ronl:implementedBy a owl:ObjectProperty ;
-    skos:prefLabel
-        "Is geïmplementeerd door"@nl ,
-        "Is implememnted by"@en ;
-    rdfs:label
-        "RONL Geïmplementeerd door"@nl ,
-        "RONL Implemented by"@nl ;
-    skos:altLabel
-        "geïmplementeerd"@nl ,
-        "implemented"@en ;
-    rdfs:comment
-        "Bedoeld om aan te geven waarmee een bepaalde set regels wordt geïmplementeerd (zoals een openbare dienst of uitvoeringsentiteit)."@nl ,
-        "Intended to indicate what a particular set of rules is implemented with (like a public service or execution entity)."@en ;
-    skos:editorialNote
-        "rdfs:domain moet het type entiteit zijn dat `wordt geïmplementeerd door` iets anders. In dit geval moet het een cpsv-ap:RuleSpecification zijn."@nl ,
-        "rdfs:range moet het type entiteit zijn dat de implementatie uitvoert (bijvoorbeeld een uitvoerende service, resource of algoritme), die opgeven als rdfs:Resource om flexibiliteit mogelijk te maken."@nl ,
-        "Door ronl:implementedBy te definiëren als de inverse van ronl:implements, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: het domein van ronl:implements wordt het bereik van ronl:implementedBy, en vice versa."@nl ,
-        "rdfs:domain should be the type of entity that `is implemented by` something else. In this case, it must be a cpsv-ap:RuleSpecification."@en ,
-        "rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility."@en ,
-        "By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will `mirror` each other, meaning: The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa."@en ;
-    rdfs:domain cpsv-ap:RuleSpecification ;
-    rdfs:range rdfs:Resource ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> ;
-    owl:inverseOf ronl:implements .
-
-ronl:implements a owl:ObjectProperty ;
-    skos:prefLabel
-        "Implementeert"@nl ,
-        "Implements"@en ;
-    rdfs:label
-        "RONL Implementeert"@nl ,
-        "RONL Implements"@nl ;
-    rdfs:comment
-        "Bedoeld om aan te geven dat een specifieke resource een bepaalde set regels implementeert."@nl ,
-        "Intended to indicate that a specific resource implements a certain rule specification."@en ;
-    skos:editorialNote
-        "rdfs:domain moet de entiteit zijn die de implementatie uitvoert, een algemene rdfs:Resource in dit model, wat bredere toepasbaarheid mogelijk maakt."@nl ,
-        "rdfs:range moet terugverwijzen naar de entiteit die is geïmplementeerd, namelijk cpsv-ap:RuleSpecification."@nl ,
-        "Door ronl:implements te definiëren als de inverse van ronl:implementedBy, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: Het domein van ronl:implementedBy wordt het bereik van ronl:implements, en vice versa."@nl ,
-        "rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability."@en ,
-        "rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification."@en ,
-        "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:range cpsv-ap:RuleSpecification ;
-    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten> ;
-    owl:inverseOf ronl:implementedBy .
-#
-# Define AnalysisConcept as top-level concept
-#
-ronl:AnalysisConcept a skos:Concept ;
-    rdfs:label
-        "RONL Wetsanalyse"@nl ,
-        "RONL Legislative analysis"@en ;
-    rdfs:comment
-        "Bevat alle voorkomende gevallen van methodieken voor wetsanalyse die bekend zijn."@nl ,
-        "Contains all known common cases of methodologies for legislative analysis."@en ;
-    skos:prefLabel
-        "Wetsanalyse Concepten Schema"@nl ,
-        "Legislative analysis Concepts Scheme"@en ;
-    skos:altLabel
-        "wetsanalyse"@nl ,
-        "legislative analysis"@en ;
-    skos:definition
-        "Wetsanalyse is een aanpak waarbij alle stappen voor het interpreteren, preciseren en nader invullen van wetgeving expliciet en op een gestructureerde manier worden vastgelegd."@nl ,
-        "Legislative analysis is an approach in which all steps for interpreting, specifying and further defining legislation are explicitly and in a structured manner documented."@en ;
-    skos:scopeNote
-        "Het doel is om een nagenoeg complete verzameling van wetsanalyse methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
-        "The aim is to group a nearly complete collection of legislative analysis methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
-    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:analysis.json> ;
-    skos:narrower
-        ronl:WetsanalyseJAS ,
-        ronl:WetsanalyseJRM ,
-        ronl:FLINT ;
-    skos:topConceptOf ronl:Vocabulary ;
-    skos:inScheme ronl:Vocabulary .
-#
 # Define MethodConcept as top-level concept
 #
 ronl:MethodConcept a skos:Concept ;
-    rdfs:label
-        "RONL Methodieken voor Regelbeheer"@nl ,
-        "RONL Methodologies for Rules management"@nl ;
-    rdfs:comment
-        "Bevat alle voorkomende gevallen van methodieken voor regelbeheer die bekend zijn."@nl ,
-        "Contains all known common cases of methodologies for rules management."@en ;
     skos:prefLabel
         "Methodieken voor regelbeheer Concepten Schema"@nl ,
         "Methodologies for rules mannagement Concepts Scheme"@en ;
+    skos:altLabel
+        "RONL Methodiek voor Regelbeheer"@nl ,
+        "RONL Methodology for Rules management"@nl ;
     skos:altLabel
         "regelbeheer"@nl ,
         "rules management"@en ;
@@ -244,7 +126,6 @@ ronl:MethodConcept a skos:Concept ;
     skos:scopeNote
         "Het doel is om een nagenoeg complete verzameling van regelbeheer methodieken te groeperen zonder daarbij allerlei criteria te hanteren vooraf. Kwalitatieve beoordeling is geen onderdeel van dit concept!"@nl ,
         "The aim is to group a nearly complete collection of rules management methodologies without using all kinds of criteria in advance. Qualitative assessment is not part of this concept!"@en ;
-    ronl:source <https://regels.overheid.nl/waardelijsten/ronl:method.json> ;
     skos:narrower
         ronl:AKN4EU ,
         ronl:ALEF ,
@@ -264,6 +145,56 @@ ronl:MethodConcept a skos:Concept ;
         ronl:USoft ;
     skos:topConceptOf ronl:Vocabulary ;
     skos:inScheme ronl:Vocabulary .
+#
+# Define ronl:MethodProperty as RDF property.
+#
+ronl:MethodProperty a owl:ObjectProperty ;
+    rdfs:label
+        "RONL Methodiek voor Regelbeheer"@nl ,
+        "RONL Methodology for Rules management"@nl ;
+#   Use owl:unionOf to specify multiple classes as the domain, ie this will allow both cpsv-ap:PublicService and dcat:Dataset
+    rdfs:domain [ a owl:Class ; owl:unionOf ( cpsv-ap:PublicService dcat:Dataset ) ] ;
+    rdfs:range ronl:MethodConcept ;
+    rdfs:comment
+        "Is een methodiek voor regelbeheer."@nl ,
+        "Is a methodology for rules management."@en ;
+    rdfs:isDefinedBy <https://regels.overheid.nl/waardelijsten/ronl:method.json> .
+#
+# Define ronl:implementedBy and ronl:implements as RDF property
+#
+ronl:implementedBy a owl:ObjectProperty ;
+    rdfs:label
+        "RONL Geïmplementeerd door"@nl ,
+        "RONL Implemented by"@nl ;
+    rdfs:comment
+        "Bedoeld om aan te geven waarmee een bepaalde set regels wordt geïmplementeerd (zoals een openbare dienst of uitvoeringsentiteit)."@nl ,
+        "rdfs:domain moet het type entiteit zijn dat `wordt geïmplementeerd door` iets anders. In dit geval moet het een cpsv-ap:RuleSpecification zijn."@nl ,
+        "rdfs:range moet het type entiteit zijn dat de implementatie uitvoert (bijvoorbeeld een uitvoerende service, resource of algoritme), die opgeven als rdfs:Resource om flexibiliteit mogelijk te maken."@nl ,
+        "Door ronl:implementedBy te definiëren als de inverse van ronl:implements, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: het domein van ronl:implements wordt het bereik van ronl:implementedBy, en vice versa."@nl ,
+        "Intended to indicate what a particular set of rules is implemented with (like a public service or execution entity)."@en ;
+        "rdfs:domain should be the type of entity that `is implemented by` something else. In this case, it must be a cpsv-ap:RuleSpecification."@en ,
+        "rdfs:range should be the type of entity that does the implementing (e.g., an executing service, resource, or algorithm), which we specified as rdfs:Resource to allow for flexibility."@en ,
+        "By defining ronl:implementedBy as the inverse of ronl:implements, the domain and range values will `mirror` each other, meaning: The domain of ronl:implements will become the range of ronl:implementedBs, and vice versa."@en ;
+    rdfs:domain cpsv-ap:RuleSpecification ;
+    rdfs:range rdfs:Resource ;
+    owl:inverseOf ronl:implements .
+
+ronl:implements a owl:ObjectProperty ;
+    rdfs:label
+        "RONL Implementeert"@nl ,
+        "RONL Implements"@nl ;
+    rdfs:comment
+        "Bedoeld om aan te geven dat een specifieke resource een bepaalde set regels implementeert."@nl ,
+        "rdfs:domain moet de entiteit zijn die de implementatie uitvoert, een algemene rdfs:Resource in dit model, wat bredere toepasbaarheid mogelijk maakt."@nl ,
+        "rdfs:range moet terugverwijzen naar de entiteit die is geïmplementeerd, namelijk cpsv-ap:RuleSpecification."@nl ,
+        "Door ronl:implements te definiëren als de inverse van ronl:implementedBy, zullen de domein- en bereikwaarden elkaar `spiegelen`, wat betekent: Het domein van ronl:implementedBy wordt het bereik van ronl:implements, en vice versa."@nl ,
+        "Intended to indicate that a specific resource implements a certain rule specification."@en ;
+        "rdfs:domain should be the entity that does the implementing, a general rdfs:Resource in this model, allowing for broader applicability."@en ,
+        "rdfs:range should point back to the entity that is implemented, namely cpsv-ap:RuleSpecification."@en ,
+        "By defining ronl:implements as the inverse of ronl:implementedBy, the domain and range values will `mirror` each other, meaning: The domain of ronl:implementedBy will become the range of ronl:implements, and vice versa."@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range cpsv-ap:RuleSpecification ;
+    owl:inverseOf ronl:implementedBy .
 #
 # Define SpecificationTypeConcept as a concept that is narrower under both AnalysisConcept and MethodConcept
 #
