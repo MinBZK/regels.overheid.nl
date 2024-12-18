@@ -8,7 +8,7 @@ sidebar_position: 3
 
 # Introductie
 
-Het is mogelijk om ReSpec documenten die via GitHub onderhouden worden te publiceren op regels.overheid.nl, zie als voorbeeld [MinBZK/LegitiMaat](https://github.com/MinBZK/LegitiMaat) gepubliceerd op [regels.overheid.nl/publications/legitimaat](https://regels.overheid.nl/publicaties/legitimaat). De benodigdheden zijn een zogenoemde publicatie-token en 2 GitHub actions.
+Het is mogelijk om ReSpec documenten die via GitHub onderhouden worden te publiceren op regels.overheid.nl, zie als voorbeeld [MinBZK/LegitiMaat](https://github.com/MinBZK/LegitiMaat) gepubliceerd op [regels.overheid.nl/standaarden/legitimaat](https://regels.overheid.nl/standaarden/legitimaat). De benodigdheden zijn een zogenoemde publicatie-token en 2 GitHub actions.
 
 ## Publicatie-token
 
