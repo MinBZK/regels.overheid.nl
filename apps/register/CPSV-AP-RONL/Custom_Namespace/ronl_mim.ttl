@@ -1,20 +1,53 @@
-@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix org: <http://www.w3.org/ns/org#> .
-@prefix dcat: <http://www.w3.org/ns/dcat#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ex: <http://example.org/ns#> .
-@prefix ronl: <https://regels.overheid.nl/termen/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ex: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vb: <http://modellen.mim-standaard.nl/voorbeeld/> .
-@prefix mim: <http://modellen.mim-standaard.nl/def/mim#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-vb:mens a mim:Objecttype ;
-    rdfs:label
-        "Mens"@nl ,
-        "Human being"@en .
+# Classes
+ex:Person rdf:type rdfs:Class ;
+          rdfs:label "Person"@en ;
+          rdfs:comment "A human being."@en .
+
+ex:Family rdf:type rdfs:Class ;
+          rdfs:label "Family"@en ;
+          rdfs:comment "A unit consisting of parents and children."@en .
+
+# Properties
+ex:hasSpouse rdf:type rdf:Property ;
+             rdfs:domain ex:Person ;
+             rdfs:range ex:Person ;
+             rdfs:label "has spouse"@en ;
+             rdfs:comment "Links a person to their spouse."@en .
+
+ex:hasChild rdf:type rdf:Property ;
+            rdfs:domain ex:Person ;
+            rdfs:range ex:Person ;
+            rdfs:label "has child"@en ;
+            rdfs:comment "Links a person to their child."@en .
+
+ex:age rdf:type rdf:Property ;
+       rdfs:domain ex:Person ;
+       rdfs:range xsd:integer ;
+       rdfs:label "age"@en ;
+       rdfs:comment "The age of a person."@en .
+
+# Individuals
+ex:Lisotte rdf:type ex:Person ;
+           ex:age 64 ;
+           ex:hasSpouse ex:HansPeter ;
+           ex:hasChild ex:Robert ;
+           rdfs:label "Lisotte"@nl .
+
+ex:HansPeter rdf:type ex:Person ;
+             ex:age 64 ;
+             ex:hasSpouse ex:Lisotte ;
+             ex:hasChild ex:Robert ;
+             rdfs:label "Hans-Peter"@nl .
+
+ex:Robert rdf:type ex:Person ;
+          ex:age 17 ;
+          rdfs:label "Robert"@nl .
+
+# Family Unit
+ex:LisotteAndHansPeterFamily rdf:type ex:Family ;
+                             rdfs:label "Lisotte and Hans-Peter Family"@en .
