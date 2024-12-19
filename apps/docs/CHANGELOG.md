@@ -1,5 +1,11 @@
 # docs
 
+## 3.15.3
+
+### Patch Changes
+
+- 2c98ac7: Fix example link due to restructuring navigation
+
 ## 3.15.2
 
 ### Patch Changes
