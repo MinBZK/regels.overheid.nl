@@ -1,0 +1,20 @@
+@prefix cpsv-ap: <http://data.europa.eu/m8g/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex: <http://example.org/ns#> .
+@prefix ronl: <https://regels.overheid.nl/termen/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vb: <http://modellen.mim-standaard.nl/voorbeeld/> .
+@prefix mim: <http://modellen.mim-standaard.nl/def/mim#> .
+
+vb:mens a mim:Objecttype ;
+    rdfs:label
+        "Mens"@nl ,
+        "Human being"@en .
