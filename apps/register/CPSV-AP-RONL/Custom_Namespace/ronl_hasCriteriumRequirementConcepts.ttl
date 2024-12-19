@@ -11,12 +11,26 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+#
+# HIER VERDER - DEC 18
+#
+# EERST MIM NADER BESCHOUWEN
+#
+ronl:Ingezetene a skos:Concept ;
+    skos:prefLabel
+        "Ingezetene Nederlandse Staat"@nl ,
+        "Ingezetene"@en ;
+    skos:definition
+        "De aanvrager bezit de Nederlandse of buitenlandse nationaliteit en beschikt over een verblijfsvergunning voor rechtmatig verblijf in Nederland."@nl ,
+        "The applicant possesses Dutch or foreign nationality and has a residence permit for lawful residence in the Netherlands."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .
 
-ronl:leeftijd18 a skos:Concept ;
+ronl:Leeftijd18 a skos:Concept ;
     rdfs:label
         "Ouder18"@nl ,
         "Older18"@en ;
-    rdfs:comment
+    skos:note
         "Voorbeeld term voor test doeleinden."@nl ,
         "Sample term for testing purposes."@en ;
     skos:prefLabel
@@ -122,3 +136,23 @@ ronl:boolean_leeftijd18_attribute a ex:Attribute ;
     dct:description
         "Een boolean waarde die aangeeft of de leeftijd van de persoon groter dan of gelijk aan 18 is."@nl ,
         "A boolean value indicating whether the person's age is greater than or equal to 18."@en .
+
+ronl:Betalingsregeling a skos:Concept ;
+    skos:prefLabel
+        "Betalingsregeling"@nl ,
+        "Payment arrangement"@en ;
+    skos:definition
+        "Vereist toeslag uit te betalen aan het CJIB als er sprake is van een betalingsregeling."@nl ,
+        "Requires allowance to be paid to CJIB if there is a payment arrangement."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .
+
+ronl:Detentie a skos:Concept ;
+    skos:prefLabel
+        "In gevangenschap"@nl ,
+        "Incarcerated"@en ;
+    skos:definition
+        "De aanvrager is gedetineerd."@nl ,
+        "The applicant is incarcerated."@en ;
+    skos:broader ronl:hasCriterionRequirementConcept ;
+    skos:inScheme ronl:Vocabulary .

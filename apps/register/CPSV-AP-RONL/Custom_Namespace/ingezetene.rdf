@@ -3,7 +3,7 @@
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
 
-  <skos:Concept rdf:about="https://regels.overheid.nl/termen/Ingezetene">
+  <skos:Concept rdf:about="https://regels.overheid.nl/termen/ingezetene">
     <rdfs:label xml:lang="nl">Ingezetene</rdfs:label>
     <rdfs:label xml:lang="en">Resident</rdfs:label>
     <rdfs:comment xml:lang="nl">Voorbeeld term voor test doeleinden.</rdfs:comment>

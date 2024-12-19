@@ -6,6 +6,9 @@
         "@id": "http://example.org/ns#Attribute"
     },
     {
+        "@id": "http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/geboortedatum-geboorte"
+    },
+    {
         "@id": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
@@ -18,7 +21,10 @@
         "@id": "https://brp-api.github.io/Haal-Centraal-BRP-bevragen/"
     },
     {
-        "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103",
+        "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103"
+    },
+    {
+        "@id": "https://organisaties.overheid.nl/96832/Rijksdienst_voor_Identiteitsgegevens",
         "@type": [
             "http://xmlns.com/foaf/0.1/Organization"
         ],
@@ -26,6 +32,10 @@
             {
                 "@value": "Rijksdienst voor Identiteitsgegevens (RvIG).",
                 "@language": "nl"
+            },
+            {
+                "@value": "National Office for Identity Data (RvIG).",
+                "@language": "en"
             }
         ],
         "http://xmlns.com/foaf/0.1/homepage": [
@@ -40,10 +50,72 @@
         ]
     },
     {
-        "@id": "https://opendata.stelselcatalogus.nl/brp/doc/begrip/geboorte"
+        "@id": "https://regels.overheid.nl/termen/Vocabulary"
     },
     {
-        "@id": "https://regels.overheid.nl/termen/BooleanAge",
+        "@id": "https://regels.overheid.nl/termen/boolean_leeftijd18",
+        "@type": [
+            "http://www.w3.org/ns/dcat#Dataset"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Boolean leeftijd gegevens.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Boolean age data.",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Een dataset met een boolean waarde die aangeeft of iemand ouder is dan 18 jaar.",
+                "@language": "nl"
+            },
+            {
+                "@value": "A dataset containing a boolean value indicating whether someone is older than 18 years.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/2004/02/skos/core#scopeNote": [
+            {
+                "@value": "Er is (nog) geen attribuut dat antwoord geeft op de vraag of iemand ouder is dan 18. Voor illustratie doeleinden toegevoegd hier.",
+                "@language": "nl"
+            },
+            {
+                "@value": "There is (still) no attribute that answers the question of whether someone is over 18. Added here for illustration purposes.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#accessURL": [
+            {
+                "@id": "https://brp-api.github.io/Haal-Centraal-BRP-bevragen/"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103"
+            }
+        ],
+        "https://regels.overheid.nl/termen/source": [
+            {
+                "@id": "https://regels.overheid.nl/termen/placeholder-do-not-use"
+            }
+        ],
+        "http://purl.org/dc/terms/issued": [
+            {
+                "@value": "2023-01-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "http://example.org/ns#hasAttribute": [
+            {
+                "@id": "https://regels.overheid.nl/termen/boolean_leeftijd18_attribute"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/boolean_leeftijd18_attribute",
         "@type": [
             "http://example.org/ns#Attribute"
         ],
@@ -69,7 +141,80 @@
         ]
     },
     {
-        "@id": "https://regels.overheid.nl/termen/Geboortedatum",
+        "@id": "https://regels.overheid.nl/termen/boolean_leeftijd18_vereiste",
+        "@type": [
+            "http://data.europa.eu/m8g/CriterionRequirement"
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Een boolean waarde die aangeeft of de aanvrager ouder dan 18 jaar is.",
+                "@language": "nl"
+            },
+            {
+                "@value": "A boolean value indicating whether the applicant is older than 18 years.",
+                "@language": "en"
+            }
+        ],
+        "http://data.europa.eu/m8g/requiresInput": [
+            {
+                "@id": "https://regels.overheid.nl/termen/boolean_leeftijd18"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/geboortecertificaat_datum",
+        "@type": [
+            "http://www.w3.org/ns/dcat#Dataset"
+        ],
+        "http://purl.org/dc/terms/title": [
+            {
+                "@value": "Geboorte.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Birth.",
+                "@language": "en"
+            }
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "De gegevens over de geboorte van de persoon.",
+                "@language": "nl"
+            },
+            {
+                "@value": "The data about the person's birth.",
+                "@language": "en"
+            }
+        ],
+        "http://www.w3.org/ns/dcat#accessURL": [
+            {
+                "@id": "https://brp-api.github.io/Haal-Centraal-BRP-bevragen/"
+            }
+        ],
+        "http://purl.org/dc/terms/publisher": [
+            {
+                "@id": "https://organisaties.overheid.nl/96832/Rijksdienst_voor_Identiteitsgegevens"
+            }
+        ],
+        "http://purl.org/dc/terms/issued": [
+            {
+                "@value": "2023-01-01",
+                "@type": "http://www.w3.org/2001/XMLSchema#date"
+            }
+        ],
+        "https://regels.overheid.nl/termen/source": [
+            {
+                "@id": "http://opendata.stelselcatalogus.nl/brp/id/gegevenselement/geboortedatum-geboorte"
+            }
+        ],
+        "http://example.org/ns#hasAttribute": [
+            {
+                "@id": "https://regels.overheid.nl/termen/geboortecertificaat_datum_attribute"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/geboortecertificaat_datum_attribute",
         "@type": [
             "http://example.org/ns#Attribute"
         ],
@@ -95,7 +240,31 @@
         ]
     },
     {
-        "@id": "https://regels.overheid.nl/termen/Leeftijd18",
+        "@id": "https://regels.overheid.nl/termen/geboortecertificaat_datum_vereiste",
+        "@type": [
+            "http://data.europa.eu/m8g/CriterionRequirement"
+        ],
+        "http://purl.org/dc/terms/description": [
+            {
+                "@value": "Geboortecertificaat datum die wordt gebruikt voor leeftijdsbepaling.",
+                "@language": "nl"
+            },
+            {
+                "@value": "Birth certificate date used for age determination.",
+                "@language": "en"
+            }
+        ],
+        "http://data.europa.eu/m8g/requiresInput": [
+            {
+                "@id": "https://regels.overheid.nl/termen/geboortecertificaat_datum"
+            }
+        ]
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/hasCriterionRequirementConcept"
+    },
+    {
+        "@id": "https://regels.overheid.nl/termen/leeftijd18",
         "@type": [
             "http://www.w3.org/2004/02/skos/core#Concept"
         ],
@@ -161,164 +330,23 @@
         ],
         "http://data.europa.eu/m8g/hasCriterionRequirement": [
             {
-                "@id": "https://regels.overheid.nl/termen/birthcertificate_date_requirement"
+                "@id": "https://regels.overheid.nl/termen/geboortecertificaat_datum_vereiste"
             },
             {
-                "@id": "https://regels.overheid.nl/termen/boolean_age_requirement"
-            }
-        ],
-        "http://data.europa.eu/m8g/hasInput": [
-            {
-                "@id": "https://regels.overheid.nl/termen/persoonlijke_gegevens_dataset"
-            }
-        ]
-    },
-    {
-        "@id": "https://regels.overheid.nl/termen/Vocabulary"
-    },
-    {
-        "@id": "https://regels.overheid.nl/termen/birthcertificate_date_requirement",
-        "@type": [
-            "http://data.europa.eu/m8g/CriterionRequirement"
-        ],
-        "http://purl.org/dc/terms/description": [
-            {
-                "@value": "Geboortecertificaat datum die wordt gebruikt voor leeftijdsbepaling.",
-                "@language": "nl"
-            },
-            {
-                "@value": "Birth certificate date used for age determination.",
-                "@language": "en"
+                "@id": "https://regels.overheid.nl/termen/boolean_leeftijd18_vereiste"
             }
         ],
         "http://data.europa.eu/m8g/requiresInput": [
             {
-                "@id": "https://regels.overheid.nl/termen/Geboortedatum"
+                "@id": "https://regels.overheid.nl/termen/geboortecertificaat_datum"
+            },
+            {
+                "@id": "https://regels.overheid.nl/termen/boolean_leeftijd18"
             }
         ]
     },
     {
-        "@id": "https://regels.overheid.nl/termen/boolean_age_input",
-        "@type": [
-            "http://www.w3.org/ns/dcat#Dataset"
-        ],
-        "http://purl.org/dc/terms/title": [
-            {
-                "@value": "Boolean leeftijd gegevens.",
-                "@language": "nl"
-            },
-            {
-                "@value": "Boolean age data.",
-                "@language": "en"
-            }
-        ],
-        "http://purl.org/dc/terms/description": [
-            {
-                "@value": "Een dataset met een boolean waarde die aangeeft of iemand ouder is dan 18 jaar.",
-                "@language": "nl"
-            },
-            {
-                "@value": "A dataset containing a boolean value indicating whether someone is older than 18 years.",
-                "@language": "en"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#accessURL": [
-            {
-                "@id": "https://brp-api.github.io/Haal-Centraal-BRP-bevragen/"
-            }
-        ],
-        "http://purl.org/dc/terms/publisher": [
-            {
-                "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103"
-            }
-        ],
-        "http://purl.org/dc/terms/issued": [
-            {
-                "@value": "2023-01-01",
-                "@type": "http://www.w3.org/2001/XMLSchema#date"
-            }
-        ],
-        "http://example.org/ns#hasAttribute": [
-            {
-                "@id": "https://regels.overheid.nl/termen/BooleanAge"
-            }
-        ]
-    },
-    {
-        "@id": "https://regels.overheid.nl/termen/boolean_age_requirement",
-        "@type": [
-            "http://data.europa.eu/m8g/CriterionRequirement"
-        ],
-        "http://purl.org/dc/terms/description": [
-            {
-                "@value": "Een boolean waarde die aangeeft of de aanvrager ouder dan 18 jaar is.",
-                "@language": "nl"
-            },
-            {
-                "@value": "A boolean value indicating whether the applicant is older than 18 years.",
-                "@language": "en"
-            }
-        ],
-        "http://data.europa.eu/m8g/requiresInput": [
-            {
-                "@id": "https://regels.overheid.nl/termen/boolean_age_input"
-            }
-        ]
-    },
-    {
-        "@id": "https://regels.overheid.nl/termen/hasCriterionRequirementConcept"
-    },
-    {
-        "@id": "https://regels.overheid.nl/termen/persoonlijke_gegevens_dataset",
-        "@type": [
-            "http://www.w3.org/ns/dcat#Dataset"
-        ],
-        "http://purl.org/dc/terms/title": [
-            {
-                "@value": "Persoonlijke gegevens.",
-                "@language": "nl"
-            },
-            {
-                "@value": "Personal data.",
-                "@language": "en"
-            }
-        ],
-        "http://purl.org/dc/terms/description": [
-            {
-                "@value": "Al uw persoonlijke gegevens, zoals naam, adres en geboortedatum, maar ook vingerafdrukken en burgerservicenummer.",
-                "@language": "nl"
-            },
-            {
-                "@value": "All your personal data, such as name, address and date of birth, but also fingerprints and citizen service number.",
-                "@language": "en"
-            }
-        ],
-        "http://www.w3.org/ns/dcat#accessURL": [
-            {
-                "@id": "https://brp-api.github.io/Haal-Centraal-BRP-bevragen/"
-            }
-        ],
-        "http://purl.org/dc/terms/publisher": [
-            {
-                "@id": "https://identifier.overheid.nl/tooi/id/oorg/oorg10103"
-            }
-        ],
-        "http://purl.org/dc/terms/issued": [
-            {
-                "@value": "2023-01-01",
-                "@type": "http://www.w3.org/2001/XMLSchema#date"
-            }
-        ],
-        "https://regels.overheid.nl/termen/source": [
-            {
-                "@id": "https://opendata.stelselcatalogus.nl/brp/doc/begrip/geboorte"
-            }
-        ],
-        "http://example.org/ns#hasAttribute": [
-            {
-                "@id": "https://regels.overheid.nl/termen/Geboortedatum"
-            }
-        ]
+        "@id": "https://regels.overheid.nl/termen/placeholder-do-not-use"
     },
     {
         "@id": "https://www.rvig.nl/"

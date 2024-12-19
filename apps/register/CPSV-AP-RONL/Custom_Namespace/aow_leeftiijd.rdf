@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:ns0="https://regels.overheid.nl/termen/"
+         xmlns:ns1="http://data.europa.eu/m8g/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+         xmlns:dcat="http://www.w3.org/ns/dcat#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+  <foaf:Organization rdf:about="https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank">
+    <foaf:name xml:lang="nl">Sociale Verzekeringsbank (SVB)</foaf:name>
+    <foaf:name xml:lang="en">Social insurance bank (SVB)</foaf:name>
+    <foaf:homepage rdf:resource="https://www.svb.nl/nl/"/>
+    <foaf:uri rdf:resource="https://identifier.overheid.nl/tooi/id/zbo/zb000143"/>
+  </foaf:Organization>
+
+  <rdf:Description rdf:about="https://regels.overheid.nl/termen/aow_leeftijd_service">
+    <rdf:type rdf:resource="http://data.europa.eu/m8g/PublicService"/>
+    <dc:title xml:lang="nl">Bepaling leeftijd AOW</dc:title>
+    <dc:title xml:lang="en">Determination of AOW age</dc:title>
+    <dc:description xml:lang="nl">Bepaling van de leeftijd AOW (Algemene Ouderdomswet).</dc:description>
+    <dc:description xml:lang="en">Determination of AOW age (General Old Age Act).</dc:description>
+    <dc:identifier rdf:resource="https://standaarden.overheid.nl/owms/terms/aow-leeftijd"/>
+    <ns0:analysis rdf:resource="https://regels.overheid.nl/termen/WetsanalyseJAS"/>
+    <ns0:method rdf:resource="https://regels.overheid.nl/termen/ConcordiaLegal"/>
+    <dc:creator rdf:resource="https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank"/>
+    <dc:subject xml:lang="nl">Sociale zekerheid</dc:subject>
+    <dc:subject xml:lang="en">Social security.</dc:subject>
+    <ns1:hasChannel>
+      <ns1:Channel>
+        <dc:title xml:lang="nl">Online portaal.</dc:title>
+        <dc:title xml:lang="en">Online portal.</dc:title>
+        <ns1:accessURL rdf:resource="https://regels.overheid.nl/lab/aow-leeftijd/"/>
+        <dc:description xml:lang="nl">Het online portaal waar iedereen zijn/haar AOW leeftijd kan berekenen.</dc:description>
+        <dc:description xml:lang="nl">The online portal where everyone can calculate his/her AOW age.</dc:description>
+        <ns1:channelType>
+          <skos:Concept>
+            <skos:prefLabel xml:lang="en">Web Portal</skos:prefLabel>
+            <skos:exactMatch rdf:resource="http://example.org/channel-type/web-portal"/>
+          </skos:Concept>
+        </ns1:channelType>
+
+      </ns1:Channel>
+    </ns1:hasChannel>
+
+    <ns1:hasContactPoint>
+      <vcard:Organization>
+        <vcard:fn xml:lang="en">Customer Service</vcard:fn>
+        <vcard:hasEmail rdf:resource="mailto:algoritmenenai@svb.nl"/>
+        <vcard:hasTelephone>
+          <vcard:Work>
+            <rdf:type rdf:resource="http://www.w3.org/2006/vcard/ns#Voice"/>
+            <vcard:hasValue rdf:resource="tel:+1234567890"/>
+          </vcard:Work>
+        </vcard:hasTelephone>
+
+        <vcard:hasURL rdf:resource="https://www.example.org/contact"/>
+      </vcard:Organization>
+    </ns1:hasContactPoint>
+
+    <ns1:goal xml:lang="nl">Landelijk herbruikbare service voor gevalideerde bepaling van de leeftijd AOW.</ns1:goal>
+    <ns1:goal xml:lang="en">Nationally reusable service for validated determination of the AOW age.</ns1:goal>
+    <ns1:hasLegalResource>
+      <ns1:LegalResource>
+        <dc:title xml:lang="nl">Algemene Ouderdomswet (AOW)</dc:title>
+        <dc:title xml:lang="en">General Old Age Pensions Act (AOW)</dc:title>
+        <dcat:accessURL rdf:resource="https://wetten.overheid.nl/jci1.3:c:BWBR0002221"/>
+        <dcat:accessURL rdf:resource="https://wetten.overheid.nl/jci1.3:c:BWBR0002221&amp;hoofdstuk=III&amp;paragraaf=1&amp;artikel=7&amp;z=2023-01-01&amp;g=2023-01-01"/>
+        <dcat:accessURL rdf:resource="https://wetten.overheid.nl/jci1.3:c:BWBR0002221&amp;hoofdstuk=III&amp;paragraaf=1&amp;artikel=7a&amp;z=2023-01-01&amp;g=2023-01-01"/>
+      </ns1:LegalResource>
+    </ns1:hasLegalResource>
+
+    <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-06-12</dc:issued>
+    <dc:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-09</dc:modified>
+    <dc:language>nld</dc:language>
+    <ns0:implements>
+      <ns1:Rule rdf:about="https://regels.overheid.nl/termen/aow_leeftijd_regels">
+        <dc:title xml:lang="nl">Bedrijfsregels voor bepaling van de AOW-leeftijd</dc:title>
+        <dc:title xml:lang="en">Business Rules for AOW Age Determination</dc:title>
+        <dc:description xml:lang="nl">Een op regels gebaseerd beslismodel voor het vaststellen van de AOW-leeftijd volgens de Algemene Ouderdomswet (AOW).</dc:description>
+        <dc:description xml:lang="en">A rules-based decision model for determining the AOW age according to the Algemene Ouderdomswet (AOW).</dc:description>
+        <dc:conformsTo rdf:resource="https://schema.example.org/AOWRulesModel"/>
+        <dc:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/MD"/>
+        <dcat:mediaType>text/markdown</dcat:mediaType>
+        <ns1:specifies>
+          <ns1:RuleSpecification>
+            <dc:title xml:lang="nl">Datamodel voor bedrijfsregels</dc:title>
+            <dc:title xml:lang="en">Data Model for Business Rules</dc:title>
+            <dc:description xml:lang="nl">Dit model definieert de vereiste gegevensbronnen voor het bepalen van AOW-gerechtigdheid en leeftijd.</dc:description>
+            <dc:description xml:lang="en">This model defines the required data sources for determining AOW eligibility and age.</dc:description>
+            <ns0:source rdf:resource="https://www.svb.nl/nl/aow/"/>
+            <dc:source rdf:resource="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py"/>
+            <ns0:implementedBy rdf:resource="https://regels.overheid.nl/lab/aow-leeftijd/resultaat"/>
+            <rdfs:seeAlso rdf:resource="https://regels.overheid.nl/docs/lab/AOW"/>
+            <rdfs:seeAlso rdf:resource="https://regels.overheid.nl/publicaties/wetsanalyse"/>
+            <rdfs:seeAlso rdf:resource="https://regels.overheid.nl/docs/methods/CONCORDIALEGAL"/>
+            <ns1:hasCriterionRequirement rdf:resource="https://regels.overheid.nl/termen/geboortecertificaat_datum_vereiste"/>
+            <ns1:hasCriterionRequirement>
+              <ns1:CriterionRequirement rdf:about="https://regels.overheid.nl/termen/systeem_datum_vereiste">
+                <dc:description xml:lang="nl">Peildatum.</dc:description>
+                <dc:description xml:lang="en">Reference date.</dc:description>
+              </ns1:CriterionRequirement>
+            </ns1:hasCriterionRequirement>
+
+            <ns1:requiresInput rdf:resource="https://regels.overheid.nl/termen/geboortecertificaat_datum"/>
+            <ns1:requiresInput>
+              <dcat:Dataset rdf:about="https://regels.overheid.nl/termen/systeem_datum_dataset">
+                <dc:title xml:lang="en">System Date for Age Calculation</dc:title>
+                <dc:description xml:lang="en">The current date is used as a reference to determine eligibility age for AOW.</dc:description>
+                <dc:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-01-01</dc:issued>
+                <dcat:theme rdf:resource="http://eurovoc.europa.eu/100141"/>
+                <dc:temporal>
+                  <dc:PeriodOfTime>
+                    <dc:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-01-01</dc:startDate>
+                  </dc:PeriodOfTime>
+                </dc:temporal>
+
+                <dcat:keyword>System Date</dcat:keyword>
+                <dcat:keyword xml:lang="en">Current Date</dcat:keyword>
+                <dc:publisher rdf:resource="https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank"/>
+              </dcat:Dataset>
+            </ns1:requiresInput>
+
+          </ns1:RuleSpecification>
+        </ns1:specifies>
+
+        <dc:version>1.0</dc:version>
+      </ns1:Rule>
+    </ns0:implements>
+
+    <ns1:hasOutput>
+      <ns1:Output>
+        <dc:description xml:lang="nl">Vastgestelde AOW-leeftijd op peildatum.</dc:description>
+        <dc:description xml:lang="en">Established AOW age on reference date.</dc:description>
+      </ns1:Output>
+    </ns1:hasOutput>
+
+    <ns1:hasCost>
+      <ns1:Cost>
+        <dc:description xml:lang="nl">The dienst is gratis.</dc:description>
+        <dc:description xml:lang="en">The service is free of charge.</dc:description>
+      </ns1:Cost>
+    </ns1:hasCost>
+
+    <dc:publisher rdf:resource="https://organisaties.overheid.nl/28212263/Sociale_Verzekeringsbank"/>
+  </rdf:Description>
+
+</rdf:RDF>
