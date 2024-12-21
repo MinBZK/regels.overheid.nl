@@ -789,3 +789,29 @@ export const blogArticles = pgTable(
     };
   }
 );
+
+export const publications = pgTable(
+  'publications',
+  {
+    id: serial('id').primaryKey().notNull(),
+    title: varchar('title', { length: 255 }),
+    summary: text('summary'),
+    content: text('content'),
+    tags: text('tags'),
+    createdAt: timestamp('created_at', { precision: 6, mode: 'string' }),
+    updatedAt: timestamp('updated_at', { precision: 6, mode: 'string' }),
+    publishedAt: timestamp('published_at', { precision: 6, mode: 'string' }),
+    createdById: integer('created_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    updatedById: integer('updated_by_id').references(() => adminUsers.id, { onDelete: 'set null' }),
+    slug: varchar('slug', { length: 255 }),
+    authors: text('authors'),
+    location: varchar('location', { length: 255 }),
+  },
+  (table) => {
+    return {
+      createdByIdFk: index('publications_created_by_id_fk').on(table.createdById),
+      updatedByIdFk: index('publications_updated_by_id_fk').on(table.updatedById),
+      publicationsSlugUnique: unique('publications_slug_unique').on(table.slug),
+    };
+  }
+);
