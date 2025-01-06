@@ -1,5 +1,16 @@
 # web
 
+## 3.48.0
+
+### Minor Changes
+
+- 58bfc2f: Added `publicaties` page
+- e212a6d: Added `publication` content type
+
+### Patch Changes
+
+- 7cf47d4: Added SEO tags for `/termen/*` pages
+
 ## 3.47.0
 
 ### Minor Changes
