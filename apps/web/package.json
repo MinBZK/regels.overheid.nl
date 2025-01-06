@@ -16,6 +16,7 @@
   "dependencies": {
     "@octokit/rest": "^20.0.2",
     "@radix-ui/react-collapsible": "^1.1.0",
+    "@radix-ui/react-dialog": "^1.1.4",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-portal": "^1.0.4",
@@ -24,6 +25,7 @@
     "@sindresorhus/slugify": "^2.2.1",
     "@tabler/icons-react": "^2.46.0",
     "@total-typescript/ts-reset": "^0.5.1",
+    "@types/react-copy-to-clipboard": "^5.0.7",
     "cheerio": "1.0.0-rc.12",
     "clsx": "^2.1.0",
     "compare-versions": "^6.1.0",
@@ -39,6 +41,7 @@
     "pg": "^8.8.0",
     "puppeteer": "^22.9.0",
     "react": "^18",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18",
     "react-remove-scroll": "^2.5.9",
     "remark-gfm": "^3.0.1",
