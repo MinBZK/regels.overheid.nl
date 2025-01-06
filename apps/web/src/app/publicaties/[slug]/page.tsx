@@ -23,7 +23,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
         <Typography variant="h1">{publication.title}</Typography>
         <section className="flex flex-col gap-y-1 pb-2 pt-12">
           <Typography className="!mt-0 text-lg text-primary-dark">
-            Gepubliceerd op: {format(publication.updatedAt!, 'dd MMMM yyyy')}
+            Gepubliceerd op: {format(publication.publicationDate!, 'dd MMMM yyyy')}
           </Typography>
           <Typography className="!mt-0 text-lg text-primary-dark">Auteurs: {publication.authors}</Typography>
           <Typography className="!mt-0 text-lg text-primary-dark">Locatie: {publication.location}</Typography>
