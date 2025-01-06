@@ -1,5 +1,11 @@
 # cms
 
+## 1.29.0
+
+### Minor Changes
+
+- e212a6d: Added `publication` content type
+
 ## 1.28.0
 
 ### Minor Changes
