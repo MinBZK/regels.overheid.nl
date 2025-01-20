@@ -16,8 +16,7 @@ export default async function LabPage() {
       </Container>
       <ContainerMethod>
         <CardLab.Root title="Lawnotation">
-          Find, annotate, and publish legal data.
-          Lawnotation is a free open-source platform for text labeling.
+          Find, annotate, and publish legal data. Lawnotation is a free open-source platform for text labeling.
           <CardLab.MethodItems>
             <CardLab.License label="Apache 2.0" href="https://www.apache.org/licenses/LICENSE-2.0" />
             <CardLab.Repo href="https://github.com/MaastrichtU-BISS/lawnotation" />
