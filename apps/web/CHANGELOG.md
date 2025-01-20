@@ -1,5 +1,11 @@
 # web
 
+## 3.49.0
+
+### Minor Changes
+
+- 94755b3: Added Lawnotation. A free open-source platform for text labeling
+
 ## 3.48.0
 
 ### Minor Changes
