@@ -15,6 +15,16 @@ export default async function LabPage() {
         <RemotePage page="lab" />
       </Container>
       <ContainerMethod>
+        <CardLab.Root title="Lawnotation">
+          Find, annotate, and publish legal data.
+          Lawnotation is a free open-source platform for text labeling.
+          <CardLab.MethodItems>
+            <CardLab.License label="Apache 2.0" href="https://www.apache.org/licenses/LICENSE-2.0" />
+            <CardLab.Repo href="https://github.com/MaastrichtU-BISS/lawnotation" />
+            <CardLab.Docs href="https://docs.lawnotation.org/" />
+            <CardLab.Demo href="https://app.lawnotation.org/dashboard" />
+          </CardLab.MethodItems>
+        </CardLab.Root>
         <CardLab.Root title="Yasgui SPARQL editor">
           Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te
           extraheren uit en te schrijven naar RDF-graphs. Yasgui biedt diverse geavanceerde functies voor het maken,
