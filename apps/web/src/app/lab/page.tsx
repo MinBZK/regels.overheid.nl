@@ -22,7 +22,7 @@ export default async function LabPage() {
             <CardLab.License label="Apache 2.0" href="https://www.apache.org/licenses/LICENSE-2.0" />
             <CardLab.Repo href="https://github.com/MaastrichtU-BISS/lawnotation" />
             <CardLab.Docs href="https://docs.lawnotation.org/" />
-            <CardLab.Demo href="https://app.lawnotation.org/dashboard" />
+            <CardLab.Demo href="https://app.lawnotation.org/auth/login" />
           </CardLab.MethodItems>
         </CardLab.Root>
         <CardLab.Root title="Yasgui SPARQL editor">
