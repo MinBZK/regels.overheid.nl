@@ -5,8 +5,6 @@ title: Architectuur Platform Regelbeheer
 
 **Status**
 
-NB deze file is gegenereerd vanuit docx file als test
-
 Concept
 
 Datum 30-01-2025
@@ -15,32 +13,26 @@ Datum 30-01-2025
 
 > \<aansprekend (domein- of keten)plaatje\>
 
-# Inhoud {#inhoud .TOC-Heading}
+# Inhoud
 
-[1 Managementsamenvatting
-[3](#managementsamenvatting)](#managementsamenvatting)
+[1 Managementsamenvatting](#managementsamenvatting)
 
-[2 Inleiding [4](#inleiding)](#inleiding)
+[2 Inleiding](#inleiding)
 
-[2.1 Doelstelling en doelgroep document
-[4](#doelstelling-en-doelgroep-document)](#doelstelling-en-doelgroep-document)
+[2.1 Doelstelling en doelgroep document](#doelstelling-en-doelgroep-document)
 
-[2.2 Over de verandering
-[4](#over-de-verandering)](#over-de-verandering)
+[2.2 Over de verandering](#over-de-verandering)
 
-[2.3 Definitie regelbeheer
-[4](#definitie-regelbeheer)](#definitie-regelbeheer)
+[2.3 Definitie regelbeheer](#definitie-regelbeheer)
 
-[2.4 Relaties met andere ontwikkelingen
-[4](#relaties-met-andere-ontwikkelingen)](#relaties-met-andere-ontwikkelingen)
+[2.4 Relaties met andere ontwikkelingen](#relaties-met-andere-ontwikkelingen)
 
-[3 Visualisatie en visie
-[5](#visualisatie-en-visie)](#visualisatie-en-visie)
+[3 Visualisatie en visie](#visualisatie-en-visie)
 
 [3.1 Twee zichtlijnen [5](#twee-zichtlijnen)](#twee-zichtlijnen)
 
-[[3.2]{.mark} [Huidige situatie]{.mark}
-[5](#huidige-situatie)](#huidige-situatie)
+[<span class="mark">3.2</span> <span class="mark">Huidige
+situatie</span> [5](#huidige-situatie)](#huidige-situatie)
 
 [3.3 Aandachtspunten [5](#aandachtspunten)](#aandachtspunten)
 
@@ -143,100 +135,111 @@ beschrijving van de oplossing en is zodoende meer een Project Start
 Solution Architectuur die met stakeholders getoetst en met hun feedback
 verbeterd kan worden door architecten en adviseurs binnen het project.
 
-+-----------------+-----------------+------------------+--------------+
-| **Stakeholder** | **Functie /     | **Belang in      | **Bijdrage   |
-|                 | Rol**           | resultaat**      | aan de       |
-|                 |                 |                  | ar           |
-|                 |                 |                  | chitectuur** |
-+=================+=================+==================+==============+
-| Burgers en      | Indirecte       | Uitlegbaarheid,  | Toetsen,     |
-| Bedrijven       | gebruikers      | Transparantie    | feedback     |
-|                 |                 | (Access),        | geven        |
-|                 |                 | Consistentie,    | (indirect)   |
-|                 |                 |                  |              |
-|                 |                 | Vindbaarheid     |              |
-|                 |                 | (Findable),      |              |
-|                 |                 |                  |              |
-|                 |                 | Rechtmatigheid   |              |
-+-----------------+-----------------+------------------+--------------+
-| Wetgevende      | Participerend   | Alle belangen    | Toetsen,     |
-| organisaties    | in beheer van   | van Burgers en   | feedback     |
-| (zoals          | regels via      | bedrijven maar   | geven        |
-| Ministeries)    | platform        | ook:             |              |
-| (experts in     | Regelbeheer,    |                  |              |
-| regelbeheer,    | aangaande de    | Herbruikbaarheid |              |
-| juridisch,      | formalisatie    | (Reusable)       |              |
-| architectuur    | van wetgeving   |                  |              |
-| etc.)           | en              | In               |              |
-|                 | standaardisatie | teroperabiliteit |              |
-|                 | in regels       | (Interoperable)  |              |
-+-----------------+-----------------+------------------+--------------+
-| Uitvoeri        | Participerend   | Zelfde als       | Toetsen,     |
-| ngsorganisaties | in beheer van   | Wetgevende       | feedback     |
-| (zoals          | regels via      | organisaties     | geven        |
-| Gemeentes of de | platform        |                  |              |
-| B               | Regelbeheer,    |                  |              |
-| elastingdienst) | aangaande de    |                  |              |
-| (experts in     | formalisatie    |                  |              |
-| regelbeheer,    | van beleid en   |                  |              |
-| juridisch,      | standaardisatie |                  |              |
-| architectuur    | in regels       |                  |              |
-| etc.)           |                 |                  |              |
-+-----------------+-----------------+------------------+--------------+
-| Leveranciers    | Indirect als    | Indirect zelfde  | Toetsen,     |
-| (voor           | leveranciers    | als Wetgevende   | feedback     |
-| oplossingen die | van             | organisaties     | geven        |
-| het platform    | deeloplossingen | maar met name de |              |
-| Regelbeheer     | waarmee andere  | r                |              |
-| gebruiken, niet | stakeholders    | ealiseerbaarheid |              |
-| voor het        | via platform    | van de           |              |
-| platform        | Regelbeheer het | compatibiliteit  |              |
-| Regelbeheer     | regelbeheer     | van hetgeen ze   |              |
-| zelf)           | kunnen doen.    | kunnen leveren,  |              |
-|                 |                 | waarbij          |              |
-|                 |                 | in               |              |
-|                 |                 | teroperabiliteit |              |
-|                 |                 | een grote rol    |              |
-|                 |                 | heeft terwijl    |              |
-|                 |                 | dit wel in hun   |              |
-|                 |                 | bu               |              |
-|                 |                 | sinesspropositie |              |
-|                 |                 | moet blijven     |              |
-|                 |                 | passen           |              |
-+-----------------+-----------------+------------------+--------------+
-|                 |                 |                  |              |
-+-----------------+-----------------+------------------+--------------+
-| **Stakeholders  |                 |                  |              |
-| van project     |                 |                  |              |
-| Platform        |                 |                  |              |
-| Regelbeheer     |                 |                  |              |
-| zelf:**         |                 |                  |              |
-+-----------------+-----------------+------------------+--------------+
-| Opdrachtgever   | Opdrachtgever   | Realisatie,      | Vaststellen  |
-|                 | (OG)            | outcome          |              |
-+-----------------+-----------------+------------------+--------------+
-| Opdrachtnemer   | Projectleider   | Uitvoerbaarheid  | Monitoren    |
-|                 | (PL)            | project          |              |
-+-----------------+-----------------+------------------+--------------+
-| Architect /     |                 | Oplossing die    | Opstellen    |
-| Adviseur        |                 | alle belangen    |              |
-|                 |                 | van alle         |              |
-|                 |                 | stakeholders     |              |
-|                 |                 | behartigd        |              |
-+-----------------+-----------------+------------------+--------------+
-| Ontwikkelaars   |                 | Re               | Toetsen,     |
-|                 |                 | aliseerbaarheid, | feedback     |
-|                 |                 | Kwaliteit        | geven        |
-+-----------------+-----------------+------------------+--------------+
-| Beheerder       |                 | Beh              | Toetsen      |
-|                 |                 | eermogelijkheden | feedback     |
-|                 |                 |                  | geven        |
-+-----------------+-----------------+------------------+--------------+
-| Leveranciers    |                 |                  |              |
-| mbt platform    |                 |                  |              |
-| regelbeheer     |                 |                  |              |
-| zelf            |                 |                  |              |
-+-----------------+-----------------+------------------+--------------+
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 27%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Stakeholder</strong></th>
+<th><strong>Functie / Rol</strong></th>
+<th><strong>Belang in resultaat</strong></th>
+<th><strong>Bijdrage aan de architectuur</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Burgers en Bedrijven</th>
+<td>Indirecte gebruikers</td>
+<td><p>Uitlegbaarheid, Transparantie (Access), Consistentie,</p>
+<p>Vindbaarheid (Findable),</p>
+<p>Rechtmatigheid</p></td>
+<td>Toetsen, feedback geven (indirect)</td>
+</tr>
+<tr>
+<th>Wetgevende organisaties (zoals Ministeries) (experts in regelbeheer,
+juridisch, architectuur etc.)</th>
+<td>Participerend in beheer van regels via platform Regelbeheer,
+aangaande de formalisatie van wetgeving en standaardisatie in
+regels</td>
+<td><p>Alle belangen van Burgers en bedrijven maar ook:</p>
+<p>Herbruikbaarheid (Reusable)</p>
+<p>Interoperabiliteit (Interoperable)</p></td>
+<td>Toetsen, feedback geven</td>
+</tr>
+<tr>
+<th>Uitvoeringsorganisaties (zoals Gemeentes of de Belastingdienst)
+(experts in regelbeheer, juridisch, architectuur etc.)</th>
+<td>Participerend in beheer van regels via platform Regelbeheer,
+aangaande de formalisatie van beleid en standaardisatie in regels</td>
+<td>Zelfde als Wetgevende organisaties</td>
+<td>Toetsen, feedback geven</td>
+</tr>
+<tr>
+<th>Leveranciers (voor oplossingen die het platform Regelbeheer
+gebruiken, niet voor het platform Regelbeheer zelf)</th>
+<td>Indirect als leveranciers van deeloplossingen waarmee andere
+stakeholders via platform Regelbeheer het regelbeheer kunnen doen.</td>
+<td>Indirect zelfde als Wetgevende organisaties maar met name de
+realiseerbaarheid van de compatibiliteit van hetgeen ze kunnen leveren,
+waarbij interoperabiliteit een grote rol heeft terwijl dit wel in hun
+businesspropositie moet blijven passen</td>
+<td>Toetsen, feedback geven</td>
+</tr>
+<tr>
+<th></th>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><strong>Stakeholders van project Platform Regelbeheer
+zelf:</strong></th>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>Opdrachtgever</th>
+<td>Opdrachtgever (OG)</td>
+<td>Realisatie, outcome</td>
+<td>Vaststellen</td>
+</tr>
+<tr>
+<th>Opdrachtnemer</th>
+<td>Projectleider (PL)</td>
+<td>Uitvoerbaarheid project</td>
+<td>Monitoren</td>
+</tr>
+<tr>
+<th>Architect / Adviseur</th>
+<td></td>
+<td>Oplossing die alle belangen van alle stakeholders behartigd</td>
+<td>Opstellen</td>
+</tr>
+<tr>
+<th>Ontwikkelaars</th>
+<td></td>
+<td>Realiseerbaarheid, Kwaliteit</td>
+<td>Toetsen, feedback geven</td>
+</tr>
+<tr>
+<th>Beheerder</th>
+<td></td>
+<td>Beheermogelijkheden</td>
+<td>Toetsen feedback geven</td>
+</tr>
+<tr>
+<th>Leveranciers mbt platform regelbeheer zelf</th>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ## Over de verandering
 
@@ -262,40 +265,40 @@ de belangen van alle stakeholders bij een dergelijk platform behartigt.
 In de leidraad Regelbeheer van de expertisegroep regelbeheer wordt
 regelbeheer gedefinieerd als:
 
-*Regelbeheer is het \"geheel aan methoden, technieken, hulpmiddelen en
+*Regelbeheer is het "geheel aan methoden, technieken, hulpmiddelen en
 voorschriften om regels te ontwerpen, analyseren, valideren, verifiëren,
-uit te rollen, uit te voeren, te beheren en te evalueren.\"*[^2]
+uit te rollen, uit te voeren, te beheren en te evalueren."*[^2]
 
-*In plaats van de term \'Regelbeheer\' wordt ook wel gesproken over
-\'Regelbeheersing\', \'Business Rules Management (BRM)\',
-\'Kennisgebaseerd Werken\' of \'Regelgestuurd werken\'.*
+*In plaats van de term 'Regelbeheer' wordt ook wel gesproken over
+'Regelbeheersing', 'Business Rules Management (BRM)', 'Kennisgebaseerd
+Werken' of 'Regelgestuurd werken'.*
 
-Maar dan is het wel ook nodig het begrip "regel" in deze context te
+Maar dan is het wel ook nodig het begrip “regel” in deze context te
 definieren. De leidraad doet dit gelukkig ook en definieert deze als:
 
-*\"Een logisch of rekenkundig construct dat is gebaseerd op wet- en
+*"Een logisch of rekenkundig construct dat is gebaseerd op wet- en
 regelgeving of beleid en rechtstreeks sturing geeft aan de primaire taak
-van een uitvoeringsorganisatie\"*
+van een uitvoeringsorganisatie"*
 
 Voortschrijdend inzicht levert echter op dat wet- en regelgeving of
 beleid in alle gevallen gaat over afspraken en dat regels ook deels
 gebaseerd moeten kunnen worden op andere vormen van afspraken dan wet-
 en regelgeving of beleid zoals standaarden, architectuur, of misschien
 ook gewoon wel persoonlijke afspraken die juridisch bindend zijn.
-Derhalve definieren we in dit document het begrip "regel" als volgt:
+Derhalve definieren we in dit document het begrip “regel” als volgt:
 
-*\"Een logisch of rekenkundig construct dat is gebaseerd op juridisch
+*"Een logisch of rekenkundig construct dat is gebaseerd op juridisch
 bindende afspraken en rechtstreeks sturing geeft aan de primaire taak
-van een uitvoeringsorganisatie\"*
+van een uitvoeringsorganisatie"*
 
 ## Relaties met andere ontwikkelingen
 
 Geef vooral aan of afhankelijkheden wederzijds spelen met andere
-(deel)projecten en waaruit die afhankelijkheid bestaat.\
+(deel)projecten en waaruit die afhankelijkheid bestaat.  
 Doe dat in elk geval voor projecten van en voor de [Werkagenda
 Waardengedreven
 Digitaliseren](https://www.digitaleoverheid.nl/document/werkagenda-waardengedreven-digitaliseren/)
-...
+…
 
 nieuwe toekomstige visie van kabinet
 
@@ -310,7 +313,7 @@ Nederlandse tegenhanger: TOOI etc
 
 Zie <https://regels.overheid.nl/regelbeheer> / Inhoud
 
-## [Huidige situatie]{.mark}
+## <span class="mark">Huidige situatie</span>
 
 ## Aandachtspunten
 
@@ -349,26 +352,26 @@ Zie <https://regels.overheid.nl/regelbeheer> / Inhoud
 ## Nederlandse standaarden
 
 Hier wordt onderbouwd met welke open standaarden verplicht zijn om toe
-te passen en met welke (open) standaarden rekening wordt gehouden.\
+te passen en met welke (open) standaarden rekening wordt gehouden.  
 Maak daarbij vooral ook gebruik van:
 
--   het principe NAP08 [Standaardiseer waar
-    mogelijk](https://www.noraonline.nl/wiki/Standaardiseer_waar_mogelijk)
+- het principe NAP08 [Standaardiseer waar
+  mogelijk](https://www.noraonline.nl/wiki/Standaardiseer_waar_mogelijk)
 
--   en de informatie over open
-    [Standaarden](https://www.noraonline.nl/wiki/Standaarden) van het
-    Forum Standaardisatie
+- en de informatie over open
+  [Standaarden](https://www.noraonline.nl/wiki/Standaarden) van het
+  Forum Standaardisatie
 
--   de standaarden die worden gebruikt in bestaande bouwstenen
-    (voorzieningen), zie [Bouwstenen en gebruikte
-    standaarden](https://www.noraonline.nl/wiki/Bouwstenen_en_gebruikte_standaarden)
+- de standaarden die worden gebruikt in bestaande bouwstenen
+  (voorzieningen), zie [Bouwstenen en gebruikte
+  standaarden](https://www.noraonline.nl/wiki/Bouwstenen_en_gebruikte_standaarden)
 
 Indien van toepassing ook aangeven waar wordt afgeweken van de
 standaarden, de reden hiervoor en de maatregelen om negatieve
-consequenties te voorkomen.\
+consequenties te voorkomen.  
 Deze verklaring moet worden gebruikt in de jaarrapportage voor
-compliancy aan open\
-standaarden, zie [\'Pas toe of leg uit\'-beleid \| Forum
+compliancy aan open  
+standaarden, zie ['Pas toe of leg uit'-beleid \| Forum
 Standaardisatie](https://forumstandaardisatie.nl/pas-toe-leg-uit-beleid).
 
 ## Internationale standaarden
@@ -393,7 +396,7 @@ Kwaliteitsdoel [Privacy
 fundament](https://www.noraonline.nl/wiki/Neem_gegevens_als_fundament)
 en NAP11 [Pas doelbinding
 toe](https://www.noraonline.nl/wiki/Pas_doelbinding_toe) en bij
-behorende Implicaties zoals IMP004 \"Data minimalisation\".
+behorende Implicaties zoals IMP004 "Data minimalisation".
 
 Een advies daarover kan je mogelijk verkrijgen via de community van het
 thema Privacy.
@@ -403,11 +406,11 @@ thema Privacy.
 Beschrijf hier hoe de geldende beveiligingskaders, waaronder met name de
 BIO, zullen worden vertaald naar beveiligingsmaatregelen die nodig zijn
 voor de processen en gegevens binnen de scope van de verandering c.q.
-het project.\
+het project.  
 Denk ook aan [open standaarden ten behoeve van veilig
 internet](https://www.forumstandaardisatie.nl/onderwerpen/veilig-internet)
 en de [Meting Informatieveiligheidstandaarden \| Forum
-Standaardisatie](https://forumstandaardisatie.nl/metingen/informatieveiligheidstandaarden)\
+Standaardisatie](https://forumstandaardisatie.nl/metingen/informatieveiligheidstandaarden)  
 Zie ook [Kaders
 beveiliging](https://www.noraonline.nl/wiki/Kaders_beveiliging)
 
@@ -415,7 +418,7 @@ Informatiebeveiliging is uitgewerkt in het thema
 [Beveiliging](https://www.noraonline.nl/wiki/Beveiliging) en via NAP10
 [Neem gegevens als
 fundament](https://www.noraonline.nl/wiki/Neem_gegevens_als_fundament),
-NAP13 [Beheers risico\'s
+NAP13 [Beheers risico's
 voortdurend](https://www.noraonline.nl/wiki/Beheers_risico%27s_voortdurend),
 NAP14 [Verifieer
 altijd](https://www.noraonline.nl/wiki/Verifieer_altijd) en NAP15 [Maak
@@ -442,7 +445,7 @@ afwijkingen die vervolgens jaren blijven bestaan en uit zicht
 verdwijnen. Daarom is het van belang dat er een verantwoordelijke is
 voor het beoordelen, goed- dan wel afkeuren en blijvend monitoren van
 bewuste afwijkingen op de architectuur. Er kunnen valide redenen zijn om
-afwijkingen toe te staan; niet om ze jarenlang te laten bestaan...
+afwijkingen toe te staan; niet om ze jarenlang te laten bestaan…
 
 Geef een opsomming van de punten waarvan de stakeholders aangeven dat
 daar besluitvorming over nodig is en licht per punt kort toe welke
@@ -459,63 +462,37 @@ En hier kan je ook alle overige relevante vraagstukken benoemen.
 # Bijlage A. Vragen en antwoorden
 
 Deze bijlage bevat een overzicht van vragen en onduidelijkheden die we
-'dagelijks' tegenkomen in ons werk en waar deze in het document zijn
+‘dagelijks’ tegenkomen in ons werk en waar deze in het document zijn
 beantwoord.
 
-  -------------------------------------------------------------------------
-  Vraag                                 Plaats in de   Toelichting
-                                        architectuur   
-  ------------------------------------- -------------- --------------------
-  Wat valt onder regelbeheer, en wat                   
-  niet?                                                
-
-  Wat is een regeltaal?                                
-
-  Wát moet over een regel worden                       
-  vastgelegd en waarom?                                
-
-  Hóe leggen we dit vast?                              
-
-  Welke internationale en nationale                    
-  standaarden en kaders worden                         
-  toegepast, en waarom?                                
-
-  Welke principes liggen aan het                       
-  regelbeheer ten grondslag?                           
-
-  Welke functies heeft het platform                    
-  regels.overheid.nl, en voor welke                    
-  stakeholders?                                        
-
-  Welke rollen hebben de verschillende                 
-  organisaties in het regelbeheer, nu                  
-  en in de toekomst?                                   
-
-  Hoe is de samenwerking tussen deze                   
-  partijen vormgegeven?                                
-  -------------------------------------------------------------------------
+| Vraag | Plaats in de architectuur | Toelichting |
+|----|----|----|
+| Wat valt onder regelbeheer, en wat niet? |  |  |
+| Wat is een regeltaal? |  |  |
+| Wát moet over een regel worden vastgelegd en waarom? |  |  |
+| Hóe leggen we dit vast? |  |  |
+| Welke internationale en nationale standaarden en kaders worden toegepast, en waarom? |  |  |
+| Welke principes liggen aan het regelbeheer ten grondslag? |  |  |
+| Welke functies heeft het platform regels.overheid.nl, en voor welke stakeholders? |  |  |
+| Welke rollen hebben de verschillende organisaties in het regelbeheer, nu en in de toekomst? |  |  |
+| Hoe is de samenwerking tussen deze partijen vormgegeven? |  |  |
 
 # Bijlage B. Betrokkenen
 
 Geef hier aan wie vanuit zijn of haar functie heeft meegewerkt aan de
 totstandkoming van deze PSA.
 
-  ------------------------------------------------------------------------
-  Naam               Organisatie   Functie / Rol
-  ------------------ ------------- ---------------------------------------
-  Eric Brouwer       ICTU          Hoeder van de NORA
-
-                                   
-
-                                   
-
-                                   
-  ------------------------------------------------------------------------
+| Naam         | Organisatie | Functie / Rol      |
+|--------------|-------------|--------------------|
+| Eric Brouwer | ICTU        | Hoeder van de NORA |
+|              |             |                    |
+|              |             |                    |
+|              |             |                    |
 
 # Bijlage C. Bronnen
 
--   Voorbeeld domeinarchitectuur:
-    <https://www.surf.nl/files/2022-02/hosa-domeinarchitectuur-flexibilisering-onderwijs-v1.0.pdf>
+- Voorbeeld domeinarchitectuur:
+  <https://www.surf.nl/files/2022-02/hosa-domeinarchitectuur-flexibilisering-onderwijs-v1.0.pdf>
 
 # Bijlage D. Toelichting NORA-Vijflaagsmodel
 
@@ -533,55 +510,55 @@ geborgd dat toekomstvaste en duurzame keuzes worden gemaakt.
 
 Geef hier een eerste indicatie van de manier waarop de wet- en
 regelgeving en beleidsafspraken van toepassing zijn op het vraagstuk.
-Dat kunnen ook algemene maatregelen van bestuur (AMvB's), of
-Ministeriële regelingen (MR's) zijn.\
+Dat kunnen ook algemene maatregelen van bestuur (AMvB’s), of
+Ministeriële regelingen (MR’s) zijn.  
 Hierbij kan je gebruik maken van het overzicht van alle [Implicaties van
 Architectuurprincipes voor de
 Grondslagenlaag](https://www.noraonline.nl/wiki/Implicaties_van_Architectuurprincipes#Laag_1:_Grondslagenlaag)
 
 Denk verder met name aan de volgende wet- en regelgeving:
 
-a.  Algemene Wet Bestuursrecht (Awb)
+1.  Algemene Wet Bestuursrecht (Awb)
 
-b.  Wet Open Overheid (Woo)
+2.  Wet Open Overheid (Woo)
 
-c.  Wet Digitale Overheid (Wdo)
+3.  Wet Digitale Overheid (Wdo)
 
-d.  Archiefwet (Aw)
+4.  Archiefwet (Aw)
 
-e.  Privacywetgeving (AVG)
+5.  Privacywetgeving (AVG)
 
-f.  Specifieke wetgeving die van toepassing is op het domein of werkveld
-    van de organisatie of keten waarop de verandering impact heeft.\
+6.  Specifieke wetgeving die van toepassing is op het domein of werkveld
+    van de organisatie of keten waarop de verandering impact heeft.  
     Bijvoorbeeld specifieke wetgeving in de Zorg.
 
-g.  Agenda Waardengedreven Digitaliseren
+7.  Agenda Waardengedreven Digitaliseren
 
 Architectuurkaders en voorschriften die van toepassing zijn:
 
-h.  NORA, het toepassen van de [Bindende
+8.  NORA, het toepassen van de [Bindende
     Architectuurafspraken](https://www.noraonline.nl/wiki/Bindende_Architectuurafspraken)
 
-i.  De [VISIE ARCHITECTUUR Digitale Overheid 2030
+9.  De [VISIE ARCHITECTUUR Digitale Overheid 2030
     (noraonline.nl)](https://www.noraonline.nl/images/noraonline/6/6d/Visie_Architectuur_Digitale_Overheid_2030_-_concept.pdf)
 
-j.  Kaders vanuit de NORA familie: [Welke dochter is voor mij van
+10. Kaders vanuit de NORA familie: [Welke dochter is voor mij van
     toepassing?](https://www.noraonline.nl/wiki/Welke_dochter_is_voor_mij_van_toepassing%3F)
 
-k.  De lijst van verplichte standaarden van Forum Standaardisatie:
-    [[\'Pas toe leg uit\' standaarden
-    (verplicht)]{.underline}](https://forumstandaardisatie.nl/open-standaarden/verplicht)
-    volgens [[\'Pas toe of leg
-    uit\'-beleid]{.underline}](https://forumstandaardisatie.nl/pas-toe-leg-uit-beleid)
+11. De lijst van verplichte standaarden van Forum Standaardisatie:
+    [<u>'Pas toe leg uit' standaarden
+    (verplicht)</u>](https://forumstandaardisatie.nl/open-standaarden/verplicht)
+    volgens [<u>'Pas toe of leg
+    uit'-beleid</u>](https://forumstandaardisatie.nl/pas-toe-leg-uit-beleid)
 
-l.  Standaarden op de 'pas toe of leg uit'-lijst van Forum
+12. Standaarden op de ‘pas toe of leg uit’-lijst van Forum
     Standaardisatie zijn verplicht om uit te vragen bij inkooptrajecten
     van meer dan EUR 50K (alleen onder zwaarwegende omstandigheden mag
-    afgeweken worden van de verplichting via een 'leg uit' in het
-    jaarverslag). Zie: [[\'Pas toe of leg uit\'-beleid \| Forum
-    Standaardisatie]{.underline}](https://forumstandaardisatie.nl/pas-toe-leg-uit-beleid)
+    afgeweken worden van de verplichting via een ‘leg uit’ in het
+    jaarverslag). Zie: [<u>'Pas toe of leg uit'-beleid \| Forum
+    Standaardisatie</u>](https://forumstandaardisatie.nl/pas-toe-leg-uit-beleid)
 
-m.  Specifieke kaders vanuit de organisatie of een keten.\
+13. Specifieke kaders vanuit de organisatie of een keten.  
     Bijvoorbeeld de regels die gelden vanuit de wettelijke taak, de
     Enterprise Architectuur of de begrotingsruimte.
 
@@ -593,24 +570,24 @@ belangen van de verschillende stakeholders.
 
 Zorg in elk geval voor duidelijkheid over:
 
--   Hoe goed is de dienst beschreven?
+- Hoe goed is de dienst beschreven?
 
--   Hoe is de dienst gepositioneerd t.o.v. andere diensten?\
-    Zie voor deze 2 aspecten NAP09 - [Beschrijf de dienst
-    nauwkeurig](https://www.noraonline.nl/wiki/Beschrijf_de_dienst_nauwkeurig)
+- Hoe is de dienst gepositioneerd t.o.v. andere diensten?  
+  Zie voor deze 2 aspecten NAP09 - [Beschrijf de dienst
+  nauwkeurig](https://www.noraonline.nl/wiki/Beschrijf_de_dienst_nauwkeurig)
 
--   Hoe is de dienst via internet te bereiken?\
-    Zie voor dit aspect NAP03 [Lever een kanaal-onafhankelijk
-    resultaat](https://www.noraonline.nl/wiki/Lever_een_kanaal-onafhankelijk_resultaat)
+- Hoe is de dienst via internet te bereiken?  
+  Zie voor dit aspect NAP03 [Lever een kanaal-onafhankelijk
+  resultaat](https://www.noraonline.nl/wiki/Lever_een_kanaal-onafhankelijk_resultaat)
 
--   Hoe is rekening gehouden met wensen vanuit de gebruiker van de
-    dienst?\
-    Zie voor dit aspect NAP01 [Verplaats je in de
-    gebruiker](https://www.noraonline.nl/wiki/Verplaats_je_in_de_gebruiker)
+- Hoe is rekening gehouden met wensen vanuit de gebruiker van de
+  dienst?  
+  Zie voor dit aspect NAP01 [Verplaats je in de
+  gebruiker](https://www.noraonline.nl/wiki/Verplaats_je_in_de_gebruiker)
 
--   Welke kwaliteitsafspraken zijn gemaakt over deze dienst?\
-    Zie voor dit aspect NAP17 [Stuur cyclisch op
-    kwaliteit](https://www.noraonline.nl/wiki/Stuur_cyclisch_op_kwaliteit)
+- Welke kwaliteitsafspraken zijn gemaakt over deze dienst?  
+  Zie voor dit aspect NAP17 [Stuur cyclisch op
+  kwaliteit](https://www.noraonline.nl/wiki/Stuur_cyclisch_op_kwaliteit)
 
 ## De invalshoek Organisatie
 
@@ -622,33 +599,31 @@ laag](https://www.noraonline.nl/wiki/Implicaties_van_Architectuurprincipes#Laag_
 
 Zorg in elk geval voor duidelijkheid over:
 
--   Wie (welke functie) is eind-verantwoordelijk voor deze dienst?
+- Wie (welke functie) is eind-verantwoordelijk voor deze dienst?
 
--   Hoe wordt de dienst gemanaged met het
-    [Dienstverleningsconcept](https://www.noraonline.nl/wiki/Dienstverleningsconcept)?
+- Hoe wordt de dienst gemanaged met het
+  [Dienstverleningsconcept](https://www.noraonline.nl/wiki/Dienstverleningsconcept)?
 
-    -   Welk gremium bepaalt de afspraken over de dienst?\
-        Denk aan Tweede Kamer als het een overheidsdienst aan burgers
-        is, of het OBDO als het gaat om samenwerking tussen
-        overheidsorganisaties of efficiëntie (via het gebruik van
-        standaarden e.d.)
+  - Welk gremium bepaalt de afspraken over de dienst?  
+    Denk aan Tweede Kamer als het een overheidsdienst aan burgers is, of
+    het OBDO als het gaat om samenwerking tussen overheidsorganisaties
+    of efficiëntie (via het gebruik van standaarden e.d.)
 
-    -   Welke overheidsorganisatie(s) voert (voeren) die afspraken uit?
+  - Welke overheidsorganisatie(s) voert (voeren) die afspraken uit?
 
-    -   Welke overheidsorganisatie is verantwoordelijk voor het herstel
-        van eventuele gemaakte fouten? En bij wie kan de gebruiker
-        (burger, ondernemer, ambtenaar) hulp vragen als het vastloopt
-        oid.?
+  - Welke overheidsorganisatie is verantwoordelijk voor het herstel van
+    eventuele gemaakte fouten? En bij wie kan de gebruiker (burger,
+    ondernemer, ambtenaar) hulp vragen als het vastloopt oid.?
 
-    -   Welke overheidsorganisatie(s) is (zijn) verantwoordelijk voor
-        het doorvoeren van wijzigingen in het proces?
+  - Welke overheidsorganisatie(s) is (zijn) verantwoordelijk voor het
+    doorvoeren van wijzigingen in het proces?
 
-    -   Welke overheidsorganisatie is verantwoordelijk voor voorstellen
-        voor verbetering van de afspraken of van de uitvoering?
+  - Welke overheidsorganisatie is verantwoordelijk voor voorstellen voor
+    verbetering van de afspraken of van de uitvoering?
 
 Zie voor deze aspecten NAP17 [Stuur cyclisch op
-kwaliteit](https://www.noraonline.nl/wiki/Stuur_cyclisch_op_kwaliteit)\
-\
+kwaliteit](https://www.noraonline.nl/wiki/Stuur_cyclisch_op_kwaliteit)  
+  
 NB. Beheer is onderdeel van deze 5 processen (zie verder het hoofdstuk
 inzake Beheer) !
 
@@ -663,15 +638,15 @@ Informatielaag](https://www.noraonline.nl/wiki/Implicaties_van_Architectuurprinc
 
 Zorg in elk geval voor duidelijkheid over:
 
--   Welke gegevens(soorten) zijn onderkend?
+- Welke gegevens(soorten) zijn onderkend?
 
--   Hoe en waar zijn die beschreven?\
-    Zie voor deze 2 aspecten NAP10 [Neem gegevens als
-    fundament](https://www.noraonline.nl/wiki/Neem_gegevens_als_fundament)
+- Hoe en waar zijn die beschreven?  
+  Zie voor deze 2 aspecten NAP10 [Neem gegevens als
+  fundament](https://www.noraonline.nl/wiki/Neem_gegevens_als_fundament)
 
--   Uit welke bron-registraties kunnen die gegevens worden verkregen?\
-    Zie voor dit aspect NAP12 [Informeer bij de
-    bron](https://www.noraonline.nl/wiki/Informeer_bij_de_bron)
+- Uit welke bron-registraties kunnen die gegevens worden verkregen?  
+  Zie voor dit aspect NAP12 [Informeer bij de
+  bron](https://www.noraonline.nl/wiki/Informeer_bij_de_bron)
 
 ## De invalshoek Applicaties
 
@@ -684,21 +659,20 @@ Applicatielaag](https://www.noraonline.nl/wiki/Implicaties_van_Architectuurprinc
 
 Zorg in elk geval voor duidelijkheid over:
 
--   Welke bestaande bouwstenen (voorzieningen) zijn te hergebruiken?\
-    Ook mogelijk internationale bouwstenen (voorzieningen)!\
-    Zie voor dit aspect NAP08 [Standaardiseer waar
-    mogelijk](https://www.noraonline.nl/wiki/Standaardiseer_waar_mogelijk)
+- Welke bestaande bouwstenen (voorzieningen) zijn te hergebruiken?  
+  Ook mogelijk internationale bouwstenen (voorzieningen)!  
+  Zie voor dit aspect NAP08 [Standaardiseer waar
+  mogelijk](https://www.noraonline.nl/wiki/Standaardiseer_waar_mogelijk)
 
--   Algoritmen zijn bekend en aangemeld bij het algoritmeregister,
-    conform de
-    [kamerbrief](https://open.overheid.nl/documenten/ronl-391fc340bc62f9c0b60f7408f9d780aa6be5168e/pdf)
-    2022-0000693912: \"*In de aanloop naar verplichtstelling zal het
-    kabinet overheidsorganisaties stimuleren om waar mogelijk hun
-    (hoog-risico) algoritmes te publiceren. Dergelijke publicatie kan
-    wel begrensd worden door wettelijke of gerechtvaardigde
-    uitzonderingen die van toepassing zijn in het kader van bijvoorbeeld
-    opsporing, rechtshandhaving, defensie of inlichtingenverzameling.
-    \" *
+- Algoritmen zijn bekend en aangemeld bij het algoritmeregister, conform
+  de
+  [kamerbrief](https://open.overheid.nl/documenten/ronl-391fc340bc62f9c0b60f7408f9d780aa6be5168e/pdf)
+  2022-0000693912: "*In de aanloop naar verplichtstelling zal het
+  kabinet overheidsorganisaties stimuleren om waar mogelijk hun
+  (hoog-risico) algoritmes te publiceren. Dergelijke publicatie kan wel
+  begrensd worden door wettelijke of gerechtvaardigde uitzonderingen die
+  van toepassing zijn in het kader van bijvoorbeeld opsporing,
+  rechtshandhaving, defensie of inlichtingenverzameling. " *
 
 ## De invalshoek Infrastructuur
 
@@ -711,10 +685,10 @@ Netwerklaag](https://www.noraonline.nl/wiki/Implicaties_van_Architectuurprincipe
 
 Zorg in elk geval voor duidelijkheid over:
 
--   Hoe wordt hergebruik gemaakt van internet en andere bestaande
-    netwerken (DigiNetwerk, Rinis, RON e.d.)\
-    Zie voor dit aspect NAP08 [Standaardiseer waar
-    mogelijk](https://www.noraonline.nl/wiki/Standaardiseer_waar_mogelijk)
+- Hoe wordt hergebruik gemaakt van internet en andere bestaande
+  netwerken (DigiNetwerk, Rinis, RON e.d.)  
+  Zie voor dit aspect NAP08 [Standaardiseer waar
+  mogelijk](https://www.noraonline.nl/wiki/Standaardiseer_waar_mogelijk)
 
 [^1]: https://www.noraonline.nl/wiki/Expertisegroep_Regelbeheer
 
