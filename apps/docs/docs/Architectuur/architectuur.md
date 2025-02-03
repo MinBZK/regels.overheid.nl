@@ -447,6 +447,8 @@ NB zie hoofdstuk 5.4 voor meer informatie hierover.
 
 ## 5.3 Organisatie
 
+![Stakeholders en hun belangen](./puml/stakeholder-motivation.svg)
+
 TODO Archimate organisatie laag
 
 Stakeholders als in hoofdstuk 3.3 met hun belangen. Meer uitgewerkt, ook
