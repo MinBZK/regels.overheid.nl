@@ -1,5 +1,11 @@
 # docs
 
+## 3.17.0
+
+### Minor Changes
+
+- 37f5108: Added initial architecture page and started documenting OpenCatalogi capabilities
+
 ## 3.16.0
 
 ### Minor Changes
