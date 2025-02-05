@@ -18,51 +18,51 @@ TODO: plaatje
 
 # 1 Inhoudsopgave
 
-* [2 Managementsamenvatting](#managementsamenvatting)
+* [2 Managementsamenvatting](#2-managementsamenvatting)
 
-* [3 Inleiding](#inleiding)
+* [3 Inleiding](#3-inleiding)
 
-  *  [3.1 Aanleiding en doelstelling](#aanleiding-en-doelstelling)
+  *  [3.1 Aanleiding en doelstelling](#31-aanleiding-en-doelstelling)
 
-  *  [3.2 De verandering](#de-verandering)
+  *  [3.2 De verandering](#32-de-verandering)
 
-  *  [3.3 Stakeholders](#stakeholders)
+  *  [3.3 Stakeholders](#33-stakeholders)
 
-  *  [3.4 Relaties met andere ontwikkelingen](#relaties-met-andere-ontwikkelingen)
+  *  [3.4 Relaties met andere ontwikkelingen](#34-relaties-met-andere-ontwikkelingen)
 
-* [4 Visualisatie en visie](#visualisatie-en-visie)
+* [4 Visualisatie en visie](#4-visualisatie-en-visie)
 
-  * [4.1 Huidige situatie](#huidige-situatie)
+  * [4.1 Huidige situatie](#41-huidige-situatie)
 
-  * [4.2 Platform Regelbeheer, een essentiële generieke Digitale Bouwsteen](#platform-regelbeheer-een-essentiële-generieke-digitale-bouwsteen)
+  * [4.2 Platform Regelbeheer, een essentiële generieke Digitale Bouwsteen](#42-platform-regelbeheer-een-essentiële-generieke-digitale-bouwsteen)
 
-* [5 Beschrijving per laag](#beschrijving-per-laag)
+* [5 Beschrijving per laag](#5-beschrijving-per-laag)
 
-  *  [5.1 Overzicht](#overzicht)
+  *  [5.1 Overzicht](#51-overzicht)
 
-  *  [5.2 Grondslagen](#grondslagen)
+  *  [5.2 Grondslagen](#52-grondslagen)
 
-  *  [5.3 Organisatie](#organisatie)
+  *  [5.3 Organisatie](#53-organisatie)
 
-  *  [5.4 Informatie](#informatie)
+  *  [5.4 Informatie](#54-informatie)
 
-  *  [5.5 Applicaties](#applicaties)
+  *  [5.5 Applicaties](#55-applicaties)
 
-  *  [5.6 Fysieke infrastructuur](#fysieke-infrastructuur)
+  *  [5.6 Fysieke infrastructuur](#56-fysieke-infrastructuur)
 
-* [6 Standaarden](#standaarden)
+* [6 Standaarden](#6-standaarden)
 
-* [7 Privacy en Informatiebeveiliging](#privacy-en-informatiebeveiliging)
+* [7 Privacy en Informatiebeveiliging](#7-privacy-en-informatiebeveiliging)
 
-  *  [7.1 Privacy](#privacy)
+  *  [7.1 Privacy](#71-privacy)
 
-  *  [7.2 Informatiebeveiliging](#informatiebeveiliging)
+  *  [7.2 Informatiebeveiliging](#72-informatiebeveiliging)
 
-* [8 Beheer](#beheer)
+* [8 Beheer](#8-beheer)
 
-* [9 Beslispunten](#beslispunten)
+* [9 Beslispunten](#9-beslispunten)
 
-  *  [9.1 Definitie begrippen Regelbeheer, Regel en Regeltaal](#definitie-begrippen-regelbeheer-regel-en-regeltaal)
+  *  [9.1 Definitie begrippen Regelbeheer, Regel en Regeltaal](#91-definitie-begrippen-regelbeheer-regel-en-regeltaal)
 
 * [Bijlage A. Vragen en antwoorden](#bijlage-a.-vragen-en-antwoorden)
 
@@ -72,16 +72,18 @@ TODO: plaatje
 
 # 2 Managementsamenvatting
 
+TODO
+
 # 3 Inleiding
 
 ## 3.1 Aanleiding en doelstelling
 
 Dit document beschrijft een doelarchitectuur voor een platform waar
 overheden de informatie kunnen vinden om effectief samen te kunnen
-werken aan goed regelbeheer (zie 9.1 voor de [definitie van regelbeheer](#definitie-begrippen-regelbeheer-regel-en-regeltaal)),
+werken aan goed regelbeheer (zie 9.1 voor de [definitie van regelbeheer](#91-definitie-begrippen-regelbeheer-regel-en-regeltaal)),
 hetgeen het doel is van het project Platform Regelbeheer. De doelgroep
 van dit document wordt uiteindelijk gevormd door alle stakeholders bij
-de beoogde oplossing die worden genoemd in hoofdstuk [3.3 Stakeholders](#stakeholders). Dit document
+de beoogde oplossing die worden genoemd in hoofdstuk [3.3 Stakeholders](#33-stakeholders). Dit document
 fungeert daarbij als de Project Start Architectuur zoals die voor alle
 overheidsprojecten dient te worden opgesteld en is daarmee een van de
 deliverables in het project Platform Regelbeheer.
@@ -104,118 +106,20 @@ Stakeholders en hun belangen bij het beoogde platform alsook hun
 bijdrage aan de architectuur ervan worden hieronder grofweg weergegeven
 in tabel 1.
 
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 27%" />
-<col style="width: 22%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>Stakeholder</strong></th>
-<th><strong>Functie / Rol</strong></th>
-<th><strong>Belang in resultaat</strong></th>
-<th><strong>Bijdrage aan de architectuur</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>Burgers en Bedrijven</th>
-<td>Indirecte gebruikers</td>
-<td><p>Uitlegbaarheid, Transparantie (Access), Consistentie,</p>
-<p>Vindbaarheid (Findable),</p>
-<p>Rechtmatigheid</p></td>
-<td>Toetsen, feedback geven (indirect)</td>
-</tr>
-<tr>
-<th>Wetgevende organisaties (zoals Ministeries) (experts in regelbeheer,
-juridisch, architectuur etc.)</th>
-<td>Participerend in beheer van regels via platform Regelbeheer,
-aangaande de formalisatie van wetgeving en standaardisatie in
-regels</td>
-<td><p>Alle belangen van Burgers en bedrijven maar ook:</p>
-<p>Herbruikbaarheid (Reusable)</p>
-<p>Interoperabiliteit (Interoperable)</p></td>
-<td>Toetsen, feedback geven</td>
-</tr>
-<tr>
-<th>Uitvoeringsorganisaties (zoals Gemeentes of de Belastingdienst)
-(experts in regelbeheer, juridisch, architectuur etc.)</th>
-<td>Participerend in beheer van regels via platform Regelbeheer,
-aangaande de formalisatie van beleid en standaardisatie in regels</td>
-<td>Zelfde als Wetgevende organisaties</td>
-<td>Toetsen, feedback geven</td>
-</tr>
-<tr>
-<th>Leveranciers (voor oplossingen op basis van het platform
-Regelbeheer, niet voor het platform Regelbeheer zelf)</th>
-<td>Indirect als leveranciers van deeloplossingen waarmee andere
-stakeholders op basis van het platform Regelbeheer het regelbeheer
-kunnen doen.</td>
-<td>Indirect zelfde als Wetgevende organisaties maar met name de
-realiseerbaarheid van de compatibiliteit van hetgeen ze kunnen leveren,
-waarbij interoperabiliteit een grote rol heeft terwijl dit wel in hun
-businesspropositie moet blijven passen</td>
-<td>Toetsen, feedback geven</td>
-</tr>
-<tr>
-<th></th>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<th><strong>Stakeholders van project Platform Regelbeheer
-zelf:</strong></th>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<th>Opdrachtgever</th>
-<td>Opdrachtgever (OG)</td>
-<td>Realisatie, outcome</td>
-<td>Toetsen, feedback geven, vaststellen</td>
-</tr>
-<tr>
-<th>Opdrachtnemer</th>
-<td>Projectleider (PL)</td>
-<td>Uitvoerbaarheid project</td>
-<td>Monitoren</td>
-</tr>
-<tr>
-<th>Architect / Adviseur</th>
-<td></td>
-<td>Oplossing die alle belangen van alle stakeholders behartigd</td>
-<td>Opstellen</td>
-</tr>
-<tr>
-<th>Ontwikkelaars</th>
-<td></td>
-<td>Realiseerbaarheid, Kwaliteit</td>
-<td>Toetsen, feedback geven</td>
-</tr>
-<tr>
-<th>Beheerder</th>
-<td></td>
-<td>Beheermogelijkheden</td>
-<td>Toetsen feedback geven</td>
-</tr>
-<tr>
-<th>Aanpalende projecten (zie [3.4](#relaties-met-andere-ontwikkelingen))</th>
-<td></td>
-<td>Realiseerbaarheid (van aanpassing op impact)</td>
-<td>Toetsen feedback geven</td>
-</tr>
-<tr>
-<th>Leveranciers mbt platform regelbeheer zelf</th>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+| Stakeholder | Functie / Rol | Belang in resultaat | Bijdrage aan de architectuur |
+|----|----|----|----|
+| Burgers en Bedrijven | Indirecte gebruikers | Uitlegbaarheid, Transparantie (Access), Consistentie, Vindbaarheid (Findable), Rechtmatigheid | Toetsen, feedback geven (indirect) |
+| Wetgevende organisaties (zoals Ministeries) (experts in regelbeheer, juridisch, architectuur etc.) | Participerend in beheer van regels via platform Regelbeheer, aangaande de formalisatie van wetgeving en standaardisatie in regels | Alle belangen van Burgers en bedrijven maar ook: Herbruikbaarheid (Reusable), Interoperabiliteit (Interoperable) | Toetsen, feedback geven |
+| Uitvoeringsorganisaties (zoals Gemeentes of de Belastingdienst) (experts in regelbeheer, juridisch, architectuur etc.) | Participerend in beheer van regels via platform Regelbeheer, aangaande de formalisatie van beleid en standaardisatie in regels | Zelfde als Wetgevende organisaties | Toetsen, feedback geven |
+| Leveranciers (voor oplossingen op basis van het platform Regelbeheer, niet voor het platform Regelbeheer zelf) | Indirect als leveranciers van deeloplossingen waarmee andere stakeholders op basis van het platform Regelbeheer het regelbeheer kunnen doen. | Indirect zelfde als Wetgevende organisaties maar met name de realiseerbaarheid van de compatibiliteit van hetgeen ze kunnen leveren, waarbij interoperabiliteit een grote rol heeft terwijl dit wel in hun businesspropositie moet blijven passen | Toetsen, feedback geven |
+| Stakeholders van project Platform Regelbeheer zelf: |  |  |  |           
+| Opdrachtgever | Opdrachtgever (OG) | Realisatie, outcome | Toetsen, feedback geven, vaststellen |
+| Opdrachtnemer | Projectleider (PL) | Uitvoerbaarheid project | Monitoren |
+| Architect / Adviseur | Development | Oplossing die alle belangen van alle stakeholders behartigd | Opstellen |
+| Ontwikkelaars | Development | Realiseerbaarheid, Kwaliteit | Toetsen, feedback geven |
+| Beheerder | Beheerder | Beheermogelijkheden | Toetsen feedback geven |
+| Aanpalende projecten (zie [3.4](#34-relaties-met-andere-ontwikkelingen)) | | Realiseerbaarheid (van aanpassing op impact) | Toetsen feedback geven |
+| Leveranciers mbt platform regelbeheer zelf |  |  |  |
 
 *Tabel 1, stakeholderbelangen overzicht*
 
@@ -629,19 +533,19 @@ Wat wordt de beheerpartij voor de website regels.overheid.nl ?
 In de leidraad Regelbeheer van de expertisegroep regelbeheer wordt
 regelbeheer gedefinieerd als:
 
-***Regelbeheer** is het "geheel aan methoden, technieken, hulpmiddelen
+> **Regelbeheer** is het "geheel aan methoden, technieken, hulpmiddelen
 en voorschriften om regels te ontwerpen, analyseren, valideren,
 verifiëren, uit te rollen, uit te voeren, te beheren en te
-evalueren."*[^3]
-
-*In plaats van de term 'Regelbeheer' wordt ook wel gesproken over
+evalueren."[^3]
+> 
+> *In plaats van de term 'Regelbeheer' wordt ook wel gesproken over
 'Regelbeheersing', 'Business Rules Management (BRM)', 'Kennisgebaseerd
 Werken' of 'Regelgestuurd werken'.*
 
 Maar dan is het wel ook nodig het begrip “regel” in deze context te
 definieren. De leidraad doet dit gelukkig ook en definieert deze als:
 
-*"Een logisch of rekenkundig construct dat is gebaseerd op wet- en
+> *"Een logisch of rekenkundig construct dat is gebaseerd op wet- en
 regelgeving of beleid en rechtstreeks sturing geeft aan de primaire taak
 van een uitvoeringsorganisatie"*
 
@@ -652,11 +556,11 @@ en regelgeving of beleid zoals standaarden, architectuur, of misschien
 ook gewoon wel persoonlijke afspraken die juridisch bindend zijn.
 Derhalve definiëren we in dit document het begrip “**regel**” als volgt:
 
-*"Een logisch of rekenkundig construct dat is gebaseerd op juridisch
+> *"Een logisch of rekenkundig construct dat is gebaseerd op juridisch
 bindende afspraken en rechtstreeks sturing geeft aan de primaire taak
 van een uitvoeringsorganisatie"*
 
-*“De taal waarmee een logisch of rekenkundig contruct uitgedrukt kan
+> *“De taal waarmee een logisch of rekenkundig contruct uitgedrukt kan
 worden en die het een formele semantiek geeft”* noemen we een
 “**regeltaal**”.
 
