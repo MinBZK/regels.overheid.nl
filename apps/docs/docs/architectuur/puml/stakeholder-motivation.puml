@@ -1,0 +1,67 @@
+@startuml
+!include <archimate/Archimate>
+!theme archimate-saturated from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
+
+title Stakeholders en hun belangen
+
+'Elements'
+
+Grouping(samenleving,"Samenleving") {
+    together {
+        Motivation_Stakeholder(burgers, "Burgers")
+        Motivation_Stakeholder(nonprofits, "Non profit organisaties")
+        Motivation_Stakeholder(bedrijven, "Bedrijven")
+        Motivation_Stakeholder(overheid, "Overheid")
+    }
+    Grouping(overheidsorganisaties,"overheidsorganisaties") {
+        together {
+            Motivation_Stakeholder(leveranciers_overheidsdienstverleners, "Leveranciers overheidsdienstverleners")
+            Motivation_Stakeholder(wetgevende_organisaties, "Wetgevende organisaties")
+            Motivation_Stakeholder(uitvoerende_organisaties, "Uitvoerende organisaties")
+            Motivation_Stakeholder(rechterlijke_macht, "Rechterlijke macht")
+            Motivation_Stakeholder(project_platform_regelbeheer, "project Platform Regelbeheer")
+            Motivation_Stakeholder(aanpalende_projecten, "Aanpalende projecten")
+        }
+        Grouping(project, "Platform Regelbeheer") {
+            together {
+                Motivation_Stakeholder(opdrachtgever, "Opdrachtgever")
+                Motivation_Stakeholder(opdrachtnemer, "Opdrachtnemer")
+                Motivation_Stakeholder(architect_adviseur, "Architect/Adviseur")
+                Motivation_Stakeholder(ontwikkelaars, "Ontwikkelaars")
+                Motivation_Stakeholder(beheerder, "Beheerder")
+                Motivation_Stakeholder(leveranciers, "Leveranciers")
+            }
+        }
+    }
+}
+
+Grouping(samenlevingsbelangen, "Belangen samenleving") {
+    together {
+        Motivation_Driver(Transparency, "Transparantie")
+        Motivation_Driver(Explainability, "Uitlegbaarheid")
+        Motivation_Driver(Validity, "Rechtmatigheid")
+        Motivation_Driver(Findable, "Vindbaarheid")
+        Motivation_Driver(Accessibility, "Toegankelijk")
+    }
+    Grouping(overheidsbelangen, "Belangen overheid") {
+        together {
+            Motivation_Driver(Consistency, "Consistentheid")
+            Motivation_Driver(Reusability, "Herbruikbaarheid")
+            Motivation_Driver(Interoperability, "Interoperabiliteit")
+            Motivation_Driver(Feasibility, "Realiseerbaarheid")
+            Motivation_Driver(Adaptability, "Wendbaarheid")
+            Motivation_Driver(Efficiency, "Doelmatigheid")
+            Motivation_Driver(Effectiveness, "Doeltreffendheid")
+        }
+    }
+}
+
+'Relationships'
+Rel_Composition_Down(overheid,overheidsorganisaties)
+Rel_Composition_Down(project_platform_regelbeheer, project)
+Rel_Specialization_Up(leveranciers, bedrijven)
+Rel_Specialization_Up(leveranciers_overheidsdienstverleners, bedrijven)
+Rel_Association_Down(samenleving,samenlevingsbelangen)
+Rel_Association_Down(overheidsorganisaties,overheidsbelangen)
+
+@enduml
