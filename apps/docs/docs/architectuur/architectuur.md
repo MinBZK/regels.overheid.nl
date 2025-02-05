@@ -14,61 +14,7 @@ Datum 30-01-2025
 
 TODO: plaatje
 
-# Inhoud
-
-# 1 Inhoudsopgave
-
-* [2 Managementsamenvatting](#2-managementsamenvatting)
-
-* [3 Inleiding](#3-inleiding)
-
-  *  [3.1 Aanleiding en doelstelling](#31-aanleiding-en-doelstelling)
-
-  *  [3.2 De verandering](#32-de-verandering)
-
-  *  [3.3 Stakeholders](#33-stakeholders)
-
-  *  [3.4 Relaties met andere ontwikkelingen](#34-relaties-met-andere-ontwikkelingen)
-
-* [4 Visualisatie en visie](#4-visualisatie-en-visie)
-
-  * [4.1 Huidige situatie](#41-huidige-situatie)
-
-  * [4.2 Platform Regelbeheer, een essentiële generieke Digitale Bouwsteen](#42-platform-regelbeheer-een-essentiële-generieke-digitale-bouwsteen)
-
-* [5 Beschrijving per laag](#5-beschrijving-per-laag)
-
-  *  [5.1 Overzicht](#51-overzicht)
-
-  *  [5.2 Grondslagen](#52-grondslagen)
-
-  *  [5.3 Organisatie](#53-organisatie)
-
-  *  [5.4 Informatie](#54-informatie)
-
-  *  [5.5 Applicaties](#55-applicaties)
-
-  *  [5.6 Fysieke infrastructuur](#56-fysieke-infrastructuur)
-
-* [6 Standaarden](#6-standaarden)
-
-* [7 Privacy en Informatiebeveiliging](#7-privacy-en-informatiebeveiliging)
-
-  *  [7.1 Privacy](#71-privacy)
-
-  *  [7.2 Informatiebeveiliging](#72-informatiebeveiliging)
-
-* [8 Beheer](#8-beheer)
-
-* [9 Beslispunten](#9-beslispunten)
-
-  *  [9.1 Definitie begrippen Regelbeheer, Regel en Regeltaal](#91-definitie-begrippen-regelbeheer-regel-en-regeltaal)
-
-* [Bijlage A. Vragen en antwoorden](#bijlage-a.-vragen-en-antwoorden)
-
-* [Bijlage B. Betrokkenen](#bijlage-b.-betrokkenen)
-
-* [Bijlage C. Bronnen](#bijlage-c.-bronnen)
+# 1 Inhoud
 
 # 2 Managementsamenvatting
 
