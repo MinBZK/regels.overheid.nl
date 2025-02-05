@@ -1,3 +1,7 @@
+---
+title: Platform Regelbeheer
+description: Architectuur - Platform Regelbeheer
+---
 
 # Platform Regelbeheer
 ## Op basis van regels.overheid.nl en de Leidraad Regelbeheer
@@ -199,7 +203,7 @@ zelf:</strong></th>
 <td>Toetsen feedback geven</td>
 </tr>
 <tr>
-<th>Aanpalende projecten (zie [3.4]](#relaties-met-andere-ontwikkelingen))</th>
+<th>Aanpalende projecten (zie [3.4](#relaties-met-andere-ontwikkelingen))</th>
 <td></td>
 <td>Realiseerbaarheid (van aanpassing op impact)</td>
 <td>Toetsen feedback geven</td>
