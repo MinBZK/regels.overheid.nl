@@ -20,7 +20,7 @@ Selecteer de app (Open) Register en maak de volgende schema's aan via **Schemas*
 
 Het eindresultaat ziet er dan zo uit.
 
-![Geconfigureerde schema's](../../../static/img/OpenCatalogi/OC-schemas-configured.png)
+![Geconfigureerde schema's](../../../static/img/OpenCatalogi/OC-schemas-configured-new.png)
 
 ## Register
 
@@ -36,10 +36,10 @@ Het eindresultaat ziet er dan zo uit.
 
 ## Database
 
-Ga nu naar naar opencatalogi app via **Admin settings** -> **Open Catalogi** waarin je moet instellen dat we deze schema's in de Mariadb database willen opslaan.
+Ga nu naar naar opencatalogi app via **Administration settings** -> **Open Catalogi** waarin je moet instellen dat we deze schema's in de Mariadb database willen opslaan.
 
 ![Administration settings](../../../static/img/OpenCatalogi/OC-admin-settings.png)
 
-![Data storage](../../../static/img/OpenCatalogi/OC-data-storage.png)
+Let er goed op dat elk geselecteerde **Schema** in de dropdown overeenkomt met het gevraagde **Type**.
 
-test
+![Data storage](../../../static/img/OpenCatalogi/OC-data-storage-new.png)
