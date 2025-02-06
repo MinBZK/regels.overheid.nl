@@ -35,4 +35,10 @@ Het eindresultaat ziet er dan zo uit.
 
 ## Database
 
-Ga nu naar naar opencatalogi app waarin je moet instellen dat deze schema's in de nextcloud (Mariadb) database wil opslaan.
+Ga nu naar naar opencatalogi app via **Personal settings** -> **Open Catalogi** waarin je moet instellen dat we deze schema's in de Mariadb database willen opslaan.
+
+![Personal settings](../../../static/img/OpenCatalogi/OC-personal-settings.png)
+
+![Data storage](../../../static/img/OpenCatalogi/OC-data-storage.png)
+
+

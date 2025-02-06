@@ -1,5 +1,5 @@
 ---
-hide_title: Wat is Open Catalogies?
+hide_title: Wat is Open Catalogi?
 description: Getting started - Open Catalogi
 ---
 
