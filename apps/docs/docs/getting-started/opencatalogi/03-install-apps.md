@@ -1,7 +1,9 @@
 ---
-title: Apps
-description: Getting started - Open Catalogi Apps
+hide_title: Open Catalogi Apps
+description: Getting started - installeren Open Catalogi Apps
 ---
+
+## Open Catalogi Apps
 
 In nextcloud zelf kunnen we nu de apps openconnector, opencatalogi en openregisters ophalen uit de appstore. Selecteer daarvoor de **+ Apps** optie onder je proiel.
 

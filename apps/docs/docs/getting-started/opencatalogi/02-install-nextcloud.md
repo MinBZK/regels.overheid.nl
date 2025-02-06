@@ -1,6 +1,6 @@
 ---
-title: Installeren
-description: Getting started - installeren Open Catalogi
+hide_title: Nextcloud
+description: Getting started - installeren Nextcloud
 ---
 
 ## Nextcloud
