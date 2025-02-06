@@ -1,15 +1,16 @@
 ---
-hide_title: Wat is Open Catalogi?
-description: Getting started - Open Catalogi
+title: Wat is Open Catalogi?
+hide_title: true
+description: Getting started - Wat is Open Catalogi?
 ---
 
-# Wat is Open Catalogi?
+## Wat is Open Catalogi?
 
 Een federatieve catalogus ‘OpenCatalogi’, passend in het nieuwe informatielandschap Common Ground. Het concept OpenCatalogi biedt overzicht per gekozen (individuele) gemeente en geaggregeerde informatie van deelnemende gemeenten. Elke deelnemende gemeente installeert de OpenCatalogi software ten behoeve van vulling van het individuele deel. Gemeenten gebruiken de publicatiefunctie van het individuele deel om herbruikbare en uitwisselbare onderdelen te publiceren zodat dit inzichtelijk wordt voor andere deelnemers van OpenCatalogi.
 
 [Lees verder hier](https://github.com/OpenCatalogi)
 
-# Relatie met regels.overheid.nl
+## Relatie met regels.overheid.nl
 
 De gedachte bij het beschikbaar (helpen) stellen van gevalideerde regelspecificaties via regels.overheidnl is dat óók regels.overheid.nl een bronhouder is in het federatief stelsel dat OpenCatalogi beoogt te faciliteren.
 

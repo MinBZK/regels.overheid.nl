@@ -1,5 +1,5 @@
 ---
-hide_title: Configuratie
+title: Configuratie
 description: Getting started - Configureren Open Catalogi
 ---
 
@@ -14,31 +14,32 @@ Selecteer de app (Open) Register en maak de volgende schema's aan via **Schemas*
 - Thema
 - Publicatie Type
 - Pagina
+- Menu
 
-![Confugureren schema's](../../../static/img/OpenCatalogi/OC_schemas.png)
+![Confugureren schema's](../../../static/img/OpenCatalogi/OC-schemas.png)
 
 Het eindresultaat ziet er dan zo uit.
 
-![Confuguratie schema's](../../../static/img/OpenCatalogi/OC-schemas-configured.png)
+![Geconfigureerde schema's](../../../static/img/OpenCatalogi/OC-schemas-configured.png)
 
 ## Register
 
-Maak daarna een register Publicatie aan via **Registers** -> **Add Register**
+Maak daarna een nieuw register aan via **Registers** -> **Add Register**
 
 :::tip
-Let op: laat Source en Schema vooralsnog leeg!
+Let op: laat dat je Schema niet leeg laat! Anders kan je dit Register niet toevoegen aan de Data storage verderop.
 :::
 
 Het eindresultaat ziet er dan zo uit.
 
-![Register Publicatie](../../../static/img/OpenCatalogi/OC-publicatie.png)
+![Register](../../../static/img/OpenCatalogi/OC-register.png)
 
 ## Database
 
-Ga nu naar naar opencatalogi app via **Personal settings** -> **Open Catalogi** waarin je moet instellen dat we deze schema's in de Mariadb database willen opslaan.
+Ga nu naar naar opencatalogi app via **Admin settings** -> **Open Catalogi** waarin je moet instellen dat we deze schema's in de Mariadb database willen opslaan.
 
-![Personal settings](../../../static/img/OpenCatalogi/OC-personal-settings.png)
+![Administration settings](../../../static/img/OpenCatalogi/OC-admin-settings.png)
 
 ![Data storage](../../../static/img/OpenCatalogi/OC-data-storage.png)
 
-
+test

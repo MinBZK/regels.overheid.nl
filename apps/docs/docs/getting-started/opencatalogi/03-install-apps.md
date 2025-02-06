@@ -1,5 +1,6 @@
 ---
-hide_title: Open Catalogi Apps
+title: Open Catalogi Apps
+hide_title: true
 description: Getting started - installeren Open Catalogi Apps
 ---
 

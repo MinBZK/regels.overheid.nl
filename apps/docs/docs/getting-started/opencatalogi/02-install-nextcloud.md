@@ -1,5 +1,6 @@
 ---
-hide_title: Nextcloud
+title: Nextcloud
+hide_title: true
 description: Getting started - installeren Nextcloud
 ---
 
