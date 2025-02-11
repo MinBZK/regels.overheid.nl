@@ -40,6 +40,5 @@ Ga nu naar naar opencatalogi app via **Administration settings** -> **Open Catal
 
 ![Administration settings](../../../static/img/OpenCatalogi/OC-admin-settings.png)
 
-Let er goed op dat elk geselecteerde **Schema** in de dropdown overeenkomt met het gevraagde **Type**. Test commit tekst met SSH key for signing nadat SSH key met git is gedeeld.
-
+Let er goed op dat elk geselecteerde **Schema** in de dropdown overeenkomt met het gevraagde **Type**. Test commit original laptop.
 ![Data storage](../../../static/img/OpenCatalogi/OC-data-storage-new.png)
