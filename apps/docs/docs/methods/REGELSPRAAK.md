@@ -7,7 +7,7 @@ description: Method - Agile Law Execution Factory
 
 De Belastingdienst heeft met RegelSpraak een uitgebreide ‘Controlled Natural Language’ (CNL) ontwikkeld. De complexe belasting wet- en regelgeving kan volledig uitgedrukt worden door non-ITers en begrepen worden door een software generator. Deze is in staat de regelgeving om te zetten in een rekenmodule (webservice) die in het hart zit van, bijvoorbeeld, de verwerking van de aangifte inkomstenbelasting. De zo opgestelde regels kunnen echter wel gewoon als Nederlands gelezen en begrepen worden. Het is dus geen programmeertaal zoals Java of Python, maar een bijna-natuurlijke vorm van ‘gewoon Nederlands’. Zo kunnen ook niet-technische mensen, bijvoorbeeld juristen of belastinginspecteurs, de regels gewoon lezen en op inhoud beoordelen.
 
-Zie: <a href="https://blog3.han.nl/it-en-mediadesign/regelspraak-een-bedrijfsregeltaal-bij-de-belastingdienst/" target="_blank">RegelSpraak: een bedrijfsregeltaal bij de Belastingdienst</a>
+Zie: <a href="https://wendbarewetsuitvoering.pleio.nl/page/view/ba938b8f-0668-4451-a7e6-81de78bbe66a/regelspraak" target="_blank">RegelSpraak: een bedrijfsregeltaal bij de Belastingdienst</a>
 
 ## Workshop CNL
 
