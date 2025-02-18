@@ -1,5 +1,15 @@
 # docs
 
+## 3.18.0
+
+### Minor Changes
+
+- c378f99: Updated Open Catalogi docs up until configuration register
+
+### Patch Changes
+
+- bed4cdf: Fix broken link Regelspraak specs
+
 ## 3.17.0
 
 ### Minor Changes
