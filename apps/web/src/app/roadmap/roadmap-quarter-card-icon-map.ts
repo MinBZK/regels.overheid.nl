@@ -6,9 +6,11 @@ import {
   IconComponents,
   IconLicense,
   IconUserCheck,
+  IconSettingsCog,
+  IconCertificate,
 } from '@tabler/icons-react';
 
-export type IconCategory = 'user check' | 'devops' | 'linked data' | 'design' | 'content management' | 'legal';
+export type IconCategory = 'user check' | 'devops' | 'linked data' | 'design' | 'content management' | 'legal' | 'rule management' | 'standardization';
 
 export const roadmapQuarterCardItemIconMap: Record<IconCategory, Icon> = {
   'user check': IconUserCheck,
@@ -17,4 +19,6 @@ export const roadmapQuarterCardItemIconMap: Record<IconCategory, Icon> = {
   'linked data': IconBinaryTree2,
   design: IconComponents,
   legal: IconGavel,
+  'rule management': IconSettingsCog,
+  standardization: IconCertificate,
 };
