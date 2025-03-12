@@ -7,11 +7,13 @@ import { getYear } from 'date-fns';
 import { useState } from 'react';
 import { roadmap2023 } from './roadmap-2023';
 import { roadmap2024 } from './roadmap-2024';
+import { roadmap2025 } from './roadmap-2025';
 import { RoadmapQuarterCard } from './roadmap-quarter-card';
 
 const roadMaps = [
   [2023, roadmap2023],
   [2024, roadmap2024],
+  [2025, roadmap2025],
 ] as const;
 
 const indexOfCurrentYear = roadMaps.findIndex(([year]) => year === getYear(new Date()));
