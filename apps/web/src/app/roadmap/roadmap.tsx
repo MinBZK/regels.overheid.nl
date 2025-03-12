@@ -8,9 +8,7 @@ import { useState } from 'react';
 import { roadmap2025 } from './roadmap-2025';
 import { RoadmapQuarterCard } from './roadmap-quarter-card';
 
-const roadMaps = [
-  [2025, roadmap2025],
-] as const;
+const roadMaps = [[2025, roadmap2025]] as const;
 
 const indexOfCurrentYear = roadMaps.findIndex(([year]) => year === getYear(new Date()));
 
