@@ -3,26 +3,13 @@ import { RoadmapQuarterCardProps } from './roadmap-quarter-card';
 
 export const roadmap2025: RoadmapQuarterCardProps['items'][] = [
   [
-    ['design', 'Interactive prototype'],
-    ['devops', 'Beta navigatie Interactive prototype'],
-    ['devops', 'Docusaurus voor interactive protoype'],
+    ['standardization', 'Baseline Core Public Service Vocabulary Application Profile (CPSV-AP) voor RONL v1'],
+    ['standardization', 'Baseline Core Public Rule Management Vocabulary (CPRMV) v1'],
+    ['legal', 'geen'],
+    ['devops', 'Tooling en infrastructuur vaststellen'],
+    ['linked data', 'Voorbeelden Terse RDF Triple Language (Turtle) in SPARQL'],
     [
-      'devops',
-      <>
-        Onboarding{' '}
-        <Link component="a" href="https://digilab.overheid.nl/">
-          Digilab
-        </Link>
-      </>,
-    ],
-    ['linked data', 'Apache Jena Fuseki SPARQL server'],
-    ['devops', 'Selectie van resultaten Wetsanalyse Tooling HvA studenten op Lab'],
-    ['user check', 'Documenteren iteraties Bruikbaarheid testen & Inzichten verzamelen'],
-    ['devops', 'Multistack website én regelbank obv Gemeenschappelijke DataCatalogus (GDC)'],
-  ],
-  [
-    [
-      'devops',
+      'content management',
       <>
         Minimal Viable Product ontsluiting regelspecificaties via{' '}
         <Link component="a" href="https://opencatalogi.nl/">
@@ -30,37 +17,38 @@ export const roadmap2025: RoadmapQuarterCardProps['items'][] = [
         </Link>
       </>,
     ],
+    ['rule management', 'geen'],
+    ['user check', 'geen'],
+    ['design', 'geen'],
+  ],
+  [
+    ['standardization', 'Baseline Core Public Service Vocabulary Application Profile (CPSV-AP) voor RONL v2'],
+    ['standardization', 'Baseline Core Public Rule Management Vocabulary (CPRMV) v2'],
+    ['legal', 'Doorontwikkeling Regeleditor (TNO)'],
+    ['legal', 'Wetsanalyse HDAB ondersteunen'],
+    ['devops', 'Inrichten tooling en infrastructuur'],
+    ['linked data', 'Ontwikkelen alternatief voor normenbrief(pdf) SZW'],
     [
       'content management',
       <>
-        Eerste versie{' '}
-        <Link component="a" href="https://minbzk.github.io/dcat-ap-ronl/">
-          applicatie profiel
-        </Link>{' '}
-        van de{' '}
-        <Link
-          component="a"
-          href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211"
-        >
-          Europese DCAT-AP standaard
-        </Link>{' '}
-        voor uitwisseling met regels.overheid.nl
-      </>,
-    ],
-    ['user check', 'Eerste iteratie Bruikbaarheid & Inzichten verzamelen'],
-    ['devops', 'Belastingdienst Bold Form Builder op Lab'],
-    [
-      'linked data',
-      <>
-        XML import{' '}
-        <Link component="a" href="https://linkeddata.overheid.nl/front/portal/">
-          LiDO
+        Protoptype ontsluiting regelspecificaties via{' '}
+        <Link component="a" href="https://opencatalogi.nl/">
+          OpenCatalogi
         </Link>
       </>,
     ],
-    ['user check', 'Tweeede iteratie Bruikbaarheid & Inzichten verzamelen'],
+    ['rule management', 'Generieke functie voor aanvraag Heusdenpas met de app FP'],
+    ['user check', 'Implementatie Heusdenpas'],
+    ['user check', 'Show case high validity data set(s) ontsluiting icm regels iov Rotterdam'],
+    ['design', 'UX Design forum.regels.overheid.nl'],
   ],
   [
+    ['standardization', 'Baseline Core Public Service Vocabulary Application Profile (CPSV-AP) voor RONL v3'],
+    ['standardization', 'Baseline Core Public Rule Management Vocabulary (CPRMV) v4'],
+    ['legal', 'iKnow cognitatie inzetten in portfolio ICTU'],
+    ['devops', 'Realiseren MVP obv Figma prototype Digitale Vertalingen'],
+    ['devops', 'iKnow cognitatie FOSS maken tbv inzet in het publieke domein (fase 1)'],
+    ['linked data', 'geen'],
     [
       'content management',
       <>
@@ -70,23 +58,17 @@ export const roadmap2025: RoadmapQuarterCardProps['items'][] = [
         </Link>
       </>,
     ],
-    ['user check', 'Derde iteratie Bruikbaarheid & Inzichten verzamelen'],
-    [
-      'devops',
-      <>
-        Doorontwikkeling{' '}
-        <Link component="a" href="https://xml-annotate.live.wem.io/">
-          Low Code Widget voor annotatie
-        </Link>
-      </>,
-    ],
-    ['content management', 'Creatie & publicatie proces'],
-    ['user check', 'Vierde iteratie Bruikbaarheid & Inzichten verzamelen'],
-    ['content management', 'Inrichten governance structuur'],
+    ['content management', 'Inrichten redactie op content, inhoud en relevantie'],
+    ['rule management', 'Generieke functies voor aanvragen inkomensondersteuning'],
+    ['user check', 'Showcase Loonaangifteketen'],
+    ['design', 'UX Design zoeken en presenteren regelspecificatie sets én implementatie(s)'],
   ],
   [
-    ['content management', 'Redactie proces op basis van governance structuur'],
-    ['user check', 'Vijfde iteratie Bruikbaarheid & Inzichten verzamelen'],
+    ['standardization', 'Baseline Core Public Service Vocabulary Application Profile (CPSV-AP) voor RONL v4'],
+    ['standardization', 'Baseline Core Public Rule Management Vocabulary (CPRMV) v4'],
+    ['legal', 'Strategische positionering Wetsanalyse en regelbeheer'],
+    ['devops', 'iKnow cognitatie FOSS maken tbv inzet in het publieke domein (fase 2)'],
+    ['devops', 'Realiseren forum.regels.overheid.nl'],
     [
       'devops',
       <>
@@ -96,6 +78,18 @@ export const roadmap2025: RoadmapQuarterCardProps['items'][] = [
         </Link>
       </>,
     ],
-    ['user check', 'Zesde iteratie Bruikbaarheid & Inzichten verzamelen'],
+    [
+      'linked data',
+      <>
+        Testen regels import{' '}
+        <Link component="a" href="https://linkeddata.overheid.nl/front/portal/">
+          LiDO
+        </Link>
+      </>,
+    ],
+    ['content management', 'Redactieraad ingericht'],
+    ['rule management', 'Eerste selectie kandidaten methoden regelbeheer'],
+    ['user check', 'Show case(s) ntb'],
+    ['design', 'geen'],
   ],
 ];
