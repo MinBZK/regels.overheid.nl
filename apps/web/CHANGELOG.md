@@ -1,5 +1,11 @@
 # web
 
+## 3.50.0
+
+### Minor Changes
+
+- 322c8ce: Added new roadmap for 2025
+
 ## 3.49.1
 
 ### Patch Changes
