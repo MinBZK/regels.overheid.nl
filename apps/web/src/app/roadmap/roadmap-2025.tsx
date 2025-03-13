@@ -44,7 +44,7 @@ export const roadmap2025: RoadmapQuarterCardProps['items'][] = [
   ],
   [
     ['standardization', 'Baseline Core Public Service Vocabulary Application Profile (CPSV-AP) voor RONL v3'],
-    ['standardization', 'Baseline Core Public Rule Management Vocabulary (CPRMV) v4'],
+    ['standardization', 'Baseline Core Public Rule Management Vocabulary (CPRMV) v3'],
     ['legal', 'iKnow cognitatie inzetten in portfolio ICTU'],
     ['devops', 'Realiseren MVP obv Figma prototype Digitale Vertalingen'],
     ['devops', 'iKnow cognitatie FOSS maken tbv inzet in het publieke domein (fase 1)'],
