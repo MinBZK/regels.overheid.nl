@@ -5,7 +5,16 @@ import { Metadata } from 'next';
 import { Roadmap } from './roadmap';
 import { IconCategory, roadmapQuarterCardItemIconMap } from './roadmap-quarter-card-icon-map';
 
-const legendOrder: IconCategory[] = ['user check', 'content management', 'devops', 'design', 'legal', 'linked data'];
+const legendOrder: IconCategory[] = [
+  'standardization',
+  'legal',
+  'devops',
+  'linked data',
+  'content management',
+  'rule management',
+  'user check',
+  'design',
+];
 
 export default async function RoadmapPage() {
   return (
