@@ -1,5 +1,11 @@
 # web
 
+## 3.50.1
+
+### Patch Changes
+
+- 5f0d517: Fix version CPRM Q3
+
 ## 3.50.0
 
 ### Minor Changes
