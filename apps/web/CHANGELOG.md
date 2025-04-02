@@ -1,5 +1,11 @@
 # web
 
+## 3.51.0
+
+### Minor Changes
+
+- 5f81ec9: Update SKOS browser and renamed Norm Editor
+
 ## 3.50.1
 
 ### Patch Changes
