@@ -80,8 +80,8 @@ export default async function LabPage() {
             <CardLab.Demo href="https://regels.dexcat.nl/" />
           </CardLab.MethodItems>
         </CardLab.Root>
-        <CardLab.Root title="Norm Editor" method="FLINT">
-          Norm Editor is een applicatie, gebouwd met behulp van webgebaseerde technologieën, waarmee een gebruiker op
+        <CardLab.Root title="Regeleditor" method="FLINT">
+          Regeleditor is een applicatie, gebouwd met behulp van webgebaseerde technologieën, waarmee een gebruiker op
           een gebruiksvriendelijke en interactieve manier interpretaties van normen in FLINT kan creëren.
           <CardLab.MethodItems>
             <CardLab.License
