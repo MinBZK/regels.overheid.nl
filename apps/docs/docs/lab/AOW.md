@@ -2,15 +2,6 @@
 title: AOW micro service
 description: Lab - Bepaling van de AOW leeftijd
 ---
-:::info
-
-Dit is een bijdrage van MyClarityPal.
-
-Voor werkers, of het nou flexarbeid of ZZP is, is het een heel gedoe om op de hoogte te zijn van al je rechten waardoor niet iedereen zijn recht ook kan verwezenlijken. MyClarityPal geeft werkers proactief toegang tot hun recht, een werker hoeft niet meer zelf te weten wat zijn recht is.
-
-Website: [MyClarityPal](https://myclaritypal.com/about)
-:::
-
 Ter illustratie van de Concordia Legal methode zoals die wordt gebruikt om de kennis in MyCalrityPal te bouwen, ontsluiten we een micro service: de bepaling van de AOW leeftijd.
 
 De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling. Bij een aantal tijdelijke contracten of tijd onder tijdelijk contract gewerkt, komt iemand in vaste dienst. Arbeidsovereenkomsten aangegaan boven de AOW leeftijd, tellen niet mee in de ketenregeling.
