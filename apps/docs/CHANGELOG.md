@@ -1,5 +1,11 @@
 # docs
 
+## 3.19.0
+
+### Minor Changes
+
+- 00ea9d7: Removed reference to obsolete information
+
 ## 3.18.0
 
 ### Minor Changes
