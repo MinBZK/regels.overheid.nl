@@ -2,7 +2,7 @@
 title: AOW micro service
 description: Lab - Bepaling van de AOW leeftijd
 ---
-Ter illustratie van de Concordia Legal methode zoals die wordt gebruikt om de kennis in MyCalrityPal te bouwen, ontsluiten we een micro service: de bepaling van de AOW leeftijd.
+Ter illustratie van de Concordia Legal methode, ontsluiten we een micro service: de bepaling van de AOW leeftijd.
 
 De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling. Bij een aantal tijdelijke contracten of tijd onder tijdelijk contract gewerkt, komt iemand in vaste dienst. Arbeidsovereenkomsten aangegaan boven de AOW leeftijd, tellen niet mee in de ketenregeling.
 
