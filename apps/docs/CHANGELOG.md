@@ -1,5 +1,11 @@
 # docs
 
+## 3.20.0
+
+### Minor Changes
+
+- 00fbaa6: Updated Open Catalogi docs
+
 ## 3.19.0
 
 ### Minor Changes
