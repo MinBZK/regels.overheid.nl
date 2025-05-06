@@ -33,3 +33,60 @@ De DRM is opgebouwd uit een aantal bouwblokken:
 :::info
 Voor de nadere uitwerking is een [issue](https://github.com/orgs/OpenCatalogi/projects/7?pane=issue&itemId=107620304&issue=OpenCatalogi%7C.github%7C411) aangemaakt in het corresponderende project bij de Open Catalogi organisatie.
 :::
+
+## Camunda 8
+
+Implementatie geslaagd in self hosted camunda 8 op https://camundadev.open-regels.nl/operate/login
+
+Te evalueren met onderstaande `evaluate-bijstandsnorm.js` Node.JS script
+
+```
+const { ZBClient } = require('zeebe-node');
+
+// Enable debugging
+process.env.ZEEBE_NODE_LOG_LEVEL = 'debug';
+
+const zbc = new ZBClient('zeebedev.open-regels.nl:8443', {
+  useTLS: true
+});
+
+async function evaluateDecision() {
+  console.log('Connecting to Zeebe...');
+
+  try {
+    console.log('Sending decision evaluation request...');
+
+    const result = await zbc.evaluateDecision({
+      decisionId: 'Bijstandsnorm',
+      variables: {
+        geboortedatumAanvrager: '1987-12-03',
+        aanvragerAlleenstaand: false,
+        geboortedatumPartner: '1968-04-15',
+        dagVanAanvraag: '2025-03-25',
+        aanvragerHeeftKinderen: false
+      },
+    });
+
+    console.log('✅ Decision Evaluation Result:');
+    console.dir(result, { depth: null });
+  } catch (err) {
+    console.error('❌ Error evaluating decision:', err.message);
+    if (err.details) {
+      console.error('Details:', err.details);
+    }
+  } finally {
+    console.log('Closing Zeebe connection...');
+    await zbc.close();
+    console.log('Connection closed.');
+  }
+}
+
+evaluateDecision();
+```
+Run met `$ node evaluate-bijstandsnorm.js` levert de gewenste output op.
+
+## Operaton
+
+:::info
+Vanwege bericht G4 dat men switched naar [Operaton](https://operaton.org/download), een fork van Camunda 7, wordt nog uitgezocht of en hoe de DRD Heusdenpas kan worden deployed in Operaton, dat inmiddels operationeel is op https://operatondev.open-regels.nl/operaton/app/welcome/default/#!/login
+:::
