@@ -1,5 +1,11 @@
 # docs
 
+## 3.21.0
+
+### Minor Changes
+
+- c731f1b: Added Node.JS info & WIP concering Operaton (ie fork Camunda 7)
+
 ## 3.20.0
 
 ### Minor Changes
