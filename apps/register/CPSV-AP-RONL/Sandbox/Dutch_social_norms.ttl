@@ -1,0 +1,907 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix gov: <http://data.overheid.nl/def/> .
+@prefix dsn: <http://data.overheid.nl/def/social-norms/> .
+@prefix financial: <http://data.overheid.nl/def/financial/> .
+
+# Document metadata
+<http://data.overheid.nl/documents/normenbrief-2024-01-01> a schema:Document ;
+    dcterms:title "Normenbrief 1 januari 2024" ;
+    dcterms:issued "2024-01-01"^^xsd:date ;
+    dcterms:subject "Social Security Norms", "Participation Act", "IOAW", "IOAZ" ;
+    dcterms:publisher <http://data.overheid.nl/organization/ministerie-szw> ;
+    schema:version "2024-01-01" .
+
+# Reference minimum wage
+dsn:reference-minimum-wage-2024 a financial:MinimumWage ;
+    dcterms:title "Referentiemaandloon 2024" ;
+    financial:amount "2069.40"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:excludesVacationPay true ;
+    dcterms:valid "2024-01-01"^^xsd:date .
+
+# Youth norms without children (Article 20, first paragraph)
+dsn:youth-norm-single-18-20-no-children a dsn:SocialNorm ;
+    dcterms:title "Alleenstaande 18-20 jaar, zonder kinderen" ;
+    dsn:ageRange "18-20" ;
+    dsn:householdType "single" ;
+    dsn:hasChildren false ;
+    financial:amount-2023-07-01 "300.36"^^xsd:decimal ;
+    financial:amount-2024-01-01 "316.94"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 20, eerste lid" .
+
+dsn:youth-norm-married-both-18-20-no-children a dsn:SocialNorm ;
+    dcterms:title "Gehuwden beide 18-20 jaar, zonder kinderen" ;
+    dsn:ageRange "18-20" ;
+    dsn:householdType "married-both-youth" ;
+    dsn:hasChildren false ;
+    financial:amount-2023-07-01 "600.72"^^xsd:decimal ;
+    financial:amount-2024-01-01 "633.88"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 20, eerste lid" .
+
+dsn:youth-norm-married-one-18-20-no-children a dsn:SocialNorm ;
+    dcterms:title "Gehuwden één 18-20 jaar, ander 21+, zonder kinderen" ;
+    dsn:ageRange "18-20/21+" ;
+    dsn:householdType "married-mixed-age" ;
+    dsn:hasChildren false ;
+    dsn:hasCostSharingResidents false ;
+    financial:amount-2023-07-01 "1169.37"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1233.96"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 20, eerste lid" .
+
+# Youth norms with children (Article 20, second paragraph)
+dsn:youth-norm-single-parent-18-20 a dsn:SocialNorm ;
+    dcterms:title "Alleenstaande ouder 18-20 jaar" ;
+    dsn:ageRange "18-20" ;
+    dsn:householdType "single-parent" ;
+    dsn:hasChildren true ;
+    financial:amount-2023-07-01 "300.36"^^xsd:decimal ;
+    financial:amount-2024-01-01 "316.94"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 20, tweede lid" .
+
+dsn:youth-norm-married-both-18-20-with-children a dsn:SocialNorm ;
+    dcterms:title "Gehuwden beide 18-20 jaar, met kinderen" ;
+    dsn:ageRange "18-20" ;
+    dsn:householdType "married-both-youth" ;
+    dsn:hasChildren true ;
+    financial:amount-2023-07-01 "948.32"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1000.69"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 20, tweede lid" .
+
+dsn:youth-norm-married-one-18-20-with-children a dsn:SocialNorm ;
+    dcterms:title "Gehuwden één 18-20 jaar, ander 21+, met kinderen" ;
+    dsn:ageRange "18-20/21+" ;
+    dsn:householdType "married-mixed-age" ;
+    dsn:hasChildren true ;
+    dsn:hasCostSharingResidents false ;
+    financial:amount-2023-07-01 "1516.97"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1600.77"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 20, tweede lid" .
+
+# Norms 21 to retirement age (Article 21)
+dsn:norm-single-21-retirement a dsn:SocialNorm ;
+    dcterms:title "Alleenstaande of alleenstaande ouder 21 jaar tot pensioengerechtigde leeftijd" ;
+    dsn:ageRange "21-retirement" ;
+    dsn:householdType "single" ;
+    dsn:hasCostSharingResidents false ;
+    financial:amount-2023-07-01 "1216.62"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1283.83"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 21" .
+
+dsn:norm-married-21-retirement a dsn:SocialNorm ;
+    dcterms:title "Gehuwden beide jonger dan pensioengerechtigde leeftijd" ;
+    dsn:ageRange "21-retirement" ;
+    dsn:householdType "married" ;
+    dsn:hasCostSharingResidents false ;
+    financial:amount-2023-07-01 "1738.02"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1834.04"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 21" .
+
+# Retirement age norms (Article 22)
+dsn:norm-single-retirement a dsn:SocialNorm ;
+    dcterms:title "Alleenstaande of alleenstaande ouder pensioengerechtigde leeftijd" ;
+    dsn:ageRange "retirement+" ;
+    dsn:householdType "single" ;
+    dsn:hasCostSharingResidents false ;
+    financial:amount-2023-07-01 "1357.66"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1425.76"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 22" .
+
+dsn:norm-married-retirement a dsn:SocialNorm ;
+    dcterms:title "Gehuwden pensioengerechtigde leeftijd" ;
+    dsn:ageRange "retirement+" ;
+    dsn:householdType "married" ;
+    dsn:hasCostSharingResidents false ;
+    financial:amount-2023-07-01 "1843.60"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1932.32"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 22" .
+
+# Cost sharing norms (Article 22a, third paragraph)
+dsn:cost-sharing-norm-with-children a dsn:SocialNorm ;
+    dcterms:title "Kostendelersnorm gehuwden met kinderen" ;
+    dsn:ageRange "18-20/21+" ;
+    dsn:householdType "married-mixed-age" ;
+    dsn:hasChildren true ;
+    dsn:hasCostSharingResidents true ;
+    financial:amount-2023-07-01 "647.96"^^xsd:decimal ;
+    financial:amount-2024-01-01 "683.75"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 22a, derde lid" .
+
+dsn:cost-sharing-norm-without-children a dsn:SocialNorm ;
+    dcterms:title "Kostendelersnorm gehuwden zonder kinderen" ;
+    dsn:ageRange "18-20/21+" ;
+    dsn:householdType "married-mixed-age" ;
+    dsn:hasChildren false ;
+    dsn:hasCostSharingResidents true ;
+    financial:amount-2023-07-01 "300.36"^^xsd:decimal ;
+    financial:amount-2024-01-01 "316.94"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 22a, derde lid" .
+
+# Institution residence (Article 23, first paragraph)
+dsn:institution-norm-single a dsn:SocialNorm ;
+    dcterms:title "Verblijf inrichting alleenstaande" ;
+    dsn:householdType "single" ;
+    dsn:residenceType "institution" ;
+    financial:amount-2023-07-01 "385.24"^^xsd:decimal ;
+    financial:amount-2024-01-01 "406.51"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 23, eerste lid" .
+
+dsn:institution-norm-married a dsn:SocialNorm ;
+    dcterms:title "Verblijf inrichting gehuwden" ;
+    dsn:householdType "married" ;
+    dsn:residenceType "institution" ;
+    financial:amount-2023-07-01 "599.23"^^xsd:decimal ;
+    financial:amount-2024-01-01 "632.31"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    financial:includesVacationPay true ;
+    dsn:legalReference "art. 23, eerste lid" .
+
+# Health insurance premium increases (Article 23, second paragraph)
+dsn:health-premium-increase-single a financial:HealthInsurancePremium ;
+    dcterms:title "Verhoging Zvw premie alleenstaande" ;
+    dsn:householdType "single" ;
+    financial:amount-2023-07-01 "3.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "42.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 23, tweede lid" .
+
+dsn:health-premium-increase-married a financial:HealthInsurancePremium ;
+    dcterms:title "Verhoging Zvw premie gehuwden" ;
+    dsn:householdType "married" ;
+    financial:amount-2023-07-01 "50.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "95.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 23, tweede lid" .
+
+# Vacation allowance percentage
+dsn:vacation-allowance-percentage a financial:Percentage ;
+    dcterms:title "Vakantietoeslag percentage" ;
+    financial:percentage "5.00"^^xsd:decimal ;
+    dsn:legalReference "art. 19, derde lid" ;
+    dcterms:valid "2023-07-01"^^xsd:date, "2024-01-01"^^xsd:date .
+
+# Assets and income exemptions (Article 31, second paragraph)
+dsn:work-integration-premium a financial:Allowance ;
+    dcterms:title "Premie arbeidsinschakeling" ;
+    financial:amount-2023-07-01 "2979.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "3151.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:frequency "one-or-two-time" ;
+    dsn:legalReference "art. 31, tweede lid, onderdeel j" .
+
+dsn:volunteer-expense-compensation-monthly a financial:Allowance ;
+    dcterms:title "Onkostenvergoeding vrijwilligerswerk maandelijks" ;
+    financial:amount-2023-07-01 "190.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "210.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 31, tweede lid, onderdeel k" .
+
+dsn:volunteer-expense-compensation-yearly a financial:Allowance ;
+    dcterms:title "Onkostenvergoeding vrijwilligerswerk jaarlijks maximum" ;
+    financial:amount-2023-07-01 "1900.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "2100.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" ;
+    dsn:legalReference "art. 31, tweede lid, onderdeel k" .
+
+dsn:work-income-exemption-max a financial:Exemption ;
+    dcterms:title "Maximaal vrij te laten inkomsten uit arbeid" ;
+    financial:amount-2023-07-01 "249.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "264.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 31, tweede lid, onderdeel n" .
+
+dsn:single-parent-work-income-exemption a financial:Exemption ;
+    dcterms:title "Vrij te laten inkomsten alleenstaande ouder" ;
+    financial:amount-2023-07-01 "155.74"^^xsd:decimal ;
+    financial:amount-2024-01-01 "164.73"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 31, tweede lid, onderdeel r" .
+
+dsn:medical-limited-work-income-exemption a financial:Exemption ;
+    dcterms:title "Maximaal vrij te laten inkomsten medisch uren-beperkt" ;
+    financial:amount-2023-07-01 "157.96"^^xsd:decimal ;
+    financial:amount-2024-01-01 "167.07"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 31, tweede lid, onderdeel y" .
+
+dsn:wage-subsidy-work-income-exemption a financial:Exemption ;
+    dcterms:title "Maximaal vrij te laten inkomsten loonkostensubsidie" ;
+    financial:amount-2023-07-01 "157.96"^^xsd:decimal ;
+    financial:amount-2024-01-01 "167.07"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 31, tweede lid, onderdeel z, aa" .
+
+# Private pension provisions (Article 33, fifth paragraph)
+dsn:private-pension-exemption-single a financial:Exemption ;
+    dcterms:title "Buiten beschouwing particuliere oudedagsvoorziening alleenstaande" ;
+    financial:amount-2023-07-01 "25.15"^^xsd:decimal ;
+    financial:amount-2024-01-01 "25.05"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:householdType "single" ;
+    dsn:legalReference "art. 33, vijfde lid" .
+
+dsn:private-pension-exemption-married a financial:Exemption ;
+    dcterms:title "Buiten beschouwing particuliere oudedagsvoorziening gehuwden" ;
+    financial:amount-2023-07-01 "50.30"^^xsd:decimal ;
+    financial:amount-2024-01-01 "50.10"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:householdType "married" ;
+    dsn:legalReference "art. 33, vijfde lid" .
+
+# Asset exemptions (Article 34, second and third paragraphs)
+dsn:housing-asset-exemption a financial:AssetExemption ;
+    dcterms:title "In woning gebonden vermogen" ;
+    financial:amount-2023-07-01 "64100"^^xsd:decimal ;
+    financial:amount-2024-01-01 "63900"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 34, tweede en derde lid" .
+
+dsn:asset-limit-single a financial:AssetLimit ;
+    dcterms:title "Vermogensgrens alleenstaande" ;
+    financial:amount-2023-07-01 "7605"^^xsd:decimal ;
+    financial:amount-2024-01-01 "7575"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:householdType "single" ;
+    dsn:legalReference "art. 34" .
+
+dsn:asset-limit-single-parent a financial:AssetLimit ;
+    dcterms:title "Vermogensgrens alleenstaande ouder" ;
+    financial:amount-2023-07-01 "15210"^^xsd:decimal ;
+    financial:amount-2024-01-01 "15150"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:householdType "single-parent" ;
+    dsn:legalReference "art. 34" .
+
+dsn:asset-limit-married a financial:AssetLimit ;
+    dcterms:title "Vermogensgrens gehuwden" ;
+    financial:amount-2023-07-01 "15210"^^xsd:decimal ;
+    financial:amount-2024-01-01 "15150"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:householdType "married" ;
+    dsn:legalReference "art. 34" .
+
+# Special assistance threshold (Article 35, second paragraph)
+dsn:special-assistance-threshold a financial:Threshold ;
+    dcterms:title "Drempelbedrag bijzondere bijstand" ;
+    financial:amount-2023-07-01 "167.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "166.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 35, tweede lid" .
+
+# Study allowance minimum amounts (Article 36b)
+dsn:study-allowance-21-plus a financial:StudyAllowance ;
+    dcterms:title "Studietoeslag minimumbedrag 21 jaar en ouder" ;
+    dsn:ageGroup "21+" ;
+    financial:amount-2023-07-01 "334.34"^^xsd:decimal ;
+    financial:amount-2024-01-01 "352.80"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7a, onderdeel a" .
+
+dsn:study-allowance-20 a financial:StudyAllowance ;
+    dcterms:title "Studietoeslag minimumbedrag 20 jaar" ;
+    dsn:ageGroup "20" ;
+    financial:amount-2023-07-01 "267.47"^^xsd:decimal ;
+    financial:amount-2024-01-01 "282.23"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7a, onderdeel b" .
+
+dsn:study-allowance-19 a financial:StudyAllowance ;
+    dcterms:title "Studietoeslag minimumbedrag 19 jaar" ;
+    dsn:ageGroup "19" ;
+    financial:amount-2023-07-01 "200.60"^^xsd:decimal ;
+    financial:amount-2024-01-01 "211.67"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7a, onderdeel c" .
+
+dsn:study-allowance-18 a financial:StudyAllowance ;
+    dcterms:title "Studietoeslag minimumbedrag 18 jaar" ;
+    dsn:ageGroup "18" ;
+    financial:amount-2023-07-01 "167.17"^^xsd:decimal ;
+    financial:amount-2024-01-01 "176.40"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7a, onderdeel d" .
+
+dsn:study-allowance-17 a financial:StudyAllowance ;
+    dcterms:title "Studietoeslag minimumbedrag 17 jaar" ;
+    dsn:ageGroup "17" ;
+    financial:amount-2023-07-01 "132.06"^^xsd:decimal ;
+    financial:amount-2024-01-01 "139.35"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7a, onderdeel e" .
+
+dsn:study-allowance-16 a financial:StudyAllowance ;
+    dcterms:title "Studietoeslag minimumbedrag 16 jaar" ;
+    dsn:ageGroup "16" ;
+    financial:amount-2023-07-01 "115.34"^^xsd:decimal ;
+    financial:amount-2024-01-01 "121.71"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7a, onderdeel f" .
+
+dsn:study-allowance-15 a financial:StudyAllowance ;
+    dcterms:title "Studietoeslag minimumbedrag 15 jaar" ;
+    dsn:ageGroup "15" ;
+    financial:amount-2023-07-01 "100.30"^^xsd:decimal ;
+    financial:amount-2024-01-01 "105.84"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7a, onderdeel g" .
+
+# Internship compensation exemption
+dsn:internship-compensation-exemption a financial:Exemption ;
+    dcterms:title "Vrijlating stagevergoeding" ;
+    financial:amount-2023-07-01 "200.60"^^xsd:decimal ;
+    financial:amount-2024-01-01 "211.67"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 7b" .
+
+# IOAW net amounts (Article 5)
+dsn:ioaw-couples-21-plus a dsn:IOAWBenefit ;
+    dcterms:title "IOAW werkloze werknemer en echtgenoot beide 21+" ;
+    dsn:householdType "married" ;
+    dsn:ageRange "21+" ;
+    financial:amount-2023-07-01 "869.01"^^xsd:decimal ;
+    financial:amount-2024-01-01 "917.02"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 5, derde lid, onderdeel a" .
+
+dsn:ioaw-single-cost-sharing a dsn:IOAWBenefit ;
+    dcterms:title "IOAW alleenstaande werkloze met kostendelende medebewoners" ;
+    dsn:householdType "single" ;
+    dsn:ageRange "27+" ;
+    dsn:hasCostSharingResidents true ;
+    financial:amount-2023-07-01 "869.01"^^xsd:decimal ;
+    financial:amount-2024-01-01 "917.02"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 5, derde lid, onderdeel b" .
+
+dsn:ioaw-single-23-plus a dsn:IOAWBenefit ;
+    dcterms:title "IOAW alleenstaande werkloze 23+" ;
+    dsn:householdType "single" ;
+    dsn:ageRange "23+" ;
+    financial:amount-2023-07-01 "1216.62"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1283.83"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 5, vierde lid" .
+
+# IOAZ net amounts (Article 5, fourth paragraph)
+dsn:ioaz-couples a dsn:IOAZBenefit ;
+    dcterms:title "IOAZ gewezen zelfstandige en echtgenoot" ;
+    dsn:householdType "married" ;
+    financial:amount-2023-07-01 "869.01"^^xsd:decimal ;
+    financial:amount-2024-01-01 "917.02"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 5, vierde lid, onderdeel a" .
+
+dsn:ioaz-single-cost-sharing a dsn:IOAZBenefit ;
+    dcterms:title "IOAZ alleenstaande gewezen zelfstandige met kostendelende medebewoners" ;
+    dsn:householdType "single" ;
+    dsn:ageRange "27+" ;
+    dsn:hasCostSharingResidents true ;
+    financial:amount-2023-07-01 "869.01"^^xsd:decimal ;
+    financial:amount-2024-01-01 "917.02"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 5, vierde lid, onderdeel c" .
+
+dsn:ioaz-single a dsn:IOAZBenefit ;
+    dcterms:title "IOAZ alleenstaande gewezen zelfstandige" ;
+    dsn:householdType "single" ;
+    financial:amount-2023-07-01 "1216.62"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1283.83"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 5, vierde lid, onderdeel b" .
+
+# IOAW calculation bases
+dsn:ioaw-base-couples a financial:CalculationBase ;
+    dcterms:title "IOAW grondslag werkloze werknemer en echtgenoot beide 21+" ;
+    dsn:scheme "IOAW" ;
+    dsn:householdType "married" ;
+    dsn:ageRange "21+" ;
+    financial:amount-2023-07-01 "1940.78"^^xsd:decimal ;
+    financial:amount-2024-01-01 "2017.64"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Regeling vaststelling grondslagen IOAW, art. 1, eerste lid" .
+
+dsn:ioaw-base-single-cost-sharing a financial:CalculationBase ;
+    dcterms:title "IOAW grondslag alleenstaande met kostendelende medebewoners" ;
+    dsn:scheme "IOAW" ;
+    dsn:householdType "single" ;
+    dsn:hasCostSharingResidents true ;
+    financial:amount-2023-07-01 "970.39"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1008.82"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Regeling vaststelling grondslagen IOAW, art. 1, tweede lid" .
+
+dsn:ioaw-base-single a financial:CalculationBase ;
+    dcterms:title "IOAW grondslag alleenstaande werkloze" ;
+    dsn:scheme "IOAW" ;
+    dsn:householdType "single" ;
+    financial:amount-2023-07-01 "1522.52"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1591.24"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Regeling vaststelling grondslagen IOAW, art. 1, derde lid" .
+
+# IOAZ calculation bases
+dsn:ioaz-base-couples a financial:CalculationBase ;
+    dcterms:title "IOAZ grondslag gewezen zelfstandige en echtgenoot" ;
+    dsn:scheme "IOAZ" ;
+    dsn:householdType "married" ;
+    financial:amount-2023-07-01 "1940.78"^^xsd:decimal ;
+    financial:amount-2024-01-01 "2017.64"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Regeling vaststelling grondslagen IOAZ, art. 1, eerste lid" .
+
+dsn:ioaz-base-single-cost-sharing a financial:CalculationBase ;
+    dcterms:title "IOAZ grondslag alleenstaande gewezen zelfstandige met kostendelende medebewoners" ;
+    dsn:scheme "IOAZ" ;
+    dsn:householdType "single" ;
+    dsn:hasCostSharingResidents true ;
+    financial:amount-2023-07-01 "970.39"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1008.82"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Regeling vaststelling grondslagen IOAZ, art. 1, tweede lid" .
+
+dsn:ioaz-base-single a financial:CalculationBase ;
+    dcterms:title "IOAZ grondslag alleenstaande gewezen zelfstandige" ;
+    dsn:scheme "IOAZ" ;
+    dsn:householdType "single" ;
+    financial:amount-2023-07-01 "1522.52"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1591.24"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Regeling vaststelling grondslagen IOAZ, art. 1, derde lid" .
+
+# Income exemptions
+dsn:income-maximum-exemption a financial:Exemption ;
+    dcterms:title "Maximale vrijlating inkomen" ;
+    financial:amount-2023-07-01 "396.16"^^xsd:decimal ;
+    financial:amount-2024-01-01 "418.46"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Inkomensbesluit" .
+
+dsn:work-integration-premium-exemption a financial:Exemption ;
+    dcterms:title "Premie arbeidsinschakeling voorziening" ;
+    financial:amount-2023-07-01 "2979.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "3151.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "Inkomensbesluit" .
+
+dsn:volunteer-cost-compensation-monthly a financial:Exemption ;
+    dcterms:title "Kostenvergoeding vrijwilligerswerk per maand" ;
+    financial:amount-2023-07-01 "190.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "210.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "Inkomensbesluit" .
+
+dsn:volunteer-cost-compensation-yearly a financial:Exemption ;
+    dcterms:title "Kostenvergoeding vrijwilligerswerk per jaar" ;
+    financial:amount-2023-07-01 "1900.00"^^xsd:decimal ;
+    financial:amount-2024-01-01 "2100.00"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" ;
+    dsn:legalReference "Inkomensbesluit" .
+
+# IOAW specific exemptions
+dsn:ioaw-single-parent-exemption a financial:Exemption ;
+    dcterms:title "IOAW maximaal vrij te laten bedrag alleenstaande ouder" ;
+    dsn:scheme "IOAW" ;
+    dsn:householdType "single-parent" ;
+    financial:amount-2023-07-01 "247.25"^^xsd:decimal ;
+    financial:amount-2024-01-01 "260.02"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 8, vijfde lid" .
+
+dsn:ioaw-medical-limited-exemption a financial:Exemption ;
+    dcterms:title "IOAW maximaal vrij te laten bedrag medisch uren-beperkt" ;
+    dsn:scheme "IOAW" ;
+    financial:amount-2023-07-01 "249.53"^^xsd:decimal ;
+    financial:amount-2024-01-01 "264.14"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 8, zevende lid" .
+
+dsn:ioaw-wage-subsidy-exemption a financial:Exemption ;
+    dcterms:title "IOAW maximaal vrij te laten bedrag loonkostensubsidie doelgroep" ;
+    dsn:scheme "IOAW" ;
+    financial:amount-2023-07-01 "249.53"^^xsd:decimal ;
+    financial:amount-2024-01-01 "264.14"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 8, negende of tiende lid" .
+
+# IOAZ specific amounts and exemptions
+dsn:ioaz-amount-art5-2-2 a financial:Amount ;
+    dcterms:title "IOAZ bedrag artikel 5, tweede lid, onderdeel 2" ;
+    dsn:scheme "IOAZ" ;
+    financial:amount-2023-07-01 "27493"^^xsd:decimal ;
+    financial:amount-2024-01-01 "28957"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 5, tweede lid, onderdeel 2" .
+
+dsn:ioaz-amount-art5-2-3 a financial:Amount ;
+    dcterms:title "IOAZ bedrag artikel 5, tweede lid, onderdeel 3" ;
+    dsn:scheme "IOAZ" ;
+    financial:amount-2023-07-01 "31829"^^xsd:decimal ;
+    financial:amount-2024-01-01 "33212"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 5, tweede lid, onderdeel 3" .
+
+dsn:ioaz-asset-exemption a financial:AssetExemption ;
+    dcterms:title "IOAZ buiten beschouwing te laten vermogen" ;
+    dsn:scheme "IOAZ" ;
+    financial:amount-2023-07-01 "167116"^^xsd:decimal ;
+    financial:amount-2024-01-01 "166431"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 8, tweede lid" .
+
+dsn:ioaz-asset-income-percentage a financial:Percentage ;
+    dcterms:title "IOAZ berekening inkomen uit vermogen percentage" ;
+    dsn:scheme "IOAZ" ;
+    financial:percentage "2.00"^^xsd:decimal ;
+    dsn:legalReference "art. 8" .
+
+dsn:ioaz-asset-valuation-amount a financial:Amount ;
+    dcterms:title "IOAZ vermogenswaardering bedrag" ;
+    dsn:scheme "IOAZ" ;
+    financial:amount-2023-07-01 "151296"^^xsd:decimal ;
+    financial:amount-2024-01-01 "160026"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "Regeling vermogenswaardering IOAZ, art. 5, eerste lid, onderdeel d" .
+
+dsn:ioaz-maximum-exemption a financial:Exemption ;
+    dcterms:title "IOAZ maximale vrijlating" ;
+    dsn:scheme "IOAZ" ;
+    financial:amount-2023-07-01 "396.16"^^xsd:decimal ;
+    financial:amount-2024-01-01 "418.46"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 8, derde lid" .
+
+dsn:ioaz-single-parent-exemption a financial:Exemption ;
+    dcterms:title "IOAZ maximaal vrij te laten bedrag alleenstaande ouder" ;
+    dsn:scheme "IOAZ" ;
+    dsn:householdType "single-parent" ;
+    financial:amount-2023-07-01 "247.25"^^xsd:decimal ;
+    financial:amount-2024-01-01 "260.02"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 8, negende lid" .
+
+dsn:ioaz-medical-limited-exemption a financial:Exemption ;
+    dcterms:title "IOAZ maximaal vrij te laten bedrag medisch uren-beperkt" ;
+    dsn:scheme "IOAZ" ;
+    financial:amount-2023-07-01 "249.53"^^xsd:decimal ;
+    financial:amount-2024-01-01 "264.14"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 8, elfde lid" .
+
+dsn:ioaz-wage-subsidy-exemption a financial:Exemption ;
+    dcterms:title "IOAZ maximaal vrij te laten bedrag loonkostensubsidie doelgroep" ;
+    dsn:scheme "IOAZ" ;
+    financial:amount-2023-07-01 "249.53"^^xsd:decimal ;
+    financial:amount-2024-01-01 "264.14"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "monthly" ;
+    dsn:legalReference "art. 8, dertiende of veertiende lid" .
+
+# Bbz 2004 (Decision on self-employed assistance 2004)
+dsn:bbz-amount-art3-1-ab a financial:Amount ;
+    dcterms:title "Bbz 2004 bedrag artikel 3, eerste lid, onderdelen a en b" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "238737"^^xsd:decimal ;
+    financial:amount-2024-01-01 "237758"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 3, eerste lid, onderdelen a en b" .
+
+dsn:bbz-amount-art3-1-b a financial:Amount ;
+    dcterms:title "Bbz 2004 bedrag artikel 3, eerste lid, onderdeel b" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "56809"^^xsd:decimal ;
+    financial:amount-2024-01-01 "56576"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 3, eerste lid, onderdeel b" .
+
+dsn:bbz-amount-art3-2 a financial:Amount ;
+    dcterms:title "Bbz 2004 bedrag artikel 3, tweede lid" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "167116"^^xsd:decimal ;
+    financial:amount-2024-01-01 "166431"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 3, tweede lid" .
+
+dsn:bbz-percentage-art6-2 a financial:Percentage ;
+    dcterms:title "Bbz 2004 percentage artikel 6, tweede lid" ;
+    dsn:scheme "Bbz2004" ;
+    financial:percentage-2023-07-01 "18.00"^^xsd:decimal ;
+    financial:percentage-2024-01-01 "17.00"^^xsd:decimal ;
+    dsn:legalReference "art. 6, tweede lid" .
+
+dsn:bbz-percentage-art15-a a financial:Percentage ;
+    dcterms:title "Bbz 2004 percentage artikel 15, onderdeel a" ;
+    dsn:scheme "Bbz2004" ;
+    financial:percentage "8.00"^^xsd:decimal ;
+    dsn:legalReference "art. 15, onderdeel a" .
+
+dsn:bbz-maximum-loan a financial:Amount ;
+    dcterms:title "Bbz 2004 maximale geldlening" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "248064"^^xsd:decimal ;
+    financial:amount-2024-01-01 "247047"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 20, eerste lid" .
+
+dsn:bbz-business-capital-established a financial:Amount ;
+    dcterms:title "Bbz 2004 bedrijfskapitaal gevestigde zelfstandige" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "12403"^^xsd:decimal ;
+    financial:amount-2024-01-01 "12352"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 22" .
+
+dsn:bbz-business-capital-starting a financial:Amount ;
+    dcterms:title "Bbz 2004 bedrijfskapitaal beginnende zelfstandige" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "45670"^^xsd:decimal ;
+    financial:amount-2024-01-01 "45483"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 24" .
+
+dsn:bbz-income-requirement-elderly a financial:Amount ;
+    dcterms:title "Bbz 2004 inkomenseis oudere zelfstandige" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "9852"^^xsd:decimal ;
+    financial:amount-2024-01-01 "9811"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 25" .
+
+dsn:bbz-business-capital-elderly a financial:Amount ;
+    dcterms:title "Bbz 2004 bijstand bedrijfskapitaal oudere zelfstandigen" ;
+    dsn:scheme "Bbz2004" ;
+    financial:amount-2023-07-01 "12403"^^xsd:decimal ;
+    financial:amount-2024-01-01 "12352"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "art. 26" .
+
+# Regulation amounts (Regeling Participatiewet, IOAW en IOAZ)
+dsn:regulation-report-extensive-inland-shipping a financial:Amount ;
+    dcterms:title "Uitgebreid rapport binnenvaart" ;
+    financial:amount-2023-01-01 "3305"^^xsd:decimal ;
+    financial:amount-2024-01-01 "3292"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "Regeling Participatiewet, IOAW en IOAZ, art. 15a, eerste lid, onderdeel a" .
+
+dsn:regulation-report-short-inland-shipping a financial:Amount ;
+    dcterms:title "Verkort rapport binnenvaart" ;
+    financial:amount-2023-01-01 "1953"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1945"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "Regeling Participatiewet, IOAW en IOAZ, art. 15a, eerste lid, onderdeel a" .
+
+dsn:regulation-report-follow-up-inland-shipping a financial:Amount ;
+    dcterms:title "Nader/vervolgrapport binnenvaart" ;
+    financial:amount-2023-01-01 "1201"^^xsd:decimal ;
+    financial:amount-2024-01-01 "1196"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    dsn:legalReference "Regeling Participatiewet, IOAW en IOAZ, art. 15a, eerste lid, onderdeel b" .
+
+# Tax calculation rules and percentages
+dsn:wage-tax-deduction-under-retirement a financial:TaxDeduction ;
+    dcterms:title "Loonheffingskorting jonger dan pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "under-retirement" ;
+    financial:amount-2024 "3362"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" .
+
+dsn:wage-tax-deduction-married-retirement a financial:TaxDeduction ;
+    dcterms:title "Loonheffingskorting gehuwden pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "retirement+" ;
+    dsn:householdType "married" ;
+    financial:amount-2024 "3745"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" .
+
+dsn:wage-tax-deduction-single-retirement a financial:TaxDeduction ;
+    dcterms:title "Loonheffingskorting alleenstaanden pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "retirement+" ;
+    dsn:householdType "single" ;
+    financial:amount-2024 "4269"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" .
+
+dsn:tax-rate-first-bracket-under-retirement a financial:TaxRate ;
+    dcterms:title "Percentage 1e schijf schijventarief jonger dan pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "under-retirement" ;
+    financial:percentage "36.97"^^xsd:decimal ;
+    dsn:taxBracket "first" .
+
+dsn:tax-rate-first-bracket-retirement a financial:TaxRate ;
+    dcterms:title "Percentage 1e schijf schijventarief pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "retirement+" ;
+    financial:percentage "19.07"^^xsd:decimal ;
+    dsn:taxBracket "first" .
+
+dsn:tax-rate-corrected-under-retirement a financial:TaxRate ;
+    dcterms:title "Percentage 1e schijf na correctie arbeidskorting jonger dan pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "under-retirement" ;
+    financial:percentage "28.545"^^xsd:decimal ;
+    dsn:taxBracket "first-corrected" .
+
+dsn:tax-rate-corrected-retirement a financial:TaxRate ;
+    dcterms:title "Percentage 1e schijf na correctie arbeidskorting pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "retirement+" ;
+    financial:percentage "14.724"^^xsd:decimal ;
+    dsn:taxBracket "first-corrected" .
+
+dsn:wage-tax-with-health-insurance-under-retirement a financial:TaxRate ;
+    dcterms:title "Percentage loonheffing met Zvw bijdrage jonger dan pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "under-retirement" ;
+    financial:percentage "64.06"^^xsd:decimal ;
+    dsn:includesHealthInsurance true .
+
+dsn:wage-tax-with-health-insurance-retirement a financial:TaxRate ;
+    dcterms:title "Percentage loonheffing met Zvw bijdrage pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "retirement+" ;
+    financial:percentage "25.22"^^xsd:decimal ;
+    dsn:includesHealthInsurance true .
+
+dsn:wage-tax-without-health-insurance-under-retirement a financial:TaxRate ;
+    dcterms:title "Percentage loonheffing zonder Zvw bijdrage jonger dan pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "under-retirement" ;
+    financial:percentage "58.65"^^xsd:decimal ;
+    dsn:includesHealthInsurance false .
+
+dsn:wage-tax-without-health-insurance-retirement a financial:TaxRate ;
+    dcterms:title "Percentage loonheffing zonder Zvw bijdrage pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "retirement+" ;
+    financial:percentage "23.56"^^xsd:decimal ;
+    dsn:includesHealthInsurance false .
+
+dsn:health-insurance-gross-factor a financial:Factor ;
+    dcterms:title "Bruteringsfactor bijdrage-inkomen Zvw" ;
+    dsn:ageGroup "retirement+" ;
+    financial:factor "1.056"^^xsd:decimal .
+
+dsn:health-insurance-contribution-rate a financial:Percentage ;
+    dcterms:title "Bijdrage Zvw percentage" ;
+    dsn:ageGroup "retirement+" ;
+    financial:percentage "5.32"^^xsd:decimal .
+
+dsn:employer-health-insurance-levy a financial:Percentage ;
+    dcterms:title "Werkgeversheffing Zvw" ;
+    dsn:ageGroup "under-retirement" ;
+    financial:percentage "6.57"^^xsd:decimal .
+
+dsn:maximum-health-insurance-contribution-income a financial:Amount ;
+    dcterms:title "Maximum bijdrage-inkomen Zvw" ;
+    financial:amount-2024 "71628"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" .
+
+# Assistance percentage rates
+dsn:assistance-rate-retirement a financial:Percentage ;
+    dcterms:title "Bijstandspercentagetarief pensioengerechtigde leeftijd" ;
+    dsn:ageGroup "retirement+" ;
+    financial:percentage "0.00"^^xsd:decimal .
+
+dsn:assistance-rate-bbz a financial:Percentage ;
+    dcterms:title "Bijstandspercentagetarief Bbz 2004" ;
+    dsn:scheme "Bbz2004" ;
+    financial:percentage "58.65"^^xsd:decimal .
+
+dsn:assistance-rate-other a financial:Percentage ;
+    dcterms:title "Bijstandspercentagetarief overige personen" ;
+    financial:percentage "20.70"^^xsd:decimal .
+
+# Estimated taxable income for assistance recipients
+dsn:estimated-taxable-income-married a financial:EstimatedIncome ;
+    dcterms:title "Schatting belastbaar inkomen gehuwd per partner" ;
+    dsn:ageRange "21-retirement" ;
+    dsn:householdType "married" ;
+    financial:amount-2024 "12124"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" .
+
+dsn:estimated-taxable-income-single a financial:EstimatedIncome ;
+    dcterms:title "Schatting belastbaar inkomen alleenstaande (70%)" ;
+    dsn:ageRange "21-retirement" ;
+    dsn:householdType "single" ;
+    financial:amount-2024 "19107"^^xsd:decimal ;
+    financial:currency "EUR" ;
+    financial:period "yearly" .
