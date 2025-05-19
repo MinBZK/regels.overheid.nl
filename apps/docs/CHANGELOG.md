@@ -1,5 +1,11 @@
 # docs
 
+## 3.22.0
+
+### Minor Changes
+
+- d6864a0: Added WIP banner to docs and added linked data ttl file SZW normenbrief
+
 ## 3.21.0
 
 ### Minor Changes
