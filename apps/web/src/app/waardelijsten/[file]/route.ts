@@ -4,10 +4,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 
 export async function GET(req: NextRequest, { params }: { params: { file: string } }) {
-  const rootDirPath = path.resolve(process.cwd(), 'src/app/waardelijsten/[file]');
+  const rootDirPath = path.resolve(process.cwd(), 'src/app/waardelijsten');
   const filePath = path.resolve(rootDirPath, `${params.file}`);
 
-  console.log({ filePath });
+  if (!filePath.startsWith(rootDirPath)) return notFoundResponse(req);
 
   const fileExists = await fs
     .stat(filePath)
