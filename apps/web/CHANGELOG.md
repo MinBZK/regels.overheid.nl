@@ -1,5 +1,11 @@
 # web
 
+## 3.51.1
+
+### Patch Changes
+
+- 3c1e606: Fixed path traversal vulnerability
+
 ## 3.51.0
 
 ### Minor Changes
