@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.31.0",
+    "@strapi/plugin-graphql": "^5.31.0",
     "@strapi/plugin-users-permissions": "5.31.0",
     "@strapi/strapi": "5.31.0",
     "pg": "8.8.0",
