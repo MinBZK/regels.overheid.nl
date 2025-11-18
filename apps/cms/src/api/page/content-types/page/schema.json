@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "string",
+      "minLength": 1,
+      "required": true,
+      "unique": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "cmsPage": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "showInNav": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
