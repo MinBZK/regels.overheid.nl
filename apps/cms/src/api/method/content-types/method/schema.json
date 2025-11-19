@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "methods",
+  "info": {
+    "singularName": "method",
+    "pluralName": "methods",
+    "displayName": "Methods"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "arch",
+        "megaphone",
+        "right-angle-ruler",
+        "ruler",
+        "scale",
+        "therefore"
+      ]
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "platform",
+        "software",
+        "DSL",
+        "methode"
+      ]
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
