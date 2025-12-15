@@ -10,16 +10,23 @@ RUN corepack prepare pnpm@8 --activate
 RUN apk add --no-cache libc6-compat
 RUN apk update
 
-RUN pnpm install -g turbo@1.11
+# Note: Turbo 2.x is installed globally, use version 2.6.3
+RUN pnpm install -g turbo@2.6.3
 
 # ==== Builder ====
 FROM root as builder
 
 WORKDIR /app
 
+# Copy all source files for monorepo resolution
 COPY . .
 
-RUN turbo prune cms --docker
+# Prune only the CMS app for Docker
+RUN turbo prune cms --docker --out-dir out
+
+# Install dependencies for pruned CMS
+WORKDIR /app/out
+RUN pnpm install --frozen-lockfile
 
 # ==== Installer ====
 FROM root as installer
@@ -27,12 +34,15 @@ FROM root as installer
 WORKDIR /app
 
 COPY .gitignore .gitignore
-COPY --from=builder /app/out/json/ .
+
+# Copy pruned JSON and lockfile from builder
+COPY --from=builder /app/out/json/ ./
 COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 
+# Install pruned dependencies
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 
-# ==== Base ====
+# ==== Base user setup ====
 FROM root AS base
 
 ARG UID=1001
@@ -45,7 +55,8 @@ USER ${UID}
 
 WORKDIR /app
 
-COPY --from=builder --chown=${UID}:${GID} /app/out/full .
+# Copy built files and node_modules
+COPY --from=builder --chown=${UID}:${GID} /app/out/full ./
 COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
 COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
 COPY --from=installer --chown=${UID}:${GID} /app/apps/cms/node_modules ./apps/cms/node_modules
@@ -54,27 +65,23 @@ COPY --from=installer --chown=${UID}:${GID} /app/apps/cms/node_modules ./apps/cm
 FROM base as dev
 
 WORKDIR /app
-
 ENV NODE_ENV development
 
 RUN pnpm build
 
 EXPOSE 9001
-
-ENTRYPOINT pnpm dev
+ENTRYPOINT ["pnpm", "dev"]
 
 # ==== Prod ====
-FROM base AS prod
+FROM base as prod
 
 WORKDIR /app
 
 ARG PUBLIC_URL=http://localhost:9001
 ENV PUBLIC_URL ${PUBLIC_URL}
-
 ENV NODE_ENV production
 
 RUN pnpm build
 
 EXPOSE 9001
-
-ENTRYPOINT pnpm start
+ENTRYPOINT ["pnpm", "start"]
