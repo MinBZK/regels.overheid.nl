@@ -1,2 +1,16 @@
 packages:
-  - "apps/*"
+  - apps/*
+
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - '@strapi/strapi'
+  - core-js
+  - core-js-pure
+  - es5-ext
+  - puppeteer
+  - unrs-resolver
+
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+  - sharp
