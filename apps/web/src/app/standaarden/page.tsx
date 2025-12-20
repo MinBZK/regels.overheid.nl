@@ -29,13 +29,6 @@ export default function StandaardenPage() {
           of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
         </CardStandard.Root>
         <CardStandard.Root
-          title="Algoritmes Publicatiestandaard"
-          url="/standaarden/algoritmeregister-publicatiestandaard"
-        >
-          Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij
-          het invullen.
-        </CardStandard.Root>
-        <CardStandard.Root
           variant="work-in-progress"
           title="Levensgebeurtenissen SIVI AFS"
           url="/standaarden/levensgebeurtenissen-sivi-afs"
@@ -45,8 +38,6 @@ export default function StandaardenPage() {
         <CardStandard.Root variant="work-in-progress" title="WetsTaal Handreiking" url="/standaarden/wetstaal">
           De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal
         </CardStandard.Root>
-        <CardStandard.Root title="Harmonisator" variant="unavailable" />
-        <CardStandard.Root title="FLINT" variant="unavailable" />
       </ContainerMethod>
     </main>
   );
