@@ -124,24 +124,6 @@ export default async function LabPage() {
             <CardLab.Repo href="https://github.com/MinBZK/HvA-legal-annotation-tool-frontend-json" />
           </CardLab.MethodItems>
         </CardLab.Root>
-        <Card.Root>
-          <Card.Title>Form Builder</Card.Title>
-          <Card.Content>
-            <Typography>Ontwerp conditionele BOLD formulieren sneller en consistenter</Typography>
-            <Card.Footer>Binnenkort beschikbaar</Card.Footer>
-          </Card.Content>
-        </Card.Root>
-        <Card.Root>
-          <Card.Title>Wil je jouw eigen tool ook op deze pagina zien?</Card.Title>
-          <Card.Content>
-            <Typography>
-              Neem dan contact op met{' '}
-              <Link component="a" href="mailto:steven.gort@ictu.nl" className="underline">
-                Steven Gort.
-              </Link>
-            </Typography>
-          </Card.Content>
-        </Card.Root>
       </ContainerMethod>
     </>
   );

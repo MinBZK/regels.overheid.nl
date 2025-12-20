@@ -25,8 +25,6 @@ Ultimately, we want to offer a new government-wide rule management library that 
 
 This [open-regels.nl](https://open-regels.nl) website is a community initiative in preparation for the assignment from the Ministry of the Interior and Kingdom Relations to publish this new library on [regels.overheid.nl](https://regels.overheid.nl).
 
-Do you have any questions or do you want to work with us? Please contact [Steven Gort](mailto:steven.gort@ictu.nl)
-
 ## Open Rules
 
 Open Rules has also recently been introduced in the [standardization process](https://www.gemmaonline.nl/index.php/Standaardisatieproces) of VNG-Realisatie with the aim of helping to develop a standard that fulfills at least the following 4 aspects:
