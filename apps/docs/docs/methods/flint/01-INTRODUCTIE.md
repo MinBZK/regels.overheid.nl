@@ -2,19 +2,20 @@
 title: Een korte introductie
 description: Methods - Flint
 ---
-Flint is een actie-gerichte interpretatiemethode waarin normen worden uitgedrukt als _handelingen (acts)_, _feiten (facts)_ of _plichten (duties)_. 
+
+Flint is een actie-gerichte interpretatiemethode waarin normen worden uitgedrukt als _handelingen (acts)_, _feiten (facts)_ of _plichten (duties)_.
 
 Flint is ontwikkeld om alle toestanden en toestandsovergangen waarin normen een rol spelen expliciet te kunnen beschrijven met een referentie naar gebruikte bronnen.
 
 # Wat zijn normen?
 
-*Definitie norm*
+_Definitie norm_
 Een norm is:
 
 1. sociaal gedrag dat in een groep wordt geaccepteerd of verwacht, of
 2. een waarde gebruikt als een ijkpunt voor vergelijkingen: een regel, criterium, graadmeter, maatstaf of standaard.
 
-*Soorten normen*
+_Soorten normen_
 
 - Sociale normen gaan over gedrag dat in een groep wordt verwacht of geaccepteerd
 - Ethische normen gaan over gedrag dat als 'goed' of 'fout' kan worden gekwalificeerd
@@ -29,9 +30,9 @@ Een norm is:
 
 ## Handelingen
 
-Een handeling is een _actie_, uitgevoerd door een _actor_, die betrekking heeft op een _object_. 
+Een handeling is een _actie_, uitgevoerd door een _actor_, die betrekking heeft op een _object_.
 
-Als bij het uitvoeren van de actie aan de _voorwaarden_ wordt voldaan, dan is de actie geldig en heeft deze een _resultaat_. Het resultaat (_feiten_ of _plichten_ die worden gecreëerd of die verdwijnen) zijn bestemd voor een _ontvanger_. 
+Als bij het uitvoeren van de actie aan de _voorwaarden_ wordt voldaan, dan is de actie geldig en heeft deze een _resultaat_. Het resultaat (_feiten_ of _plichten_ die worden gecreëerd of die verdwijnen) zijn bestemd voor een _ontvanger_.
 
 Een _handeling_ zonder _actie_, _actor_ of _resultaat_ kan niet bestaan, maar een _handeling_ zonder _object_ (vb. een ambtshalve besluit) of zonder _voorwaarden_ is mogelijk
 
@@ -86,4 +87,3 @@ Opmerkelijke aspecten bij deze interpretatie zijn:
 ## Meer informatie
 
 Voor meer informatie over Flint, zie [Methode beschrijving](./methodebeschrijving/01-INLEIDING.md)
-

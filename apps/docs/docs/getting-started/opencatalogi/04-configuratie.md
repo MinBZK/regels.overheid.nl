@@ -6,6 +6,7 @@ description: Getting started - Configureren Open Catalogi
 ## Schema's
 
 Selecteer de app (Open) Register en maak de volgende schema's aan via **Schemas** -> **Add schema**:
+
 - Publicatie
 - Organisatie
 - Bijlagen

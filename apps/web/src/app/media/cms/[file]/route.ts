@@ -68,7 +68,7 @@ export async function GET({ nextUrl }: NextRequest, { params }: { params: Params
 
   if (!rootImageExists) {
     const responseArrayBuffer = await fetch(resolveCmsFile('/uploads/' + file)).then((response) =>
-      response.arrayBuffer()
+      response.arrayBuffer(),
     );
 
     const responseBuffer = Buffer.from(responseArrayBuffer);

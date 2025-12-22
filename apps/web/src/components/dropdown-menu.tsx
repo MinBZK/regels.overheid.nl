@@ -15,5 +15,5 @@ export const Content = withClassName(DropdownMenu.Content, [
 
 export const Item = withClassName(
   DropdownMenu.Item,
-  'relative flex cursor-pointer items-center hover:outline-none rounded-sm px-2 py-1.5 focus:bg-gray-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50'
+  'relative flex cursor-pointer items-center hover:outline-none rounded-sm px-2 py-1.5 focus:bg-gray-100 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
 );

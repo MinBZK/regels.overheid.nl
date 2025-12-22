@@ -23,7 +23,7 @@ permissions:
   id-token: write
   contents: read
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - uses: actions/checkout@v3
     - uses: azure/login@v1

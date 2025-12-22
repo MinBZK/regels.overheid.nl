@@ -16,7 +16,7 @@ export const CardLegacy = forwardRef<HTMLDivElement, React.OverrideProps<Props &
         {children}
       </Component>
     );
-  }
+  },
 ) as React.OverrideAbleComponentFC<'div', Props>;
 
 CardLegacy.displayName = 'Card';

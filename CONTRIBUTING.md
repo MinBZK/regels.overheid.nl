@@ -1,4 +1,3 @@
-
 # Contributing guidelines
 
 ## What do I need to know to help?

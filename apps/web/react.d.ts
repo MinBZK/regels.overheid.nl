@@ -18,7 +18,7 @@ declare module 'react' {
     <TComponent extends React.ElementType = TDefaultComponent>(
       props: {
         component?: TComponent;
-      } & OverrideProps<TProps, TComponent>
+      } & OverrideProps<TProps, TComponent>,
     ): JSX.Element | null;
     displayName?: string;
   }

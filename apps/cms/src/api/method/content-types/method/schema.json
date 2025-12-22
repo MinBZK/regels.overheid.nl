@@ -41,14 +41,7 @@
         }
       },
       "type": "enumeration",
-      "enum": [
-        "arch",
-        "megaphone",
-        "right-angle-ruler",
-        "ruler",
-        "scale",
-        "therefore"
-      ],
+      "enum": ["arch", "megaphone", "right-angle-ruler", "ruler", "scale", "therefore"],
       "required": true
     },
     "Href": {
@@ -67,12 +60,7 @@
         }
       },
       "type": "enumeration",
-      "enum": [
-        "platform",
-        "software",
-        "DSL",
-        "methode"
-      ],
+      "enum": ["platform", "software", "DSL", "methode"],
       "required": true
     }
   }

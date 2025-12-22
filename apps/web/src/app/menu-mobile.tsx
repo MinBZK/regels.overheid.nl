@@ -47,7 +47,7 @@ export const MenuMobile: React.FC<Props> = ({ navbar }) => {
             />
           );
         })}
-      </div>
+      </div>,
     );
   });
 

@@ -2,6 +2,7 @@
 title: De overheid als normatief systeem
 description: Methods - norm engineering
 ---
+
 De overheid vertegenwoordigd het openbaar gezag. In een democratische rechtstaat is dat gezag gelegitimeerd omdat burgers zichzelf besturen, direct of door gekozen vertegenwoordigers. De macht van het openbaar bestuur is gelimiteerd door het recht, vastgelegd bij, of krachtens, de wet.
 
 De werking van de democratische rechtsstaat is onderwerp van gesprek, binnen en buiten Nederland. De belangrijkste oorzaken daarvan zijn:
@@ -25,5 +26,3 @@ Dat betekent dat de overheid moet kunnen uitleggen wat zij doet. Hoe wetten word
 Het doel van [regels.overheid.nl](https://regels.overheid.nl) is te laten zien welke methoden de overheid gebruikt om wetten te interpreteren, regels te maken en hoe deze regels worden gebruikt. We beschrijven de methoden die we gebruiken, we leggen uit hoe ze werken, we bieden open source instrumenten aan om die methoden te kunnen gebruiken en we publiceren de regels die overheidsorganisaties gebruiken.
 
 [Regels.overheid.nl](https://regels.overheid.nl)] is in 2022 van start gegaan. In 2023 zullen we de eerste methoden, instrumenten en regels publiceren. Daarnaast bieden we de gelegenheid om vragen te stellen. We beantwoorden vragen over methoden, instructies, instrumenten of regels die op deze website staan. En als er behoefte is aan methoden, instrumenten of regels die hier nog niet te vinden zijn, dan zullen we ons best doen deze toe te voegen.
-
-

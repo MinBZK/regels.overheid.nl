@@ -9,9 +9,7 @@ export interface AnnouncementBarProps {
 function AnnouncementBar(props: AnnouncementBarProps): React.ReactElement {
   return (
     <div className={styles.announcementBar} role="banner">
-      <div className={styles.announcementBarContent}>
-        🚧 This documentation is a work in progress 🚧
-      </div>
+      <div className={styles.announcementBarContent}>🚧 This documentation is a work in progress 🚧</div>
     </div>
   );
 }

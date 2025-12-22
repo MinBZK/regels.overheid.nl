@@ -22,7 +22,7 @@ export const TagFilter: React.FC<Props> = ({ filters, onFilter, methods }) => {
     onFilter(
       newActiveFilters.length > 0
         ? methods.filter((method) => newActiveFilters.includes(method.tag || defaultTag))
-        : methods
+        : methods,
     );
   };
 

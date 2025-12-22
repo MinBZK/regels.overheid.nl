@@ -2,6 +2,7 @@
 title: Rulecube
 description: Method - Rulecube
 ---
+
 Rulecube is een software platform waarmee je beslisregels, koppelingen (API's), workflows en formulieren bouwt. Met een Business Rule Engine (BRE) **automatiseer je beslissingen** in je organisatie. Je definieert wanneer en onder welke voorwaarden je een beslissing neemt en welke actie of consequentie je daaraan verbindt. Met de Business Rule Engine van Rulecube bepaal je ook het **proces of de workflow** waarbinnen beslissingen worden genomen en regel je de **integratie met de systemen** – gegevensbronnen en softwareprogramma’s – waarbinnen die beslissingen en processtappen moeten worden genomen.
 
 Vaak is het ook nodig dat burgers of bedrijven een aanvraag- of contact-formulier invullen. Het is handig als al heel vroeg in je werkproces de juiste regels worden toegepast. Dat kan veel werk besparen en duidelijkheid geven. Daarom bouw je met Rulecube ook slimme **formulieren**, die zich gedragen volgens jouw beslisregels en onderdeel uitmaken van een slimme workflow.
@@ -23,7 +24,6 @@ editor bijvoorbeeld. Maar ook wanneer je al je processen hebt ingericht, is Rule
 Ben jij technisch aangelegd? Dan word je heel blij van onze ‘tech stack’. De technische details bekijk je hier: [Technische details](https://rulecube.com/language/nl/how-it-works/).
 
 Technische details Ben je niet technisch aangelegd? Dan word je vooral heel blij van onze demo. [Vraag een demo aan](https://rulecube.com/language/nl/get-demo/).
-
 
 Rulecube bestaat uit drie onderdelen:
 

@@ -51,7 +51,7 @@ services:
       - MARIADB_MYSQL_LOCALHOST_USER=true
     expose:
       - 3306
-      
+
   nextcloud:
     user: root
     container_name: nextcloud

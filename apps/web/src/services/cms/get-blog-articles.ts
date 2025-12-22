@@ -22,7 +22,7 @@ export function getBlogArticles() {
     .where(
       and(
         lte(blogArticles.publishedAt, new Date().toISOString()),
-        eq(filesRelatedMorphs.relatedType, 'api::blog-article.blog-article')
-      )
+        eq(filesRelatedMorphs.relatedType, 'api::blog-article.blog-article'),
+      ),
     );
 }

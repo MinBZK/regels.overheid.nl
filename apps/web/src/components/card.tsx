@@ -25,7 +25,7 @@ export const Root: React.FC<React.PropsWithChildren> = ({ children }) => {
         className={cx(
           'relative grid aspect-square rounded-lg border border-grey-lighter p-6 transition-all duration-300 ease-in-out',
           Style.root,
-          open && Style.rootOpen
+          open && Style.rootOpen,
         )}
       >
         <context.Provider value={{ open }}>{children}</context.Provider>

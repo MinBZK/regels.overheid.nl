@@ -14,7 +14,7 @@ export const Link = forwardRef<typeof NextLink, React.OverrideProps<{} & { compo
         {children}
       </Component>
     );
-  }
+  },
 );
 
 Link.displayName = 'Link';

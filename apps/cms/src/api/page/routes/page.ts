@@ -19,7 +19,7 @@ const makeRouter = (coreRoutes: any, overrideRoutes: any[], extraRoutes: any[]) 
 
       const newRoutes = routes.map((route) => {
         const override = overrideRoutes.find(
-          (override) => route.handler === override.handler && route.method === override.method
+          (override) => route.handler === override.handler && route.method === override.method,
         );
 
         return override || route;
