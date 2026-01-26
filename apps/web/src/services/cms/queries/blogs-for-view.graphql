@@ -1,0 +1,12 @@
+query BlogsForView {
+  blogs(pagination: { pageSize: 9999 }, sort: "publishedAt:desc") {
+    id: documentId
+    title
+    category
+    publishedAt
+    cover {
+      url
+      alternativeText
+    }
+  }
+}

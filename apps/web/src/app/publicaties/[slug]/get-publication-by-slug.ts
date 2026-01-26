@@ -1,13 +1,9 @@
-import { db } from '@/drizzle/db';
-import { publications } from '@/drizzle/schema';
-import { eq } from 'drizzle-orm';
+import { gqlClient } from '@/gql-client';
 
 interface Args {
   slug: string;
 }
 
 export async function getPublicationBySlug({ slug }: Args) {
-  const [publication] = await db.select().from(publications).where(eq(publications.slug, slug)).limit(1);
-
-  return publication;
+  return gqlClient.PublicationsForViewBySlug({ slug }).then((res) => res.publications[0]);
 }

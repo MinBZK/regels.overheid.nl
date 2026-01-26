@@ -10,20 +10,23 @@ import { format } from 'date-fns';
 import Link from 'next/link';
 import { CopyCiteToClipboard } from './copy-cite-to-clipboard';
 import { getPublicationBySlug } from './get-publication-by-slug';
+import { notFound } from 'next/navigation';
 
 type Args = { params: { slug: string } };
 
 export default async function PublicatiesSlugPage({ params }: Args) {
   const publication = await getPublicationBySlug({ slug: params.slug });
 
+  if (!publication) throw notFound();
+
   return (
     <>
-      <EnhanceMenuBreadcrumbs append={publication.title!} />
+      <EnhanceMenuBreadcrumbs append={publication.title} />
       <Container component="header" className="-mt-14 bg-[#F7FBFD] py-12">
         <Typography variant="h1">{publication.title}</Typography>
         <section className="flex flex-col gap-y-1 pb-2 pt-12">
           <Typography className="!mt-0 text-lg text-primary-dark">
-            Gepubliceerd op: {format(publication.publicationDate!, 'dd MMMM yyyy')}
+            Gepubliceerd op: {format(publication.publicationDate, 'dd MMMM yyyy')}
           </Typography>
           <Typography className="!mt-0 text-lg text-primary-dark">Auteurs: {publication.authors}</Typography>
           <Typography className="!mt-0 text-lg text-primary-dark">Locatie: {publication.location}</Typography>
@@ -43,7 +46,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
                     <Dialog.Description>
                       {publication.cite}
                       <div className="mt-4 flex justify-center">
-                        <CopyCiteToClipboard text={publication.cite!} />
+                        <CopyCiteToClipboard text={publication.cite} />
                       </div>
                     </Dialog.Description>
                   </Dialog.Content>
@@ -67,7 +70,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<IconExternalLink />}
-                href={publication.originalSource!}
+                href={publication.originalSource}
               >
                 Originele bron
               </Button>
@@ -78,7 +81,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
       <Container component="main" className="pt-12">
         <section>
           <Typography variant="h2">Samenvatting</Typography>
-          <RemoteMdx content={publication.content!} />
+          <RemoteMdx content={publication.content} />
         </section>
         <section>
           <Typography variant="h3">Trefwoorden</Typography>
@@ -110,6 +113,8 @@ export default async function PublicatiesSlugPage({ params }: Args) {
 
 export async function generateMetadata({ params }: Args) {
   const publication = await getPublicationBySlug({ slug: params.slug });
+
+  if (!publication) throw notFound();
 
   return {
     title: publication.title + ' - Regelregister van de Nederlandse Overheid',

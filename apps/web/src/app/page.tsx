@@ -4,12 +4,12 @@ import { getBlogArticles } from '@/services/cms/get-blog-articles';
 import { getEvents } from '@/services/cms/get-events';
 import { Metadata } from 'next';
 import { CardBlog } from './card-blog';
+import { CardEvent } from './card-event';
 import { CardIllustration } from './card-illustration';
 import { CardLink } from './card-link';
 import { IllustrationCollaboration } from './illustration-collaboration';
 import { IllustrationQuestion } from './illustration-question';
 import { IllustrationTrack } from './illustration-track';
-import { CardEvent } from './card-event';
 
 export default async function Home() {
   const events = await getEvents();
@@ -45,6 +45,8 @@ export default async function Home() {
       <Container bleed>
         <div className="grid auto-cols-[85%] grid-flow-col gap-4 overflow-x-auto pb-2 sm:h-[400px] md:auto-cols-[minmax(250px,1fr)]  md:grid-rows-2">
           {blogArticles.map((article, i) => {
+            if (!article) return;
+
             return (
               <CardBlog
                 key={article.id}
@@ -63,6 +65,8 @@ export default async function Home() {
       <Container bleed>
         <div className="flex flex-row gap-x-4 overflow-x-auto pb-2">
           {events.map((event) => {
+            if (!event) return;
+
             return <CardEvent key={event.id} event={event} />;
           })}
         </div>

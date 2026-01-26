@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: '/next',
   images: {
     remotePatterns: [
       {
@@ -28,6 +29,10 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'localhost',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'regels.blob.core.windows.net',
       },
     ],
   },

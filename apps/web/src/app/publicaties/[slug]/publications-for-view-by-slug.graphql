@@ -1,0 +1,18 @@
+query PublicationsForViewBySlug($slug: String!) {
+  publications(filters: { slug: { eq: $slug } }) {
+    id: documentId
+    title
+    summary
+    content
+    tags
+    slug
+    authors
+    location
+    cite
+    originalSource
+    publicationDate
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}

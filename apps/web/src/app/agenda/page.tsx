@@ -1,5 +1,4 @@
 import { defaultMetaData } from '@/common/default-metadata';
-import { resolveCmsImage } from '@/common/resolve-cms-image';
 import { Container } from '@/components/container';
 import { RemotePage } from '@/components/remote-page';
 import { Typography } from '@/components/typography';
@@ -29,7 +28,7 @@ export default async function CalendarPage() {
             start={new Date(event.start)}
             hasReport={Boolean(event.report)}
             expired={isAfter(new Date(), event.start)}
-            cover={resolveCmsImage({ ext: event.cover!.ext!, hash: event.cover!.hash! }).toString()}
+            cover={event.cover.url}
           />
         ))}
       </div>

@@ -1,0 +1,8 @@
+query PagesForNavbar {
+  pages(pagination: { pageSize: 9999 }, sort: "order") {
+    id: documentId
+    slug
+    name
+    openInNewTab
+  }
+}

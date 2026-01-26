@@ -1,11 +1,5 @@
-import { db } from '@/drizzle/db';
-import { publications } from '@/drizzle/schema';
-import { and, desc, lte } from 'drizzle-orm';
+import { gqlClient } from '@/gql-client';
 
 export function getPublications() {
-  return db
-    .select()
-    .from(publications)
-    .orderBy(desc(publications.publicationDate))
-    .where(and(lte(publications.publishedAt, new Date().toISOString())));
+  return gqlClient.PublicationsForView().then((res) => res.publications.filter(Boolean));
 }

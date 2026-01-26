@@ -1,8 +1,9 @@
-import { resolveCmsImage } from '@/common/resolve-cms-image';
+import { EnhanceMenuBreadcrumbs } from '@/app/menu-breadcrumbs';
 import { truncateStringAtWord } from '@/common/truncate-string-at-word';
 import { Button } from '@/components/button';
 import { Container } from '@/components/container';
 import { RemoteMdx } from '@/components/remote-mdx';
+import { ShareBar } from '@/components/share-bar';
 import { Typography } from '@/components/typography';
 import { getBlogArticleById } from '@/services/cms/get-blog-article-by-id';
 import slugify from '@sindresorhus/slugify';
@@ -11,8 +12,6 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { EnhanceMenuBreadcrumbs } from '@/app/menu-breadcrumbs';
-import { ShareBar } from '@/components/share-bar';
 
 interface Props {
   params: {
@@ -23,26 +22,25 @@ interface Props {
 export const revalidate = 300;
 
 export default async function BlogArticlePage(props: Props) {
-  const id = Number(props.params.slug[0]);
-  const blogArticle = await getBlogArticleById(id);
+  const id = props.params.slug[0];
+  const blog = await getBlogArticleById(id);
 
-  // Absolutely required fields, we can not render the page without these
-  if (!blogArticle.title || !blogArticle.content) return notFound();
+  if (!blog) return notFound();
 
   return (
     <Container component="main" className="pb-8">
-      <EnhanceMenuBreadcrumbs append={blogArticle.title} />
+      <EnhanceMenuBreadcrumbs append={blog.title} />
       <header>
         <Button component={Link} variant="text" startIcon={<IconArrowLeft />} href="/blog">
           Overzicht
         </Button>
         <Typography variant="h1" className="mb-12 mt-4 ">
-          {blogArticle.title}
+          {blog.title}
         </Typography>
-        {blogArticle.publishedAt && (
+        {blog.publishedAt && (
           <span className="text-grey-light">
             Publicatiedatum{' '}
-            {new Date(blogArticle.publishedAt).toLocaleDateString('nl-NL', {
+            {new Date(blog.publishedAt).toLocaleDateString('nl-NL', {
               month: 'long',
               day: 'numeric',
               year: 'numeric',
@@ -52,32 +50,21 @@ export default async function BlogArticlePage(props: Props) {
           </span>
         )}
         <figure className="relative mb-12 mt-3 aspect-[308/140] overflow-hidden rounded-lg">
-          {blogArticle.cover.ext && blogArticle.cover.hash && (
-            <Image
-              fill
-              className="object-cover"
-              src={resolveCmsImage({
-                ext: blogArticle.cover.ext,
-                hash: blogArticle.cover.hash,
-                width: 1235,
-              }).toString()}
-              alt={blogArticle.cover.alt || blogArticle?.title}
-            />
-          )}
+          <Image fill className="object-cover" src={blog.cover.url} alt={blog.cover.alternativeText || blog.title} />
         </figure>
       </header>
       <article>
-        <RemoteMdx content={blogArticle?.content || ''} />
-        {blogArticle.source && (
+        <RemoteMdx content={blog.content || ''} />
+        {blog.source && (
           <div className="mt-6 border border-primary-main bg-primary-lighter p-6 text-black">
-            <RemoteMdx content={blogArticle.source} />
+            <RemoteMdx content={blog.source} />
           </div>
         )}
       </article>
-      <div className="mt-6 border-b border-t border-grey-light py-6">Categorie: {blogArticle?.category}</div>
+      <div className="mt-6 border-b border-t border-grey-light py-6">Categorie: {blog.category}</div>
 
       <p className="mb-2 mt-12 text-xl">Deel deze pagina</p>
-      <ShareBar title={blogArticle.title} />
+      <ShareBar title={blog.title} />
     </Container>
   );
 }
@@ -85,49 +72,38 @@ export default async function BlogArticlePage(props: Props) {
 export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata> {
   const [id] = params.slug;
 
-  const blogArticle = await getBlogArticleById(Number(id));
+  const blog = await getBlogArticleById(id);
 
-  if (!blogArticle.title || !blogArticle.content) return notFound();
+  if (blog == null) return notFound();
 
   function images() {
-    if (!blogArticle.cover.ext || !blogArticle.cover.hash || !blogArticle.cover.mime) return;
-
-    const rootURL = resolveCmsImage({
-      ext: blogArticle.cover.ext,
-      hash: blogArticle.cover.hash,
-      width: 1200,
-      height: 630,
-    });
-
-    const url = new URL(rootURL.pathname + rootURL.search, 'https://regels.overheid.nl').toString();
+    if (!blog) return;
 
     return {
-      url,
-      width: 1200,
-      height: 630,
-      secureUrl: url,
-      type: blogArticle.cover.mime,
-      alt: blogArticle.cover.alt || undefined,
+      url: blog.cover.url,
+      secureUrl: blog.cover.url,
+      type: blog.cover.mime,
+      alt: blog.cover.alternativeText || undefined,
     };
   }
 
   return {
-    title: `${blogArticle.title} - Blog - regels.overheid.nl`,
-    description: blogArticle.description || truncateStringAtWord(blogArticle.content || '', 100),
+    title: `${blog.title} - Blog - regels.overheid.nl`,
+    description: blog.description || truncateStringAtWord(blog.content || '', 100),
     alternates: {
-      canonical: `https://regels.overheid.nl/blog/${blogArticle.id}/${slugify(blogArticle.title)}`,
+      canonical: `https://regels.overheid.nl/blog/${blog.id}/${slugify(blog.title)}`,
     },
     openGraph: {
-      title: blogArticle.title,
-      description: blogArticle.description || truncateStringAtWord(blogArticle.content || '', 150),
+      title: blog.title,
+      description: blog.description || truncateStringAtWord(blog.content || '', 150),
       images: images(),
-      url: `https://regels.overheid.nl/blog/${blogArticle.id}/${slugify(blogArticle.title)}`,
+      url: `https://regels.overheid.nl/blog/${blog.id}/${slugify(blog.title)}`,
       type: 'article',
       siteName: 'regels.overheid.nl',
       locale: 'nl_NL',
     },
     twitter: {
-      title: blogArticle.title,
+      title: blog.title,
       site: 'https://regels.ovherheid.nl',
       card: 'summary',
       images: images(),

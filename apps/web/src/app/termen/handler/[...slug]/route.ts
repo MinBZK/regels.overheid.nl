@@ -1,12 +1,8 @@
-import { resolveCmsImage } from '@/common/resolve-cms-image';
-import { db } from '@/drizzle/db';
-import { files, filesRelatedMorphs, terms } from '@/drizzle/schema';
-import { and, eq, param } from 'drizzle-orm';
 import { NextRequest } from 'next/server';
-import path from 'path';
-import { getSlugFromParams } from '../../get-slug-from-params';
 import { findTermInFormat, FindTermInFormatArgs } from '../../find-term-in-format';
 import { getHeadersWithContentTypes } from '../../get-headers-with-content-type';
+import { getSlugFromParams } from '../../get-slug-from-params';
+import { notFoundResponse } from '@/common/not-found-response';
 
 export async function GET(req: NextRequest, { params }: { params: { slug: string[] } }) {
   const slug = getSlugFromParams(params.slug);
@@ -23,11 +19,13 @@ export async function GET(req: NextRequest, { params }: { params: { slug: string
     return null;
   })();
 
-  if (!extension) return new Response('Not found', { status: 404 });
+  if (!extension) return notFoundResponse(req);
 
-  const term = await findTermInFormat({ slug, extension });
+  const file = await findTermInFormat({ slug, extension });
 
-  const fetchResponse = await fetch(resolveCmsImage(term.files as any), {
+  if (!file) return notFoundResponse(req);
+
+  const fetchResponse = await fetch(file.url, {
     method: 'GET',
   });
 

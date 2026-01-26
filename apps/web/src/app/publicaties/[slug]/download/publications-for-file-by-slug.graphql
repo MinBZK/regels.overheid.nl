@@ -1,0 +1,9 @@
+query PublicationsForFileBySlug($slug: String!) {
+  publications(filters: { slug: { eq: $slug } }) {
+    file {
+      mime
+      ext
+      url
+    }
+  }
+}

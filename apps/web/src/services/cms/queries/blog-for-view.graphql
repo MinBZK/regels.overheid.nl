@@ -1,0 +1,16 @@
+query BlogForViewByID($id: ID!) {
+  blog(documentId: $id) {
+    id: documentId
+    title
+    content
+    category
+    description
+    publishedAt
+    source
+    cover {
+      url
+      alternativeText
+      mime
+    }
+  }
+}

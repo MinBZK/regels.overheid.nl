@@ -1,16 +1,5 @@
-import { db } from '@/drizzle/db';
-import { pages } from '@/drizzle/schema';
-import { and, eq, lte } from 'drizzle-orm';
+import { gqlClient } from '@/gql-client';
 
-export function getNavbarPages() {
-  return db
-    .select({
-      id: pages.id,
-      slug: pages.slug,
-      name: pages.name,
-      openInNewTab: pages.openInNewTab,
-    })
-    .from(pages)
-    .where(and(lte(pages.publishedAt, new Date().toISOString()), eq(pages.showInNav, true)))
-    .orderBy(pages.order);
+export async function getNavbarPages() {
+  return gqlClient.PagesForNavbar().then((res) => res.pages);
 }

@@ -1,0 +1,13 @@
+query TermsWithFormatsBySlug($slug: String!) {
+  terms(pagination: { pageSize: 9999 }, filters: { slug: { eq: $slug } }) {
+    rdf {
+      url
+    }
+    json {
+      url
+    }
+    ttl {
+      url
+    }
+  }
+}

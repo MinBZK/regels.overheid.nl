@@ -13,8 +13,8 @@ export async function getNavbarTree() {
   const pages = await getNavbarPages();
   const root: NavbarNode = { name: 'root', id: 'root', url: '', openInNewTab: false, children: new Map() };
 
-  pages.forEach((item) => {
-    const parts = item.name!.split('/');
+  pages.filter(Boolean).forEach((item) => {
+    const parts = item.name.split('/');
     let current = root;
 
     parts.forEach((part, index) => {

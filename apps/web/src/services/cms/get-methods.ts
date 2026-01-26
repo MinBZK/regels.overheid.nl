@@ -1,7 +1,5 @@
-import { db } from '@/drizzle/db';
-import { methods } from '@/drizzle/schema';
-import { lte } from 'drizzle-orm';
+import { gqlClient } from '@/gql-client';
 
-export function getMethods() {
-  return db.select().from(methods).where(lte(methods.publishedAt, new Date().toISOString()));
+export async function getMethods() {
+  return gqlClient.MethodsForView().then((res) => res.methods.filter(Boolean));
 }

@@ -1,0 +1,18 @@
+query PublicationsForView {
+  publications(pagination: { pageSize: 9999 }, sort: "publicationDate:desc") {
+    id: documentId
+    title
+    summary
+    content
+    tags
+    slug
+    authors
+    location
+    cite
+    originalSource
+    publicationDate
+    createdAt
+    updatedAt
+    publishedAt
+  }
+}

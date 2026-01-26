@@ -9,7 +9,7 @@ export default async function Avola() {
   return (
     <>
       <Container component="main">
-        <RemotePage page="specificaties/avola" />
+        {/* <RemotePage page="specificaties/avola" /> */}
         {Object.entries(data).map(([title, table]) => (
           <div className="mb-8 w-full overflow-x-auto" key={title}>
             <h2 className="mb-1 text-xl">{title}</h2>

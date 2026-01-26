@@ -1,0 +1,22 @@
+query EventsForViewBySlug($slug: String!) {
+  events(filters: { slug: { eq: $slug } }) {
+    id: documentId
+    intro
+    title
+    subject
+    start
+    slug
+    content
+    address
+    end
+    addressName
+    eventbrite
+    eventbriteTitle
+    report
+    cover {
+      url
+      mime
+      alternativeText
+    }
+  }
+}

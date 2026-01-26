@@ -1,5 +1,4 @@
 import { EnhanceMenuBreadcrumbs } from '@/app/menu-breadcrumbs';
-import { resolveCmsImage } from '@/common/resolve-cms-image';
 import { truncateStringAtWord } from '@/common/truncate-string-at-word';
 import { Button } from '@/components/button';
 import { Container } from '@/components/container';
@@ -29,6 +28,7 @@ export default async function EventPage({ params }: Props) {
   const event = await getEventBySlug(params.event);
 
   if (!event) return redirect('/agenda');
+
   const { title, subject, intro, content, address, cover, addressName, eventbrite, eventbriteTitle, report } = event;
 
   const hasPassed = new Date(event.end) < new Date();
@@ -43,12 +43,7 @@ export default async function EventPage({ params }: Props) {
 
       <div className={cx('relative -mt-14 h-[300px] w-full overflow-hidden object-fill', hasPassed && 'grayscale')}>
         {cover && (
-          <Image
-            className="object-cover"
-            src={resolveCmsImage({ ext: cover.ext!, hash: cover.hash! }).toString()}
-            fill
-            alt={cover.alt || title}
-          />
+          <Image className="object-cover" src={event.cover.url} fill alt={event.cover.alternativeText || title} />
         )}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary-main p-6 text-center text-5xl font-bold text-white">
           {format(start, 'eeee d MMMM', { locale: nl })}
@@ -119,24 +114,13 @@ export async function generateMetadata({ params }: { params: { event: string } }
   if (!event) return notFound();
 
   function images() {
-    if (!event.cover || !event.cover.ext || !event.cover.hash || !event.cover.mime) return;
-
-    const rootURL = resolveCmsImage({
-      ext: event.cover.ext,
-      hash: event.cover.hash,
-      width: 1200,
-      height: 630,
-    });
-
-    const url = new URL(rootURL.pathname + rootURL.search, 'https://regels.overheid.nl').toString();
+    if (!event) return;
 
     return {
-      url,
-      width: 1200,
-      height: 630,
-      secureUrl: url,
+      url: event.cover.url,
+      secureUrl: event.cover.url,
       type: event.cover.mime,
-      alt: event.cover.alt || undefined,
+      alt: event.cover.alternativeText || undefined,
     };
   }
 

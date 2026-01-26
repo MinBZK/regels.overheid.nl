@@ -1,13 +1,5 @@
-import { db } from '@/drizzle/db';
-import { pages } from '@/drizzle/schema';
-import { and, eq, lte } from 'drizzle-orm';
+import { gqlClient } from '@/gql-client';
 
 export async function getPageBySlug(slug: string) {
-  const [page] = await db
-    .select()
-    .from(pages)
-    .where(and(lte(pages.publishedAt, new Date().toISOString()), eq(pages.slug, slug)))
-    .limit(1);
-
-  return page;
+  return gqlClient.PagesForViewBySlug({ slug }).then((res) => res.pages.filter(Boolean)[0]);
 }

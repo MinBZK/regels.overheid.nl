@@ -1,0 +1,12 @@
+query MethodsForView {
+  methods(pagination: { pageSize: 9999 }) {
+    id: documentId
+    title
+    icon
+    tag
+    href
+    description
+    updatedAt
+    createdAt
+  }
+}

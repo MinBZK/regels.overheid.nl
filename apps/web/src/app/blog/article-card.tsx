@@ -12,7 +12,7 @@ TimeAgo.addDefaultLocale(nl);
 const timeAgo = new TimeAgo('nl-NL');
 
 interface Props {
-  id: number;
+  id: string;
   title: string;
   date?: string | null;
   category?: string | null;

@@ -8,8 +8,6 @@ interface Props {
 }
 
 export const CardPublication: React.FC<Props> = ({ publication }) => {
-  if (!publication.slug || !publication.title || !publication.summary) return null;
-
   return (
     <Link href={'/publicaties/' + publication.slug} className="rounded-md border border-grey-lighter p-6">
       <Typography variant="h3" className="mt-0 text-xl text-grey-dark">

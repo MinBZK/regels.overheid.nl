@@ -1,5 +1,5 @@
-import { resolveCmsImage } from '@/common/resolve-cms-image';
 import { findTermInFormat } from '../find-term-in-format';
+import { notFound } from 'next/navigation';
 
 type Args = {
   slug: string;
@@ -36,9 +36,11 @@ function findNodeWithField({ input, key, value }: FindFieldArgs): Record<string,
 }
 
 export async function getParsedTerm({ slug }: Args) {
-  const term = await findTermInFormat({ slug, extension: '.json' });
+  const file = await findTermInFormat({ slug, extension: '.json' });
 
-  const json = await await fetch(resolveCmsImage(term.files as any), {
+  if (!file) throw notFound();
+
+  const json = await fetch(file.url, {
     method: 'GET',
   }).then((res) => res.json() as Record<string, any>);
 

@@ -1,0 +1,17 @@
+query EventsForView {
+  events(pagination: { pageSize: 9999 }, sort: "start:desc") {
+    id: documentId
+    intro
+    title
+    subject
+    start
+    slug
+    address
+    end
+    report
+    cover {
+      url
+      alternativeText
+    }
+  }
+}

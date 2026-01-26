@@ -1,0 +1,8 @@
+query PagesForViewBySlug($slug: String!) {
+  pages(filters: { slug: { eq: $slug } }) {
+    documentId
+    name
+    order
+    content
+  }
+}

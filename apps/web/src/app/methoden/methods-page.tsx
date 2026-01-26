@@ -24,15 +24,11 @@ export const MethodsPage: React.FC<Props> = ({ methods }) => {
         <TagFilter filters={Array.from(uniqueTags)} methods={methods} onFilter={(data) => setFilteredMethods(data)} />
       </Container>
       <ContainerMethod>
-        {filteredMethods.map(
-          ({ id, href, title, tag, description, updatedAt, createdAt }) =>
-            title &&
-            description && (
-              <CardMethod.Root key={id} title={title} docsURL={href} tag={tag}>
-                {description}
-              </CardMethod.Root>
-            )
-        )}
+        {filteredMethods.map(({ id, href, title, tag, description }) => (
+          <CardMethod.Root key={id} title={title} docsURL={href} tag={tag}>
+            {description}
+          </CardMethod.Root>
+        ))}
       </ContainerMethod>
     </>
   );
