@@ -13,7 +13,7 @@ export async function findTermInFormat({ extension, slug }: FindTermInFormatArgs
     .from(terms)
     .leftJoin(
       filesRelatedMorphs,
-      and(eq(terms.id, filesRelatedMorphs.relatedId), eq(filesRelatedMorphs.relatedType, 'api::term.term')),
+      and(eq(terms.id, filesRelatedMorphs.relatedId), eq(filesRelatedMorphs.relatedType, 'api::term.term'))
     )
     .leftJoin(files, and(eq(files.id, filesRelatedMorphs.fileId)))
     .where(and(eq(terms.slug, slug), eq(files.ext, extension)))

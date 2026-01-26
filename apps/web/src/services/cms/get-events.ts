@@ -25,6 +25,6 @@ export function getEvents() {
     .leftJoin(filesRelatedMorphs, eq(events.id, filesRelatedMorphs.relatedId))
     .leftJoin(files, eq(files.id, filesRelatedMorphs.fileId))
     .where(
-      and(lte(events.publishedAt, new Date().toISOString()), eq(filesRelatedMorphs.relatedType, 'api::event.event')),
+      and(lte(events.publishedAt, new Date().toISOString()), eq(filesRelatedMorphs.relatedType, 'api::event.event'))
     );
 }

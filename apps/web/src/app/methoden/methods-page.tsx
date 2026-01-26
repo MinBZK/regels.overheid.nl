@@ -31,7 +31,7 @@ export const MethodsPage: React.FC<Props> = ({ methods }) => {
               <CardMethod.Root key={id} title={title} docsURL={href} tag={tag}>
                 {description}
               </CardMethod.Root>
-            ),
+            )
         )}
       </ContainerMethod>
     </>

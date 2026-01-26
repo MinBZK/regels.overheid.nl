@@ -83,7 +83,7 @@ export const adminUsers = pgTable(
         name: 'admin_users_updated_by_id_fk',
       }).onDelete('set null'),
     };
-  },
+  }
 );
 
 export const adminPermissions = pgTable(
@@ -105,7 +105,7 @@ export const adminPermissions = pgTable(
       createdByIdFk: index('admin_permissions_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('admin_permissions_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const adminRoles = pgTable(
@@ -125,7 +125,7 @@ export const adminRoles = pgTable(
       createdByIdFk: index('admin_roles_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('admin_roles_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const strapiApiTokens = pgTable(
@@ -150,7 +150,7 @@ export const strapiApiTokens = pgTable(
       createdByIdFk: index('strapi_api_tokens_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('strapi_api_tokens_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const strapiApiTokenPermissions = pgTable(
@@ -168,7 +168,7 @@ export const strapiApiTokenPermissions = pgTable(
       createdByIdFk: index('strapi_api_token_permissions_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('strapi_api_token_permissions_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const strapiTransferTokens = pgTable(
@@ -192,7 +192,7 @@ export const strapiTransferTokens = pgTable(
       createdByIdFk: index('strapi_transfer_tokens_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('strapi_transfer_tokens_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const strapiTransferTokenPermissions = pgTable(
@@ -210,7 +210,7 @@ export const strapiTransferTokenPermissions = pgTable(
       createdByIdFk: index('strapi_transfer_token_permissions_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('strapi_transfer_token_permissions_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const files = pgTable(
@@ -248,7 +248,7 @@ export const files = pgTable(
       createdByIdFk: index('files_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('files_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const uploadFolders = pgTable(
@@ -270,7 +270,7 @@ export const uploadFolders = pgTable(
       uploadFoldersPathIdIndex: unique('upload_folders_path_id_index').on(table.pathId),
       uploadFoldersPathIndex: unique('upload_folders_path_index').on(table.path),
     };
-  },
+  }
 );
 
 export const strapiReleases = pgTable(
@@ -292,7 +292,7 @@ export const strapiReleases = pgTable(
       createdByIdFk: index('strapi_releases_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('strapi_releases_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const strapiReleaseActions = pgTable(
@@ -315,7 +315,7 @@ export const strapiReleaseActions = pgTable(
       createdByIdFk: index('strapi_release_actions_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('strapi_release_actions_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const i18NLocale = pgTable(
@@ -334,7 +334,7 @@ export const i18NLocale = pgTable(
       createdByIdFk: index('i18n_locale_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('i18n_locale_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const upPermissions = pgTable(
@@ -352,7 +352,7 @@ export const upPermissions = pgTable(
       createdByIdFk: index('up_permissions_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('up_permissions_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const upRoles = pgTable(
@@ -372,7 +372,7 @@ export const upRoles = pgTable(
       createdByIdFk: index('up_roles_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('up_roles_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const upUsers = pgTable(
@@ -397,7 +397,7 @@ export const upUsers = pgTable(
       createdByIdFk: index('up_users_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('up_users_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const applicationMetadatas = pgTable(
@@ -417,7 +417,7 @@ export const applicationMetadatas = pgTable(
       createdByIdFk: index('application_metadatas_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('application_metadatas_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const methods = pgTable(
@@ -441,7 +441,7 @@ export const methods = pgTable(
       createdByIdFk: index('methods_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('methods_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const pages = pgTable(
@@ -466,7 +466,7 @@ export const pages = pgTable(
       createdByIdFk: index('pages_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('pages_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const publishers = pgTable(
@@ -488,7 +488,7 @@ export const publishers = pgTable(
       createdByIdFk: index('publishers_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('publishers_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const adminPermissionsRoleLinks = pgTable(
@@ -506,10 +506,10 @@ export const adminPermissionsRoleLinks = pgTable(
       orderInvFk: index('admin_permissions_role_links_order_inv_fk').on(table.permissionOrder),
       adminPermissionsRoleLinksUnique: unique('admin_permissions_role_links_unique').on(
         table.permissionId,
-        table.roleId,
+        table.roleId
       ),
     };
-  },
+  }
 );
 
 export const adminUsersRolesLinks = pgTable(
@@ -529,7 +529,7 @@ export const adminUsersRolesLinks = pgTable(
       orderInvFk: index('admin_users_roles_links_order_inv_fk').on(table.userOrder),
       adminUsersRolesLinksUnique: unique('admin_users_roles_links_unique').on(table.userId, table.roleId),
     };
-  },
+  }
 );
 
 export const strapiApiTokenPermissionsTokenLinks = pgTable(
@@ -549,10 +549,10 @@ export const strapiApiTokenPermissionsTokenLinks = pgTable(
       orderInvFk: index('strapi_api_token_permissions_token_links_order_inv_fk').on(table.apiTokenPermissionOrder),
       strapiApiTokenPermissionsTokenLinksUnique: unique('strapi_api_token_permissions_token_links_unique').on(
         table.apiTokenPermissionId,
-        table.apiTokenId,
+        table.apiTokenId
       ),
     };
-  },
+  }
 );
 
 export const strapiTransferTokenPermissionsTokenLinks = pgTable(
@@ -561,7 +561,7 @@ export const strapiTransferTokenPermissionsTokenLinks = pgTable(
     id: serial('id').primaryKey().notNull(),
     transferTokenPermissionId: integer('transfer_token_permission_id').references(
       () => strapiTransferTokenPermissions.id,
-      { onDelete: 'cascade' },
+      { onDelete: 'cascade' }
     ),
     transferTokenId: integer('transfer_token_id').references(() => strapiTransferTokens.id, { onDelete: 'cascade' }),
     transferTokenPermissionOrder: doublePrecision('transfer_token_permission_order'),
@@ -571,14 +571,14 @@ export const strapiTransferTokenPermissionsTokenLinks = pgTable(
       fk: index('strapi_transfer_token_permissions_token_links_fk').on(table.transferTokenPermissionId),
       invFk: index('strapi_transfer_token_permissions_token_links_inv_fk').on(table.transferTokenId),
       orderInvFk: index('strapi_transfer_token_permissions_token_links_order_inv_fk').on(
-        table.transferTokenPermissionOrder,
+        table.transferTokenPermissionOrder
       ),
       strapiTransferTokenPermissionsTokenLinksUnique: unique('strapi_transfer_token_permissions_token_links_unique').on(
         table.transferTokenPermissionId,
-        table.transferTokenId,
+        table.transferTokenId
       ),
     };
-  },
+  }
 );
 
 export const filesRelatedMorphs = pgTable(
@@ -597,7 +597,7 @@ export const filesRelatedMorphs = pgTable(
       orderIdx: index().on(table.order),
       idColumnIdx: index('files_related_morphs_id_column_index').on(table.relatedId),
     };
-  },
+  }
 );
 
 export const filesFolderLinks = pgTable(
@@ -615,7 +615,7 @@ export const filesFolderLinks = pgTable(
       orderInvFk: index('files_folder_links_order_inv_fk').on(table.fileOrder),
       filesFolderLinksUnique: unique('files_folder_links_unique').on(table.fileId, table.folderId),
     };
-  },
+  }
 );
 
 export const uploadFoldersParentLinks = pgTable(
@@ -633,10 +633,10 @@ export const uploadFoldersParentLinks = pgTable(
       orderInvFk: index('upload_folders_parent_links_order_inv_fk').on(table.folderOrder),
       uploadFoldersParentLinksUnique: unique('upload_folders_parent_links_unique').on(
         table.folderId,
-        table.invFolderId,
+        table.invFolderId
       ),
     };
-  },
+  }
 );
 
 export const strapiReleaseActionsReleaseLinks = pgTable(
@@ -654,10 +654,10 @@ export const strapiReleaseActionsReleaseLinks = pgTable(
       orderInvFk: index('strapi_release_actions_release_links_order_inv_fk').on(table.releaseActionOrder),
       strapiReleaseActionsReleaseLinksUnique: unique('strapi_release_actions_release_links_unique').on(
         table.releaseActionId,
-        table.releaseId,
+        table.releaseId
       ),
     };
-  },
+  }
 );
 
 export const upPermissionsRoleLinks = pgTable(
@@ -675,7 +675,7 @@ export const upPermissionsRoleLinks = pgTable(
       orderInvFk: index('up_permissions_role_links_order_inv_fk').on(table.permissionOrder),
       upPermissionsRoleLinksUnique: unique('up_permissions_role_links_unique').on(table.permissionId, table.roleId),
     };
-  },
+  }
 );
 
 export const upUsersRoleLinks = pgTable(
@@ -693,7 +693,7 @@ export const upUsersRoleLinks = pgTable(
       orderInvFk: index('up_users_role_links_order_inv_fk').on(table.userOrder),
       upUsersRoleLinksUnique: unique('up_users_role_links_unique').on(table.userId, table.roleId),
     };
-  },
+  }
 );
 
 export const methodsLocalizationsLinks = pgTable(
@@ -711,10 +711,10 @@ export const methodsLocalizationsLinks = pgTable(
       orderFk: index('methods_localizations_links_order_fk').on(table.methodOrder),
       methodsLocalizationsLinksUnique: unique('methods_localizations_links_unique').on(
         table.methodId,
-        table.invMethodId,
+        table.invMethodId
       ),
     };
-  },
+  }
 );
 
 export const terms = pgTable(
@@ -733,7 +733,7 @@ export const terms = pgTable(
       createdByIdFk: index('terms_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('terms_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const events = pgTable(
@@ -764,7 +764,7 @@ export const events = pgTable(
       updatedByIdFk: index('events_updated_by_id_fk').on(table.updatedById),
       eventsSlugUnique: unique('events_slug_unique').on(table.slug),
     };
-  },
+  }
 );
 
 export const blogArticles = pgTable(
@@ -787,7 +787,7 @@ export const blogArticles = pgTable(
       createdByIdFk: index('blog_articles_created_by_id_fk').on(table.createdById),
       updatedByIdFk: index('blog_articles_updated_by_id_fk').on(table.updatedById),
     };
-  },
+  }
 );
 
 export const publications = pgTable(
@@ -816,5 +816,5 @@ export const publications = pgTable(
       updatedByIdFk: index('publications_updated_by_id_fk').on(table.updatedById),
       publicationsSlugUnique: unique('publications_slug_unique').on(table.slug),
     };
-  },
+  }
 );

@@ -74,7 +74,7 @@ export const MenuItem = forwardRef<any, Props>(
         </Component>
       </Slot>
     );
-  },
+  }
 ) as React.FC<Props>;
 
 MenuItem.displayName = 'MenuItem';

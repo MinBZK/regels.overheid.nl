@@ -26,7 +26,7 @@ function formatDocument(document: string) {
   $('.spraak').addClass('p-4 bg-gray-100 rounded-lg mb-10');
 
   $('table').addClass(
-    'w-full bg-gray-100 rounded-lg mb-10 first:[&_td]:pl-4 last:[&_td]:pr-4 [&_tr:first-child_td]:pt-4 [&_tr:last-child_td]:pb-4',
+    'w-full bg-gray-100 rounded-lg mb-10 first:[&_td]:pl-4 last:[&_td]:pr-4 [&_tr:first-child_td]:pt-4 [&_tr:last-child_td]:pb-4'
   );
 
   $('a').replaceWith((_, el) => {

@@ -32,7 +32,7 @@ export default async function Blog() {
                       : null
                   }
                 />
-              ),
+              )
           )}
         </div>
       </Container>
