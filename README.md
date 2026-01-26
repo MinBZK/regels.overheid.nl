@@ -9,7 +9,7 @@
 In 2021, Utrecht started developing the [Virtual Income Desk](https://opensource.pleio.nl/news/view/bc7443c1-483c-4aca-8a8f-16f2a954ff4f/het-virtueel-inkomstenloket) with Open Rules.
 This initiative aims for citizens to always and easily receive all financial regulations to which they are entitled.
 
-For the realization of this goal, standards of the [NORA guideline *rule management*](https://www.noraonline.nl/wiki/Leidraad_Regelbeheer) have been used.
+For the realization of this goal, standards of the [NORA guideline _rule management_](https://www.noraonline.nl/wiki/Leidraad_Regelbeheer) have been used.
 These standardized [rules for the Virtual Income Desk](https://regels.dexcat.nl/dataset/regelgroep-uit-te-keren-individuele-inkomenstoeslag) have now been published.
 
 Rules management is applied in various ways by organizations. A constant shared by all organizations is the need to implement the law according to the interpretation intended by the legislator, to act in accordance with the principles of good administration and to be able to adapt implementation as smoothly as possible to new insights from politics.
@@ -24,8 +24,6 @@ By applying rule management, the aim is to achieve the following “business” 
 Ultimately, we want to offer a new government-wide rule management library that includes information on product launches, rules management implementation support, best practices, and publishing of rules specifications.
 
 This [open-regels.nl](https://open-regels.nl) website is a community initiative in preparation for the assignment from the Ministry of the Interior and Kingdom Relations to publish this new library on [regels.overheid.nl](https://regels.overheid.nl).
-
-Do you have any questions or do you want to work with us? Please contact [Steven Gort](mailto:steven.gort@ictu.nl)
 
 ## Open Rules
 

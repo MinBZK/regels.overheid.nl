@@ -2,6 +2,7 @@
 title: Inwilligen aanvraag verblijfsvergunning voor bepaalde tijd
 description: Methods - norm engineering
 ---
+
 Dit is een voorbeeld van de interpretatie van de juridische bronnen waarin staat beschreven onder welke voorwaarden een aanvraag tot het verlenen van een verblijfsvergunning.
 
 We gaan eerst op zoek naar de bronnen van de handeling 'inwilligen van een aanvraag tot het verlenen van een reguliere verblijfsvergunning, zoals beschreven in artikel 14, eerste lid aanhef en onder a, Vreemdelingenwet.
@@ -17,9 +18,10 @@ De actie, de actor en het object van de handeling kunnen worden gevonden in arti
 Om deze elementen van de handeling te kunnen vullen, moet een bron worden gevonden. Na enig zoeken vinden we [artikel 26, eerste lid Vreemdelingenwet](https://wetten.overheid.nl/BWBR0011823/2022-10-01/0#Hoofdstuk3_Afdeling3_Paragraaf5_Artikel26) (over de voorwaarden) en [artikel 8 aanhef en onder a Vreemdelingenwet](https://wetten.overheid.nl/BWBR0011823/2022-10-01/0#Hoofdstuk3_Afdeling1_Artikel8) (over de ontvanger).
 
 **Opmerkelijk**
-De naam van de handeling is *inwilligen aanvraag tot het verlenen van een reguliere verblijfsvergunning voor bepaalde tijd* 
+De naam van de handeling is _inwilligen aanvraag tot het verlenen van een reguliere verblijfsvergunning voor bepaalde tijd_
 
 Opmerkelijke aspecten bij deze interpretatie zijn:
+
 - Artikel 14 heeft alleen betrekking op aanvragen voor reguliere verblijfsvergunningen. Dit volgt uit het opschrift van de afdeling waar artikel 14 toe behoord.
 - Dat het resultaat van het inwilligen is dat er een ‘besluit tot inwilligen van een aanvraag tot het verlenen van een reguliere verblijfsvergunning voor bepaalde tijd’ wordt gecreëerd, volgt uit artikel 1:3 eerste t/m derde lid Algemene wet bestuursrecht.
 - Dat de ‘aanvraag tot het verlenen van een reguliere verblijfsvergunning voor bepaalde tijd’ verdwijnt door het inwilligen van de aanvraag volgt uit artikel 1:3 derde lid Algemene wet bestuursrecht: er is voldaan aan het verzoek een besluit te nemen.

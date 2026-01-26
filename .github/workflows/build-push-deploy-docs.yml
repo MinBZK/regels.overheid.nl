@@ -1,10 +1,10 @@
-name: "Build, Push and Deploy - Docs"
-on: 
+name: 'Build, Push and Deploy - Docs'
+on:
   workflow_call:
-    inputs: 
-      version: 
+    inputs:
+      version:
         type: string
-        description: ""
+        description: ''
         required: true
       build-push:
         type: boolean
@@ -15,10 +15,10 @@ on:
         required: false
         default: true
   workflow_dispatch:
-    inputs: 
-      version: 
+    inputs:
+      version:
         type: string
-        description: ""
+        description: ''
         required: true
       build-push:
         type: boolean
@@ -31,7 +31,7 @@ on:
 permissions:
   id-token: write
   contents: read
-jobs: 
+jobs:
   build-push-deploy:
     runs-on: ubuntu-latest
     steps:
@@ -39,24 +39,19 @@ jobs:
       - name: Build and push to registry
         uses: ./.github/actions/docker-build-push-acr
         if: inputs.build-push
-        with: 
+        with:
           app: docs
           tag: ${{ inputs.version }}
           acr-username: ${{ secrets.ACR_USERNAME }}
           acr-password: ${{ secrets.ACR_PASSWORD }}
-          acr-login-server:  ${{ secrets.ACR_LOGIN_SERVER }}
+          acr-login-server: ${{ secrets.ACR_LOGIN_SERVER }}
       - name: Deploy/Upgrade Helm release
         if: inputs.deploy
         uses: ./.github/actions/helm-upgrade-install-release
-        with: 
+        with:
           release-name: docs
           tag: ${{ inputs.version }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
           azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-
-
-
-          

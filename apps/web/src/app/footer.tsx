@@ -37,7 +37,6 @@ export const Footer: React.FC = () => {
           >
             <ul>
               <FooterLink href="/over">Over deze website</FooterLink>
-              <FooterLink href="mailto:steven.gort@ictu.nl">Contact</FooterLink>
               <FooterLink href="https://github.com/MinBZK/regels.overheid.nl" isBlank>
                 Github
               </FooterLink>

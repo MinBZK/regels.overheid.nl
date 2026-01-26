@@ -2,6 +2,7 @@
 title: Normatieve systemen voor het beïnvloeden van gedrag
 description: Methods - norm engineering
 ---
+
 # Afspraken tussen mensen
 
 Stel je voor: er zijn mensen. En die mensen weten wat ze willen, ze hebben een doel. Ze maken een plan om dat doel te bereiken. Ze komen erachter dat ze elkaar soms in de weg zitten. De sterkste krijgt zijn zin.
@@ -30,12 +31,12 @@ Waar we korte, eenvoudige beschrijvingen geven, gebruiken we geen voetnoten en r
 
 # Wat zijn normen?
 
-*Definitie norm*
+_Definitie norm_
 
 1. sociaal gedrag dat in een groep wordt geaccepteerd of verwacht, of
 2. een waarde gebruikt als een ijkpunt voor vergelijkingen: een regel, criterium, graadmeter, maatstaf of standaard.
 
-*Soorten normen*
+_Soorten normen_
 
 - Sociale normen gaan over gedrag dat in een groep wordt verwacht of geaccepteerd
 - Ethische normen gaan over gedrag dat als 'goed' kan worden gekwalificeerd
@@ -44,4 +45,3 @@ Waar we korte, eenvoudige beschrijvingen geven, gebruiken we geen voetnoten en r
 ![Drie soorten normen](../../../../static/img/drie-soorten-normen.png)
 
 # Wat zijn normatieve systemen?
-

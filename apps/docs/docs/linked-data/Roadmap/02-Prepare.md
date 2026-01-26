@@ -5,7 +5,6 @@ description: LOD - Bereid de gegevens voor
 
 In deze stap worden de gegevens van de aanleverende partijen geanalyseerd, gestructureerd, aangevuld en/of gecorrigeerd waar nodig én gedocumenteerd.
 
-
 ## Organisatie
 
 Van organisaties kennen we het [Register van Overheidsorganisaties](https://organisaties.overheid.nl/) en de [Centrale OIN Raadpleegvoorziening](https://portaal.digikoppeling.nl/registers/) van alle uitgegeven openbare Organisatie Identificatienummers (OIN). Organisaties die met of binnen de overheid digitaal informatie willen uitwisselen op basis van de Digikoppeling Standaard kunnen een OIN krijgen. Dit is een uniek identificerend nummer dat gebruikt wordt in de digitale communicatie en onder meer wordt opgenomen in PKIO-certificaten.
@@ -32,21 +31,20 @@ Het doel — een betere informatiehuishouding voor overheidsinformatie — wordt
 
 De klasse `tooiont:Overheidsorganisatie` is gedefinieerd als een subklasse van `prov:Entity` en van `org:FormalOrganisation`. ORG is een ontologie voor het modelleren van organisaties en is een W3C-recommendation.
 
-| Klasse | Subklasse van | Definitie | Toelichting |
-| :----- | :------------ | :-------- | :---------- |
-| `tooiont:Overheidsorganisatie` | `prov:Entity, org:FormalOrganisation` | Een organisatie die namens de overheid taken uitvoert en onder het gezag en toezicht van de overheid valt | Welke organisaties dat zijn hangt af van wetgeving en verandert daarom met de tijd.
+| Klasse                         | Subklasse van                         | Definitie                                                                                                 | Toelichting                                                                         |
+| :----------------------------- | :------------------------------------ | :-------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| `tooiont:Overheidsorganisatie` | `prov:Entity, org:FormalOrganisation` | Een organisatie die namens de overheid taken uitvoert en onder het gezag en toezicht van de overheid valt | Welke organisaties dat zijn hangt af van wetgeving en verandert daarom met de tijd. |
 
 ### Toepassen
 
 Voor het veld **Organisatie** hanteren we de OWMS-URIs. Die we (later?) vervangen door TOOI-URIs.
 
-| Organisatie | Label | URI |
-| :---------- | :---- | :-- | 
-| UWV | Uitvoeringsinstituut Werknemersverzekeringen | [https://standaarden.overheid.nl/owms/terms/Uitvoeringsinstituut_Werknemersverzekeringen](http://standaarden.overheid.nl/owms/terms/Uitvoeringsinstituut_Werknemersverzekeringen) |
-| Ministerie van Financiën | Ministerie van Financiën | [https://standaarden.overheid.nl/owms/terms/Ministerie_van_Financien](http://standaarden.overheid.nl/owms/terms/Ministerie_van_Financien) | MINFIN |
-| Provincie Zuid-Holland | Zuid-Holland | [http://standaarden.overheid.nl/owms/terms/Zuid-Holland](http://standaarden.overheid.nl/owms/terms/Zuid-Holland) |
-| Kadaster | Dienst voor het kadaster en de openbare registers | [https://standaarden.overheid.nl/owms/terms/Dienst_voor_het_kadaster_en_de_openbare_registers](https://standaarden.overheid.nl/owms/terms/Dienst_voor_het_kadaster_en_de_openbare_registers) |
-
+| Organisatie              | Label                                             | URI                                                                                                                                                                                          |
+| :----------------------- | :------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| UWV                      | Uitvoeringsinstituut Werknemersverzekeringen      | [https://standaarden.overheid.nl/owms/terms/Uitvoeringsinstituut_Werknemersverzekeringen](http://standaarden.overheid.nl/owms/terms/Uitvoeringsinstituut_Werknemersverzekeringen)            |
+| Ministerie van Financiën | Ministerie van Financiën                          | [https://standaarden.overheid.nl/owms/terms/Ministerie_van_Financien](http://standaarden.overheid.nl/owms/terms/Ministerie_van_Financien)                                                    | MINFIN |
+| Provincie Zuid-Holland   | Zuid-Holland                                      | [http://standaarden.overheid.nl/owms/terms/Zuid-Holland](http://standaarden.overheid.nl/owms/terms/Zuid-Holland)                                                                             |
+| Kadaster                 | Dienst voor het kadaster en de openbare registers | [https://standaarden.overheid.nl/owms/terms/Dienst_voor_het_kadaster_en_de_openbare_registers](https://standaarden.overheid.nl/owms/terms/Dienst_voor_het_kadaster_en_de_openbare_registers) |
 
 ## Naam
 
@@ -55,6 +53,7 @@ De **Naam** is een vrij veld van het type String dat uniciteit afdwingt op de ge
 ## Grondslag
 
 Voor de **Grondslag** herleiden we de herkomst(en) uit één of meerdere van de volgende OWMS contenmodellen:
+
 - [Basis Wetten Bestand](https://standaarden.overheid.nl/bwb)
 - [Decentrale Regelgeving](https://standaarden.overheid.nl/cvdr)
 - [Officiële publicaties](https://standaarden.overheid.nl/op)
@@ -87,13 +86,12 @@ Officiële publicaties is nog niet beschouwd op relevantie hieromtrent.
 
 Voor de **Grondslag** hanteren we de link(s) mét citeertitel van het Basis Wetten Bestand en/of de directe link(s) van Decentrale Regelgeving.
 
-| Organisatie | Naam | Grondslag |
-| :---------- | :--- | :-------- |
-| UWV | Klantapplicatie WW | [Hoofdstuk II Werkloosheidswet](https://wetten.overheid.nl/jci1.3:c:BWBR0004045&hoofdstuk=II&z=2022-08-02&g=2022-08-02) |
-| Ministerie van Financiën | Berekenen huurtoeslag | [Wet op de huurtoeslag](https://wetten.overheid.nl/jci1.3:c:BWBR0008659&z=2023-01-01&g=2023-01-01) |
-| Zuid-Holland | Webapplicatie Impactmonitor Brugopening | https://lokaleregelgeving.overheid.nl/CVDR431299 |
-| Dienst voor het kadaster en de openbare registers | Akte AI | [artikel 3, eerste lid, van de Kadasterwet](http://wetten.overheid.nl/jci1.3:c:BWBR0004541&hoofdstuk=1&artikel=3&lid=1) |
-
+| Organisatie                                       | Naam                                    | Grondslag                                                                                                               |
+| :------------------------------------------------ | :-------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
+| UWV                                               | Klantapplicatie WW                      | [Hoofdstuk II Werkloosheidswet](https://wetten.overheid.nl/jci1.3:c:BWBR0004045&hoofdstuk=II&z=2022-08-02&g=2022-08-02) |
+| Ministerie van Financiën                          | Berekenen huurtoeslag                   | [Wet op de huurtoeslag](https://wetten.overheid.nl/jci1.3:c:BWBR0008659&z=2023-01-01&g=2023-01-01)                      |
+| Zuid-Holland                                      | Webapplicatie Impactmonitor Brugopening | https://lokaleregelgeving.overheid.nl/CVDR431299                                                                        |
+| Dienst voor het kadaster en de openbare registers | Akte AI                                 | [artikel 3, eerste lid, van de Kadasterwet](http://wetten.overheid.nl/jci1.3:c:BWBR0004541&hoofdstuk=1&artikel=3&lid=1) |
 
 ## Type
 
@@ -107,17 +105,16 @@ Het veld **Type** mag niet leeg zijn en we hanteren de volgende waardenlijst:
 Bron: [Intelligent Things >> It's all about machine learning](https://www.linkedin.com/pulse/intelligent-things-its-all-machine-learning-roger-attick)
 
 ![Algoritmes-varianten](../../../static/img/algosvarianten.jpeg)
-*Image Credit: Dr. Boris Adryan*
+_Image Credit: Dr. Boris Adryan_
 
 ### Toepassen
 
-| Naam | Type |
-| :--- | :--- |
-| Klantapplicatie WW | regelgebaseerd |
-| Berekenen huurtoeslag | regelgebaseerd |
+| Naam                                    | Type                    |
+| :-------------------------------------- | :---------------------- |
+| Klantapplicatie WW                      | regelgebaseerd          |
+| Berekenen huurtoeslag                   | regelgebaseerd          |
 | Webapplicatie Impactmonitor Brugopening | statistische redenering |
-| Akte AI | machine learning |
-
+| Akte AI                                 | machine learning        |
 
 ## Status
 
@@ -129,9 +126,9 @@ Het veld **Status** mag niet leeg zijn en we hanteren de volgende waardenlijst:
 - in ontwikkeling
 - pilot
 
-| Naam | Status |
-| :--- | :--- |
-| Klantapplicatie WW | in gebruik |
-| Berekenen huurtoeslag | in gebruik |
-| Webapplicatie Impactmonitor Brugopening | pilot |
-| Akte AI | in gebruik |
+| Naam                                    | Status     |
+| :-------------------------------------- | :--------- |
+| Klantapplicatie WW                      | in gebruik |
+| Berekenen huurtoeslag                   | in gebruik |
+| Webapplicatie Impactmonitor Brugopening | pilot      |
+| Akte AI                                 | in gebruik |

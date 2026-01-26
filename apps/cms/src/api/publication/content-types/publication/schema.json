@@ -38,12 +38,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "videos",
-        "audios",
-        "files"
-      ]
+      "allowedTypes": ["images", "videos", "audios", "files"]
     },
     "cite": {
       "type": "text"

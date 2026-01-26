@@ -3,9 +3,14 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   changesets:
+    permissions:
+      contents: write
+      packages: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,23 +33,23 @@ jobs:
     outputs:
       published: ${{ steps.changesets.outputs.published || 'false' }}
       publishedPackages: ${{ steps.changesets.outputs.publishedPackages || '[{}]' }}
-  transform-changesets-output: 
+  transform-changesets-output:
     needs: changesets
     if: needs.changesets.outputs.published
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - id: transform
         run: |
           transformed=$(echo '${{ needs.changesets.outputs.publishedPackages }}' | jq -c 'map({(.name): {version: .version}}) | add')
           echo "transformed=$transformed" >> "$GITHUB_OUTPUT"
-    outputs: 
+    outputs:
       publishedPackages: ${{ steps.transform.outputs.transformed }}
   deploy-apps:
-    needs: 
+    needs:
       - changesets
       - transform-changesets-output
     if: needs.changesets.outputs.published
     uses: ./.github/workflows/changesets-gateway.yml
     secrets: inherit
-    with: 
+    with:
       packages: ${{ needs.transform-changesets-output.outputs.publishedPackages }}
