@@ -1,5 +1,11 @@
 # web
 
+## 3.52.0
+
+### Minor Changes
+
+- f1a2782: Remove obsolete content and cleanup old references
+
 ## 3.51.1
 
 ### Patch Changes
