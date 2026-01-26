@@ -1,12 +1,19 @@
 export default ({ env }) => {
   const plugins: Record<string, any> = {
     graphql: {
-      shadowCRUD: true,
-      endpoint: '/graphql',
-      subscriptions: false,
-      maxLimit: Infinity,
-      apolloServer: {},
-      v4CompatibilityMode: process.env.STRAPI_GRAPHQL_V4_COMPATIBILITY_MODE ?? false,
+      config: {
+        shadowCRUD: true,
+        playgroundAlways: true,
+        landingPage: true,
+        endpoint: '/graphql',
+        subscriptions: false,
+        maxLimit: Infinity,
+        introspection: true,
+        apolloServer: {
+          introspection: true,
+        },
+        v4CompatibilityMode: process.env.STRAPI_GRAPHQL_V4_COMPATIBILITY_MODE ?? false,
+      },
     },
   };
 
