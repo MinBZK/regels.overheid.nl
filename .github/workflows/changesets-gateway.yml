@@ -5,6 +5,9 @@ on:
       packages:
         type: string
         required: true
+permissions:
+  contents: read
+  id-token: write
 jobs:
   release-cms:
     if: ${{ fromJson(inputs.packages).cms != null }}
