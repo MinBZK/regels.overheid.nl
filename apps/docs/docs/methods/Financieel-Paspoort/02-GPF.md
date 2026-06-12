@@ -4,6 +4,7 @@ description: Method - Gegevensstandaard Persoonlijke Financiën
 ---
 
 # Open-regels voor voorzieningen voor financiële redzaamheid
+
 De burger wordt vaak geconfronteerd met regels die beginnen met het moeten beantwoorden van vragen (invullen van formulieren), vragen die de burger vaak niet begrijpt. Daarbij wordt de burger steeds vaker gevraagd gegevens digitaal op websites in te vullen, een aanvullende horde voor de toegang tot voorzieningen. Niet alleen hebben wij in Nederland te maken met een significante groep laaggeletterden, ook andere burgers ondervinden problemen met het begrijpen van de vragen en het ambtelijk taalgebruik.
 
 Na het begrijpen van de vraag komt het probleem van het zoeken naar het juiste antwoord op deze vraag. Naast de angst die vaak bestaat dat men mogelijk het verkeerde antwoord geeft, hetgeen onverwachte en soms ernstige consequenties heeft, weten burgers vaak niet waar het antwoord vandaan zou kunnen komen. Pas na het beantwoorden van de vragen (het invullen van het formulier) komt de volgende stap die bestaat uit de toetsing of de antwoorden plausibel zijn en tenslotte de administratieve verwerking en besluit.
@@ -15,6 +16,7 @@ Voor het effectief kunnen koppelen van open regels zijn standaarden noodzakelijk
 Daarnaast is het noodzakelijk voor het beschrijven van de noodzakelijke gegevens een standaard te hebben waarmee eenduidig de relatie wordt gelegd tussen de vraag en de locatie waar het antwoord vandaan moet komen. De standaard die in de app FP wordt gebruikt is de Gegevensstandaard Persoonlijke Financiën (GPF).
 
 # Gegevensstandaard Persoonlijke Financiën
+
 Een grote uitdaging bij het ophalen en delen van persoonlijke gegevens is de standaardisatie. Omdat de burger in meerdere domeinen verkeert, zoals centrale en lokale overheden, banken, verzekeringen, web-gebaseerde retail etc. heeft deze te maken met meerdere standaarden.
 
 Bij het opzetten van de Gegevensstandaard Persoonlijke Financiën (GPF) hebben wij de gegevensvraag als uitgangspunt genomen. De gegevensvraag is vaak een formulier (papier of webgebaseerd) met meerdere vragen. Deze vragen kunnen worden beantwoord door gebruik te maken van gegevens uit meerdere bronnen, die toegankelijk zijn volgens verschillende standaarden.

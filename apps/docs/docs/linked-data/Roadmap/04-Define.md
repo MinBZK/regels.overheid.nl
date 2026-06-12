@@ -17,7 +17,6 @@ waar
 - `{concept}` is de naam van het concept waarnaar het door de URI geïdentificeerde object verwijst.
 - `{referentie}` moet een uniek nummer of code zijn die het object binnen de naamruimte identificeert. Het kan een naam of een nummer zijn, zolang ze maar uniek en niet te lang zijn.
 
-
 Volgens dit schema krijgen we bijvoorbeeld de volgende URI's:
 
 - `http://algoritmes.overheid.nl/def/algoritme` voor het concept

@@ -12,7 +12,7 @@ Het is mogelijk om ReSpec documenten die via GitHub onderhouden worden te public
 
 ## Publicatie-token
 
-De publicatie-token kan verkregen worden via [Steven Gort](mailto:steven.gort@ictu.nl). De publicatie-token is een geheim wachtwoord dat niet gedeeld dient te worden. Na het verkrijgen van de publicatie-token dient deze in de repository secrets geregistreerd te worden onder de naam `REGELS_PUBLICATION_TOKEN`. Zie [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
+DDe publicatie-token is een geheim wachtwoord dat niet gedeeld dient te worden. Na het verkrijgen van de publicatie-token dient deze in de repository secrets geregistreerd te worden onder de naam `REGELS_PUBLICATION_TOKEN`. Zie [Creating encrypted secrets for a repository](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 ## Release action
 

@@ -4,44 +4,63 @@
   "info": {
     "singularName": "method",
     "pluralName": "methods",
-    "displayName": "Methods"
+    "displayName": "Method",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
-    "title": {
+    "Title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "string",
       "required": true
     },
-    "icon": {
-      "type": "enumeration",
-      "required": true,
-      "enum": [
-        "arch",
-        "megaphone",
-        "right-angle-ruler",
-        "ruler",
-        "scale",
-        "therefore"
-      ]
-    },
-    "tag": {
-      "type": "enumeration",
-      "enum": [
-        "platform",
-        "software",
-        "DSL",
-        "methode"
-      ]
-    },
-    "href": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "type": "richtext",
+      "required": true
+    },
+    "Icon": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": ["arch", "megaphone", "right-angle-ruler", "ruler", "scale", "therefore"],
+      "required": true
+    },
+    "Href": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "Tag": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": ["platform", "software", "DSL", "methode"],
       "required": true
     }
   }

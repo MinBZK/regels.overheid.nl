@@ -5,13 +5,13 @@ description: Documentatie - Gebruikers
 
 # Gebruikers documentatie
 
-In dit document krijgt u een rondleiding door de web-app `Legal Annotation Tool`. 
+In dit document krijgt u een rondleiding door de web-app `Legal Annotation Tool`.
 
 Allereerst beginnen we op de `home` pagina. Deze pagina bevat een overzicht van alle geüploade xml documenten. Zoals u kunt zien is er momenteel nog niet veel zichtbaar, dit komt omdat wij nog geen documenten hebben geüpload. Dit zal zo meteen in stap 2 gedaan worden. Voor dat we naar stap twee gaan breng ik eerst de aandacht naar de tekst `0/40 XML's beschikbaar`. Hier kunt u straks gaan zien hoe veel xml's er geüpload zijn naar het systeem. Aan dit totaal zit ook een limiet. Dit limiet kan aangepast worden in de database, voor meer informatie verwijs ik u naar de technische documentatie.
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-1.png)
 
-Door te klikken op `Importeer XML` krijgt u het onderstaande Modal te zien. Hier heeft u de mogelijkheid om een XML te uploaden. 
+Door te klikken op `Importeer XML` krijgt u het onderstaande Modal te zien. Hier heeft u de mogelijkheid om een XML te uploaden.
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image.png)
 
@@ -31,7 +31,7 @@ Zoals u hier onder kunt zien is de xml succesvol toegevoegd. Zoals u ook kunt zi
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-5.png)
 
-Op de homepagina ziet u rechts bovenin een gebruikers knopje. Wanneer hier op geklikt wordt krijgt u onderstaande modal zichtbaar. Hier in kunt u kiezen welke gebruiker u wilt zijn. De reden waarom dit systeem op deze manier is toegepast wordt verder uitgelegd in de technische documentatie. 
+Op de homepagina ziet u rechts bovenin een gebruikers knopje. Wanneer hier op geklikt wordt krijgt u onderstaande modal zichtbaar. Hier in kunt u kiezen welke gebruiker u wilt zijn. De reden waarom dit systeem op deze manier is toegepast wordt verder uitgelegd in de technische documentatie.
 
 Zoals u kunt zien is er momenteel maar één gebruiker beschikbaar met de rol `Admin`. Om een nieuwe gebruiker te maken klikt u op `maak nieuwe gebruiker`.
 
@@ -45,11 +45,11 @@ Wanneer de gebruiker is opgeslagen klikt u op `selecteer`. U ziet dan meteen dat
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-8.png)
 
-Als u op het home scherm op `open project` klikt wordt u naar het annotatie scherm gebracht. Dit is het scherm waar de wetteksten en gemaakte annotaties getoond worden. 
+Als u op het home scherm op `open project` klikt wordt u naar het annotatie scherm gebracht. Dit is het scherm waar de wetteksten en gemaakte annotaties getoond worden.
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-9.png)
 
-Zodra u een tekst selecteert zult u zien dat de tekst aan de linkerkant een achtergrond kleur krijgt. Tegelijkertijd wordt de rechterkant van het scherm voorzien van een annotatie aanmaak scherm. Hier kunt u nogmaals zien welke tekst u geselecteerd heeft en betekenis geven aan dit specifieke woord. 
+Zodra u een tekst selecteert zult u zien dat de tekst aan de linkerkant een achtergrond kleur krijgt. Tegelijkertijd wordt de rechterkant van het scherm voorzien van een annotatie aanmaak scherm. Hier kunt u nogmaals zien welke tekst u geselecteerd heeft en betekenis geven aan dit specifieke woord.
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-10.png)
 
@@ -61,7 +61,7 @@ Daarnaast heeft u de mogelijkheid om een optionele notitie toe te voegen en een 
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-12.png)
 
-Na dat u deze velden hebt ingevuld kunt u klikken op `Opslaan`. Wanneer u dit doet, wordt de annotatie opgeslagen en krijgt het geselecteerde woord aan de linkerkant een gerelateerde achtergrond kleur. Bepaalde wet vormen hebben relaties. Deze relaties worden zichtbaar zodra er voor de eerste keer op opslaan geklikt wordt. Bepaalde van deze relaties kunnen verplicht zijn. Hier is in het overzicht ook onderscheid tussen gemaakt. 
+Na dat u deze velden hebt ingevuld kunt u klikken op `Opslaan`. Wanneer u dit doet, wordt de annotatie opgeslagen en krijgt het geselecteerde woord aan de linkerkant een gerelateerde achtergrond kleur. Bepaalde wet vormen hebben relaties. Deze relaties worden zichtbaar zodra er voor de eerste keer op opslaan geklikt wordt. Bepaalde van deze relaties kunnen verplicht zijn. Hier is in het overzicht ook onderscheid tussen gemaakt.
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-13.png)
 
@@ -69,7 +69,7 @@ Wanneer u klikt op één van deze relaties krijgt u daar onder opnieuw de mogeli
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-14.png)
 
-Wanneer u deze tekst heeft geselecteerd wordt deze zichtbaar in het `Label` veld. Ook hier kunt u nu een optionele notitie en begrip toevoegen. Als u dit heeft gedaan kunt u opnieuw op opslaan klikken en ziet u dat ook deze annotatie in het linker scherm kleur krijgt. 
+Wanneer u deze tekst heeft geselecteerd wordt deze zichtbaar in het `Label` veld. Ook hier kunt u nu een optionele notitie en begrip toevoegen. Als u dit heeft gedaan kunt u opnieuw op opslaan klikken en ziet u dat ook deze annotatie in het linker scherm kleur krijgt.
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-15.png)
 
@@ -77,7 +77,7 @@ Ook ziet u dat de relatie groen gekleurd wordt om aan te tonen dat de relatie vo
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-16.png)
 
-Als u volledig tevreden bent met uw annotatie kunt u klikken op `Afronden`. Hier mee sluit u het rechter scherm en komt u terug bij het overzicht scherm. Hier ziet u nu op het rechter scherm de twee wet vormen die tijdens het annoteren toegevoegd zijn. 
+Als u volledig tevreden bent met uw annotatie kunt u klikken op `Afronden`. Hier mee sluit u het rechter scherm en komt u terug bij het overzicht scherm. Hier ziet u nu op het rechter scherm de twee wet vormen die tijdens het annoteren toegevoegd zijn.
 
 ![Alt text](../../../../static/img/gebruikers_documentatie_fotos/image-17.png)
 

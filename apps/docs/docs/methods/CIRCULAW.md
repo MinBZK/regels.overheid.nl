@@ -51,4 +51,4 @@ Leren doe je nooit alleen, en al helemaal niet als het gaat om de toepassing van
 ## CircuLaw: open source en transparant
 
 Eén van de belangrijkste principes van CircuLaw is dat we het platform op een open en transparante wijze ontwikkelen. We streven naar repliceerbaarheid en schaalbaarheid. Daarom willen we graag dat iedereen kan meekijken hoe wij de dingen doen. Zo kan ons kennisplatform zelf, maar ook de wijze waarop we dat platform bouwen en de manier waarop wij wetten analyseren, in de toekomst ook gebruikt worden voor andere transities. En zelfs voor andere landen. Op onze [Open Research pagina](https://openresearch.amsterdam/nl/page/89270/circulaw---circulaire-regelgevingstool)
- vind je alle achtergrondinformatie, waaronder meer over de [code van CircuLaw](https://openresearch.amsterdam/nl/page/92197/code-circulaw).
+vind je alle achtergrondinformatie, waaronder meer over de [code van CircuLaw](https://openresearch.amsterdam/nl/page/92197/code-circulaw).

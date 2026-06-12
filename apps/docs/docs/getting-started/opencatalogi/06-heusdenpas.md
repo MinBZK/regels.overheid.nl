@@ -10,12 +10,15 @@ De gemeente Heusden wil een geautomatiseerd aanvraagproces voor de HeusdenPas mo
 Dit geautomatiseerde proces ondersteunt de burger met het digitaal verzamelen van de noodzakelijke persoonlijke gegevens en het inzetten daarvan voor de beoordeling en aanvraag van de Heusdenpas. De aanvraag wordt door de burger geautomatiseerd aangereikt aan de gemeente, die deze aanvraag direct kan verwerken.
 
 Voor dat doel is een user story geformuleerd:
+
 > Als FP wil ik generieke functie(s) voor het vaststellen van de bijstandsnorm én nadere criteria voor het verlenen van de Heusdenpas.
 
 Uitwerking is in [dit issue](https://github.com/MinBZK/regels.overheid.nl/issues/725) beschikbaar. Relevante uitleg DRM is hieronder opgenomen.
 
 ## DRM
+
 De DRM is opgebouwd uit een aantal bouwblokken:
+
 - Heusdenpas aanvrager: het verwerken van de aanvraag
 - Heusdenpas aanvraag Kindpakket: De aanvraag namens het kind
 - Heusdenpas automatisch go: het vangen van de automatische goedkeuringscriteria
@@ -83,6 +86,7 @@ async function evaluateDecision() {
 
 evaluateDecision();
 ```
+
 Run met `$ node evaluate-bijstandsnorm.js` levert de gewenste output op.
 
 ## Operaton

@@ -4,6 +4,7 @@ description: Architectuur - Platform Regelbeheer
 ---
 
 # Platform Regelbeheer
+
 ## Op basis van regels.overheid.nl en de Leidraad Regelbeheer
 
 **Status**
@@ -52,22 +53,22 @@ Stakeholders en hun belangen bij het beoogde platform alsook hun
 bijdrage aan de architectuur ervan worden hieronder grofweg weergegeven
 in tabel 1.
 
-| Stakeholder | Functie / Rol | Belang in resultaat | Bijdrage aan de architectuur |
-|----|----|----|----|
-| Burgers en Bedrijven | Indirecte gebruikers | Uitlegbaarheid, Transparantie (Access), Consistentie, Vindbaarheid (Findable), Rechtmatigheid | Toetsen, feedback geven (indirect) |
-| Wetgevende organisaties (zoals Ministeries) (experts in regelbeheer, juridisch, architectuur etc.) | Participerend in beheer van regels via platform Regelbeheer, aangaande de formalisatie van wetgeving en standaardisatie in regels | Alle belangen van Burgers en bedrijven maar ook: Herbruikbaarheid (Reusable), Interoperabiliteit (Interoperable) | Toetsen, feedback geven |
-| Uitvoeringsorganisaties (zoals Gemeentes of de Belastingdienst) (experts in regelbeheer, juridisch, architectuur etc.) | Participerend in beheer van regels via platform Regelbeheer, aangaande de formalisatie van beleid en standaardisatie in regels | Zelfde als Wetgevende organisaties | Toetsen, feedback geven |
-| Leveranciers (voor oplossingen op basis van het platform Regelbeheer, niet voor het platform Regelbeheer zelf) | Indirect als leveranciers van deeloplossingen waarmee andere stakeholders op basis van het platform Regelbeheer het regelbeheer kunnen doen. | Indirect zelfde als Wetgevende organisaties maar met name de realiseerbaarheid van de compatibiliteit van hetgeen ze kunnen leveren, waarbij interoperabiliteit een grote rol heeft terwijl dit wel in hun businesspropositie moet blijven passen | Toetsen, feedback geven |
-| Stakeholders van project Platform Regelbeheer zelf: |  |  |  |           
-| Opdrachtgever | Opdrachtgever (OG) | Realisatie, outcome | Toetsen, feedback geven, vaststellen |
-| Opdrachtnemer | Projectleider (PL) | Uitvoerbaarheid project | Monitoren |
-| Architect / Adviseur | Development | Oplossing die alle belangen van alle stakeholders behartigd | Opstellen |
-| Ontwikkelaars | Development | Realiseerbaarheid, Kwaliteit | Toetsen, feedback geven |
-| Beheerder | Beheerder | Beheermogelijkheden | Toetsen feedback geven |
-| Aanpalende projecten (zie [3.4](#34-relaties-met-andere-ontwikkelingen)) | | Realiseerbaarheid (van aanpassing op impact) | Toetsen feedback geven |
-| Leveranciers mbt platform regelbeheer zelf |  |  |  |
+| Stakeholder                                                                                                            | Functie / Rol                                                                                                                                | Belang in resultaat                                                                                                                                                                                                                               | Bijdrage aan de architectuur         |
+| ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| Burgers en Bedrijven                                                                                                   | Indirecte gebruikers                                                                                                                         | Uitlegbaarheid, Transparantie (Access), Consistentie, Vindbaarheid (Findable), Rechtmatigheid                                                                                                                                                     | Toetsen, feedback geven (indirect)   |
+| Wetgevende organisaties (zoals Ministeries) (experts in regelbeheer, juridisch, architectuur etc.)                     | Participerend in beheer van regels via platform Regelbeheer, aangaande de formalisatie van wetgeving en standaardisatie in regels            | Alle belangen van Burgers en bedrijven maar ook: Herbruikbaarheid (Reusable), Interoperabiliteit (Interoperable)                                                                                                                                  | Toetsen, feedback geven              |
+| Uitvoeringsorganisaties (zoals Gemeentes of de Belastingdienst) (experts in regelbeheer, juridisch, architectuur etc.) | Participerend in beheer van regels via platform Regelbeheer, aangaande de formalisatie van beleid en standaardisatie in regels               | Zelfde als Wetgevende organisaties                                                                                                                                                                                                                | Toetsen, feedback geven              |
+| Leveranciers (voor oplossingen op basis van het platform Regelbeheer, niet voor het platform Regelbeheer zelf)         | Indirect als leveranciers van deeloplossingen waarmee andere stakeholders op basis van het platform Regelbeheer het regelbeheer kunnen doen. | Indirect zelfde als Wetgevende organisaties maar met name de realiseerbaarheid van de compatibiliteit van hetgeen ze kunnen leveren, waarbij interoperabiliteit een grote rol heeft terwijl dit wel in hun businesspropositie moet blijven passen | Toetsen, feedback geven              |
+| Stakeholders van project Platform Regelbeheer zelf:                                                                    |                                                                                                                                              |                                                                                                                                                                                                                                                   |                                      |
+| Opdrachtgever                                                                                                          | Opdrachtgever (OG)                                                                                                                           | Realisatie, outcome                                                                                                                                                                                                                               | Toetsen, feedback geven, vaststellen |
+| Opdrachtnemer                                                                                                          | Projectleider (PL)                                                                                                                           | Uitvoerbaarheid project                                                                                                                                                                                                                           | Monitoren                            |
+| Architect / Adviseur                                                                                                   | Development                                                                                                                                  | Oplossing die alle belangen van alle stakeholders behartigd                                                                                                                                                                                       | Opstellen                            |
+| Ontwikkelaars                                                                                                          | Development                                                                                                                                  | Realiseerbaarheid, Kwaliteit                                                                                                                                                                                                                      | Toetsen, feedback geven              |
+| Beheerder                                                                                                              | Beheerder                                                                                                                                    | Beheermogelijkheden                                                                                                                                                                                                                               | Toetsen feedback geven               |
+| Aanpalende projecten (zie [3.4](#34-relaties-met-andere-ontwikkelingen))                                               |                                                                                                                                              | Realiseerbaarheid (van aanpassing op impact)                                                                                                                                                                                                      | Toetsen feedback geven               |
+| Leveranciers mbt platform regelbeheer zelf                                                                             |                                                                                                                                              |                                                                                                                                                                                                                                                   |                                      |
 
-*Tabel 1, stakeholderbelangen overzicht*
+_Tabel 1, stakeholderbelangen overzicht_
 
 Het project bouwt voort op een al bestaand werkend conceptplatform en
 een vastgestelde leidraad en architectuur en bevat zodoende bij aanvang
@@ -190,7 +191,7 @@ officieel gepubliceerd en ook transparant dienen te zijn voor burgers.
 
 TODO : maak plaatje (Archimate)
 
-*Figuur 1, Platform Regelbeheer in context*
+_Figuur 1, Platform Regelbeheer in context_
 
 Het project Platform Regelbeheer bouwt voort op het concept van
 regels.overheid.nl (reeds een werkend concept platform voor regelbeheer
@@ -431,8 +432,8 @@ TODO Archimate applicatie laag
 
 - Etalage van tooling en voorbeelden tbv regelbeheer.
 
-> *NB hier is reeds meer van al opgesteld denk ik bij het ontwerp van
-> regels.overheid.nl?*
+> _NB hier is reeds meer van al opgesteld denk ik bij het ontwerp van
+> regels.overheid.nl?_
 
 ## 5.6 Fysieke infrastructuur
 
@@ -480,20 +481,20 @@ In de leidraad Regelbeheer van de expertisegroep regelbeheer wordt
 regelbeheer gedefinieerd als:
 
 > **Regelbeheer** is het "geheel aan methoden, technieken, hulpmiddelen
-en voorschriften om regels te ontwerpen, analyseren, valideren,
-verifiëren, uit te rollen, uit te voeren, te beheren en te
-evalueren."[^3]
-> 
-> *In plaats van de term 'Regelbeheer' wordt ook wel gesproken over
-'Regelbeheersing', 'Business Rules Management (BRM)', 'Kennisgebaseerd
-Werken' of 'Regelgestuurd werken'.*
+> en voorschriften om regels te ontwerpen, analyseren, valideren,
+> verifiëren, uit te rollen, uit te voeren, te beheren en te
+> evalueren."[^3]
+>
+> _In plaats van de term 'Regelbeheer' wordt ook wel gesproken over
+> 'Regelbeheersing', 'Business Rules Management (BRM)', 'Kennisgebaseerd
+> Werken' of 'Regelgestuurd werken'._
 
 Maar dan is het wel ook nodig het begrip “regel” in deze context te
 definieren. De leidraad doet dit gelukkig ook en definieert deze als:
 
-> *"Een logisch of rekenkundig construct dat is gebaseerd op wet- en
-regelgeving of beleid en rechtstreeks sturing geeft aan de primaire taak
-van een uitvoeringsorganisatie"*
+> _"Een logisch of rekenkundig construct dat is gebaseerd op wet- en
+> regelgeving of beleid en rechtstreeks sturing geeft aan de primaire taak
+> van een uitvoeringsorganisatie"_
 
 Voortschrijdend inzicht levert echter op dat wet- en regelgeving of
 beleid in alle gevallen gaat over afspraken en dat regels ook deels
@@ -502,13 +503,13 @@ en regelgeving of beleid zoals standaarden, architectuur, of misschien
 ook gewoon wel persoonlijke afspraken die juridisch bindend zijn.
 Derhalve definiëren we in dit document het begrip “**regel**” als volgt:
 
-> *"Een logisch of rekenkundig construct dat is gebaseerd op juridisch
-bindende afspraken en rechtstreeks sturing geeft aan de primaire taak
-van een uitvoeringsorganisatie"*
+> _"Een logisch of rekenkundig construct dat is gebaseerd op juridisch
+> bindende afspraken en rechtstreeks sturing geeft aan de primaire taak
+> van een uitvoeringsorganisatie"_
 
-> *“De taal waarmee een logisch of rekenkundig contruct uitgedrukt kan
-worden en die het een formele semantiek geeft”* noemen we een
-“**regeltaal**”.
+> _“De taal waarmee een logisch of rekenkundig contruct uitgedrukt kan
+> worden en die het een formele semantiek geeft”_ noemen we een
+> “**regeltaal**”.
 
 NB het daadwerkelijk doen van regelbeheer zelf en de
 verantwoordelijkheid daarvoor is niet onderdeel van het Platform
@@ -540,17 +541,17 @@ Deze bijlage bevat een overzicht van vragen en onduidelijkheden die we
 ‘dagelijks’ tegenkomen in ons werk en waar deze in het document zijn
 beantwoord.
 
-| Vraag | Plaats in de architectuur | Toelichting |
-|----|----|----|
-| Wat valt onder regelbeheer, en wat niet? | Zie opmerking bij einde hoofdstuk 9.1 |  |
-| Wat is een regeltaal? | Zie definitie hoofdstuk 9.1 |  |
-| Wát moet over een regel worden vastgelegd en waarom? | Zie lijst metadata standaarden in hoofdstuk 5.3 |  |
-| Hóe leggen we dit vast? | Zie lijst metadata standaarden in hoofdstuk 5.3 |  |
-| Welke internationale en nationale standaarden en kaders worden toegepast, en waarom? | Zie hoofdstukken 5.1 en 5.3 |  |
-| Welke principes liggen aan het regelbeheer ten grondslag? | De principes in de NORA, de leidraad regelbeheer en FAIR (Findable, Accessible, Interoperable en Reusable). Zie hoofdstukken 3 en 4 |  |
-| Welke functies heeft het platform regels.overheid.nl, en voor welke stakeholders? | Zie hoofdstuk 3.3 voor stakeholders en hoofdstuk 5.4 voor functies |  |
-| Welke rollen hebben de verschillende organisaties in het regelbeheer, nu en in de toekomst? | TODO .. uitwerken in 5.1 |  |
-| Hoe is de samenwerking tussen deze partijen vormgegeven? | TODO | Dat is niet direct onderdeel van het platform regelbeheer zelf, maar wordt wel begeleid vanuit standaardisatie, kennisdeling en tooling |
+| Vraag                                                                                       | Plaats in de architectuur                                                                                                           | Toelichting                                                                                                                             |
+| ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Wat valt onder regelbeheer, en wat niet?                                                    | Zie opmerking bij einde hoofdstuk 9.1                                                                                               |                                                                                                                                         |
+| Wat is een regeltaal?                                                                       | Zie definitie hoofdstuk 9.1                                                                                                         |                                                                                                                                         |
+| Wát moet over een regel worden vastgelegd en waarom?                                        | Zie lijst metadata standaarden in hoofdstuk 5.3                                                                                     |                                                                                                                                         |
+| Hóe leggen we dit vast?                                                                     | Zie lijst metadata standaarden in hoofdstuk 5.3                                                                                     |                                                                                                                                         |
+| Welke internationale en nationale standaarden en kaders worden toegepast, en waarom?        | Zie hoofdstukken 5.1 en 5.3                                                                                                         |                                                                                                                                         |
+| Welke principes liggen aan het regelbeheer ten grondslag?                                   | De principes in de NORA, de leidraad regelbeheer en FAIR (Findable, Accessible, Interoperable en Reusable). Zie hoofdstukken 3 en 4 |                                                                                                                                         |
+| Welke functies heeft het platform regels.overheid.nl, en voor welke stakeholders?           | Zie hoofdstuk 3.3 voor stakeholders en hoofdstuk 5.4 voor functies                                                                  |                                                                                                                                         |
+| Welke rollen hebben de verschillende organisaties in het regelbeheer, nu en in de toekomst? | TODO .. uitwerken in 5.1                                                                                                            |                                                                                                                                         |
+| Hoe is de samenwerking tussen deze partijen vormgegeven?                                    | TODO                                                                                                                                | Dat is niet direct onderdeel van het platform regelbeheer zelf, maar wordt wel begeleid vanuit standaardisatie, kennisdeling en tooling |
 
 # Bijlage B. Betrokkenen
 
@@ -558,7 +559,7 @@ Geef hier aan wie vanuit zijn of haar functie heeft meegewerkt aan de
 totstandkoming van deze PSA.
 
 | Naam             | Organisatie | Functie / Rol       |
-|------------------|-------------|---------------------|
+| ---------------- | ----------- | ------------------- |
 | Bas Kaptijn      | ICTU        | Adviseur/ Architect |
 | Auke Bloembergen | ICTU        |                     |
 | Steven Gort      | ICTU        | Adviseur/ Architect |
@@ -569,9 +570,8 @@ totstandkoming van deze PSA.
 - …
 
 [^1]: https://www.noraonline.nl/wiki/Expertisegroep_Regelbeheer
-
 [^2]: https://usmwiki.com/index.php/Process_model/nl
-
-[^3]: Zoet, M., de Haan, E., & Smit, K. (2014). Van Wetsanalyse tot
+[^3]:
+    Zoet, M., de Haan, E., & Smit, K. (2014). Van Wetsanalyse tot
     Producten en Diensten voor Burgers en Bedrijven. Utrecht, Hogeschool
     Utrecht.

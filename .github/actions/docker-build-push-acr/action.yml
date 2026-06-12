@@ -20,7 +20,7 @@ inputs:
     required: false
     description: Build-args to pass to the Docker build command
 runs:
-  using: "composite"
+  using: 'composite'
   steps:
     - uses: actions/checkout@v3
     - uses: azure/docker-login@v1

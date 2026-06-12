@@ -4,7 +4,8 @@
   "info": {
     "singularName": "publication",
     "pluralName": "publications",
-    "displayName": "Publications"
+    "displayName": "Publication",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,56 +13,41 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "summary": {
-      "type": "text",
-      "required": true
+      "type": "text"
     },
     "content": {
-      "type": "richtext",
-      "required": true
+      "type": "richtext"
     },
     "tags": {
-      "type": "text",
-      "required": true
+      "type": "text"
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
+      "targetField": "title"
     },
     "authors": {
-      "type": "text",
-      "required": true
+      "type": "text"
     },
     "location": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "file": {
       "type": "media",
       "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+      "required": false,
+      "allowedTypes": ["images", "videos", "audios", "files"]
     },
     "cite": {
-      "type": "text",
-      "required": true
+      "type": "text"
     },
     "originalSource": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "publicationDate": {
-      "type": "date",
-      "required": true
+      "type": "date"
     }
   }
 }

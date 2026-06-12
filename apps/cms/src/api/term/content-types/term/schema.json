@@ -16,28 +16,19 @@
       "required": true
     },
     "rdf": {
+      "allowedTypes": ["files"],
       "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "files"
-      ]
+      "multiple": false
     },
     "ttl": {
+      "allowedTypes": ["files"],
       "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "files"
-      ]
+      "multiple": false
     },
     "json": {
+      "allowedTypes": ["files"],
       "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "files"
-      ]
+      "multiple": false
     }
   }
 }

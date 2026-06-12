@@ -24,52 +24,6 @@ export default async function LabPage() {
             <CardLab.Demo href="https://app.lawnotation.org/auth/login" />
           </CardLab.MethodItems>
         </CardLab.Root>
-        <CardLab.Root title="Yasgui SPARQL editor">
-          Apache Jena is een open source semantisch webframework voor Java. Het biedt een API om regelspecificaties te
-          extraheren uit en te schrijven naar RDF-graphs. Yasgui biedt diverse geavanceerde functies voor het maken,
-          delen en visualiseren van SPARQL-query&apos;s en hun resultaten.
-          <CardLab.MethodItems>
-            <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
-            <CardLab.Repo href="https://github.com/TriplyDB/Yasgui" />
-            <CardLab.Docs href="https://docs.triply.cc/yasgui/" />
-            <CardLab.Demo href="https://regels.overheid.nl/lab/sparql/ui/" />
-          </CardLab.MethodItems>
-        </CardLab.Root>
-        <CardLab.Root title="Skosmos">
-          Skosmos is een open source webgebaseerde SKOS-browser en publicatietool. Deze demo bevat oa de vocabulaire van
-          regels.overheid.nl en de Standaard voor het beschrijven van begrippen (NL-SBB).
-          <CardLab.MethodItems>
-            <CardLab.License label="MIT License" href="https://opensource.org/license/mit" />
-            <CardLab.Repo href="https://github.com/NatLibFi/Skosmos" />
-            <CardLab.Docs href="https://github.com/NatLibFi/Skosmos/wiki/Data-Model" />
-            <CardLab.Demo href="https://skosmos.open-regels.nl" />
-          </CardLab.MethodItems>
-        </CardLab.Root>
-        <CardLab.Root title="AOW microservice">
-          De AOW leeftijd, wanneer ga je met pensioen, is van belang voor arbeidsrecht in de ketenregeling. Met deze
-          microservice illustreren we een landelijke service voor de bepaling van de AOW leeftijd.
-          <CardLab.MethodItems>
-            <CardLab.License
-              label="EU PL 1.2 license"
-              href="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
-            />
-            <CardLab.Repo href="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/concordialegal/AOW/FlaskAOW.py" />
-            <CardLab.Docs href="https://regels.overheid.nl/docs/lab/AOW" />
-            <CardLab.Demo href="https://regels.overheid.nl/lab/aow-leeftijd/" />
-          </CardLab.MethodItems>
-        </CardLab.Root>
-        <CardLab.Root title="Field Lab FDS zorgtoeslag">
-          Op basis van de ALEF rapportage van Dienst Toeslagen is voor Field Lab FDS is een zorgtoeslag service
-          beschikbaar gemaakt.
-          <CardLab.MethodItems>
-            <CardLab.License
-              label="EU PL 1.2 license"
-              href="https://github.com/MinBZK/regels.overheid.nl/blob/main/LICENSE.md"
-            />
-            <CardLab.Repo href="https://github.com/MinBZK/regels.overheid.nl/blob/main/apps/register/CPSV-AP-RONL/Zorgtoeslag/BerekenRechtEnHoogteZorg.dmn" />
-            <CardLab.Docs href="https://regels.overheid.nl/docs/lab/zorgtoeslag" />
-          </CardLab.MethodItems>
-        </CardLab.Root>
         <CardLab.Root title="Open GDC Regelregister">
           De GDC is in essentie een publicatieplatform voor overheden om actieve en passieve openbaarmaking van data,
           documenten en informatieproducten te ondersteunen. De live demo bevat een prototpe voor Open Regels
@@ -124,24 +78,6 @@ export default async function LabPage() {
             <CardLab.Repo href="https://github.com/MinBZK/HvA-legal-annotation-tool-frontend-json" />
           </CardLab.MethodItems>
         </CardLab.Root>
-        <Card.Root>
-          <Card.Title>Form Builder</Card.Title>
-          <Card.Content>
-            <Typography>Ontwerp conditionele BOLD formulieren sneller en consistenter</Typography>
-            <Card.Footer>Binnenkort beschikbaar</Card.Footer>
-          </Card.Content>
-        </Card.Root>
-        <Card.Root>
-          <Card.Title>Wil je jouw eigen tool ook op deze pagina zien?</Card.Title>
-          <Card.Content>
-            <Typography>
-              Neem dan contact op met{' '}
-              <Link component="a" href="mailto:steven.gort@ictu.nl" className="underline">
-                Steven Gort.
-              </Link>
-            </Typography>
-          </Card.Content>
-        </Card.Root>
       </ContainerMethod>
     </>
   );

@@ -2,6 +2,7 @@
 title: Instrumenten voor het maken en gebruiken van normatieve systemen
 description: Methods - norm engineering
 ---
+
 # Inleiding
 
 De vijf stappen van het Calculemus protocol zijn:
@@ -53,5 +54,4 @@ Voor meer informatie over de [norm-editor](https://norm-editor.tnodatalab.nl/). 
 
 # Basale ondersteuning van de stappen van het Calculemus protocol
 
-Op korte termijn wordt er een user-interface aangeboden voor het doorlopen van het Calculemus protocol. Daarna zullen we het doorlopen van het protocol stap voor stap gaan ondersteunen met te ontwikkelen  functionaliteiten. Welke functionaliteiten dat zijn, en welke prioriteiten we stellen bij het ontwikkelen wordt bepaald door de behoefte die er is in de projecten waarin we werken.
-
+Op korte termijn wordt er een user-interface aangeboden voor het doorlopen van het Calculemus protocol. Daarna zullen we het doorlopen van het protocol stap voor stap gaan ondersteunen met te ontwikkelen functionaliteiten. Welke functionaliteiten dat zijn, en welke prioriteiten we stellen bij het ontwikkelen wordt bepaald door de behoefte die er is in de projecten waarin we werken.

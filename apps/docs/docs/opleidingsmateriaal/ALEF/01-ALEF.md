@@ -8,19 +8,23 @@ Voor het werken met ALEF is opleidingsmateriaal beschikbaar. Dit materiaal geeft
 Doel van het opleidingsmateriaal is dat iemand na het bestuderen van de presentaties en het maken van de opdrachten inzicht heeft in de mogelijkheden van ALEF en in staat is om eenvoudige specificaties op te stellen en te valideren.
 
 Het opleidingsmateriaal bestaat uit:
+
 - **presentaties** waarin wordt toegelicht wat er functioneel mogelijk is in ALEF om specificaties op te stellen en te testen en
 - **opdrachten** om te oefenen met het zelf in ALEF vastleggen en testen van specificaties.
 
 Het opleidingsmateriaal is modulair opgezet rondom de onderwerpen:
 
 - **Regels en gegevens**
+
   - [ALEF200 Regels en gegevens - basis](../ALEF/02-ALEF200.md)
   - [ALEF201 Regels en gegevens - advanced](../ALEF/03-ALEF201.md)
 
 - **Besturing**
+
   - [ALEF210 Besturing](../ALEF/04-ALEF210.md)
 
 - **Services**.
+
   - [ALEF220 Services](../ALEF/05-ALEF220.md)
 
 - **Testen**

@@ -2,6 +2,7 @@
 title: De Calculemus-Flint methode
 description: Methods - norm engineering
 ---
+
 # Het Calculemus protocol voor normatieve systemen
 
 Het Calculemus protocol is een stappenplan dat gereguleerde taken opdeelt in stappen.
@@ -91,7 +92,7 @@ Flint interpretaties maak je door fragmenten van bronteksten te classificeren al
 Er zijn drie soorten Flint frames:
 
 - handelingsframes,
-- plicht frames, en 
+- plicht frames, en
 - feit frames.
 
 **Handelingsframes**
@@ -225,7 +226,7 @@ Als in een situatie twee acties mogelijk zijn, kan alleen een voorkeursoptie wor
 
 Datagedreven redeneren is in essentie statistisch redeneren. De vraag “Is dit een stoel?” wordt niet beantwoord met ja of nee. Het antwoord bevat ook geen motivering. Het object wordt met een zekere waarschijnlijkheid als ‘stoel’ gekwalificeerd omdat het kenmerken heeft die overeenkomen met andere objecten die als ‘stoel’ zijn gekwalificeerd. Het object lijkt meer op objecten die eerder als stoel zijn gelabeld, dan op andere objecten.
 
-Voordeel van datagedreven redeneren is dat uit een set mogelijke acties  die actie wordt geselecteerd die op statistische gronden de beste is. De belangrijkste nadelen datagedreven redeneren zijn:
+Voordeel van datagedreven redeneren is dat uit een set mogelijke acties die actie wordt geselecteerd die op statistische gronden de beste is. De belangrijkste nadelen datagedreven redeneren zijn:
 
 - andere argumenten dan statistische argumenten worden niet meegenomen, denk aan sociale, ethische en juridische overwegingen niet expliciet zijn meegenomen in de redenering
 - statistische patronen kunnen gemanipuleerd worden, zodat iets wat volgens een mens duidelijk de afbeelding van een aap is, op grond van statistische analyse volgens de machine het meest overeenkomst vertoond met een stoel.
@@ -253,7 +254,7 @@ Een meningsverschil over een het uitvoeren van een taak kan vier oorzaken hebben
 
 ### Oplossen meningsverschillen
 
-Belanghebbenden kunnen meningsverschillen over een zaak zelf oplossen als zijn tot een gedeelde opvatting komen over taakomschrijving, relevante bronnen, interpretatie van de  bronnen en de bewijsmiddelen waarmee wordt aangetoond dat de taak op de juiste wijze is uitgevoerd.
+Belanghebbenden kunnen meningsverschillen over een zaak zelf oplossen als zijn tot een gedeelde opvatting komen over taakomschrijving, relevante bronnen, interpretatie van de bronnen en de bewijsmiddelen waarmee wordt aangetoond dat de taak op de juiste wijze is uitgevoerd.
 
 Als dat niet lukt kunnen ze hulp zoeken bij een adviseur of mediator die helpt bij de totstandkoming van een oplossing.
 

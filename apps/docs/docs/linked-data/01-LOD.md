@@ -11,7 +11,7 @@ De principes die ten grondslag liggen aan Linked Data zijn:
 
 - Use URIs as names for things
 - Use HTTP URIs so that people can look up those names
-- When someone looks up a URI, provide useful information, using the standards (RDF*, SPARQL)
+- When someone looks up a URI, provide useful information, using the standards (RDF\*, SPARQL)
 - Include links to other URIs, so that they can discover more things
 
 Bron: [Platform Linked Data Nederland](https://www.pldn.nl/wiki/Wat_is_het)

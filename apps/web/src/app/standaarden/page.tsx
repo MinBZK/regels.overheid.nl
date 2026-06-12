@@ -21,23 +21,12 @@ export default function StandaardenPage() {
           Specificatie van het <b>juridisch analyseschema</b> (JAS) dat gebruikt wordt bij Wetsanalyse en waarin
           verschillende juridische elementen die in wetgeving voorkomen in samenhang gerangschikt zijn.
         </CardStandard.Root>
-        <CardStandard.Root title="DCAT" variant="work-in-progress" url="/standaarden/dcat-ap-ronl">
-          DCAT-AP is een Europese specificatie voor het beschrijven van datasets van de publieke sector, gebaseerd op
-          W3C&apos;s Data Catalogue Vocabulary (DCAT).
-        </CardStandard.Root>
         <CardStandard.Root title="GGHH" variant="work-in-progress" url="/standaarden/gghh">
           Dit model heeft betrekkeing op de gegevenshuishouding dat onderdeel is van de informatie huishouding.
         </CardStandard.Root>
         <CardStandard.Root title="Wetsuitvoering" variant="work-in-progress" url="/standaarden/wetsuitvoering">
           Specificatie van het <b>juridisch referentiemodel</b> (JRM) dat met scenario&apos;s beschrijft hoe een burger
           of bedrijf een bepaald stuk wet- en regelgeving ervaart of doorloopt in de wetsuitvoering.
-        </CardStandard.Root>
-        <CardStandard.Root
-          title="Algoritmes Publicatiestandaard"
-          url="/standaarden/algoritmeregister-publicatiestandaard"
-        >
-          Bevat de publicatiestandaard van het Algoritmeregister. Het is bedoeld om overheidsorganisaties te helpen bij
-          het invullen.
         </CardStandard.Root>
         <CardStandard.Root
           variant="work-in-progress"
@@ -49,8 +38,6 @@ export default function StandaardenPage() {
         <CardStandard.Root variant="work-in-progress" title="WetsTaal Handreiking" url="/standaarden/wetstaal">
           De syntax en semantiek van de logisch formele, declaratieve en breed begrijpelijke taal
         </CardStandard.Root>
-        <CardStandard.Root title="Harmonisator" variant="unavailable" />
-        <CardStandard.Root title="FLINT" variant="unavailable" />
       </ContainerMethod>
     </main>
   );

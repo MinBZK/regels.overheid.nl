@@ -9,11 +9,11 @@ De Persoonlijke Regelingen Assistent (PRA) is een meerjarig innovatieproject dat
 
 - [https://vimeo.com/726417466](https://vimeo.com/726417466)
 - [https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/dienstverlening-aan-burgers-en-ondernemers/persoonlijke-regelingen-assistent/](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/dienstverlening-aan-burgers-en-ondernemers/persoonlijke-regelingen-assistent/)
-- [https://persoonlijkeregelingenassistent.pleio.nl/](https://persoonlijkeregelingenassistent.pleio.nl/) 
+- [https://persoonlijkeregelingenassistent.pleio.nl/](https://persoonlijkeregelingenassistent.pleio.nl/)
 
 ## Digitale 'assistent'
 
-De PRA richt zich op het bieden van een digitale “assistent” in de vorm van een AI advisor app (op basis van Rasa) die gebruik kan maken van persoonlijke gegevens zonder deze met centrale diensten nog te delen en tot aan het doen van een aanvraag ook **offline en geheel anoniem** kan werken. De app is dus overigens geen geheel “online tool”. De app moet een intuïtieve interface krijgen waar de gebruiker van de app op eenvoudige wijze via navigatie danwel via een chatterbot de volgende zaken kan bewerkstelligen: 
+De PRA richt zich op het bieden van een digitale “assistent” in de vorm van een AI advisor app (op basis van Rasa) die gebruik kan maken van persoonlijke gegevens zonder deze met centrale diensten nog te delen en tot aan het doen van een aanvraag ook **offline en geheel anoniem** kan werken. De app is dus overigens geen geheel “online tool”. De app moet een intuïtieve interface krijgen waar de gebruiker van de app op eenvoudige wijze via navigatie danwel via een chatterbot de volgende zaken kan bewerkstelligen:
 
 1. Regelingen vinden aan de hand van opgegeven of herkende behoefte (eten, onderdak, financiële hulp etc.), levensgebeurtenissen, keywords, wet en regelgeving, en verantwoordelijke organisatie etc. Maar hier hoort ook het proactief vinden van regelingen bij waar de gebruiker mogelijk interesse in heeft bijvoorbeeld aan de hand van herkende wijzingen in iemands situatie (bijvoorbeeld dat het inkomen of de woonplaats is veranderd).
 2. Regelingen direct duidelijk uitleggen op een bij de gebruiker passend niveau
@@ -22,7 +22,7 @@ De PRA richt zich op het bieden van een digitale “assistent” in de vorm van 
 5. Monitoren van het verloop van de afhandeling van aanvragen.
 6. Hulp vragen bij een probleem in het algemeen als iemand er niet uitkomt of bijvoorbeeld als iemand ervaart tussen wal en schip te vallen dan wel een bezwaar indienen mbt een (beslissing op een) aanvraag.
 
-Hierbij wordt direct onderkend dat alleen een app voor lang niet iedereen een oplossing biedt, zeker niet voor bijvoorbeeld ouderen, laaggeletterden, wilsonbekwamen; een niet gering deel van de bevolking. De app moet dan ook vooral toegang kunnen bieden tot hulp bij bijvoorbeeld een informatiepunt digitale overheid (IDO) in bibliotheken maar ook meer persoonsgerichte hulp en de hulp moet bovendien geheel los kunnen staan van een specifieke aanvraag, wet of uitvoeringsorganisatie. Dit laatste is zeer belangrijk. De PRA moet ook een hulpmiddel kunnen zijn voor hulpverleners zelf zover deze er nu zijn. 
+Hierbij wordt direct onderkend dat alleen een app voor lang niet iedereen een oplossing biedt, zeker niet voor bijvoorbeeld ouderen, laaggeletterden, wilsonbekwamen; een niet gering deel van de bevolking. De app moet dan ook vooral toegang kunnen bieden tot hulp bij bijvoorbeeld een informatiepunt digitale overheid (IDO) in bibliotheken maar ook meer persoonsgerichte hulp en de hulp moet bovendien geheel los kunnen staan van een specifieke aanvraag, wet of uitvoeringsorganisatie. Dit laatste is zeer belangrijk. De PRA moet ook een hulpmiddel kunnen zijn voor hulpverleners zelf zover deze er nu zijn.
 
 De PRA moet ook inzicht geven in welke capaciteit het bij de overheid ontbreekt om in welke (hulp)behoefte te voorzien. Hiervoor moet de PRA ook een openbare geheel anonieme monitor bieden.
 
