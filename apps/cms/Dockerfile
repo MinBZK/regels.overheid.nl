@@ -1,39 +1,21 @@
-# ==== Base ====
-FROM node:24.11-alpine AS root
+# ==== Deps ====
+FROM ghcr.io/pnpm/pnpm:11.6.0 AS deps
 
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
 
-RUN corepack enable
-RUN corepack prepare pnpm@8 --activate 
-
-RUN apk add --no-cache libc6-compat
-RUN apk update
-
-RUN pnpm install -g turbo@1.11
-
-# ==== Builder ====
-FROM root AS builder
+RUN pnpm runtime set node 24 -g
 
 WORKDIR /app
 
-COPY . .
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY apps/cms/package.json ./apps/cms/package.json
 
-RUN turbo prune cms --docker
+RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
+    pnpm install --frozen-lockfile --filter=cms...
 
-# ==== Installer ====
-FROM root AS installer
-
-WORKDIR /app
-
-COPY .gitignore .gitignore
-COPY --from=builder /app/out/json/ .
-COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-
-# ==== Base ====
-FROM root AS base
+# ==== Runtime ====
+FROM node:24-slim AS runtime
 
 ARG UID=1001
 ARG GID=1001
@@ -41,40 +23,33 @@ ARG GID=1001
 RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
     (getent passwd ${UID} || adduser --system --uid ${UID} app)
 
+WORKDIR /app
+
+COPY --from=deps --chown=${UID}:${GID} /app/node_modules ./node_modules
+COPY --from=deps --chown=${UID}:${GID} /app/apps/cms/node_modules ./apps/cms/node_modules
+
+COPY --chown=${UID}:${GID} pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY --chown=${UID}:${GID} apps/cms ./apps/cms
+
 USER ${UID}
 
-WORKDIR /app
-
-COPY --from=builder --chown=${UID}:${GID} /app/out/full .
-COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
-COPY --from=installer --chown=${UID}:${GID} /app/apps/cms/node_modules ./apps/cms/node_modules
-
-# ==== Dev ====
-FROM base AS dev
-
-WORKDIR /app
-
-ENV NODE_ENV development
-
-RUN pnpm build
+WORKDIR /app/apps/cms
 
 EXPOSE 1337
 
-ENTRYPOINT pnpm dev
+# ==== Dev ====
+FROM runtime AS dev
+
+ENV NODE_ENV=development
+
+ENTRYPOINT ["npm", "run", "dev"]
 
 # ==== Prod ====
-FROM base AS prod
-
-WORKDIR /app
-
-ARG PUBLIC_URL=http://localhost:1337
-ENV PUBLIC_URL=${PUBLIC_URL}
+FROM runtime AS prod
 
 ENV NODE_ENV=production
 
-RUN pnpm build
+RUN npm run build
 
-EXPOSE 1337
+ENTRYPOINT ["npm", "run", "start"]
 
-ENTRYPOINT ["pnpm", "start"]

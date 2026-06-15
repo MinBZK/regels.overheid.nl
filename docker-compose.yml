@@ -15,15 +15,14 @@ services:
       context: .
       dockerfile: apps/cms/Dockerfile
       target: dev
-      args:
-        PUBLIC_URL: http://localhost/cms/
     volumes:
       - ./apps/cms/config:/app/apps/cms/config
       - ./apps/cms/database:/app/apps/cms/database
       - ./apps/cms/public:/app/apps/cms/public
       - ./apps/cms/src:/app/apps/cms/src
     environment:
-      - PUBLIC_URL=http://localhost/cms/
+      - PORT=9001
+      - PUBLIC_URL=http://cms.localhost
       - DATABASE_CLIENT=postgres
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/strapi
       - JWT_SECRET=jwt-secret
