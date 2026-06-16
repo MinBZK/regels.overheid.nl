@@ -40,13 +40,13 @@
     "encoding": "^0.1.13",
     "graphql-request": "^7.3.4",
     "javascript-time-ago": "^2.5.9",
-    "next": "14.1.0",
+    "next": "16.2.9",
     "next-mdx-remote": "^4.4.1",
     "pg": "^8.8.0",
     "puppeteer": "^22.9.0",
-    "react": "^18",
+    "react": "19.2.7",
     "react-copy-to-clipboard": "^5.1.0",
-    "react-dom": "^18",
+    "react-dom": "19.2.7",
     "react-remove-scroll": "^2.5.9",
     "remark-gfm": "^3.0.1",
     "server-only": "^0.0.1",
@@ -64,11 +64,11 @@
     "@storybook/test": "^7.6.8",
     "@types/node": "^20",
     "@types/pg": "^8.10.9",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0",
+    "eslint-config-next": "16.2.9",
     "eslint-plugin-storybook": "^0.6.15",
     "postcss": "^8",
     "prettier": "^2.8.0",
@@ -77,5 +77,9 @@
     "storybook": "^7.6.8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
+  },
+  "resolutions": {
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3"
   }
 }

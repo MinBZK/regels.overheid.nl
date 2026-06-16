@@ -1,39 +1,28 @@
-# ==== Base ====
-FROM node:20.11-alpine as root
+# ==== Deps ====
+FROM ghcr.io/pnpm/pnpm:11.6.0 AS deps
 
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
 
-RUN corepack enable && \
-    corepack prepare pnpm@8 --activate && \
-    apk add --no-cache libc6-compat chromium && \
-    apk update && \
-    pnpm install -g turbo@1.11
-
-ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
-
-# ==== Builder ====
-FROM root as builder
+RUN pnpm runtime set node 20 -g
 
 WORKDIR /app
 
-COPY . .
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY apps/web/package.json ./apps/web/package.json
 
-RUN turbo prune web --docker
+RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
+    pnpm install --frozen-lockfile --filter=web...
 
-# ==== Installer ====
-FROM root as installer
+# ==== Runtime ====
+FROM node:20-slim AS runtime
 
-WORKDIR /app
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends chromium ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 
-COPY .gitignore .gitignore
-COPY --from=builder /app/out/json/ .
-COPY --from=builder /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-
-# ==== Base ====
-FROM root AS base
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+ENV PUPPETEER_SKIP_DOWNLOAD=true
 
 ARG UID=1001
 ARG GID=1001
@@ -41,52 +30,45 @@ ARG GID=1001
 RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
     (getent passwd ${UID} || adduser --system --uid ${UID} app)
 
-USER ${UID}
-
 WORKDIR /app
 
-COPY --from=builder --chown=${UID}:${GID} /app/out/full .
-COPY --from=builder --chown=${UID}:${GID} /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
-COPY --from=installer --chown=${UID}:${GID} /app/node_modules ./node_modules
-COPY --from=installer --chown=${UID}:${GID} /app/apps/web/node_modules ./apps/web/node_modules
+COPY --from=deps --chown=${UID}:${GID} /app/node_modules ./node_modules
+COPY --from=deps --chown=${UID}:${GID} /app/apps/web/node_modules ./apps/web/node_modules
 
-# ==== Dev ====
-FROM base as dev
+COPY --chown=${UID}:${GID} pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY --chown=${UID}:${GID} apps/web ./apps/web
 
 USER ${UID}
 
-WORKDIR /app
+WORKDIR /app/apps/web
 
 EXPOSE 9000
 
-ENTRYPOINT pnpm dev
+# ==== Dev ====
+FROM runtime AS dev
+
+ENV NODE_ENV=development
+
+ENTRYPOINT ["npm", "run", "dev"]
 
 # ==== Storybook (dev) ====
-FROM base AS storybook-dev
-
-WORKDIR /app
+FROM runtime AS storybook-dev
 
 EXPOSE 6006
 
-ENTRYPOINT pnpm --filter=web storybook
+ENTRYPOINT ["npm", "run", "storybook"]
 
-#  ==== Prod ====
-FROM base AS prod
+# ==== Prod ====
+FROM runtime AS prod
 
-USER ${UID}
+ENV NODE_ENV=production
 
-WORKDIR /app
-
-ARG NEXT_PUBLIC_WEB_URL 
-ENV NEXT_PUBLIC_WEB_URL ${NEXT_PUBLIC_WEB_URL}
+ARG NEXT_PUBLIC_WEB_URL
+ENV NEXT_PUBLIC_WEB_URL=${NEXT_PUBLIC_WEB_URL}
 
 ARG NEXT_PUBLIC_CMS_URL
-ENV NEXT_PUBLIC_CMS_URL ${NEXT_PUBLIC_CMS_URL}
+ENV NEXT_PUBLIC_CMS_URL=${NEXT_PUBLIC_CMS_URL}
 
-EXPOSE 9000
+RUN npm run gen-graphql && npm run build
 
-RUN pnpm run --filter=web  gen-graphql
-
-RUN pnpm build
-
-ENTRYPOINT pnpm start
+ENTRYPOINT ["npm", "run", "start"]
