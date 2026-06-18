@@ -465,21 +465,21 @@ export interface ApiMethodMethod extends Struct.CollectionTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
-    Description: Schema.Attribute.RichText &
+    description: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Href: Schema.Attribute.String &
+    href: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Icon: Schema.Attribute.Enumeration<['arch', 'megaphone', 'right-angle-ruler', 'ruler', 'scale', 'therefore']> &
+    icon: Schema.Attribute.Enumeration<['arch', 'megaphone', 'right-angle-ruler', 'ruler', 'scale', 'therefore']> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -489,14 +489,14 @@ export interface ApiMethodMethod extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::method.method'>;
     publishedAt: Schema.Attribute.DateTime;
-    Tag: Schema.Attribute.Enumeration<['platform', 'software', 'DSL', 'methode']> &
+    tag: Schema.Attribute.Enumeration<['platform', 'software', 'DSL', 'methode']> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Title: Schema.Attribute.String &
+    title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

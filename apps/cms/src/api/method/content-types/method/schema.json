@@ -16,52 +16,64 @@
     }
   },
   "attributes": {
-    "Title": {
+    "title": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
       "required": true
     },
-    "Description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+    "description": {
       "type": "richtext",
-      "required": true
-    },
-    "Icon": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
+      "required": true
+    },
+    "icon": {
       "type": "enumeration",
-      "enum": ["arch", "megaphone", "right-angle-ruler", "ruler", "scale", "therefore"],
-      "required": true
-    },
-    "Href": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
+      "required": true,
+      "enum": [
+        "arch",
+        "megaphone",
+        "right-angle-ruler",
+        "ruler",
+        "scale",
+        "therefore"
+      ]
+    },
+    "href": {
       "type": "string",
-      "required": true
-    },
-    "Tag": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "enumeration",
-      "enum": ["platform", "software", "DSL", "methode"],
       "required": true
+    },
+    "tag": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "enum": [
+        "platform",
+        "software",
+        "DSL",
+        "methode"
+      ]
     }
   }
 }

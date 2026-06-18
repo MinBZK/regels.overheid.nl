@@ -8,7 +8,7 @@ RUN pnpm runtime set node 24 -g
 
 WORKDIR /app
 
-COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json .npmrc ./
 COPY apps/cms/package.json ./apps/cms/package.json
 
 RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
@@ -21,7 +21,10 @@ ARG UID=1001
 ARG GID=1001
 
 RUN (getent group ${GID} || addgroup --system --gid ${GID} app) && \
-    (getent passwd ${UID} || adduser --system --uid ${UID} app)
+    (getent passwd ${UID} || adduser --system --uid ${UID} --home /home/app --gid ${GID} app) && \
+    mkdir -p /home/app && chown ${UID}:${GID} /home/app
+
+ENV HOME=/home/app
 
 WORKDIR /app
 
