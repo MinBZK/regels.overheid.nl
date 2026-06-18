@@ -6,12 +6,16 @@ import { notFoundResponse } from '@/common/not-found-response';
 import slugify from '@sindresorhus/slugify';
 import { NextRequest } from 'next/server';
 
-export async function GET(req: NextRequest, { params }: { params: { slug: string[]; extension: string } }) {
-  const extension = getValidExtension(params.extension);
+export async function GET(
+  req: NextRequest,
+  { params }: { params: Promise<{ slug: string[]; extension: string }> },
+) {
+  const resolvedParams = await params;
+  const extension = getValidExtension(resolvedParams.extension);
 
   if (extension === null) return notFoundResponse(req);
 
-  const slug = getSlugFromParams(params.slug);
+  const slug = getSlugFromParams(resolvedParams.slug);
   const file = await findTermInFormat({ slug, extension });
 
   if (!file) return notFoundResponse(req);

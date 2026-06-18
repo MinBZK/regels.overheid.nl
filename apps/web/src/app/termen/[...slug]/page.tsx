@@ -7,11 +7,12 @@ import { getSlugFromParams } from '../get-slug-from-params';
 import { getParsedTerm } from './get-parsed-term';
 
 type Args = {
-  params: { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 };
 
 export default async function TermenPage({ params }: Args) {
-  const slug = getSlugFromParams(params.slug);
+  const { slug: slugParam } = await params;
+  const slug = getSlugFromParams(slugParam);
   const { nlDefinition, nlPrefLabel, nlScopeNote, nlLabel } = await getParsedTerm({ slug });
 
   if (!nlPrefLabel) return notFound();
@@ -46,7 +47,8 @@ export default async function TermenPage({ params }: Args) {
 }
 
 export async function generateMetadata({ params }: Args) {
-  const slug = getSlugFromParams(params.slug);
+  const { slug: slugParam } = await params;
+  const slug = getSlugFromParams(slugParam);
   const { nlDefinition, nlPrefLabel } = await getParsedTerm({ slug });
 
   return {

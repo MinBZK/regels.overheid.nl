@@ -13,7 +13,7 @@ export const RemoteMdx: React.FC<Props> = ({ content, components, ...props }) =>
       source={content || ''}
       options={{ mdxOptions: { rehypePlugins: [remarkGfmPlugin] } }}
       components={{
-        a: LinkRemoteMdx,
+        a: LinkRemoteMdx as any,
         h1: (props) => <Typography variant="h1" {...(props as any)} />,
         h2: (props) => <Typography variant="h2" {...(props as any)} />,
         h3: (props) => <Typography variant="h3" {...(props as any)} />,

@@ -4,8 +4,11 @@ import fs from 'fs/promises';
 import { NextResponse } from 'next/server';
 import puppeteer from 'puppeteer';
 
-export async function GET(request: Request, { params }: { params: { version?: string; publication: string } }) {
-  const { publication, version = 'latest' } = params;
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ version?: string; publication: string }> },
+) {
+  const { publication, version = 'latest' } = await params;
 
   const publicationPath = resolveFromPublicPublicDir('publications', publication, `${version}.html`);
 
@@ -36,7 +39,7 @@ export async function GET(request: Request, { params }: { params: { version?: st
       return pdf;
     });
 
-  return new NextResponse(pdf, {
+  return new NextResponse(new Uint8Array(pdf), {
     headers: {
       'Content-Type': 'application/pdf',
     },

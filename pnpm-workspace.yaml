@@ -1,5 +1,8 @@
 packages:
   - 'apps/*'
+overrides:
+  '@types/react': 19.2.17
+  '@types/react-dom': 19.2.3
 allowBuilds:
   '@apollo/protobufjs': true
   '@parcel/watcher': true

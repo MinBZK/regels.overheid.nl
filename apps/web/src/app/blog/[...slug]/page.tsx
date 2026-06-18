@@ -14,15 +14,16 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 interface Props {
-  params: {
-    slug: string;
-  };
+  params: Promise<{
+    slug: string[];
+  }>;
 }
 
 export const revalidate = 300;
 
 export default async function BlogArticlePage(props: Props) {
-  const id = props.params.slug[0];
+  const params = await props.params;
+  const id = params.slug[0];
   const blog = await getBlogArticleById(id);
 
   if (!blog) return notFound();
@@ -69,8 +70,9 @@ export default async function BlogArticlePage(props: Props) {
   );
 }
 
-export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata> {
-  const [id] = params.slug;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const [id] = slug;
 
   const blog = await getBlogArticleById(id);
 

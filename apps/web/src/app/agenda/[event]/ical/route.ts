@@ -3,8 +3,9 @@ import slugify from '@sindresorhus/slugify';
 import { format } from 'date-fns';
 import { NextRequest } from 'next/server';
 
-export async function GET(req: NextRequest, { params }: { params: { event: string } }) {
-  const event = await getEventBySlug(params.event);
+export async function GET(req: NextRequest, { params }: { params: Promise<{ event: string }> }) {
+  const { event: eventSlug } = await params;
+  const event = await getEventBySlug(eventSlug);
 
   if (!event) return new Response('Event not found', { status: 404 });
 

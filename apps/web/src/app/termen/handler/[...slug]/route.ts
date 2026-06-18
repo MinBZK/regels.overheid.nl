@@ -4,8 +4,9 @@ import { getHeadersWithContentTypes } from '../../get-headers-with-content-type'
 import { getSlugFromParams } from '../../get-slug-from-params';
 import { notFoundResponse } from '@/common/not-found-response';
 
-export async function GET(req: NextRequest, { params }: { params: { slug: string[] } }) {
-  const slug = getSlugFromParams(params.slug);
+export async function GET(req: NextRequest, { params }: { params: Promise<{ slug: string[] }> }) {
+  const { slug: slugParam } = await params;
+  const slug = getSlugFromParams(slugParam);
 
   const extension = ((): FindTermInFormatArgs['extension'] | null => {
     const accepts = req.headers.get('accept');

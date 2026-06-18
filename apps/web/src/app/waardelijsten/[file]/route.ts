@@ -3,9 +3,10 @@ import fs from 'fs/promises';
 import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 
-export async function GET(req: NextRequest, { params }: { params: { file: string } }) {
+export async function GET(req: NextRequest, { params }: { params: Promise<{ file: string }> }) {
+  const { file: fileName } = await params;
   const rootDirPath = path.resolve(process.cwd(), 'src/app/waardelijsten');
-  const filePath = path.resolve(rootDirPath, `${params.file}`);
+  const filePath = path.resolve(rootDirPath, `${fileName}`);
 
   if (!filePath.startsWith(rootDirPath)) return notFoundResponse(req);
 

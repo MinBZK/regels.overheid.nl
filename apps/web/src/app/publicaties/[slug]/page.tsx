@@ -12,16 +12,17 @@ import { CopyCiteToClipboard } from './copy-cite-to-clipboard';
 import { getPublicationBySlug } from './get-publication-by-slug';
 import { notFound } from 'next/navigation';
 
-type Args = { params: { slug: string } };
+type Args = { params: Promise<{ slug: string }> };
 
 export default async function PublicatiesSlugPage({ params }: Args) {
-  const publication = await getPublicationBySlug({ slug: params.slug });
+  const { slug } = await params;
+  const publication = await getPublicationBySlug({ slug });
 
   if (!publication) throw notFound();
 
   return (
     <>
-      <EnhanceMenuBreadcrumbs append={publication.title} />
+      <EnhanceMenuBreadcrumbs append={publication.title ?? ''} />
       <Container component="header" className="-mt-14 bg-[#F7FBFD] py-12">
         <Typography variant="h1">{publication.title}</Typography>
         <section className="flex flex-col gap-y-1 pb-2 pt-12">
@@ -46,7 +47,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
                     <Dialog.Description>
                       {publication.cite}
                       <div className="mt-4 flex justify-center">
-                        <CopyCiteToClipboard text={publication.cite} />
+                        <CopyCiteToClipboard text={publication.cite ?? ''} />
                       </div>
                     </Dialog.Description>
                   </Dialog.Content>
@@ -56,7 +57,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
             <li>
               <Button
                 component={Link}
-                href={`/publicaties/${params.slug}/download`}
+                href={`/publicaties/${slug}/download`}
                 startIcon={<IconFileTypePdf />}
                 variant="text"
               >
@@ -70,7 +71,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
                 target="_blank"
                 rel="noopener noreferrer"
                 startIcon={<IconExternalLink />}
-                href={publication.originalSource}
+                href={publication.originalSource ?? undefined}
               >
                 Originele bron
               </Button>
@@ -81,7 +82,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
       <Container component="main" className="pt-12">
         <section>
           <Typography variant="h2">Samenvatting</Typography>
-          <RemoteMdx content={publication.content} />
+          <RemoteMdx content={publication.content ?? ''} />
         </section>
         <section>
           <Typography variant="h3">Trefwoorden</Typography>
@@ -100,7 +101,7 @@ export default async function PublicatiesSlugPage({ params }: Args) {
           <Button
             component={Link}
             color="primary-light"
-            href={`/publicaties/${params.slug}/download`}
+            href={`/publicaties/${slug}/download`}
             startIcon={<IconDownload />}
           >
             Download
@@ -112,7 +113,8 @@ export default async function PublicatiesSlugPage({ params }: Args) {
 }
 
 export async function generateMetadata({ params }: Args) {
-  const publication = await getPublicationBySlug({ slug: params.slug });
+  const { slug } = await params;
+  const publication = await getPublicationBySlug({ slug });
 
   if (!publication) throw notFound();
 

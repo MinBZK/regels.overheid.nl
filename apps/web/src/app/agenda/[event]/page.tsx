@@ -19,13 +19,14 @@ import { AddToCalendarDropdown } from '../add-to-calendar-dropdown';
 import { OpenInMapDropdown } from './open-in-map-dropdown';
 
 interface Props {
-  params: { event: string };
+  params: Promise<{ event: string }>;
 }
 
 export const revalidate = 300;
 
 export default async function EventPage({ params }: Props) {
-  const event = await getEventBySlug(params.event);
+  const { event: eventSlug } = await params;
+  const event = await getEventBySlug(eventSlug);
 
   if (!event) return redirect('/agenda');
 
@@ -108,8 +109,9 @@ export default async function EventPage({ params }: Props) {
   );
 }
 
-export async function generateMetadata({ params }: { params: { event: string } }): Promise<Metadata> {
-  const event = await getEventBySlug(params.event);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { event: eventSlug } = await params;
+  const event = await getEventBySlug(eventSlug);
 
   if (!event) return notFound();
 
@@ -134,7 +136,7 @@ export async function generateMetadata({ params }: { params: { event: string } }
       title: event.title,
       description: truncateStringAtWord(event.intro || '', 150),
       images: images(),
-      url: `https://regels.overheid.nl/agenda/${params.event}`,
+      url: `https://regels.overheid.nl/agenda/${eventSlug}`,
       type: 'article',
       siteName: 'regels.overheid.nl',
       locale: 'nl_NL',

@@ -2,8 +2,11 @@ import { notFoundResponse } from '@/common/not-found-response';
 import fs from 'fs/promises';
 import path from 'path';
 
-export async function GET(request: Request, { params }: { params: { version?: string; publication: string } }) {
-  const { publication, version = 'latest' } = params;
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ version?: string; publication: string }> },
+) {
+  const { publication, version = 'latest' } = await params;
   const publicationPath = path.resolve(process.cwd(), `public/public/publications/${publication}/${version}.html`);
 
   const publicationExists = await fs
@@ -15,5 +18,5 @@ export async function GET(request: Request, { params }: { params: { version?: st
 
   const buffer = await fs.readFile(publicationPath);
 
-  return new Response(buffer, { headers: { 'Content-Type': 'text/html' } });
+  return new Response(new Uint8Array(buffer), { headers: { 'Content-Type': 'text/html' } });
 }

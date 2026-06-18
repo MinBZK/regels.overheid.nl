@@ -5,21 +5,23 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function SlugPage({ params }: Props) {
+export default async function SlugPage({ params }: Props) {
+  const { slug } = await params;
   return (
     <Container component="main">
-      <RemotePage page={params.slug} />
+      <RemotePage page={slug} />
     </Container>
   );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const page = await getPageBySlug(params.slug);
+  const { slug } = await params;
+  const page = await getPageBySlug(slug);
 
   if (!page) return notFound();
 

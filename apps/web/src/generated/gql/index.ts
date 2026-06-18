@@ -17,6 +17,7 @@ export type Scalars = {
   Float: { input: number; output: number; }
   Date: { input: any; output: any; }
   DateTime: { input: any; output: any; }
+  I18NLocaleCode: { input: any; output: any; }
   JSON: { input: any; output: any; }
 };
 
@@ -180,7 +181,7 @@ export type Event = {
   cover: UploadFile;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   documentId: Scalars['ID']['output'];
-  end?: Maybe<Scalars['DateTime']['output']>;
+  end: Scalars['DateTime']['output'];
   eventbrite?: Maybe<Scalars['String']['output']>;
   eventbriteTitle?: Maybe<Scalars['String']['output']>;
   intro: Scalars['String']['output'];
@@ -381,10 +382,27 @@ export type Method = {
   documentId: Scalars['ID']['output'];
   href: Scalars['String']['output'];
   icon: Enum_Method_Icon;
+  locale?: Maybe<Scalars['String']['output']>;
+  localizations: Array<Maybe<Method>>;
+  localizations_connection?: Maybe<MethodRelationResponseCollection>;
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  tag?: Maybe<Enum_Method_Tag>;
+  tag: Enum_Method_Tag;
   title: Scalars['String']['output'];
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+
+export type MethodLocalizationsArgs = {
+  filters?: InputMaybe<MethodFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+export type MethodLocalizations_ConnectionArgs = {
+  filters?: InputMaybe<MethodFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type MethodEntityResponseCollection = {
@@ -400,6 +418,8 @@ export type MethodFiltersInput = {
   documentId?: InputMaybe<IdFilterInput>;
   href?: InputMaybe<StringFilterInput>;
   icon?: InputMaybe<StringFilterInput>;
+  locale?: InputMaybe<StringFilterInput>;
+  localizations?: InputMaybe<MethodFiltersInput>;
   not?: InputMaybe<MethodFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<MethodFiltersInput>>>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
@@ -415,6 +435,11 @@ export type MethodInput = {
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   tag?: InputMaybe<Enum_Method_Tag>;
   title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MethodRelationResponseCollection = {
+  __typename?: 'MethodRelationResponseCollection';
+  nodes: Array<Method>;
 };
 
 export type Mutation = {
@@ -492,6 +517,7 @@ export type MutationCreateEventArgs = {
 
 export type MutationCreateMethodArgs = {
   data: MethodInput;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
   status?: InputMaybe<PublicationStatus>;
 };
 
@@ -548,6 +574,7 @@ export type MutationDeleteEventArgs = {
 
 export type MutationDeleteMethodArgs = {
   documentId: Scalars['ID']['input'];
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
 };
 
 
@@ -635,6 +662,7 @@ export type MutationUpdateEventArgs = {
 export type MutationUpdateMethodArgs = {
   data: MethodInput;
   documentId: Scalars['ID']['input'];
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
   status?: InputMaybe<PublicationStatus>;
 };
 
@@ -757,20 +785,20 @@ export type PaginationArg = {
 
 export type Publication = {
   __typename?: 'Publication';
-  authors: Scalars['String']['output'];
-  cite: Scalars['String']['output'];
-  content: Scalars['String']['output'];
+  authors?: Maybe<Scalars['String']['output']>;
+  cite?: Maybe<Scalars['String']['output']>;
+  content?: Maybe<Scalars['String']['output']>;
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   documentId: Scalars['ID']['output'];
-  file: UploadFile;
-  location: Scalars['String']['output'];
-  originalSource: Scalars['String']['output'];
-  publicationDate: Scalars['Date']['output'];
+  file?: Maybe<UploadFile>;
+  location?: Maybe<Scalars['String']['output']>;
+  originalSource?: Maybe<Scalars['String']['output']>;
+  publicationDate?: Maybe<Scalars['Date']['output']>;
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  slug: Scalars['String']['output'];
-  summary: Scalars['String']['output'];
-  tags: Scalars['String']['output'];
-  title: Scalars['String']['output'];
+  slug?: Maybe<Scalars['String']['output']>;
+  summary?: Maybe<Scalars['String']['output']>;
+  tags?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -779,6 +807,17 @@ export type PublicationEntityResponseCollection = {
   nodes: Array<Publication>;
   pageInfo: Pagination;
 };
+
+export enum PublicationFilter {
+  HasPublishedVersion = 'HAS_PUBLISHED_VERSION',
+  HasPublishedVersionDocument = 'HAS_PUBLISHED_VERSION_DOCUMENT',
+  Modified = 'MODIFIED',
+  NeverPublished = 'NEVER_PUBLISHED',
+  NeverPublishedDocument = 'NEVER_PUBLISHED_DOCUMENT',
+  PublishedWithoutDraft = 'PUBLISHED_WITHOUT_DRAFT',
+  PublishedWithDraft = 'PUBLISHED_WITH_DRAFT',
+  Unmodified = 'UNMODIFIED'
+}
 
 export type PublicationFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<PublicationFiltersInput>>>;
@@ -864,13 +903,17 @@ export type Query = {
 
 export type QueryBlogArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryBlogsArgs = {
   filters?: InputMaybe<BlogFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -878,7 +921,9 @@ export type QueryBlogsArgs = {
 
 export type QueryBlogs_ConnectionArgs = {
   filters?: InputMaybe<BlogFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -886,13 +931,17 @@ export type QueryBlogs_ConnectionArgs = {
 
 export type QueryEventArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryEventsArgs = {
   filters?: InputMaybe<EventFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -900,7 +949,9 @@ export type QueryEventsArgs = {
 
 export type QueryEvents_ConnectionArgs = {
   filters?: InputMaybe<EventFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -908,13 +959,17 @@ export type QueryEvents_ConnectionArgs = {
 
 export type QueryI18NLocaleArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryI18NLocalesArgs = {
   filters?: InputMaybe<I18NLocaleFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -922,7 +977,9 @@ export type QueryI18NLocalesArgs = {
 
 export type QueryI18NLocales_ConnectionArgs = {
   filters?: InputMaybe<I18NLocaleFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -930,13 +987,19 @@ export type QueryI18NLocales_ConnectionArgs = {
 
 export type QueryMethodArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryMethodsArgs = {
   filters?: InputMaybe<MethodFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -944,7 +1007,10 @@ export type QueryMethodsArgs = {
 
 export type QueryMethods_ConnectionArgs = {
   filters?: InputMaybe<MethodFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -952,13 +1018,17 @@ export type QueryMethods_ConnectionArgs = {
 
 export type QueryPageArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryPagesArgs = {
   filters?: InputMaybe<PageFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -966,7 +1036,9 @@ export type QueryPagesArgs = {
 
 export type QueryPages_ConnectionArgs = {
   filters?: InputMaybe<PageFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -974,13 +1046,17 @@ export type QueryPages_ConnectionArgs = {
 
 export type QueryPublicationArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryPublicationsArgs = {
   filters?: InputMaybe<PublicationFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -988,7 +1064,9 @@ export type QueryPublicationsArgs = {
 
 export type QueryPublications_ConnectionArgs = {
   filters?: InputMaybe<PublicationFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -996,19 +1074,25 @@ export type QueryPublications_ConnectionArgs = {
 
 export type QueryReviewWorkflowsWorkflowArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryReviewWorkflowsWorkflowStageArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryReviewWorkflowsWorkflowStagesArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowStageFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1016,7 +1100,9 @@ export type QueryReviewWorkflowsWorkflowStagesArgs = {
 
 export type QueryReviewWorkflowsWorkflowStages_ConnectionArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowStageFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1024,7 +1110,9 @@ export type QueryReviewWorkflowsWorkflowStages_ConnectionArgs = {
 
 export type QueryReviewWorkflowsWorkflowsArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1032,7 +1120,9 @@ export type QueryReviewWorkflowsWorkflowsArgs = {
 
 export type QueryReviewWorkflowsWorkflows_ConnectionArgs = {
   filters?: InputMaybe<ReviewWorkflowsWorkflowFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1040,13 +1130,17 @@ export type QueryReviewWorkflowsWorkflows_ConnectionArgs = {
 
 export type QueryTermArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryTermsArgs = {
   filters?: InputMaybe<TermFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1054,7 +1148,9 @@ export type QueryTermsArgs = {
 
 export type QueryTerms_ConnectionArgs = {
   filters?: InputMaybe<TermFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1062,13 +1158,17 @@ export type QueryTerms_ConnectionArgs = {
 
 export type QueryUploadFileArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryUploadFilesArgs = {
   filters?: InputMaybe<UploadFileFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1076,7 +1176,9 @@ export type QueryUploadFilesArgs = {
 
 export type QueryUploadFiles_ConnectionArgs = {
   filters?: InputMaybe<UploadFileFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1084,13 +1186,17 @@ export type QueryUploadFiles_ConnectionArgs = {
 
 export type QueryUsersPermissionsRoleArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryUsersPermissionsRolesArgs = {
   filters?: InputMaybe<UsersPermissionsRoleFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1098,7 +1204,9 @@ export type QueryUsersPermissionsRolesArgs = {
 
 export type QueryUsersPermissionsRoles_ConnectionArgs = {
   filters?: InputMaybe<UsersPermissionsRoleFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1106,13 +1214,17 @@ export type QueryUsersPermissionsRoles_ConnectionArgs = {
 
 export type QueryUsersPermissionsUserArgs = {
   documentId: Scalars['ID']['input'];
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   status?: InputMaybe<PublicationStatus>;
 };
 
 
 export type QueryUsersPermissionsUsersArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1120,7 +1232,9 @@ export type QueryUsersPermissionsUsersArgs = {
 
 export type QueryUsersPermissionsUsers_ConnectionArgs = {
   filters?: InputMaybe<UsersPermissionsUserFiltersInput>;
+  hasPublishedVersion?: InputMaybe<Scalars['Boolean']['input']>;
   pagination?: InputMaybe<PaginationArg>;
+  publicationFilter?: InputMaybe<PublicationFilter>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   status?: InputMaybe<PublicationStatus>;
 };
@@ -1251,11 +1365,11 @@ export type Term = {
   __typename?: 'Term';
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   documentId: Scalars['ID']['output'];
-  json: UploadFile;
+  json?: Maybe<UploadFile>;
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  rdf: UploadFile;
+  rdf?: Maybe<UploadFile>;
   slug: Scalars['String']['output'];
-  ttl: UploadFile;
+  ttl?: Maybe<UploadFile>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -1291,6 +1405,7 @@ export type UploadFile = {
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   documentId: Scalars['ID']['output'];
   ext?: Maybe<Scalars['String']['output']>;
+  focalPoint?: Maybe<Scalars['JSON']['output']>;
   formats?: Maybe<Scalars['JSON']['output']>;
   hash: Scalars['String']['output'];
   height?: Maybe<Scalars['Int']['output']>;
@@ -1320,6 +1435,7 @@ export type UploadFileFiltersInput = {
   createdAt?: InputMaybe<DateTimeFilterInput>;
   documentId?: InputMaybe<IdFilterInput>;
   ext?: InputMaybe<StringFilterInput>;
+  focalPoint?: InputMaybe<JsonFilterInput>;
   formats?: InputMaybe<JsonFilterInput>;
   hash?: InputMaybe<StringFilterInput>;
   height?: InputMaybe<IntFilterInput>;
@@ -1556,26 +1672,26 @@ export type PublicationsForFileBySlugQueryVariables = Exact<{
 }>;
 
 
-export type PublicationsForFileBySlugQuery = { __typename?: 'Query', publications: Array<{ __typename?: 'Publication', file: { __typename?: 'UploadFile', mime: string, ext?: string | null, url: string } } | null> };
+export type PublicationsForFileBySlugQuery = { __typename?: 'Query', publications: Array<{ __typename?: 'Publication', file?: { __typename?: 'UploadFile', mime: string, ext?: string | null, url: string } | null } | null> };
 
 export type PublicationsForViewBySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type PublicationsForViewBySlugQuery = { __typename?: 'Query', publications: Array<{ __typename?: 'Publication', title: string, summary: string, content: string, tags: string, slug: string, authors: string, location: string, cite: string, originalSource: string, publicationDate: any, createdAt?: any | null, updatedAt?: any | null, publishedAt?: any | null, id: string } | null> };
+export type PublicationsForViewBySlugQuery = { __typename?: 'Query', publications: Array<{ __typename?: 'Publication', title?: string | null, summary?: string | null, content?: string | null, tags?: string | null, slug?: string | null, authors?: string | null, location?: string | null, cite?: string | null, originalSource?: string | null, publicationDate?: any | null, createdAt?: any | null, updatedAt?: any | null, publishedAt?: any | null, id: string } | null> };
 
 export type PublicationsForViewQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PublicationsForViewQuery = { __typename?: 'Query', publications: Array<{ __typename?: 'Publication', title: string, summary: string, content: string, tags: string, slug: string, authors: string, location: string, cite: string, originalSource: string, publicationDate: any, createdAt?: any | null, updatedAt?: any | null, publishedAt?: any | null, id: string } | null> };
+export type PublicationsForViewQuery = { __typename?: 'Query', publications: Array<{ __typename?: 'Publication', title?: string | null, summary?: string | null, content?: string | null, tags?: string | null, slug?: string | null, authors?: string | null, location?: string | null, cite?: string | null, originalSource?: string | null, publicationDate?: any | null, createdAt?: any | null, updatedAt?: any | null, publishedAt?: any | null, id: string } | null> };
 
 export type TermsWithFormatsBySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type TermsWithFormatsBySlugQuery = { __typename?: 'Query', terms: Array<{ __typename?: 'Term', rdf: { __typename?: 'UploadFile', url: string }, json: { __typename?: 'UploadFile', url: string }, ttl: { __typename?: 'UploadFile', url: string } } | null> };
+export type TermsWithFormatsBySlugQuery = { __typename?: 'Query', terms: Array<{ __typename?: 'Term', rdf?: { __typename?: 'UploadFile', url: string } | null, json?: { __typename?: 'UploadFile', url: string } | null, ttl?: { __typename?: 'UploadFile', url: string } | null } | null> };
 
 export type BlogForViewByIdQueryVariables = Exact<{
   id: Scalars['ID']['input'];
@@ -1594,17 +1710,17 @@ export type EventsForViewBySlugQueryVariables = Exact<{
 }>;
 
 
-export type EventsForViewBySlugQuery = { __typename?: 'Query', events: Array<{ __typename?: 'Event', intro: string, title: string, subject: string, start: any, slug: string, content: string, address: string, end?: any | null, addressName: string, eventbrite?: string | null, eventbriteTitle?: string | null, report?: string | null, id: string, cover: { __typename?: 'UploadFile', url: string, mime: string, alternativeText?: string | null } } | null> };
+export type EventsForViewBySlugQuery = { __typename?: 'Query', events: Array<{ __typename?: 'Event', intro: string, title: string, subject: string, start: any, slug: string, content: string, address: string, end: any, addressName: string, eventbrite?: string | null, eventbriteTitle?: string | null, report?: string | null, id: string, cover: { __typename?: 'UploadFile', url: string, mime: string, alternativeText?: string | null } } | null> };
 
 export type EventsForViewQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type EventsForViewQuery = { __typename?: 'Query', events: Array<{ __typename?: 'Event', intro: string, title: string, subject: string, start: any, slug: string, address: string, end?: any | null, report?: string | null, id: string, cover: { __typename?: 'UploadFile', url: string, alternativeText?: string | null } } | null> };
+export type EventsForViewQuery = { __typename?: 'Query', events: Array<{ __typename?: 'Event', intro: string, title: string, subject: string, start: any, slug: string, address: string, end: any, report?: string | null, id: string, cover: { __typename?: 'UploadFile', url: string, alternativeText?: string | null } } | null> };
 
 export type MethodsForViewQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MethodsForViewQuery = { __typename?: 'Query', methods: Array<{ __typename?: 'Method', title: string, icon: Enum_Method_Icon, tag?: Enum_Method_Tag | null, href: string, description: string, updatedAt?: any | null, createdAt?: any | null, id: string } | null> };
+export type MethodsForViewQuery = { __typename?: 'Query', methods: Array<{ __typename?: 'Method', title: string, icon: Enum_Method_Icon, tag: Enum_Method_Tag, href: string, description: string, updatedAt?: any | null, createdAt?: any | null, id: string } | null> };
 
 export type PagesForNavbarQueryVariables = Exact<{ [key: string]: never; }>;
 
